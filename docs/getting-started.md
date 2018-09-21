@@ -20,7 +20,7 @@ Or include through a CDN.
 <script src="https://cdn.bbc.co.uk/gelui/core/main.umd.min.js" crossorigin="anonymous"></script>
 ```
 
-## Example
+## Usage
 
 Assuming your host page should have HTML like this:
 
@@ -35,11 +35,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Card from '@bbc-gelui/core/Card';
 
-const App = () => (
-<Card variant="xwide" theme="bbcsport">
-  Hello World
-</Card>
-);
+function App() {
+  return (
+    <Card variant="xwide" theme="bbcsport">
+      Hello World
+    </Card>
+  );
+}
 
 ReactDOM.render( <App />, document.querySelector('#app') );
 ```
