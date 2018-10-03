@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} | {{site.title}}</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.0.13/fontfaceobserver.standalone.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{site.basedir}}static/css/main.css">
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+  </head>
+
+  <body class="">
+    <script>
+        (function() {
+            (new FontFaceObserver('ReithSans')).load().then(function () {
+                document.body.className += ' b-reith-sans-font';
+            });
+            (new FontFaceObserver('ReithSerif')).load().then(function () {
+                document.body.className += ' b-reith-serif-font';
+            });
+        })();
+    </script>
+
+    <header role="banner" class="header">
+        <div class="a11y-tuts__banner a11y-tuts__headerbanner">
+            <div class="gel-wrap gs-u-clearfix">
+                <div class="a11y-tuts-header__brand">
+                    <a class="a11y-tuts-header__brand-logo" href="http://www.bbc.co.uk/">
+                        <svg aria-label="BBC GEL Logo" width="100" height="24">
+                            <title>BBC</title>
+                            <image xlink:href="{{site.basedir}}static/images/bbc-blocks_grey.svg" src="{{site.basedir}}static/images/bbc-blocks_grey.png" width="100%" height="100%"></image>
+                        </svg>
+                    </a>
+                    <a class="button a11y-tuts__button" href="http://www.bbc.co.uk/gel">Go to BBC GEL</a>
+                </div>
+            </div>
+        </div>
+        <div class="a11y-tuts__banner">
+            <div class="gel-wrap gs-u-clearfix">
+                <h1 class="a11y-tuts__sitetitle"><a href="{{site.basedir}}index.html">{{site.title}}</a></h1>
+            </div>
+        </div>
+    </header>
+
+    <article class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="a11y-tut-content gel-layout__item gel-4/5@l">
+                <h1 id="bbc-accessibility-tutorials">{{title}}</h1>
+
+                {{ content | safe }}
+            </div>
+        </div>
+    </article>
+
+    <div class="a11y-tuts__footerbanner">
+        <div class="gel-wrap">
+            <div class="gel-layout">
+                <div class="a11y-tuts__icon gel-layout__item gel-2/12@l gel-1/5@xl">
+                    <image class="gel-icon gel-icon--large" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{site.basedir}}static/images/gel-icon-help.svg" src="{{site.basedir}}static/images/gel-icon-help.svg" width="100%" height="100%" alt=""></image>
+                </div>
+                <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
+                    <h2 class="gel-contribution-banner__title">Could you improve this documentation?</h2>
+                    <p class="gel-contribution-banner-copy gel-great-primer">If you think you could make anything you see here a bit better then become one of <a href="{{site.basedir}}contributors/">our lovely contributors</a>!</p>
+                </div>
+                <div class="gel-layout__item gel-3/3@l gel-5/5@xl">
+                <p>
+                <small>
+                    Copyright &copy; 2018 BBC. The BBC is not responsible for the content of external sites.<br>
+                    <a href="http://www.bbc.co.uk/help/web/links/">Read about the BBC's approach to external linking.</a>
+                </small>
+                </p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
