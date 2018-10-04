@@ -14,6 +14,9 @@
     
     <script>hljs.initHighlightingOnLoad();</script>
 
+    {% if includecss %}
+    <link rel="stylesheet" type="text/css" href="{{ includecss }}">
+    {% endif %}
   </head>
 
   <body class="">
@@ -80,5 +83,8 @@
             </div>
         </div>
     </div>
+    {% if includejs %}
+    <script type="text/javascript" src="{{site.basedir}}static/js/{{ includejs }}"></script>
+    {% endif %}
   </body>
 </html>

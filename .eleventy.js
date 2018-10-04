@@ -20,6 +20,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.setLibrary("md", md);
     eleventyConfig.addPassthroughCopy("src/static/css");
     eleventyConfig.addPassthroughCopy("src/static/images");
+    eleventyConfig.addPassthroughCopy("src/static/js");
 
     return {
         passthroughFileCopy: true

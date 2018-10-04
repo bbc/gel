@@ -1,10 +1,11 @@
 ---
 title: Hello World Component
+includejs: hello-world.js
 ---
 
 Hello world is a placeholder component just for trying things out. It doesn't do anything useful. Sure is _cute_ though!
 
-![kittens are cute.]({{pathtobase}}static/images/components/hello-world.jpg)
+![kittens are cute.]({{site.basedir}}static/images/components/hello-world.jpg)
 
 ## Check it out
 
@@ -19,7 +20,7 @@ println('done');
 </h1>
 ```
 
-<button class="button a11y-tuts__button" onclick="" style="font-size:16px;font-weight:bold;">Reload examples</button>
+<button id="gelui-reload" class="button a11y-tuts__button" onclick="" style="font-size:16px;font-weight:bold;">Reload examples</button>
 
 ## Where next?
 
