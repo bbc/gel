@@ -1,6 +1,6 @@
-# gelui-docs
+# bbc/code-gel
 
-Static documentation generator for GelUI.
+Static documentation generator for GEL components.
 
 ## Installation
 
@@ -30,4 +30,4 @@ From the project base directory simply run...
 
 `serve`
 
-Then navigate to the resulting server address like so: `http://localhost:8888/gelui-docs/components/hello-world` using whatever hostname and port is appropriate.
+Then navigate to the resulting server address like so: `http://localhost:8888/gel-docs/components/hello-world` using whatever hostname and port is appropriate.
