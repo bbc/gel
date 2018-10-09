@@ -20,6 +20,10 @@ To generate the HTML output into the project `docs` folder, using the markdown f
 
 `npm run build`
 
+## Example
+
+This is only an example: https://bbc.github.io/code-gel/components/hello-world/
+
 ## Testing
 
 It's just HTML, so you only need to open up a web browser :-)
@@ -30,4 +34,4 @@ From the project base directory simply run...
 
 `serve`
 
-Then navigate to the resulting server address like so: `http://localhost:8888/gel-docs/components/hello-world` using whatever hostname and port is appropriate.
+Then navigate to the resulting server address like so: `http://localhost:8888/code-gel/components/hello-world` using whatever hostname and port is appropriate.
