@@ -4,30 +4,28 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card | GelUI Components</title>
+    <title>Card | Code GEL</title>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.0.13/fontfaceobserver.standalone.js"></script>
-    <link rel="stylesheet" type="text/css" href="/gelui-docs/static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
 
 
     <script>hljs.initHighlightingOnLoad();</script>
-
-    
 </head>
 
 <body class="">
     <script>
-        (function () {
+        /*(function () {
             (new FontFaceObserver('ReithSans')).load().then(function () {
                 document.body.className += ' b-reith-sans-font';
             });
             (new FontFaceObserver('ReithSerif')).load().then(function () {
                 document.body.className += ' b-reith-serif-font';
             });
-        })();
+        })();*/
     </script>
 
     <header role="banner" class="header">
@@ -38,7 +36,7 @@
                     <a class="a11y-tuts-header__brand-logo" href="http://www.bbc.co.uk/">
                         <svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
                             <title>BBC</title>
-                            <image xlink:href="/gelui-docs/static/images/bbc-blocks_grey.svg" src="/gelui-docs/static/images/bbc-blocks_grey.png"
+                            <image xlink:href="/static/images/bbc-blocks_grey.svg" src="/static/images/bbc-blocks_grey.png"
                                 width="100%" height="100%"></image>
                         </svg>
                     </a>
@@ -48,7 +46,7 @@
         </div>
         <div class="a11y-tuts__banner">
             <div class="gel-wrap gs-u-clearfix">
-                <a href="/gelui-docs/index.html">GelUI Components</a>
+                <a href="/index.html">Code GEL</a>
             </div>
         </div>
     </header>
@@ -237,7 +235,9 @@
 <span class="hljs-comment">// and `img` represents the image node...</span>
 img.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; link.click());
 </code></pre>
-<p>This is the only JavaScript enhancement. In an environment where the card is not client rendered, the card will be functional where JavaScript is not available.</p>
+<p>This is the only JavaScript enhancement. In an environment where the card is not client rendered, the card will be functional where JavaScript is not available. Accordingly, only add the <code>cursor</code> style if JavaScript has run:</p>
+<pre class="hljs"><code>img.style.cursor = <span class="hljs-string">'pointer'</span>;
+</code></pre>
 <p>In React with JSX, you might use a <code>ref</code> (the node for which being accessible via the <code>current</code> property). The following example is elided for brevity:</p>
 <pre class="hljs"><code><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Card</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
   <span class="hljs-keyword">constructor</span>(props) {
@@ -284,6 +284,9 @@ moreBtn.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; {
   <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Share<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
+<p>In addition, it should be possible to close the <code>class=&quot;card_more-info&quot;</code> element using the <kbd>ESC</kbd> key.</p>
+<pre class="hljs"><code>moreElem.
+</code></pre>
 <p>In JSX, you can use the button to toggle a state declared on the info element like <code>hidden={infoHidden}</code>. But you will still need to move focus, which will require a <code>ref</code>. A small function to be triggered via the button's <code>onClick</code>:</p>
 <pre class="hljs"><code>toggleInfo() {
   <span class="hljs-keyword">this</span>.setState(
@@ -300,7 +303,145 @@ moreBtn.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; {
 </code></pre>
 <p>(<strong>Note:</strong> <code>setState</code> is asynchronous, so a callback function is used to trigger the <code>focus()</code> method.)</p>
 <h2 id="reference-implementation">Reference implementation</h2>
-<p>TODO: Link to demo, or embedded demos (including variants)</p>
+<live-demo id="card1">
+  <template>
+    <style>
+      .card, .card * {
+        box-sizing: border-box;
+      }
+      .card {
+        position: relative;
+        color: #404040;
+        font-family: sans-serif;
+        background: #F1F1F1;
+        display: flex;
+        flex-direction: column;
+        width: 266px;
+      }
+      .card ul {
+        margin: 0;
+      }
+      .card_img {
+        overflow: hidden;
+        position: relative;
+      }
+      .card_img img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .card_icon {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: 1rem;
+        background-color: rgba(255,255,255,0.5);
+        line-height: 1;
+      }
+      .card_icon svg {
+        height: 1.5rem;
+        width: auto;
+      }
+      .card_text {
+        padding: 1rem;
+        flex-grow: 1;
+      }
+      .card_text > * + * {
+        margin: 0;
+        margin-top: 0.5rem;
+      }
+      .card_title a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .card_title a:hover,
+      .card_title a:focus {
+        outline: none;
+        text-decoration: underline;
+      }
+      .card > :last-child {
+        margin-top: auto;
+      }
+      .card_toolbar {
+        height: 2.5rem;
+        list-style: none;
+        display: flex;
+        padding: 0.5rem;
+        background-color: #e5e5e5;
+      }
+      .card_toolbar li + li {
+        margin-left: 0.5rem;
+      }
+      .card_toolbar > :first-child {
+        margin-right: auto;
+      }
+      .card_toolbar button {
+        background: none;
+        border: none;
+        font-size: inherit;
+        cursor: pointer;
+      }
+      .card_more-info {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 2.5rem;
+        left: 0;
+        padding: 1rem;
+        background-color: #F1F1F1;
+      }
+    </style>
+    <div class="card">
+      <div class="card_img">
+        <img src="/static/images/placeholder.png" alt="">
+        <span class="card_icon" aria-hidden="true">
+          <svg fill="currentColor" viewBox="0 0 20 20" width="20" height="20" focusable="false">
+            <polyline points="2 2, 18 10, 2 18"></polyline>
+          </svg>
+        </span>
+      </div>
+      <div class="card_text">
+        <h2 class="card_title"><a href="#to-permalink">Title Of Card</a></h2>
+        <p>Description of the card</p>
+        <small>Attribution</small>
+      </div>
+      <div class="card_toolbar">
+        <button type="button" aria-haspopup="true">More info</button>
+        <div class="card_more-info" role="group" aria-label="more info" tabindex="-1" hidden>
+          <p>More info here</p>
+        </div>
+        <button type="button">L</button>
+        <button type="button">A</button>
+        <button type="button">S</button>
+      </div>
+    </div>
+    <script>
+      const img = demo.querySelector('img');
+      const link = demo.querySelector('a');
+      const moreBtn = demo.querySelector('[aria-haspopup]');
+      const moreElem = demo.querySelector('.card_more-info');
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', () => link.click());
+      moreBtn.addEventListener('click', () => {
+        moreElem.hidden = !moreElem.hidden;
+        if (!moreElem.hidden) {
+          moreElem.focus();
+          moreBtn.textContent = 'Close';
+        } else {
+          moreBtn.textContent = 'More info';
+        }
+      });
+      moreElem.addEventListener('keydown', e => {
+        if (e.which === 27) {
+          moreElem.hidden = true;
+          moreBtn.textContent = 'More info';
+          moreBtn.focus();
+        }
+      });
+    </script>
+  </template>
+</live-demo>
 <h2 id="existing-implementations">Existing implementations</h2>
 <p>There are currently no existing implementations of this reference component.</p>
 
@@ -312,13 +453,13 @@ moreBtn.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; {
         <div class="gel-wrap">
             <div class="gel-layout">
                 <div class="a11y-tuts__icon gel-layout__item gel-2/12@l gel-1/5@xl">
-                    <image class="gel-icon gel-icon--large" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/gelui-docs/static/images/gel-icon-help.svg"
-                        src="/gelui-docs/static/images/gel-icon-help.svg" width="100%" height="100%" alt=""></image>
+                    <image class="gel-icon gel-icon--large" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/code-gel/static/images/gel-icon-help.svg"
+                        src="/code-gel/static/images/gel-icon-help.svg" width="100%" height="100%" alt=""></image>
                 </div>
                 <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
                     <h2 class="gel-contribution-banner__title">Could you improve this documentation?</h2>
                     <p class="gel-contribution-banner-copy gel-great-primer">If you think you could make anything you
-                        see here a bit better then become one of <a href="/gelui-docs/contributors/">our lovely
+                        see here a bit better then become one of <a href="/contributors/">our lovely
                             contributors</a>!</p>
                 </div>
                 <div class="gel-layout__item gel-3/3@l gel-5/5@xl">
@@ -333,7 +474,7 @@ moreBtn.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; {
             </div>
         </div>
     </div>
-    
+    <script type="module" src="/static/js/Demo.js"></script>
 </body>
 
 </html>

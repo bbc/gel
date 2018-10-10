@@ -10,26 +10,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.0.13/fontfaceobserver.standalone.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{site.basedir}}static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
 
 
     <script>hljs.initHighlightingOnLoad();</script>
-
-    {% if includecss %}
-    <link rel="stylesheet" type="text/css" href="{{ includecss }}">
-    {% endif %}
 </head>
 
 <body class="">
     <script>
-        (function () {
+        /*(function () {
             (new FontFaceObserver('ReithSans')).load().then(function () {
                 document.body.className += ' b-reith-sans-font';
             });
             (new FontFaceObserver('ReithSerif')).load().then(function () {
                 document.body.className += ' b-reith-serif-font';
             });
-        })();
+        })();*/
     </script>
 
     <header role="banner" class="header">
@@ -40,7 +36,7 @@
                     <a class="a11y-tuts-header__brand-logo" href="http://www.bbc.co.uk/">
                         <svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
                             <title>BBC</title>
-                            <image xlink:href="{{site.basedir}}static/images/bbc-blocks_grey.svg" src="{{site.basedir}}static/images/bbc-blocks_grey.png"
+                            <image xlink:href="/static/images/bbc-blocks_grey.svg" src="/static/images/bbc-blocks_grey.png"
                                 width="100%" height="100%"></image>
                         </svg>
                     </a>
@@ -50,7 +46,7 @@
         </div>
         <div class="a11y-tuts__banner">
             <div class="gel-wrap gs-u-clearfix">
-                <a href="{{site.basedir}}index.html">{{site.title}}</a>
+                <a href="/index.html">{{site.title}}</a>
             </div>
         </div>
     </header>
@@ -84,7 +80,7 @@
                 <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
                     <h2 class="gel-contribution-banner__title">Could you improve this documentation?</h2>
                     <p class="gel-contribution-banner-copy gel-great-primer">If you think you could make anything you
-                        see here a bit better then become one of <a href="{{site.basedir}}contributors/">our lovely
+                        see here a bit better then become one of <a href="/contributors/">our lovely
                             contributors</a>!</p>
                 </div>
                 <div class="gel-layout__item gel-3/3@l gel-5/5@xl">
@@ -99,9 +95,7 @@
             </div>
         </div>
     </div>
-    {% if includejs %}
-    <script type="text/javascript" src="{{site.basedir}}static/js/{{ includejs }}"></script>
-    {% endif %}
+    <script type="module" src="/static/js/Demo.js"></script>
 </body>
 
 </html>

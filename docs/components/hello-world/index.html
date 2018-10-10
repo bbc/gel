@@ -10,23 +10,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.0.13/fontfaceobserver.standalone.js"></script>
-    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+
 
     <script>hljs.initHighlightingOnLoad();</script>
-
-
 </head>
 
 <body class="">
     <script>
-        (function () {
+        /*(function () {
             (new FontFaceObserver('ReithSans')).load().then(function () {
                 document.body.className += ' b-reith-sans-font';
             });
             (new FontFaceObserver('ReithSerif')).load().then(function () {
                 document.body.className += ' b-reith-serif-font';
             });
-        })();
+        })();*/
     </script>
 
     <header role="banner" class="header">
@@ -37,7 +36,7 @@
                     <a class="a11y-tuts-header__brand-logo" href="http://www.bbc.co.uk/">
                         <svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
                             <title>BBC</title>
-                            <image xlink:href="/code-gel/static/images/bbc-blocks_grey.svg" src="/code-gel/static/images/bbc-blocks_grey.png"
+                            <image xlink:href="/static/images/bbc-blocks_grey.svg" src="/static/images/bbc-blocks_grey.png"
                                 width="100%" height="100%"></image>
                         </svg>
                     </a>
@@ -47,7 +46,7 @@
         </div>
         <div class="a11y-tuts__banner">
             <div class="gel-wrap gs-u-clearfix">
-                <a href="/code-gel/index.html">GelUI Components</a>
+                <a href="/index.html">Code GEL</a>
             </div>
         </div>
     </header>
@@ -64,31 +63,24 @@
                     <dt>Accessibility:</dt>
                     <dd>&amp;times; fail</dd>
                 </dl>
-                <nav class="toc">
-                    <ol>
-                        <li><a href="#check-it-out">Check it out</a></li>
-                        <li><a href="#where-next%3F">Where next?</a></li>
-                    </ol>
-                </nav>
+                <nav class="toc"><ol><li><a href="#check-it-out">Check it out</a></li><li><a href="#where-next%3F">Where next?</a></li></ol></nav>
 
-                <p>Hello world is a placeholder component just for trying things out. It doesn't do anything useful.
-                    Sure is <em>cute</em> though!</p>
-                <p><img src="/code-gel/static/images/components/hello-world.jpg" alt="kittens are cute."></p>
-                <h2>Check it out</h2>
-                <pre class="hljs"><code><span class="hljs-keyword">this</span>.is.code(x);
+                <p>Hello world is a placeholder component just for trying things out. It doesn't do anything useful. Sure is <em>cute</em> though!</p>
+<p><img src="/code-gel/static/images/components/hello-world.jpg" alt="kittens are cute."></p>
+<h2 id="check-it-out">Check it out</h2>
+<pre class="hljs"><code><span class="hljs-keyword">this</span>.is.code(x);
 println(<span class="hljs-string">'done'</span>);
 </code></pre>
-                <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"primary"</span>&gt;</span>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"primary"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Hello HTML<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
 </code></pre>
-                <p><button id="gelui-reload" class="button a11y-tuts__button" onclick="" style="font-size:16px;font-weight:bold;">Reload
-                        examples</button></p>
-                <h2 id="where-next%3F">Where next?</h2>
-                <ul>
-                    <li><a href="http://bbc.co.uk/">BBC Homepage</a></li>
-                    <li><a href="http://bbc.co.uk/gel">BBC GEL Guidelines</a></li>
-                </ul>
+<p><button id="gelui-reload" class="button a11y-tuts__button" onclick="" style="font-size:16px;font-weight:bold;">Reload examples</button></p>
+<h2 id="where-next%3F">Where next?</h2>
+<ul>
+<li><a href="http://bbc.co.uk/">BBC Homepage</a></li>
+<li><a href="http://bbc.co.uk/gel">BBC GEL Guidelines</a></li>
+</ul>
 
             </div>
         </div>
@@ -104,9 +96,8 @@ println(<span class="hljs-string">'done'</span>);
                 <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
                     <h2 class="gel-contribution-banner__title">Could you improve this documentation?</h2>
                     <p class="gel-contribution-banner-copy gel-great-primer">If you think you could make anything you
-                        see here a bit better then become one of <a href="/code-gel/contributors/">our lovely
+                        see here a bit better then become one of <a href="/contributors/">our lovely
                             contributors</a>!</p>
-
                 </div>
                 <div class="gel-layout__item gel-3/3@l gel-5/5@xl">
                     <p>
@@ -120,9 +111,7 @@ println(<span class="hljs-string">'done'</span>);
             </div>
         </div>
     </div>
-
-    <script type="text/javascript" src="/code-gel/static/js/hello-world.js"></script>
-
+    <script type="module" src="/static/js/Demo.js"></script>
 </body>
 
 </html>

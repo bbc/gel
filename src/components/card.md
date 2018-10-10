@@ -229,7 +229,11 @@ In which case, you need to add a JavaScript `click` listener to the image and us
 img.addEventListener('click', () => link.click());
 ```
 
-This is the only JavaScript enhancement. In an environment where the card is not client rendered, the card will be functional where JavaScript is not available.
+This is the only JavaScript enhancement. In an environment where the card is not client rendered, the card will be functional where JavaScript is not available. Accordingly, only add the `cursor` style if JavaScript has run:
+
+```js
+img.style.cursor = 'pointer';
+```
 
 In React with JSX, you might use a `ref` (the node for which being accessible via the `current` property). The following example is elided for brevity:
 
@@ -289,6 +293,19 @@ For the `focus()` method to succeed, the `class="card_more-info"` element needs 
 </div>
 ```
 
+In addition, it should be possible to close the `class="card_more-info"` element using the <kbd>ESC</kbd> key. 
+
+```js
+moreElem.addEventListener('keydown', e => {
+  if (e.which === 27) {
+    e.preventDefault();
+    moreElem.hidden = true;
+    moreBtn.textContent = 'More info';
+    moreBtn.focus();
+  }
+});
+```
+
 In JSX, you can use the button to toggle a state declared on the info element like `hidden={infoHidden}`. But you will still need to move focus, which will require a `ref`. A small function to be triggered via the button's `onClick`:
 
 ```js
@@ -308,9 +325,166 @@ toggleInfo() {
 
 (**Note:** `setState` is asynchronous, so a callback function is used to trigger the `focus()` method.)
 
+A separate function would be needed to handle closing on <kbd>ESC</kbd>:
+
+```js
+closeInfo(e) {
+  if (e.which === 27) {
+    e.preventDefault();
+    this.setState(
+      (state) => ({
+        state.infoHidden = true;
+      }),
+      () => {
+        /* ↓ ref will need to be created with createRef() */
+        this.infoBtn.current.focus();
+      }
+    );    
+  }
+}
+```
+
 ## Reference implementation
 
-TODO: Link to demo, or embedded demos (including variants)
+<live-demo id="card1">
+  <template>
+    <style>
+      .card, .card * {
+        box-sizing: border-box;
+      }
+      .card {
+        position: relative;
+        color: #404040;
+        font-family: sans-serif;
+        background: #F1F1F1;
+        display: flex;
+        flex-direction: column;
+        width: 266px;
+      }
+      .card ul {
+        margin: 0;
+      }
+      .card_img {
+        overflow: hidden;
+        position: relative;
+      }
+      .card_img img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .card_icon {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: 1rem;
+        background-color: rgba(255,255,255,0.5);
+        line-height: 1;
+      }
+      .card_icon svg {
+        height: 1.5rem;
+        width: auto;
+      }
+      .card_text {
+        padding: 1rem;
+        flex-grow: 1;
+      }
+      .card_text > * + * {
+        margin: 0;
+        margin-top: 0.5rem;
+      }
+      .card_title a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .card_title a:hover,
+      .card_title a:focus {
+        outline: none;
+        text-decoration: underline;
+      }
+      .card > :last-child {
+        margin-top: auto;
+      }
+      .card_toolbar {
+        height: 2.5rem;
+        list-style: none;
+        display: flex;
+        padding: 0.5rem;
+        background-color: #e5e5e5;
+      }
+      .card_toolbar li + li {
+        margin-left: 0.5rem;
+      }
+      .card_toolbar > :first-child {
+        margin-right: auto;
+      }
+      .card_toolbar button {
+        background: none;
+        border: none;
+        font-size: inherit;
+        cursor: pointer;
+      }
+      .card_more-info {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 2.5rem;
+        left: 0;
+        padding: 1rem;
+        background-color: #F1F1F1;
+      }
+    </style>
+    <div class="card">
+      <div class="card_img">
+        <img src="/static/images/placeholder.png" alt="">
+        <span class="card_icon" aria-hidden="true">
+          <svg fill="currentColor" viewBox="0 0 20 20" width="20" height="20" focusable="false">
+            <polyline points="2 2, 18 10, 2 18"></polyline>
+          </svg>
+        </span>
+      </div>
+      <div class="card_text">
+        <h2 class="card_title"><a href="#to-permalink">Title Of Card</a></h2>
+        <p>Description of the card</p>
+        <small>Attribution</small>
+      </div>
+      <div class="card_toolbar">
+        <button type="button" aria-haspopup="true">More info</button>
+        <div class="card_more-info" role="group" aria-label="more info" tabindex="-1" hidden>
+          <p>More info here</p>
+        </div>
+        <button type="button">L</button>
+        <button type="button">A</button>
+        <button type="button">S</button>
+      </div>
+    </div>
+    <script>
+      const img = demo.querySelector('img');
+      const link = demo.querySelector('a');
+      const moreBtn = demo.querySelector('[aria-haspopup]');
+      const moreElem = demo.querySelector('.card_more-info');
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', () => link.click());
+      moreBtn.addEventListener('click', () => {
+        moreElem.hidden = !moreElem.hidden;
+        if (!moreElem.hidden) {
+          moreElem.focus();
+          moreBtn.textContent = 'Close';
+        } else {
+          moreBtn.textContent = 'More info';
+        }
+      });
+      moreElem.addEventListener('keydown', e => {
+        if (e.which === 27) {
+          moreElem.hidden = true;
+          moreBtn.textContent = 'More info';
+          moreBtn.focus();
+        }
+      });
+    </script>
+  </template>
+</live-demo>
 
 ## Existing implementations
 
