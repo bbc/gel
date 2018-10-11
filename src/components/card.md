@@ -3,6 +3,7 @@ title: Card
 version: 0.1.0
 published: true
 accessibility: true
+includejs: card/demo.js
 ---
 
 ## When to use a card
@@ -437,7 +438,7 @@ closeInfo(e) {
     </style>
     <div class="card">
       <div class="card_img">
-        <img src="/static/images/placeholder.png" alt="">
+        <img src="{{site.basedir}}static/images/placeholder.png" alt="">
         <span class="card_icon" aria-hidden="true">
           <svg fill="currentColor" viewBox="0 0 20 20" width="20" height="20" focusable="false">
             <polyline points="2 2, 18 10, 2 18"></polyline>
