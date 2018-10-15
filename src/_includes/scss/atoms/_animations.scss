@@ -1,0 +1,4 @@
+$standardCurve:     cubic-bezier(0.4, 0.0, 0.2, 1); // in/out - just moving around
+$accelerationCurve: cubic-bezier(0.4, 0.0, 1, 1); // easing in
+$decelerationCurve: cubic-bezier(0.0, 0.0, 0.2, 1); // easing out - permanently leaving
+$sharpCurve:        cubic-bezier(0.4, 0.0, 0.6, 1); // for objects temporarily leaving the screen

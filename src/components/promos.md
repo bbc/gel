@@ -1,13 +1,13 @@
 ---
-title: Card
-summary: Cards let you preview and share content quickly, without having to leave the page you're on.
+title: Promos
+summary: A promo is a snippet of content which links to a full piece of content elsewhere on the BBC site or app.
 version: 0.1.0
 published: true
 accessibility: true
-includejs: card/demo.js
+includejs: promo/demo.js
 ---
 
-## When to use a card
+## When to use a promo
 
 The card component represents a summary/preview of longer-form content. It should only be incorporated within you interface where:
 

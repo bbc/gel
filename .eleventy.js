@@ -1,6 +1,6 @@
 module.exports = function (eleventyConfig) {
-  var pluginTOC = require('eleventy-plugin-toc');
-  var hljs = require('highlight.js');
+  const hljs = require('highlight.js');
+  const cheerio = require('cheerio');
 
   var md = require('markdown-it')({
     html: true,
@@ -19,9 +19,21 @@ module.exports = function (eleventyConfig) {
     }
   }).use(require('markdown-it-anchor'));
 
-  eleventyConfig.addPlugin(pluginTOC);
+  eleventyConfig.addPlugin(function(eleventyConfig, pluginNamespace) {
+    eleventyConfig.namespace(pluginNamespace, () => {
+      eleventyConfig.addFilter('toc', function(content, opts){
+        var $ = cheerio.load(content);
+        var result = '<ol class="gel-toc">';
+        $('h2').each(function(i, h2) {
+          result += '<li><a href="#' + h2.attribs.id + '">' + $(h2).text() + '</a></li>';
+        });
+        return result + '</ol>';
+      })
+    })
+  });
   eleventyConfig.setLibrary("md", md);
   eleventyConfig.addPassthroughCopy("src/static/css");
+  eleventyConfig.addPassthroughCopy("src/static/css/bbc-grandstand/dist");
   eleventyConfig.addPassthroughCopy("src/static/images");
   eleventyConfig.addPassthroughCopy("src/static/js");
 
