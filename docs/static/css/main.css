@@ -2056,3 +2056,14 @@ code.hljs {
   live-demo {
     display: block;
   }
+
+  /* Notes */
+
+  .note {
+    background-color: #edeeef;
+    padding: 1.25rem;
+  }
+
+  .note_label {
+    font-size: 1.125rem;
+  }
