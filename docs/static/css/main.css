@@ -1143,30 +1143,32 @@ body {
   font-size: 62.5%;
   font-family: Arial,Helvetica,freesans,sans-serif;
   line-height: 1;
-  margin: 0; }
+  margin: 0;
+  padding: 16px 0 0 0; }
 
-.gel-body a {
-  font-weight: bold; }
+a {
+  text-decoration: none; }
 
-.gel-template-body a {
+.gel-guideline-sections a {
+  font-weight: bold;
   text-decoration: none;
   border-bottom: 1px solid #ccc; }
 
-.gel-template-body a:hover {
+.gel-guideline-sections a:hover {
   color: #e6711b;
   border-bottom: 1px solid #e6711b;
   transition: 300ms; }
 
-.gel-template-body h1 a, .gel-template-body h2 a, .gel-template-body h3 a, .gel-template-body h4 a, .gel-template-body h5 a, .gel-template-body h6 a, .gel-template-body li a {
+.gel-guideline-sections h1 a, .gel-guideline-sections h2 a, .gel-guideline-sections h3 a, .gel-guideline-sections h4 a, .gel-guideline-sections h5 a, .gel-guideline-sections h6 a, .gel-guideline-sections li a {
   border-bottom: 1px solid transparent; }
 
-.gel-template-body h1 a:hover, .gel-template-body h2 a:hover, .gel-template-body h3 a:hover, .gel-template-body h4 a:hover, .gel-template-body h5 a:hover, .gel-template-body h6 a:hover, .gel-template-body li a:hover {
+.gel-guideline-sections h1 a:hover, .gel-guideline-sections h2 a:hover, .gel-guideline-sections h3 a:hover, .gel-guideline-sections h4 a:hover, .gel-guideline-sections h5 a:hover, .gel-guideline-sections h6 a:hover, .gel-guideline-sections li a:hover {
   border-bottom: 1px solid #e6711b; }
 
-.gel-template-body h2 {
+.gel-guideline-sections h2 {
   border-top: 1px solid #ccc;
   padding-top: 30px;
-  margin-top: 64px; }
+  margin-top: 64px !important; }
 
 .gel-link--last-word {
   white-space: nowrap; }
