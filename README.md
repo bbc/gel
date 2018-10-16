@@ -12,13 +12,20 @@ Try...
 
 And then...
 
-`npm install`
+```
+npm install
+npm link
+```
 
 ## Build
 
 To generate the HTML output into the project `docs` folder, using the markdown from the project `src` folder, run this command...
 
 `npm run build`
+
+To make updates to the generated CSS files from the `scss` source...
+
+`npm run sass`
 
 ## Example
 

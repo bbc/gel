@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <symbol viewBox="0 0 32 32" id="gel-icon-alarm" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17 17.4V11h-2v7.6l6.6 3.8 1-1.7-5.6-3.3zM29.2 9a6 6 0 0 0-10.4-6zM2.8 9a6 6 0 0 1 10.4-6z"/>
+        <path d="M29 17.5C29 10.3 23.2 4 16 4S3 10.3 3 17.5a13.6 13.6 0 0 0 3.4 9L4 29l2.8 2.9 2.7-2.7a12.9 12.9 0 0 0 12.9 0l2.8 2.8 2.8-2.8-2.4-2.7a13.6 13.6 0 0 0 3.4-9zM6.5 18a10 10 0 0 1 2.8-7A9.7 9.7 0 0 1 16 8a9.7 9.7 0 0 1 9.5 9.8 9.6 9.6 0 0 1-9.5 9.6A9.4 9.4 0 0 1 6.5 18z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-alert" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 2L0 30h32zm2 25h-4v-4h4zm-4-6V11h4v10z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-back-to-start" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 0v32h3V0H2zm28 0L5 16l25 16v-8l-13.3-8L30 8V0z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-calendar" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 13h4v4h-4zM22 0h2v5h-2zM8 0h2v5H8zm11 13h4v4h-4zm-5 0h4v4h-4zm-5 0h4v4H9zm15 5h4v4h-4zm-5 0h4v4h-4zm-5 0h4v4h-4zm-5 0h4v4H9zm-5 0h4v4H4zm15 5h4v4h-4zm-5 0h4v4h-4zm-5 0h4v4H9zm-5 0h4v4H4z"/>
+        <path d="M2 9h30V2h-7v4h-4V2H11v4H7V2H0v7h2zm28 2v19H2V11H0v21h32V11h-2z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-chapters" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 0h24v8H8zm8 12h16v8H16zM8 24h24v8H8zm-8-1l12-7L0 9v14z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-countdown" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.8 18.4V12h-2v7.6l6.6 3.8 1-1.8-5.6-3.2zm5.76-10.723l2.828-2.828 4.243 4.242-2.829 2.829z"/>
+        <path d="M15.4 6a13 13 0 1 0 13 13 13 13 0 0 0-13-13zm0 22.5a9.5 9.5 0 1 1 9.5-9.5 9.5 9.5 0 0 1-9.5 9.5zm0-22.5a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm0-5a2 2 0 1 1-2 2 2 2 0 0 1 2-2z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-degraded" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30 0h-9l2 2h7v28H2V2h7.2l8.6 8.6L9.4 19l7.8 9.5V19l8.2-8.1L14.5 0H0v32h32V0h-2z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-delete" xmlns="http://www.w3.org/2000/svg">
+        <path d="M26 32H6L5 11h4l.1 15H11V11h4v15h2V11h4v15h2V11h4l-1 21zM21 0h-9l-1 1v1h11V1l-1-1zm7 9H4V5l2-1h20l2 1v4z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-down" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 29L32 3h-7.2L16 18.3 7.2 3H0l16 26z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-download" xmlns="http://www.w3.org/2000/svg">
+        <path d="M28.2 12.2L19 21.4V0h-6v21.4l-9.2-9.2L0 16l14 14H2v-6H0v8h16l16-16-3.8-3.8zM30 30h-8l-2 2h12v-8h-2v6z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-duplicate" xmlns="http://www.w3.org/2000/svg">
+        <path d="M26 6h-5l-6-6H0v26h11v6h21V12zM2 24V2h12.2l4 4H11v5H6v2h5v1H6v2h5v1H6v2h5v5zm28 6H13V8h12.2l4.8 4.8z"/>
+        <path d="M17 17h9v2h-9zm0 3h9v2h-9zm0 3h9v2h-9z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-duration" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17 15.4V6h-2v10.6l8.8 5.1 1-1.8-7.8-4.5z"/>
+        <path d="M16 4A12 12 0 1 1 4 16 12 12 0 0 1 16 4m0-4a16 16 0 1 0 16 16A16 16 0 0 0 16 0z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-edit-draft" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24.875.061l7.071 7.071L9.934 29.144l-7.071-7.07zM7.1 32H0v-7.1l.7-.7 7.1 7.1-.7.7z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-email" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 19.4l16-15V3H0v26h32V8l-4 4v13H4V8.2zm0-2.8L5.8 7h20.4L16 16.6z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-embed" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 6.2V0L0 10l10 10v-6.2L6.2 10 10 6.2zm12 7.6V20l10-10L22 0v6.2l3.8 3.8-3.8 3.8zm-10.611-.66l7.778-7.779 1.414 1.414-7.778 7.779z"/>
+    </symbol>
+    <symbol viewBox="0 0 36 32" id="gel-icon-embed-off-grid" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 29v-7l-5-6 5-6V3L0 16l11 13zM25 3v7l5 6-5 6v7l11-13L25 3zM13 25h2l8-18h-2l-8 18z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-embed-on-grid" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 27v-6l-4.5-5 4.5-5V5L0 16l10 11zM22 5v6l4.5 5-4.5 5v6l10-11L22 5zM12 24h2l6-16h-2l-6 16z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-expires" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 0h-1v4h1A12 12 0 1 1 4 16H0A16 16 0 1 0 16 0z"/>
+        <path d="M23.8 21.7l1-1.8-7.8-4.5V6h-2v10.6l8.8 5.1z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-export" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 0v22.5l-6 6L3.5 32 22 13.5V21h5V5H11v5h7.5L8 20.5V2h22v22H15.8l-2 2H32V0H6z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-external-link" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 0v5h11.5l-5 5H0v22h22V17.5l-2 2V30H2V12h14.5l-7.8 7.7 3.6 3.6L27 8.5V20h5V0H12z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-filter" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19.9 13v17l-1 1-7-6V13L0 1h32L19.9 13z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-grid" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0h8v8H0zm0 12h8v8H0zm0 12h8v8H0zM12 0h8v8h-8zm0 12h8v8h-8zm0 12h8v8h-8zM24 0h8v8h-8zm0 12h8v8h-8zm0 12h8v8h-8z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-help" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 0a16 16 0 1 0 16 16A16 16 0 0 0 16 0zm2 26h-4v-4h4zm2.6-10c-1.2.9-2.6 1.6-2.6 3.2v.8h-4v-1a5 5 0 0 1 2.5-4.3c1.1-.8 2.5-1.5 2.5-2.9s-1.4-2.4-2.8-2.4a3.7 3.7 0 0 0-3.7 3.6H9a6.8 6.8 0 0 1 7-6.8c5.1 0 7.3 3.1 7.3 5.2s-1.5 3.7-2.7 4.6z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-home" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 5.4l-12 12V32h9V22h6v10h9V17.4l-12-12z"/>
+        <path d="M28 12V4h-4v4l-6.6-6.5L16 0l-1.4 1.5L0 16v2.9l16-16 16 16V16l-4-4z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-import" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 25h17l-2-2H2V2h21v17.5l-13-13L6.5 10l17 17H17v5h15V17h-5v6.5l-2-2V0H0v25z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-info" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 0a16 16 0 1 0 16 16A16 16 0 0 0 16 0zm2 25h-4V13h4zm0-14h-4V7h4z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-label" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.9.1H0v12.7l19.3 19.1L32 19.2zM7.2 9.7a2.5 2.5 0 1 1 2.5-2.6 2.5 2.5 0 0 1-2.5 2.6z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-launch-application" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 26H2v-6h2v-2H0v10h12v-6h-2v4zm12 0h8v-6h-2v-2h4v10H20v-6h2v4z"/>
+        <path d="M6 20h20V4H6zm16-4H10V8h12z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-link" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18.5 4.6l-1.7-1.7A9.8 9.8 0 0 0 2.9 16.8l3.4 3.4a9.9 9.9 0 0 0 13.9 0l-3.5-3.5a4.9 4.9 0 0 1-7 0l-3.3-3.4a4.9 4.9 0 0 1 7-7L15.1 8z"/>
+        <path d="M13.4 27.4l1.7 1.7a9.9 9.9 0 0 0 13.9 0 9.7 9.7 0 0 0 .1-13.8l-3.5-3.5a9.9 9.9 0 0 0-13.9 0l3.5 3.5a4.9 4.9 0 0 1 7 0l3.4 3.4a4.9 4.9 0 0 1-7 7L16.9 24z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-list" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0v8h32V0H0zm0 17v3h32v-8H0v5zm0 12v3h32v-8H0v5z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-list-thumb" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0h8v8H0zm0 12h8v8H0zm0 12h8v8H0zM11 0v8h21V0H11zm0 17v3h21v-8H11v5zm0 12v3h21v-8H11v5z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-loading" xmlns="http://www.w3.org/2000/svg">
+        <path d="M29.8 8l-3.5 2A12 12 0 1 1 16 4V0a16 16 0 1 0 13.8 8z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-location" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 0a16 16 0 1 0 16 16A16 16 0 0 0 16 0zm2 27.8V23h-4v4.8A12 12 0 0 1 4.2 18H9v-4H4.2A12 12 0 0 1 14 4.2V9h4V4.2a12 12 0 0 1 9.8 9.8H23v4h4.8a12 12 0 0 1-9.8 9.8z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-lock" xmlns="http://www.w3.org/2000/svg">
+        <path d="M25 14V8.3C25 3.7 20.9 0 16 0S7 3.7 7 8.3V14H3v18h26V14zM12 8.3a3.9 3.9 0 0 1 4-3.7 3.9 3.9 0 0 1 4 3.7V14h-8z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-more-horizontal" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 12h8v8H0zm12 0h8v8h-8zm12 0h8v8h-8z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-more-vertical" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 0h8v8h-8zm0 12h8v8h-8zm0 12h8v8h-8z"/>
+    </symbol>
+    <symbol viewBox="0 0 56 32" id="gel-icon-new" xmlns="http://www.w3.org/2000/svg">
+        <path d="M56 32H0V0h56zM4 23.9h3.9v-10H8l5.6 10h4.3v-16h-4v9.8L8.3 7.9H4zm16.2 0h11.6v-3.6h-7.5v-3h6.5v-3.2h-6.5v-2.8h7.2V7.9H20.2zm32.3-16h-3.8l-2.1 11.7-2.1-11.7h-3.6l-2.2 11.7-2.1-11.7h-3.8l3.9 16h3.9l2-11 2 11h3.8z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-next" xmlns="http://www.w3.org/2000/svg">
+        <path d="M29 16L3 0v7.2L17.6 16 3 24.8V32l26-16z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-no" xmlns="http://www.w3.org/2000/svg">
+        <path d="M32 3.5L28.5 0 16 12.5 3.5 0 0 3.5 12.5 16 0 28.5 3.5 32 16 19.5 28.5 32l3.5-3.5L19.5 16 32 3.5z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-previous" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 16l26 16v-7.2L14.4 16 29 7.2V0L3 16z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-print" xmlns="http://www.w3.org/2000/svg">
+        <path d="M26 12V5l-5-5H6v12H0v12.1L5.9 30H6v2h20v-2h.1l5.9-5.9V12zM8 12V2h12.2L24 5.8V18H8zm0 18v-5h16v5z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-quote" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 17v15h15V17H7c.2-5.9 2.4-8.8 8-9.9V0A17.5 17.5 0 0 0 0 17zm32-9.9V0a17.5 17.5 0 0 0-15 17v15h15V17h-8c.2-5.9 2.4-8.8 8-9.9z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-re-order" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 25.5v-19l5.6 5.7L26 9.8 16 0 6 9.8l2.4 2.4L14 6.5v19l-5.6-5.7L6 22.2 16 32l10-9.8-2.4-2.4-5.6 5.7z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-refresh" xmlns="http://www.w3.org/2000/svg">
+        <path d="M32 0H20v12h4V7.1A12 12 0 0 1 16 28v4A16 16 0 0 0 26.6 4H32zM8 24.9A12 12 0 0 1 16 4V0A16 16 0 0 0 5.4 28H0v4h12V20H8z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-save" xmlns="http://www.w3.org/2000/svg">
+        <path d="M27.7 0H0v32h32V7zM16 2h4v8h-4zm14 28h-6V18H8v12H2V2h8v10h12V2h4.9L30 7.8z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-search" xmlns="http://www.w3.org/2000/svg">
+        <path d="M32 28.5l-8.2-8.2a13 13 0 1 0-3.5 3.5l8.2 8.2zM6.6 19.4A9 9 0 1 1 13 22a8.9 8.9 0 0 1-6.4-2.6z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-settings" xmlns="http://www.w3.org/2000/svg">
+        <path d="M31.7 19.7l-3.6-1.5a12.2 12.2 0 0 0 0-4.5l3.6-1.5a.5.5 0 0 0 .3-.7l-1.6-3.7a.5.5 0 0 0-.7-.3L26.1 9A12.3 12.3 0 0 0 23 5.9l1.5-3.6a.5.5 0 0 0-.3-.7L20.4 0a.5.5 0 0 0-.7.3l-1.5 3.6a12.3 12.3 0 0 0-4.5 0L12.3.3a.5.5 0 0 0-.7-.3L7.8 1.6a.5.5 0 0 0-.3.7L9 5.9A12.2 12.2 0 0 0 5.9 9L2.3 7.5a.5.5 0 0 0-.7.3L0 11.6a.5.5 0 0 0 .3.7l3.6 1.5a12.2 12.2 0 0 0 0 4.5L.3 19.7a.5.5 0 0 0-.3.7l1.6 3.8a.5.5 0 0 0 .7.3L5.9 23A12.2 12.2 0 0 0 9 26.1l-1.5 3.6a.5.5 0 0 0 .3.7l3.8 1.6a.5.5 0 0 0 .7-.3l1.5-3.6a12.3 12.3 0 0 0 4.5 0l1.5 3.6a.5.5 0 0 0 .7.3l3.8-1.6a.5.5 0 0 0 .3-.7L23 26.1a12.3 12.3 0 0 0 3.1-3.1l3.6 1.5a.5.5 0 0 0 .7-.3l1.6-3.8a.5.5 0 0 0-.3-.7zm-14.2 0a4 4 0 1 1 2.2-5.2 4 4 0 0 1-2.2 5.2z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-to-bottom" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 27h32v3H0zm16 0L0 2h8.2L16 15.3 23.8 2H32L16 27z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-to-top" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 2h32v3H0zm16 3l16 25h-8.2L16 16.7 8.2 30H0L16 5z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-toggle-horizontal" xmlns="http://www.w3.org/2000/svg">
+        <path d="M25 16L0 32v-8l13-8L0 8.2V0l25 16z"/>
+        <path d="M21 0v2h9v28h-9v2h11V0H21z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-unlink" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.7 9.7l-3.4-3.3a4.9 4.9 0 0 0-7 7L8 15.1l-3.4 3.4-1.7-1.7A9.8 9.8 0 0 1 16.8 2.9l3.4 3.4zm-1.4 12.5l3.4 3.4a4.9 4.9 0 1 0 7-7L24 16.9l3.5-3.5 1.7 1.7a9.9 9.9 0 0 1 0 13.9 9.7 9.7 0 0 1-13.8.1l-3.5-3.5 3.5-3.5z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-unlock" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23 0a9 9 0 0 0-9 9v5H0v18h23V14h-4V9a4 4 0 0 1 8 0v5h5V9a9 9 0 0 0-9-9z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-up" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 3L0 29h7.2L16 13.7 24.8 29H32L16 3z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-upload" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20.5 30v-2H30v-6h2v8H20.5zm-2 0H0v-8h2v6h11.5V11.6L6 19l-3.5-3.5L16 2l13.5 13.5-3.6 3.5-7.4-7.4V30z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-vocab" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0v18h12.8l1.2 2 2.5 4 2.5-4 1.3-2H32V0zm22 14H4v-4h18zm6-6H4V4h24zM0 26h32v6H0z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-yes" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.9 28.9l19-22.6-3.8-3.2-15.8 18.8-9-7.5-3.2 3.8 12.8 10.7z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-zoom-in" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 20h-4v-5H6v-4h5V6h4v5h5v4h-5z"/>
+        <path d="M32 28.5l-8.2-8.2a13 13 0 1 0-3.5 3.5l8.2 8.2zM6.6 19.4A9 9 0 1 1 13 22a8.9 8.9 0 0 1-6.4-2.6z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="gel-icon-zoom-out" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 15v-4h14v4z"/>
+        <path d="M32 28.5l-8.2-8.2a13 13 0 1 0-3.5 3.5l8.2 8.2zM6.6 19.4A9 9 0 1 1 13 22a8.9 8.9 0 0 1-6.4-2.6z"/>
+    </symbol>
+</svg>
