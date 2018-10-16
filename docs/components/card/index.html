@@ -10,13 +10,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.0.13/fontfaceobserver.standalone.js"></script>
+    <script src="/code-gel/static/js/main.js"></script>
+
     <link rel="stylesheet" type="text/css" href="/code-gel/static/css/main.css">
 
-    <script>hljs.initHighlightingOnLoad();</script>
-    
-</head>
-
-<body class="">
     <script>
         (function () {
             (new FontFaceObserver('ReithSans')).load().then(function () {
@@ -28,54 +25,55 @@
         })();
     </script>
 
-    <header role="banner" class="header">
-        <p class="gel-sr gel-sr__focusable gel-sr__overlay" tabindex="0">
-            <a href="#main" onfocus="this.parentNode.classList.add('gel-sr__focused')" onblur="this.parentNode.classList.remove('gel-sr__focused')">Skip to content</a>
-        </p>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+</head>
 
-        <div class="a11y-tuts__banner a11y-tuts__headerbanner">
-            <div class="gel-wrap gs-u-clearfix">
-                <div class="a11y-tuts-header__brand">
-                    <a class="a11y-tuts-header__brand-logo" href="http://www.bbc.co.uk/">
-                        <svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
-                            <title>BBC</title>
-                            <image xlink:href="/code-gel/static/images/bbc-blocks_grey.svg" src="/code-gel/static/images/bbc-blocks_grey.png"
-                                width="100%" height="100%"></image>
-                        </svg>
-                    </a>
-                </div>
-            </div>
+<body class="gel-guideline-body">
+    <p class="gel-sr gel-sr__focusable gel-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('gel-sr__focused')" onblur="this.parentNode.classList.remove('gel-sr__focused')">Skip to content</a>
+    </p>
+
+    <header role="banner" class="header">
+        <div class="gel-wrap gs-u-clearfix">
+            <a href="http://www.bbc.co.uk/">
+                <svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
+                    <title>BBC</title>
+                    <image xlink:href="/code-gel/static/images/bbc-blocks_grey.svg" src="/code-gel/static/images/bbc-blocks_grey.png"
+                        width="100%" height="100%"></image>
+                </svg>
+            </a>
         </div>
     </header>
 
     <main id="main" tabindex="-1" class="gel-wrap gs-u-clearfix">
         <div class="gel-layout">
-            <div class="gel-layout__item gel-1/5@l">
-            </div>
-            <div class="gel-guideline-sections gel-layout__item gel-3/5@l">
-                <h1 class="gel-guideline-header__title">Card</h1>
-                
-                <p class="gel-guideline-header__summary gel-great-primer">Cards let you preview and share content quickly, without having to leave the page you&#39;re on.</p>
+            <div class="gel-layout__item gel-1/5@l"><!-- column placeholder--></div>
 
-                <div class="gel-breakout-box extra-padding">
-                    <dl class="gel-breakout-box__meta">
-                        <dt>Version:</dt>
-                        <dd>0.1.0</dd>
-                        <dt>Status:</dt>
-                        <dd>Published</dd>
-                        <dt>Accessibility:</dt>
-                        <dd>Pass</dd>
-                    </dl>
-                </div>
+            <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
+                <h1 class="gel-guideline-header__title">Card</h1>
+                <p class="gel-guideline-header__summary gel-great-primer">Cards let you preview and share content quickly, without having to leave the page you&#39;re on.</p>
+            </div>
+
+            <div class="gel-layout__item gel-1/5@l">
+                <dl class="gel-standout-box">
+                    <dt>Version:</dt>
+                    <dd>0.1.0</dd>
+                    <dt>Status:</dt>
+                    <dd>Published</dd>
+                    <dt>Accessibility:</dt>
+                    <dd>Pass</dd>
+                </dl>
             </div>
         </div>
         <div class="gel-layout">
             <div class="gel-layout__item gel-1/5@l">
-                <nav role="navigation" id="side-nav" class="gel-side-nav">
-                    <ol class="gel-toc"><li><a href="#when-to-use-a-card">When to use a card</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#expected-behavior">Expected behavior</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#existing-implementations">Existing implementations</a></li></ol>
+                <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
+                    <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
+                    <ol id="gel-toc__links" class="gel-toc"><li><a href="#when-to-use-a-card">When to use a card</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#expected-behavior">Expected behavior</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#existing-implementations">Existing implementations</a></li></ol>
                 </nav>
             </div>
-            <div class="gel-guideline-sections gel-layout__item gel-3/5@l">
+            <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="when-to-use-a-card">When to use a card</h2>
 <p>The card component represents a summary/preview of longer-form content. It should only be incorporated within you interface where:</p>
 <ol>
@@ -483,34 +481,33 @@ moreBtn.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; {
         </div>
     </main>
 
-    <div class="a11y-tuts__footerbanner">
+    <div class="gel-feedback-banner">
         <div class="gel-wrap">
             <div class="gel-layout">
-                <div class="a11y-tuts__icon gel-layout__item gel-2/12@l gel-1/5@xl">
-                    <image class="gel-icon gel-icon--large" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/code-gel/static/images/gel-icon-help.svg"
-                        src="/code-gel/static/images/gel-icon-help.svg" width="100%" height="100%" alt=""></image>
-                </div>
                 <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
-                    <h2 class="gel-contribution-banner__title">Could you improve this documentation?</h2>
-                    <p class="gel-contribution-banner-copy gel-great-primer">If you think you could make anything you
-                        see here a bit better then become one of <a href="/code-gel/contributors/">our lovely
-                        contributors</a>!</p>
-                </div>
-                <div class="gel-layout__item gel-3/3@l gel-5/5@xl">
-                    <p>
-                        <small>
-                            Copyright &copy; 2018 BBC. The BBC is not responsible for the content of external sites.<br>
-                            <a href="http://www.bbc.co.uk/help/web/links/">Read about the BBC's approach to external
-                            linking.</a>
-                        </small>
-                    </p>
+                    <h2 class="gel-feedback-banner__title">Got a minute?</h2>
+                    <p>We'd love to know what you think of the GEL website.</p>
+                    <a role="button" href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" target="_blank" rel="noopener" class="gel-button gel-button__link-button gel-feedback-banner__cta gel-button--primary">
+                        <span class="gel-button__content"> Go to survey </span>
+                        <span class="gel-button__icon_wrapper">
+                            <svg class="gel-button__icon gel-icon gel-icon--text">
+                                <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:undefined;"></use>
+                            </svg>
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
+
+
     
     <script type="text/javascript" src="/code-gel/static/js/card/demo.js"></script>
     
+    <script type="text/javascript">
+        new Sticky('.sticky');
+        new MenuSpy(document.querySelector('#gel-toc__links'));
+    </script>
 </body>
 
 </html>

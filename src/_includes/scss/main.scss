@@ -6,6 +6,14 @@ div#gel-app {
   @include gel-typography('body-copy');
 }
 
+
+body {
+    font-size: 62.5%;
+    font-family: Arial,Helvetica,freesans,sans-serif;
+    line-height: 1;
+    margin: 0;
+}
+
 .gel-body {
   a {
     font-weight: bold;
@@ -31,6 +39,12 @@ div#gel-app {
     a:hover {
       border-bottom: 1px solid $gel-color--brand;
     }
+  }
+
+  h2 {
+    border-top: 1px solid #ccc;
+    padding-top: 30px;
+    margin-top: 64px;
   }
 }
 
@@ -91,6 +105,14 @@ div#gel-app {
     }
   }
 
+  code.hljs {
+    padding: double($gel-spacing-unit);
+    margin: double($gel-spacing-unit);
+  }
+}
+
+.gel-feedback-banner {
+    margin-top: 192px;
 }
 
 /*
@@ -205,6 +227,9 @@ div#gel-app {
 .gel-breakout-box.extra-padding {
     padding: 16px
 }
+.gel-breakout-box.extra-margin {
+    margin-top: 18px;
+}
 
 .gel-breakout-box h4 {
     margin-top: 8px;
@@ -244,10 +269,17 @@ div#gel-app {
     top: 1px
 }
 
-.gel-breakout-box__meta {
+.gel-standout-box {
+  background: #eee;
+  width: 100%;
   overflow: auto;
   zoom: 1;
-  dt, dd { float: left }
+  padding: double($gel-spacing-unit);
+  @include gel-typography('brevier');
+  dt, dd {
+    float: left;
+    line-height: 150%;
+  }
   dt {
     clear:both;
     font-weight: bold;
@@ -262,8 +294,12 @@ div#gel-app {
 .gel-toc {
   list-style-type: none;
   padding-left: 0;
-  padding-top: 36px;
-  margin-top: 42px;
+  margin-top: 0;
+}
+@media (min-width: 900px) {
+  #side-nav {
+    padding-top: 4 * $gel-spacing-unit + 4;
+  }
 }
 
 .gel-toc a {
@@ -272,13 +308,9 @@ div#gel-app {
   line-height: 160%;
 }
 .gel-toc a:hover,
-.gel-toc a:focus {
+.gel-toc a:focus,
+.gel-toc li.active a {
   color: #397cb8;
-}
-h2 {
-  border-top: 1px solid #ccc;
-  padding-top: 36px;
-  margin-top: 42px;
 }
 
 
@@ -313,7 +345,277 @@ h2 {
 /* snippet */
 
 pre {
-  margin-top: 36px;
-  margin-bottom: 36px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+/* body-copy */
+
+.gel-body-copy {
+  p, ol, ul {
+    font-family: ReithSerif;
+  }
+}
+
+/* button */
+
+.gel-button {
+    border: 1px solid transparent;
+    padding: 16px;
+    font-size: 15px;
+    font-size: .9375rem;
+    line-height: 18px;
+    line-height: 1.125rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none
+}
+
+@media (min-width: 37.5em) {
+    .gel-button {
+        line-height:20px;
+        line-height: 1.25rem
+    }
+
+    .no-touch .gel-button {
+        font-size: 14px;
+        font-size: .875rem;
+        line-height: 18px;
+        line-height: 1.125rem
+    }
+}
+
+.gel-button:hover:not(.is-disabled) {
+    text-decoration: none
+}
+
+.gel-button.is-disabled {
+    cursor: default;
+    opacity: .6
+}
+
+.gel-button.gel-button--primary {
+    background: transparent;
+    border-color: #5a5a5a;
+    color: #404040;
+    transition: background-color .2s ease
+}
+
+.gel-button.gel-button--primary:hover {
+    transition: .3s;
+    border: 1px solid #397cb8;
+    color: #397cb8
+}
+
+.gel-button.gel-button--primary:hover .gel-button__content {
+    text-decoration: none;
+    border-bottom: 1px solid #397cb8;
+    transition: border-bottom .3s
+}
+
+.gel-button__content {
+    border-bottom: 1px solid transparent;
+    margin-right: 12px;
+    float: left
+}
+
+.gel-button--secondary {
+    border-color: #404040;
+    color: #404040;
+    background: transparent
+}
+
+.gel-button--light {
+    border-color: #fff;
+    color: #fff;
+    background: transparent
+}
+
+.gel-button--light:hover {
+    transition: .3s
+}
+
+.gel-button--light:hover .gel-button__content {
+    text-decoration: none;
+    border-bottom: 1px solid #fff;
+    transition: border-bottom .3s
+}
+
+.gel-button--minor {
+    background: transparent
+}
+
+.gel-button--publish {
+    background: #0b8a0b;
+    color: #fff
+}
+
+.gel-button--publish:hover:not(.is-disabled) {
+    background: #126612
+}
+
+.gel-button--danger {
+    background: #e4134f;
+    color: #fff
+}
+
+.gel-button--danger:hover:not(.is-disabled) {
+    background: #b50f3f
+}
+
+.gel-input {
+    border: 1px solid #121212;
+    padding: 12px;
+    width: 100%;
+    background: #fff;
+    font-size: 15px;
+    font-size: .9375rem;
+    line-height: 20px;
+    line-height: 1.25rem
+}
+
+@media (min-width: 20em) {
+    .gel-input {
+        font-size:16px;
+        font-size: 1rem;
+        line-height: 20px;
+        line-height: 1.25rem
+    }
+}
+
+@media (min-width: 37.5em) {
+    .gel-input {
+        font-size:18px;
+        font-size: 1.125rem;
+        line-height: 22px;
+        line-height: 1.375rem
+    }
+
+    .no-touch .gel-input {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 20px;
+        line-height: 1.25rem
+    }
+}
+
+/* feedback banner */
+
+.gel-feedback-banner {
+    background-color: #ffdc48;
+    color: #404040;
+    padding: 32px 0;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 22px;
+    line-height: 1.375rem
+}
+
+@media (min-width: 37.5em) {
+    .gel-feedback-banner {
+        font-size:21px;
+        font-size: 1.3125rem;
+        line-height: 24px;
+        line-height: 1.5rem
+    }
+
+    .no-touch .gel-feedback-banner {
+        font-size: 20px;
+        font-size: 1.25rem
+    }
+}
+
+.gel-feedback-banner p {
+    max-width: 600px;
+    margin-top: 0
+}
+
+.gel-feedback-banner__icon {
+    padding-bottom: 24px;
+    margin-top: 24px
+}
+
+.gel-feedback-banner__icon svg {
+    width: 72px;
+    height: 72px
+}
+
+.gel-feedback-banner__title {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 24px;
+    line-height: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    letter-spacing: -.0625rem;
+    margin-bottom: 16px;
+    margin-top: 24px
+}
+
+@media (min-width: 20em) {
+    .gel-feedback-banner__title {
+        font-size:24px;
+        font-size: 1.5rem;
+        line-height: 28px;
+        line-height: 1.75rem
+    }
+}
+
+@media (min-width: 37.5em) {
+    .gel-feedback-banner__title {
+        font-size:36px;
+        font-size: 2.25rem;
+        line-height: 40px;
+        line-height: 2.5rem
+    }
+
+    .no-touch .gel-feedback-banner__title {
+        font-size: 32px;
+        font-size: 2rem;
+        line-height: 36px;
+        line-height: 2.25rem
+    }
+}
+
+.gel-feedback-banner__cta {
+    margin-top: 16px;
+    margin-bottom: 16px
+}
+
+.gel-feedback-banner__cta .gel-button__icon {
+    height: 16px;
+    width: 16px;
+    position: relative
+}
+
+.gel-feedback-banner__cta .gel-button__icon svg {
+    position: absolute;
+    top: 2px;
+    left: 0
+}
+
+a.gel-button.gel-button__link-button {
+    font-size: 15px;
+    font-size: .9375rem;
+    line-height: 18px;
+    line-height: 1.125rem;
+    font-weight: 700;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center
+}
+
+@media (min-width: 37.5em) {
+    a.gel-button.gel-button__link-button {
+        line-height:20px;
+        line-height: 1.25rem
+    }
+
+    .no-touch a.gel-button.gel-button__link-button {
+        font-size: 14px;
+        font-size: .875rem;
+        line-height: 18px;
+        line-height: 1.125rem
+    }
 }
 

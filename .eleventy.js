@@ -23,7 +23,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.namespace(pluginNamespace, () => {
       eleventyConfig.addFilter('toc', function(content, opts){
         var $ = cheerio.load(content);
-        var result = '<ol class="gel-toc">';
+        var result = '<ol id="gel-toc__links" class="gel-toc">';
         $('h2').each(function(i, h2) {
           result += '<li><a href="#' + h2.attribs.id + '">' + $(h2).text() + '</a></li>';
         });
