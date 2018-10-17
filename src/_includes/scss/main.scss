@@ -1,0 +1,626 @@
+@import 'common';
+@import 'bbc-grandstand/dist/bbc-grandstand.min.css';
+@import 'reith.css';
+
+div#gel-app {
+  @include gel-typography('body-copy');
+}
+
+
+body {
+    font-size: 62.5%;
+    font-family: Arial,Helvetica,freesans,sans-serif;
+    line-height: 1;
+    margin: 0;
+    padding: 16px 0 0 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.gel-guideline-sections {
+  a {
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid $gel-color--link-underline;
+  }
+
+  a:hover {
+    color: $gel-color--brand;
+    border-bottom: 1px solid $gel-color--brand;
+    transition: 300ms;
+  }
+
+  h1, h2, h3, h4, h5, h6, li {
+    a {
+      border-bottom:  1px solid transparent;
+    }
+    a:hover {
+      border-bottom: 1px solid $gel-color--brand;
+    }
+  }
+
+  h2 {
+    border-top: 1px solid #ccc;
+    padding-top: 30px;
+    margin-top: 64px !important;
+  }
+}
+
+.gel-link--last-word {
+  white-space: nowrap;
+}
+
+.gel-icon--inline-text {
+  height: 0.75em;
+  width: 0.75em;
+  left: 0;
+  top: 0.3em;
+  margin-left: 0.2em;
+  padding-top: 0.055em;
+}
+
+.orb-nav-pri a:hover {
+  color: inherit;
+}
+
+/* Type Styles for the GEL Guideline body */
+.gel-guideline-body, .gel-article-body {
+  @include gel-typography('body-copy');
+
+  h1 {
+    @include gel-typography('canon-bold');
+    font-weight: 800;
+
+    margin-top: $gel-alt-spacing-unit;
+    margin-bottom: $gel-alt-spacing-unit;
+  }
+
+  h2 {
+    @include gel-typography('trafalgar-bold');
+
+    margin-top: double($gel-alt-spacing-unit);
+    margin-bottom: double($gel-spacing-unit);
+  }
+
+  h3 {
+    @include gel-typography('great-primer-bold');
+
+    margin-top: double($gel-spacing-unit) + 4;
+    margin-bottom: $gel-alt-spacing-unit;
+  }
+
+  h4 {
+    @include gel-typography('pica-bold');
+
+    margin-top: double($gel-spacing-unit) + 4;
+    margin-bottom: $gel-alt-spacing-unit;
+  }
+
+  p {
+    margin-bottom: double($gel-spacing-unit);
+    @include mq($from: gel-bp-xxl) {
+      margin-bottom: double($gel-spacing-unit) + 4;
+    }
+  }
+
+  code.hljs {
+    padding: double($gel-spacing-unit);
+    margin: double($gel-spacing-unit);
+  }
+}
+
+.gel-feedback-banner {
+    margin-top: 192px;
+}
+
+/*
+ * Use full font if JavaScript has put b-reith-sans-loaded on the <html> element.
+ *
+ * 1. Override gel-typography classes which set negative letter spacing as this
+ *    is no longer require in the new font. This code should be removed once all
+ *    products are using the new font and should be moved to the gel-typography
+ *    code base. https://jira.dev.bbc.co.uk/browse/GELWEB-847
+ */
+
+/*
+ */
+
+/* are there other fonts we can use as fallbacks here? */
+
+.serif
+{
+  font-family: "Times New Roman", serif;
+}
+
+.sans
+{
+  font-family: Helvetica, Arial, freesans, sans-serif;
+}
+
+
+// Rules to hide/show elements depending on nonJS version
+.noscriptElement {
+  display: none;
+}
+
+.noscript {
+  .noscriptElement {
+    display: block;
+  }
+}
+
+.noscript {
+  .gel-enhanced {
+    display: none;
+  }
+}
+
+/*
+ * gel styles
+ */
+
+/* header */
+
+.gel-guideline-header {
+    background: #eee;
+    padding: 24px 0 48px;
+    border-bottom: 1px solid #dcdcdc
+}
+
+.gel-guideline-header__data {
+    margin-top: 24px
+}
+
+.gel-guideline-contributors {
+    max-width: 240px
+}
+
+.gel-guideline-contributor-title p {
+    margin-bottom: 8px
+}
+
+.gel-guideline-header__title {
+    margin: 12px 0 24px;
+    font-size: 28px;
+    font-size: 1.75rem;
+    line-height: 32px;
+    line-height: 2rem;
+    font-weight: 700;
+    font-weight: 800
+}
+
+@media (min-width: 20em) {
+    .gel-guideline-header__title {
+        font-size:32px;
+        font-size: 2rem;
+        line-height: 36px;
+        line-height: 2.25rem
+    }
+}
+
+@media (min-width: 37.5em) {
+    .gel-guideline-header__title {
+        font-size:52px;
+        font-size: 3.25rem;
+        line-height: 56px;
+        line-height: 3.5rem
+    }
+
+    .no-touch .gel-guideline-header__title {
+        font-size: 44px;
+        font-size: 2.75rem;
+        line-height: 48px;
+        line-height: 3rem
+    }
+}
+
+/* breakout */
+
+.gel-breakout-box {
+    background: #eee;
+    padding: 8px;
+    margin: 20px 0 32px 0;
+    width: 100%
+}
+
+.gel-breakout-box.extra-padding {
+    padding: 16px
+}
+.gel-breakout-box.extra-margin {
+    margin-top: 18px;
+}
+
+.gel-breakout-box h4 {
+    margin-top: 8px;
+    margin-bottom: 12px
+}
+
+.gel-breakout-box aside {
+    padding-bottom: 18px;
+}
+
+.gel-breakout-box p {
+    overflow: hidden;
+    margin: 0;
+    font-weight: 400;
+    font-size: 15px;
+    font-size: .9375rem;
+    line-height: 18px;
+    line-height: 1.125rem;
+    color: #404040
+}
+
+@media (min-width: 37.5em) {
+    .gel-breakout-box p {
+        line-height:20px;
+        line-height: 1.25rem
+    }
+
+    .no-touch .gel-breakout-box p {
+        font-size: 14px;
+        font-size: .875rem;
+        line-height: 18px;
+        line-height: 1.125rem
+    }
+}
+
+.gel-breakout-box__icon {
+    float: left;
+    display: inline;
+    margin-right: 8px;
+    position: relative;
+    top: 1px
+}
+
+.gel-standout-box {
+  background: #eee;
+  width: 100%;
+  overflow: auto;
+  zoom: 1;
+  padding: double($gel-spacing-unit);
+  @include gel-typography('brevier');
+  dt, dd {
+    float: left;
+    line-height: 150%;
+  }
+  dt {
+    clear:both;
+    font-weight: bold;
+  }
+  dd {
+    margin-inline-start: 8px;
+  }
+}
+
+/* toc */
+
+.gel-toc {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+@media (min-width: 900px) {
+  #side-nav {
+    padding-top: 4 * $gel-spacing-unit + 4;
+  }
+}
+
+.gel-toc a {
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 160%;
+}
+.gel-toc a:hover,
+.gel-toc a:focus,
+.gel-toc li.active a {
+  color: #397cb8;
+}
+
+
+/* icon */
+
+.gel-icon {
+    fill: currentColor
+}
+
+.gel-icon--small {
+    height: 16px;
+    width: 16px
+}
+
+.gel-icon--medium {
+    height: 32px;
+    width: 32px
+}
+
+.gel-icon--large {
+    height: 64px;
+    width: 64px
+}
+
+.gel-icon--text {
+    margin-top: .1em;
+    height: 1em;
+    width: 1em;
+    vertical-align: text-top
+}
+
+/* snippet */
+
+pre {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+/* body-copy */
+
+.gel-body-copy {
+  p, ol, ul {
+    font-family: ReithSerif;
+  }
+}
+
+/* button */
+
+.gel-button {
+    border: 1px solid transparent;
+    padding: 16px;
+    font-size: 15px;
+    font-size: .9375rem;
+    line-height: 18px;
+    line-height: 1.125rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none
+}
+
+@media (min-width: 37.5em) {
+    .gel-button {
+        line-height:20px;
+        line-height: 1.25rem
+    }
+
+    .no-touch .gel-button {
+        font-size: 14px;
+        font-size: .875rem;
+        line-height: 18px;
+        line-height: 1.125rem
+    }
+}
+
+.gel-button:hover:not(.is-disabled) {
+    text-decoration: none
+}
+
+.gel-button.is-disabled {
+    cursor: default;
+    opacity: .6
+}
+
+.gel-button.gel-button--primary {
+    background: transparent;
+    border-color: #5a5a5a;
+    color: #404040;
+    transition: background-color .2s ease
+}
+
+.gel-button.gel-button--primary:hover {
+    transition: .3s;
+    border: 1px solid #397cb8;
+    color: #397cb8
+}
+
+.gel-button.gel-button--primary:hover .gel-button__content {
+    text-decoration: none;
+    border-bottom: 1px solid #397cb8;
+    transition: border-bottom .3s
+}
+
+.gel-button__content {
+    border-bottom: 1px solid transparent;
+    margin-right: 12px;
+    float: left
+}
+
+.gel-button--secondary {
+    border-color: #404040;
+    color: #404040;
+    background: transparent
+}
+
+.gel-button--light {
+    border-color: #fff;
+    color: #fff;
+    background: transparent
+}
+
+.gel-button--light:hover {
+    transition: .3s
+}
+
+.gel-button--light:hover .gel-button__content {
+    text-decoration: none;
+    border-bottom: 1px solid #fff;
+    transition: border-bottom .3s
+}
+
+.gel-button--minor {
+    background: transparent
+}
+
+.gel-button--publish {
+    background: #0b8a0b;
+    color: #fff
+}
+
+.gel-button--publish:hover:not(.is-disabled) {
+    background: #126612
+}
+
+.gel-button--danger {
+    background: #e4134f;
+    color: #fff
+}
+
+.gel-button--danger:hover:not(.is-disabled) {
+    background: #b50f3f
+}
+
+.gel-input {
+    border: 1px solid #121212;
+    padding: 12px;
+    width: 100%;
+    background: #fff;
+    font-size: 15px;
+    font-size: .9375rem;
+    line-height: 20px;
+    line-height: 1.25rem
+}
+
+@media (min-width: 20em) {
+    .gel-input {
+        font-size:16px;
+        font-size: 1rem;
+        line-height: 20px;
+        line-height: 1.25rem
+    }
+}
+
+@media (min-width: 37.5em) {
+    .gel-input {
+        font-size:18px;
+        font-size: 1.125rem;
+        line-height: 22px;
+        line-height: 1.375rem
+    }
+
+    .no-touch .gel-input {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 20px;
+        line-height: 1.25rem
+    }
+}
+
+/* feedback banner */
+
+.gel-feedback-banner {
+    background-color: #ffdc48;
+    color: #404040;
+    padding: 32px 0;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 22px;
+    line-height: 1.375rem
+}
+
+@media (min-width: 37.5em) {
+    .gel-feedback-banner {
+        font-size:21px;
+        font-size: 1.3125rem;
+        line-height: 24px;
+        line-height: 1.5rem
+    }
+
+    .no-touch .gel-feedback-banner {
+        font-size: 20px;
+        font-size: 1.25rem
+    }
+}
+
+.gel-feedback-banner p {
+    max-width: 600px;
+    margin-top: 0
+}
+
+.gel-feedback-banner__icon {
+    padding-bottom: 24px;
+    margin-top: 24px
+}
+
+.gel-feedback-banner__icon svg {
+    width: 72px;
+    height: 72px
+}
+
+.gel-feedback-banner__title {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 24px;
+    line-height: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    letter-spacing: -.0625rem;
+    margin-bottom: 16px;
+    margin-top: 24px
+}
+
+@media (min-width: 20em) {
+    .gel-feedback-banner__title {
+        font-size:24px;
+        font-size: 1.5rem;
+        line-height: 28px;
+        line-height: 1.75rem
+    }
+}
+
+@media (min-width: 37.5em) {
+    .gel-feedback-banner__title {
+        font-size:36px;
+        font-size: 2.25rem;
+        line-height: 40px;
+        line-height: 2.5rem
+    }
+
+    .no-touch .gel-feedback-banner__title {
+        font-size: 32px;
+        font-size: 2rem;
+        line-height: 36px;
+        line-height: 2.25rem
+    }
+}
+
+.gel-feedback-banner__cta {
+    margin-top: 16px;
+    margin-bottom: 16px
+}
+
+.gel-feedback-banner__cta .gel-button__icon {
+    height: 16px;
+    width: 16px;
+    position: relative
+}
+
+.gel-feedback-banner__cta .gel-button__icon svg {
+    position: absolute;
+    top: 2px;
+    left: 0
+}
+
+a.gel-button.gel-button__link-button {
+    font-size: 15px;
+    font-size: .9375rem;
+    line-height: 18px;
+    line-height: 1.125rem;
+    font-weight: 700;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center
+}
+
+@media (min-width: 37.5em) {
+    a.gel-button.gel-button__link-button {
+        line-height:20px;
+        line-height: 1.25rem
+    }
+
+    .no-touch a.gel-button.gel-button__link-button {
+        font-size: 14px;
+        font-size: .875rem;
+        line-height: 18px;
+        line-height: 1.125rem
+    }
+}
+

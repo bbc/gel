@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Card | Code GEL</title>
+    <title>Promos | Code GEL</title>
 
     <script src="/code-gel/static/js/main.js"></script>
     
@@ -60,8 +60,8 @@
             <div class="gel-layout__item gel-1/5@l"><!-- column placeholder--></div>
 
             <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
-                <h1 class="gel-guideline-header__title">Card</h1>
-                <p class="gel-guideline-header__summary gel-great-primer">Cards let you preview and share content quickly, without having to leave the page you&#39;re on.</p>
+                <h1 class="gel-guideline-header__title">Promos</h1>
+                <p class="gel-guideline-header__summary gel-great-primer">A promo is a snippet of content which links to a full piece of content elsewhere on the BBC site or app.</p>
             </div>
 
             <div class="gel-layout__item gel-1/5@l">
@@ -77,12 +77,12 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gel-toc__links" class="gel-toc"><li><a href="#when-to-use-a-card">When to use a card</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#expected-behavior">Expected behavior</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#existing-implementations">Existing implementations</a></li></ol>
+                    <ol id="gel-toc__links" class="gel-toc"><li><a href="#when-to-use-a-promo">When to use a promo</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#expected-behavior">Expected behavior</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#existing-implementations">Existing implementations</a></li></ol>
                 </nav>
             </div>
 
             <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-3/5@l">
-                <h2 id="when-to-use-a-card">When to use a card</h2>
+                <h2 id="when-to-use-a-promo">When to use a promo</h2>
 <p>The card component represents a summary/preview of longer-form content. It should only be incorporated within you interface where:</p>
 <ol>
 <li>It belongs to a set of cards, each summarizing similar and equivalent content</li>
@@ -175,11 +175,13 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 
-          <aside class="note" aria-label="Important:">
-            <p class="note_label" aria-hidden="true"><strong>Important</strong></p>
+        <div class="gel-breakout-box gel-breakout-box extra-padding">
+          <aside class="note" aria-label="Note:">
+            <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
             <p><p>The 'More info' button takes <code>aria-haspopup</code> because it will reveal, and move focus to, the additional info element. See <strong>Expected behavior</strong>, to follow.</p>
 </p>
           </aside>
+        </div>
         <h2 id="expected-layout">Expected layout</h2>
 <p>The minimum width for a card is <code>266px</code>. A set of cards can appear within a grid formation or as the content of a carousel component.</p>
 <h3 id="grid-formation">Grid formation</h3>
@@ -302,11 +304,13 @@ moreBtn.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; {
 });
 </code></pre>
 
-          <aside class="note" aria-label="Important:">
-            <p class="note_label" aria-hidden="true"><strong>Important</strong></p>
-            <p><p>The button's state is not toggled via <code>aria-expanded</code>. This is because the button label changes, and a simultaneous change in state would result in contradictory information.</p>
+        <div class="gel-breakout-box gel-breakout-box extra-padding">
+          <aside class="note" aria-label="Note:">
+            <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
+            <p><p>The button's state is not toggled via <code>aria-expanded</code>. This is because the button label changes, and a simultaneous change in state would result in contradictory information.)</p>
 </p>
           </aside>
+        </div>
         <p>For the <code>focus()</code> method to succeed, the <code>class=&quot;card_more-info&quot;</code> element needs <code>tabindex=&quot;-1&quot;</code>. Also provide a role and label for screen reader identification. It is recommended the element is positioned between the 'More info' and subsequent buttons in the source, and is positioned absolutely over the card, leaving just the toolbar visible.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card_toolbar"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span>&gt;</span>More info<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
@@ -533,7 +537,7 @@ moreBtn.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; {
     </div>
 
     
-    <script type="text/javascript" src="/code-gel/static/js/card/demo.js"></script>
+    <script type="text/javascript" src="/code-gel/static/js/promo/demo.js"></script>
     
 
     <script type="text/javascript">

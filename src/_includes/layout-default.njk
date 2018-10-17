@@ -1,105 +1,126 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>{{title}} | {{site.title}}</title>
 
+    <script src="{{site.basedir}}static/js/main.js"></script>
+    
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.0.13/fontfaceobserver.standalone.js"></script>
     <link rel="stylesheet" type="text/css" href="{{site.basedir}}static/css/main.css">
 
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript">
+        // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + (supports.touchevents? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + (SimpleFeatureDetector.supports({ property: 'flex-wrap' }, {property: 'flex-flow'})? 'flexbox' : 'no-flexbox'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg'))? 'svg' : 'no-svg'));
+    </script>
+
+    <script type="text/javascript">
+        // use reith fonts
+        (new FontFaceObserver('ReithSans')).load().then(function () {
+            document.documentElement.className += ' b-reith-sans-loaded';
+        });
+        (new FontFaceObserver('ReithSerif')).load().then(function () {
+            document.documentElement.className += ' b-reith-loaded';
+        });
+    </script>
+
+    <script type="text/javascript">
+        // syntax highlight
+        hljs.initHighlightingOnLoad();
+    </script>
+
     {% if includecss %}
     <link rel="stylesheet" type="text/css" href="{{ includecss }}">
     {% endif %}
 </head>
 
-<body class="">
-    <script>
-        (function () {
-            (new FontFaceObserver('ReithSans')).load().then(function () {
-                document.body.className += ' b-reith-sans-font';
-            });
-            (new FontFaceObserver('ReithSerif')).load().then(function () {
-                document.body.className += ' b-reith-serif-font';
-            });
-        })();
-    </script>
+<body class="gel-guideline-body">
+    <p class="gel-sr gel-sr__focusable gel-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('gel-sr__focused')" onblur="this.parentNode.classList.remove('gel-sr__focused')">Skip to content</a>
+    </p>
 
     <header role="banner" class="header">
-        <a href="#main">Skip to content</a>
-        <div class="a11y-tuts__banner a11y-tuts__headerbanner">
-            <div class="gel-wrap gs-u-clearfix">
-                <div class="a11y-tuts-header__brand">
-                    <a class="a11y-tuts-header__brand-logo" href="http://www.bbc.co.uk/">
-                        <svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
-                            <title>BBC</title>
-                            <image xlink:href="{{site.basedir}}static/images/bbc-blocks_grey.svg" src="{{site.basedir}}static/images/bbc-blocks_grey.png"
-                                width="100%" height="100%"></image>
-                        </svg>
-                    </a>
-                    <a class="button a11y-tuts__button" href="http://www.bbc.co.uk/gel">Go to BBC GEL</a>
-                </div>
-            </div>
-        </div>
-        <div class="a11y-tuts__banner">
-            <div class="gel-wrap gs-u-clearfix">
-                <a href="{{site.basedir}}index.html">{{site.title}}</a>
-            </div>
+        <div class="gel-wrap gs-u-clearfix">
+            <a href="http://www.bbc.co.uk/">
+                <svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
+                    <title>BBC</title>
+                    <image xlink:href="{{site.basedir}}static/images/bbc-blocks_grey.svg" src="{{site.basedir}}static/images/bbc-blocks_grey.png"
+                        width="100%" height="100%"></image>
+                </svg>
+            </a>
         </div>
     </header>
 
     <main id="main" tabindex="-1" class="gel-wrap gs-u-clearfix">
         <div class="gel-layout">
-            <div class="a11y-tut-content gel-layout__item gel-4/5@l">
-                <h1 id="bbc-accessibility-tutorials">{{title}}</h1>
-                <dl>
-                    <dt>Version:</dt>
-                    <dd>{{ version }}</dd>
-                    <dt>Status:</dt>
-                    <dd>{{ "published" if published else "draft" }}</dd>
-                    <dt>Accessibility:</dt>
-                    <dd>{{ "✓ pass" if accessibility else "&times; fail" }}</dd>
-                </dl>
-                {{ content | toc | safe }}
+            <div class="gel-layout__item gel-1/5@l"><!-- column placeholder--></div>
 
+            <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
+                <h1 class="gel-guideline-header__title">{{title}}</h1>
+                <p class="gel-guideline-header__summary gel-great-primer">{{summary}}</p>
+            </div>
+
+            <div class="gel-layout__item gel-1/5@l">
+                <dl class="gel-standout-box">
+                    <dt>Version:</dt>       <dd>{{ version }}</dd>
+                    <dt>Status:</dt>        <dd>{{ "Published" if published else "Draft" }}</dd>
+                    <dt>Accessibility:</dt> <dd>{{ "Pass" if accessibility else "Fail" }}</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
+                    <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
+                    {{ content | toc | safe }}
+                </nav>
+            </div>
+
+            <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-3/5@l">
                 {{ content | safe }}
             </div>
         </div>
     </main>
 
-    <div class="a11y-tuts__footerbanner">
+    <div class="gel-feedback-banner">
         <div class="gel-wrap">
             <div class="gel-layout">
-                <div class="a11y-tuts__icon gel-layout__item gel-2/12@l gel-1/5@xl">
-                    <image class="gel-icon gel-icon--large" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{site.basedir}}static/images/gel-icon-help.svg"
-                        src="{{site.basedir}}static/images/gel-icon-help.svg" width="100%" height="100%" alt=""></image>
-                </div>
                 <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
-                    <h2 class="gel-contribution-banner__title">Could you improve this documentation?</h2>
-                    <p class="gel-contribution-banner-copy gel-great-primer">If you think you could make anything you
-                        see here a bit better then become one of <a href="{{site.basedir}}contributors/">our lovely
-                        contributors</a>!</p>
-                </div>
-                <div class="gel-layout__item gel-3/3@l gel-5/5@xl">
-                    <p>
-                        <small>
-                            Copyright &copy; 2018 BBC. The BBC is not responsible for the content of external sites.<br>
-                            <a href="http://www.bbc.co.uk/help/web/links/">Read about the BBC's approach to external
-                            linking.</a>
-                        </small>
-                    </p>
+                    <h2 class="gel-feedback-banner__title">Got a minute?</h2>
+                    <p>We'd love to know what you think of the Code GEL website.</p>
+                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" class="gel-button gel-button__link-button gel-feedback-banner__cta gel-button--primary">
+                        <span class="gel-button__content">Go to survey</span>
+                        <span class="gel-button__icon_wrapper">
+                            <svg class="gel-button__icon gel-icon gel-icon--text">
+                                <use xlink:href="{{site.basedir}}static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:undefined;"></use>
+                            </svg>
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
+
     {% if includejs %}
     <script type="text/javascript" src="{{site.basedir}}static/js/{{ includejs }}"></script>
     {% endif %}
+
+    <script type="text/javascript">
+        new Sticky('.sticky');
+        new MenuSpy(document.querySelector('#gel-toc__links'));
+        new SweetScroll({
+            trigger: '#gel-toc__links a',
+            quickMode: true,
+            easing: 'easeOutExpo'
+        });
+    </script>
 </body>
 
 </html>

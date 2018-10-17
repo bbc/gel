@@ -1,13 +1,13 @@
 ---
-title: Card
-summary: Cards let you preview and share content quickly, without having to leave the page you're on.
+title: Promos
+summary: A promo is a snippet of content which links to a full piece of content elsewhere on the BBC site or app.
 version: 0.1.0
 published: true
 accessibility: true
-includejs: card/demo.js
+includejs: promo/demo.js
 ---
 
-## When to use a card
+## When to use a promo
 
 The card component represents a summary/preview of longer-form content. It should only be incorporated within you interface where:
 
@@ -130,7 +130,7 @@ The toolbar must appear after the headline and description, last in source order
 </div>
 ```
 
-<important text="The 'More info' button takes `aria-haspopup` because it will reveal, and move focus to, the additional info element. See **Expected behavior**, to follow." />
+<note text="The 'More info' button takes `aria-haspopup` because it will reveal, and move focus to, the additional info element. See **Expected behavior**, to follow." />
 
 ## Expected layout
 
@@ -279,7 +279,7 @@ moreBtn.addEventListener('click', () => {
 });
 ```
 
-<important text="The button's state is not toggled via `aria-expanded`. This is because the button label changes, and a simultaneous change in state would result in contradictory information." />
+<note text="The button's state is not toggled via `aria-expanded`. This is because the button label changes, and a simultaneous change in state would result in contradictory information.)" />
 
 For the `focus()` method to succeed, the `class="card_more-info"` element needs `tabindex="-1"`. Also provide a role and label for screen reader identification. It is recommended the element is positioned between the 'More info' and subsequent buttons in the source, and is positioned absolutely over the card, leaving just the toolbar visible.
 
