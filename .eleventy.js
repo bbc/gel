@@ -30,10 +30,9 @@ module.exports = function (eleventyConfig) {
     },
     mark: {
       render: function (attrs) {
-        var markIs = attr.is;
-        var char = attr.is === 'good'? '✓' : attr.is === 'bad'? ':(' : '?';
+        var char = (attrs.is === 'good')? '✓' : (attrs.is === 'bad')? '✕' : '?';
         return `
-          <div class="circular circular__${attr.is}">${char}</div>
+          <div class="circular circular__${attrs.is}" aria-hidden="true">${char}</div>
         `;
       }
     }

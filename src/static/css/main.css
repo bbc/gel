@@ -1395,14 +1395,17 @@ a {
 /* good and bad */
 .circular {
   display: inline-block;
-  margin-right: 8px;
-  width: 22px;
-  line-height: 22px;
+  position: relative;
+  top: -1px;
+  margin-right: 4px;
+  width: 21px;
+  line-height: 21px;
   border-radius: 50%;
   text-align: center;
   font-size: 14px;
   color: white;
-  background: #333; }
+  background: #333;
+  font-family: "Lucida Sans Unicode", "Arial Unicode MS", Verdana, "Verdana Ref", sans-serif !important; }
 
 .circular__good {
   background: green; }
