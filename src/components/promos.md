@@ -130,7 +130,7 @@ The toolbar must appear after the headline and description, last in source order
 </div>
 ```
 
-:::info Note
+::: info Note
 The 'More info' button takes `aria-haspopup` because it will reveal, and move focus to, the additional info element. See **Expected behavior**, to follow.
 :::
 
@@ -178,7 +178,7 @@ The most efficient way to arrange cards into a grid is to use the CSS Grid modul
 }
 ```
 
-:::info Note
+::: info Note
 These examples use [GEL Sass Tools](https://github.com/bbc/gel-sass-tools) for the margins.
 :::
 
@@ -283,7 +283,7 @@ moreBtn.addEventListener('click', () => {
 });
 ```
 
-:::info Note
+::: info Note
 The button's state is not toggled via `aria-expanded`. This is because the button label changes, and a simultaneous change in state would result in contradictory information.)
 :::
 
@@ -331,7 +331,7 @@ toggleInfo() {
 }
 ```
 
-:::info Note
+::: info Note
 The `setState` function is asynchronous, so a callback function is used to trigger the `focus()` method.
 :::
 
