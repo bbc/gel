@@ -27,6 +27,14 @@ To make updates to the generated CSS files from the `scss` source...
 
 `npm run sass`
 
+If you have added new JS files to the project, you may include them in the `main.js` file...
+
+`npm run js`
+
+Or, if you're feeling like you want it all, try this...
+
+`npm run js && npm run sass && npm run build`
+
 ## Example
 
 This is only an example: https://bbc.github.io/code-gel/components/hello-world/

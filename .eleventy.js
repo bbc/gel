@@ -1,4 +1,7 @@
 module.exports = function (eleventyConfig) {
+  const data = {
+    site: require('./src/_data/site.json')
+  };
   const hljs = require('highlight.js');
   const cheerio = require('cheerio');
 
@@ -8,7 +11,7 @@ module.exports = function (eleventyConfig) {
         return `
         <div class="gel-breakout-box gel-breakout-box extra-padding">
           <aside class="note" aria-label="Note:">
-            <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
+            <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="${data.site.basedir}static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
             <p>${md.render(attrs.text)}</p>
           </aside>
         </div>
