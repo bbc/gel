@@ -28,17 +28,12 @@ module.exports = function (eleventyConfig) {
         `;
       }
     },
-    good: {
+    mark: {
       render: function (attrs) {
+        var markIs = attr.is;
+        var char = attr.is === 'good'? '✓' : attr.is === 'bad'? ':(' : '?';
         return `
-          <div class="circular circular__good">✓</div>
-        `;
-      }
-    },
-    bad: {
-      render: function (attrs) {
-        return `
-          <div class="circular circular__bad">✕</div>
+          <div class="circular circular__${attr.is}">${char}</div>
         `;
       }
     }

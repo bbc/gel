@@ -83,7 +83,7 @@ Cards may contain images. These may be considered decorative or non-decorative. 
 
 Only provide a positive `alt` value if it is not redundant. That is, if it adds pertinent information non-visually and does not simply repeat information provided by the primary link text or description.
 
-#### <good> Good example
+#### <mark is="good"> Good example
 
 ```html
 <li>
@@ -95,7 +95,7 @@ Only provide a positive `alt` value if it is not redundant. That is, if it adds 
 </li>
 ```
 
-#### <bad> Poor example
+#### <mark is="bad"> Poor example
 
 ```html
 <li>
