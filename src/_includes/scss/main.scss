@@ -221,6 +221,7 @@ a {
 .gel-breakout-box {
     background: #eee;
     padding: 8px;
+    margin: 20px 0 32px 0;
     width: 100%
 }
 
@@ -234,6 +235,10 @@ a {
 .gel-breakout-box h4 {
     margin-top: 8px;
     margin-bottom: 12px
+}
+
+.gel-breakout-box aside {
+    padding-bottom: 18px;
 }
 
 .gel-breakout-box p {

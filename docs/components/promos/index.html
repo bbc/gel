@@ -174,8 +174,15 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Share<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<p>(<strong>Note:</strong> The 'More info' button takes <code>aria-haspopup</code> because it will reveal, and move focus to, the additional info element. See <strong>Expected behavior</strong>, to follow.)</p>
-<h2 id="expected-layout">Expected layout</h2>
+
+        <div class="gel-breakout-box gel-breakout-box extra-padding">
+          <aside class="note" aria-label="Note:">
+            <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
+            <p><p>The 'More info' button takes <code>aria-haspopup</code> because it will reveal, and move focus to, the additional info element. See <strong>Expected behavior</strong>, to follow.</p>
+</p>
+          </aside>
+        </div>
+        <h2 id="expected-layout">Expected layout</h2>
 <p>The minimum width for a card is <code>266px</code>. A set of cards can appear within a grid formation or as the content of a carousel component.</p>
 <h3 id="grid-formation">Grid formation</h3>
 <p>The most efficient way to arrange cards into a grid is to use the CSS Grid module. You must ensure that a fallback layout is in place where CSS Grid is not supported. In the following example, the fallback emulates <code>grid-gap</code> by using a combination of positive and negative margins. This is undone where CSS Grid is supported.</p>
@@ -213,8 +220,15 @@
   }
 }
 </code></pre>
-<p>(<strong>Note:</strong> These examples use <a href="https://github.com/bbc/gel-sass-tools">GEL Sass Tools</a> for the margins.)</p>
-<h3 id="carousel-formation">Carousel formation</h3>
+
+        <div class="gel-breakout-box gel-breakout-box extra-padding">
+          <aside class="note" aria-label="Note:">
+            <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
+            <p><p>These examples use <a href="https://github.com/bbc/gel-sass-tools">GEL Sass Tools</a> for the margins.</p>
+</p>
+          </aside>
+        </div>
+        <h3 id="carousel-formation">Carousel formation</h3>
 <p>To achieve a carousel formation, the containing carousel element needs to have <code>overflow-x: auto</code> and the cards list must not be allowed to wrap. This is best achieved using Flexbox.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.cards</span> {
   <span class="hljs-attribute">overflow-x</span>: auto;
@@ -289,8 +303,15 @@ moreBtn.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; {
   }
 });
 </code></pre>
-<p>(<strong>Note:</strong> The button's state is not toggled via <code>aria-expanded</code>. This is because the button label changes, and a simultaneous change in state would result in contradictory information.)</p>
-<p>For the <code>focus()</code> method to succeed, the <code>class=&quot;card_more-info&quot;</code> element needs <code>tabindex=&quot;-1&quot;</code>. Also provide a role and label for screen reader identification. It is recommended the element is positioned between the 'More info' and subsequent buttons in the source, and is positioned absolutely over the card, leaving just the toolbar visible.</p>
+
+        <div class="gel-breakout-box gel-breakout-box extra-padding">
+          <aside class="note" aria-label="Note:">
+            <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
+            <p><p>The button's state is not toggled via <code>aria-expanded</code>. This is because the button label changes, and a simultaneous change in state would result in contradictory information.)</p>
+</p>
+          </aside>
+        </div>
+        <p>For the <code>focus()</code> method to succeed, the <code>class=&quot;card_more-info&quot;</code> element needs <code>tabindex=&quot;-1&quot;</code>. Also provide a role and label for screen reader identification. It is recommended the element is positioned between the 'More info' and subsequent buttons in the source, and is positioned absolutely over the card, leaving just the toolbar visible.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card_toolbar"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span>&gt;</span>More info<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card_more-info"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"more info"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>
@@ -325,8 +346,15 @@ moreBtn.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; {
   );
 }
 </code></pre>
-<p>(<strong>Note:</strong> <code>setState</code> is asynchronous, so a callback function is used to trigger the <code>focus()</code> method.)</p>
-<p>A separate function would be needed to handle closing on <kbd>ESC</kbd>:</p>
+
+        <div class="gel-breakout-box gel-breakout-box extra-padding">
+          <aside class="note" aria-label="Note:">
+            <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
+            <p><p><code>setState</code> is asynchronous, so a callback function is used to trigger the <code>focus()</code> method.</p>
+</p>
+          </aside>
+        </div>
+        <p>A separate function would be needed to handle closing on <kbd>ESC</kbd>:</p>
 <pre class="hljs"><code>closeInfo(e) {
   <span class="hljs-keyword">if</span> (e.which === <span class="hljs-number">27</span>) {
     e.preventDefault();

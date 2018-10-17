@@ -42,3 +42,37 @@ From the project base directory simply run...
 `serve`
 
 Then navigate to the resulting server address like so: `http://localhost:8888/code-gel/components/hello-world` using whatever hostname and port is appropriate.
+
+## Advanced
+
+Supported shortcodes that can be included in the Markdown source:
+
+### `<note>`
+
+```html
+<note text="`setState` is asynchronous, so a callback function is used to trigger the `focus()` method." />
+```
+
+... becomes ...
+
+```html
+<aside class="note" aria-label="Note:">
+  <p class="note_label" aria-hidden="true"><strong>Note</strong></p>
+  <p><code>setState</code> is asynchronous, so a callback function is used to trigger the <code>focus()</code> method.</p>
+</aside>
+```
+
+### `<important>`
+
+```html
+<important text="The button's state is not toggled via `aria-expanded`. This is because the button label changes, and a simultaneous change in state would result in contradictory information." />
+```
+
+... becomes ...
+
+```html
+<aside class="note" aria-label="Important:">
+  <p class="note_label" aria-hidden="true"><strong>Important</strong></p>
+  <p>The button's state is not toggled via <code>aria-expanded</code>. This is because the button label changes, and a simultaneous change in state would result in contradictory information.</p>
+</aside>
+```

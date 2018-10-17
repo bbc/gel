@@ -2,7 +2,32 @@ module.exports = function (eleventyConfig) {
   const hljs = require('highlight.js');
   const cheerio = require('cheerio');
 
-  var md = require('markdown-it')({
+  var shortcodes = {
+    note: {
+      render: function (attrs) {
+        return `
+        <div class="gel-breakout-box gel-breakout-box extra-padding">
+          <aside class="note" aria-label="Note:">
+            <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
+            <p>${md.render(attrs.text)}</p>
+          </aside>
+        </div>
+        `;
+      }
+    },
+    important: {
+      render: function (attrs) {
+        return `
+          <aside class="note" aria-label="Important:">
+            <p class="note_label" aria-hidden="true"><strong>Important</strong></p>
+            <p>${md.render(attrs.text)}</p>
+          </aside>
+        `;
+      }
+    }
+  }
+
+  const md = require('markdown-it')({
     html: true,
     breaks: true,
     linkify: true,
@@ -17,7 +42,7 @@ module.exports = function (eleventyConfig) {
 
       return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
     }
-  }).use(require('markdown-it-anchor'));
+  }).use(require('markdown-it-anchor')).use(require('markdown-it-shortcode-tag'), shortcodes);
 
   eleventyConfig.addPlugin(function(eleventyConfig, pluginNamespace) {
     eleventyConfig.namespace(pluginNamespace, () => {
