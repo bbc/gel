@@ -1,31 +1,40 @@
 <!doctype html>
-<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font">
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Card | Code GEL</title>
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fontfaceobserver/2.0.13/fontfaceobserver.standalone.js"></script>
     <script src="/code-gel/static/js/main.js"></script>
-
+    
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
     <link rel="stylesheet" type="text/css" href="/code-gel/static/css/main.css">
 
-    <script>
-        (function () {
-            (new FontFaceObserver('ReithSans')).load().then(function () {
-                document.documentElement.className += ' b-reith-sans-loaded';
-            });
-            (new FontFaceObserver('ReithSerif')).load().then(function () {
-                document.documentElement.className += ' b-reith-loaded';
-            });
-        })();
+    <script type="text/javascript">
+        // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + (supports.touchevents? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + (SimpleFeatureDetector.supports({ property: 'flex-wrap' }, {property: 'flex-flow'})? 'flexbox' : 'no-flexbox'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg'))? 'svg' : 'no-svg'));
     </script>
 
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript">
+        // use reith fonts
+        (new FontFaceObserver('ReithSans')).load().then(function () {
+            document.documentElement.className += ' b-reith-sans-loaded';
+        });
+        (new FontFaceObserver('ReithSerif')).load().then(function () {
+            document.documentElement.className += ' b-reith-loaded';
+        });
+    </script>
+
+    <script type="text/javascript">
+        // syntax highlight
+        hljs.initHighlightingOnLoad();
+    </script>
+
     
 </head>
 
@@ -57,15 +66,13 @@
 
             <div class="gel-layout__item gel-1/5@l">
                 <dl class="gel-standout-box">
-                    <dt>Version:</dt>
-                    <dd>0.1.0</dd>
-                    <dt>Status:</dt>
-                    <dd>Published</dd>
-                    <dt>Accessibility:</dt>
-                    <dd>Pass</dd>
+                    <dt>Version:</dt>       <dd>0.1.0</dd>
+                    <dt>Status:</dt>        <dd>Published</dd>
+                    <dt>Accessibility:</dt> <dd>Pass</dd>
                 </dl>
             </div>
         </div>
+
         <div class="gel-layout">
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
@@ -73,6 +80,7 @@
                     <ol id="gel-toc__links" class="gel-toc"><li><a href="#when-to-use-a-card">When to use a card</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#expected-behavior">Expected behavior</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#existing-implementations">Existing implementations</a></li></ol>
                 </nav>
             </div>
+
             <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="when-to-use-a-card">When to use a card</h2>
 <p>The card component represents a summary/preview of longer-form content. It should only be incorporated within you interface where:</p>
@@ -486,9 +494,9 @@ moreBtn.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; {
             <div class="gel-layout">
                 <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
                     <h2 class="gel-feedback-banner__title">Got a minute?</h2>
-                    <p>We'd love to know what you think of the GEL website.</p>
-                    <a role="button" href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" target="_blank" rel="noopener" class="gel-button gel-button__link-button gel-feedback-banner__cta gel-button--primary">
-                        <span class="gel-button__content"> Go to survey </span>
+                    <p>We'd love to know what you think of the Code GEL website.</p>
+                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" class="gel-button gel-button__link-button gel-feedback-banner__cta gel-button--primary">
+                        <span class="gel-button__content">Go to survey</span>
                         <span class="gel-button__icon_wrapper">
                             <svg class="gel-button__icon gel-icon gel-icon--text">
                                 <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:undefined;"></use>
@@ -500,13 +508,18 @@ moreBtn.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; {
         </div>
     </div>
 
-
     
     <script type="text/javascript" src="/code-gel/static/js/card/demo.js"></script>
     
+
     <script type="text/javascript">
         new Sticky('.sticky');
         new MenuSpy(document.querySelector('#gel-toc__links'));
+        new SweetScroll({
+            trigger: '#gel-toc__links a',
+            quickMode: true,
+            easing: 'easeOutExpo'
+        });
     </script>
 </body>
 
