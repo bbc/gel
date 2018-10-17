@@ -27,6 +27,20 @@ module.exports = function (eleventyConfig) {
           </aside>
         `;
       }
+    },
+    good: {
+      render: function (attrs) {
+        return `
+          <div class="circular circular__good">✓</div>
+        `;
+      }
+    },
+    bad: {
+      render: function (attrs) {
+        return `
+          <div class="circular circular__bad">✕</div>
+        `;
+      }
     }
   }
 
