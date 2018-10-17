@@ -1430,8 +1430,9 @@ a {
   margin-top: 8px;
   margin-bottom: 12px; }
 
-.gel-breakout-box aside {
-  padding-bottom: 18px; }
+.gel-breakout-box aside p {
+  padding-bottom: 18px;
+  font-family: ReithSans !important; }
 
 .gel-breakout-box p {
   overflow: hidden;

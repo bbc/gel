@@ -130,7 +130,9 @@ The toolbar must appear after the headline and description, last in source order
 </div>
 ```
 
-<note text="The 'More info' button takes `aria-haspopup` because it will reveal, and move focus to, the additional info element. See **Expected behavior**, to follow." />
+:::info Note
+The 'More info' button takes `aria-haspopup` because it will reveal, and move focus to, the additional info element. See **Expected behavior**, to follow.
+:::
 
 ## Expected layout
 
@@ -176,7 +178,9 @@ The most efficient way to arrange cards into a grid is to use the CSS Grid modul
 }
 ```
 
-<note text="These examples use [GEL Sass Tools](https://github.com/bbc/gel-sass-tools) for the margins." />
+:::info Note
+These examples use [GEL Sass Tools](https://github.com/bbc/gel-sass-tools) for the margins.
+:::
 
 ### Carousel formation
 
@@ -279,7 +283,9 @@ moreBtn.addEventListener('click', () => {
 });
 ```
 
-<note text="The button's state is not toggled via `aria-expanded`. This is because the button label changes, and a simultaneous change in state would result in contradictory information.)" />
+:::info Note
+The button's state is not toggled via `aria-expanded`. This is because the button label changes, and a simultaneous change in state would result in contradictory information.)
+:::
 
 For the `focus()` method to succeed, the `class="card_more-info"` element needs `tabindex="-1"`. Also provide a role and label for screen reader identification. It is recommended the element is positioned between the 'More info' and subsequent buttons in the source, and is positioned absolutely over the card, leaving just the toolbar visible.
 
@@ -325,7 +331,9 @@ toggleInfo() {
 }
 ```
 
-<note text="`setState` is asynchronous, so a callback function is used to trigger the `focus()` method." />
+:::info Note
+The `setState` function is asynchronous, so a callback function is used to trigger the `focus()` method.
+:::
 
 A separate function would be needed to handle closing on <kbd>ESC</kbd>:
 
@@ -491,5 +499,3 @@ closeInfo(e) {
 ## Existing implementations
 
 There are currently no existing implementations of this reference component.
-
-

@@ -6,28 +6,6 @@ module.exports = function (eleventyConfig) {
   const cheerio = require('cheerio');
 
   var shortcodes = {
-    note: {
-      render: function (attrs) {
-        return `
-        <div class="gel-breakout-box gel-breakout-box extra-padding">
-          <aside class="note" aria-label="Note:">
-            <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="${data.site.basedir}static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
-            <p>${md.render(attrs.text)}</p>
-          </aside>
-        </div>
-        `;
-      }
-    },
-    important: {
-      render: function (attrs) {
-        return `
-          <aside class="note" aria-label="Important:">
-            <p class="note_label" aria-hidden="true"><strong>Important</strong></p>
-            <p>${md.render(attrs.text)}</p>
-          </aside>
-        `;
-      }
-    },
     mark: {
       render: function (attrs) {
         var char = (attrs.is === 'good')? '✓' : (attrs.is === 'bad')? '✕' : '?';
@@ -53,7 +31,30 @@ module.exports = function (eleventyConfig) {
 
       return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
     }
-  }).use(require('markdown-it-anchor')).use(require('markdown-it-shortcode-tag'), shortcodes);
+  })
+  .use(require('markdown-it-anchor'))
+  .use(require('markdown-it-shortcode-tag'), shortcodes)
+  .use(require('markdown-it-container'), 'breakout', {
+    validate: function(params) {
+      return params.trim().match(/^(info|help|alert)/);
+    },
+    render: function (tokens, idx) {
+      var m = tokens[idx].info.trim().match(/^(info|help|alert) (.+)$/);
+
+      if (tokens[idx].nesting === 1) { // opening tag
+        return `
+          <div class="gel-breakout-box gel-breakout-box extra-padding">
+            <aside aria-label="${m[2]}">
+              <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="${data.site.basedir}static/images/gel-icons-core-set.svg#gel-icon-${m[1]}" style="fill:#404040;"></use></svg>${m[2]}</h4><div>
+              <p>`;
+      } else { // closing tag
+        return `</p>
+            </aside>
+          </div>
+          `;
+      }
+    }
+  });
 
   eleventyConfig.addPlugin(function(eleventyConfig, pluginNamespace) {
     eleventyConfig.namespace(pluginNamespace, () => {
