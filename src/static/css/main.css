@@ -1430,10 +1430,10 @@ a {
   font-family: "Lucida Sans Unicode", "Arial Unicode MS", Verdana, "Verdana Ref", sans-serif !important; }
 
 .circular__good {
-  background: green; }
+  background: #789e42; }
 
 .circular__bad {
-  background: red; }
+  background: #bb3626; }
 
 /* breakout */
 .gel-breakout-box {
