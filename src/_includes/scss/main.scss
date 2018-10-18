@@ -2,17 +2,21 @@
 @import 'bbc-grandstand/dist/bbc-grandstand.min.css';
 @import 'reith.css';
 
+@media (min-width: 56.25em) {
+  .gel-pull__right\@l {
+    text-align: right !important;
+  }
+}
 div#gel-app {
   @include gel-typography('body-copy');
 }
-
 
 body {
     font-size: 62.5%;
     font-family: Arial,Helvetica,freesans,sans-serif;
     line-height: 1;
     margin: 0;
-    padding: 16px 0 0 0;
+    padding: 0;
 }
 
 a {
@@ -163,10 +167,31 @@ a {
 
 /* header */
 
+.gel-logo {
+  display: inline-block;
+  font-size:44px;
+  font-weight:700;
+  color:#404040;
+}
+@media (max-width: 37.5em) {
+  .gel-logo {
+    margin-left: -8px;
+  }
+}
+
 .gel-guideline-header {
-    background: #eee;
-    padding: 24px 0 48px;
+    background: #fff;
+    padding: 6px 0 3px 0;
     border-bottom: 1px solid #dcdcdc
+}
+.gel-guideline-header .gel-wrap {
+  padding-left: 8px !important;
+}
+
+.gel-guideline-header__banner {
+  padding: 28px 0 16px;
+  border-bottom: 1px solid #dcdcdc;
+  margin-bottom: 24px;
 }
 
 .gel-guideline-header__data {
@@ -475,13 +500,14 @@ pre {
     background: transparent
 }
 
-.gel-button--publish {
-    background: #0b8a0b;
-    color: #fff
+.gel-button--dark {
+  text-decoration: none;
+  background: #121212;
+  color: #fff
 }
 
-.gel-button--publish:hover:not(.is-disabled) {
-    background: #126612
+.gel-button--dark:hover:not(.is-disabled) {
+    text-decoration: underline;
 }
 
 .gel-button--danger {

@@ -4,7 +4,8 @@ summary: A promo is a snippet of content which links to a full piece of content 
 version: 0.1.0
 published: true
 accessibility: true
-includejs: promo/demo.js
+includejs: promos/demo.js
+linkback: http://www.bbc.co.uk/gel/guidelines/promos
 ---
 
 ## When to use a promo
