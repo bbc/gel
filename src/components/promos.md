@@ -230,4 +230,4 @@ There are currently no test specs.
 
 ## Related Research
 
-There are currently no related research.
+There is currently no related research.
