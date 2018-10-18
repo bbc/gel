@@ -87,445 +87,209 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gel-toc__links" class="gel-toc"><li><a href="#when-to-use-a-promo">When to use a promo</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#expected-behavior">Expected behavior</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#existing-implementations">Existing implementations</a></li></ol>
+                    <ol id="gel-toc__links" class="gel-toc"><li><a href="#when-to-use-a-promo">When to use a promo</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#test-specs">Test Specs</a></li><li><a href="#related-research">Related Research</a></li></ol>
                 </nav>
             </div>
 
             <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="when-to-use-a-promo">When to use a promo</h2>
-<p>The card component represents a summary/preview of longer-form content. It should only be incorporated within you interface where:</p>
+<p>The Promo component represents a link to a full piece of content eleswhere on the BBC site or app. It should only be incorporated within you interface where:</p>
 <ol>
-<li>It belongs to a set of cards, each summarizing similar and equivalent content</li>
-<li>There is a permalink to which the card can be linked</li>
+<li>It is used to create a standout call-to-action, possibly including an image or additional information</li>
+<li>There is a permanent URL to which the Promo can be linked</li>
 </ol>
-<p>Examples of sets of cards include programme listings, news stories, and sports events.</p>
-<h2 id="expected-markup">Expected markup</h2>
-<p>Any set of cards must be marked up as an unordered list, with each card as a list item (<code>&lt;li&gt;</code>). This communicates to assistive technologies that the the items are related and part of a set. It also enables the list navigation mechanism in screen reader software.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"cards"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"cards_list"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-      <span class="hljs-comment">&lt;!-- first card content --&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-      <span class="hljs-comment">&lt;!-- second card content --&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+          <div class="gel-breakout-box gel-breakout-box extra-padding">
+            <aside aria-label="Note">
+              <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
+              <p><p>A Promo differs from a Card because cards are used to <em>actually show</em> content within a card-like format; cards do not link anywhere. The purpose of a promo is to tease content which is displayed elsewhere on the site so promos always link.</p>
+</p>
+            </aside>
+          </div>
+          <h2 id="expected-markup">Expected markup</h2>
+<p>Promos are normally shown as a collection, so a set of promos must be marked up as an unordered list, with each promo maqrked as a list item (<code>&lt;li&gt;</code>). This communicates to assistive technologies that the items are part of a related set. It also enables the list navigation mechanism in screen reader software.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"[url]"</span>&gt;</span>
+      <span class="hljs-comment">&lt;!-- first promo content --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"[url]"</span>&gt;</span>
+      <span class="hljs-comment">&lt;!-- second promo content --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 </code></pre>
 <h3 id="headings">Headings</h3>
-<p>It is recommended that each card's primary (headline) link is contained within a heading, that each of the cards' headings are of the same level, and that the set of cards is introduced by a heading one level higher. For example:</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Latest news stories<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"cards"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"cards_list"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"[url]"</span>&gt;</span>Headline 1<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-      <span class="hljs-comment">&lt;!-- ensuing card content --&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"[url]"</span>&gt;</span>Headline 2<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-      <span class="hljs-comment">&lt;!-- ensuing card content --&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"[url]"</span>&gt;</span>Headline 3<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-      <span class="hljs-comment">&lt;!-- ensuing card content --&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<p>It is recommended that each promo's primary (headline) link is contained within a heading, that each of the promo's headings are of the same level, and that the set of promos is introduced by a heading one level higher. For example:</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Top Stories<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"[url]"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo-body"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Story Title<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 </code></pre>
-<p>This marks out and labels the set as a subsection within the page, and provides a sound hierarchy for those traversing the page non-visually.</p>
-<p>For search engine optimization and cognitive accessibility, the card's primary link text should match, or at least closely resemble, the <code>&lt;h1&gt;</code> text of the target URL.</p>
+<p>This marks out and labels the set as a subsection within the page and provides a sound hierarchy for those traversing the page non-visually.</p>
+<p>For search engine optimization and cognitive accessibility, the promo's primary link text should match, or at least closely resemble, the <code>&lt;h1&gt;</code> text of the target URL.</p>
 <h3 id="images">Images</h3>
-<p>Cards may contain images. These may be considered decorative or non-decorative. Where decorative, a 'null' alternative text value must be provided (<code>alt=&quot;&quot;</code>):</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/to/image.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"[url]"</span>&gt;</span>Headline 2<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- ensuing card content --&gt;</span>
+<p>Promos may contain images. These should be considered decorative and thus an empty alternative text value must be provided (<code>alt=&quot;&quot;</code>):</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"[url]"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo-media"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"image.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo-body"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Trade Talks "Breakthrough" Announced<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 </code></pre>
-<p>Only provide a positive <code>alt</code> value if it is not redundant. That is, if it adds pertinent information non-visually and does not simply repeat information provided by the primary link text or description.</p>
-<h4 id="good-example">
-          <div class="circular circular__good" aria-hidden="true">✓</div>
-         Good example</h4>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/to/image.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Mugshot of a short-haired, thickset man"</span> /&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"[url]"</span>&gt;</span>Skripal attack: Second Russian Salisbury suspect named<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- ensuing card content --&gt;</span>
+<h3 id="metadata">Metadata</h3>
+<p>Promos may contain a short list of metadata at the bottom of the component. Examples include information like the date or time the linked-to content was updated, or the category of pages to which the linked-to content belongs.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"[url]"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo-media"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"image.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo-body"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Trade Talks "Breakthrough" Announced<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo-meta"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">time</span> <span class="hljs-attr">datetime</span>=<span class="hljs-string">"2018-08-13T20:01Z"</span>&gt;</span>16m<span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>UK News<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 </code></pre>
-<h4 id="poor-example">
-          <div class="circular circular__bad" aria-hidden="true">✕</div>
-         Poor example</h4>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/to/image.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Virgin Galactic logo"</span> /&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"[url]"</span>&gt;</span>Virgin Galactic to reach space in weeks<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- ensuing card content --&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-</code></pre>
-<p>If the <code>alt</code> is omitted, screen reader software tends to announce the image's <code>src</code> value instead. In React, the <code>alt</code> prop should therefore be required, either using <code>propTypes</code> or an alternative type checking method.</p>
-<pre class="hljs"><code>Card.propTypes = {
-  <span class="hljs-attr">alt</span>: PropTypes.string.isRequired
-};
-</code></pre>
-<h3 id="toolbar">Toolbar</h3>
-<p>A typical card contains a toolbar after the description and at the bottom of the card. This can contain a &quot;More info&quot; button and one or more actions (Love, Add, and/or Share).</p>
-<p>The toolbar must appear after the headline and description, last in source order within the card. The controls themselves must be marked up as buttons, with the <code>type=&quot;button&quot;</code> attribution since they trigger JavaScript behavior.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card_toolbar"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span>&gt;</span>More info<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Love<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Add<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Share<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</code></pre>
-
-          <div class="gel-breakout-box gel-breakout-box extra-padding">
-            <aside aria-label="Note">
-              <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
-              <p><p>The 'More info' button takes <code>aria-haspopup</code> because it will reveal, and move focus to, the additional info element. See <strong>Expected behavior</strong>, to follow.</p>
-</p>
-            </aside>
-          </div>
-          <h2 id="expected-layout">Expected layout</h2>
-<p>The minimum width for a card is <code>266px</code>. A set of cards can appear within a grid formation or as the content of a carousel component.</p>
-<h3 id="grid-formation">Grid formation</h3>
-<p>The most efficient way to arrange cards into a grid is to use the CSS Grid module. You must ensure that a fallback layout is in place where CSS Grid is not supported. In the following example, the fallback emulates <code>grid-gap</code> by using a combination of positive and negative margins. This is undone where CSS Grid is supported.</p>
-<pre class="hljs"><code><span class="hljs-comment">/* Fallback CSS */</span>
-<span class="hljs-selector-class">.cards</span> {
-  <span class="hljs-attribute">overflow</span>: hidden;
-}
-
-<span class="hljs-selector-class">.cards_list</span> {
-  <span class="hljs-attribute">margin</span>: -#{<span class="hljs-built_in">double</span>($gel-spacing-unit)};
-}
-
-<span class="hljs-selector-class">.cards_list</span> <span class="hljs-selector-tag">li</span> {
-  <span class="hljs-attribute">min-width</span>: <span class="hljs-number">266px</span>;
-  <span class="hljs-attribute">float</span>: left;
-  <span class="hljs-attribute">margin</span>: $gel-spacing-unit;
-}
-
-@<span class="hljs-keyword">supports</span> (display: grid) {
-  <span class="hljs-comment">/* Undo fallback CSS */</span>
-  <span class="hljs-selector-class">.cards_list</span>, 
-  <span class="hljs-selector-class">.cards_list</span> <span class="hljs-selector-tag">li</span> {
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
-  }
-
-  <span class="hljs-selector-class">.cards_list</span> <span class="hljs-selector-tag">li</span> {
-    <span class="hljs-attribute">float</span>: none;
-  }
-
-  <span class="hljs-comment">/* CSS Grid layout */</span>
-  <span class="hljs-selector-class">.cards_list</span> {
-    <span class="hljs-attribute">display</span>: grid;
-    <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(auto-fill, minmax(266px, 1fr));
-    <span class="hljs-attribute">grid-gap</span>: <span class="hljs-built_in">double</span>($gel-spacing-unit);
-  }
-}
-</code></pre>
-
-          <div class="gel-breakout-box gel-breakout-box extra-padding">
-            <aside aria-label="Note">
-              <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
-              <p><p>These examples use <a href="https://github.com/bbc/gel-sass-tools">GEL Sass Tools</a> for the margins.</p>
-</p>
-            </aside>
-          </div>
-          <h3 id="carousel-formation">Carousel formation</h3>
-<p>To achieve a carousel formation, the containing carousel element needs to have <code>overflow-x: auto</code> and the cards list must not be allowed to wrap. This is best achieved using Flexbox.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.cards</span> {
-  <span class="hljs-attribute">overflow-x</span>: auto;
-}
-
-<span class="hljs-selector-class">.cards_list</span> {
-  <span class="hljs-attribute">display</span>: flex;
-}
-
-<span class="hljs-selector-class">.cards_list</span> <span class="hljs-selector-tag">li</span> {
-  <span class="hljs-attribute">flex</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">266px</span>;
-}
-
-<span class="hljs-selector-class">.cards_list</span> <span class="hljs-selector-tag">li</span> + <span class="hljs-selector-tag">li</span> { <span class="hljs-comment">/* margin only between cards */</span>
-  <span class="hljs-attribute">margin-left</span>: <span class="hljs-built_in">double</span>($gel-spacing-unit);
-}
-</code></pre>
-<h3 id="individual-card-layout">Individual card layout</h3>
-<p>Each card in a set should share the same height, despite content across cards varying in quantity/length. In a Grid or Flexbox context, cards already stretch to fill the container's height. All that remains is to push the card's final child element (usually the toolbar) to the bottom of the card.</p>
-<p>This must <em>not</em> be achieved using absolute positioning, because this is likely to interfere with zoom functionality. Instead, make the card a Flexbox context and give the final element a top margin of <code>auto</code>:</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.cards_list</span> <span class="hljs-selector-tag">li</span> {
-  <span class="hljs-attribute">display</span>: flex;
-  <span class="hljs-attribute">flex-direction</span>: column;
-}
-
-<span class="hljs-selector-class">.cards_list</span> <span class="hljs-selector-tag">li</span> &gt; <span class="hljs-selector-pseudo">:last-child</span> {
-  <span class="hljs-attribute">margin-top</span>: auto;
-}
-</code></pre>
-<h2 id="expected-behavior">Expected behavior</h2>
-<h3 id="the-link">The link</h3>
-<p>Mouse and touch users should be able to activate the primary (headline) link by pressing either the headline text <em>or</em> the image. However, the image should not represent an additional, redundant tab stop to keyboard users or be perceivable as a link to screen reader users.</p>
-<p>In which case, you need to add a JavaScript <code>click</code> listener to the image and use it to trigger the link's <code>click</code> event by proxy. In plain JavaScript this would look something like the following:</p>
-<pre class="hljs"><code><span class="hljs-comment">// Assuming that `link` represents the headline link node</span>
-<span class="hljs-comment">// and `img` represents the image node...</span>
-img.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; link.click());
-</code></pre>
-<p>This is the only JavaScript enhancement. In an environment where the card is not client rendered, the card will be functional where JavaScript is not available. Accordingly, only add the <code>cursor</code> style if JavaScript has run:</p>
-<pre class="hljs"><code>img.style.cursor = <span class="hljs-string">'pointer'</span>;
-</code></pre>
-<p>In React with JSX, you might use a <code>ref</code> (the node for which being accessible via the <code>current</code> property). The following example is elided for brevity:</p>
-<pre class="hljs"><code><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Card</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
-  <span class="hljs-keyword">constructor</span>(props) {
-    <span class="hljs-keyword">super</span>(props);
-    <span class="hljs-keyword">this</span>.link = React.createRef();
-  }
-  render() {
-    <span class="hljs-keyword">const</span> { src, alt, url, headline } = <span class="hljs-keyword">this</span>.props;
-    <span class="hljs-keyword">return</span> (
-      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">{src}</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">{alt}</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.link.current.click()}</span> /&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">{url}</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{this.link}</span>&gt;</span>{headline}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-    );
-  }
-}
-</span></code></pre>
-<h3 id="more-info">More info</h3>
-<p>The 'More info' button toggles the visibility of an element containing the additional information for the card. This element must be <code>hidden</code> by default. When 'More info' is clicked for the first time, <code>hidden</code> becomes <code>false</code> and focus is moved to the element. The <code>aria-haspopup</code> attribute on the button warns the user that a redirection of focus will take place.</p>
-<p>In plain JavaScript, a simple function will suffice:</p>
-<pre class="hljs"><code><span class="hljs-comment">// Assuming that `moreBtn` is the button node</span>
-<span class="hljs-comment">// and `moreElem` is the info node</span>
-moreBtn.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; {
-  moreElem.hidden = !moreElem.hidden;
-  <span class="hljs-keyword">if</span> (!moreElem.hidden) {
-    moreElem.focus();
-    moreBtn.textContent = <span class="hljs-string">'Close'</span>;
-  } <span class="hljs-keyword">else</span> {
-    moreBtn.textContent = <span class="hljs-string">'More info'</span>;
-  }
-});
-</code></pre>
-
-          <div class="gel-breakout-box gel-breakout-box extra-padding">
-            <aside aria-label="Note">
-              <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
-              <p><p>The button's state is not toggled via <code>aria-expanded</code>. This is because the button label changes, and a simultaneous change in state would result in contradictory information.)</p>
-</p>
-            </aside>
-          </div>
-          <p>For the <code>focus()</code> method to succeed, the <code>class=&quot;card_more-info&quot;</code> element needs <code>tabindex=&quot;-1&quot;</code>. Also provide a role and label for screen reader identification. It is recommended the element is positioned between the 'More info' and subsequent buttons in the source, and is positioned absolutely over the card, leaving just the toolbar visible.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card_toolbar"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span>&gt;</span>More info<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card_more-info"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"more info"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>
-    <span class="hljs-comment">&lt;!-- more info here --&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Love<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Add<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Share<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</code></pre>
-<p>In addition, it should be possible to close the <code>class=&quot;card_more-info&quot;</code> element using the <kbd>ESC</kbd> key.</p>
-<pre class="hljs"><code>moreElem.addEventListener(<span class="hljs-string">'keydown'</span>, e =&gt; {
-  <span class="hljs-keyword">if</span> (e.which === <span class="hljs-number">27</span>) {
-    e.preventDefault();
-    moreElem.hidden = <span class="hljs-literal">true</span>;
-    moreBtn.textContent = <span class="hljs-string">'More info'</span>;
-    moreBtn.focus();
-  }
-});
-</code></pre>
-<p>In JSX, you can use the button to toggle a state declared on the info element like <code>hidden={infoHidden}</code>. But you will still need to move focus, which will require a <code>ref</code>. A small function to be triggered via the button's <code>onClick</code>:</p>
-<pre class="hljs"><code>toggleInfo() {
-  <span class="hljs-keyword">this</span>.setState(
-    <span class="hljs-function">(<span class="hljs-params">state</span>) =&gt;</span> ({
-      state.infoHidden = !state.infoHidden;
-    }),
-    () =&gt; {
-      <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.state.infoHidden)
-        <span class="hljs-comment">/* ↓ ref will need to be created with createRef() */</span>
-        <span class="hljs-keyword">this</span>.infoElem.current.focus();
-    }
-  );
-}
-</code></pre>
-
-          <div class="gel-breakout-box gel-breakout-box extra-padding">
-            <aside aria-label="Note">
-              <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
-              <p><p>The <code>setState</code> function is asynchronous, so a callback function is used to trigger the <code>focus()</code> method.</p>
-</p>
-            </aside>
-          </div>
-          <p>A separate function would be needed to handle closing on <kbd>ESC</kbd>:</p>
-<pre class="hljs"><code>closeInfo(e) {
-  <span class="hljs-keyword">if</span> (e.which === <span class="hljs-number">27</span>) {
-    e.preventDefault();
-    <span class="hljs-keyword">this</span>.setState(
-      <span class="hljs-function">(<span class="hljs-params">state</span>) =&gt;</span> ({
-        state.infoHidden = <span class="hljs-literal">true</span>;
-      }),
-      () =&gt; {
-        <span class="hljs-comment">/* ↓ ref will need to be created with createRef() */</span>
-        <span class="hljs-keyword">this</span>.infoBtn.current.focus();
-      }
-    );    
-  }
-}
-</code></pre>
+<h2 id="expected-layout">Expected layout</h2>
+<p>There are generally two layouts possible with promos: one vertical with the image stacked above the promo headline, and the other horizontal with the image sitting to to the side of the promo headline.</p>
 <h2 id="reference-implementation">Reference implementation</h2>
-<live-demo id="card1">
+<live-demo id="promo1">
   <template>
     <style>
-      .card, .card * {
-        box-sizing: border-box;
+      .cf:after {
+        content: "";
+        display: table;
+        clear: both;
       }
-      .card {
-        position: relative;
+      .gel-promo {
+        display: inline-block;
         color: #404040;
         font-family: sans-serif;
         background: #F1F1F1;
-        display: flex;
-        flex-direction: column;
-        width: 266px;
+        width: 100%;
+        margin-bottom: 16px;
       }
-      .card ul {
-        margin: 0;
+      .gel-promo__horz .gel-promo-media {
+        display: inline-block;
+        float: left;
+        line-height: 0;
+        width: 40%;
+        margin-right: 16px;
       }
-      .card_img {
-        overflow: hidden;
+      .gel-promo .gel-promo-media img {
+        display: inline-block;
+        height: 100%;
+        width: 100%
+      }
+      .gel-promo__horz .gel-promo-body {
+        padding: 0 16px 0 0;
+      }
+      .gel-promo a {
+        display: inline-block;
+        height: 100%;
         position: relative;
       }
-      .card_img img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .card_icon {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        padding: 1rem;
-        background-color: rgba(255,255,255,0.5);
-        line-height: 1;
-      }
-      .card_icon svg {
-        height: 1.5rem;
-        width: auto;
-      }
-      .card_text {
-        padding: 1rem;
-        flex-grow: 1;
-      }
-      .card_text > * + * {
-        margin: 0;
-        margin-top: 0.5rem;
-      }
-      .card_title a {
-        color: inherit;
+      .gel-promo a,
+      .gel-promo a:hover,
+      .gel-promo a:visited {
         text-decoration: none;
+        color: #333;
       }
-      .card_title a:hover,
-      .card_title a:focus {
-        outline: none;
-        text-decoration: underline;
+      .gel-promo a img,
+      .gel-promo a:hover img,
+      .gel-promo a:visited img {
+        border: 0;
       }
-      .card > :last-child {
-        margin-top: auto;
-      }
-      .card_toolbar {
-        height: 2.5rem;
-        list-style: none;
-        display: flex;
-        padding: 0.5rem;
-        background-color: #e5e5e5;
-      }
-      .card_toolbar li + li {
-        margin-left: 0.5rem;
-      }
-      .card_toolbar > :first-child {
-        margin-right: auto;
-      }
-      .card_toolbar button {
-        background: none;
-        border: none;
-        font-size: inherit;
-        cursor: pointer;
-      }
-      .card_more-info {
+      ul.gel-promo-meta {
+        left: 40%;
+        padding: 0;
+        bottom: 0;
         position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 2.5rem;
-        left: 0;
-        padding: 1rem;
-        background-color: #F1F1F1;
+        padding-left: 16px;
+        padding-bottom: 16px;
+      }
+      .gel-promo-meta li {
+        display: inline;
+        list-style-type: none;
+      }
+      .gel-promo-meta li:not(:last-child)::after {
+        content: "\007c";
+        margin: 0 0.6em;
+      }
+      @media (max-width: 37.5em) {
+        .gel-promo-body {
+          padding: 0 8px 0 0;
+        }
+        .gel-promo-body h3 {
+          padding: 0 8px 0 0;
+          margin-block-start: 8px;
+          margin-block-end: 8px;
+        }
+        .gel-promo-body p { display: none; }
+        .gel-promo__horz .gel-promo-media {
+          margin-right: 8px;
+        }
+      }
+      @media (max-width: 30em) {
+        .gel-promo-meta { display: none; }
       }
     </style>
-    <div class="card">
-      <div class="card_img">
-        <img src="/code-gel/static/images/placeholder.png" alt="">
-        <span class="card_icon" aria-hidden="true">
-          <svg fill="currentColor" viewBox="0 0 20 20" width="20" height="20" focusable="false">
-            <polyline points="2 2, 18 10, 2 18"></polyline>
-          </svg>
-        </span>
-      </div>
-      <div class="card_text">
-        <h2 class="card_title"><a href="#to-permalink">Title Of Card</a></h2>
-        <p>Description of the card</p>
-        <small>Attribution</small>
-      </div>
-      <div class="card_toolbar">
-        <button type="button" aria-haspopup="true">More info</button>
-        <div class="card_more-info" role="group" aria-label="more info" tabindex="-1" hidden>
-          <p>More info here</p>
-        </div>
-        <button type="button">L</button>
-        <button type="button">A</button>
-        <button type="button">S</button>
-      </div>
+    <div class="cf" style="max-width:600px">
+      <ul>
+        <li class="gel-promo gel-promo__horz cf">
+          <a href="#example-link-1">
+            <div class="gel-promo-media">
+              <img src="/code-gel/static/images/placeholder.png" alt="">
+            </div>
+            <div class="gel-promo-body">
+              <h3>Trade Talks "Breakthrough"</h3>
+              <p>Both sides reportedly happy, eager to move forward</p>
+              <ul class="gel-promo-meta">
+                <li><time datetime="2018-08-13T20:01Z">16m</time></li><li>UK News</li>
+              </ul>
+            </div>
+          </a>
+        </li>
+        <li class="gel-promo gel-promo__horz cf">
+          <a href="#example-link-2">
+            <div class="gel-promo-media">
+              <img src="/code-gel/static/images/placeholder.png" alt="">
+            </div>
+            <div class="gel-promo-body">
+              <h3>All Gold for New Olympic Trampoline Team</h3>
+              <ul class="gel-promo-meta">
+                <li><time datetime="2018-08-13T20:01Z">42m</time></li><li>Sports</li>
+              </ul>
+            </div>
+          </a>
+        </li>
+      </ul>
     </div>
     <script>
-      const img = demo.querySelector('img');
-      const link = demo.querySelector('a');
-      const moreBtn = demo.querySelector('[aria-haspopup]');
-      const moreElem = demo.querySelector('.card_more-info');
-      img.style.cursor = 'pointer';
-      img.addEventListener('click', () => link.click());
-      moreBtn.addEventListener('click', () => {
-        moreElem.hidden = !moreElem.hidden;
-        if (!moreElem.hidden) {
-          moreElem.focus();
-          moreBtn.textContent = 'Close';
-        } else {
-          moreBtn.textContent = 'More info';
-        }
-      });
-      moreElem.addEventListener('keydown', e => {
-        if (e.which === 27) {
-          moreElem.hidden = true;
-          moreBtn.textContent = 'More info';
-          moreBtn.focus();
-        }
-      });
     </script>
   </template>
 </live-demo>
-<h2 id="existing-implementations">Existing implementations</h2>
-<p>There are currently no existing implementations of this reference component.</p>
+<h2 id="test-specs">Test Specs</h2>
+<p>There are currently no test specs.</p>
+<h2 id="related-research">Related Research</h2>
+<p>There are currently no related research.</p>
 
             </div>
         </div>
