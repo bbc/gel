@@ -8,16 +8,16 @@
     <title>{{site.title}} | {{title}}</title>
 
     <script src="{{site.basedir}}static/js/main.js"></script>
-    
+
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
     <link rel="stylesheet" type="text/css" href="{{site.basedir}}static/css/main.css">
 
     <script type="text/javascript">
         // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
-        document.documentElement.className += (' ' + (supports.touchevents? 'touch' : 'no-touch'));
-        document.documentElement.className += (' ' + (SimpleFeatureDetector.supports({ property: 'flex-wrap' }, {property: 'flex-flow'})? 'flexbox' : 'no-flexbox'));
-        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg'))? 'svg' : 'no-svg'));
+        document.documentElement.className += (' ' + (supports.touchevents ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + (SimpleFeatureDetector.supports({ property: 'flex-wrap' }, { property: 'flex-flow' }) ? 'flexbox' : 'no-flexbox'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
     </script>
 
     <script type="text/javascript">
@@ -42,13 +42,18 @@
 
 <body class="gel-guideline-body">
     <p class="gel-sr gel-sr__focusable gel-sr__overlay" tabindex="0">
-        <a href="#main" onfocus="this.parentNode.classList.add('gel-sr__focused')" onblur="this.parentNode.classList.remove('gel-sr__focused')">Skip to content</a>
+        <a href="#main" onfocus="this.parentNode.classList.add('gel-sr__focused')" onblur="this.parentNode.classList.remove('gel-sr__focused')">Skip
+            to content</a>
     </p>
 
     <header>
         <div class="gel-guideline-header gs-u-clearfix">
             <div class="gel-wrap">
-                <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24"><title>BBC</title><image xlink:href="{{site.basedir}}static/images/bbc-blocks_grey.svg" src="{{site.basedir}}static/images/bbc-blocks_grey.png" width="100%" height="100%"></image></svg></a>
+                <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
+                        <title>BBC</title>
+                        <image xlink:href="{{site.basedir}}static/images/bbc-blocks_grey.svg" src="{{site.basedir}}static/images/bbc-blocks_grey.png"
+                            width="100%" height="100%"></image>
+                    </svg></a>
             </div>
         </div>
         <div class="gel-guideline-header__banner gs-u-clearfix">
@@ -57,7 +62,7 @@
                     <div class="gel-layout__item gel-2/5@l" style="text-align:left; padding-left:14px; margin-bottom:32px;">
                         <span class="gel-logo">Code{GEL}</span>
                     </div>
-                    <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;"> 
+                    <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
                         <a class="gel-button gel-button--dark gel-long-primer-bold" href="{{linkback}}">
                             Go to BBC GEL
                         </a>
@@ -69,7 +74,9 @@
 
     <main id="main" tabindex="-1" class="gel-wrap gs-u-clearfix">
         <div class="gel-layout">
-            <div class="gel-layout__item gel-1/5@l"><!-- column placeholder--></div>
+            <div class="gel-layout__item gel-1/5@l">
+                <!-- column placeholder-->
+            </div>
 
             <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
                 <h1 class="gel-guideline-header__title">{{title}}</h1>
@@ -78,9 +85,18 @@
 
             <div class="gel-layout__item gel-1/5@l">
                 <dl class="gel-standout-box">
-                    <dt>Version:</dt>       <dd>{{ version }}</dd>
-                    <dt>Status:</dt>        <dd>{{ "Published" if published else "Draft" }}</dd>
-                    <dt>Accessibility:</dt> <dd>{{ "Pass" if accessibility else "Fail" }}</dd>
+                    {% if version %}
+                    <dt>Version:</dt>
+                    <dd>{{ version }}</dd>
+                    {% endif %}
+                    {% if published %}
+                    <dt>Status:</dt>
+                    <dd>{{ "Published" if published else "Draft" }}</dd>
+                    {% endif %}
+                    {% if accessibility %}
+                    <dt>Accessibility:</dt>
+                    <dd>{{ "Pass" if accessibility else "Fail" }}</dd>
+                    {% endif %}
                 </dl>
             </div>
         </div>
@@ -109,7 +125,8 @@
                         <span class="gel-button__content">Go to survey</span>
                         <span class="gel-button__icon_wrapper">
                             <svg class="gel-button__icon gel-icon gel-icon--text">
-                                <use xlink:href="{{site.basedir}}static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:undefined;"></use>
+                                <use xlink:href="{{site.basedir}}static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                                    style="fill:undefined;"></use>
                             </svg>
                         </span>
                     </a>
@@ -119,7 +136,7 @@
     </div>
 
     {% if includejs %}
-    <script type="text/javascript" src="{{site.basedir}}static/js/{{ includejs }}"></script>
+    <script type="text/javascript" src="{{site.basedir}}static/js/demo.js"></script>
     {% endif %}
 
     <script type="text/javascript">

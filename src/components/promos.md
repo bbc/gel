@@ -4,7 +4,6 @@ summary: A promo is a snippet of content which links to a full piece of content 
 version: 0.1.0
 published: true
 accessibility: true
-includejs: promos/demo.js
 linkback: http://www.bbc.co.uk/gel/guidelines/promos
 ---
 
@@ -107,6 +106,10 @@ There are generally two layouts possible with promos: one vertical with the imag
 <live-demo id="promo1">
   <template>
     <style>
+      ul {
+        margin: 0;
+        padding: 0;
+      }
       .cf:after {
         content: "";
         display: table;
