@@ -1773,3 +1773,7 @@ a.gel-button.gel-button__link-button {
     font-size: .875rem;
     line-height: 18px;
     line-height: 1.125rem; } }
+
+/* hacks */
+hr.footnotes-sep {
+  display: none; }
