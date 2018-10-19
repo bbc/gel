@@ -118,12 +118,15 @@ println(<span class="hljs-string">'done'</span>);
 
 
                 <div class="gel-breakout-box gel-breakout-box extra-padding" style="margin-top:36px">
-                <aside aria-label="Could you improve this documentation?">
-                    <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg> Could you improve this documentation?</h4>
-                    <p>
-                        If you think you could make anything you see here a bit better then become one of our lovely contributors!</p>
-                    </p>
-                </aside>
+                    <aside aria-label="Could you improve this documentation?">
+                        <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text">
+                                <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use>
+                            </svg> Could you improve this documentation?</h4>
+                        <p>
+                            If you think you could make anything you see here a bit better then become one of our
+                            lovely contributors!</p>
+                        </p>
+                    </aside>
                 </div>
 
             </div>
@@ -153,8 +156,45 @@ println(<span class="hljs-string">'done'</span>);
     
     <script type="text/javascript" src="/code-gel/static/js/hello-world.js"></script>
     
-    
+
     <script type="text/javascript" src="/code-gel/static/js/demo.js"></script>
+
+    <script type="text/javascript">
+        // Launch demos in new window 
+        // (does not require custom elements or Shadow DOM)
+        var demos = document.querySelectorAll('live-demo');
+        Array.prototype.forEach.call(demos, function (demo) {
+            var code = demo.querySelector('template').innerHTML;
+
+            var wrapper = document.createElement('div');
+            wrapper.innerHTML = code;
+
+            var js = wrapper.querySelector('script');
+            if (js) {
+                var jsText = js.textContent;
+                js.textContent = `(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ${jsText} })();`;
+            }
+            var button = document.createElement('button');
+            button.setAttribute('class', 'gel-button gel-button--dark gel-long-primer-bold');
+            button.innerHTML = 'Launch standalone demo&nbsp;<svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:undefined;"></use></svg>';
+            button.addEventListener('click', function () {
+                var standalone = window.open('/code-gel/static/html/demo.html');
+                standalone.addEventListener('load', function () {
+                    this.document.body.innerHTML = wrapper.innerHTML;
+
+                    // Needed to activate script, which arrives inert :-(
+                    var newScript = standalone.document.createElement('script');
+                    var oldScript = standalone.document.querySelector('script');
+                    if (oldScript) {
+                        newScript.textContent = oldScript.textContent;
+                        oldScript.parentNode.removeChild(oldScript);
+                        this.document.body.appendChild(newScript);
+                    }
+                });
+            });
+            demo.parentNode.insertBefore(button, demo.nextSibling);
+        });
+    </script>
 
     <script type="text/javascript">
         new Sticky('.sticky');

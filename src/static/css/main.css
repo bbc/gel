@@ -1777,3 +1777,12 @@ a.gel-button.gel-button__link-button {
 /* hacks */
 hr.footnotes-sep {
   display: none; }
+
+/* live demos */
+live-demo {
+  display: block;
+}
+
+live-demo + * {
+  margin-top: 1rem;
+}

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Code GEL | Promos</title>
+    <title>Code GEL | Promo</title>
 
     <script src="/code-gel/static/js/main.js"></script>
 
@@ -77,7 +77,7 @@
             </div>
 
             <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
-                <h1 class="gel-guideline-header__title">Promos</h1>
+                <h1 class="gel-guideline-header__title">Promo</h1>
                 <p class="gel-guideline-header__summary gel-great-primer">A promo is a snippet of content which links to a full piece of content elsewhere on the BBC site or app.</p>
             </div>
 
@@ -103,13 +103,13 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gel-toc__links" class="gel-toc"><li><a href="#semantics">Semantics</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#test-specifications">Test specifications</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="gel-toc__links" class="gel-toc"><li><a href="#when-to-use-a-promo">When to use a promo</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#test-specs">Test Specs</a></li><li><a href="#related-research">Related Research</a></li></ol>
                 </nav>
             </div>
 
             <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-3/5@l">
-                <h2 id="semantics">Semantics</h2>
-<p>The Promo component represents a link to a full piece of content elsewhere on the BBC site or app. It should only be incorporated within an interface where:</p>
+                <h2 id="when-to-use-a-promo">When to use a promo</h2>
+<p>The Promo component represents a link to a full piece of content eleswhere on the BBC site or app. It should only be incorporated within you interface where:</p>
 <ol>
 <li>It is used to create a standout call-to-action, possibly including an image or additional information</li>
 <li>There is a permanent URL to which the Promo can be linked</li>
@@ -122,10 +122,8 @@
 </p>
             </aside>
           </div>
-          <p>The case for a Promo versus a Card interface can be subtle, so it is important to understand the different uses, and when a Card or Promo might be most appropriate<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p>
-<p>Providing what would otherwise be a simple text link, with design signifiers<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> like a bordered block, an accompanying image, and emboldened text communicates that the link has extra significance, and so this pattern should be used sparingly and only for links to content that deserve extra attention.</p>
-<h2 id="expected-markup">Expected markup</h2>
-<p>Promos are normally shown as a collection, so a set of promos must be marked up as an unordered list, with each promo marked as a list item (<code>&lt;li&gt;</code>). This communicates to assistive technologies that the items are part of a related set. It also enables the list navigation mechanism in screen reader software<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
+          <h2 id="expected-markup">Expected markup</h2>
+<p>Promos are normally shown as a collection, so a set of promos must be marked up as an unordered list, with each promo maqrked as a list item (<code>&lt;li&gt;</code>). This communicates to assistive technologies that the items are part of a related set. It also enables the list navigation mechanism in screen reader software.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"[url]"</span>&gt;</span>
@@ -156,7 +154,7 @@
 <p>This marks out and labels the set as a subsection within the page and provides a sound hierarchy for those traversing the page non-visually.</p>
 <p>For search engine optimization and cognitive accessibility, the promo's primary link text should match, or at least closely resemble, the <code>&lt;h1&gt;</code> text of the target URL.</p>
 <h3 id="images">Images</h3>
-<p>The accompanying image should be considered decorative and thus an empty alternative text value must be provided (<code>alt=&quot;&quot;</code>):</p>
+<p>Promos may contain images. These should be considered decorative and thus an empty alternative text value must be provided (<code>alt=&quot;&quot;</code>):</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"[url]"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo-media"</span>&gt;</span>
@@ -188,14 +186,9 @@
 <h2 id="expected-layout">Expected layout</h2>
 <p>There are generally two layouts possible with promos: one vertical with the image stacked above the promo headline, and the other horizontal with the image sitting to to the side of the promo headline.</p>
 <h2 id="reference-implementation">Reference implementation</h2>
-<p>The working example below shows an implementation of a series of horizontally formatted promos.</p>
 <live-demo id="promo1">
   <template>
     <style>
-      ul {
-        margin: 0;
-        padding: 0;
-      }
       .cf:after {
         content: "";
         display: table;
@@ -309,35 +302,10 @@
     </script>
   </template>
 </live-demo>
-<h2 id="test-specifications">Test specifications</h2>
-<p>A list of gherkin-style feature specifications (including requirements for the <a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile">BBC Mobile Accessibility Guidelines</a>) for this component has been developed and published in a format suitable for use with an automated testing framework. You can review and download these feature files from <a href="#linktocome">the project Wiki page, hosted on GitHub</a>.</p>
-<h2 id="related-research">Related research</h2>
-<p>This component was originally developed and tested at the BBC in a prototype of the BBC Homepage. During user research we tested with X users, including subjects with a variety of impairments and a range of digital skills. You can read more about our research and findings on <a href="#linktocome">the project Wiki page, hosted on GitHub</a>.</p>
-<h3 id="further-reading%2C-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>&quot;Using Card-Based Design To Enhance UX&quot; by Nick Babich, <em>Don't Use Cards</em> <a href="https://uxplanet.org/using-card-based-design-to-enhance-ux-51f965ab70cb#dfb8">https://uxplanet.org/using-card-based-design-to-enhance-ux-51f965ab70cb#dfb8</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>&quot;Signifiers, not affordances&quot; by Don Norman, <em>People need some way of understanding the product or service, some sign of what it is for, what is happening, and what the alternative actions are.</em> <a href="https://www.jnd.org/dn.mss/signifiers_not_affordances.html">https://www.jnd.org/dn.mss/signifiers_not_affordances.html</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p>&quot;Basic screen reader commands for accessibility testing&quot; by Léonie Watson, <a href="https://developer.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/">https://developer.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-
-
-                <div class="gel-breakout-box gel-breakout-box extra-padding" style="margin-top:36px">
-                    <aside aria-label="Could you improve this documentation?">
-                        <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text">
-                                <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use>
-                            </svg> Could you improve this documentation?</h4>
-                        <p>
-                            If you think you could make anything you see here a bit better then become one of our
-                            lovely contributors!</p>
-                        </p>
-                    </aside>
-                </div>
+<h2 id="test-specs">Test Specs</h2>
+<p>There are currently no test specs.</p>
+<h2 id="related-research">Related Research</h2>
+<p>There are currently no related research.</p>
 
             </div>
         </div>
@@ -364,45 +332,6 @@
     </div>
 
     
-
-    <script type="text/javascript" src="/code-gel/static/js/demo.js"></script>
-
-    <script type="text/javascript">
-        // Launch demos in new window 
-        // (does not require custom elements or Shadow DOM)
-        var demos = document.querySelectorAll('live-demo');
-        Array.prototype.forEach.call(demos, function (demo) {
-            var code = demo.querySelector('template').innerHTML;
-
-            var wrapper = document.createElement('div');
-            wrapper.innerHTML = code;
-
-            var js = wrapper.querySelector('script');
-            if (js) {
-                var jsText = js.textContent;
-                js.textContent = `(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ${jsText} })();`;
-            }
-            var button = document.createElement('button');
-            button.setAttribute('class', 'gel-button gel-button--dark gel-long-primer-bold');
-            button.innerHTML = 'Launch standalone demo&nbsp;<svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:undefined;"></use></svg>';
-            button.addEventListener('click', function () {
-                var standalone = window.open('/code-gel/static/html/demo.html');
-                standalone.addEventListener('load', function () {
-                    this.document.body.innerHTML = wrapper.innerHTML;
-
-                    // Needed to activate script, which arrives inert :-(
-                    var newScript = standalone.document.createElement('script');
-                    var oldScript = standalone.document.querySelector('script');
-                    if (oldScript) {
-                        newScript.textContent = oldScript.textContent;
-                        oldScript.parentNode.removeChild(oldScript);
-                        this.document.body.appendChild(newScript);
-                    }
-                });
-            });
-            demo.parentNode.insertBefore(button, demo.nextSibling);
-        });
-    </script>
 
     <script type="text/javascript">
         new Sticky('.sticky');
