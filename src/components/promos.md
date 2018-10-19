@@ -9,7 +9,7 @@ linkback: http://www.bbc.co.uk/gel/guidelines/promos
 
 ## Semantics
 
-The Promo component represents a link to a full piece of content eleswhere on the BBC site or app. It should only be incorporated within an interface where:
+The Promo component represents a link to a full piece of content elsewhere on the BBC site or app. It should only be incorporated within an interface where:
 
 1. It is used to create a standout call-to-action, possibly including an image or additional information
 2. There is a permanent URL to which the Promo can be linked
@@ -24,7 +24,7 @@ Providing what would otherwise be a simple text link, with design signifiers[^2]
 
 ## Expected markup
 
-Promos are normally shown as a collection, so a set of promos must be marked up as an unordered list, with each promo maqrked as a list item (`<li>`). This communicates to assistive technologies that the items are part of a related set. It also enables the list navigation mechanism in screen reader software[^3].
+Promos are normally shown as a collection, so a set of promos must be marked up as an unordered list, with each promo marked as a list item (`<li>`). This communicates to assistive technologies that the items are part of a related set. It also enables the list navigation mechanism in screen reader software[^3].
 
 ```html
 <ul>
@@ -232,7 +232,7 @@ The working example below shows an implementation of a series of horizontally fo
 
 ## Test specifications
 
-A lsit of gherkin-style feature specifications (including requirements for the [BBC Mobile Accessibility Guidelines](https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile)) for this component has been developed and published in a format suitable for use with an automated testing framework. You can review and download these feature files from [the project Wiki page, hosted on GitHub](#linktocome).
+A list of gherkin-style feature specifications (including requirements for the [BBC Mobile Accessibility Guidelines](https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile)) for this component has been developed and published in a format suitable for use with an automated testing framework. You can review and download these feature files from [the project Wiki page, hosted on GitHub](#linktocome).
 
 ## Related research
 
