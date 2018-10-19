@@ -65,7 +65,7 @@ For search engine optimization and cognitive accessibility, the promo's primary 
 
 ### Images
 
-Images. These should be considered decorative and thus an empty alternative text value must be provided (`alt=""`):
+The accompanying image should be considered decorative and thus an empty alternative text value must be provided (`alt=""`):
 
 ```html
 <li class="gel-promo">
