@@ -34,6 +34,7 @@ module.exports = function (eleventyConfig) {
   })
   .use(require('markdown-it-anchor'))
   .use(require('markdown-it-shortcode-tag'), shortcodes)
+  .use(require('markdown-it-footnote'))
   .use(require('markdown-it-container'), 'breakout', {
     validate: function(params) {
       return params.trim().match(/^(info|help|alert)/);

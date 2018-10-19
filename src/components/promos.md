@@ -7,9 +7,9 @@ accessibility: true
 linkback: http://www.bbc.co.uk/gel/guidelines/promos
 ---
 
-## When to use a promo
+## Semantics
 
-The Promo component represents a link to a full piece of content eleswhere on the BBC site or app. It should only be incorporated within you interface where:
+The Promo component represents a link to a full piece of content eleswhere on the BBC site or app. It should only be incorporated within an interface where:
 
 1. It is used to create a standout call-to-action, possibly including an image or additional information
 2. There is a permanent URL to which the Promo can be linked
@@ -18,9 +18,13 @@ The Promo component represents a link to a full piece of content eleswhere on th
 A Promo differs from a Card because cards are used to _actually show_ content within a card-like format; cards do not link anywhere. The purpose of a promo is to tease content which is displayed elsewhere on the site so promos always link.
 :::
 
+The case for a Promo versus a Card interface can be subtle, so it is important to understand the different uses, and when a Card or Promo might be most appropriate[^1].
+
+Providing what would otherwise be a simple text link, with design signifiers[^2] like a bordered block, an accompanying image, and emboldened text communicates that the link has extra significance, and so this pattern should be used sparingly and only for links to content that deserve extra attention.
+
 ## Expected markup
 
-Promos are normally shown as a collection, so a set of promos must be marked up as an unordered list, with each promo maqrked as a list item (`<li>`). This communicates to assistive technologies that the items are part of a related set. It also enables the list navigation mechanism in screen reader software.
+Promos are normally shown as a collection, so a set of promos must be marked up as an unordered list, with each promo maqrked as a list item (`<li>`). This communicates to assistive technologies that the items are part of a related set. It also enables the list navigation mechanism in screen reader software[^3].
 
 ```html
 <ul>
@@ -61,7 +65,7 @@ For search engine optimization and cognitive accessibility, the promo's primary 
 
 ### Images
 
-Promos may contain images. These should be considered decorative and thus an empty alternative text value must be provided (`alt=""`):
+Images. These should be considered decorative and thus an empty alternative text value must be provided (`alt=""`):
 
 ```html
 <li class="gel-promo">
@@ -102,6 +106,8 @@ Promos may contain a short list of metadata at the bottom of the component. Exam
 There are generally two layouts possible with promos: one vertical with the image stacked above the promo headline, and the other horizontal with the image sitting to to the side of the promo headline.
 
 ## Reference implementation
+
+The working example below shows an implementation of a series of horizontally formatted promos.
 
 <live-demo id="promo1">
   <template>
@@ -224,10 +230,16 @@ There are generally two layouts possible with promos: one vertical with the imag
   </template>
 </live-demo>
 
-## Test Specs
+## Test specifications
 
-There are currently no test specs.
+A lsit of gherkin-style feature specifications (including requirements for the [BBC Mobile Accessibility Guidelines](https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile)) for this component has been developed and published in a format suitable for use with an automated testing framework. You can review and download these feature files from [the project Wiki page, hosted on GitHub](#linktocome).
 
-## Related Research
+## Related research
 
-There is currently no related research.
+This component was originally developed and tested at the BBC in a prototype of the BBC Homepage. During user research we tested with X users, including subjects with a variety of impairments and a range of digital skills. You can read more about our research and findings on [the project Wiki page, hosted on GitHub](#linktocome).
+
+### Further reading, elsewhere on the Web
+
+[^1]: "Using Card-Based Design To Enhance UX" by Nick Babich, _Don't Use Cards_ <https://uxplanet.org/using-card-based-design-to-enhance-ux-51f965ab70cb#dfb8>
+[^2]: "Signifiers, not affordances" by Don Norman, _People need some way of understanding the product or service, some sign of what it is for, what is happening, and what the alternative actions are._ <https://www.jnd.org/dn.mss/signifiers_not_affordances.html>
+[^3]: "Basic screen reader commands for accessibility testing" by Léonie Watson, <https://developer.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/>
