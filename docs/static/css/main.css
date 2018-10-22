@@ -1060,19 +1060,25 @@ h4 {
 /**
  * All Code GEL Components
  */
+ul.gel-promo-list {
+  list-style-position: inside;
+  margin: 0;
+  padding: 0; }
+
 .gel-promo {
   display: inline-block;
   color: #404040;
   font-family: ReithSans;
   background: #eeeeee;
   width: 100%;
-  margin-bottom: 16px; }
+  margin-bottom: 16px;
+  padding-left: 0 !important; }
 
 .gel-promo__horz .gel-promo-media {
   display: inline-block;
   float: left;
   line-height: 0;
-  width: 40%;
+  padding-left: 0 !important;
   margin-right: 16px; }
 
 .gel-promo .gel-promo-media img {

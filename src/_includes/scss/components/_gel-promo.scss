@@ -1,3 +1,9 @@
+ul.gel-promo-list {
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+
 .gel-promo {
   display: inline-block;
   color: $gel-color--tundora;
@@ -5,12 +11,13 @@
   background: $gel-color--gallery;
   width: 100%;
   margin-bottom: double($gel-spacing-unit);
+  padding-left: 0 !important;
 }
 .gel-promo__horz .gel-promo-media {
   display: inline-block;
   float: left;
   line-height: 0;
-  width: 40%;
+  padding-left: 0 !important;
   margin-right: double($gel-spacing-unit);
 }
 .gel-promo .gel-promo-media img {
