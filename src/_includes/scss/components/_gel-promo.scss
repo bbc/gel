@@ -1,0 +1,77 @@
+.gel-promo {
+  display: inline-block;
+  color: $gel-color--tundora;
+  font-family: ReithSans;
+  background: $gel-color--gallery;
+  width: 100%;
+  margin-bottom: double($gel-spacing-unit);
+}
+.gel-promo__horz .gel-promo-media {
+  display: inline-block;
+  float: left;
+  line-height: 0;
+  width: 40%;
+  margin-right: double($gel-spacing-unit);
+}
+.gel-promo .gel-promo-media img {
+  display: inline-block;
+  height: 100%;
+  width: 100%
+}
+.gel-promo__horz .gel-promo-body {
+  padding: 0 double($gel-spacing-unit) 0 0;
+}
+.gel-promo a {
+  display: inline-block;
+  height: 100%;
+  position: relative;
+}
+.gel-promo a,
+.gel-promo a:hover,
+.gel-promo a:visited {
+  text-decoration: none;
+  border: 0 !important;
+  transition: none;
+  color: $gel-color--black !important;
+}
+ul.gel-promo-meta {
+  left: 40%;
+  padding: 0;
+  bottom: 0;
+  position: absolute;
+  padding-left: double($gel-spacing-unit);
+  padding-bottom: double($gel-spacing-unit);
+}
+.gel-promo-meta li {
+  display: inline;
+  list-style-type: none;
+}
+.gel-promo-meta li:not(:last-child)::after {
+  content: "\007c";
+  margin: 0 0.6em;
+}
+.gel-promo-meta li,
+.gel-promo-body p {
+  @include gel-typography('pica');
+  font-family: ReithSans !important;
+}
+.gel-promo-meta li {
+  color: $gel-color--cod-dark-gray !important;
+}
+@media (max-width: 37.5em) {
+  .gel-promo-body {
+    padding: 0 $gel-spacing-unit 0 0;
+  }
+  .gel-promo-body h3 {
+    padding: 0 $gel-spacing-unit 0 0;
+    margin-block-start: $gel-spacing-unit;
+    margin-block-end: $gel-spacing-unit;
+  }
+  .gel-promo-body p { display: none; }
+  .gel-promo__horz .gel-promo-media {
+    margin-right: $gel-spacing-unit;
+  }
+}
+@media (max-width: 30em) {
+  .gel-promo-meta { display: none; }
+}

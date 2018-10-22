@@ -189,127 +189,45 @@
 <p>There are generally two layouts possible with promos: one vertical with the image stacked above the promo headline, and the other horizontal with the image sitting to to the side of the promo headline.</p>
 <h2 id="reference-implementation">Reference implementation</h2>
 <p>The working example below shows an implementation of a series of horizontally formatted promos.</p>
-<live-demo id="promo1">
-  <template>
-    <style>
-      ul {
-        margin: 0;
-        padding: 0;
-      }
-      .cf:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-      .gel-promo {
-        display: inline-block;
-        color: #404040;
-        font-family: sans-serif;
-        background: #F1F1F1;
-        width: 100%;
-        margin-bottom: 16px;
-      }
-      .gel-promo__horz .gel-promo-media {
-        display: inline-block;
-        float: left;
-        line-height: 0;
-        width: 40%;
-        margin-right: 16px;
-      }
-      .gel-promo .gel-promo-media img {
-        display: inline-block;
-        height: 100%;
-        width: 100%
-      }
-      .gel-promo__horz .gel-promo-body {
-        padding: 0 16px 0 0;
-      }
-      .gel-promo a {
-        display: inline-block;
-        height: 100%;
-        position: relative;
-      }
-      .gel-promo a,
-      .gel-promo a:hover,
-      .gel-promo a:visited {
-        text-decoration: none;
-        color: #333;
-      }
-      .gel-promo a img,
-      .gel-promo a:hover img,
-      .gel-promo a:visited img {
-        border: 0;
-      }
-      ul.gel-promo-meta {
-        left: 40%;
-        padding: 0;
-        bottom: 0;
-        position: absolute;
-        padding-left: 16px;
-        padding-bottom: 16px;
-      }
-      .gel-promo-meta li {
-        display: inline;
-        list-style-type: none;
-      }
-      .gel-promo-meta li:not(:last-child)::after {
-        content: "\007c";
-        margin: 0 0.6em;
-      }
-      @media (max-width: 37.5em) {
-        .gel-promo-body {
-          padding: 0 8px 0 0;
-        }
-        .gel-promo-body h3 {
-          padding: 0 8px 0 0;
-          margin-block-start: 8px;
-          margin-block-end: 8px;
-        }
-        .gel-promo-body p { display: none; }
-        .gel-promo__horz .gel-promo-media {
-          margin-right: 8px;
-        }
-      }
-      @media (max-width: 30em) {
-        .gel-promo-meta { display: none; }
-      }
-    </style>
-    <div class="cf" style="max-width:600px">
-      <ul>
-        <li class="gel-promo gel-promo__horz cf">
-          <a href="#example-link-1">
-            <div class="gel-promo-media">
-              <img src="/code-gel/static/images/placeholder.png" alt="">
-            </div>
-            <div class="gel-promo-body">
-              <h3>Trade Talks "Breakthrough"</h3>
-              <p>Both sides reportedly happy, eager to move forward</p>
-              <ul class="gel-promo-meta">
-                <li><time datetime="2018-08-13T20:01Z">16m</time></li><li>UK News</li>
-              </ul>
-            </div>
-          </a>
-        </li>
-        <li class="gel-promo gel-promo__horz cf">
-          <a href="#example-link-2">
-            <div class="gel-promo-media">
-              <img src="/code-gel/static/images/placeholder.png" alt="">
-            </div>
-            <div class="gel-promo-body">
-              <h3>All Gold for New Olympic Trampoline Team</h3>
-              <ul class="gel-promo-meta">
-                <li><time datetime="2018-08-13T20:01Z">42m</time></li><li>Sports</li>
-              </ul>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <script>
-    </script>
-  </template>
-</live-demo>
-<h2 id="test-specifications">Test specifications</h2>
+
+          <div class="gel-demo"><!-- 
+title: Promo Examples
+ -->
+
+<div class="cf" style="max-width:600px">
+  <ul>
+    <li class="gel-promo gel-promo__horz cf">
+      <a href="#example-link-1">
+        <div class="gel-promo-media">
+          <img src="/code-gel/static/images/placeholder.png" alt="">
+        </div>
+        <div class="gel-promo-body">
+          <h3>Trade Talks "Breakthrough"</h3>
+          <!--p>Both sides reportedly happy, eager to move forward</p-->
+          <ul class="gel-promo-meta">
+            <li><time datetime="2018-08-13T20:01Z">16m</time></li><li>UK News</li>
+          </ul>
+        </div>
+      </a>
+    </li>
+    <li class="gel-promo gel-promo__horz cf">
+      <a href="#example-link-2">
+        <div class="gel-promo-media">
+          <img src="/code-gel/static/images/placeholder.png" alt="">
+        </div>
+        <div class="gel-promo-body">
+          <h3>All Gold for New Olympic Trampoline Team</h3>
+          <ul class="gel-promo-meta">
+            <li><time datetime="2018-08-13T20:01Z">42m</time></li><li>Sports</li>
+          </ul>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
+
+</div>
+        <h2 id="test-specifications">Test specifications</h2>
 <p>A list of gherkin-style feature specifications (including requirements for the <a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile">BBC Mobile Accessibility Guidelines</a>) for this component has been developed and published in a format suitable for use with an automated testing framework. You can review and download these feature files from <a href="#linktocome">the project Wiki page, hosted on GitHub</a>.</p>
 <h2 id="related-research">Related research</h2>
 <p>This component was originally developed and tested at the BBC in a prototype of the BBC Homepage. During user research we tested with X users, including subjects with a variety of impairments and a range of digital skills. You can read more about our research and findings on <a href="#linktocome">the project Wiki page, hosted on GitHub</a>.</p>
@@ -361,8 +279,6 @@
     </div>
 
     
-    
-    <script type="text/javascript" src="/code-gel/static/js/demo.js"></script>
 
     <script type="text/javascript">
         new Sticky('.sticky');

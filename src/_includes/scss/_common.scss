@@ -14,7 +14,6 @@ $gel-type-enable--base-elements: true;
  * Dependencies.
  */
 
-//@import 'node_modules/normalize/normalize.css';
 @import 'atoms/colours';
 @import 'atoms/gel-z-index';
 @import 'atoms/animations';
@@ -28,6 +27,11 @@ $gel-type-enable--base-elements: true;
 @import 'node_modules/sass-mq/_mq.scss';
 @import 'node_modules/gel-typography/_typography.scss';
 @import 'node_modules/gel-grid/_grid.scss';
+
+/**
+ * Components
+ */
+@import 'components';
 
 /**
  * Generic

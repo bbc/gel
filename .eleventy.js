@@ -1,3 +1,6 @@
+const fs = require('fs');
+const nunjucks = require('nunjucks');
+
 module.exports = function (eleventyConfig) {
   const data = {
     site: require('./src/_data/site.json')
@@ -11,6 +14,21 @@ module.exports = function (eleventyConfig) {
         var char = (attrs.is === 'good')? '✓' : (attrs.is === 'bad')? '✕' : '?';
         return `
           <div class="circular circular__${attrs.is}" aria-hidden="true">${char}</div>
+        `;
+      }
+    },
+    include: {
+      render: function (attrs) {
+        var filePath = attrs.src;
+        var fileContent = fs.readFileSync('./src/' + filePath, 'utf8');
+        if (fileContent.substr(0,3) === '---') {
+          fileContent = fileContent.replace(/^---([\s\S]+?)---/, '<!-- $1 -->');
+        }
+        
+        var renderedContent = nunjucks.renderString(fileContent, data);
+
+        return `
+          <div class="gel-demo">${renderedContent}</div>
         `;
       }
     }
@@ -76,6 +94,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/static/js");
 
   return {
+    htmlTemplateEngine: 'njk',
     passthroughFileCopy: true
   };
 };
