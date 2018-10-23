@@ -1653,14 +1653,20 @@ pre {
 /* button */
 .gel-button {
   border: 1px solid transparent;
-  padding: 16px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: ReithSans;
   font-size: 15px;
   font-size: .9375rem;
+  font-weight: 800 !important;
   line-height: 18px;
   line-height: 1.125rem;
-  font-weight: 700;
-  cursor: pointer;
+  margin: 16px 0;
+  padding: 16px;
   text-decoration: none; }
+
+a.gel-button:hover {
+  color: white; }
 
 @media (min-width: 37.5em) {
   .gel-button {

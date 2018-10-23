@@ -111,6 +111,8 @@ The working example below shows an implementation of a series of horizontally fo
 
 <include src="components/demos/promos.html">
 
+<p><a class="gel-button gel-button--dark gel-long-primer-bold" href="../demos/promos/" target="_new">Open in new window</a></p>
+
 ## Test specifications
 
 A list of gherkin-style feature specifications (including requirements for the [BBC Mobile Accessibility Guidelines](https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile)) for this component has been developed and published in a format suitable for use with an automated testing framework. You can review and download these feature files from [the project Wiki page, hosted on GitHub](#linktocome).
