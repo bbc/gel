@@ -1060,122 +1060,89 @@ h4 {
 /**
  * All Code GEL Components
  */
-ul.gel-promo-list {
+/*-- util -----------------------------*/
+.gel-u-flex-rw {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; }
+
+.gel-u-flex-rw, .gel-u-flex-rw * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.gel-u-flex-rt {
+  -webkit-box-ordinal-group: 2;
+  -moz-box-ordinal-group: 2;
+  -ms-flex-order: 2;
+  -webkit-order: 2;
+  order: 2;
+  width: 50%;
+  -moz-box-flex: 1; }
+
+.gel-u-flex-lf {
+  -webkit-box-ordinal-group: 1;
+  -moz-box-ordinal-group: 1;
+  -ms-flex-order: 1;
+  -webkit-order: 1;
+  order: 1;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  width: 50%;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
+
+/*-- promo -----------------------------*/
+.gel-promo-list {
   list-style-position: inside;
   margin: 0;
   padding: 0; }
 
 .gel-promo {
-  display: inline-block;
+  list-style-type: none; }
+
+.gel-promo-media img {
+  display: block;
+  width: 100%; }
+
+.gel-promo-media {
+  width: 33.33333%; }
+
+.gel-promo-body {
+  width: 66.66666%; }
+
+.gel-promo {
   color: #404040;
   font-family: ReithSans;
   background: #eeeeee;
-  width: 100%;
-  margin-bottom: 16px;
-  padding-left: 0 !important; }
-
-.gel-promo__horz .gel-promo-media {
-  display: inline-block;
-  float: left;
-  line-height: 0;
-  margin-right: 16px;
-  padding: 0; }
-
-.gel-promo .gel-promo-media img {
-  display: inline-block;
-  height: 100%;
-  width: 100%; }
-
-.gel-promo-body {
-  padding: 0;
-  margin: 16px 0; }
-
-.gel-guideline-body h4 {
-  margin: 0 !important;
-  padding: 0 !important; }
+  margin-bottom: 16px; }
 
 .gel-promo a {
-  display: inline-block;
-  height: 100%;
-  position: relative; }
-
-.gel-promo a,
-.gel-promo a:hover,
-.gel-promo a:visited {
   text-decoration: none;
-  border: 0 !important;
-  transition: none;
-  color: #121212 !important; }
+  border-bottom: 0 !important; }
 
-ul.gel-promo-meta {
-  left: 40%;
-  padding: 0;
-  bottom: 0;
-  position: absolute;
-  padding-left: 16px;
-  padding-bottom: 16px; }
+.gel-promo__horz .gel-promo-media {
+  margin-right: 16px; }
 
-.gel-promo-meta li {
-  display: inline;
-  list-style-type: none; }
+.gel-promo__horz .gel-promo-body {
+  padding: 24px 16px; }
 
-.gel-promo-meta li:not(:last-child)::after {
-  content: "\007c";
-  margin: 0 0.6em; }
-
-.gel-promo-meta li,
 .gel-promo-body p {
-  font-size: 15px;
-  font-size: 0.9375rem;
-  line-height: 20px;
-  line-height: 1.25rem;
   font-family: ReithSans !important; }
-  @media (min-width: 20em) {
-    .gel-promo-meta li,
-    .gel-promo-body p {
-      font-size: 16px;
-      font-size: 1rem;
-      line-height: 20px;
-      line-height: 1.25rem; } }
-  @media (min-width: 37.5em) {
-    .gel-promo-meta li,
-    .gel-promo-body p {
-      font-size: 18px;
-      font-size: 1.125rem;
-      line-height: 22px;
-      line-height: 1.375rem; }
-      .no-touch .gel-promo-meta li, .no-touch
-      .gel-promo-body p {
-        font-size: 16px;
-        font-size: 1rem;
-        line-height: 20px;
-        line-height: 1.25rem; } }
 
-.gel-promo-meta li {
-  color: #5a5a5a !important; }
+.gel-promo-body h2, .gel-promo-body h3, .gel-promo-body h4, .gel-promo-body h5, .gel-promo-body h6 {
+  margin: 0 !important;
+  padding: 0 !important; }
 
 @media (max-width: 37.5em) {
   .gel-promo__horz .gel-promo-media {
     margin-right: 8px; }
   .gel-promo__horz .gel-promo-body {
-    padding: 0 8px 0 0; }
-  .gel-promo-body h3 {
-    padding: 0 8px 0 0;
-    margin-block-start: 8px;
-    margin-block-end: 8px; }
-  .gel-promo-body p {
-    display: none; }
-  .gel-promo__horz .gel-promo-media {
-    margin-right: 8px; }
-  .gel-promo-body {
-    margin: 8px 0; }
-  ul.gel-promo-meta {
-    padding-left: 8px;
-    padding-bottom: 8px; } }
-
-@media (max-width: 30em) {
-  .gel-promo-meta {
-    display: none; } }
+    margin: 8px 0;
+    padding: 8px; } }
 
 /**
  * Generic
