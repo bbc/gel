@@ -17,17 +17,23 @@ ul.gel-promo-list {
   display: inline-block;
   float: left;
   line-height: 0;
-  padding-left: 0 !important;
   margin-right: double($gel-spacing-unit);
+  padding: 0;
 }
 .gel-promo .gel-promo-media img {
   display: inline-block;
   height: 100%;
   width: 100%
 }
-.gel-promo__horz .gel-promo-body {
-  padding: 0 double($gel-spacing-unit) 0 0;
+.gel-promo-body {
+  padding: 0;
+  margin: double($gel-spacing-unit) 0;
 }
+.gel-guideline-body h4 {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .gel-promo a {
   display: inline-block;
   height: 100%;
@@ -66,7 +72,10 @@ ul.gel-promo-meta {
   color: $gel-color--cod-dark-gray !important;
 }
 @media (max-width: 37.5em) {
-  .gel-promo-body {
+  .gel-promo__horz .gel-promo-media {
+    margin-right: $gel-spacing-unit;
+  }
+  .gel-promo__horz .gel-promo-body {
     padding: 0 $gel-spacing-unit 0 0;
   }
   .gel-promo-body h3 {
@@ -78,6 +87,13 @@ ul.gel-promo-meta {
   .gel-promo__horz .gel-promo-media {
     margin-right: $gel-spacing-unit;
   }
+  .gel-promo-body {
+    margin: $gel-spacing-unit 0;
+  }
+  ul.gel-promo-meta {
+  padding-left: $gel-spacing-unit;
+  padding-bottom: $gel-spacing-unit;
+}
 }
 @media (max-width: 30em) {
   .gel-promo-meta { display: none; }
