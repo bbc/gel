@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reference implementation demo</title>
+  <script src="{{site.basedir}}static/js/main.js"></script>
+  <link rel="stylesheet" type="text/css" href="{{site.basedir}}static/css/main.css">
+
+  <script type="text/javascript">
+    // feature detects
+    document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+    document.documentElement.className += (' ' + (supports.touchevents ? 'touch' : 'no-touch'));
+    document.documentElement.className += (' ' + (SimpleFeatureDetector.supports({ property: 'flex-wrap' }, { property: 'flex-flow' }) ? 'flexbox' : 'no-flexbox'));
+    document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+  </script>
+
+  <script type="text/javascript">
+    // use reith fonts
+    (new FontFaceObserver('ReithSans')).load().then(function () {
+      document.documentElement.className += ' b-reith-sans-loaded';
+    });
+    (new FontFaceObserver('ReithSerif')).load().then(function () {
+      document.documentElement.className += ' b-reith-loaded';
+    });
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

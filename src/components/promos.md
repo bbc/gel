@@ -7,107 +7,149 @@ accessibility: true
 linkback: http://www.bbc.co.uk/gel/guidelines/promos
 ---
 
-## Semantics
+## Introduction
 
-The Promo component represents a link to a full piece of content elsewhere on the BBC site or app. It should only be incorporated within an interface where:
-
-1. It is used to create a standout call-to-action, possibly including an image or additional information
-2. There is a permanent URL to which the Promo can be linked
-
-::: info Note
-A Promo differs from a Card because cards are used to _actually show_ content within a card-like format; cards do not link anywhere. The purpose of a promo is to tease content which is displayed elsewhere on the site so promos always link.
-:::
-
-The case for a Promo versus a Card interface can be subtle, so it is important to understand the different uses, and when a Card or Promo might be most appropriate[^1].
-
-Providing what would otherwise be a simple text link, with design signifiers[^2] like a bordered block, an accompanying image, and emboldened text communicates that the link has extra significance, and so this pattern should be used sparingly and only for links to content that deserve extra attention.
+The **Promo** component is similar to the [**Card**](#link-todo) but exists solely for linking to permalink content. It optionally contains meta information, a description,  and/or an image. Read the [original GEL Promo documentation](https://www.bbc.co.uk/gel/guidelines/promos) for more.
 
 ## Expected markup
 
-Promos are normally shown as a collection, so a set of promos must be marked up as an unordered list, with each promo marked as a list item (`<li>`). This communicates to assistive technologies that the items are part of a related set. It also enables the list navigation mechanism in screen reader software[^3].
-
 ```html
+<h2>Latest news</h2>
 <ul>
-  <li class="gel-promo">
-    <a href="[url]">
-      <!-- first promo content -->
-    </a>
-  </li>
-  <li class="gel-promo">
-    <a href="[url]">
-      <!-- second promo content -->
-    </a>
-  </li>
-</ul>
-```
-
-### Headings
-
-It is recommended that each promo's primary (headline) link is contained within a heading, that each of the promo's headings are of the same level, and that the set of promos is introduced by a heading one level higher. For example:
-
-```html
-<h2>Top Stories</h2>
-
-<ul>
-  <li class="gel-promo">
-    <a href="[url]">
-      <div class="gel-promo-body">
-        <h3>Story Title</h3>
+  <li>
+    <div class="gel-promo">
+      <h3>
+        <a href="/to/permalink/1">Suspect package found at De Niro restaurant</a>
+      </h3>
+      <div class="gel-promo-image">
+        <img src="path/to/image.png" alt="" />
       </div>
-    </a>
+      <p>Police investigate a package at the New York restaurant owned by the actor, reports say.</p>
+      <dl class="gel-promo-meta">
+        <dt class="vh">Published:</dt>
+        <dd>
+          <span aria-hidden="true">1h</span>
+          <span class="vh">1 hour ago</span>
+        </dd>
+        <dt class="vh">From:</dt>
+        <dd>
+          <a href="link/to/category">US & Canada</a>
+        </dd>
+      </dl>
+    </div>
+  </li>
+  <li>
+    <div class="gel-promo">
+      <h3>
+        <a href="/to/permalink/2">UK Sorry For Forcing DNA Tests On Immigrants</a>
+      </h3>
+      <div class="gel-promo-image">
+        <img src="path/to/image.png" alt="Home secretary Sajid Javid in parliament" />
+      </div>
+      <p>The home secretary says people were wrongly forced to take tests to prove their right to be in the UK.</p>
+      <dl class="gel-promo-meta">
+        <dt class="vh">Published:</dt>
+        <dd>
+          <span aria-hidden="true">1m</span>
+          <span class="vh">1 minute ago</span>
+        </dd>
+        <dt class="vh">From:</dt>
+        <dd>
+          <a href="link/to/category">UK</a>
+        </dd>
+      </dl>
+    </div>
   </li>
 </ul>
 ```
 
-This marks out and labels the set as a subsection within the page and provides a sound hierarchy for those traversing the page non-visually.
+### Notes
 
-For search engine optimization and cognitive accessibility, the promo's primary link text should match, or at least closely resemble, the `<h1>` text of the target URL.
-
-### Images
-
-The accompanying image should be considered decorative and thus an empty alternative text value must be provided (`alt=""`):
-
-```html
-<li class="gel-promo">
-  <a href="[url]">
-    <div class="gel-promo-media">
-      <img src="image.png" alt="" />
-    </div>
-    <div class="gel-promo-body">
-      <h3>Trade Talks "Breakthrough" Announced</h3>
-    </div>
-  </a>
-</li>
-```
-
-### Metadata
-
-Promos may contain a short list of metadata at the bottom of the component. Examples include information like the date or time the linked-to content was updated, or the category of pages to which the linked-to content belongs.
-
-```html
-<li class="gel-promo">
-  <a href="[url]">
-    <div class="gel-promo-media">
-      <img src="image.png" alt="" />
-    </div>
-    <div class="gel-promo-body">
-      <h3>Trade Talks "Breakthrough" Announced</h3>
-    </div>
-    <ul class="gel-promo-meta">
-      <li><time datetime="2018-08-13T20:01Z">16m</time></li>
-      <li>UK News</li>
-    </ul>
-  </a>
-</li>
-```
+* **`<ul>` and `<li>`:** Promos are typically presented as a set, and together must be marked up as an unordered list, with each promo marked as a list item (`<li>`). This enables structural and navigational cues in screen reader software[^3].
+* **Headings:** Each promo's primary (headline) link is contained within a heading, each of the promo's headings are of the same level, and the set of promos is introduced as a section within the document by a heading one level higher. The wording of the promo's primary link should resemble that of the target page's `<title>` and `<h1>`. This consistency aids cognitive accessibility and improves SEO.
+* **Image (optional):** Images can be considered decorative (`alt=""`; the first promo in the code example) or non-decorative (`alt="[description of image]"`; the second promo in the example). They must appear _after_ the headline in the markup since the headline's heading introduces the promo content. **Non-decorative images must have alternative text that does not simply repeat information in the headline or description**.
+* **Metadata (optional):** Metadata is presented as a description list. The `<dt>` labels are optionally visually hidden (using the `vh` class in the example), making them available to just screen reader users. If the visible wording is likely to confuse screen reader users, provide an alternative version and hide the visible version using `aria-hidden="true"` (see the 'Published' examples). Do _not_ use `aria-label` to provide auxiliary labels, because it will not be translated by in-browser translation services. Metadata values may or may not be linked.
 
 ## Expected layout
 
-There are generally two layouts possible with promos: one vertical with the image stacked above the promo headline, and the other horizontal with the image sitting to to the side of the promo headline.
+As with [**Cards**](#link-todo), promos in a set should share the same height. This is possible by making the `<ul>` a CSS Flexbox or CSS Grid context. The appearance of each promo is improved by distributing the metadata (if present) to the bottom of the container. This is possible by making the promo a Flexbox context and giving the metadata element `margin-top: auto`. Padding can be combined with margin to ensure a minimum space between the metadata and the element above it.
+
+```css
+.gel-promo {
+  display: flex;
+  flex-diection: column;
+}
+
+.gel-promo > * + * {
+  margin-top: 1rem; /* generic spacing between components of the promo */
+} 
+
+.gel-promo-meta {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+```
+
+### The image
+
+As stated in **[Expected markup](#expected-markup)**, the image must come _after_ the headline in the source order. However, it is designed to appear before it visually. Using Flexbox, it is possible to augment the visual order without affecting the source order:
+
+```css
+.gel-promo-image {
+  order: 1;
+}
+```
+
+The image will need to fit the available space, regardless of the promo's dimensions (which are likely to change across breakpoints) without distorting. This is possible by setting the desired height of the image box and using the `object-fit` property:
+
+```css
+.gel-promo-image {
+  height: 10rem;
+  overflow: hidden;
+}
+
+.gel-promo-image img {
+  height: 100%;
+  width: auto;
+}
+
+@supports (object-fit: cover) {
+  .gel-promo-image img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+```
+
+::: info Note
+At the time of writing, the `object-fit` property is supported everywhere but Internet Explorer. The code uses `@supports` and falls back to showing the image at its natural width, cropping the right edge or leaving a right margin.
+:::
+
+### Metadata icons
+
+Some items of metadata come with icons, such as a clock prefixing the 'Published' time. These should be provided from [GEL's iconography system](https://www.bbc.co.uk/gel/guidelines/iconography). Ensure their fill is applied using `currentColor` so that the icon is compatible with high contrast themes.
+
+## Expected behavior
+
+Mouse and touch users should be able to activate the primary (headline) link by pressing either the headline text _or_ the image. However, the image should not represent an additional, redundant tab stop to keyboard users or be perceivable as a link to screen reader users. 
+
+In which case, you need to add a JavaScript `click` listener to the image and use it to trigger the link's `click` event by proxy. In plain JavaScript this would look something like the following:
+
+```js
+// Assuming that `link` represents the headline link node
+// and `img` represents the image node...
+img.addEventListener('click', () => link.click());
+```
+
+This is the only JavaScript enhancement. In an environment where the card is not client rendered, the card will be functional where JavaScript is not available. Accordingly, only add the `cursor` style if JavaScript has run:
+
+```js
+img.style.cursor = 'pointer';
+```
+
+If the metadata contains links, these will fall into focus order after the headline, as expected.
 
 ## Reference implementation
-
-The working example below shows an implementation of a series of horizontally formatted promos.
 
 <include src="components/demos/promos.html">
 

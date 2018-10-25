@@ -103,12 +103,67 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gel-toc__links" class="gel-toc"><li><a href="#semantics">Semantics</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#test-specifications">Test specifications</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="gel-toc__links" class="gel-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#markup">Markup</a></li><li><a href="#semantics">Semantics</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#test-specifications">Test specifications</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
             <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-3/5@l">
-                <h2 id="semantics">Semantics</h2>
+                <h2 id="introduction">Introduction</h2>
+<p>The <strong>Promo</strong> component is similar to the <a href="#link-todo"><strong>Card</strong></a> but exists solely for linking to permalink content. It optionally contains meta information, a description,  and/or a decorative image.</p>
+<h2 id="markup">Markup</h2>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Latest news<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>News headline 1<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>News headline 2<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+<table>
+  <caption>Notes:</caption>
+  <tr>
+    <th>`<ul>` and `<li>`</th>
+    <td>
+      Promos are typically presented as a set, and together must be marked up as an unordered list, with each promo marked as a list item (`<li>`). This enables structural and navigational cues in screen reader software[^3].
+    </td>
+  </tr>
+  <tr>
+    <th>Headings</th>
+    <td>
+      Each promo's primary (headline) link is contained within a heading, each of the promo's headings are of the same level, and the set of promos is introduced as a section within the document by a heading one level higher. In the above example, the following structure is created:
+      <ul>
+        <li>
+          Latest news
+          <ul>
+            <li>News headline 1</li>
+            <li>News headline 2</li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo"</span>&gt;</span>
+      <span class="hljs-tag">&lt;
+    &lt;/<span class="hljs-attr">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo"</span>&gt;</span>
+      <span class="hljs-comment">&lt;!-- promo 2 content --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+<p>This marks out and labels the set as a subsection within the page and provides a sound hierarchy for those traversing the page non-visually. For search engine optimization and cognitive accessibility, the promo's primary link text should match, or at least closely resemble, the <code>&lt;h1&gt;</code> text of the target URL.</p>
+<h2 id="semantics">Semantics</h2>
 <p>The Promo component represents a link to a full piece of content elsewhere on the BBC site or app. It should only be incorporated within an interface where:</p>
 <ol>
 <li>It is used to create a standout call-to-action, possibly including an image or additional information</li>
@@ -153,8 +208,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 </code></pre>
-<p>This marks out and labels the set as a subsection within the page and provides a sound hierarchy for those traversing the page non-visually.</p>
-<p>For search engine optimization and cognitive accessibility, the promo's primary link text should match, or at least closely resemble, the <code>&lt;h1&gt;</code> text of the target URL.</p>
+<p>This marks out and labels the set as a subsection within the page and provides a sound hierarchy for those traversing the page non-visually. For search engine optimization and cognitive accessibility, the promo's primary link text should match, or at least closely resemble, the <code>&lt;h1&gt;</code> text of the target URL.</p>
 <h3 id="images">Images</h3>
 <p>The accompanying image should be considered decorative and thus an empty alternative text value must be provided (<code>alt=&quot;&quot;</code>):</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo"</span>&gt;</span>
