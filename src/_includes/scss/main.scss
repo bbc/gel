@@ -1,4 +1,28 @@
-@import 'common';
+/**
+ * site settings
+ */
+
+$gel-grid-enable--markup-output: true;
+$gel-grid-enable--1280-breakpoint: true;
+$gel-grid-enable--box-sizing: true;
+
+$gel-type-enable--markup-output: true;
+$gel-type-enable--font-family: false;
+$gel-type-enable--base-elements: true;
+
+/**
+ * gel atoms
+ */
+
+@import 'atoms/animations';
+@import 'atoms/colours';
+@import 'atoms/gel-z-index';
+@import 'atoms/sr';
+
+/**
+ * dependencies
+ */
+@import "gelui";
 @import 'bbc-grandstand/dist/bbc-grandstand.min.css';
 @import 'reith.css';
 
@@ -141,9 +165,19 @@ a {
   font-family: "Times New Roman", serif;
 }
 
+.reith-serif
+{
+  font-family: ReithSerif, "Times New Roman", serif;
+}
+
 .sans
 {
-  font-family: Helvetica, Arial, freesans, sans-serif;
+  font-family: Helvetica, Arial, freesans, sans-serif !important;
+}
+
+.reith-sans
+{
+  font-family: ReithSans, Helvetica, Arial, freesans, sans-serif !important;
 }
 
 

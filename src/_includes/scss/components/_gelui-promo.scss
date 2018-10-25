@@ -1,0 +1,74 @@
+
+/*-- promo -----------------------------*/
+
+.gel-promo-list {
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+
+.gel-promo {
+  list-style-type: none;
+}
+
+.gel-promo__horz > a {
+  @include flexrow;
+}
+
+.gel-promo-media img {
+  display: block;
+  width: 100%
+}
+
+.gel-promo-media {
+  @include flexcol-pullleft;
+  width: 40%
+}
+.gel-promo-body,
+.gel-promo-body p {
+  @include reith(false);
+  @include flexcol-pullright;
+  width: 60%
+}
+
+.gel-promo-body {
+  h2, h3, h4, h5, h6 {
+    @include reith(false);
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+.gel-promo {
+  color: $gel-color--tundora;
+  background: $gel-color--gallery;
+  margin-bottom: double($gel-spacing-unit);
+}
+
+.gel-promo a {
+  text-decoration: none;
+  border-bottom: 0 !important;
+}
+
+.gel-promo__horz .gel-promo-media {
+  margin-right: double($gel-spacing-unit);
+}
+.gel-promo__horz .gel-promo-body {
+  padding: triple($gel-spacing-unit) double($gel-spacing-unit);
+}
+
+@media (max-width: 37.5em) {
+  .gel-promo__horz .gel-promo-media {
+    margin-right: $gel-spacing-unit;
+  }
+  .gel-promo__horz .gel-promo-body {
+    margin: $gel-spacing-unit 0;
+    padding: $gel-spacing-unit;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .gel-promo__horz .gel-promo-body p {
+    display: none;
+  }
+}

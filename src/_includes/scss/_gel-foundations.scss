@@ -1,0 +1,79 @@
+/**
+ * GEL foundations
+ */
+@import 'node_modules/gel-sass-tools/_sass-tools.scss';
+@import 'node_modules/sass-mq/_mq.scss';
+@import 'node_modules/gel-typography/_typography.scss';
+@import 'node_modules/gel-grid/_grid.scss';
+
+/**
+ * Generic
+ */
+html {
+  box-sizing: border-box;
+}
+
+// because we are overriding the box-sizing above, we have to set it back to the default for orbit
+#orb-banner, #orb-footer {
+  box-sizing: content-box;
+}
+
+body {
+  color: $gel-color--text;
+  font-family: Helvetica, Arial, sans-serif;
+
+  &.is-masked {
+    overflow-y: scroll;
+    position: fixed;
+    width: 100%;
+  }
+}
+
+a {
+  color: $gel-color--text;
+  transition: color 300ms;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.gel-u-u-flex-grow {
+  flex: 1;
+}
+
+.gel-u-u-margin-right {
+  margin-right: 12px;
+}
+
+.gel-u-u-margin-bottom {
+  margin-bottom: 12px;
+}
+
+.gel-u-u-mb\+ {
+  margin-bottom: 24px;
+}
+
+.gel-u-u-mb\+\+ {
+  margin-bottom: 36px;
+}
+
+.gel-u-u-mb\+\+\+ {
+  margin-bottom: 48px;
+}
+
+.gel-u-u-ph\+\+ {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.gel-u-u-full-width {
+  display: block;
+  width: 100%;
+}
+
+.gel-u-u-clickable {
+  cursor: pointer;
+}

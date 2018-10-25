@@ -1,0 +1,49 @@
+@mixin clearfix() {
+  &::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+
+@mixin reith($serif) {
+  @if $serif {
+    font-family: ReithSerif, "Times New Roman", serif !important;
+  }
+  @else {
+    font-family: ReithSans, Helvetica, Arial, freesans, sans-serif !important;
+  }
+}
+
+@mixin flexrow() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flexcol-pullright() {
+  -webkit-box-ordinal-group: 2;
+  -moz-box-ordinal-group: 2;
+  -ms-flex-order: 2;
+  -webkit-order: 2;
+  order: 2;
+  width: 50%;
+  -moz-box-flex: 1;
+}
+
+@mixin flexcol-pullleft() {
+  -webkit-box-ordinal-group: 1;
+  -moz-box-ordinal-group: 1;
+  -ms-flex-order: 1;
+  -webkit-order: 1;
+  order: 1;
+  
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  width: 50%;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
