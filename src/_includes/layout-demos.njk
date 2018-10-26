@@ -8,8 +8,6 @@
     <title>{{site.title}} | {{title}} Demo</title>
 
     <script src="{{site.basedir}}static/js/main.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
     <link rel="stylesheet" type="text/css" href="{{site.basedir}}static/css/main.css">
 
     <script type="text/javascript">
@@ -30,13 +28,8 @@
         });
     </script>
 
-    <script type="text/javascript">
-        // syntax highlight
-        hljs.initHighlightingOnLoad();
-    </script>
-
     {% if includecss %}
-    <link rel="stylesheet" type="text/css" href="{{ includecss }}">
+    <link rel="stylesheet" type="text/css" href="{{site.basedir}}static/css/{{ includecss }}">
     {% endif %}
 </head>
 
@@ -58,7 +51,7 @@
     {% if includejs %}
     <script type="text/javascript" src="{{site.basedir}}static/js/{{ includejs }}"></script>
     {% endif %}
-    
+
     <script type="text/javascript" src="{{site.basedir}}static/js/demo.js"></script>
 </body>
 

@@ -5,11 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Code GEL | Promo Examples Demo</title>
+    <title>Code GEL | Fully featured promos Demo</title>
 
     <script src="/code-gel/static/js/main.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
     <link rel="stylesheet" type="text/css" href="/code-gel/static/css/main.css">
 
     <script type="text/javascript">
@@ -30,11 +28,6 @@
         });
     </script>
 
-    <script type="text/javascript">
-        // syntax highlight
-        hljs.initHighlightingOnLoad();
-    </script>
-
     
 </head>
 
@@ -42,52 +35,260 @@
     <main id="main" class="gel-wrap gs-u-clearfix">
         <div class="gel-layout">
             <div class="gel-layout__item gel-5/5@l" style="padding-right: 12px;">
-                <h1 class="gel-guideline-header__title">Promo Examples</h1>
+                <h1 class="gel-guideline-header__title">Fully featured promos</h1>
             </div>
         </div>
 
         <div class="gel-layout">
             <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-5/5@l">
-                
-<div class="gel-promo-wrapper" style="width:100%; max-width:900px; border-left:1px solid #ccc; padding:16px;">
-  
-  <h3>More Stories...</h3>
+                <style>
+  .gel-promos {
+    margin: 0;
+    padding: 0;
+  }
 
-  <ul class="gel-promo-list">
+  .gel-promos>*+* {
+    margin-top: 1rem;
+  }
 
-    <li class="gel-promo gel-promo__horz">
-      <a href="#example-link-1">
-          <div class="gel-promo-body">
-            <h4>Trains Run On Time</h4>
-            <p>"A first!" declares transport boss.</p>
-          </div>
-          <div class="gel-promo-media">
-            <img src="/code-gel/static/images/placeholder.png" alt="">
-          </div>
-      </a>
+  @supports (display: grid) {
+    .gel-promos>*+* {
+      margin-top: 0;
+    }
+
+    .gel-promo {
+      margin: 0;
+    }
+
+    .gel-promos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
+      grid-gap: 1rem;
+    }
+  }
+
+  .gel-promo {
+    display: flex;
+    flex-direction: column;
+    background-color: #F1F1F1;
+  }
+
+  .gel-promo>*:not(.gel-promo-image) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .gel-promo> :last-child:not(.gel-promo-image) {
+    padding-bottom: 1rem;
+  }
+
+  .gel-promo-image {
+    order: -1;
+    margin-top: 0;
+    height: 10rem;
+    overflow: hidden;
+  }
+
+  .gel-promo-image img {
+    height: 100%;
+    width: auto;
+  }
+
+  @supports (object-fit: cover) {
+    .gel-promo-image img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .gel-promo-headline {
+    font-weight: bold;
+  }
+
+  .gel-promo-headline * {
+    font-weight: inherit;
+  }
+
+  .gel-promo-meta {
+    margin: 0;
+    margin-top: auto;
+    padding-top: 1rem;
+  }
+
+  .gel-promo-meta>* {
+    flex: 1 0 auto;
+    margin: 0;
+    display: inline;
+  }
+
+  .gel-promo-meta dd~dd::before {
+    content: '';
+    border-left: 1px solid;
+    margin: 0 0.5rem 0 0.25rem;
+  }
+
+  .vh {
+    clip-path: inset(100%) !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    width: 1px !important;
+  }
+
+  .gel-promo :focus {
+    outline: none;
+    text-decoration: underline;
+  }
+
+  .gel-promo:focus-within {
+    outline: 0.25rem solid;
+  }
+</style>
+
+<div style="margin-bottom: 1rem;">
+  <h3>Fully featured promos</h3>
+  <ul class="gel-promos">
+    <li class="gel-promo">
+      <div class="gel-promo-headline">
+        <h4>
+          <a href="/to/permalink/1">Suspect package found at De Niro restaurant</a>
+        </h4>
+      </div>
+      <div class="gel-promo-image">
+        <img src="/code-gel/static/images/placeholder.png" alt="">
+      </div>
+      <div class="gel-promo-desc">
+        <p>Police investigate a package at the New York restaurant owned by the actor, reports say.</p>
+      </div>
+      <dl class="gel-promo-meta">
+        <dt class="vh">Published:</dt>
+        <dd>
+          <span aria-hidden="true">1h</span>
+          <span class="vh">1 hour ago</span>
+        </dd>
+        <dt class="vh">From:</dt>
+        <dd>
+          <a href="link/to/category">US & Canada</a>
+        </dd>
+      </dl>
     </li>
-
-    <li class="gel-promo gel-promo__horz">
-      <a href="#example-link-2">
-          <div class="gel-promo-body">
-            <h4>More Gold for New Olympic Trampoline Team in London</h4>
-          </div>
-          <div class="gel-promo-media">
-            <img src="/code-gel/static/images/placeholder.png" alt="">
-          </div>
-      </a>
+    <li class="gel-promo">
+      <div class="gel-promo-headline">
+        <h4>
+          <a href="/to/permalink/2">UK Sorry For Forcing DNA Tests On Immigrants</a>
+        </h4>
+      </div>
+      <div class="gel-promo-image">
+        <img src="/code-gel/static/images/placeholder.png" alt="">
+      </div>
+      <div class="gel-promo-desc">
+        <p>The home secretary says people were wrongly forced to take tests to prove their right to be in the UK.</p>
+      </div>
+      <dl class="gel-promo-meta">
+        <dt class="vh">Published:</dt>
+        <dd>
+          <span aria-hidden="true">1m</span>
+          <span class="vh">1 minute ago</span>
+        </dd>
+        <dt class="vh">From:</dt>
+        <dd>
+          <a href="link/to/category">UK</a>
+        </dd>
+      </dl>
     </li>
-
   </ul>
-
+  <h3>Promos without descriptions</h3>
+  <ul class="gel-promos">
+    <li class="gel-promo">
+      <div class="gel-promo-headline">
+        <h4>
+          <a href="/to/permalink/1">Suspect package found at De Niro restaurant</a>
+        </h4>
+      </div>
+      <div class="gel-promo-image">
+        <img src="/code-gel/static/images/placeholder.png" alt="">
+      </div>
+      <dl class="gel-promo-meta">
+        <dt class="vh">Published:</dt>
+        <dd>
+          <span aria-hidden="true">1h</span>
+          <span class="vh">1 hour ago</span>
+        </dd>
+        <dt class="vh">From:</dt>
+        <dd>
+          <a href="link/to/category">US & Canada</a>
+        </dd>
+      </dl>
+    </li>
+    <li class="gel-promo">
+      <div class="gel-promo-headline">
+        <h4>
+          <a href="/to/permalink/2">UK Sorry For Forcing DNA Tests On Immigrants</a>
+        </h4>
+      </div>
+      <div class="gel-promo-image">
+        <img src="/code-gel/static/images/placeholder.png" alt="">
+      </div>
+      <dl class="gel-promo-meta">
+        <dt class="vh">Published:</dt>
+        <dd>
+          <span aria-hidden="true">1m</span>
+          <span class="vh">1 minute ago</span>
+        </dd>
+        <dt class="vh">From:</dt>
+        <dd>
+          <a href="link/to/category">UK</a>
+        </dd>
+      </dl>
+    </li>
+  </ul>
+  <h3>Promos with just images and headlines</h3>
+  <ul class="gel-promos">
+    <li class="gel-promo">
+      <div class="gel-promo-headline">
+        <h4>
+          <a href="/to/permalink/1">Suspect package found at De Niro restaurant</a>
+        </h4>
+      </div>
+      <div class="gel-promo-image">
+        <img src="/code-gel/static/images/placeholder.png" alt="">
+      </div>
+    </li>
+    <li class="gel-promo">
+      <div class="gel-promo-headline">
+        <h4>
+          <a href="/to/permalink/2">UK Sorry For Forcing DNA Tests On Immigrants</a>
+        </h4>
+      </div>
+      <div class="gel-promo-image">
+        <img src="/code-gel/static/images/placeholder.png" alt="">
+      </div>
+    </li>
+  </ul>
 </div>
 
+<script>
+  (function () {
+    var promos = document.querySelectorAll('.gel-promo');
+    Array.prototype.forEach.call(promos, function (promo) {
+      var img = promo.querySelector('.gel-promo-image');
+      var link = promo.querySelector('.gel-promo-headline a');
+
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', function () {
+        link.click();
+      });
+    });
+  })();
+</script>
             </div>
         </div>
     </main>
 
     
-    
+
     <script type="text/javascript" src="/code-gel/static/js/demo.js"></script>
 </body>
 

@@ -16,59 +16,63 @@ The **Promo** component is similar to the [**Card**](#link-todo) but exists sole
 ```html
 <h2>Latest news</h2>
 <ul>
-  <li>
-    <div class="gel-promo">
+  <li class="gel-promo">
+    <div class="gel-promo-headline">
       <h3>
         <a href="/to/permalink/1">Suspect package found at De Niro restaurant</a>
       </h3>
-      <div class="gel-promo-image">
-        <img src="path/to/image.png" alt="" />
-      </div>
-      <p>Police investigate a package at the New York restaurant owned by the actor, reports say.</p>
-      <dl class="gel-promo-meta">
-        <dt class="vh">Published:</dt>
-        <dd>
-          <span aria-hidden="true">1h</span>
-          <span class="vh">1 hour ago</span>
-        </dd>
-        <dt class="vh">From:</dt>
-        <dd>
-          <a href="link/to/category">US & Canada</a>
-        </dd>
-      </dl>
     </div>
+    <div class="gel-promo-image">
+      <img src="path/to/image.png" alt="" />
+    </div>
+    <div class="gel-promo-desc">
+      <p>Police investigate a package at the New York restaurant owned by the actor, reports say.</p>
+    </div>
+    <dl class="gel-promo-meta">
+      <dt class="vh">Published:</dt>
+      <dd>
+        <span aria-hidden="true">1h</span>
+        <span class="vh">1 hour ago</span>
+      </dd>
+      <dt class="vh">From:</dt>
+      <dd>
+        <a href="link/to/category">US & Canada</a>
+      </dd>
+    </dl>
   </li>
-  <li>
-    <div class="gel-promo">
+  <li class="gel-promo">
+    <div class="gel-promo-headline">
       <h3>
         <a href="/to/permalink/2">UK Sorry For Forcing DNA Tests On Immigrants</a>
       </h3>
-      <div class="gel-promo-image">
-        <img src="path/to/image.png" alt="Home secretary Sajid Javid in parliament" />
-      </div>
-      <p>The home secretary says people were wrongly forced to take tests to prove their right to be in the UK.</p>
-      <dl class="gel-promo-meta">
-        <dt class="vh">Published:</dt>
-        <dd>
-          <span aria-hidden="true">1m</span>
-          <span class="vh">1 minute ago</span>
-        </dd>
-        <dt class="vh">From:</dt>
-        <dd>
-          <a href="link/to/category">UK</a>
-        </dd>
-      </dl>
     </div>
+    <div class="gel-promo-image">
+      <img src="path/to/image.png" alt="Home secretary Sajid Javid in parliament" />
+    </div>
+    <div class="gel-promo-desc">
+      <p>The home secretary says people were wrongly forced to take tests to prove their right to be in the UK.</p>
+    </div>
+    <dl class="gel-promo-meta">
+      <dt class="vh">Published:</dt>
+      <dd>
+        <span aria-hidden="true">1m</span>
+        <span class="vh">1 minute ago</span>
+      </dd>
+      <dt class="vh">From:</dt>
+      <dd>
+        <a href="link/to/category">UK</a>
+      </dd>
+    </dl>
   </li>
 </ul>
 ```
 
 ### Notes
 
-* **`<ul>` and `<li>`:** Promos are typically presented as a set, and together must be marked up as an unordered list, with each promo marked as a list item (`<li>`). This enables structural and navigational cues in screen reader software[^3].
+* **`<ul>` and `<li>`:** Promos are typically presented as a set, and together must be marked up as an unordered list, with each promo marked as a list item (`<li>`). This enables structural and navigational cues in screen reader software[^1].
 * **Headings:** Each promo's primary (headline) link is contained within a heading, each of the promo's headings are of the same level, and the set of promos is introduced as a section within the document by a heading one level higher. The wording of the promo's primary link should resemble that of the target page's `<title>` and `<h1>`. This consistency aids cognitive accessibility and improves SEO.
 * **Image (optional):** Images can be considered decorative (`alt=""`; the first promo in the code example) or non-decorative (`alt="[description of image]"`; the second promo in the example). They must appear _after_ the headline in the markup since the headline's heading introduces the promo content. **Non-decorative images must have alternative text that does not simply repeat information in the headline or description**.
-* **Metadata (optional):** Metadata is presented as a description list. The `<dt>` labels are optionally visually hidden (using the `vh` class in the example), making them available to just screen reader users. If the visible wording is likely to confuse screen reader users, provide an alternative version and hide the visible version using `aria-hidden="true"` (see the 'Published' examples). Do _not_ use `aria-label` to provide auxiliary labels, because it will not be translated by in-browser translation services. Metadata values may or may not be linked.
+* **Metadata (optional):** Metadata is presented as a description list. The `<dt>` labels are optionally visually hidden (using the `vh` class in the example[^2]), making them available to just screen reader users. If the visible wording is likely to confuse screen reader users, provide an alternative version and hide the visible version using `aria-hidden="true"` (see the 'Published' examples). Do _not_ use `aria-label` to provide auxiliary labels, because it will not be translated by in-browser translation services. Metadata values may or may not be linked.
 
 ## Expected layout
 
@@ -96,7 +100,7 @@ As stated in **[Expected markup](#expected-markup)**, the image must come _after
 
 ```css
 .gel-promo-image {
-  order: 1;
+  order: -1;
 }
 ```
 
@@ -104,6 +108,7 @@ The image will need to fit the available space, regardless of the promo's dimens
 
 ```css
 .gel-promo-image {
+  order: -1;
   height: 10rem;
   overflow: hidden;
 }
@@ -124,6 +129,21 @@ The image will need to fit the available space, regardless of the promo's dimens
 ::: info Note
 At the time of writing, the `object-fit` property is supported everywhere but Internet Explorer. The code uses `@supports` and falls back to showing the image at its natural width, cropping the right edge or leaving a right margin.
 :::
+
+### Focus styles
+
+A `text-decoration` focus style is recommended for the headline link and any linked meta information (which should be the only focusable elements inside the promo). In addition, the promo itself can take an outline via `focus-within`, to better draw attention to the promo 'in hand':
+
+```css
+.gel-promo :focus {
+  outline: none;
+  text-decoration: underline;
+}
+
+.gel-promo:focus-within {
+  outline: 0.25rem solid;
+}
+```
 
 ### Metadata icons
 
@@ -151,9 +171,13 @@ If the metadata contains links, these will fall into focus order after the headl
 
 ## Reference implementation
 
+::: alert Important
+Reference implementations are intended to demonstate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behavior of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
+:::
+
 <include src="components/demos/promos.html">
 
-<p><a class="gel-button gel-button--dark gel-long-primer-bold" href="../demos/promos/" target="_new">Open in new window</a></p>
+<p><a class="gel-button gel-button--dark gel-long-primer-bold" href="../demos/promos/" target="_new">Open in new window <svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:undefined;"></use></svg></a></p>
 
 ## Test specifications
 
@@ -165,6 +189,5 @@ This component was originally developed and tested at the BBC in a prototype of 
 
 ### Further reading, elsewhere on the Web
 
-[^1]: "Using Card-Based Design To Enhance UX" by Nick Babich, _Don't Use Cards_ <https://uxplanet.org/using-card-based-design-to-enhance-ux-51f965ab70cb#dfb8>
-[^2]: "Signifiers, not affordances" by Don Norman, _People need some way of understanding the product or service, some sign of what it is for, what is happening, and what the alternative actions are._ <https://www.jnd.org/dn.mss/signifiers_not_affordances.html>
-[^3]: "Basic screen reader commands for accessibility testing" by Léonie Watson, <https://developer.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/>
+[^1]: "Basic screen reader commands for accessibility testing" by Léonie Watson, <https://developer.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/>
+[^2]: Gist of the `vh` (visually hidden) class <https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472> 
