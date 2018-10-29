@@ -103,104 +103,136 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gel-toc__links" class="gel-toc"><li><a href="#when-to-use-a-card">When to use a card</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#expected-behavior">Expected behavior</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#existing-implementations">Existing implementations</a></li></ol>
+                    <ol id="gel-toc__links" class="gel-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#expected-behavior">Expected behavior</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#test-specifications">Test specifications</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
             <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-3/5@l">
-                <h2 id="when-to-use-a-card">When to use a card</h2>
-<p>The card component represents a summary/preview of longer-form content. It should only be incorporated within you interface where:</p>
-<ol>
-<li>It belongs to a set of cards, each summarizing similar and equivalent content</li>
-<li>There is a permalink to which the card can be linked</li>
-</ol>
-<p>Examples of sets of cards include programme listings, news stories, and sports events.</p>
+                <h2 id="introduction">Introduction</h2>
+<p>The <strong>Card</strong> component is superficially similar to the <a href="#link-todo"><strong>Promo</strong></a>. However, while the promo acts as a teaser and links to a page with full information, the <strong>Card</strong> is self-sufficient and offers functionality <em>in situ</em>.</p>
+<p>This functionality can include video playback, and options to share the card content via social media. Read the <a href="https://www.bbc.co.uk/gel/guidelines/promos">original GEL Card documentation</a> for more.</p>
 <h2 id="expected-markup">Expected markup</h2>
-<p>Any set of cards must be marked up as an unordered list, with each card as a list item (<code>&lt;li&gt;</code>). This communicates to assistive technologies that the the items are related and part of a set. It also enables the list navigation mechanism in screen reader software.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"cards"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"cards_list"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-      <span class="hljs-comment">&lt;!-- first card content --&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-      <span class="hljs-comment">&lt;!-- second card content --&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+          <div class="gel-breakout-box gel-breakout-box extra-padding">
+            <aside aria-label="Note">
+              <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
+              <p><p>The following designates the basic card structure, consisting of the headline, description, content, and toolbar. See <strong>Card content</strong> for guidance on the structure of common types of card content.</p>
+</p>
+            </aside>
+          </div>
+          <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Heading introducing the set of cards<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-card"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-card-headline"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Card 1 Headline<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-card-content"</span>&gt;</span>
+      <span class="hljs-comment">&lt;!-- an image, video, quotation, etc --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-card-desc"</span>&gt;</span>
+      <span class="hljs-comment">&lt;!-- can include an attribution, timestamp, etc. --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-card-toolbar"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span>&gt;</span>More info<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-card-info"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"more-info-title-1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-card-info-heading"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"more-info-title-1"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>More info<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- More info here --&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">aria-pressed</span>=<span class="hljs-string">"false"</span>&gt;</span>Love<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Add<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Share<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-card"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- another card's contents --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 </code></pre>
-<h3 id="headings">Headings</h3>
-<p>It is recommended that each card's primary (headline) link is contained within a heading, that each of the cards' headings are of the same level, and that the set of cards is introduced by a heading one level higher. For example:</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Latest news stories<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"cards"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"cards_list"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"[url]"</span>&gt;</span>Headline 1<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-      <span class="hljs-comment">&lt;!-- ensuing card content --&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"[url]"</span>&gt;</span>Headline 2<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-      <span class="hljs-comment">&lt;!-- ensuing card content --&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"[url]"</span>&gt;</span>Headline 3<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-      <span class="hljs-comment">&lt;!-- ensuing card content --&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<h3 id="notes">Notes</h3>
+<ul>
+<li><strong><code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code>:</strong> Cards are typically presented as a set, and together must be marked up as an unordered list, with each card marked as a list item (<code>&lt;li&gt;</code>). This enables structural and navigational cues in screen reader software<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</li>
+<li><strong>Headings:</strong> Each card's primary (headline) link must be contained within a heading, each of the card's headline headings must be of the same level, and the set of cards must be introduced as a section within the document by a heading one level higher.</li>
+<li><strong><code>gel-card-headline</code>:</strong> This must appear first in the source order, although the card content will <em>appear</em> first visually. This is because the card's heading introduces the document section that constitutes the rest of the card. Avoid putting interactive content inside <code>gel-card-headline</code> because this will create a reversed focus order.</li>
+<li><strong><code>gel-card-desc</code>:</strong> This will contain prosaic content, such as a description, attribution, and/or timestamp. Some of these elements may be linked to other resources.</li>
+<li><strong><code>aria-popup=&quot;true&quot;</code>:</strong> You may need to provide additional, clarifying information for the card. A <code>gel-card-info</code> element is hidden by default, but can be toggled into view using the <code>aria-haspopup</code> button. Note that the <code>gel-card-info</code> element appears directly after the <code>aria-haspopup</code> button so that it is logically placed within focus order. The further action buttons will be the next '<kbd>Tab</kbd> stops'.</li>
+<li><strong><code>role=&quot;group&quot;</code> and <code>aria-labelledby</code>:</strong> In order to reliably associate a label with the <code>gel-card-info</code> element, a generic ARIA role is provided. The label itself is provided as a heading of the correct nesting level (<code>&lt;h4&gt;</code> following <code>&lt;h3&gt;</code> in the example) and connected to <code>gel-card-info</code> using <code>aria-labelledby</code>.</li>
+<li><strong>Love, add, and share:</strong> The remaining actions facilitated by <code>gel-card-toolbar</code>. The <code>aria-pressed</code> state attribute should be provided on the &quot;Love&quot; action, since this is a an &quot;on/off&quot; toggle.</li>
+</ul>
+<h3 id="card-contents">Card contents</h3>
+<p>As set out in <a href="https://www.bbc.co.uk/gel/guidelines/cards">bbc.co.uk/gel/guidelines/cards</a>, there is a variety of content that may be included in cards. Here are some common examples:</p>
+<h4 id="an-image">An image</h4>
+<p>When an image is the focus of the card, it should be considered salient content and <em>must</em> include sufficient alternative text. For example, if the card's headline is <em>&quot;Winning nature photograph&quot;</em>, the alternative text should not be:</p>
+<ol>
+<li>Omitted</li>
+<li>A mere repetition of the headline</li>
+</ol>
+<p>Instead, describe what is in the photograph and what makes it appealing.</p>
+<p>To ensure the image has the best chance of fitting within the given space without distorting, it is recommended you use the <code>object-fit</code> property as a progressive enhancement. In the following example, the height of the content area has been set to <code>10rem</code> and the width is assumed to be indeterminate/responsive.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-promo-image</span> {
+  <span class="hljs-attribute">order</span>: -<span class="hljs-number">1</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">10rem</span>;
+  <span class="hljs-attribute">overflow</span>: hidden;
+}
+
+<span class="hljs-selector-class">.gel-promo-image</span> <span class="hljs-selector-tag">img</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">width</span>: auto;
+}
+
+@<span class="hljs-keyword">supports</span> (object-fit: cover) {
+  <span class="hljs-selector-class">.gel-promo-image</span> <span class="hljs-selector-tag">img</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">object-fit</span>: cover;
+  }
+}
 </code></pre>
-<p>This marks out and labels the set as a subsection within the page, and provides a sound hierarchy for those traversing the page non-visually.</p>
-<p>For search engine optimization and cognitive accessibility, the card's primary link text should match, or at least closely resemble, the <code>&lt;h1&gt;</code> text of the target URL.</p>
-<h3 id="images">Images</h3>
-<p>Cards may contain images. These may be considered decorative or non-decorative. Where decorative, a 'null' alternative text value must be provided (<code>alt=&quot;&quot;</code>):</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/to/image.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"[url]"</span>&gt;</span>Headline 2<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- ensuing card content --&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+
+          <div class="gel-breakout-box gel-breakout-box extra-padding">
+            <aside aria-label="Note">
+              <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
+              <p><p>At the time of writing, the <code>object-fit</code> property is supported everywhere but Internet Explorer. The code uses <code>@supports</code> and falls back to showing the image at its natural width, cropping the right edge or leaving a right margin.</p>
+</p>
+            </aside>
+          </div>
+          <h4 id="a-video">A video</h4>
+<p>If a video is provided, ensure the following:</p>
+<ol>
+<li>The video does not auto-play</li>
+<li>The video player's controls are accessible by screen reader and keyboard</li>
+<li>Dialog in the video is accompanied by closed captions</li>
+</ol>
+<p>If (as illustrated in the <a href="https://www.bbc.co.uk/gel/guidelines/promos">original GEL Card documentation</a>) an auxiliary play/pause button is provided,  ensure that the button is accessible:</p>
+<ol>
+<li>Use a <code>&lt;button&gt;</code> element with the <code>type=&quot;button&quot;</code> attribute</li>
+<li>Provide the (visually hidden<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>) accessible label &quot;play&quot; or &quot;pause&quot;, depending on the play state</li>
+</ol>
+<pre class="hljs"><code><span class="hljs-comment">/* Assuming `btn` represents the button
+and `vid` represents the video */</span>
+btn.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">if</span> (vid.paused) {
+    vid.play();
+    vid.textContent = <span class="hljs-string">'Pause'</span>;
+  } <span class="hljs-keyword">else</span> {
+    vid.pause();
+    vid.textContent = <span class="hljs-string">'Play'</span>;
+  }
+});
 </code></pre>
-<p>Only provide a positive <code>alt</code> value if it is not redundant. That is, if it adds pertinent information non-visually and does not simply repeat information provided by the primary link text or description.</p>
-<h4 id="%E2%9C%93-good-example">✓ Good example</h4>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/to/image.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Mugshot of a short-haired, thickset man"</span> /&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"[url]"</span>&gt;</span>Skripal attack: Second Russian Salisbury suspect named<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- ensuing card content --&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+
+          <div class="gel-breakout-box gel-breakout-box extra-padding">
+            <aside aria-label="Important">
+              <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div>
+              <p><p>Where the label of a toggle button changes, its (ARIA-defined) state must not also do so. By changing the label, you change the purpose of the button, and a simultaneous shift in state (<code>aria-pressed=&quot;false&quot;</code> to <code>aria-pressed=&quot;true&quot;</code>) will result in confusion.</p>
+</p>
+            </aside>
+          </div>
+          <h4 id="a-quotation">A quotation</h4>
+<p>Quotations must be set out using the <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> elements. The <code>&lt;figcaption&gt;</code> element must come after the quotation itself.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">figure</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Are you the sort of person who gloats when you see a woman fall, or the kind that celebrates a magnificent recovery? #TeamMadonna<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span>&gt;</span>J.K. Rowling<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span>
 </code></pre>
-<h4 id="%E2%9C%96%EF%B8%8F-poor-example">✖️ Poor example</h4>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/to/image.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Virgin Galactic logo"</span> /&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"[url]"</span>&gt;</span>Virgin Galactic to reach space in weeks<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- ensuing card content --&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-</code></pre>
-<p>If the <code>alt</code> is omitted, screen reader software tends to announce the image's <code>src</code> value instead. In React, the <code>alt</code> prop should therefore be required, either using <code>propTypes</code> or an alternative type checking method.</p>
-<pre class="hljs"><code>Card.propTypes = {
-  <span class="hljs-attr">alt</span>: PropTypes.string.isRequired
-};
-</code></pre>
-<h3 id="toolbar">Toolbar</h3>
-<p>A typical card contains a toolbar after the description and at the bottom of the card. This can contain a &quot;More info&quot; button and one or more actions (Love, Add, and/or Share).</p>
-<p>The toolbar must appear after the headline and description, last in source order within the card. The controls themselves must be marked up as buttons, with the <code>type=&quot;button&quot;</code> attribution since they trigger JavaScript behavior.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card_toolbar"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span>&gt;</span>More info<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Love<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Add<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Share<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</code></pre>
-<important text="The 'More info' button takes `aria-haspopup` because it will reveal, and move focus to, the additional info element. See **Expected behavior**, to follow." />
 <h2 id="expected-layout">Expected layout</h2>
 <p>The minimum width for a card is <code>266px</code>. A set of cards can appear within a grid formation or as the content of a carousel component.</p>
 <h3 id="grid-formation">Grid formation</h3>
@@ -239,8 +271,15 @@
   }
 }
 </code></pre>
-<note text="These examples use [GEL Sass Tools](https://github.com/bbc/gel-sass-tools) for the margins." />
-<h3 id="carousel-formation">Carousel formation</h3>
+
+          <div class="gel-breakout-box gel-breakout-box extra-padding">
+            <aside aria-label="Note">
+              <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
+              <p><p>These examples use <a href="https://github.com/bbc/gel-sass-tools">GEL Sass Tools</a> for the margins.</p>
+</p>
+            </aside>
+          </div>
+          <h3 id="carousel-formation">Carousel formation</h3>
 <p>To achieve a carousel formation, the containing carousel element needs to have <code>overflow-x: auto</code> and the cards list must not be allowed to wrap. This is best achieved using Flexbox.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.cards</span> {
   <span class="hljs-attribute">overflow-x</span>: auto;
@@ -261,7 +300,7 @@
 <h3 id="individual-card-layout">Individual card layout</h3>
 <p>Each card in a set should share the same height, despite content across cards varying in quantity/length. In a Grid or Flexbox context, cards already stretch to fill the container's height. All that remains is to push the card's final child element (usually the toolbar) to the bottom of the card.</p>
 <p>This must <em>not</em> be achieved using absolute positioning, because this is likely to interfere with zoom functionality. Instead, make the card a Flexbox context and give the final element a top margin of <code>auto</code>:</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.cards_list</span> <span class="hljs-selector-tag">li</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.cards_list</span> &gt; <span class="hljs-selector-tag">li</span> {
   <span class="hljs-attribute">display</span>: flex;
   <span class="hljs-attribute">flex-direction</span>: column;
 }
@@ -270,65 +309,63 @@
   <span class="hljs-attribute">margin-top</span>: auto;
 }
 </code></pre>
-<h2 id="expected-behavior">Expected behavior</h2>
-<h3 id="the-link">The link</h3>
-<p>Mouse and touch users should be able to activate the primary (headline) link by pressing either the headline text <em>or</em> the image. However, the image should not represent an additional, redundant tab stop to keyboard users or be perceivable as a link to screen reader users.</p>
-<p>In which case, you need to add a JavaScript <code>click</code> listener to the image and use it to trigger the link's <code>click</code> event by proxy. In plain JavaScript this would look something like the following:</p>
-<pre class="hljs"><code><span class="hljs-comment">// Assuming that `link` represents the headline link node</span>
-<span class="hljs-comment">// and `img` represents the image node...</span>
-img.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; link.click());
-</code></pre>
-<p>This is the only JavaScript enhancement. In an environment where the card is not client rendered, the card will be functional where JavaScript is not available. Accordingly, only add the <code>cursor</code> style if JavaScript has run:</p>
-<pre class="hljs"><code>img.style.cursor = <span class="hljs-string">'pointer'</span>;
-</code></pre>
-<p>In React with JSX, you might use a <code>ref</code> (the node for which being accessible via the <code>current</code> property). The following example is elided for brevity:</p>
-<pre class="hljs"><code><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Card</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
-  <span class="hljs-keyword">constructor</span>(props) {
-    <span class="hljs-keyword">super</span>(props);
-    <span class="hljs-keyword">this</span>.link = React.createRef();
-  }
-  render() {
-    <span class="hljs-keyword">const</span> { src, alt, url, headline } = <span class="hljs-keyword">this</span>.props;
-    <span class="hljs-keyword">return</span> (
-      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">{src}</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">{alt}</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.link.current.click()}</span> /&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">{url}</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{this.link}</span>&gt;</span>{headline}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-    );
-  }
+<p>The <code>gel-card-headline</code>, containing the heading element, must come first in focus order hence it is first in source order. To move the <code>gel-card-content</code> above it <em>visually</em> you can use <code>order: -1</code>.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-card-headline</span> {
+  <span class="hljs-attribute">order</span>: -<span class="hljs-number">1</span>;
 }
-</span></code></pre>
-<h3 id="more-info">More info</h3>
-<p>The 'More info' button toggles the visibility of an element containing the additional information for the card. This element must be <code>hidden</code> by default. When 'More info' is clicked for the first time, <code>hidden</code> becomes <code>false</code> and focus is moved to the element. The <code>aria-haspopup</code> attribute on the button warns the user that a redirection of focus will take place.</p>
+</code></pre>
+<h4 id="the-'more-info'-element">The 'More info' element</h4>
+<p>This element must be absolutely positioned over the card, which means the card itself must take <code>position: relative</code>. The <code>bottom</code> positioning of the element must match the height of the <code>gel-card-toolbar</code> element so that element is npt obscured while the element is visible.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-card</span> {
+  <span class="hljs-attribute">position</span>: relative;
+}
+
+<span class="hljs-selector-class">.gel-card-info</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">bottom</span>: <span class="hljs-number">2.5rem</span>; <span class="hljs-comment">/* height of the toolbar */</span>
+  <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">1rem</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#F1F1F1</span>;
+  <span class="hljs-attribute">overflow-y</span>: auto;
+}
+</code></pre>
+<p>Also note <code>overflow-y: auto</code>. This is provided in case the content inside the 'More info' element is taller than its height. Since the element is not allowed to grow, it must be scrollable instead.</p>
+<h2 id="expected-behavior">Expected behavior</h2>
+<p>Aside from the toolbar behavior, the card's behavior will depend on the content it houses. See <a href="#card-contents"><strong>Card contents</strong></a> for pointers.</p>
+<h3 id="the-'more-info'-button">The 'More info' button</h3>
+<p>The 'More info' button toggles the visibility of an element containing the additional information for the card. This element must be <code>hidden</code> by default. When 'More info' is clicked for the first time, <code>hidden</code> becomes <code>false</code> and focus is moved to the 'More info' heading. The <code>aria-haspopup</code> attribute on the button warns the user that a redirection of focus will take place.</p>
 <p>In plain JavaScript, a simple function will suffice:</p>
-<pre class="hljs"><code><span class="hljs-comment">// Assuming that `moreBtn` is the button node</span>
-<span class="hljs-comment">// and `moreElem` is the info node</span>
-moreBtn.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; {
-  moreElem.hidden = !moreElem.hidden;
-  <span class="hljs-keyword">if</span> (!moreElem.hidden) {
-    moreElem.focus();
+<pre class="hljs"><code><span class="hljs-comment">// Assuming `moreBtn` is the button node,</span>
+<span class="hljs-comment">// `moreElem` is the info node</span>
+<span class="hljs-comment">// and `moreHeading` is the info node's heading node</span>
+moreBtn.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  moreElem.hidden = !more.hidden;
+  <span class="hljs-keyword">if</span> (!more.hidden) {
+    moreHeading.focus();
     moreBtn.textContent = <span class="hljs-string">'Close'</span>;
   } <span class="hljs-keyword">else</span> {
     moreBtn.textContent = <span class="hljs-string">'More info'</span>;
   }
 });
 </code></pre>
-<important text="The button's state is not toggled via `aria-expanded`. This is because the button label changes, and a simultaneous change in state would result in contradictory information." />
-<p>For the <code>focus()</code> method to succeed, the <code>class=&quot;card_more-info&quot;</code> element needs <code>tabindex=&quot;-1&quot;</code>. Also provide a role and label for screen reader identification. It is recommended the element is positioned between the 'More info' and subsequent buttons in the source, and is positioned absolutely over the card, leaving just the toolbar visible.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card_toolbar"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span>&gt;</span>More info<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card_more-info"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"more info"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>
-    <span class="hljs-comment">&lt;!-- more info here --&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Love<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Add<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Share<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+          <div class="gel-breakout-box gel-breakout-box extra-padding">
+            <aside aria-label="Note">
+              <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
+              <p><p>GEL SVG icons have been removed from the above example for brevity.</p>
+</p>
+            </aside>
+          </div>
+          <p>For the <code>focus()</code> method to succeed, the <code>class=&quot;gel-card-info-heading&quot;</code> element needs <code>tabindex=&quot;-1&quot;</code>.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-card-info"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"more-info-title-1"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-card-info-heading"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"info-title-1"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>More info<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- More info here --&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<p>In addition, it should be possible to close the <code>class=&quot;card_more-info&quot;</code> element using the <kbd>ESC</kbd> key.</p>
-<pre class="hljs"><code>moreElem.addEventListener(<span class="hljs-string">'keydown'</span>, e =&gt; {
+<p>In addition, it should be possible to close the <code>class=&quot;gel-card-info&quot;</code> element using the <kbd>ESC</kbd> key. In this scenario, focus needs to be returned programmatically to the button.</p>
+<pre class="hljs"><code>moreBtn.addEventListener(<span class="hljs-string">'keydown'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
   <span class="hljs-keyword">if</span> (e.which === <span class="hljs-number">27</span>) {
     e.preventDefault();
     moreElem.hidden = <span class="hljs-literal">true</span>;
@@ -337,39 +374,242 @@ moreBtn.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; {
   }
 });
 </code></pre>
-<p>In JSX, you can use the button to toggle a state declared on the info element like <code>hidden={infoHidden}</code>. But you will still need to move focus, which will require a <code>ref</code>. A small function to be triggered via the button's <code>onClick</code>:</p>
-<pre class="hljs"><code>toggleInfo() {
-  <span class="hljs-keyword">this</span>.setState(
-    <span class="hljs-function">(<span class="hljs-params">state</span>) =&gt;</span> ({
-      state.infoHidden = !state.infoHidden;
-    }),
-    () =&gt; {
-      <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.state.infoHidden)
-        <span class="hljs-comment">/* ↓ ref will need to be created with createRef() */</span>
-        <span class="hljs-keyword">this</span>.infoElem.current.focus();
-    }
-  );
-}
-</code></pre>
-<note text="`setState` is asynchronous, so a callback function is used to trigger the `focus()` method." />
-<p>A separate function would be needed to handle closing on <kbd>ESC</kbd>:</p>
-<pre class="hljs"><code>closeInfo(e) {
-  <span class="hljs-keyword">if</span> (e.which === <span class="hljs-number">27</span>) {
-    e.preventDefault();
-    <span class="hljs-keyword">this</span>.setState(
-      <span class="hljs-function">(<span class="hljs-params">state</span>) =&gt;</span> ({
-        state.infoHidden = <span class="hljs-literal">true</span>;
-      }),
-      () =&gt; {
-        <span class="hljs-comment">/* ↓ ref will need to be created with createRef() */</span>
-        <span class="hljs-keyword">this</span>.infoBtn.current.focus();
-      }
-    );    
-  }
-}
-</code></pre>
 <h2 id="reference-implementation">Reference implementation</h2>
-<live-demo id="card1">
+
+          <div class="gel-breakout-box gel-breakout-box extra-padding">
+            <aside aria-label="Important">
+              <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div>
+              <p><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behavior of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+</p>
+            </aside>
+          </div>
+          
+          <div class="gel-demo"><!-- 
+title: Cards
+ -->
+<style>
+  .gel-cards {
+    margin: 0;
+    padding: 0;
+  }
+
+  .gel-cards>*+* {
+    margin-top: 1rem;
+  }
+
+  @supports (display: grid) {
+    .gel-cards>*+* {
+      margin-top: 0;
+    }
+
+    .gel-card {
+      margin: 0;
+    }
+
+    .gel-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
+      grid-gap: 1rem;
+    }
+  }
+
+  .gel-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #F1F1F1;
+    position: relative;
+  }
+
+  .gel-card-content {
+    order: -1;
+    overflow: hidden;
+    height: 10rem;
+  }
+
+  .gel-promo-content {
+    order: -1;
+    height: 10rem;
+    overflow: hidden;
+  }
+
+  .gel-card-content img,
+  .gel-card-content video {
+    height: 100%;
+    width: auto;
+  }
+
+  @supports (object-fit: cover) {
+    .gel-card-content img, 
+    .gel-card-content video {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .gel-card-headline, .gel-card-desc {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .gel-card-toolbar {
+    height: 2.5rem;
+    list-style: none;
+    display: flex;
+    padding: 0.5rem 1rem;
+    background-color: #e5e5e5;
+    margin-top: auto;
+  }
+
+  .gel-card-toolbar button {
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: inherit;
+    display: inline-block;
+  }
+
+  .gel-card-toolbar > *:first-child {
+    margin-right: auto;
+  }
+
+  .gel-card-toolbar > * + * {
+    margin: 0;
+    margin-left: 0.5rem;
+  }
+
+  .gel-card-info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 2.5rem;
+    left: 0;
+    margin: 0;
+    padding: 1rem;
+    background-color: #F1F1F1;
+    overflow-y: auto;
+  }
+</style>
+
+<div style="margin-bottom: 1rem;">
+  <h3>Astronomy Photographer of the Year 2018</h3>
+  <ul class="gel-cards">
+    <li class="gel-card">
+      <div class="gel-card-headline">
+        <h4>Living Space</h4>
+      </div>
+      <div class="gel-card-content">
+        <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/E134/production/_104025675_livingspaceandrewwhyte.jpg"
+          alt="A silhouette of a lamppost reaches up from suburbia into the milky way" />
+      </div>
+      <div class="gel-card-desc">
+        <p>Taken in Pagham, West Sussex, Whyte's photograph aims to show how accustomed we have become to the loss of
+          night sky views because of light pollution, with the unlit street lamps allowing for awe-inspiring views.</p>
+        <p><small>Runner-up: Andrew Whyte</small></p>
+      </div>
+      <div class="gel-card-toolbar">
+        <button type="button" aria-haspopup="true">More info</button>
+        <div class="gel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
+          <h5 class="gel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin posuere mauris, at sagittis
+            odio aliquam sed. Nunc neque diam, euismod ut purus et, scelerisque vulputate tortor. Donec non commodo
+            turpis. Nunc ac magna in diam molestie posuere eget eu elit. Suspendisse ut lectus porta eros dapibus
+            tempor. Curabitur tempus purus eu consequat semper. Ut a lectus non metus imperdiet finibus. Sed vestibulum
+            enim congue, finibus augue ut, dictum justo.</p>
+        </div>
+        <button type="button" aria-pressed="false">Love</button>
+        <button type="button">Add</button>
+        <button type="button">Share</button>
+      </div>
+    </li>
+    <li class="gel-card">
+      <div class="gel-card-headline">
+        <h4>Speeding on the Aurora Lane</h4>
+      </div>
+      <div class="gel-card-content">
+        <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/12F54/production/_104025677_speedingontheauroralanenicolaslefaudeux.jpg"
+          alt="A shimmering green sheet reaches through a sky of stars towards a glowing green horizon" />
+      </div>
+      <div class="gel-card-desc">
+        <p>A hazy auroral band is seen drifting across the sky above Sirkka, Finland, seeming like a road disappearing
+          over the horizon.</p>
+        <p><small>Winner: Nicolas Lefaudeux</small></p>
+      </div>
+      <div class="gel-card-toolbar">
+        <button type="button" aria-haspopup="true">More info</button>
+        <div class="gel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
+          <h5 class="gel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
+          <p>Vestibulum consectetur, lectus sed porta pulvinar, turpis nunc placerat nisl, non blandit augue leo in
+            nunc. Vivamus in mi lectus. Vivamus ex orci, finibus non massa nec, viverra sollicitudin nibh. Nunc semper
+            imperdiet ante, et mattis magna hendrerit a. Quisque libero nibh, hendrerit at tortor vitae, cursus
+            elementum diam. Donec auctor molestie imperdiet. Vivamus venenatis mauris ut ante volutpat fringilla. Duis
+            ullamcorper ac libero sed iaculis. Duis pulvinar leo at feugiat dapibus. Aenean sagittis felis massa,
+            sodales ullamcorper tellus consectetur ac.</p>
+        </div>
+        <button type="button" aria-pressed="false">Love</button>
+        <button type="button">Add</button>
+        <button type="button">Share</button>
+      </div>
+    </li>
+    <li class="gel-card">
+      <div class="gel-card-headline">
+        <h4>Castlerigg Stone Circle</h4>
+      </div>
+      <div class="gel-card-content">
+        <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/40B2/production/_104026561_castleriggstonecirclematthewjamesturner.jpg"
+          alt="The sun creeps over bright green hills to gently illuminate a circle of ancient stones. A few lights emanate from a distant village." />
+      </div>
+      <div class="gel-card-desc">
+        <p>Turner's image depicts standing stones illuminated by moonlight, while auroras beyond the mountains gives
+          the appearance that the hills are emitting an ethereal green glow.</p>
+        <p><small>Runner-up: Matthew James Turner</small></p>
+      </div>
+      <div class="gel-card-toolbar">
+        <button type="button" aria-haspopup="true">More info</button>
+        <div class="gel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
+          <h5 class="gel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
+          <p>Quisque sit amet magna lacus. Donec in fringilla velit. Curabitur vulputate magna euismod turpis luctus
+            bibendum. Donec fringilla risus eget felis aliquet, vel vestibulum nibh bibendum. In laoreet ut nisi nec
+            gravida. Nullam scelerisque posuere mollis. Donec ac mauris maximus, placerat enim vitae, placerat libero.
+            Maecenas eget magna quis diam faucibus suscipit at et velit. Nulla placerat vehicula nunc in maximus. Nulla
+            euismod neque vel imperdiet dignissim.</p>
+        </div>
+        <button type="button" aria-pressed="false">Love</button>
+        <button type="button">Add</button>
+        <button type="button">Share</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<script>
+  (function () {
+    var cards = document.querySelectorAll('.gel-card');
+    Array.prototype.forEach.call(cards, function (card) {
+      var moreBtn = card.querySelector('[aria-haspopup="true"]');
+      var moreElem = card.querySelector('.gel-card-info');
+      var moreHeading = moreElem.querySelector('.gel-card-info-heading');
+
+      moreBtn.addEventListener('click', function () {
+        moreElem.hidden = !moreElem.hidden;
+        if (!moreElem.hidden) {
+          moreHeading.focus();
+          moreBtn.textContent = 'Close';
+        } else {
+          moreBtn.textContent = 'More info';
+        }
+      });
+
+      moreElem.addEventListener('keydown', function (e) {
+        if (e.which === 27) {
+          moreElem.hidden = true;
+          moreBtn.textContent = 'More info';
+          moreBtn.focus();
+        }
+      });
+    });
+  })();
+</script></div>
+        <live-demo id="card1">
   <template>
     <style>
       .card, .card * {
@@ -508,8 +748,20 @@ moreBtn.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; {
     </script>
   </template>
 </live-demo>
-<h2 id="existing-implementations">Existing implementations</h2>
-<p>There are currently no existing implementations of this reference component.</p>
+<h2 id="test-specifications">Test specifications</h2>
+<p>A list of gherkin-style feature specifications (including requirements for the <a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile">BBC Mobile Accessibility Guidelines</a>) for this component has been developed and published in a format suitable for use with an automated testing framework. You can review and download these feature files from <a href="#linktocome">the project Wiki page, hosted on GitHub</a>.</p>
+<h2 id="related-research">Related research</h2>
+<p>[TODO]</p>
+<h3 id="further-reading%2C-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>&quot;Basic screen reader commands for accessibility testing&quot; by Léonie Watson, <a href="https://developer.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/">https://developer.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Gist of the <code>vh</code> (visually hidden) class <a href="https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472">https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
 
                 <div class="gel-breakout-box gel-breakout-box extra-padding" style="margin-top:36px">

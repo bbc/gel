@@ -166,7 +166,7 @@
 <h3 id="notes">Notes</h3>
 <ul>
 <li><strong><code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code>:</strong> Promos are typically presented as a set, and together must be marked up as an unordered list, with each promo marked as a list item (<code>&lt;li&gt;</code>). This enables structural and navigational cues in screen reader software<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</li>
-<li><strong>Headings:</strong> Each promo's primary (headline) link is contained within a heading, each of the promo's headings are of the same level, and the set of promos is introduced as a section within the document by a heading one level higher. The wording of the promo's primary link should resemble that of the target page's <code>&lt;title&gt;</code> and <code>&lt;h1&gt;</code>. This consistency aids cognitive accessibility and improves SEO.</li>
+<li><strong>Headings:</strong> Each promo's primary (headline) link must be contained within a heading, each of the promo's headings must be of the same level, and the set of promos must be introduced as a section within the document by a heading one level higher. The wording of the promo's primary link should resemble that of the target page's <code>&lt;title&gt;</code> and <code>&lt;h1&gt;</code>. This consistency aids cognitive accessibility and improves SEO.</li>
 <li><strong>Image (optional):</strong> Images can be considered decorative (<code>alt=&quot;&quot;</code>; the first promo in the code example) or non-decorative (<code>alt=&quot;[description of image]&quot;</code>; the second promo in the example). They must appear <em>after</em> the headline in the markup since the headline's heading introduces the promo content. <strong>Non-decorative images must have alternative text that does not simply repeat information in the headline or description</strong>.</li>
 <li><strong>Metadata (optional):</strong> Metadata is presented as a description list. The <code>&lt;dt&gt;</code> labels are optionally visually hidden (using the <code>vh</code> class in the example<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>), making them available to just screen reader users. If the visible wording is likely to confuse screen reader users, provide an alternative version and hide the visible version using <code>aria-hidden=&quot;true&quot;</code> (see the 'Published' examples). Do <em>not</em> use <code>aria-label</code> to provide auxiliary labels, because it will not be translated by in-browser translation services. Metadata values may or may not be linked.</li>
 </ul>
@@ -254,7 +254,7 @@ img.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; link.cli
           </div>
           
           <div class="gel-demo"><!-- 
-title: Fully featured promos
+title: Promos
  -->
 <style>
   .gel-promos {
