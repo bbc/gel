@@ -9,7 +9,7 @@ linkback: http://www.bbc.co.uk/gel/guidelines/cards
 
 ## Introduction
 
-The **Metadata Strip** is a simple component to be provided as part of content such as a [**Promo**](#link-todo). It defines key information attributed to the content, for example its publish date, and derivation.
+The **Metadata Strip** is a simple component to be provided as part of content such as a [**Promo**](#link-todo). It defines key information attributed to the content like its publish date, and derivation.
 
 ## Expected markup
 
