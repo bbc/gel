@@ -28,16 +28,20 @@ The **Promo** component is similar to the [**Card**](#link-todo) but exists sole
     <div class="gel-promo-desc">
       <p>Police investigate a package at the New York restaurant owned by the actor, reports say.</p>
     </div>
-    <dl class="gel-promo-meta">
-      <dt class="vh">Published:</dt>
-      <dd>
-        <span aria-hidden="true">1h</span>
-        <span class="vh">1 hour ago</span>
-      </dd>
-      <dt class="vh">From:</dt>
-      <dd>
-        <a href="link/to/category">US & Canada</a>
-      </dd>
+    <dl class="gel-metadata-strip">
+      <div>
+        <dt class="vh">Published:</dt>
+        <dd>
+          <span aria-hidden="true">1h</span>
+          <span class="vh">1 hour ago</span>
+        </dd>
+      </div>
+      <div>
+        <dt class="vh">From:</dt>
+        <dd>
+          <a href="link/to/category">US & Canada</a>
+        </dd>
+      </div>
     </dl>
   </li>
   <li class="gel-promo">
@@ -52,16 +56,20 @@ The **Promo** component is similar to the [**Card**](#link-todo) but exists sole
     <div class="gel-promo-desc">
       <p>The home secretary says people were wrongly forced to take tests to prove their right to be in the UK.</p>
     </div>
-    <dl class="gel-promo-meta">
-      <dt class="vh">Published:</dt>
-      <dd>
-        <span aria-hidden="true">1m</span>
-        <span class="vh">1 minute ago</span>
-      </dd>
-      <dt class="vh">From:</dt>
-      <dd>
-        <a href="link/to/category">UK</a>
-      </dd>
+    <dl class="gel-metadata-strip">
+      <div>
+        <dt class="vh">Published:</dt>
+        <dd>
+          <span aria-hidden="true">1m</span>
+          <span class="vh">1 minute ago</span>
+        </dd>
+      </div>
+      <div>
+        <dt class="vh">From:</dt>
+        <dd>
+          <a href="link/to/category">UK</a>
+        </dd>
+      </div>
     </dl>
   </li>
 </ul>
@@ -70,9 +78,9 @@ The **Promo** component is similar to the [**Card**](#link-todo) but exists sole
 ### Notes
 
 * **`<ul>` and `<li>`:** Promos are typically presented as a set, and together must be marked up as an unordered list, with each promo marked as a list item (`<li>`). This enables structural and navigational cues in screen reader software[^1].
-* **Headings:** Each promo's primary (headline) link must be contained within a heading, each of the promo's headings must be of the same level, and the set of promos must be introduced as a section within the document by a heading one level higher. The wording of the promo's primary link should resemble that of the target page's `<title>` and `<h1>`. This consistency aids cognitive accessibility and improves SEO.
-* **Image (optional):** Images can be considered decorative (`alt=""`; the first promo in the code example) or non-decorative (`alt="[description of image]"`; the second promo in the example). They must appear _after_ the headline in the markup since the headline's heading introduces the promo content. **Non-decorative images must have alternative text that does not simply repeat information in the headline or description**.
-* **Metadata (optional):** Metadata is presented as a description list. The `<dt>` labels are optionally visually hidden (using the `vh` class in the example[^2]), making them available to just screen reader users. If the visible wording is likely to confuse screen reader users, provide an alternative version and hide the visible version using `aria-hidden="true"` (see the 'Published' examples). Do _not_ use `aria-label` to provide auxiliary labels, because it will not be translated by in-browser translation services. Metadata values may or may not be linked.
+* **Headings:** Each promo's primary (headline) link must be contained within a heading, each of the promo's headings must be of the same level, and the set of promos must be introduced as a section within the document by a heading one level higher. The wording of the promo's primary link should resemble that of the target page's `<title>` and `<h1>`. This consistency aids cognitive accessibility and improves SEO[^3].
+* **Image (optional):** Images can be considered decorative (`alt=""`; the first Promo in the code example) or non-decorative (`alt="[description of image]"`; the second Promo in the example). They must appear _after_ the headline in the markup since the headline's heading introduces the promo content. **Non-decorative images must have alternative text that does not simply repeat information in the headline or description**.
+* **Metadata (optional):** [**Metadata Strips**](#link-todo) are specified as their own component
 
 ## Expected layout
 
@@ -88,11 +96,15 @@ As with [**Cards**](#link-todo), promos in a set should share the same height. T
   margin-top: 1rem; /* generic spacing between components of the promo */
 } 
 
-.gel-promo-meta {
+.gel-metadata-strip {
   margin-top: auto;
   padding-top: 1rem;
 }
 ```
+
+::: info Note
+While [**Metadata Strips**](#link-todo) are documented as their own component, the `margin-top` and `padding-top` styles specified here are needed in the **Promo** context.
+:::
 
 ### The image
 
@@ -127,7 +139,7 @@ The image will need to fit the available space, regardless of the promo's dimens
 ```
 
 ::: info Note
-At the time of writing, the `object-fit` property is supported everywhere but Internet Explorer. The code uses `@supports` and falls back to showing the image at its natural width, cropping the right edge or leaving a right margin.
+At the time of writing, the `object-fit` property is supported everywhere but Internet Explorer[^5]. The code uses `@supports` and falls back to showing the image at its natural width, cropping the right edge or leaving a right margin.
 :::
 
 ### Focus styles
@@ -151,7 +163,7 @@ Some items of metadata come with icons, such as a clock prefixing the 'Published
 
 ## Expected behavior
 
-Mouse and touch users should be able to activate the primary (headline) link by pressing either the headline text _or_ the image. However, the image should not represent an additional, redundant tab stop to keyboard users or be perceivable as a link to screen reader users. 
+Mouse and touch users should be able to activate the primary (headline) link by pressing either the headline text _or_ the image. However, the image should not represent an additional, redundant tab stop to keyboard users or be perceivable as a link to screen reader users. Too many and redundant 'tab stops' can be cumbersome for keyboard-only users[^4].
 
 In which case, you need to add a JavaScript `click` listener to the image and use it to trigger the link's `click` event by proxy. In plain JavaScript this would look something like the following:
 
@@ -191,3 +203,6 @@ This component was originally developed and tested at the BBC in a prototype of 
 
 [^1]: "Basic screen reader commands for accessibility testing" by Léonie Watson, <https://developer.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/>
 [^2]: Gist of the `vh` (visually hidden) class <https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472> 
+[^3]: "How To Write Page Titles For Google & Other Search Engines in 2018", <https://www.hobo-web.co.uk/title-tags/#page-titles-example-use>
+[^4]: "Keyboard Accessibility" — WebAIM, <https://webaim.org/techniques/keyboard/>
+[^5]: `object-fit` (caniuse data), <https://caniuse.com/#feat=object-fit>

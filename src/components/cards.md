@@ -55,7 +55,7 @@ The following designates the basic card structure, consisting of the headline, d
 * **Headings:** Each card's primary (headline) link must be contained within a heading, each of the card's headline headings must be of the same level, and the set of cards must be introduced as a section within the document by a heading one level higher.
 * **`gel-card-headline`:** This must appear first in the source order, although the card content will _appear_ first visually. This is because the card's heading introduces the document section that constitutes the rest of the card. Avoid putting interactive content inside `gel-card-headline` because this will create a reversed focus order.
 * **`gel-card-desc`:** This will contain prosaic content, such as a description, attribution, and/or timestamp. Some of these elements may be linked to other resources.
-* **`aria-popup="true"`:** You may need to provide additional, clarifying information for the card. A `gel-card-info` element is hidden by default, but can be toggled into view using the `aria-haspopup` button. Note that the `gel-card-info` element appears directly after the `aria-haspopup` button so that it is logically placed within focus order. The further action buttons will be the next '<kbd>Tab</kbd> stops'.
+* **`aria-popup="true"`:** You may need to provide additional, clarifying information for the card. A `gel-card-info` element is hidden by default, but can be toggled into view using the `aria-haspopup` button. Note that the `gel-card-info` element appears directly after the `aria-haspopup` button so that it is logically placed within focus order. The further action buttons will be the next '<kbd>Tab</kbd> stops'. The `aria-haspopup` ARIA property identifies the button as a 'popup button' in screen readers[^3]
 * **`role="group"` and `aria-labelledby`:** In order to reliably associate a label with the `gel-card-info` element, a generic ARIA role is provided. The label itself is provided as a heading of the correct nesting level (`<h4>` following `<h3>` in the example) and connected to `gel-card-info` using `aria-labelledby`.
 * **Love, add, and share:** The remaining actions facilitated by `gel-card-toolbar`. The `aria-pressed` state attribute should be provided on the "Love" action, since this is a an "on/off" toggle.
 
@@ -102,7 +102,7 @@ At the time of writing, the `object-fit` property is supported everywhere but In
 
 If a video is provided, ensure the following:
 
-1. The video does not auto-play
+1. The video does not auto-play[^4]
 2. The video player's controls are accessible by screen reader and keyboard
 3. Dialog in the video is accompanied by closed captions
 
@@ -318,145 +318,7 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 
 <include src="components/demos/cards.html">
 
-<live-demo id="card1">
-  <template>
-    <style>
-      .card, .card * {
-        box-sizing: border-box;
-      }
-      .card {
-        position: relative;
-        color: #404040;
-        font-family: sans-serif;
-        background: #F1F1F1;
-        display: flex;
-        flex-direction: column;
-        width: 266px;
-      }
-      .card ul {
-        margin: 0;
-      }
-      .card_img {
-        overflow: hidden;
-        position: relative;
-      }
-      .card_img img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .card_icon {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        padding: 1rem;
-        background-color: rgba(255,255,255,0.5);
-        line-height: 1;
-      }
-      .card_icon svg {
-        height: 1.5rem;
-        width: auto;
-      }
-      .card_text {
-        padding: 1rem;
-        flex-grow: 1;
-      }
-      .card_text > * + * {
-        margin: 0;
-        margin-top: 0.5rem;
-      }
-      .card_title a {
-        color: inherit;
-        text-decoration: none;
-      }
-      .card_title a:hover,
-      .card_title a:focus {
-        outline: none;
-        text-decoration: underline;
-      }
-      .card > :last-child {
-        margin-top: auto;
-      }
-      .card_toolbar {
-        height: 2.5rem;
-        list-style: none;
-        display: flex;
-        padding: 0.5rem;
-        background-color: #e5e5e5;
-      }
-      .card_toolbar li + li {
-        margin-left: 0.5rem;
-      }
-      .card_toolbar > :first-child {
-        margin-right: auto;
-      }
-      .card_toolbar button {
-        background: none;
-        border: none;
-        font-size: inherit;
-        cursor: pointer;
-      }
-      .card_more-info {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 2.5rem;
-        left: 0;
-        padding: 1rem;
-        background-color: #F1F1F1;
-      }
-    </style>
-    <div class="card">
-      <div class="card_img">
-        <img src="{{site.basedir}}static/images/placeholder.png" alt="">
-        <span class="card_icon" aria-hidden="true">
-          <svg fill="currentColor" viewBox="0 0 20 20" width="20" height="20" focusable="false">
-            <polyline points="2 2, 18 10, 2 18"></polyline>
-          </svg>
-        </span>
-      </div>
-      <div class="card_text">
-        <h2 class="card_title"><a href="#to-permalink">Title Of Card</a></h2>
-        <p>Description of the card</p>
-        <small>Attribution</small>
-      </div>
-      <div class="card_toolbar">
-        <button type="button" aria-haspopup="true">More info</button>
-        <div class="card_more-info" role="group" aria-label="more info" tabindex="-1" hidden>
-          <p>More info here</p>
-        </div>
-        <button type="button">L</button>
-        <button type="button">A</button>
-        <button type="button">S</button>
-      </div>
-    </div>
-    <script>
-      const img = demo.querySelector('img');
-      const link = demo.querySelector('a');
-      const moreBtn = demo.querySelector('[aria-haspopup]');
-      const moreElem = demo.querySelector('.card_more-info');
-      img.style.cursor = 'pointer';
-      img.addEventListener('click', () => link.click());
-      moreBtn.addEventListener('click', () => {
-        moreElem.hidden = !moreElem.hidden;
-        if (!moreElem.hidden) {
-          moreElem.focus();
-          moreBtn.textContent = 'Close';
-        } else {
-          moreBtn.textContent = 'More info';
-        }
-      });
-      moreElem.addEventListener('keydown', e => {
-        if (e.which === 27) {
-          moreElem.hidden = true;
-          moreBtn.textContent = 'More info';
-          moreBtn.focus();
-        }
-      });
-    </script>
-  </template>
-</live-demo>
+<p><a class="gel-button gel-button--dark gel-long-primer-bold" href="../demos/cards/" target="_new">Open in new window <svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:currentColor"></use></svg></a></p>
 
 ## Test specifications
 
@@ -470,5 +332,7 @@ A list of gherkin-style feature specifications (including requirements for the [
 
 [^1]: "Basic screen reader commands for accessibility testing" by Léonie Watson, <https://developer.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/>
 [^2]: Gist of the `vh` (visually hidden) class <https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472> 
+[^3]: Accessible Rich Internet Applications (WAI-ARIA) 1.1: `aria-haspopup`, <https://www.w3.org/TR/wai-aria-1.1/#aria-haspopup>
+[^4]: "Why Autoplay Is An Accessibility Issue" — abilitynet.org.uk, <https://www.abilitynet.org.uk/news-blogs/why-autoplay-accessibility-issue>
 
 

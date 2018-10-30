@@ -1,0 +1,49 @@
+---
+title: Metadata Strips
+---
+<style>
+  .gel-metadata-strip>div {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .gel-metadata-strip>div+div::before {
+    content: '';
+    border-left: 1px solid;
+    margin: 0 0.25rem;
+  }
+
+  .gel-metadata-strip dt,
+  .gel-metadata-strip dd {
+    margin: 0;
+    display: inline;
+  }
+
+  .vh {
+    clip-path: inset(100%) !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    width: 1px !important;
+  }
+</style>
+
+<div style="margin-bottom: 1rem;">
+  <dl class="gel-metadata-strip">
+    <div>
+      <dt class="vh">Published:</dt>
+      <dd>
+        <span aria-hidden="true">1m</span>
+        <span class="vh">1 minute ago</span>
+      </dd>
+    </div>
+    <div>
+      <dt class="vh">From:</dt>
+      <dd>
+        <a href="link/to/category">UK</a>
+      </dd>
+    </div>
+  </dl>
+</div>
