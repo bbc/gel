@@ -15,62 +15,66 @@ The **Promo** component is similar to the [**Card**](#link-todo) but exists sole
 
 ```html
 <h2>Latest news</h2>
-<ul>
+<ul class="gel-promos">
   <li class="gel-promo">
-    <div class="gel-promo-headline">
-      <h3>
-        <a href="/to/permalink/1">Suspect package found at De Niro restaurant</a>
-      </h3>
+    <div class="gel-promo-content">
+      <div class="gel-promo-headline">
+        <h4>
+          <a href="/to/permalink/1">Suspect package found at De Niro restaurant</a>
+        </h4>
+      </div>
+      <div class="gel-promo-desc">
+        <p>Police investigate a package at the New York restaurant owned by the actor, reports say.</p>
+      </div>
+      <dl class="gel-metadata-strip">
+        <div>
+          <dt class="vh">Published:</dt>
+          <dd>
+            <span aria-hidden="true">1h</span>
+            <span class="vh">1 hour ago</span>
+          </dd>
+        </div>
+        <div>
+          <dt class="vh">From:</dt>
+          <dd>
+            <a href="link/to/category">US & Canada</a>
+          </dd>
+        </div>
+      </dl>
     </div>
     <div class="gel-promo-image">
-      <img src="path/to/image.png" alt="" />
+      <img src="{{site.basedir}}static/images/placeholder.png" alt="">
     </div>
-    <div class="gel-promo-desc">
-      <p>Police investigate a package at the New York restaurant owned by the actor, reports say.</p>
-    </div>
-    <dl class="gel-metadata-strip">
-      <div>
-        <dt class="vh">Published:</dt>
-        <dd>
-          <span aria-hidden="true">1h</span>
-          <span class="vh">1 hour ago</span>
-        </dd>
-      </div>
-      <div>
-        <dt class="vh">From:</dt>
-        <dd>
-          <a href="link/to/category">US & Canada</a>
-        </dd>
-      </div>
-    </dl>
   </li>
   <li class="gel-promo">
-    <div class="gel-promo-headline">
-      <h3>
-        <a href="/to/permalink/2">UK Sorry For Forcing DNA Tests On Immigrants</a>
-      </h3>
+    <div class="gel-promo-content">
+      <div class="gel-promo-headline">
+        <h4>
+          <a href="/to/permalink/2">UK Sorry For Forcing DNA Tests On Immigrants</a>
+        </h4>
+      </div>
+      <div class="gel-promo-desc">
+        <p>The home secretary says people were wrongly forced to take tests to prove their right to be in the UK.</p>
+      </div>
+      <dl class="gel-metadata-strip">
+        <div>
+          <dt class="vh">Published:</dt>
+          <dd>
+            <span aria-hidden="true">1m</span>
+            <span class="vh">1 minute ago</span>
+          </dd>
+        </div>
+        <div>
+          <dt class="vh">From:</dt>
+          <dd>
+            <a href="link/to/category">UK</a>
+          </dd>
+        </div>
+      </dl>
     </div>
     <div class="gel-promo-image">
-      <img src="path/to/image.png" alt="Home secretary Sajid Javid in parliament" />
+      <img src="{{site.basedir}}static/images/placeholder.png" alt="">
     </div>
-    <div class="gel-promo-desc">
-      <p>The home secretary says people were wrongly forced to take tests to prove their right to be in the UK.</p>
-    </div>
-    <dl class="gel-metadata-strip">
-      <div>
-        <dt class="vh">Published:</dt>
-        <dd>
-          <span aria-hidden="true">1m</span>
-          <span class="vh">1 minute ago</span>
-        </dd>
-      </div>
-      <div>
-        <dt class="vh">From:</dt>
-        <dd>
-          <a href="link/to/category">UK</a>
-        </dd>
-      </div>
-    </dl>
   </li>
 </ul>
 ```
@@ -79,7 +83,7 @@ The **Promo** component is similar to the [**Card**](#link-todo) but exists sole
 
 * **`<ul>` and `<li>`:** Promos are typically presented as a set, and together must be marked up as an unordered list, with each promo marked as a list item (`<li>`). This enables structural and navigational cues in screen reader software[^1].
 * **Headings:** Each promo's primary (headline) link must be contained within a heading, each of the promo's headings must be of the same level, and the set of promos must be introduced as a section within the document by a heading one level higher. The wording of the promo's primary link should resemble that of the target page's `<title>` and `<h1>`. This consistency aids cognitive accessibility and improves SEO[^3].
-* **Image (optional):** Images can be considered decorative (`alt=""`; the first Promo in the code example) or non-decorative (`alt="[description of image]"`; the second Promo in the example). They must appear _after_ the headline in the markup since the headline's heading introduces the promo content. **Non-decorative images must have alternative text that does not simply repeat information in the headline or description**.
+* **Image (optional):** Images can be considered decorative (`alt=""`; the first Promo in the code example) or non-decorative (`alt="[description of image]"`; the second Promo in the example). They must appear _after_ the textual content (`gel-promo-content`) in the markup since the headline's heading introduces the promo content. **Non-decorative images must have alternative text that does not simply repeat information in the headline or description**.
 * **Metadata (optional):** [**Metadata Strips**](#link-todo) are specified as their own component
 
 ## Expected layout
@@ -108,13 +112,17 @@ While [**Metadata Strips**](#link-todo) are documented as their own component, t
 
 ### The image
 
-As stated in **[Expected markup](#expected-markup)**, the image must come _after_ the headline in the source order. However, it is designed to appear before it visually. Using Flexbox, it is possible to augment the visual order without affecting the source order:
+As stated in **[Expected markup](#expected-markup)**, the image must come _after_ the text content in the source order. However, it is designed to appear before it visually. Using Flexbox, it is possible to augment the visual order without affecting the source order:
 
 ```css
 .gel-promo-image {
   order: -1;
 }
 ```
+
+::: info Note
+Augmenting the source order can produce a [**WCAG 2.4.3 Focus Order failure**](https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html), but the image is not focusable so there is no such issue.
+:::
 
 The image will need to fit the available space, regardless of the promo's dimensions (which are likely to change across breakpoints) without distorting. This is possible by setting the desired height of the image box and using the `object-fit` property:
 
@@ -142,12 +150,35 @@ The image will need to fit the available space, regardless of the promo's dimens
 At the time of writing, the `object-fit` property is supported everywhere but Internet Explorer[^5]. The code uses `@supports` and falls back to showing the image at its natural width, cropping the right edge or leaving a right margin.
 :::
 
+### Horizontal Promos
+
+It is permissable to create a horizontal configuration, with the image to the left of the content. In the [**Reference implementation**](../demos/promos/) this is achieved without changing the markup, except to place the class `gel-promos-horizontal` on the `<ul>` element and `gel-promo-horizontal` on each subject Promo.
+
+A small amount of additional CSS is then applied. Note the switch in `flex-direction` from `column` to `row`.
+
+```css
+@supports (display: grid) {
+  .gel-promos.gel-promos-horizontal {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+}
+
+.gel-promo.gel-promo-horizontal {
+  flex-direction: row;
+}
+
+.gel-promo.gel-promo-horizontal .gel-promo-image {
+  width: 15rem;
+  height: auto;
+}
+```
+
 ### Focus styles
 
 A `text-decoration` focus style is recommended for the headline link and any linked meta information (which should be the only focusable elements inside the promo). In addition, the promo itself can take an outline via `focus-within`, to better draw attention to the promo 'in hand':
 
 ```css
-.gel-promo :focus {
+.gel-promo-headline a:focus {
   outline: none;
   text-decoration: underline;
 }

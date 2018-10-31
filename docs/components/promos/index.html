@@ -174,9 +174,9 @@
 <h3 id="notes">Notes</h3>
 <ul>
 <li><strong><code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code>:</strong> Promos are typically presented as a set, and together must be marked up as an unordered list, with each promo marked as a list item (<code>&lt;li&gt;</code>). This enables structural and navigational cues in screen reader software<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</li>
-<li><strong>Headings:</strong> Each promo's primary (headline) link must be contained within a heading, each of the promo's headings must be of the same level, and the set of promos must be introduced as a section within the document by a heading one level higher. The wording of the promo's primary link should resemble that of the target page's <code>&lt;title&gt;</code> and <code>&lt;h1&gt;</code>. This consistency aids cognitive accessibility and improves SEO.</li>
-<li><strong>Image (optional):</strong> Images can be considered decorative (<code>alt=&quot;&quot;</code>; the first promo in the code example) or non-decorative (<code>alt=&quot;[description of image]&quot;</code>; the second promo in the example). They must appear <em>after</em> the headline in the markup since the headline's heading introduces the promo content. <strong>Non-decorative images must have alternative text that does not simply repeat information in the headline or description</strong>.</li>
-<li><strong>Metadata (optional):</strong> Metadata is presented as a description list. The <code>&lt;dt&gt;</code> labels are optionally visually hidden (using the <code>vh</code> class in the example<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>), making them available to just screen reader users. If the visible wording is likely to confuse screen reader users, provide an alternative version and hide the visible version using <code>aria-hidden=&quot;true&quot;</code> (see the 'Published' examples). Do <em>not</em> use <code>aria-label</code> to provide auxiliary labels, because it will not be translated by in-browser translation services. Metadata values may or may not be linked.</li>
+<li><strong>Headings:</strong> Each promo's primary (headline) link must be contained within a heading, each of the promo's headings must be of the same level, and the set of promos must be introduced as a section within the document by a heading one level higher. The wording of the promo's primary link should resemble that of the target page's <code>&lt;title&gt;</code> and <code>&lt;h1&gt;</code>. This consistency aids cognitive accessibility and improves SEO<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</li>
+<li><strong>Image (optional):</strong> Images can be considered decorative (<code>alt=&quot;&quot;</code>; the first Promo in the code example) or non-decorative (<code>alt=&quot;[description of image]&quot;</code>; the second Promo in the example). They must appear <em>after</em> the headline in the markup since the headline's heading introduces the promo content. <strong>Non-decorative images must have alternative text that does not simply repeat information in the headline or description</strong>.</li>
+<li><strong>Metadata (optional):</strong> <a href="#link-todo"><strong>Metadata Strips</strong></a> are specified as their own component</li>
 </ul>
 <h2 id="expected-layout">Expected layout</h2>
 <p>As with <a href="#link-todo"><strong>Cards</strong></a>, promos in a set should share the same height. This is possible by making the <code>&lt;ul&gt;</code> a CSS Flexbox or CSS Grid context. The appearance of each promo is improved by distributing the metadata (if present) to the bottom of the container. This is possible by making the promo a Flexbox context and giving the metadata element <code>margin-top: auto</code>. Padding can be combined with margin to ensure a minimum space between the metadata and the element above it.</p>
@@ -194,7 +194,15 @@
   <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">1rem</span>;
 }
 </code></pre>
-<h3 id="the-image">The image</h3>
+
+          <div class="gel-breakout-box gel-breakout-box extra-padding">
+            <aside aria-label="Note">
+              <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
+              <p><p>While <a href="#link-todo"><strong>Metadata Strips</strong></a> are documented as their own component, the <code>margin-top</code> and <code>padding-top</code> styles specified here are needed in the <strong>Promo</strong> context.</p>
+</p>
+            </aside>
+          </div>
+          <h3 id="the-image">The image</h3>
 <p>As stated in <strong><a href="#expected-markup">Expected markup</a></strong>, the image must come <em>after</em> the headline in the source order. However, it is designed to appear before it visually. Using Flexbox, it is possible to augment the visual order without affecting the source order:</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gel-promo-image</span> {
   <span class="hljs-attribute">order</span>: -<span class="hljs-number">1</span>;
@@ -223,13 +231,13 @@
           <div class="gel-breakout-box gel-breakout-box extra-padding">
             <aside aria-label="Note">
               <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
-              <p><p>At the time of writing, the <code>object-fit</code> property is supported everywhere but Internet Explorer. The code uses <code>@supports</code> and falls back to showing the image at its natural width, cropping the right edge or leaving a right margin.</p>
+              <p><p>At the time of writing, the <code>object-fit</code> property is supported everywhere but Internet Explorer<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. The code uses <code>@supports</code> and falls back to showing the image at its natural width, cropping the right edge or leaving a right margin.</p>
 </p>
             </aside>
           </div>
           <h3 id="focus-styles">Focus styles</h3>
 <p>A <code>text-decoration</code> focus style is recommended for the headline link and any linked meta information (which should be the only focusable elements inside the promo). In addition, the promo itself can take an outline via <code>focus-within</code>, to better draw attention to the promo 'in hand':</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gel-promo</span> <span class="hljs-selector-pseudo">:focus</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-promo-headline</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span> {
   <span class="hljs-attribute">outline</span>: none;
   <span class="hljs-attribute">text-decoration</span>: underline;
 }
@@ -238,8 +246,10 @@
   <span class="hljs-attribute">outline</span>: <span class="hljs-number">0.25rem</span> solid;
 }
 </code></pre>
+<h3 id="metadata-icons">Metadata icons</h3>
+<p>Some items of metadata come with icons, such as a clock prefixing the 'Published' time. These should be provided from <a href="https://www.bbc.co.uk/gel/guidelines/iconography">GEL's iconography system</a>. Ensure their fill is applied using <code>currentColor</code> so that the icon is compatible with high contrast themes.</p>
 <h2 id="expected-behavior">Expected behavior</h2>
-<p>Mouse and touch users should be able to activate the primary (headline) link by pressing either the headline text <em>or</em> the image. However, the image should not represent an additional, redundant tab stop to keyboard users or be perceivable as a link to screen reader users.</p>
+<p>Mouse and touch users should be able to activate the primary (headline) link by pressing either the headline text <em>or</em> the image. However, the image should not represent an additional, redundant tab stop to keyboard users or be perceivable as a link to screen reader users. Too many and redundant 'tab stops' can be cumbersome for keyboard-only users<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>.</p>
 <p>In which case, you need to add a JavaScript <code>click</code> listener to the image and use it to trigger the link's <code>click</code> event by proxy. In plain JavaScript this would look something like the following:</p>
 <pre class="hljs"><code><span class="hljs-comment">// Assuming that `link` represents the headline link node</span>
 <span class="hljs-comment">// and `img` represents the image node...</span>
@@ -262,7 +272,7 @@ img.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; link.cli
           <div class="gel-demo"><!-- 
 title: Promos
  -->
-<style>
+<!--<style>
   .gel-promos {
     margin: 0;
     padding: 0;
@@ -528,8 +538,348 @@ title: Promos
       });
     });
   })();
-</script></div>
-        <p><a class="gel-button gel-button--dark gel-long-primer-bold" href="../demos/promos/" target="_new">Open in new window <svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:currentColor"></use></svg></a></p>
+</script>-->
+
+<style>
+  .gel-promos {
+    margin: 0;
+    padding: 0;
+  }
+
+  .gel-promos>*+* {
+    margin-top: 1rem;
+  }
+
+  @supports (display: grid) {
+    .gel-promos>*+* {
+      margin-top: 0;
+    }
+
+    .gel-promo {
+      margin: 0;
+    }
+
+    .gel-promos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
+      grid-gap: 1rem;
+    }
+  }
+
+  .gel-promo {
+    display: flex;
+    flex-direction: column;
+    background-color: #F1F1F1;
+  }
+
+  .gel-promo-content {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gel-promo-image {
+    order: -1;
+    height: 10rem;
+    overflow: hidden;
+  }
+
+  .gel-promo-image img {
+    height: 100%;
+    width: auto;
+  }
+
+  @supports (object-fit: cover) {
+    .gel-promo-image img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .gel-promo-headline {
+    font-weight: bold;
+  }
+
+  .gel-promo-headline * {
+    font-weight: inherit;
+  }
+
+  .gel-metadata-strip {
+    margin: 0;
+    margin-top: auto;
+    padding-top: 1rem;
+  }
+
+  .gel-metadata-strip>div {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .gel-metadata-strip>div+div::before {
+    content: '';
+    border-left: 1px solid;
+    margin: 0 0.25rem;
+  }
+
+  .gel-metadata-strip dt,
+  .gel-metadata-strip dd {
+    margin: 0;
+    display: inline;
+  }
+
+  @supports (display: grid) {
+    .gel-promos.gel-promos-horizontal {
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
+  }
+
+  .gel-promo.gel-promo-horizontal {
+    flex-direction: row;
+  }
+
+  .gel-promo.gel-promo-horizontal .gel-promo-image {
+    width: 15rem;
+    height: auto;
+  }
+
+  .vh {
+    clip-path: inset(100%) !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    width: 1px !important;
+  }
+
+  .gel-promo-headline a:focus {
+    outline: none;
+    text-decoration: underline;
+  }
+
+  .gel-promo:focus-within {
+    outline: 0.25rem solid;
+  }
+
+  .gel-metadata-strip a {
+    text-decoration: underline;
+  }
+</style>
+
+<div style="margin-bottom: 1rem;">
+  <h3>Fully featured promos (vertical)</h3>
+  <ul class="gel-promos">
+    <li class="gel-promo">
+      <div class="gel-promo-content">
+        <div class="gel-promo-headline">
+          <h4>
+            <a href="/to/permalink/1">Suspect package found at De Niro restaurant</a>
+          </h4>
+        </div>
+        <div class="gel-promo-desc">
+          <p>Police investigate a package at the New York restaurant owned by the actor, reports say.</p>
+        </div>
+        <dl class="gel-metadata-strip">
+          <div>
+            <dt class="vh">Published:</dt>
+            <dd>
+              <span aria-hidden="true">1h</span>
+              <span class="vh">1 hour ago</span>
+            </dd>
+          </div>
+          <div>
+            <dt class="vh">From:</dt>
+            <dd>
+              <a href="link/to/category">US & Canada</a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <div class="gel-promo-image">
+        <img src="/code-gel/static/images/placeholder.png" alt="">
+      </div>
+    </li>
+    <li class="gel-promo">
+      <div class="gel-promo-content">
+        <div class="gel-promo-headline">
+          <h4>
+            <a href="/to/permalink/2">UK Sorry For Forcing DNA Tests On Immigrants</a>
+          </h4>
+        </div>
+        <div class="gel-promo-desc">
+          <p>The home secretary says people were wrongly forced to take tests to prove their right to be in the UK.</p>
+        </div>
+        <dl class="gel-metadata-strip">
+          <div>
+            <dt class="vh">Published:</dt>
+            <dd>
+              <span aria-hidden="true">1m</span>
+              <span class="vh">1 minute ago</span>
+            </dd>
+          </div>
+          <div>
+            <dt class="vh">From:</dt>
+            <dd>
+              <a href="link/to/category">UK</a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <div class="gel-promo-image">
+        <img src="/code-gel/static/images/placeholder.png" alt="">
+      </div>
+    </li>
+  </ul>
+  <h3>Fully featured promos (horizontal)</h3>
+  <ul class="gel-promos gel-promos-horizontal">
+    <li class="gel-promo gel-promo-horizontal">
+      <div class="gel-promo-content">
+        <div class="gel-promo-headline">
+          <h4>
+            <a href="/to/permalink/1">Suspect package found at De Niro restaurant</a>
+          </h4>
+        </div>
+        <div class="gel-promo-desc">
+          <p>Police investigate a package at the New York restaurant owned by the actor, reports say.</p>
+        </div>
+        <dl class="gel-metadata-strip">
+          <div>
+            <dt class="vh">Published:</dt>
+            <dd>
+              <span aria-hidden="true">1h</span>
+              <span class="vh">1 hour ago</span>
+            </dd>
+          </div>
+          <div>
+            <dt class="vh">From:</dt>
+            <dd>
+              <a href="link/to/category">US & Canada</a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <div class="gel-promo-image">
+        <img src="/code-gel/static/images/placeholder.png" alt="">
+      </div>
+    </li>
+    <li class="gel-promo gel-promo-horizontal">
+      <div class="gel-promo-content">
+        <div class="gel-promo-headline">
+          <h4>
+            <a href="/to/permalink/2">UK Sorry For Forcing DNA Tests On Immigrants</a>
+          </h4>
+        </div>
+        <div class="gel-promo-desc">
+          <p>The home secretary says people were wrongly forced to take tests to prove their right to be in the UK.</p>
+        </div>
+        <dl class="gel-metadata-strip">
+          <div>
+            <dt class="vh">Published:</dt>
+            <dd>
+              <span aria-hidden="true">1m</span>
+              <span class="vh">1 minute ago</span>
+            </dd>
+          </div>
+          <div>
+            <dt class="vh">From:</dt>
+            <dd>
+              <a href="link/to/category">UK</a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <div class="gel-promo-image">
+        <img src="/code-gel/static/images/placeholder.png" alt="">
+      </div>
+    </li>
+  </ul>
+  <h3>Promos without descriptions</h3>
+  <ul class="gel-promos">
+    <li class="gel-promo">
+      <div class="gel-promo-content">
+        <div class="gel-promo-headline">
+          <h4>
+            <a href="/to/permalink/1">Suspect package found at De Niro restaurant</a>
+          </h4>
+        </div>
+        <dl class="gel-metadata-strip">
+          <div>
+            <dt class="vh">Published:</dt>
+            <dd>
+              <span aria-hidden="true">1h</span>
+              <span class="vh">1 hour ago</span>
+            </dd>
+          </div>
+          <div>
+            <dt class="vh">From:</dt>
+            <dd>
+              <a href="link/to/category">US & Canada</a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <div class="gel-promo-image">
+        <img src="/code-gel/static/images/placeholder.png" alt="">
+      </div>
+    </li>
+    <li class="gel-promo">
+      <div class="gel-promo-content">
+        <div class="gel-promo-headline">
+          <h4>
+            <a href="/to/permalink/2">UK Sorry For Forcing DNA Tests On Immigrants</a>
+          </h4>
+        </div>
+        <dl class="gel-metadata-strip">
+          <div>
+            <dt class="vh">Published:</dt>
+            <dd>
+              <span aria-hidden="true">1m</span>
+              <span class="vh">1 minute ago</span>
+            </dd>
+          </div>
+          <div>
+            <dt class="vh">From:</dt>
+            <dd>
+              <a href="link/to/category">UK</a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <div class="gel-promo-image">
+        <img src="/code-gel/static/images/placeholder.png" alt="">
+      </div>
+    </li>
+  </ul>
+  <h3>Promos with just images and headlines</h3>
+  <ul class="gel-promos">
+    <li class="gel-promo">
+      <div class="gel-promo-content">
+        <div class="gel-promo-headline">
+          <h4>
+            <a href="/to/permalink/1">Suspect package found at De Niro restaurant</a>
+          </h4>
+        </div>
+      </div>
+      <div class="gel-promo-image">
+        <img src="/code-gel/static/images/placeholder.png" alt="">
+      </div>
+    </li>
+    <li class="gel-promo">
+      <div class="gel-promo-content">
+        <div class="gel-promo-headline">
+          <h4>
+            <a href="/to/permalink/2">UK Sorry For Forcing DNA Tests On Immigrants</a>
+          </h4>
+        </div>
+      </div>
+      <div class="gel-promo-image">
+        <img src="/code-gel/static/images/placeholder.png" alt="">
+      </div>
+    </li>
+  </ul>
+</div></div>
+        <p><a class="gel-button gel-button--dark gel-long-primer-bold" href="../demos/promos/" target="_new">Open in new window <svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:undefined;"></use></svg></a></p>
 <h2 id="test-specifications">Test specifications</h2>
 <p>A list of gherkin-style feature specifications (including requirements for the <a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile">BBC Mobile Accessibility Guidelines</a>) for this component has been developed and published in a format suitable for use with an automated testing framework. You can review and download these feature files from <a href="#linktocome">the project Wiki page, hosted on GitHub</a>.</p>
 <h2 id="related-research">Related research</h2>
@@ -540,7 +890,11 @@ title: Promos
 <ol class="footnotes-list">
 <li id="fn1" class="footnote-item"><p>&quot;Basic screen reader commands for accessibility testing&quot; by Léonie Watson, <a href="https://developer.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/">https://developer.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn2" class="footnote-item"><p>Gist of the <code>vh</code> (visually hidden) class <a href="https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472">https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+<li id="fn2" class="footnote-item"><p>&quot;How To Write Page Titles For Google &amp; Other Search Engines in 2018&quot;, <a href="https://www.hobo-web.co.uk/title-tags/#page-titles-example-use">https://www.hobo-web.co.uk/title-tags/#page-titles-example-use</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><code>object-fit</code> (caniuse data), <a href="https://caniuse.com/#feat=object-fit">https://caniuse.com/#feat=object-fit</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>&quot;Keyboard Accessibility&quot; — WebAIM, <a href="https://webaim.org/techniques/keyboard/">https://webaim.org/techniques/keyboard/</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>

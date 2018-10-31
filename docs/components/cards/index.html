@@ -154,7 +154,7 @@
 <li><strong>Headings:</strong> Each card's primary (headline) link must be contained within a heading, each of the card's headline headings must be of the same level, and the set of cards must be introduced as a section within the document by a heading one level higher.</li>
 <li><strong><code>gel-card-headline</code>:</strong> This must appear first in the source order, although the card content will <em>appear</em> first visually. This is because the card's heading introduces the document section that constitutes the rest of the card. Avoid putting interactive content inside <code>gel-card-headline</code> because this will create a reversed focus order.</li>
 <li><strong><code>gel-card-desc</code>:</strong> This will contain prosaic content, such as a description, attribution, and/or timestamp. Some of these elements may be linked to other resources.</li>
-<li><strong><code>aria-popup=&quot;true&quot;</code>:</strong> You may need to provide additional, clarifying information for the card. A <code>gel-card-info</code> element is hidden by default, but can be toggled into view using the <code>aria-haspopup</code> button. Note that the <code>gel-card-info</code> element appears directly after the <code>aria-haspopup</code> button so that it is logically placed within focus order. The further action buttons will be the next '<kbd>Tab</kbd> stops'.</li>
+<li><strong><code>aria-popup=&quot;true&quot;</code>:</strong> You may need to provide additional, clarifying information for the card. A <code>gel-card-info</code> element is hidden by default, but can be toggled into view using the <code>aria-haspopup</code> button. Note that the <code>gel-card-info</code> element appears directly after the <code>aria-haspopup</code> button so that it is logically placed within focus order. The further action buttons will be the next '<kbd>Tab</kbd> stops'. The <code>aria-haspopup</code> ARIA property identifies the button as a 'popup button' in screen readers<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></li>
 <li><strong><code>role=&quot;group&quot;</code> and <code>aria-labelledby</code>:</strong> In order to reliably associate a label with the <code>gel-card-info</code> element, a generic ARIA role is provided. The label itself is provided as a heading of the correct nesting level (<code>&lt;h4&gt;</code> following <code>&lt;h3&gt;</code> in the example) and connected to <code>gel-card-info</code> using <code>aria-labelledby</code>.</li>
 <li><strong>Love, add, and share:</strong> The remaining actions facilitated by <code>gel-card-toolbar</code>. The <code>aria-pressed</code> state attribute should be provided on the &quot;Love&quot; action, since this is a an &quot;on/off&quot; toggle.</li>
 </ul>
@@ -197,14 +197,14 @@
           <h4 id="a-video">A video</h4>
 <p>If a video is provided, ensure the following:</p>
 <ol>
-<li>The video does not auto-play</li>
+<li>The video does not auto-play<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></li>
 <li>The video player's controls are accessible by screen reader and keyboard</li>
 <li>Dialog in the video is accompanied by closed captions</li>
 </ol>
 <p>If (as illustrated in the <a href="https://www.bbc.co.uk/gel/guidelines/promos">original GEL Card documentation</a>) an auxiliary play/pause button is provided,  ensure that the button is accessible:</p>
 <ol>
 <li>Use a <code>&lt;button&gt;</code> element with the <code>type=&quot;button&quot;</code> attribute</li>
-<li>Provide the (visually hidden<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>) accessible label &quot;play&quot; or &quot;pause&quot;, depending on the play state</li>
+<li>Provide the (visually hidden<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>) accessible label &quot;play&quot; or &quot;pause&quot;, depending on the play state</li>
 </ol>
 <pre class="hljs"><code><span class="hljs-comment">/* Assuming `btn` represents the button
 and `vid` represents the video */</span>
@@ -620,7 +620,11 @@ title: Cards
 <ol class="footnotes-list">
 <li id="fn1" class="footnote-item"><p>&quot;Basic screen reader commands for accessibility testing&quot; by Léonie Watson, <a href="https://developer.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/">https://developer.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn2" class="footnote-item"><p>Gist of the <code>vh</code> (visually hidden) class <a href="https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472">https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+<li id="fn2" class="footnote-item"><p>Accessible Rich Internet Applications (WAI-ARIA) 1.1: <code>aria-haspopup</code>, <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-haspopup">https://www.w3.org/TR/wai-aria-1.1/#aria-haspopup</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>&quot;Why Autoplay Is An Accessibility Issue&quot; — <a href="http://abilitynet.org.uk">abilitynet.org.uk</a>, <a href="https://www.abilitynet.org.uk/news-blogs/why-autoplay-accessibility-issue">https://www.abilitynet.org.uk/news-blogs/why-autoplay-accessibility-issue</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>Gist of the <code>vh</code> (visually hidden) class <a href="https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472">https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
