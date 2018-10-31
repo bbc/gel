@@ -11,7 +11,7 @@ module.exports = function (eleventyConfig) {
   var shortcodes = {
     mark: {
       render: function (attrs) {
-        var char = (attrs.is === 'good')? '✓' : (attrs.is === 'bad')? '✕' : '?';
+        var char = (attrs.is === 'good') ? '✓' : (attrs.is === 'bad') ? '✕' : '?';
         return `
           <div class="circular circular__${attrs.is}" aria-hidden="true">${char}</div>
         `;
@@ -21,10 +21,10 @@ module.exports = function (eleventyConfig) {
       render: function (attrs) {
         var filePath = attrs.src;
         var fileContent = fs.readFileSync('./src/' + filePath, 'utf8');
-        if (fileContent.substr(0,3) === '---') {
+        if (fileContent.substr(0, 3) === '---') {
           fileContent = fileContent.replace(/^---([\s\S]+?)---/, '<!-- $1 -->');
         }
-        
+
         var renderedContent = nunjucks.renderString(fileContent, data);
 
         return `
@@ -50,37 +50,34 @@ module.exports = function (eleventyConfig) {
       return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
     }
   })
-  .use(require('markdown-it-anchor'))
-  .use(require('markdown-it-shortcode-tag'), shortcodes)
-  .use(require('markdown-it-footnote'))
-  .use(require('markdown-it-container'), 'breakout', {
-    validate: function(params) {
-      return params.trim().match(/^(info|help|alert)/);
-    },
-    render: function (tokens, idx) {
-      var m = tokens[idx].info.trim().match(/^(info|help|alert) (.+)$/);
-
-      if (tokens[idx].nesting === 1) { // opening tag
-        return `
-          <div class="gel-breakout-box gel-breakout-box extra-padding">
-            <aside aria-label="${m[2]}">
-              <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="${data.site.basedir}static/images/gel-icons-core-set.svg#gel-icon-${m[1]}" style="fill:#404040;"></use></svg>${m[2]}</h4><div>
-              <p>`;
-      } else { // closing tag
-        return `</p>
+    .use(require('markdown-it-anchor'))
+    .use(require('markdown-it-shortcode-tag'), shortcodes)
+    .use(require('markdown-it-footnote'))
+    .use(require('markdown-it-container'), 'breakout', {
+      validate: function (params) {
+        return params.trim().match(/^(info|help|alert)/);
+      },
+      render: function (tokens, idx) {
+        var m = tokens[idx].info.trim().match(/^(info|help|alert) (.+)$/);
+        var unique = + new Date();
+        if (tokens[idx].nesting === 1) { // opening tag
+          return `
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-${unique}">
+              <h4 id="aside-${unique}" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="${data.site.basedir}static/images/gel-icons-core-set.svg#gel-icon-${m[1]}" style="fill:#404040;"></use></svg>${m[2]}</h4><div>`;
+        } else { // closing tag
+          return `
             </aside>
-          </div>
           `;
+        }
       }
-    }
-  });
+    });
 
-  eleventyConfig.addPlugin(function(eleventyConfig, pluginNamespace) {
+  eleventyConfig.addPlugin(function (eleventyConfig, pluginNamespace) {
     eleventyConfig.namespace(pluginNamespace, () => {
-      eleventyConfig.addFilter('toc', function(content, opts){
+      eleventyConfig.addFilter('toc', function (content, opts) {
         var $ = cheerio.load(content);
         var result = '<ol id="gel-toc__links" class="gel-toc">';
-        $('h2').each(function(i, h2) {
+        $('h2').each(function (i, h2) {
           result += '<li><a href="#' + h2.attribs.id + '">' + $(h2).text() + '</a></li>';
         });
         return result + '</ol>';

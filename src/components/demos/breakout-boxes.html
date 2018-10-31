@@ -1,0 +1,17 @@
+---
+title: Breakout Boxes
+---
+
+<div style="margin-bottom: 1rem;">
+  ::: info Tip
+  To associate `aria-labelledby` with the respective `id`, they must share a value and that value must be unique. In
+  your templating system, you can create a unique string at the time of compilation using `Date()`:
+
+  ```js
+  const unique = + new Date(); // e.g. 1540915290281
+  ```
+
+  An `id` that is not unique is considered a parsing error and, since it affects accessible naming associations here,
+  would mean a failure under **WCAG 4.1.1 Parsing**[^3].
+  :::
+</div>
