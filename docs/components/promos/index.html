@@ -112,62 +112,66 @@
 <p>The <strong>Promo</strong> component is similar to the <a href="#link-todo"><strong>Card</strong></a> but exists solely for linking to permalink content. It optionally contains meta information, a description,  and/or an image. Read the <a href="https://www.bbc.co.uk/gel/guidelines/promos">original GEL Promo documentation</a> for more.</p>
 <h2 id="expected-markup">Expected markup</h2>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Latest news<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promos"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo-headline"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/to/permalink/1"</span>&gt;</span>Suspect package found at De Niro restaurant<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo-content"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo-headline"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/to/permalink/1"</span>&gt;</span>Suspect package found at De Niro restaurant<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo-desc"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Police investigate a package at the New York restaurant owned by the actor, reports say.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">dl</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-metadata-strip"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">dt</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>Published:<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>1h<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>1 hour ago<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">dt</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>From:<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"link/to/category"</span>&gt;</span>US &amp; Canada<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">dl</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo-image"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path/to/image.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/code-gel/static/images/placeholder.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo-desc"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Police investigate a package at the New York restaurant owned by the actor, reports say.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">dl</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-metadata-strip"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">dt</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>Published:<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>1h<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>1 hour ago<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">dt</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>From:<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"link/to/category"</span>&gt;</span>US &amp; Canada<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">dl</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo-headline"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/to/permalink/2"</span>&gt;</span>UK Sorry For Forcing DNA Tests On Immigrants<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo-content"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo-headline"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/to/permalink/2"</span>&gt;</span>UK Sorry For Forcing DNA Tests On Immigrants<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo-desc"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>The home secretary says people were wrongly forced to take tests to prove their right to be in the UK.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">dl</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-metadata-strip"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">dt</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>Published:<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>1m<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>1 minute ago<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">dt</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>From:<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"link/to/category"</span>&gt;</span>UK<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">dl</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo-image"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path/to/image.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Home secretary Sajid Javid in parliament"</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/code-gel/static/images/placeholder.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo-desc"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>The home secretary says people were wrongly forced to take tests to prove their right to be in the UK.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">dl</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-metadata-strip"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">dt</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>Published:<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>1m<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>1 minute ago<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">dt</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>From:<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"link/to/category"</span>&gt;</span>UK<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">dl</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 </code></pre>
@@ -175,7 +179,7 @@
 <ul>
 <li><strong><code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code>:</strong> Promos are typically presented as a set, and together must be marked up as an unordered list, with each promo marked as a list item (<code>&lt;li&gt;</code>). This enables structural and navigational cues in screen reader software<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</li>
 <li><strong>Headings:</strong> Each promo's primary (headline) link must be contained within a heading, each of the promo's headings must be of the same level, and the set of promos must be introduced as a section within the document by a heading one level higher. The wording of the promo's primary link should resemble that of the target page's <code>&lt;title&gt;</code> and <code>&lt;h1&gt;</code>. This consistency aids cognitive accessibility and improves SEO<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</li>
-<li><strong>Image (optional):</strong> Images can be considered decorative (<code>alt=&quot;&quot;</code>; the first Promo in the code example) or non-decorative (<code>alt=&quot;[description of image]&quot;</code>; the second Promo in the example). They must appear <em>after</em> the headline in the markup since the headline's heading introduces the promo content. <strong>Non-decorative images must have alternative text that does not simply repeat information in the headline or description</strong>.</li>
+<li><strong>Image (optional):</strong> Images can be considered decorative (<code>alt=&quot;&quot;</code>; the first Promo in the code example) or non-decorative (<code>alt=&quot;[description of image]&quot;</code>; the second Promo in the example). They must appear <em>after</em> the textual content (<code>gel-promo-content</code>) in the markup since the headline's heading introduces the promo content. <strong>Non-decorative images must have alternative text that does not simply repeat information in the headline or description</strong>.</li>
 <li><strong>Metadata (optional):</strong> <a href="#link-todo"><strong>Metadata Strips</strong></a> are specified as their own component</li>
 </ul>
 <h2 id="expected-layout">Expected layout</h2>
@@ -203,12 +207,20 @@
             </aside>
           </div>
           <h3 id="the-image">The image</h3>
-<p>As stated in <strong><a href="#expected-markup">Expected markup</a></strong>, the image must come <em>after</em> the headline in the source order. However, it is designed to appear before it visually. Using Flexbox, it is possible to augment the visual order without affecting the source order:</p>
+<p>As stated in <strong><a href="#expected-markup">Expected markup</a></strong>, the image must come <em>after</em> the text content in the source order. However, it is designed to appear before it visually. Using Flexbox, it is possible to augment the visual order without affecting the source order:</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gel-promo-image</span> {
   <span class="hljs-attribute">order</span>: -<span class="hljs-number">1</span>;
 }
 </code></pre>
-<p>The image will need to fit the available space, regardless of the promo's dimensions (which are likely to change across breakpoints) without distorting. This is possible by setting the desired height of the image box and using the <code>object-fit</code> property:</p>
+
+          <div class="gel-breakout-box gel-breakout-box extra-padding">
+            <aside aria-label="Note">
+              <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
+              <p><p>Augmenting the source order can produce a <a href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html"><strong>WCAG 2.4.3 Focus Order failure</strong></a>, but the image is not focusable so there is no such issue.</p>
+</p>
+            </aside>
+          </div>
+          <p>The image will need to fit the available space, regardless of the promo's dimensions (which are likely to change across breakpoints) without distorting. This is possible by setting the desired height of the image box and using the <code>object-fit</code> property:</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gel-promo-image</span> {
   <span class="hljs-attribute">order</span>: -<span class="hljs-number">1</span>;
   <span class="hljs-attribute">height</span>: <span class="hljs-number">10rem</span>;
@@ -235,7 +247,25 @@
 </p>
             </aside>
           </div>
-          <h3 id="focus-styles">Focus styles</h3>
+          <h3 id="horizontal-promos">Horizontal Promos</h3>
+<p>It is permissable to create a horizontal configuration, with the image to the left of the content. In the <a href="../demos/promos/"><strong>Reference implementation</strong></a> this is achieved without changing the markup, except to place the class <code>gel-promos-horizontal</code> on the <code>&lt;ul&gt;</code> element and <code>gel-promo-horizontal</code> on each subject Promo.</p>
+<p>A small amount of additional CSS is then applied. Note the switch in <code>flex-direction</code> from <code>column</code> to <code>row</code>.</p>
+<pre class="hljs"><code>@<span class="hljs-keyword">supports</span> (display: grid) {
+  <span class="hljs-selector-class">.gel-promos</span><span class="hljs-selector-class">.gel-promos-horizontal</span> {
+    <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(auto-fill, minmax(400px, 1fr));
+  }
+}
+
+<span class="hljs-selector-class">.gel-promo</span><span class="hljs-selector-class">.gel-promo-horizontal</span> {
+  <span class="hljs-attribute">flex-direction</span>: row;
+}
+
+<span class="hljs-selector-class">.gel-promo</span><span class="hljs-selector-class">.gel-promo-horizontal</span> <span class="hljs-selector-class">.gel-promo-image</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">15rem</span>;
+  <span class="hljs-attribute">height</span>: auto;
+}
+</code></pre>
+<h3 id="focus-styles">Focus styles</h3>
 <p>A <code>text-decoration</code> focus style is recommended for the headline link and any linked meta information (which should be the only focusable elements inside the promo). In addition, the promo itself can take an outline via <code>focus-within</code>, to better draw attention to the promo 'in hand':</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gel-promo-headline</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span> {
   <span class="hljs-attribute">outline</span>: none;
@@ -272,273 +302,6 @@ img.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; link.cli
           <div class="gel-demo"><!-- 
 title: Promos
  -->
-<!--<style>
-  .gel-promos {
-    margin: 0;
-    padding: 0;
-  }
-
-  .gel-promos>*+* {
-    margin-top: 1rem;
-  }
-
-  @supports (display: grid) {
-    .gel-promos>*+* {
-      margin-top: 0;
-    }
-
-    .gel-promo {
-      margin: 0;
-    }
-
-    .gel-promos {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
-      grid-gap: 1rem;
-    }
-  }
-
-  .gel-promo {
-    display: flex;
-    flex-direction: column;
-    background-color: #F1F1F1;
-  }
-
-  .gel-promo>*:not(.gel-promo-image) {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .gel-promo> :last-child:not(.gel-promo-image) {
-    padding-bottom: 1rem;
-  }
-
-  .gel-promo-image {
-    order: -1;
-    margin-top: 0;
-    height: 10rem;
-    overflow: hidden;
-  }
-
-  .gel-promo-image img {
-    height: 100%;
-    width: auto;
-  }
-
-  @supports (object-fit: cover) {
-    .gel-promo-image img {
-      width: 100%;
-      object-fit: cover;
-    }
-  }
-
-  .gel-promo-headline {
-    font-weight: bold;
-  }
-
-  .gel-promo-headline * {
-    font-weight: inherit;
-  }
-
-  .gel-metadata-strip {
-    margin: 0;
-    margin-top: auto;
-    padding-top: 1rem;
-  }
-
-  .gel-metadata-strip>div {
-    display: inline-block;
-    white-space: nowrap;
-  }
-
-  .gel-metadata-strip>div+div::before {
-    content: '';
-    border-left: 1px solid;
-    margin: 0 0.25rem;
-  }
-
-  .gel-metadata-strip dt,
-  .gel-metadata-strip dd {
-    margin: 0;
-    display: inline;
-  }
-
-  .vh {
-    clip-path: inset(100%) !important;
-    clip: rect(1px, 1px, 1px, 1px) !important;
-    height: 1px !important;
-    overflow: hidden !important;
-    position: absolute !important;
-    white-space: nowrap !important;
-    width: 1px !important;
-  }
-
-  .gel-promo :focus {
-    outline: none;
-    text-decoration: underline;
-  }
-
-  .gel-promo:focus-within {
-    outline: 0.25rem solid;
-  }
-
-  .gel-metadata-strip a {
-    text-decoration: underline;
-  }
-</style>
-
-<div style="margin-bottom: 1rem;">
-  <h3>Fully featured promos</h3>
-  <ul class="gel-promos">
-    <li class="gel-promo">
-      <div class="gel-promo-headline">
-        <h4>
-          <a href="/to/permalink/1">Suspect package found at De Niro restaurant</a>
-        </h4>
-      </div>
-      <div class="gel-promo-image">
-        <img src="/code-gel/static/images/placeholder.png" alt="">
-      </div>
-      <div class="gel-promo-desc">
-        <p>Police investigate a package at the New York restaurant owned by the actor, reports say.</p>
-      </div>
-      <dl class="gel-metadata-strip">
-        <div>
-          <dt class="vh">Published:</dt>
-          <dd>
-            <span aria-hidden="true">1h</span>
-            <span class="vh">1 hour ago</span>
-          </dd>
-        </div>
-        <div>
-          <dt class="vh">From:</dt>
-          <dd>
-            <a href="link/to/category">US & Canada</a>
-          </dd>
-        </div>
-      </dl>
-    </li>
-    <li class="gel-promo">
-      <div class="gel-promo-headline">
-        <h4>
-          <a href="/to/permalink/2">UK Sorry For Forcing DNA Tests On Immigrants</a>
-        </h4>
-      </div>
-      <div class="gel-promo-image">
-        <img src="/code-gel/static/images/placeholder.png" alt="">
-      </div>
-      <div class="gel-promo-desc">
-        <p>The home secretary says people were wrongly forced to take tests to prove their right to be in the UK.</p>
-      </div>
-      <dl class="gel-metadata-strip">
-        <div>
-          <dt class="vh">Published:</dt>
-          <dd>
-            <span aria-hidden="true">1m</span>
-            <span class="vh">1 minute ago</span>
-          </dd>
-        </div>
-        <div>
-          <dt class="vh">From:</dt>
-          <dd>
-            <a href="link/to/category">UK</a>
-          </dd>
-        </div>
-      </dl>
-    </li>
-  </ul>
-  <h3>Promos without descriptions</h3>
-  <ul class="gel-promos">
-    <li class="gel-promo">
-      <div class="gel-promo-headline">
-        <h4>
-          <a href="/to/permalink/1">Suspect package found at De Niro restaurant</a>
-        </h4>
-      </div>
-      <div class="gel-promo-image">
-        <img src="/code-gel/static/images/placeholder.png" alt="">
-      </div>
-      <dl class="gel-metadata-strip">
-        <div>
-          <dt class="vh">Published:</dt>
-          <dd>
-            <span aria-hidden="true">1h</span>
-            <span class="vh">1 hour ago</span>
-          </dd>
-        </div>
-        <div>
-          <dt class="vh">From:</dt>
-          <dd>
-            <a href="link/to/category">US & Canada</a>
-          </dd>
-        </div>
-      </dl>
-    </li>
-    <li class="gel-promo">
-      <div class="gel-promo-headline">
-        <h4>
-          <a href="/to/permalink/2">UK Sorry For Forcing DNA Tests On Immigrants</a>
-        </h4>
-      </div>
-      <div class="gel-promo-image">
-        <img src="/code-gel/static/images/placeholder.png" alt="">
-      </div>
-      <dl class="gel-metadata-strip">
-        <div>
-          <dt class="vh">Published:</dt>
-          <dd>
-            <span aria-hidden="true">1m</span>
-            <span class="vh">1 minute ago</span>
-          </dd>
-        </div>
-        <div>
-          <dt class="vh">From:</dt>
-          <dd>
-            <a href="link/to/category">UK</a>
-          </dd>
-        </div>
-      </dl>
-    </li>
-  </ul>
-  <h3>Promos with just images and headlines</h3>
-  <ul class="gel-promos">
-    <li class="gel-promo">
-      <div class="gel-promo-headline">
-        <h4>
-          <a href="/to/permalink/1">Suspect package found at De Niro restaurant</a>
-        </h4>
-      </div>
-      <div class="gel-promo-image">
-        <img src="/code-gel/static/images/placeholder.png" alt="">
-      </div>
-    </li>
-    <li class="gel-promo">
-      <div class="gel-promo-headline">
-        <h4>
-          <a href="/to/permalink/2">UK Sorry For Forcing DNA Tests On Immigrants</a>
-        </h4>
-      </div>
-      <div class="gel-promo-image">
-        <img src="/code-gel/static/images/placeholder.png" alt="">
-      </div>
-    </li>
-  </ul>
-</div>
-
-<script>
-  (function () {
-    var promos = document.querySelectorAll('.gel-promo');
-    Array.prototype.forEach.call(promos, function (promo) {
-      var img = promo.querySelector('.gel-promo-image');
-      var link = promo.querySelector('.gel-promo-headline a');
-
-      img.style.cursor = 'pointer';
-      img.addEventListener('click', function () {
-        link.click();
-      });
-    });
-  })();
-</script>-->
 
 <style>
   .gel-promos {

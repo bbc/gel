@@ -1893,9 +1893,4 @@ a.gel-button.gel-button__link-button {
 
 /* hacks */
 hr.footnotes-sep {
-  display: none; 
-}
-
-.footnote-ref {
-  line-height: 1;
-}
+  display: none; }
