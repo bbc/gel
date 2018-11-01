@@ -80,7 +80,7 @@ In the adjusted version, "Breaking" is made part of the heading and will be read
 ```
 
 ::: alert Important
-Part of the intention of sectioning elements (like `<section>` and `<article>`) was to automate heading levels as perceived by assistive technologies. That is, an `<h1>` inside a `<section>` would be perceived as an `<h2>`. However, the algorithm was never implemented by any browser vendors[^6]. You need to use explicit (h1—h6) levels.
+Part of the intention of sectioning elements (like `<section>` and `<article>`) was to automate heading levels as perceived by assistive technologies. That is, an `<h1>` for a  `<section>` inside `<body>` would be perceived as an `<h2>`. However, the algorithm was never implemented by any browser vendors[^6]. You still need to use explicit (h1—h6) according to your sections' nesting depth.
 :::
 
 ### Wording
