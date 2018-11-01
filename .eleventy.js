@@ -17,6 +17,13 @@ module.exports = function (eleventyConfig) {
         `;
       }
     },
+    icon: {
+      render: function (attrs) {
+        return `
+          <svg class="${attrs.class}"><use xlink:href="${data.site.basedir}static/images/gel-icons-all.svg#${attrs.name}" style="${attrs.style}"></use></svg>
+        `;
+      }
+    },
     include: {
       render: function (attrs) {
         var filePath = attrs.src;

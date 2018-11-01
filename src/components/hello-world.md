@@ -14,6 +14,8 @@ this.is.code(x);
 println('done');
 ```
 
+## <mark is="good"> Good Example
+
 ```html
 <h1 class="primary">
   <span>Hello HTML</span>
@@ -21,6 +23,8 @@ println('done');
 ```
 
 <button id="gelui-reload" class="button a11y-tuts__button" onclick="" style="font-size:16px;font-weight:bold;">Reload examples</button>
+
+## <icon class="gel-icon gel-icon--text" name="gel-icon-archery"> On Target
 
 ## Where next?
 
