@@ -1,37 +1,343 @@
 ---
-title: Promo Examples
-
+title: Promos
 ---
 
-<div class="gel-promo-wrapper" style="width:100%; max-width:900px; border-left:1px solid #ccc; padding:16px;">
-  
-  <h3>More Stories...</h3>
+<style>
+  .gel-promos {
+    margin: 0;
+    padding: 0;
+  }
 
-  <ul class="gel-promo-list">
+  .gel-promos>*+* {
+    margin-top: 1rem;
+  }
 
-    <li class="gel-promo gel-promo__horz">
-      <a href="#example-link-1">
-          <div class="gel-promo-body">
-            <h4>Trains Run On Time</h4>
-            <p>"A first!" declares transport boss.</p>
+  @supports (display: grid) {
+    .gel-promos>*+* {
+      margin-top: 0;
+    }
+
+    .gel-promo {
+      margin: 0;
+    }
+
+    .gel-promos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
+      grid-gap: 1rem;
+    }
+  }
+
+  .gel-promo {
+    display: flex;
+    flex-direction: column;
+    background-color: #F1F1F1;
+  }
+
+  .gel-promo-content {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gel-promo-image {
+    order: -1;
+    height: 10rem;
+    overflow: hidden;
+  }
+
+  .gel-promo-image img {
+    height: 100%;
+    width: auto;
+  }
+
+  @supports (object-fit: cover) {
+    .gel-promo-image img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .gel-promo-headline {
+    font-weight: bold;
+  }
+
+  .gel-promo-headline * {
+    font-weight: inherit;
+  }
+
+  .gel-metadata-strip {
+    margin: 0;
+    margin-top: auto;
+    padding-top: 1rem;
+  }
+
+  .gel-metadata-strip>div {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .gel-metadata-strip>div+div::before {
+    content: '';
+    border-left: 1px solid;
+    margin: 0 0.25rem;
+  }
+
+  .gel-metadata-strip dt,
+  .gel-metadata-strip dd {
+    margin: 0;
+    display: inline;
+  }
+
+  @supports (display: grid) {
+    .gel-promos.gel-promos-horizontal {
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
+  }
+
+  .gel-promo.gel-promo-horizontal {
+    flex-direction: row;
+  }
+
+  .gel-promo.gel-promo-horizontal .gel-promo-image {
+    width: 15rem;
+    height: auto;
+  }
+
+  .vh {
+    clip-path: inset(100%) !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    width: 1px !important;
+  }
+
+  .gel-promo-headline a:focus {
+    outline: none;
+    text-decoration: underline;
+  }
+
+  .gel-promo:focus-within {
+    outline: 0.25rem solid;
+  }
+
+  .gel-metadata-strip a {
+    text-decoration: underline;
+  }
+</style>
+
+<div style="margin-bottom: 1rem;">
+  <h3>Fully featured promos (vertical)</h3>
+  <ul class="gel-promos">
+    <li class="gel-promo">
+      <div class="gel-promo-content">
+        <div class="gel-promo-headline">
+          <h4>
+            <a href="/to/permalink/1">Suspect package found at De Niro restaurant</a>
+          </h4>
+        </div>
+        <div class="gel-promo-desc">
+          <p>Police investigate a package at the New York restaurant owned by the actor, reports say.</p>
+        </div>
+        <dl class="gel-metadata-strip">
+          <div>
+            <dt class="vh">Published:</dt>
+            <dd>
+              <span aria-hidden="true">1h</span>
+              <span class="vh">1 hour ago</span>
+            </dd>
           </div>
-          <div class="gel-promo-media">
-            <img src="{{site.basedir}}static/images/placeholder.png" alt="">
+          <div>
+            <dt class="vh">From:</dt>
+            <dd>
+              <a href="link/to/category">US & Canada</a>
+            </dd>
           </div>
-      </a>
+        </dl>
+      </div>
+      <div class="gel-promo-image">
+        <img src="{{site.basedir}}static/images/placeholder.png" alt="">
+      </div>
     </li>
-
-    <li class="gel-promo gel-promo__horz">
-      <a href="#example-link-2">
-          <div class="gel-promo-body">
-            <h4>More Gold for New Olympic Trampoline Team in London</h4>
+    <li class="gel-promo">
+      <div class="gel-promo-content">
+        <div class="gel-promo-headline">
+          <h4>
+            <a href="/to/permalink/2">UK Sorry For Forcing DNA Tests On Immigrants</a>
+          </h4>
+        </div>
+        <div class="gel-promo-desc">
+          <p>The home secretary says people were wrongly forced to take tests to prove their right to be in the UK.</p>
+        </div>
+        <dl class="gel-metadata-strip">
+          <div>
+            <dt class="vh">Published:</dt>
+            <dd>
+              <span aria-hidden="true">1m</span>
+              <span class="vh">1 minute ago</span>
+            </dd>
           </div>
-          <div class="gel-promo-media">
-            <img src="{{site.basedir}}static/images/placeholder.png" alt="">
+          <div>
+            <dt class="vh">From:</dt>
+            <dd>
+              <a href="link/to/category">UK</a>
+            </dd>
           </div>
-      </a>
+        </dl>
+      </div>
+      <div class="gel-promo-image">
+        <img src="{{site.basedir}}static/images/placeholder.png" alt="">
+      </div>
     </li>
-
   </ul>
-
+  <h3>Fully featured promos (horizontal)</h3>
+  <ul class="gel-promos gel-promos-horizontal">
+    <li class="gel-promo gel-promo-horizontal">
+      <div class="gel-promo-content">
+        <div class="gel-promo-headline">
+          <h4>
+            <a href="/to/permalink/1">Suspect package found at De Niro restaurant</a>
+          </h4>
+        </div>
+        <div class="gel-promo-desc">
+          <p>Police investigate a package at the New York restaurant owned by the actor, reports say.</p>
+        </div>
+        <dl class="gel-metadata-strip">
+          <div>
+            <dt class="vh">Published:</dt>
+            <dd>
+              <span aria-hidden="true">1h</span>
+              <span class="vh">1 hour ago</span>
+            </dd>
+          </div>
+          <div>
+            <dt class="vh">From:</dt>
+            <dd>
+              <a href="link/to/category">US & Canada</a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <div class="gel-promo-image">
+        <img src="{{site.basedir}}static/images/placeholder.png" alt="">
+      </div>
+    </li>
+    <li class="gel-promo gel-promo-horizontal">
+      <div class="gel-promo-content">
+        <div class="gel-promo-headline">
+          <h4>
+            <a href="/to/permalink/2">UK Sorry For Forcing DNA Tests On Immigrants</a>
+          </h4>
+        </div>
+        <div class="gel-promo-desc">
+          <p>The home secretary says people were wrongly forced to take tests to prove their right to be in the UK.</p>
+        </div>
+        <dl class="gel-metadata-strip">
+          <div>
+            <dt class="vh">Published:</dt>
+            <dd>
+              <span aria-hidden="true">1m</span>
+              <span class="vh">1 minute ago</span>
+            </dd>
+          </div>
+          <div>
+            <dt class="vh">From:</dt>
+            <dd>
+              <a href="link/to/category">UK</a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <div class="gel-promo-image">
+        <img src="{{site.basedir}}static/images/placeholder.png" alt="">
+      </div>
+    </li>
+  </ul>
+  <h3>Promos without descriptions</h3>
+  <ul class="gel-promos">
+    <li class="gel-promo">
+      <div class="gel-promo-content">
+        <div class="gel-promo-headline">
+          <h4>
+            <a href="/to/permalink/1">Suspect package found at De Niro restaurant</a>
+          </h4>
+        </div>
+        <dl class="gel-metadata-strip">
+          <div>
+            <dt class="vh">Published:</dt>
+            <dd>
+              <span aria-hidden="true">1h</span>
+              <span class="vh">1 hour ago</span>
+            </dd>
+          </div>
+          <div>
+            <dt class="vh">From:</dt>
+            <dd>
+              <a href="link/to/category">US & Canada</a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <div class="gel-promo-image">
+        <img src="{{site.basedir}}static/images/placeholder.png" alt="">
+      </div>
+    </li>
+    <li class="gel-promo">
+      <div class="gel-promo-content">
+        <div class="gel-promo-headline">
+          <h4>
+            <a href="/to/permalink/2">UK Sorry For Forcing DNA Tests On Immigrants</a>
+          </h4>
+        </div>
+        <dl class="gel-metadata-strip">
+          <div>
+            <dt class="vh">Published:</dt>
+            <dd>
+              <span aria-hidden="true">1m</span>
+              <span class="vh">1 minute ago</span>
+            </dd>
+          </div>
+          <div>
+            <dt class="vh">From:</dt>
+            <dd>
+              <a href="link/to/category">UK</a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <div class="gel-promo-image">
+        <img src="{{site.basedir}}static/images/placeholder.png" alt="">
+      </div>
+    </li>
+  </ul>
+  <h3>Promos with just images and headlines</h3>
+  <ul class="gel-promos">
+    <li class="gel-promo">
+      <div class="gel-promo-content">
+        <div class="gel-promo-headline">
+          <h4>
+            <a href="/to/permalink/1">Suspect package found at De Niro restaurant</a>
+          </h4>
+        </div>
+      </div>
+      <div class="gel-promo-image">
+        <img src="{{site.basedir}}static/images/placeholder.png" alt="">
+      </div>
+    </li>
+    <li class="gel-promo">
+      <div class="gel-promo-content">
+        <div class="gel-promo-headline">
+          <h4>
+            <a href="/to/permalink/2">UK Sorry For Forcing DNA Tests On Immigrants</a>
+          </h4>
+        </div>
+      </div>
+      <div class="gel-promo-image">
+        <img src="{{site.basedir}}static/images/placeholder.png" alt="">
+      </div>
+    </li>
+  </ul>
 </div>

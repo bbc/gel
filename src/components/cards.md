@@ -7,130 +7,138 @@ accessibility: true
 linkback: http://www.bbc.co.uk/gel/guidelines/cards
 ---
 
-## When to use a card
+## Introduction
 
-The card component represents a summary/preview of longer-form content. It should only be incorporated within you interface where:
+The **Card** component is superficially similar to the [**Promo**](#link-todo). However, while the promo acts as a teaser and links to a page with full information, the **Card** is self-sufficient and offers functionality _in situ_. 
 
-1. It belongs to a set of cards, each summarizing similar and equivalent content
-2. There is a permalink to which the card can be linked
-
-Examples of sets of cards include programme listings, news stories, and sports events.
+This functionality can include video playback, and options to share the card content via social media. Read the [original GEL Card documentation](https://www.bbc.co.uk/gel/guidelines/promos) for more.
 
 ## Expected markup
 
-Any set of cards must be marked up as an unordered list, with each card as a list item (`<li>`). This communicates to assistive technologies that the the items are related and part of a set. It also enables the list navigation mechanism in screen reader software.
+::: info Note
+The following designates the basic card structure, consisting of the headline, description, content, and toolbar. See **Card content** for guidance on the structure of common types of card content.
+:::
 
 ```html
-<div class="cards">
-  <ul class="cards_list">
-    <li>
-      <!-- first card content -->
-    </li>
-    <li>
-      <!-- second card content -->
-    </li>
-  </ul>
-</div>
+<h2>Heading introducing the set of cards</h2>
+<ul>
+  <li class="gel-card">
+    <div class="gel-card-headline">
+      <h3>Card 1 Headline</h3>
+    </div>
+    <div class="gel-card-content">
+      <!-- an image, video, quotation, etc -->
+    </div>
+    <div class="gel-card-desc">
+      <!-- can include an attribution, timestamp, etc. -->
+    </div>
+    <div class="gel-card-toolbar">
+      <button type="button" aria-haspopup="true">More info</button>
+      <div class="gel-card-info" role="group" aria-labelledby="more-info-title-1">
+        <h4 class="gel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h4>
+        <!-- More info here -->
+      </div>
+      <button type="button" aria-pressed="false">Love</button>
+      <button type="button">Add</button>
+      <button type="button">Share</button>
+    </div>
+  </li>
+  <li class="gel-card">
+    <!-- another card's contents -->
+  </li>
+</ul>
 ```
 
-### Headings
+### Notes
 
-It is recommended that each card's primary (headline) link is contained within a heading, that each of the cards' headings are of the same level, and that the set of cards is introduced by a heading one level higher. For example:
+* **`<ul>` and `<li>`:** Cards are typically presented as a set, and together must be marked up as an unordered list, with each card marked as a list item (`<li>`). This enables structural and navigational cues in screen reader software[^1].
+* **Headings:** Each card's primary (headline) link must be contained within a heading, each of the card's headline headings must be of the same level, and the set of cards must be introduced as a section within the document by a heading one level higher.
+* **`gel-card-headline`:** This must appear first in the source order, although the card content will _appear_ first visually. This is because the card's heading introduces the document section that constitutes the rest of the card. Avoid putting interactive content inside `gel-card-headline` because this will create a reversed focus order.
+* **`gel-card-desc`:** This will contain prosaic content, such as a description, attribution, and/or timestamp. Some of these elements may be linked to other resources.
+* **`aria-popup="true"`:** You may need to provide additional, clarifying information for the card. A `gel-card-info` element is hidden by default, but can be toggled into view using the `aria-haspopup` button. Note that the `gel-card-info` element appears directly after the `aria-haspopup` button so that it is logically placed within focus order. The further action buttons will be the next '<kbd>Tab</kbd> stops'. The `aria-haspopup` ARIA property identifies the button as a 'popup button' in screen readers[^3]
+* **`role="group"` and `aria-labelledby`:** In order to reliably associate a label with the `gel-card-info` element, a generic ARIA role is provided. The label itself is provided as a heading of the correct nesting level (`<h4>` following `<h3>` in the example) and connected to `gel-card-info` using `aria-labelledby`.
+* **Love, add, and share:** The remaining actions facilitated by `gel-card-toolbar`. The `aria-pressed` state attribute should be provided on the "Love" action, since this is a an "on/off" toggle.
 
-```html
-<h2>Latest news stories</h2>
-<div class="cards">
-  <ul class="cards_list">
-    <li>
-      <h3>
-        <a href="[url]">Headline 1</a>
-      </h3>
-      <!-- ensuing card content -->
-    </li>
-    <li>
-      <h3>
-        <a href="[url]">Headline 2</a>
-      </h3>
-      <!-- ensuing card content -->
-    </li>
-    <li>
-      <h3>
-        <a href="[url]">Headline 3</a>
-      </h3>
-      <!-- ensuing card content -->
-    </li>
-  </ul>
-</div>
+### Card contents
+
+As set out in [bbc.co.uk/gel/guidelines/cards](https://www.bbc.co.uk/gel/guidelines/cards), there is a variety of content that may be included in cards. Here are some common examples:
+
+#### An image
+
+When an image is the focus of the card, it should be considered salient content and _must_ include sufficient alternative text. For example, if the card's headline is _"Winning nature photograph"_, the alternative text should not be:
+
+1. Omitted
+2. A mere repetition of the headline
+
+Instead, describe what is in the photograph and what makes it appealing. 
+
+To ensure the image has the best chance of fitting within the given space without distorting, it is recommended you use the `object-fit` property as a progressive enhancement. In the following example, the height of the content area has been set to `10rem` and the width is assumed to be indeterminate/responsive.
+
+```css
+.gel-promo-image {
+  order: -1;
+  height: 10rem;
+  overflow: hidden;
+}
+
+.gel-promo-image img {
+  height: 100%;
+  width: auto;
+}
+
+@supports (object-fit: cover) {
+  .gel-promo-image img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
 ```
 
-This marks out and labels the set as a subsection within the page, and provides a sound hierarchy for those traversing the page non-visually.
+::: info Note
+At the time of writing, the `object-fit` property is supported everywhere but Internet Explorer. The code uses `@supports` and falls back to showing the image at its natural width, cropping the right edge or leaving a right margin.
+:::
 
-For search engine optimization and cognitive accessibility, the card's primary link text should match, or at least closely resemble, the `<h1>` text of the target URL.
+#### A video
 
-### Images
+If a video is provided, ensure the following:
 
-Cards may contain images. These may be considered decorative or non-decorative. Where decorative, a 'null' alternative text value must be provided (`alt=""`):
+1. The video does not auto-play[^4]
+2. The video player's controls are accessible by screen reader and keyboard
+3. Dialog in the video is accompanied by closed captions
 
-```html
-<li>
-  <img src="/to/image.png" alt="" />
-  <h3>
-    <a href="[url]">Headline 2</a>
-  </h3>
-  <!-- ensuing card content -->
-</li>
-```
+If (as illustrated in the [original GEL Card documentation](https://www.bbc.co.uk/gel/guidelines/promos)) an auxiliary play/pause button is provided,  ensure that the button is accessible:
 
-Only provide a positive `alt` value if it is not redundant. That is, if it adds pertinent information non-visually and does not simply repeat information provided by the primary link text or description.
-
-#### ✓ Good example
-
-```html
-<li>
-  <img src="/to/image.png" alt="Mugshot of a short-haired, thickset man" />
-  <h3>
-    <a href="[url]">Skripal attack: Second Russian Salisbury suspect named</a>
-  </h3>
-  <!-- ensuing card content -->
-</li>
-```
-
-#### ✖️ Poor example
-
-```html
-<li>
-  <img src="/to/image.png" alt="Virgin Galactic logo" />
-  <h3>
-    <a href="[url]">Virgin Galactic to reach space in weeks</a>
-  </h3>
-  <!-- ensuing card content -->
-</li>
-```
-
-If the `alt` is omitted, screen reader software tends to announce the image's `src` value instead. In React, the `alt` prop should therefore be required, either using `propTypes` or an alternative type checking method.
+1. Use a `<button>` element with the `type="button"` attribute
+2. Provide the (visually hidden[^2]) accessible label "play" or "pause", depending on the play state
 
 ```js
-Card.propTypes = {
-  alt: PropTypes.string.isRequired
-};
+/* Assuming `btn` represents the button
+and `vid` represents the video */
+btn.addEventListener('click', function() {
+  if (vid.paused) {
+    vid.play();
+    vid.textContent = 'Pause';
+  } else {
+    vid.pause();
+    vid.textContent = 'Play';
+  }
+});
 ```
 
-### Toolbar
+::: alert Important
+Where the label of a toggle button changes, its (ARIA-defined) state must not also do so. By changing the label, you change the purpose of the button, and a simultaneous shift in state (`aria-pressed="false"` to `aria-pressed="true"`) will result in confusion.
+:::
 
-A typical card contains a toolbar after the description and at the bottom of the card. This can contain a "More info" button and one or more actions (Love, Add, and/or Share).
+#### A quotation
 
-The toolbar must appear after the headline and description, last in source order within the card. The controls themselves must be marked up as buttons, with the `type="button"` attribution since they trigger JavaScript behavior.
+Quotations must be set out using the `<figure>` and `<figcaption>` elements. The `<figcaption>` element must come after the quotation itself.
 
 ```html
-<div class="card_toolbar">
-  <button type="button" aria-haspopup="true">More info</button>
-  <button type="button">Love</button>
-  <button type="button">Add</button>
-  <button type="button">Share</button>
-</div>
+<figure>
+  <p>Are you the sort of person who gloats when you see a woman fall, or the kind that celebrates a magnificent recovery? #TeamMadonna</p>
+  <figcaption>J.K. Rowling</figcaption>
+</figure>
 ```
-
-<important text="The 'More info' button takes `aria-haspopup` because it will reveal, and move focus to, the additional info element. See **Expected behavior**, to follow." />
 
 ## Expected layout
 
@@ -176,7 +184,9 @@ The most efficient way to arrange cards into a grid is to use the CSS Grid modul
 }
 ```
 
-<note text="These examples use [GEL Sass Tools](https://github.com/bbc/gel-sass-tools) for the margins." />
+::: info Note
+These examples use [GEL Sass Tools](https://github.com/bbc/gel-sass-tools) for the margins.
+:::
 
 ### Carousel formation
 
@@ -207,7 +217,7 @@ Each card in a set should share the same height, despite content across cards va
 This must _not_ be achieved using absolute positioning, because this is likely to interfere with zoom functionality. Instead, make the card a Flexbox context and give the final element a top margin of `auto`:
 
 ```css
-.cards_list li {
+.cards_list > li {
   display: flex;
   flex-direction: column;
 }
@@ -217,61 +227,56 @@ This must _not_ be achieved using absolute positioning, because this is likely t
 }
 ```
 
-## Expected behavior
+The `gel-card-headline`, containing the heading element, must come first in focus order hence it is first in source order. To move the `gel-card-content` above it _visually_ you can use `order: -1`.
 
-### The link
-
-Mouse and touch users should be able to activate the primary (headline) link by pressing either the headline text _or_ the image. However, the image should not represent an additional, redundant tab stop to keyboard users or be perceivable as a link to screen reader users. 
-
-In which case, you need to add a JavaScript `click` listener to the image and use it to trigger the link's `click` event by proxy. In plain JavaScript this would look something like the following:
-
-```js
-// Assuming that `link` represents the headline link node
-// and `img` represents the image node...
-img.addEventListener('click', () => link.click());
-```
-
-This is the only JavaScript enhancement. In an environment where the card is not client rendered, the card will be functional where JavaScript is not available. Accordingly, only add the `cursor` style if JavaScript has run:
-
-```js
-img.style.cursor = 'pointer';
-```
-
-In React with JSX, you might use a `ref` (the node for which being accessible via the `current` property). The following example is elided for brevity:
-
-```js
-class Card extends React.Component {
-  constructor(props) {
-    super(props);
-    this.link = React.createRef();
-  }
-  render() {
-    const { src, alt, url, headline } = this.props;
-    return (
-      <li>
-        <img src={src} alt={alt} onClick={this.link.current.click()} />
-        <h2>
-          <a href={url} ref={this.link}>{headline}</a>
-        </h2>
-      </li>
-    );
-  }
+```css
+.gel-card-headline {
+  order: -1;
 }
 ```
 
-### More info
 
-The 'More info' button toggles the visibility of an element containing the additional information for the card. This element must be `hidden` by default. When 'More info' is clicked for the first time, `hidden` becomes `false` and focus is moved to the element. The `aria-haspopup` attribute on the button warns the user that a redirection of focus will take place.
+#### The 'More info' element
+
+This element must be absolutely positioned over the card, which means the card itself must take `position: relative`. The `bottom` positioning of the element must match the height of the `gel-card-toolbar` element so that element is npt obscured while the element is visible.
+
+```css
+.gel-card {
+  position: relative;
+}
+
+.gel-card-info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 2.5rem; /* height of the toolbar */
+  left: 0;
+  padding: 1rem;
+  background-color: #F1F1F1;
+  overflow-y: auto;
+}
+```
+
+Also note `overflow-y: auto`. This is provided in case the content inside the 'More info' element is taller than its height. Since the element is not allowed to grow, it must be scrollable instead.
+
+## Expected behavior
+
+Aside from the toolbar behavior, the card's behavior will depend on the content it houses. See [**Card contents**](#card-contents) for pointers.
+
+### The 'More info' button
+
+The 'More info' button toggles the visibility of an element containing the additional information for the card. This element must be `hidden` by default. When 'More info' is clicked for the first time, `hidden` becomes `false` and focus is moved to the 'More info' heading. The `aria-haspopup` attribute on the button warns the user that a redirection of focus will take place.
 
 In plain JavaScript, a simple function will suffice:
 
 ```js
-// Assuming that `moreBtn` is the button node
-// and `moreElem` is the info node
-moreBtn.addEventListener('click', () => {
-  moreElem.hidden = !moreElem.hidden;
-  if (!moreElem.hidden) {
-    moreElem.focus();
+// Assuming `moreBtn` is the button node,
+// `moreElem` is the info node
+// and `moreHeading` is the info node's heading node
+moreBtn.addEventListener('click', function() {
+  moreElem.hidden = !more.hidden;
+  if (!more.hidden) {
+    moreHeading.focus();
     moreBtn.textContent = 'Close';
   } else {
     moreBtn.textContent = 'More info';
@@ -279,26 +284,23 @@ moreBtn.addEventListener('click', () => {
 });
 ```
 
-<important text="The button's state is not toggled via `aria-expanded`. This is because the button label changes, and a simultaneous change in state would result in contradictory information." />
+::: info Note
+GEL SVG icons have been removed from the above example for brevity. 
+:::
 
-For the `focus()` method to succeed, the `class="card_more-info"` element needs `tabindex="-1"`. Also provide a role and label for screen reader identification. It is recommended the element is positioned between the 'More info' and subsequent buttons in the source, and is positioned absolutely over the card, leaving just the toolbar visible.
+For the `focus()` method to succeed, the `class="gel-card-info-heading"` element needs `tabindex="-1"`.
 
 ```html
-<div class="card_toolbar">
-  <button type="button" aria-haspopup="true">More info</button>
-  <div class="card_more-info" role="group" aria-label="more info" tabindex="-1">
-    <!-- more info here -->
-  </div>
-  <button type="button">Love</button>
-  <button type="button">Add</button>
-  <button type="button">Share</button>
+<div class="gel-card-info" role="group" aria-labelledby="more-info-title-1">
+  <h4 class="gel-card-info-heading" id="info-title-1" tabindex="-1">More info</h4>
+  <!-- More info here -->
 </div>
 ```
 
-In addition, it should be possible to close the `class="card_more-info"` element using the <kbd>ESC</kbd> key. 
+In addition, it should be possible to close the `class="gel-card-info"` element using the <kbd>ESC</kbd> key. In this scenario, focus needs to be returned programmatically to the button.
 
 ```js
-moreElem.addEventListener('keydown', e => {
+moreBtn.addEventListener('keydown', function(e) {
   if (e.which === 27) {
     e.preventDefault();
     moreElem.hidden = true;
@@ -308,188 +310,29 @@ moreElem.addEventListener('keydown', e => {
 });
 ```
 
-In JSX, you can use the button to toggle a state declared on the info element like `hidden={infoHidden}`. But you will still need to move focus, which will require a `ref`. A small function to be triggered via the button's `onClick`:
-
-```js
-toggleInfo() {
-  this.setState(
-    (state) => ({
-      state.infoHidden = !state.infoHidden;
-    }),
-    () => {
-      if (!this.state.infoHidden)
-        /* ↓ ref will need to be created with createRef() */
-        this.infoElem.current.focus();
-    }
-  );
-}
-```
-
-<note text="`setState` is asynchronous, so a callback function is used to trigger the `focus()` method." />
-
-A separate function would be needed to handle closing on <kbd>ESC</kbd>:
-
-```js
-closeInfo(e) {
-  if (e.which === 27) {
-    e.preventDefault();
-    this.setState(
-      (state) => ({
-        state.infoHidden = true;
-      }),
-      () => {
-        /* ↓ ref will need to be created with createRef() */
-        this.infoBtn.current.focus();
-      }
-    );    
-  }
-}
-```
-
 ## Reference implementation
 
-<live-demo id="card1">
-  <template>
-    <style>
-      .card, .card * {
-        box-sizing: border-box;
-      }
-      .card {
-        position: relative;
-        color: #404040;
-        font-family: sans-serif;
-        background: #F1F1F1;
-        display: flex;
-        flex-direction: column;
-        width: 266px;
-      }
-      .card ul {
-        margin: 0;
-      }
-      .card_img {
-        overflow: hidden;
-        position: relative;
-      }
-      .card_img img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .card_icon {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        padding: 1rem;
-        background-color: rgba(255,255,255,0.5);
-        line-height: 1;
-      }
-      .card_icon svg {
-        height: 1.5rem;
-        width: auto;
-      }
-      .card_text {
-        padding: 1rem;
-        flex-grow: 1;
-      }
-      .card_text > * + * {
-        margin: 0;
-        margin-top: 0.5rem;
-      }
-      .card_title a {
-        color: inherit;
-        text-decoration: none;
-      }
-      .card_title a:hover,
-      .card_title a:focus {
-        outline: none;
-        text-decoration: underline;
-      }
-      .card > :last-child {
-        margin-top: auto;
-      }
-      .card_toolbar {
-        height: 2.5rem;
-        list-style: none;
-        display: flex;
-        padding: 0.5rem;
-        background-color: #e5e5e5;
-      }
-      .card_toolbar li + li {
-        margin-left: 0.5rem;
-      }
-      .card_toolbar > :first-child {
-        margin-right: auto;
-      }
-      .card_toolbar button {
-        background: none;
-        border: none;
-        font-size: inherit;
-        cursor: pointer;
-      }
-      .card_more-info {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 2.5rem;
-        left: 0;
-        padding: 1rem;
-        background-color: #F1F1F1;
-      }
-    </style>
-    <div class="card">
-      <div class="card_img">
-        <img src="{{site.basedir}}static/images/placeholder.png" alt="">
-        <span class="card_icon" aria-hidden="true">
-          <svg fill="currentColor" viewBox="0 0 20 20" width="20" height="20" focusable="false">
-            <polyline points="2 2, 18 10, 2 18"></polyline>
-          </svg>
-        </span>
-      </div>
-      <div class="card_text">
-        <h2 class="card_title"><a href="#to-permalink">Title Of Card</a></h2>
-        <p>Description of the card</p>
-        <small>Attribution</small>
-      </div>
-      <div class="card_toolbar">
-        <button type="button" aria-haspopup="true">More info</button>
-        <div class="card_more-info" role="group" aria-label="more info" tabindex="-1" hidden>
-          <p>More info here</p>
-        </div>
-        <button type="button">L</button>
-        <button type="button">A</button>
-        <button type="button">S</button>
-      </div>
-    </div>
-    <script>
-      const img = demo.querySelector('img');
-      const link = demo.querySelector('a');
-      const moreBtn = demo.querySelector('[aria-haspopup]');
-      const moreElem = demo.querySelector('.card_more-info');
-      img.style.cursor = 'pointer';
-      img.addEventListener('click', () => link.click());
-      moreBtn.addEventListener('click', () => {
-        moreElem.hidden = !moreElem.hidden;
-        if (!moreElem.hidden) {
-          moreElem.focus();
-          moreBtn.textContent = 'Close';
-        } else {
-          moreBtn.textContent = 'More info';
-        }
-      });
-      moreElem.addEventListener('keydown', e => {
-        if (e.which === 27) {
-          moreElem.hidden = true;
-          moreBtn.textContent = 'More info';
-          moreBtn.focus();
-        }
-      });
-    </script>
-  </template>
-</live-demo>
+::: alert Important
+Reference implementations are intended to demonstrate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behavior of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
+:::
 
-## Existing implementations
+<include src="components/demos/cards.html">
 
-There are currently no existing implementations of this reference component.
+<p><a class="gel-button gel-button--dark gel-long-primer-bold" href="../demos/cards/" target="_new">Open in new window <svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:currentColor"></use></svg></a></p>
+
+## Test specifications
+
+A list of gherkin-style feature specifications (including requirements for the [BBC Mobile Accessibility Guidelines](https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile)) for this component has been developed and published in a format suitable for use with an automated testing framework. You can review and download these feature files from [the project Wiki page, hosted on GitHub](#linktocome).
+
+## Related research
+
+[TODO]
+
+### Further reading, elsewhere on the Web
+
+[^1]: "Basic screen reader commands for accessibility testing" by Léonie Watson, <https://developer.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/>
+[^2]: Gist of the `vh` (visually hidden) class <https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472> 
+[^3]: Accessible Rich Internet Applications (WAI-ARIA) 1.1: `aria-haspopup`, <https://www.w3.org/TR/wai-aria-1.1/#aria-haspopup>
+[^4]: "Why Autoplay Is An Accessibility Issue" — abilitynet.org.uk, <https://www.abilitynet.org.uk/news-blogs/why-autoplay-accessibility-issue>
 
 

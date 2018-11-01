@@ -1,0 +1,225 @@
+---
+title: Cards
+---
+<style>
+  .gel-cards {
+    margin: 0;
+    padding: 0;
+  }
+
+  .gel-cards>*+* {
+    margin-top: 1rem;
+  }
+
+  @supports (display: grid) {
+    .gel-cards>*+* {
+      margin-top: 0;
+    }
+
+    .gel-card {
+      margin: 0;
+    }
+
+    .gel-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
+      grid-gap: 1rem;
+    }
+  }
+
+  .gel-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #F1F1F1;
+    position: relative;
+  }
+
+  .gel-card-content {
+    order: -1;
+    overflow: hidden;
+    height: 10rem;
+  }
+
+  .gel-promo-content {
+    order: -1;
+    height: 10rem;
+    overflow: hidden;
+  }
+
+  .gel-card-content img,
+  .gel-card-content video {
+    height: 100%;
+    width: auto;
+  }
+
+  @supports (object-fit: cover) {
+    .gel-card-content img, 
+    .gel-card-content video {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .gel-card-headline, .gel-card-desc {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .gel-card-toolbar {
+    height: 2.5rem;
+    list-style: none;
+    display: flex;
+    padding: 0.5rem 1rem;
+    background-color: #e5e5e5;
+    margin-top: auto;
+  }
+
+  .gel-card-toolbar button {
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: inherit;
+    display: inline-block;
+  }
+
+  .gel-card-toolbar > *:first-child {
+    margin-right: auto;
+  }
+
+  .gel-card-toolbar > * + * {
+    margin: 0;
+    margin-left: 0.5rem;
+  }
+
+  .gel-card-info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 2.5rem;
+    left: 0;
+    margin: 0;
+    padding: 1rem;
+    background-color: #F1F1F1;
+    overflow-y: auto;
+  }
+</style>
+
+<div style="margin-bottom: 1rem;">
+  <h3>Astronomy Photographer of the Year 2018</h3>
+  <ul class="gel-cards">
+    <li class="gel-card">
+      <div class="gel-card-headline">
+        <h4>Living Space</h4>
+      </div>
+      <div class="gel-card-content">
+        <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/E134/production/_104025675_livingspaceandrewwhyte.jpg"
+          alt="A silhouette of a lamppost reaches up from suburbia into the milky way" />
+      </div>
+      <div class="gel-card-desc">
+        <p>Taken in Pagham, West Sussex, Whyte's photograph aims to show how accustomed we have become to the loss of
+          night sky views because of light pollution, with the unlit street lamps allowing for awe-inspiring views.</p>
+        <p><small>Runner-up: Andrew Whyte</small></p>
+      </div>
+      <div class="gel-card-toolbar">
+        <button type="button" aria-haspopup="true">More info</button>
+        <div class="gel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
+          <h5 class="gel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin posuere mauris, at sagittis
+            odio aliquam sed. Nunc neque diam, euismod ut purus et, scelerisque vulputate tortor. Donec non commodo
+            turpis. Nunc ac magna in diam molestie posuere eget eu elit. Suspendisse ut lectus porta eros dapibus
+            tempor. Curabitur tempus purus eu consequat semper. Ut a lectus non metus imperdiet finibus. Sed vestibulum
+            enim congue, finibus augue ut, dictum justo.</p>
+        </div>
+        <button type="button" aria-pressed="false">Love</button>
+        <button type="button">Add</button>
+        <button type="button">Share</button>
+      </div>
+    </li>
+    <li class="gel-card">
+      <div class="gel-card-headline">
+        <h4>Speeding on the Aurora Lane</h4>
+      </div>
+      <div class="gel-card-content">
+        <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/12F54/production/_104025677_speedingontheauroralanenicolaslefaudeux.jpg"
+          alt="A shimmering green sheet reaches through a sky of stars towards a glowing green horizon" />
+      </div>
+      <div class="gel-card-desc">
+        <p>A hazy auroral band is seen drifting across the sky above Sirkka, Finland, seeming like a road disappearing
+          over the horizon.</p>
+        <p><small>Winner: Nicolas Lefaudeux</small></p>
+      </div>
+      <div class="gel-card-toolbar">
+        <button type="button" aria-haspopup="true">More info</button>
+        <div class="gel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
+          <h5 class="gel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
+          <p>Vestibulum consectetur, lectus sed porta pulvinar, turpis nunc placerat nisl, non blandit augue leo in
+            nunc. Vivamus in mi lectus. Vivamus ex orci, finibus non massa nec, viverra sollicitudin nibh. Nunc semper
+            imperdiet ante, et mattis magna hendrerit a. Quisque libero nibh, hendrerit at tortor vitae, cursus
+            elementum diam. Donec auctor molestie imperdiet. Vivamus venenatis mauris ut ante volutpat fringilla. Duis
+            ullamcorper ac libero sed iaculis. Duis pulvinar leo at feugiat dapibus. Aenean sagittis felis massa,
+            sodales ullamcorper tellus consectetur ac.</p>
+        </div>
+        <button type="button" aria-pressed="false">Love</button>
+        <button type="button">Add</button>
+        <button type="button">Share</button>
+      </div>
+    </li>
+    <li class="gel-card">
+      <div class="gel-card-headline">
+        <h4>Castlerigg Stone Circle</h4>
+      </div>
+      <div class="gel-card-content">
+        <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/40B2/production/_104026561_castleriggstonecirclematthewjamesturner.jpg"
+          alt="The sun creeps over bright green hills to gently illuminate a circle of ancient stones. A few lights emanate from a distant village." />
+      </div>
+      <div class="gel-card-desc">
+        <p>Turner's image depicts standing stones illuminated by moonlight, while auroras beyond the mountains gives
+          the appearance that the hills are emitting an ethereal green glow.</p>
+        <p><small>Runner-up: Matthew James Turner</small></p>
+      </div>
+      <div class="gel-card-toolbar">
+        <button type="button" aria-haspopup="true">More info</button>
+        <div class="gel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
+          <h5 class="gel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
+          <p>Quisque sit amet magna lacus. Donec in fringilla velit. Curabitur vulputate magna euismod turpis luctus
+            bibendum. Donec fringilla risus eget felis aliquet, vel vestibulum nibh bibendum. In laoreet ut nisi nec
+            gravida. Nullam scelerisque posuere mollis. Donec ac mauris maximus, placerat enim vitae, placerat libero.
+            Maecenas eget magna quis diam faucibus suscipit at et velit. Nulla placerat vehicula nunc in maximus. Nulla
+            euismod neque vel imperdiet dignissim.</p>
+        </div>
+        <button type="button" aria-pressed="false">Love</button>
+        <button type="button">Add</button>
+        <button type="button">Share</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<script>
+  (function () {
+    var cards = document.querySelectorAll('.gel-card');
+    Array.prototype.forEach.call(cards, function (card) {
+      var moreBtn = card.querySelector('[aria-haspopup="true"]');
+      var moreElem = card.querySelector('.gel-card-info');
+      var moreHeading = moreElem.querySelector('.gel-card-info-heading');
+
+      moreBtn.addEventListener('click', function () {
+        moreElem.hidden = !moreElem.hidden;
+        if (!moreElem.hidden) {
+          moreHeading.focus();
+          moreBtn.textContent = 'Close';
+        } else {
+          moreBtn.textContent = 'More info';
+        }
+      });
+
+      moreElem.addEventListener('keydown', function (e) {
+        if (e.which === 27) {
+          moreElem.hidden = true;
+          moreBtn.textContent = 'More info';
+          moreBtn.focus();
+        }
+      });
+    });
+  })();
+</script>
