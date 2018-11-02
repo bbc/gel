@@ -1261,20 +1261,20 @@ body {
 a {
   text-decoration: none; }
 
-.gel-guideline-sections a {
-  font-weight: normal;
+.gel-body-copy a {
+  font-weight: bold;
   text-decoration: none;
   border-bottom: 1px solid #ccc; }
 
-.gel-guideline-sections a:hover {
+.gel-body-copy a:hover {
   color: #397cb8;
   border-bottom: 1px solid #397cb8;
   transition: 300ms; }
 
-.gel-guideline-sections h1 a, .gel-guideline-sections h2 a, .gel-guideline-sections h3 a, .gel-guideline-sections h4 a, .gel-guideline-sections h5 a, .gel-guideline-sections h6 a, .gel-guideline-sections li a {
+.gel-body-copy h1 a, .gel-body-copy h2 a, .gel-body-copy h3 a, .gel-body-copy h4 a, .gel-body-copy h5 a, .gel-body-copy h6 a, .gel-body-copy li a {
   border-bottom: 1px solid transparent; }
 
-.gel-guideline-sections h2 {
+.gel-body-copy h2 {
   border-top: 1px solid #ccc;
   padding-top: 30px;
   margin-top: 64px !important; }
@@ -1894,3 +1894,7 @@ a.gel-button.gel-button__link-button {
 /* hacks */
 hr.footnotes-sep {
   display: none; }
+
+sup.footnote-ref {
+  margin: -8px 4px 0 4px;
+  display: inline-block; }
