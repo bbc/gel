@@ -5,6 +5,7 @@ version: 0.1.0
 published: true
 accessibility: true
 linkback: http://www.bbc.co.uk/gel/guidelines/promos
+includecss: gelui.css
 ---
 
 ## Introduction
