@@ -1,0 +1,40 @@
+.gel-tabs>section {
+  background-color: #F1F1F1;
+  padding: 1rem;
+}
+
+.gel-tabs>ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  margin: -0.5rem;
+}
+
+.gel-tabs ul>li {
+  flex: 1 1 auto;
+  margin: 0.5rem;
+  min-width: 0;
+}
+
+.gel-tabs>ul a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  text-align: center;
+  color: inherit;
+  background-color: #DADADA;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gel-tabs>ul a:focus,
+.gel-tabs>section:focus {
+  outline: 2px solid;
+  outline-offset: -2px;
+}
+
+.gel-tabs [aria-current] {
+  background-color: #F1F1F1;
+}

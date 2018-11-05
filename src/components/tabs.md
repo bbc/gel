@@ -129,7 +129,13 @@ window.addEventListener('DOMContentLoaded', function () {
 
 ## Reference implementation
 
+::: alert Important
+Reference implementations are intended to demonstate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behavior of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
+:::
 
+<include src="components/demos/tabs.html">
+
+<p><a class="gel-button gel-button--dark gel-long-primer-bold" href="../demos/tabs/" target="_new">Open in new window <svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:undefined;"></use></svg></a></p>
 
 ## Test specifications
 
