@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Code GEL | Headings</title>
+
+    <script src="/code-gel/static/js/main.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/main.css">
+
+    <script type="text/javascript">
+        // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + (supports.touchevents ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + (SimpleFeatureDetector.supports({ property: 'flex-wrap' }, { property: 'flex-flow' }) ? 'flexbox' : 'no-flexbox'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    <script type="text/javascript">
+        // use reith fonts
+        (new FontFaceObserver('ReithSans')).load().then(function () {
+            document.documentElement.className += ' b-reith-sans-loaded';
+        });
+        (new FontFaceObserver('ReithSerif')).load().then(function () {
+            document.documentElement.className += ' b-reith-loaded';
+        });
+    </script>
+
+    <script type="text/javascript">
+        // syntax highlight
+        hljs.initHighlightingOnLoad();
+    </script>
+
+    
+</head>
+
+<body class="gel-guideline-body">
+    <p class="gel-sr gel-sr__focusable gel-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('gel-sr__focused')" onblur="this.parentNode.classList.remove('gel-sr__focused')">Skip
+            to content</a>
+    </p>
+
+    <header>
+        <div class="gel-guideline-header gs-u-clearfix">
+            <div class="gel-wrap">
+                <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
+                        <title>BBC</title>
+                        <image xlink:href="/code-gel/static/images/bbc-blocks_grey.svg" src="/code-gel/static/images/bbc-blocks_grey.png"
+                            width="100%" height="100%"></image>
+                    </svg></a>
+            </div>
+        </div>
+        <div class="gel-guideline-header__banner gs-u-clearfix">
+            <div class="gel-wrap">
+                <div class="gel-layout">
+                    <div class="gel-layout__item gel-2/5@l" style="text-align:left; padding-left:14px; margin-bottom:32px;">
+                        <span class="gel-logo">Code{GEL}</span>
+                    </div>
+                    <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
+                        <a class="gel-button gel-button--dark gel-long-primer-bold" href="">
+                            Go to BBC GEL
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" tabindex="-1" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <!-- column placeholder-->
+            </div>
+
+            <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
+                <h1 class="gel-guideline-header__title">Headings</h1>
+                <p class="gel-guideline-header__summary gel-great-primer">Headings provide a semantic and visual hierarchical structure to a document</p>
+            </div>
+
+            <div class="gel-layout__item gel-1/5@l">
+                <dl class="gel-standout-box">
+                    
+                    <dt>Version:</dt>
+                    <dd>0.1.0</dd>
+                    
+                    
+                    <dt>Status:</dt>
+                    <dd>Published</dd>
+                    
+                    
+                    <dt>Accessibility:</dt>
+                    <dd>Pass</dd>
+                    
+                </dl>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
+                    <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
+                    <ol id="gel-toc__links" class="gel-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#expected-behavior">Expected behavior</a></li><li><a href="#test-specifications">Test specifications</a></li><li><a href="#related-research">Related research</a></li></ol>
+                </nav>
+            </div>
+
+            <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-3/5@l">
+                <h2 id="introduction">Introduction</h2>
+<p>Buttons, links, and form elements all have labels. Labels tell users what these elements are for. Headings are also labels, and describe sections of the document. A correct use of heading elements is especially important when supporting screen reader users<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> because headings together create a table of contents, navigable by a variety of shortcuts and other means.</p>
+<h2 id="expected-markup">Expected markup</h2>
+<h3 id="the-%3Ch1%3E">The <code>&lt;h1&gt;</code></h3>
+<p>The <code>&lt;h1&gt;</code> is the principle heading in the document, and labels the document itself. The following must be true for <code>&lt;h1&gt;</code> elements:</p>
+<ol>
+<li>There is only one in the document</li>
+<li>Its content is unique to the current document</li>
+<li>It is the first semantic element inside the <code>&lt;main&gt;</code> region of the document</li>
+<li>Its text relates to / is a subset of the page's <code>&lt;title&gt;</code><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></li>
+</ol>
+<p>For a search results page, the <code>&lt;title&gt;</code> should indicate that the page indeed contains search results, which term was used to search, and a reminder of the site in which the search took place.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Search results for "Chuggingtion": CBeebies - BBC<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+</code></pre>
+<p>The <code>&lt;h1&gt;</code>, accordingly, would be a subset which excludes the site information:</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Search results for "Chuggington"<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+</code></pre>
+<h3 id="subheadings">Subheadings</h3>
+<p>The heading level (h1—h6) for any other section of the page should be chosen in terms of belonging. That is, if the heading labels a child subsection of the page, then <code>&lt;h2&gt;</code> is appropriate. If the heading labels a subsection <em>of</em> a subsection, then the level should be one higher than the parent.</p>
+<ul>
+<li>UK Politics (h1)
+<ul>
+<li>Top stories (h2)
+<ul>
+<li>Bid to get Labour to change Brexit stance (h3)</li>
+<li>Ban on electric shock collars for pets (h3)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>As in the above example, sibling/equivalent sections should have the same heading level. In cases where one subsection is considered more important than another, it is <em>not</em> appropriate to change the heading level to elicit a larger heading for size (for example). This makes a nonsense of the document structure for screen reader users. Instead, use one of the following techniques:</p>
+<ul>
+<li>Promote the item so it appears first in the order (a 'sticky post' in blogging terms)</li>
+<li>Include the text 'featured' (or similar; 'breaking' for a breaking news story) as part of the heading or in close proximity to it</li>
+</ul>
+<p>Whether or not subheadings are used explicitly with sectioning elements<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>, they should be the first element that contains content within the section.</p>
+<h4 id="bad-example">Bad example</h4>
+<p>In this version, a screen reader user navigating by heading (for example, by using the <kbd>H</kbd> key with NVDA) would be skipped past the &quot;Breaking&quot; identifier and miss it.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Top stories<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"alert"</span>&gt;</span>Breaking:<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Bid to get Labour to change Brexit stance<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<h4 id="good-example">Good example</h4>
+<p>In the adjusted version, &quot;Breaking&quot; is made part of the heading and will be read out along with it.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Top stories<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"breaking"</span>&gt;</span>Breaking:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      Bid to get Labour to change Brexit stance
+    <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541412170302">
+              <h4 id="aside-1541412170302" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Part of the intention of sectioning elements (like <code>&lt;section&gt;</code> and <code>&lt;article&gt;</code>) was to automate heading levels as perceived by assistive technologies. That is, an <code>&lt;h1&gt;</code> for a  <code>&lt;section&gt;</code> inside <code>&lt;body&gt;</code> would be perceived as an <code>&lt;h2&gt;</code>. However, the algorithm was never implemented by any browser vendors<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. You still need to use explicit (h1—h6) according to your sections' nesting depth.</p>
+
+            </aside>
+          <h3 id="wording">Wording</h3>
+<p>As labels, headings must describe the sections they introduce<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>.</p>
+<p>Many screen readers aggregate headings into a table of contents. For example, JAWS produces a headings dialog when the user presses <kbd>Insert</kbd> + <kbd>F6</kbd>. For this reason, it's important headings are sufficiently descriptive independent of their surrounding content.</p>
+<h4 id="bad-example-2">Bad example</h4>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Let's get baking!<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+</code></pre>
+<h4 id="good-example-2">Good example</h4>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>A delicious cookie recipe<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+</code></pre>
+<h2 id="expected-layout">Expected layout</h2>
+<p>To establish a logical visual hierarchy, heading font sizes should decrease along with depth. An <code>&lt;h1&gt;</code> should have the greatest <code>font-size</code>, and an <code>&lt;h6&gt;</code> the smallest. There are other means to differentiate heading levels but font size is the most conventional, and therefore the most widely understood.</p>
+<pre class="hljs"><code><span class="hljs-selector-tag">h1</span>,
+<span class="hljs-selector-class">.h1</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">3rem</span>;
+}
+<span class="hljs-selector-tag">h2</span>,
+<span class="hljs-selector-class">.h2</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">2.25rem</span>;
+}
+<span class="hljs-selector-tag">h3</span>,
+<span class="hljs-selector-class">.h3</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.75rem</span>;
+}
+<span class="hljs-comment">/* etc */</span>
+</code></pre>
+<p>In the above example, classes are named after heading levels to match their size. This may be useful when wishing to enlarge some arbitrary text. It is important headings are reserved as section labels, so use the class in place of a heading element if you are just intending to add some visual emphasis.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">blockquote</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"h3"</span>&gt;</span>"I'd like to do a kind of 'Sunday Night At The Palladium'-style variety show on the BBC."<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>— Anton du Beke<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">blockquote</span>&gt;</span>
+</code></pre>
+<h2 id="expected-behavior">Expected behavior</h2>
+<p>Where headings adopt <code>id</code>s and are used as document fragments to be navigated between using same-page links, they should take <code>tabindex=&quot;-1&quot;</code>. This forces browsers that would not otherwise update their sequential focus starting point<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> to move keyboard focus to the destination heading and section.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>Navigable subsection<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+</code></pre>
+<h2 id="test-specifications">Test specifications</h2>
+<p>[TODO]</p>
+<h2 id="related-research">Related research</h2>
+<p>[TODO]</p>
+<h3 id="further-reading%2C-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>&quot;Responses To The Screen Reader Strategy&quot; — <a href="http://heydonworks.com">heydonworks.com</a>, <a href="http://www.heydonworks.com/article/responses-to-the-screen-reader-strategy-survey">http://www.heydonworks.com/article/responses-to-the-screen-reader-strategy-survey</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>WCAG 2.4.2: Page Titled, <a href="https://www.w3.org/TR/WCAG21/#page-titled">https://www.w3.org/TR/WCAG21/#page-titled</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>HTML 5.3: Sections (W3C), <a href="https://www.w3.org/TR/html53/sections.html#sections">https://www.w3.org/TR/html53/sections.html#sections</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>&quot;There Is No Document Outline Algorithm&quot; — Adrian Roselli , <a href="http://adrianroselli.com/2016/08/there-is-no-document-outline-algorithm.html">http://adrianroselli.com/2016/08/there-is-no-document-outline-algorithm.html</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>WCAG 2.4.6: Headings and labels, <a href="https://www.w3.org/TR/WCAG21/#page-titled">https://www.w3.org/TR/WCAG21/#page-titled</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>&quot;Focus should cycle from named anchor&quot; — <a href="http://bugs.chromium.org">bugs.chromium.org</a>, <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=262171">https://bugs.chromium.org/p/chromium/issues/detail?id=262171</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+
+                <div class="gel-breakout-box gel-breakout-box extra-padding" style="margin-top:36px">
+                <aside aria-label="Could you improve this documentation?">
+                    <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg> Could you improve this documentation?</h4>
+                    <p>
+                        If you think you could make anything you see here a bit better then become one of our lovely contributors!</p>
+                    </p>
+                </aside>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="gel-feedback-banner">
+        <div class="gel-wrap">
+            <div class="gel-layout">
+                <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
+                    <h2 class="gel-feedback-banner__title">Got a minute?</h2>
+                    <p>We'd love to know what you think of the Code GEL website.</p>
+                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" class="gel-button gel-button__link-button gel-feedback-banner__cta gel-button--primary">
+                        <span class="gel-button__content">Go to survey</span>
+                        <span class="gel-button__icon_wrapper">
+                            <svg class="gel-button__icon gel-icon gel-icon--text">
+                                <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                                    style="fill:undefined;"></use>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script type="text/javascript">
+        new Sticky('.sticky');
+        new MenuSpy(document.querySelector('#gel-toc__links'));
+        new SweetScroll({
+            trigger: '#gel-toc__links a',
+            quickMode: true,
+            easing: 'easeOutExpo'
+        });
+    </script>
+</body>
+
+</html>

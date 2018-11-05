@@ -11,6 +11,8 @@
  */
 @import url(bbc-grandstand/dist/bbc-grandstand.min.css);
 @import url(reith.css);
+@import url(bbc-grandstand/dist/bbc-grandstand.min.css);
+@import url(reith.css);
 .gel-sr {
   border: 0;
   clip: rect(0 0 0 0);
@@ -1058,6 +1060,57 @@ h4 {
     width: 95.83333% !important; } }
 
 /**
+ * Base
+ */
+/**
+ * Visually hide an element, but leave it available for screen readers
+ * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
+ * @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+.gel-sr {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px; }
+
+/**
+ * Extends the .screen-reader class to allow the element to be focusable when navigated to via the keyboard
+ * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
+ * @link https://www.drupal.org/node/897638
+ */
+.gel-sr__focusable:active,
+.gel-sr__focusable:focus,
+.gel-sr__focused {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  white-space: normal;
+  width: auto; }
+
+.gel-sr__overlay {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: auto;
+  height: auto;
+  color: #333;
+  background: #eee;
+  padding: 18px;
+  border: 3px solid #333; }
+
+/**
+ * Settings
+ */
+/**
+ * Dependencies
+ */
+/**
  * Generic
  */
 html {
@@ -1083,6 +1136,9 @@ a {
 *:after {
   box-sizing: inherit; }
 
+/**
+ * Utility
+ */
 .gel-u-u-flex-grow {
   flex: 1; }
 
@@ -1147,82 +1203,109 @@ a {
   -ms-flex: 1;
   flex: 1; }
 
-/*-- promo -----------------------------*/
-.gel-promo-list {
-  list-style-position: inside;
+/**
+ * GEL PROMO
+ */
+.gel-promos {
   margin: 0;
   padding: 0; }
 
+.gel-promos > * + * {
+  margin-top: 1rem; }
+
+@supports (display: grid) {
+  .gel-promos > * + * {
+    margin-top: 0; }
+  .gel-promo {
+    margin: 0; }
+  .gel-promos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
+    grid-gap: 1rem; } }
+
 .gel-promo {
-  list-style-type: none; }
+  display: flex;
+  flex-direction: column;
+  background-color: #F1F1F1; }
 
-.gel-promo__horz > a {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex; }
+.gel-promo,
+.gel-promo p {
+  font-family: ReithSans, Helvetica, Arial, freesans, sans-serif !important; }
 
-.gel-promo-media img {
-  display: block;
-  width: 100%; }
-
-.gel-promo-media {
-  -webkit-box-ordinal-group: 1;
-  -moz-box-ordinal-group: 1;
-  -ms-flex-order: 1;
-  -webkit-order: 1;
-  order: 1;
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  width: 50%;
-  -webkit-flex: 1;
-  -ms-flex: 1;
+.gel-promo-content {
+  padding: 1rem;
   flex: 1;
-  width: 40%; }
+  display: flex;
+  flex-direction: column; }
 
-.gel-promo-body,
-.gel-promo-body p {
-  font-family: ReithSans, Helvetica, Arial, freesans, sans-serif !important;
-  -webkit-box-ordinal-group: 2;
-  -moz-box-ordinal-group: 2;
-  -ms-flex-order: 2;
-  -webkit-order: 2;
-  order: 2;
-  width: 50%;
-  -moz-box-flex: 1;
-  width: 60%; }
+.gel-promo-image {
+  order: -1;
+  height: 10rem;
+  overflow: hidden; }
 
-.gel-promo-body h2, .gel-promo-body h3, .gel-promo-body h4, .gel-promo-body h5, .gel-promo-body h6 {
-  font-family: ReithSans, Helvetica, Arial, freesans, sans-serif !important;
-  margin: 0 !important;
-  padding: 0 !important; }
+.gel-promo-image img {
+  height: 100%;
+  width: auto; }
 
-.gel-promo {
-  color: #404040;
-  background: #eeeeee;
-  margin-bottom: 16px; }
+@supports (object-fit: cover) {
+  .gel-promo-image img {
+    width: 100%;
+    object-fit: cover; } }
 
-.gel-promo a {
-  text-decoration: none;
-  border-bottom: 0 !important; }
+.gel-promo-headline {
+  font-weight: bold; }
 
-.gel-promo__horz .gel-promo-media {
-  margin-right: 16px; }
+.gel-promo-headline * {
+  font-weight: inherit; }
 
-.gel-promo__horz .gel-promo-body {
-  padding: 24px 16px; }
+.gel-metadata-strip {
+  margin: 0;
+  margin-top: auto;
+  padding-top: 1rem; }
 
-@media (max-width: 37.5em) {
-  .gel-promo__horz .gel-promo-media {
-    margin-right: 8px; }
-  .gel-promo__horz .gel-promo-body {
-    margin: 8px 0;
-    padding: 8px; } }
+.gel-metadata-strip > div {
+  display: inline-block;
+  white-space: nowrap; }
 
-@media (max-width: 37.5em) {
-  .gel-promo__horz .gel-promo-body p {
-    display: none; } }
+.gel-metadata-strip > div + div::before {
+  content: '';
+  border-left: 1px solid;
+  margin: 0 0.25rem; }
+
+.gel-metadata-strip dt,
+.gel-metadata-strip dd {
+  margin: 0;
+  display: inline; }
+
+@supports (display: grid) {
+  .gel-promos.gel-promos-horizontal {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); } }
+
+.gel-promo.gel-promo-horizontal {
+  flex-direction: row; }
+
+.gel-promo.gel-promo-horizontal .gel-promo-image {
+  width: 15rem;
+  height: auto; }
+
+.vh {
+  clip-path: inset(100%) !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important; }
+
+.gel-promo-headline a:focus {
+  outline: none;
+  text-decoration: underline; }
+
+.gel-promo:focus-within {
+  outline: 0.25rem solid; }
+
+.gel-metadata-strip a {
+  text-decoration: underline; }
 
 @media (min-width: 56.25em) {
   .gel-pull__right\@l {
@@ -1261,20 +1344,20 @@ body {
 a {
   text-decoration: none; }
 
-.gel-guideline-sections a {
-  font-weight: normal;
+.gel-body-copy a {
+  font-weight: bold;
   text-decoration: none;
   border-bottom: 1px solid #ccc; }
 
-.gel-guideline-sections a:hover {
+.gel-body-copy a:hover {
   color: #397cb8;
   border-bottom: 1px solid #397cb8;
   transition: 300ms; }
 
-.gel-guideline-sections h1 a, .gel-guideline-sections h2 a, .gel-guideline-sections h3 a, .gel-guideline-sections h4 a, .gel-guideline-sections h5 a, .gel-guideline-sections h6 a, .gel-guideline-sections li a {
+.gel-body-copy h1 a, .gel-body-copy h2 a, .gel-body-copy h3 a, .gel-body-copy h4 a, .gel-body-copy h5 a, .gel-body-copy h6 a, .gel-body-copy li a {
   border-bottom: 1px solid transparent; }
 
-.gel-guideline-sections h2 {
+.gel-body-copy h2 {
   border-top: 1px solid #ccc;
   padding-top: 30px;
   margin-top: 64px !important; }
@@ -1894,3 +1977,7 @@ a.gel-button.gel-button__link-button {
 /* hacks */
 hr.footnotes-sep {
   display: none; }
+
+sup.footnote-ref {
+  margin: -8px 4px 0 4px;
+  display: inline-block; }

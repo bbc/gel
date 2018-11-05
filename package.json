@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "sass": "sass-pack -s src/_includes/scss/main.scss -o src/static/css/",
+    "sass": "sass-pack -s src/_includes/scss/main.scss -o src/static/css && sass-pack -s src/_includes/scss/gelui.scss -o src/static/css/",
     "js": "uglifyjs node_modules/supports.js/supports.min.js node_modules/simple-feature-detector/simple-feature-detector.min.js  node_modules/fontfaceobserver/fontfaceobserver.standalone.js node_modules/highlight.js/lib/highlight.js node_modules/sticky-js/dist/sticky.min.js node_modules/menuspy/dist/menuspy.min.js node_modules/sweet-scroll/sweet-scroll.min.js -o src/static/js/main.js",
     "build": "eleventy  --input=./src/ --output=docs/ --formats=md,html",
     "serve": "eleventy --serve",

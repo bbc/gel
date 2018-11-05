@@ -50,9 +50,9 @@ a {
   text-decoration: none;
 }
 
-.gel-guideline-sections {
+.gel-body-copy {
   a {
-    font-weight: normal;
+    font-weight: bold;
     text-decoration: none;
     border-bottom: 1px solid $gel-color--link-underline;
   }
@@ -722,4 +722,9 @@ a.gel-button.gel-button__link-button {
 
 hr.footnotes-sep {
   display: none;
+}
+
+sup.footnote-ref {
+  margin: -8px 4px 0 4px;
+  display: inline-block;
 }

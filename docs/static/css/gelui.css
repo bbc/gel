@@ -1,0 +1,253 @@
+/**
+ * GEL foundations
+ */
+/* autoprefixer: off */
+/**
+ * Base
+ */
+/**
+ * Visually hide an element, but leave it available for screen readers
+ * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
+ * @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+@import url(bbc-grandstand/dist/bbc-grandstand.min.css);
+@import url(reith.css);
+.gel-sr {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px; }
+
+/**
+ * Extends the .screen-reader class to allow the element to be focusable when navigated to via the keyboard
+ * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
+ * @link https://www.drupal.org/node/897638
+ */
+.gel-sr__focusable:active,
+.gel-sr__focusable:focus,
+.gel-sr__focused {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  white-space: normal;
+  width: auto; }
+
+.gel-sr__overlay {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: auto;
+  height: auto;
+  color: #333;
+  background: #eee;
+  padding: 18px;
+  border: 3px solid #333; }
+
+/**
+ * Settings
+ */
+/**
+ * Dependencies
+ */
+/**
+ * Generic
+ */
+html {
+  box-sizing: border-box; }
+
+#orb-banner, #orb-footer {
+  box-sizing: content-box; }
+
+body {
+  color: #404040;
+  font-family: Helvetica, Arial, sans-serif; }
+  body.is-masked {
+    overflow-y: scroll;
+    position: fixed;
+    width: 100%; }
+
+a {
+  color: #404040;
+  transition: color 300ms; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+/**
+ * Utility
+ */
+.gel-u-u-flex-grow {
+  flex: 1; }
+
+.gel-u-u-margin-right {
+  margin-right: 12px; }
+
+.gel-u-u-margin-bottom {
+  margin-bottom: 12px; }
+
+.gel-u-u-mb\+ {
+  margin-bottom: 24px; }
+
+.gel-u-u-mb\+\+ {
+  margin-bottom: 36px; }
+
+.gel-u-u-mb\+\+\+ {
+  margin-bottom: 48px; }
+
+.gel-u-u-ph\+\+ {
+  padding-left: 32px;
+  padding-right: 32px; }
+
+.gel-u-u-full-width {
+  display: block;
+  width: 100%; }
+
+.gel-u-u-clickable {
+  cursor: pointer; }
+
+/*-- util -----------------------------*/
+.gelui-u-flex-rw {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; }
+
+.gelui-u-flex-rw, .gelui-u-flex-rw * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.gelui-u-flex-rt {
+  -webkit-box-ordinal-group: 2;
+  -moz-box-ordinal-group: 2;
+  -ms-flex-order: 2;
+  -webkit-order: 2;
+  order: 2;
+  width: 50%;
+  -moz-box-flex: 1; }
+
+.gelui-u-flex-lf {
+  -webkit-box-ordinal-group: 1;
+  -moz-box-ordinal-group: 1;
+  -ms-flex-order: 1;
+  -webkit-order: 1;
+  order: 1;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  width: 50%;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
+
+/**
+ * GEL PROMO
+ */
+.gel-promos {
+  margin: 0;
+  padding: 0; }
+
+.gel-promos > * + * {
+  margin-top: 1rem; }
+
+@supports (display: grid) {
+  .gel-promos > * + * {
+    margin-top: 0; }
+  .gel-promo {
+    margin: 0; }
+  .gel-promos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
+    grid-gap: 1rem; } }
+
+.gel-promo {
+  display: flex;
+  flex-direction: column;
+  background-color: #F1F1F1; }
+
+.gel-promo,
+.gel-promo p {
+  font-family: ReithSans, Helvetica, Arial, freesans, sans-serif !important; }
+
+.gel-promo-content {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column; }
+
+.gel-promo-image {
+  order: -1;
+  height: 10rem;
+  overflow: hidden; }
+
+.gel-promo-image img {
+  height: 100%;
+  width: auto; }
+
+@supports (object-fit: cover) {
+  .gel-promo-image img {
+    width: 100%;
+    object-fit: cover; } }
+
+.gel-promo-headline {
+  font-weight: bold; }
+
+.gel-promo-headline * {
+  font-weight: inherit; }
+
+.gel-metadata-strip {
+  margin: 0;
+  margin-top: auto;
+  padding-top: 1rem; }
+
+.gel-metadata-strip > div {
+  display: inline-block;
+  white-space: nowrap; }
+
+.gel-metadata-strip > div + div::before {
+  content: '';
+  border-left: 1px solid;
+  margin: 0 0.25rem; }
+
+.gel-metadata-strip dt,
+.gel-metadata-strip dd {
+  margin: 0;
+  display: inline; }
+
+@supports (display: grid) {
+  .gel-promos.gel-promos-horizontal {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); } }
+
+.gel-promo.gel-promo-horizontal {
+  flex-direction: row; }
+
+.gel-promo.gel-promo-horizontal .gel-promo-image {
+  width: 15rem;
+  height: auto; }
+
+.vh {
+  clip-path: inset(100%) !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important; }
+
+.gel-promo-headline a:focus {
+  outline: none;
+  text-decoration: underline; }
+
+.gel-promo:focus-within {
+  outline: 0.25rem solid; }
+
+.gel-metadata-strip a {
+  text-decoration: underline; }
