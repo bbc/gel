@@ -312,7 +312,7 @@ a {
 }
 
 .gel-breakout-box.extra-padding {
-    padding: 16px
+    padding: 8px 16px 16px 18px
 }
 .gel-breakout-box.extra-margin {
     margin-top: 18px;
@@ -320,17 +320,13 @@ a {
 
 .gel-breakout-box h4 {
     margin-top: 8px;
-    margin-bottom: 12px
-}
-
-.gel-breakout-box aside p {
-    padding-bottom: 18px;
-    font-family: ReithSans !important;
+    margin-bottom: 8px
 }
 
 .gel-breakout-box p {
     overflow: hidden;
     margin: 0;
+    font-family: ReithSans !important;
     font-weight: 400;
     font-size: 15px;
     font-size: .9375rem;
