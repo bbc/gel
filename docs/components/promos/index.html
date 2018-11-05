@@ -201,13 +201,10 @@
 }
 </code></pre>
 
-          <div class="gel-breakout-box gel-breakout-box extra-padding">
-            <aside aria-label="Note">
-              <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
-              <p><p>While <a href="#link-todo"><strong>Metadata Strips</strong></a> are documented as their own component, the <code>margin-top</code> and <code>padding-top</code> styles specified here are needed in the <strong>Promo</strong> context.</p>
-</p>
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541412170396">
+              <h4 id="aside-1541412170396" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>While <a href="#link-todo"><strong>Metadata Strips</strong></a> are documented as their own component, the <code>margin-top</code> and <code>padding-top</code> styles specified here are needed in the <strong>Promo</strong> context.</p>
+
             </aside>
-          </div>
           <h3 id="the-image">The image</h3>
 <p>As stated in <strong><a href="#expected-markup">Expected markup</a></strong>, the image must come <em>after</em> the text content in the source order. However, it is designed to appear before it visually. Using Flexbox, it is possible to augment the visual order without affecting the source order:</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gel-promo-image</span> {
@@ -215,13 +212,10 @@
 }
 </code></pre>
 
-          <div class="gel-breakout-box gel-breakout-box extra-padding">
-            <aside aria-label="Note">
-              <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
-              <p><p>Augmenting the source order can produce a <a href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html"><strong>WCAG 2.4.3 Focus Order failure</strong></a>, but the image is not focusable so there is no such issue.</p>
-</p>
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541412170396">
+              <h4 id="aside-1541412170396" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>Augmenting the source order can produce a <a href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html"><strong>WCAG 2.4.3 Focus Order failure</strong></a>, but the image is not focusable so there is no such issue.</p>
+
             </aside>
-          </div>
           <p>The image will need to fit the available space, regardless of the promo's dimensions (which are likely to change across breakpoints) without distorting. This is possible by setting the desired height of the image box and using the <code>object-fit</code> property:</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gel-promo-image</span> {
   <span class="hljs-attribute">order</span>: -<span class="hljs-number">1</span>;
@@ -242,13 +236,10 @@
 }
 </code></pre>
 
-          <div class="gel-breakout-box gel-breakout-box extra-padding">
-            <aside aria-label="Note">
-              <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div>
-              <p><p>At the time of writing, the <code>object-fit</code> property is supported everywhere but Internet Explorer<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. The code uses <code>@supports</code> and falls back to showing the image at its natural width, cropping the right edge or leaving a right margin.</p>
-</p>
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541412170396">
+              <h4 id="aside-1541412170396" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>At the time of writing, the <code>object-fit</code> property is supported everywhere but Internet Explorer<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. The code uses <code>@supports</code> and falls back to showing the image at its natural width, cropping the right edge or leaving a right margin.</p>
+
             </aside>
-          </div>
           <h3 id="horizontal-promos">Horizontal Promos</h3>
 <p>It is permissable to create a horizontal configuration, with the image to the left of the content. In the <a href="../demos/promos/"><strong>Reference implementation</strong></a> this is achieved without changing the markup, except to place the class <code>gel-promos-horizontal</code> on the <code>&lt;ul&gt;</code> element and <code>gel-promo-horizontal</code> on each subject Promo.</p>
 <p>A small amount of additional CSS is then applied. Note the switch in <code>flex-direction</code> from <code>column</code> to <code>row</code>.</p>
@@ -293,13 +284,10 @@ img.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; link.cli
 <p>If the metadata contains links, these will fall into focus order after the headline, as expected.</p>
 <h2 id="reference-implementation">Reference implementation</h2>
 
-          <div class="gel-breakout-box gel-breakout-box extra-padding">
-            <aside aria-label="Important">
-              <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div>
-              <p><p>Reference implementations are intended to demonstate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behavior of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
-</p>
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541412170396">
+              <h4 id="aside-1541412170396" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behavior of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+
             </aside>
-          </div>
           
           <div class="gel-demo"><!-- 
 title: Promos

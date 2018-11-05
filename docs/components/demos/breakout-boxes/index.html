@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Code GEL | Breakout Boxes Demo</title>
+
+    <script src="/code-gel/static/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/main.css">
+
+    <script type="text/javascript">
+        // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + (supports.touchevents ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + (SimpleFeatureDetector.supports({ property: 'flex-wrap' }, { property: 'flex-flow' }) ? 'flexbox' : 'no-flexbox'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    <script type="text/javascript">
+        // use reith fonts
+        (new FontFaceObserver('ReithSans')).load().then(function () {
+            document.documentElement.className += ' b-reith-sans-loaded';
+        });
+        (new FontFaceObserver('ReithSerif')).load().then(function () {
+            document.documentElement.className += ' b-reith-loaded';
+        });
+    </script>
+
+    
+</head>
+
+<body class="gel-guideline-body">
+    <main id="main" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-5/5@l" style="padding-right: 12px;">
+                <h1 class="gel-guideline-header__title">Breakout Boxes</h1>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-5/5@l">
+                
+<div style="margin-bottom: 1rem;">
+  <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541071173689">
+    <h4 id="aside-1541071173689" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text">
+        <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use>
+      </svg>Tip</h4>
+    <div>
+      <p>To associate <code>aria-labelledby</code> with the respective <code>id</code>, they must share a value and
+        that value must be unique. In your templating system, you can create a unique string at the time of compilation
+        using <code>Date()</code>:</p>
+      <pre class="hljs"><code class="hljs"><span class="hljs-keyword">const</span> unique = + <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(); <span class="hljs-comment">// e.g. 1540915290281</span>
+</code></pre>
+      <p>An <code>id</code> that is not unique is considered a parsing error and, since it affects accessible naming
+        associations here, would mean a failure under <strong>WCAG 4.1.1 Parsing</strong><sup class="footnote-ref"><a
+            href="#fn3" id="fnref3">[3]</a></sup>.</p>
+    </div>
+  </aside>
+</div>
+            </div>
+        </div>
+    </main>
+
+    
+
+    <script type="text/javascript" src="/code-gel/static/js/demo.js"></script>
+</body>
+
+</html>
