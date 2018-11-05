@@ -38,11 +38,11 @@ The GEL tabs implementation diverges from the ARIA Authoring Practices specifica
   </section>
   <section id="section2" aria-labelledby="tab-section2" hidden>
     <h2>Section 2</h2>
-    <p>Content for section 1.</p>
+    <p>Content for section 2.</p>
   </section>
   <section id="section3" aria-labelledby="tab-section3" hidden>
     <h2>Section 3</h2>
-    <p>Content for section 1.</p>
+    <p>Content for section 3.</p>
   </section>
 </div>
 ```
