@@ -1357,6 +1357,9 @@ a {
 .gel-body-copy h1 a, .gel-body-copy h2 a, .gel-body-copy h3 a, .gel-body-copy h4 a, .gel-body-copy h5 a, .gel-body-copy h6 a, .gel-body-copy li a {
   border-bottom: 1px solid transparent; }
 
+.gel-body-copy h1 a:hover, .gel-body-copy h2 a:hover, .gel-body-copy h3 a:hover, .gel-body-copy h4 a:hover, .gel-body-copy h5 a:hover, .gel-body-copy h6 a:hover, .gel-body-copy li a:hover {
+  border-bottom: 1px solid #397cb8; }
+
 .gel-body-copy h2 {
   border-top: 1px solid #ccc;
   padding-top: 30px;
@@ -1719,12 +1722,18 @@ a {
 .gel-toc a {
   text-decoration: none;
   font-weight: bold;
-  line-height: 160%; }
+  line-height: 160%;
+  border-bottom: 1px solid transparent; }
 
 .gel-toc a:hover,
 .gel-toc a:focus,
 .gel-toc li.active a {
-  color: #397cb8; }
+  color: #397cb8;
+  transition: .3s; }
+
+.gel-toc a:hover {
+  border-bottom: 1px solid #397cb8;
+  transition: .3s; }
 
 /* icon */
 .gel-icon {

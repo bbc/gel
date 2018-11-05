@@ -67,9 +67,9 @@ a {
     a {
       border-bottom:  1px solid transparent;
     }
-    // a:hover {
-    //   border-bottom: 1px solid $gel-color--brand;
-    // }
+    a:hover {
+      border-bottom: 1px solid $gel-color--brand;
+    }
   }
 
   h2 {
@@ -398,11 +398,18 @@ a {
   text-decoration: none;
   font-weight: bold;
   line-height: 160%;
+  border-bottom: 1px solid transparent
 }
 .gel-toc a:hover,
 .gel-toc a:focus,
 .gel-toc li.active a {
-  color: #397cb8;
+  color: $gel-color--brand;
+  transition: .3s
+}
+
+.gel-toc a:hover {
+  border-bottom: 1px solid $gel-color--brand;
+  transition: .3s
 }
 
 
