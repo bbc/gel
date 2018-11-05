@@ -115,7 +115,21 @@ To preserve the behavior of the same-page links upon which the tabs are created 
 
 The tab panel is now the sequential focus starting point, making the first interactive element inside (or past) the tab panel next in focus order. However, the tab panel itself is not user focusable (it employs `tabindex="-1"`, not `tabindex="0"`), meaning <kbd>Shift</kbd> + <kbd>Tab</kbd> will take the user directly back to the tab list. Screen readers' reading position (or 'virtual cursor'[^4] position) will also be transported to the start of the tab panel, allowing users to read downwards from there. 
 
-#### Page load
+### Back button support
+
+Since the interface is driven by the `hashchange` events elicited by clicking the tab link elements, the back button is supported. Pressing the back button will take you to the previously opened tab if there was one.
+
+```js
+window.addEventListener('hashchange', function (e) {
+  var selected = tablist.querySelector('[aria-current]');
+  var oldIndex = selected ? Array.prototype.indexOf.call(tabs, selected) : undefined;
+  switchTab(oldIndex, tabInfo());
+}, false);
+```
+
+Whenever the hash changes to something _not_ corresponding to a tab, the first tab panel is shown but not focused.
+
+### Page load
 
 The tabs are permitted to continue updating the document's `hash` as tabs are selected, preserving the behavior of same-page links. When the document first loads, if the URL hash corresponds to a tab panel, that tab panel is shown by default. If there is no hash component to the URL, or the hash does not match a tab panel's `id`, the first tab panel is shown and the first tab selected.
 
@@ -130,7 +144,7 @@ window.addEventListener('DOMContentLoaded', function () {
 ## Reference implementation
 
 ::: alert Important
-Reference implementations are intended to demonstate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behavior of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
+Reference implementations are intended to demonstrate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behavior of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
 :::
 
 <include src="components/demos/tabs.html">
