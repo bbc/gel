@@ -1,0 +1,128 @@
+---
+title: Tabs
+---
+
+<style>
+  .gel-tabs>section {
+    background-color: #F1F1F1;
+    padding: 1rem;
+  }
+
+  .gel-tabs>ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    margin: -0.5rem;
+  }
+
+  .gel-tabs ul>li {
+    flex: 1 1 auto;
+    margin: 0.5rem;
+    min-width: 0;
+  }
+
+  .gel-tabs>ul a {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    text-align: center;
+    color: inherit;
+    background-color: #DADADA;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .gel-tabs>ul a:focus,
+  .gel-tabs>section:focus {
+    outline: 2px solid;
+    outline-offset: -2px;
+  }
+
+  .gel-tabs [aria-current] {
+    background-color: #F1F1F1;
+  }
+</style>
+<div style="margin-bottom: 1rem;">
+  <div class="gel-tabs">
+    <ul>
+      <li><a href="#section1">Section 1</a></li>
+      <li><a href="#section2">The Second Section</a></li>
+      <li><a href="#section3">Section 3</a></li>
+    </ul>
+    <section id="section1">
+      <h2>Section 1</h2>
+      <p>Content for section 1.</p>
+    </section>
+    <section id="section2">
+      <h2>Section 2</h2>
+      <p>Content for section 1.</p>
+    </section>
+    <section id="section3">
+      <h2>Section 3</h2>
+      <p>Content for section 1.</p>
+    </section>
+  </div>
+</div>
+<script>
+  (function () {
+    var tabInterfaces = document.querySelectorAll('.gel-tabs');
+    Array.prototype.forEach.call(tabInterfaces, function (tabInterface) {
+      var tablist = tabInterface.querySelector('ul');
+      var tabs = tablist.querySelectorAll('a');
+      var panels = tabInterface.querySelectorAll('section[id]');
+
+      var tabInfo = function () {
+        var focus = true;
+        var tab = 0;
+        if (window.location.hash) {
+          tab = Array.prototype.indexOf.call(
+            tabs,
+            document.getElementById('tab-' + window.location.hash.substring(1))
+          );
+        }
+        if (tab < 0) {
+          tab = 0;
+          focus = false;
+        }
+        return {
+          index: tab,
+          focus: focus
+        };
+      }
+
+      var switchTab = function (oldIndex, tabInfo) {
+        if (oldIndex > -1) {
+          tabs[oldIndex].removeAttribute('aria-current');
+          panels[oldIndex].hidden = true;
+        }
+
+        tabs[tabInfo.index].setAttribute('aria-current', 'true');
+        panels[tabInfo.index].hidden = false;
+        if (tabInfo.focus) {
+          panels[tabInfo.index].focus();
+        }
+      }
+
+      Array.prototype.forEach.call(tabs, function (tab, i) {
+        tab.id = 'tab-' + tab.getAttribute('href').substring(1);
+
+        var panel = panels[i];
+        panel.setAttribute('tabindex', '-1');
+        panel.setAttribute('aria-labelledby', tab.id);
+        panel.hidden = true;
+      });
+
+      window.addEventListener('hashchange', function (e) {
+        var selected = tablist.querySelector('[aria-current]');
+        var oldIndex = selected ? Array.prototype.indexOf.call(tabs, selected) : undefined;
+        switchTab(oldIndex, tabInfo());
+      }, false);
+
+      window.addEventListener('DOMContentLoaded', function () {
+        switchTab(undefined, tabInfo());
+      });
+    });
+  })();
+</script>
