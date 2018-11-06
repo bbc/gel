@@ -29,6 +29,8 @@
     </script>
 
     
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/gelui.css">
+    
 </head>
 
 <body class="gel-guideline-body">
@@ -41,109 +43,7 @@
 
         <div class="gel-layout">
             <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-5/5@l">
-                <style>
-  .gel-cards {
-    margin: 0;
-    padding: 0;
-  }
-
-  .gel-cards>*+* {
-    margin-top: 1rem;
-  }
-
-  @supports (display: grid) {
-    .gel-cards>*+* {
-      margin-top: 0;
-    }
-
-    .gel-card {
-      margin: 0;
-    }
-
-    .gel-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
-      grid-gap: 1rem;
-    }
-  }
-
-  .gel-card {
-    display: flex;
-    flex-direction: column;
-    background-color: #F1F1F1;
-    position: relative;
-  }
-
-  .gel-card-content {
-    order: -1;
-    overflow: hidden;
-    height: 10rem;
-  }
-
-  .gel-promo-content {
-    order: -1;
-    height: 10rem;
-    overflow: hidden;
-  }
-
-  .gel-card-content img,
-  .gel-card-content video {
-    height: 100%;
-    width: auto;
-  }
-
-  @supports (object-fit: cover) {
-    .gel-card-content img, 
-    .gel-card-content video {
-      width: 100%;
-      object-fit: cover;
-    }
-  }
-
-  .gel-card-headline, .gel-card-desc {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .gel-card-toolbar {
-    height: 2.5rem;
-    list-style: none;
-    display: flex;
-    padding: 0.5rem 1rem;
-    background-color: #e5e5e5;
-    margin-top: auto;
-  }
-
-  .gel-card-toolbar button {
-    padding: 0;
-    background: none;
-    border: none;
-    font-size: inherit;
-    display: inline-block;
-  }
-
-  .gel-card-toolbar > *:first-child {
-    margin-right: auto;
-  }
-
-  .gel-card-toolbar > * + * {
-    margin: 0;
-    margin-left: 0.5rem;
-  }
-
-  .gel-card-info {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 2.5rem;
-    left: 0;
-    margin: 0;
-    padding: 1rem;
-    background-color: #F1F1F1;
-    overflow-y: auto;
-  }
-</style>
-
+                
 <div style="margin-bottom: 1rem;">
   <h3>Astronomy Photographer of the Year 2018</h3>
   <ul class="gel-cards">

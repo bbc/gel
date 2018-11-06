@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Code GEL | Carousels Demo</title>
+
+    <script src="/code-gel/static/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/main.css">
+
+    <script type="text/javascript">
+        // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + (supports.touchevents ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + (SimpleFeatureDetector.supports({ property: 'flex-wrap' }, { property: 'flex-flow' }) ? 'flexbox' : 'no-flexbox'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    <script type="text/javascript">
+        // use reith fonts
+        (new FontFaceObserver('ReithSans')).load().then(function () {
+            document.documentElement.className += ' b-reith-sans-loaded';
+        });
+        (new FontFaceObserver('ReithSerif')).load().then(function () {
+            document.documentElement.className += ' b-reith-loaded';
+        });
+    </script>
+
+    
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/gelui.css">
+    
+</head>
+
+<body class="gel-guideline-body">
+    <main id="main" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-5/5@l" style="padding-right: 12px;">
+                <h1 class="gel-guideline-header__title">Carousels</h1>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-5/5@l">
+                
+<div style="margin-bottom: 1rem;">
+  <div class="gel-carousel" role="group">
+    <div class="gel-carousel-buttons">
+      <button class="gel-carousel-prev">
+        <span class="vh">scroll left</span>
+        <svg viewBox="0 0 20 20" width="20" height="20" focusable="false">
+          <polyline points="14 6, 6 10, 14 14"></polyline>
+        </svg>
+      </button>
+      <button class="gel-carousel-next">
+        <span class="vh">scroll right</span>
+        <svg viewBox="0 0 20 20" width="20" height="20" focusable="false">
+          <polyline points="6 6, 14 10, 6 14"></polyline>
+        </svg>
+      </button>
+    </div>
+    <div class="gel-carousel-scrollable">
+      <ul class="gel-carousel-list">
+        <li class="gel-card">
+          <div class="gel-card-headline">
+            <h3>Living Space</h3>
+          </div>
+          <div class="gel-card-content">
+            <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/E134/production/_104025675_livingspaceandrewwhyte.jpg"
+              alt="A silhouette of a lamppost reaches up from suburbia into the milky way" />
+          </div>
+          <div class="gel-card-desc">
+            <p>Taken in Pagham, West Sussex, Whyte's photograph aims to show how accustomed we have become to the loss
+              of
+              night sky views because of light pollution, with the unlit street lamps allowing for awe-inspiring views.</p>
+            <p><small>Runner-up: Andrew Whyte</small></p>
+          </div>
+          <div class="gel-card-toolbar">
+            <button type="button" aria-haspopup="true">More info</button>
+            <div class="gel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
+              <h4 class="gel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin posuere mauris, at
+                sagittis
+                odio aliquam sed. Nunc neque diam, euismod ut purus et, scelerisque vulputate tortor. Donec non commodo
+                turpis. Nunc ac magna in diam molestie posuere eget eu elit. Suspendisse ut lectus porta eros dapibus
+                tempor. Curabitur tempus purus eu consequat semper. Ut a lectus non metus imperdiet finibus. Sed
+                vestibulum
+                enim congue, finibus augue ut, dictum justo.</p>
+            </div>
+            <button type="button" aria-pressed="false">Love</button>
+            <button type="button">Add</button>
+            <button type="button">Share</button>
+          </div>
+        </li>
+        <li class="gel-card">
+          <div class="gel-card-headline">
+            <h3>Speeding on the Aurora Lane</h3>
+          </div>
+          <div class="gel-card-content">
+            <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/12F54/production/_104025677_speedingontheauroralanenicolaslefaudeux.jpg"
+              alt="A shimmering green sheet reaches through a sky of stars towards a glowing green horizon" />
+          </div>
+          <div class="gel-card-desc">
+            <p>A hazy auroral band is seen drifting across the sky above Sirkka, Finland, seeming like a road
+              disappearing
+              over the horizon.</p>
+            <p><small>Winner: Nicolas Lefaudeux</small></p>
+          </div>
+          <div class="gel-card-toolbar">
+            <button type="button" aria-haspopup="true">More info</button>
+            <div class="gel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
+              <h4 class="gel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h4>
+              <p>Vestibulum consectetur, lectus sed porta pulvinar, turpis nunc placerat nisl, non blandit augue leo in
+                nunc. Vivamus in mi lectus. Vivamus ex orci, finibus non massa nec, viverra sollicitudin nibh. Nunc
+                semper
+                imperdiet ante, et mattis magna hendrerit a. Quisque libero nibh, hendrerit at tortor vitae, cursus
+                elementum diam. Donec auctor molestie imperdiet. Vivamus venenatis mauris ut ante volutpat fringilla.
+                Duis
+                ullamcorper ac libero sed iaculis. Duis pulvinar leo at feugiat dapibus. Aenean sagittis felis massa,
+                sodales ullamcorper tellus consectetur ac.</p>
+            </div>
+            <button type="button" aria-pressed="false">Love</button>
+            <button type="button">Add</button>
+            <button type="button">Share</button>
+          </div>
+        </li>
+        <li class="gel-card">
+          <div class="gel-card-headline">
+            <h3>Castlerigg Stone Circle</h3>
+          </div>
+          <div class="gel-card-content">
+            <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/40B2/production/_104026561_castleriggstonecirclematthewjamesturner.jpg"
+              alt="The sun creeps over bright green hills to gently illuminate a circle of ancient stones. A few lights emanate from a distant village." />
+          </div>
+          <div class="gel-card-desc">
+            <p>Turner's image depicts standing stones illuminated by moonlight, while auroras beyond the mountains
+              gives
+              the appearance that the hills are emitting an ethereal green glow.</p>
+            <p><small>Runner-up: Matthew James Turner</small></p>
+          </div>
+          <div class="gel-card-toolbar">
+            <button type="button" aria-haspopup="true">More info</button>
+            <div class="gel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
+              <h4 class="gel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h4>
+              <p>Quisque sit amet magna lacus. Donec in fringilla velit. Curabitur vulputate magna euismod turpis
+                luctus
+                bibendum. Donec fringilla risus eget felis aliquet, vel vestibulum nibh bibendum. In laoreet ut nisi
+                nec
+                gravida. Nullam scelerisque posuere mollis. Donec ac mauris maximus, placerat enim vitae, placerat
+                libero.
+                Maecenas eget magna quis diam faucibus suscipit at et velit. Nulla placerat vehicula nunc in maximus.
+                Nulla
+                euismod neque vel imperdiet dignissim.</p>
+            </div>
+            <button type="button" aria-pressed="false">Love</button>
+            <button type="button">Add</button>
+            <button type="button">Share</button>
+          </div>
+        </li>
+        <li class="gel-card">
+          <div class="gel-card-headline">
+            <h3>Living Space</h3>
+          </div>
+          <div class="gel-card-content">
+            <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/E134/production/_104025675_livingspaceandrewwhyte.jpg"
+              alt="A silhouette of a lamppost reaches up from suburbia into the milky way" />
+          </div>
+          <div class="gel-card-desc">
+            <p>Taken in Pagham, West Sussex, Whyte's photograph aims to show how accustomed we have become to the loss
+              of
+              night sky views because of light pollution, with the unlit street lamps allowing for awe-inspiring views.</p>
+            <p><small>Runner-up: Andrew Whyte</small></p>
+          </div>
+          <div class="gel-card-toolbar">
+            <button type="button" aria-haspopup="true">More info</button>
+            <div class="gel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
+              <h4 class="gel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin posuere mauris, at
+                sagittis
+                odio aliquam sed. Nunc neque diam, euismod ut purus et, scelerisque vulputate tortor. Donec non commodo
+                turpis. Nunc ac magna in diam molestie posuere eget eu elit. Suspendisse ut lectus porta eros dapibus
+                tempor. Curabitur tempus purus eu consequat semper. Ut a lectus non metus imperdiet finibus. Sed
+                vestibulum
+                enim congue, finibus augue ut, dictum justo.</p>
+            </div>
+            <button type="button" aria-pressed="false">Love</button>
+            <button type="button">Add</button>
+            <button type="button">Share</button>
+          </div>
+        </li>
+        <li class="gel-card">
+          <div class="gel-card-headline">
+            <h3>Speeding on the Aurora Lane</h3>
+          </div>
+          <div class="gel-card-content">
+            <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/12F54/production/_104025677_speedingontheauroralanenicolaslefaudeux.jpg"
+              alt="A shimmering green sheet reaches through a sky of stars towards a glowing green horizon" />
+          </div>
+          <div class="gel-card-desc">
+            <p>A hazy auroral band is seen drifting across the sky above Sirkka, Finland, seeming like a road
+              disappearing
+              over the horizon.</p>
+            <p><small>Winner: Nicolas Lefaudeux</small></p>
+          </div>
+          <div class="gel-card-toolbar">
+            <button type="button" aria-haspopup="true">More info</button>
+            <div class="gel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
+              <h4 class="gel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h4>
+              <p>Vestibulum consectetur, lectus sed porta pulvinar, turpis nunc placerat nisl, non blandit augue leo in
+                nunc. Vivamus in mi lectus. Vivamus ex orci, finibus non massa nec, viverra sollicitudin nibh. Nunc
+                semper
+                imperdiet ante, et mattis magna hendrerit a. Quisque libero nibh, hendrerit at tortor vitae, cursus
+                elementum diam. Donec auctor molestie imperdiet. Vivamus venenatis mauris ut ante volutpat fringilla.
+                Duis
+                ullamcorper ac libero sed iaculis. Duis pulvinar leo at feugiat dapibus. Aenean sagittis felis massa,
+                sodales ullamcorper tellus consectetur ac.</p>
+            </div>
+            <button type="button" aria-pressed="false">Love</button>
+            <button type="button">Add</button>
+            <button type="button">Share</button>
+          </div>
+        </li>
+        <li class="gel-card">
+          <div class="gel-card-headline">
+            <h3>Castlerigg Stone Circle</h3>
+          </div>
+          <div class="gel-card-content">
+            <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/40B2/production/_104026561_castleriggstonecirclematthewjamesturner.jpg"
+              alt="The sun creeps over bright green hills to gently illuminate a circle of ancient stones. A few lights emanate from a distant village." />
+          </div>
+          <div class="gel-card-desc">
+            <p>Turner's image depicts standing stones illuminated by moonlight, while auroras beyond the mountains
+              gives
+              the appearance that the hills are emitting an ethereal green glow.</p>
+            <p><small>Runner-up: Matthew James Turner</small></p>
+          </div>
+          <div class="gel-card-toolbar">
+            <button type="button" aria-haspopup="true">More info</button>
+            <div class="gel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
+              <h4 class="gel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h4>
+              <p>Quisque sit amet magna lacus. Donec in fringilla velit. Curabitur vulputate magna euismod turpis
+                luctus
+                bibendum. Donec fringilla risus eget felis aliquet, vel vestibulum nibh bibendum. In laoreet ut nisi
+                nec
+                gravida. Nullam scelerisque posuere mollis. Donec ac mauris maximus, placerat enim vitae, placerat
+                libero.
+                Maecenas eget magna quis diam faucibus suscipit at et velit. Nulla placerat vehicula nunc in maximus.
+                Nulla
+                euismod neque vel imperdiet dignissim.</p>
+            </div>
+            <button type="button" aria-pressed="false">Love</button>
+            <button type="button">Add</button>
+            <button type="button">Share</button>
+          </div>
+        </li>
+        <li class="gel-card">
+          <div class="gel-card-headline">
+            <h3>Living Space</h3>
+          </div>
+          <div class="gel-card-content">
+            <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/E134/production/_104025675_livingspaceandrewwhyte.jpg"
+              alt="A silhouette of a lamppost reaches up from suburbia into the milky way" />
+          </div>
+          <div class="gel-card-desc">
+            <p>Taken in Pagham, West Sussex, Whyte's photograph aims to show how accustomed we have become to the loss
+              of
+              night sky views because of light pollution, with the unlit street lamps allowing for awe-inspiring views.</p>
+            <p><small>Runner-up: Andrew Whyte</small></p>
+          </div>
+          <div class="gel-card-toolbar">
+            <button type="button" aria-haspopup="true">More info</button>
+            <div class="gel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
+              <h4 class="gel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin posuere mauris, at
+                sagittis
+                odio aliquam sed. Nunc neque diam, euismod ut purus et, scelerisque vulputate tortor. Donec non commodo
+                turpis. Nunc ac magna in diam molestie posuere eget eu elit. Suspendisse ut lectus porta eros dapibus
+                tempor. Curabitur tempus purus eu consequat semper. Ut a lectus non metus imperdiet finibus. Sed
+                vestibulum
+                enim congue, finibus augue ut, dictum justo.</p>
+            </div>
+            <button type="button" aria-pressed="false">Love</button>
+            <button type="button">Add</button>
+            <button type="button">Share</button>
+          </div>
+        </li>
+        <li class="gel-card">
+          <div class="gel-card-headline">
+            <h3>Speeding on the Aurora Lane</h3>
+          </div>
+          <div class="gel-card-content">
+            <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/12F54/production/_104025677_speedingontheauroralanenicolaslefaudeux.jpg"
+              alt="A shimmering green sheet reaches through a sky of stars towards a glowing green horizon" />
+          </div>
+          <div class="gel-card-desc">
+            <p>A hazy auroral band is seen drifting across the sky above Sirkka, Finland.
+              over the horizon.</p>
+            <p><small>Winner: Nicolas Lefaudeux</small></p>
+          </div>
+          <div class="gel-card-toolbar">
+            <button type="button" aria-haspopup="true">More info</button>
+            <div class="gel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
+              <h4 class="gel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h4>
+              <p>Vestibulum consectetur, lectus sed porta pulvinar, turpis nunc placerat nisl, non blandit augue leo in
+                nunc. Vivamus in mi lectus. Vivamus ex orci, finibus non massa nec, viverra sollicitudin nibh. Nunc
+                semper
+                imperdiet ante, et mattis magna hendrerit a. Quisque libero nibh, hendrerit at tortor vitae, cursus
+                elementum diam. Donec auctor molestie imperdiet. Vivamus venenatis mauris ut ante volutpat fringilla.
+                Duis
+                ullamcorper ac libero sed iaculis. Duis pulvinar leo at feugiat dapibus. Aenean sagittis felis massa,
+                sodales ullamcorper tellus consectetur ac.</p>
+            </div>
+            <button type="button" aria-pressed="false">Love</button>
+            <button type="button">Add</button>
+            <button type="button">Share</button>
+          </div>
+        </li>
+        <li class="gel-card">
+          <div class="gel-card-headline">
+            <h3>Castlerigg Stone Circle</h3>
+          </div>
+          <div class="gel-card-content">
+            <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/40B2/production/_104026561_castleriggstonecirclematthewjamesturner.jpg"
+              alt="The sun creeps over bright green hills to gently illuminate a circle of ancient stones. A few lights emanate from a distant village." />
+          </div>
+          <div class="gel-card-desc">
+            <p>Turner's image depicts standing stones illuminated by moonlight, while auroras beyond the mountains
+              gives
+              the appearance that the hills are emitting an ethereal green glow.</p>
+            <p><small>Runner-up: Matthew James Turner</small></p>
+          </div>
+          <div class="gel-card-toolbar">
+            <button type="button" aria-haspopup="true">More info</button>
+            <div class="gel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
+              <h4 class="gel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h4>
+              <p>Quisque sit amet magna lacus. Donec in fringilla velit. Curabitur vulputate magna euismod turpis
+                luctus
+                bibendum. Donec fringilla risus eget felis aliquet, vel vestibulum nibh bibendum. In laoreet ut nisi
+                nec
+                gravida. Nullam scelerisque posuere mollis. Donec ac mauris maximus, placerat enim vitae, placerat
+                libero.
+                Maecenas eget magna quis diam faucibus suscipit at et velit. Nulla placerat vehicula nunc in maximus.
+                Nulla
+                euismod neque vel imperdiet dignissim.</p>
+            </div>
+            <button type="button" aria-pressed="false">Love</button>
+            <button type="button">Add</button>
+            <button type="button">Share</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    /* inert attribute polyfill, from https://github.com/GoogleChrome/inert-polyfill */
+    "inert" in HTMLElement.prototype || (Object.defineProperty(HTMLElement.prototype, "inert", { enumerable: !0, get: function () { return this.hasAttribute("inert") }, set: function (h) { h ? this.setAttribute("inert", "") : this.removeAttribute("inert") } }), window.addEventListener("load", function () {
+      function h(a) {
+        var b = null; try { b = new KeyboardEvent("keydown", { keyCode: 9, which: 9, key: "Tab", code: "Tab", keyIdentifier: "U+0009", shiftKey: !!a, bubbles: !0 }) } catch (g) {
+          try {
+            b = document.createEvent("KeyboardEvent"), b.initKeyboardEvent("keydown",
+              !0, !0, window, "Tab", 0, a ? "Shift" : "", !1, "en")
+          } catch (d) { }
+        } if (b) { try { Object.defineProperty(b, "keyCode", { value: 9 }) } catch (g) { } document.dispatchEvent(b) }
+      } function k(a) { for (; a && a !== document.documentElement;) { if (a.hasAttribute("inert")) return a; a = a.parentElement } return null } function e(a) { var b = a.path; return b && b[0] || a.target } function l(a) { a.path[a.path.length - 1] !== window && (m(e(a)), a.preventDefault(), a.stopPropagation()) } function m(a) {
+        var b = k(a); if (b) {
+          if (document.hasFocus() && 0 !== f) {
+            var g = (c || document).activeElement;
+            h(0 > f ? !0 : !1); if (g != (c || document).activeElement) return; var d = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT, { acceptNode: function (a) { return !a || !a.focus || 0 > a.tabIndex ? NodeFilter.FILTER_SKIP : b.contains(a) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT } }); d.currentNode = b; d = (-1 === Math.sign(f) ? d.previousNode : d.nextNode).bind(d); for (var e; e = d();)if (e.focus(), (c || document).activeElement !== g) return
+          } a.blur()
+        }
+      } (function (a) {
+        var b = document.createElement("style"); b.type = "text/css"; b.styleSheet ?
+          b.styleSheet.cssText = a : b.appendChild(document.createTextNode(a)); document.body.appendChild(b)
+      })("/*[inert]*/*[inert]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none}"); var n = function (a) { return null }; window.ShadowRoot && (n = function (a) { for (; a && a !== document.documentElement;) { if (a instanceof window.ShadowRoot) return a; a = a.parentNode } return null }); var f = 0; document.addEventListener("keydown", function (a) { f = 9 === a.keyCode ? a.shiftKey ? -1 : 1 : 0 }); document.addEventListener("mousedown",
+        function (a) { f = 0 }); var c = null; document.body.addEventListener("focus", function (a) { var b = e(a); a = b == a.target ? null : n(b); if (a != c) { if (c) { if (!(c instanceof window.ShadowRoot)) throw Error("not shadow root: " + c); c.removeEventListener("focusin", l, !0) } a && a.addEventListener("focusin", l, !0); c = a } m(b) }, !0); document.addEventListener("click", function (a) { var b = e(a); k(b) && (a.preventDefault(), a.stopPropagation()) }, !0)
+    }));
+
+
+    (function () {
+      var cards = document.querySelectorAll('.gel-carousel');
+      Array.prototype.forEach.call(cards, function (carousel) {
+        var scrollable = carousel.querySelector('.gel-carousel-scrollable');
+        var list = carousel.querySelector('.gel-carousel-list');
+        var items = list.children;
+        var scrollAmount = list.offsetWidth / 2;
+        var prev = carousel.querySelector('.gel-carousel-prev');
+        var next = carousel.querySelector('.gel-carousel-next');
+
+        prev.disabled = true;
+
+        prev.addEventListener('click', function (e) {
+          scrollable.scrollLeft += -scrollAmount;
+        });
+        next.addEventListener('click', function (e) {
+          scrollable.scrollLeft += scrollAmount;
+        });
+
+        function disableEnable() {
+          prev.disabled = scrollable.scrollLeft < 1;
+          next.disabled = scrollable.scrollLeft === list.scrollWidth - list.offsetWidth;
+        }
+
+        // Debounce the button disabling function on scroll
+        var debounced;
+        scrollable.addEventListener('scroll', function () {
+          window.clearTimeout(debounced);
+          debounced = setTimeout(disableEnable, 200);
+        });
+
+        if ('IntersectionObserver' in window) {
+          var observerSettings = {
+            root: scrollable,
+            threshold: 0.5
+          }
+
+          var callback = function (items, observer) {
+            Array.prototype.forEach.call(items, function (item) {
+              if (item.isIntersecting) {
+                item.target.removeAttribute('inert');
+              } else {
+                item.target.setAttribute('inert', 'inert');
+              }
+            });
+          }
+
+          var observer = new IntersectionObserver(callback, observerSettings);
+          Array.prototype.forEach.call(items, function (item) {
+            observer.observe(item);
+          });
+        }
+      });
+    })();
+  </script>
+</div>
+            </div>
+        </div>
+    </main>
+
+    
+
+    <script type="text/javascript" src="/code-gel/static/js/demo.js"></script>
+</body>
+
+</html>
