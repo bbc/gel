@@ -1,5 +1,5 @@
 .gel-tabs>section {
-  background-color: #F1F1F1;
+  background-color: $gel-color--dusty-gray;
   padding: 1rem;
 }
 
@@ -23,7 +23,7 @@
   text-decoration: none;
   text-align: center;
   color: inherit;
-  background-color: #DADADA;
+  background-color: $gel-color--alto;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -36,5 +36,5 @@
 }
 
 .gel-tabs [aria-current] {
-  background-color: #F1F1F1;
+  background-color: $gel-color--dusty-gray;
 }

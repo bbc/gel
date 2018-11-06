@@ -1308,7 +1308,7 @@ a {
   text-decoration: underline; }
 
 .gel-tabs > section {
-  background-color: #F1F1F1;
+  background-color: #ccc;
   padding: 1rem; }
 
 .gel-tabs > ul {
@@ -1329,7 +1329,7 @@ a {
   text-decoration: none;
   text-align: center;
   color: inherit;
-  background-color: #DADADA;
+  background-color: #dcdcdc;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
@@ -1340,7 +1340,7 @@ a {
   outline-offset: -2px; }
 
 .gel-tabs [aria-current] {
-  background-color: #F1F1F1; }
+  background-color: #ccc; }
 
 @media (min-width: 56.25em) {
   .gel-pull__right\@l {
