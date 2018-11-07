@@ -2,17 +2,17 @@
  * GEL CAROUSELS
  */
 
- .gel-carousel {
-   position: relative;
- }
+.gel-carousel {
+  position: relative;
+}
 
- .gel-carousel-scrollable {
+.gel-carousel-scrollable {
   overflow-x: auto;
   padding-bottom: 0.5rem;
   scroll-behavior: smooth;
- }
+}
 
- .gel-carousel-scrollable::-webkit-scrollbar {
+.gel-carousel-scrollable::-webkit-scrollbar {
   height: 0.5rem;
 }
 
@@ -33,11 +33,12 @@
 
 .gel-carousel-list > li {
   flex-shrink: 0;
-  width: 300px;
+  width: 266px;
+  transition: opacity 0.5s linear;
 }
 
 .gel-carousel-list > li[inert] {
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .gel-carousel-list > li + li {

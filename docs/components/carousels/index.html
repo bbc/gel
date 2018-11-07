@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Code GEL | Carousels</title>
+
+    <script src="/code-gel/static/js/main.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/main.css">
+
+    <script type="text/javascript">
+        // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + (supports.touchevents ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + (SimpleFeatureDetector.supports({ property: 'flex-wrap' }, { property: 'flex-flow' }) ? 'flexbox' : 'no-flexbox'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    <script type="text/javascript">
+        // use reith fonts
+        (new FontFaceObserver('ReithSans')).load().then(function () {
+            document.documentElement.className += ' b-reith-sans-loaded';
+        });
+        (new FontFaceObserver('ReithSerif')).load().then(function () {
+            document.documentElement.className += ' b-reith-loaded';
+        });
+    </script>
+
+    <script type="text/javascript">
+        // syntax highlight
+        hljs.initHighlightingOnLoad();
+    </script>
+
+    
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/gelui.css">
+    
+</head>
+
+<body class="gel-guideline-body">
+    <p class="gel-sr gel-sr__focusable gel-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('gel-sr__focused')" onblur="this.parentNode.classList.remove('gel-sr__focused')">Skip
+            to content</a>
+    </p>
+
+    <header>
+        <div class="gel-guideline-header gs-u-clearfix">
+            <div class="gel-wrap">
+                <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
+                        <title>BBC</title>
+                        <image xlink:href="/code-gel/static/images/bbc-blocks_grey.svg" src="/code-gel/static/images/bbc-blocks_grey.png"
+                            width="100%" height="100%"></image>
+                    </svg></a>
+            </div>
+        </div>
+        <div class="gel-guideline-header__banner gs-u-clearfix">
+            <div class="gel-wrap">
+                <div class="gel-layout">
+                    <div class="gel-layout__item gel-2/5@l" style="text-align:left; padding-left:14px; margin-bottom:32px;">
+                        <span class="gel-logo">Code{GEL}</span>
+                    </div>
+                    <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
+                        <a class="gel-button gel-button--dark gel-long-primer-bold" href="https://www.bbc.co.uk/gel/guidelines/carousel">
+                            Go to BBC GEL
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" tabindex="-1" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <!-- column placeholder-->
+            </div>
+
+            <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
+                <h1 class="gel-guideline-header__title">Carousels</h1>
+                <p class="gel-guideline-header__summary gel-great-primer">A carousel is a great way to view lots of content in a limited amount of vertical space. It presents a window to view some of a row of content, while indicating there is more out of view that can be scrolled to.</p>
+            </div>
+
+            <div class="gel-layout__item gel-1/5@l">
+                <dl class="gel-standout-box">
+                    
+                    <dt>Version:</dt>
+                    <dd>0.1.0</dd>
+                    
+                    
+                    <dt>Status:</dt>
+                    <dd>Published</dd>
+                    
+                    
+                    <dt>Accessibility:</dt>
+                    <dd>Pass</dd>
+                    
+                </dl>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
+                    <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
+                    <ol id="gel-toc__links" class="gel-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#test-specifications">Test specifications</a></li><li><a href="#related-research">Related research</a></li></ol>
+                </nav>
+            </div>
+
+            <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-3/5@l">
+                <h2 id="introduction">Introduction</h2>
+<p>The carousel component is a component for browsing sets of thematically similar content. It must be implemented so that it can be operated by mouse, keyboard, and touch.</p>
+<p>Importantly, unlike some carousel implementations, the content does not scroll automatically<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>: the user is entirely in control of which carousel items they can see and interact with at any one time.</p>
+<h3 id="expected-markup">Expected markup</h3>
+
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541589741545">
+              <h4 id="aside-1541589741545" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Code is elided</h4><div><p>The markup is elided for brevity. The <code>&lt;li&gt;</code> elements represent the containers for the content items, such as <a href="#link-todo"><strong>Cards</strong></a> or <a href="#link-todo"><strong>Promos</strong></a>.</p>
+
+            </aside>
+          <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-carousel"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-carousel-buttons"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-carousel-prev"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">disabled</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>previous<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#gel-icon-previous"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-carousel-next"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>next<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#gel-icon-next"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-carousel-scrollable"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-carousel-list"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h3 id="notes">Notes</h3>
+<ul>
+<li><strong><code>role=&quot;group&quot;</code></strong> This is a generic ARIA role, used here to indicate that the buttons and the scrollable area they control are related</li>
+<li><strong>previous and next buttons:</strong> One can scroll the through the content in incremental steps using the previous and next buttons. It's important these are <code>&lt;button&gt;</code> elements with <code>type=&quot;button&quot;</code>. Their labels are provided using visually hidden text (the <code>vh</code> class<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>) because, unlike <code>aria-label</code> it will be translated by browser translation extensions. Buttons that are not applicable (e.g. the previous button on page load) receive the <code>disabled</code> property. The button is removed from focus order and identified as disabled (or 'dimmed') in screen reader output.</li>
+<li><strong><code>gel-icon</code> SVGs:</strong> These must be the official <code>#gel-icon-previous</code> and <code>#gel-icon-next</code> icons from the <a href="http://bbc.github.io/gel-iconography/">GEL Iconography</a> set.</li>
+<li><strong><code>gel-carousel-scrollable</code>:</strong> This is the scrollable 'window' for the list of carousel content items (see <a href="#expected-layout"><strong>Expected layout</strong></a>)</li>
+<li><strong><code>gel-carousel-list</code>:</strong> The singular child element of <code>gel-carousel-scrollable</code> must be a <code>&lt;ul&gt;</code>, with each item as an <code>&lt;li&gt;</code>. List markup is identified as such in assistive technologies, and the items are enumerated. This lets screen reader users know they are met with a set of related content, and how much of it there is.</li>
+</ul>
+<h2 id="expected-layout">Expected layout</h2>
+<p>The basic scrolling functionality is achieved without JavaScript by making sure:</p>
+<ol>
+<li>The items do not wrap</li>
+<li>The parent has <code>overflow-x: auto</code></li>
+</ol>
+<p>Since flex children do not wrap by default, simply adding <code>display: flex</code> to the <code>gel-carousel-list</code> (<code>&lt;ul&gt;</code>) element is sufficient. It also ensures that each item adopts the height of the tallest item.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-carousel-scrollable</span> {
+  <span class="hljs-attribute">overflow-x</span>: auto;
+}
+
+<span class="hljs-selector-class">.gel-carousel-list</span> {
+  <span class="hljs-attribute">display</span>: flex;
+}
+</code></pre>
+<p>On some operating systems, the horizontal scrollbar is not visible by default, meaning the scrollable container lacks perceived affordance<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. It's possible to reveal the scrollbar in webkit browsers by giving them a custom styling:</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-carousel-scrollable</span><span class="hljs-selector-pseudo">::-webkit-scrollbar</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">0.5rem</span>;
+}
+
+<span class="hljs-selector-class">.gel-carousel-scrollable</span><span class="hljs-selector-pseudo">::-webkit-scrollbar-track</span> {
+  <span class="hljs-attribute">background-color</span>: $gel-color--dusty-gray;
+}
+
+<span class="hljs-selector-class">.gel-carousel-scrollable</span><span class="hljs-selector-pseudo">::-webkit-scrollbar-thumb</span> {
+  <span class="hljs-attribute">background-color</span>: $gel-color--tundora;
+}
+</code></pre>
+<h3 id="obscured-items">Obscured items</h3>
+<p>Items that are less than 50% in view are made to look faint with a reduced opacity. This indicates that the item must be brought further into view before it is interactive (see <a href="#expected-behavior"><strong>Expected behavior</strong></a>). The opacity style is applied using a CSS transition, to avoid a distracting 'blinking' effect as the user scrolls back and forth.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-carousel-list</span> &gt; <span class="hljs-selector-tag">li</span> {
+  <span class="hljs-attribute">transition</span>: opacity <span class="hljs-number">0.5s</span> linear;
+}
+
+<span class="hljs-selector-class">.gel-carousel-list</span> &gt; <span class="hljs-selector-tag">li</span><span class="hljs-selector-attr">[inert]</span> {
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.3</span>;
+}
+</code></pre>
+<h3 id="buttons">Buttons</h3>
+<p>The previous and next buttons, <code>gel-carousel-buttons</code>, is absolutely positioned over the carousel at the top right, necessitating <code>position: relative</code> on the parent <code>gel-carousel</code> element. Disabled buttons take a reduced opacity.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-carousel-buttons</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-attr">[disabled]</span> {
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.5</span>;
+}
+</code></pre>
+<h3 id="expected-behavior">Expected behavior</h3>
+<h4 id="scrolling">Scrolling</h4>
+<p>As the user scrolls by mouse, touch, gesture, or by using the auxiliary buttons, browsers that support <code>IntersectionObserver</code> add the <code>inert</code> attribute to items that go out of view and remove it from items that come into view.</p>
+<pre class="hljs"><code><span class="hljs-built_in">Array</span>.prototype.forEach.call(items, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item</span>) </span>{
+  <span class="hljs-keyword">if</span> (item.isIntersecting) {
+    item.target.removeAttribute(<span class="hljs-string">'inert'</span>);
+  } <span class="hljs-keyword">else</span> {
+    item.target.setAttribute(<span class="hljs-string">'inert'</span>, <span class="hljs-string">'inert'</span>);
+  }
+});
+</code></pre>
+<p>This not only invokes the 'fading' effect described in <a href="#expected-layout"><strong>Expected layout</strong></a>, but also removed inert items from focus order and the accessibility tree<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. The upshot is that, like sighted mouse users, keyboard and screen reader users can only perceive and interact with items that are not inert.</p>
+<p>Were the inert attribute not employed, a keyboard user could scroll to the end of a long set of items, only to find that the first item was still first in focus order. Pressing tab would scroll the container back to the beginning and progress would be lost.</p>
+
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541589741547">
+              <h4 id="aside-1541589741547" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Inert polyfill</h4><div><p>The <a href="#reference-implementation"><strong>Reference implementation</strong></a> includes a small polyfill<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> for the <code>inert</code> attribute, increasing the reach of the behavior it enables.</p>
+
+            </aside>
+          <h4 id="button-controls">Button controls</h4>
+<p>Keyboard users must scroll the content using the buttons. Each time a button is pressed, the scrollable container scrolls half of its own width (as measured on page load).</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> scrollAmount = list.offsetWidth / <span class="hljs-number">2</span>;
+</code></pre>
+<p>Buttons that are not applicable (the previous button if the user is scrolled all the way left, or the next button if the user is scrolled all the way to the right) are <code>disabled</code>. This is made possible by listening to the <code>scroll</code> event, which necessitates debouncing<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> to address performance concerns.</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> debounced;
+scrollable.addEventListener(<span class="hljs-string">'scroll'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">window</span>.clearTimeout(debounced);
+  debounced = setTimeout(disableEnable, <span class="hljs-number">200</span>);
+});
+</code></pre>
+<p>Buttons taking the <code>disabled</code> attribute are removed from focus order and identified as &quot;disabled&quot; or &quot;dimmed&quot; in screen reader output.</p>
+<h4 id="lazy-loading">Lazy loading</h4>
+<p>Although it is not provided as an intrinsic part of the <a href="#reference-implementation"><strong>Reference implementation</strong></a> to follow, it is recommended you use a lazy loading<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup> solution for images inside the carousel. Since the image containers for <a href="#link-todo"><strong>Card</strong></a> and <a href="#link-todo"><strong>Promo</strong></a> components have a fixed height, you do not need to address the scroll jumping issues associated with lazy loading.</p>
+<h2 id="reference-implementation">Reference implementation</h2>
+
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541589741547">
+              <h4 id="aside-1541589741547" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behavior of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+
+            </aside>
+          
+          <div class="gel-demo"><!-- 
+title: Carousels
+includecss: gelui.css
+ -->
+
+<div style="margin-bottom: 1rem;">
+  <div class="gel-carousel" role="group">
+    <div class="gel-carousel-buttons">
+      <button class="gel-carousel-prev">
+        <span class="vh">previous</span>
+        <svg viewBox="0 0 20 20" width="20" height="20" focusable="false">
+          <polyline points="14 6, 6 10, 14 14"></polyline>
+        </svg>
+      </button>
+      <button class="gel-carousel-next">
+        <span class="vh">next</span>
+        <svg viewBox="0 0 20 20" width="20" height="20" focusable="false">
+          <polyline points="6 6, 14 10, 6 14"></polyline>
+        </svg>
+      </button>
+    </div>
+    <div class="gel-carousel-scrollable">
+      <ul class="gel-carousel-list">
+        <li class="gel-promo">
+          <div class="gel-promo-content">
+            <div class="gel-promo-headline">
+              <h3>
+                <a href="https://www.bbc.co.uk/news/business-46122407">Children found in refrigerated lorry</a>
+              </h3>
+            </div>
+            <div class="gel-promo-desc">
+              <p>Border Force staff check lorries and trucks arriving at the UK border as they leave a cross-channel
+                ferry that has just arrived from France.</p>
+            </div>
+            <dl class="gel-metadata-strip">
+              <div>
+                <dt class="vh">Published:</dt>
+                <dd>
+                  <span aria-hidden="true">1h</span>
+                  <span class="vh">1 hour ago</span>
+                </dd>
+              </div>
+              <div>
+                <dt class="vh">From:</dt>
+                <dd>
+                  <a href="https://www.bbc.co.uk/news/england/sussex">Sussex</a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div class="gel-promo-image">
+            <img src="https://ichef.bbci.co.uk/news/240/cpsprodpb/B8E2/production/_104203374_gettyimages-453634166.jpg"
+              alt="">
+          </div>
+        </li>
+        <li class="gel-promo">
+          <div class="gel-promo-content">
+            <div class="gel-promo-headline">
+              <h3>
+                <a href="https://www.bbc.co.uk/news/business-46122407">Building boss out over £75m pay row</a>
+              </h3>
+            </div>
+            <div class="gel-promo-desc">
+              <p>Persimmon said Jeff Fairburn was leaving because the 'negative impact' on its reputation over his pay.</p>
+            </div>
+            <dl class="gel-metadata-strip">
+              <div>
+                <dt class="vh">Published:</dt>
+                <dd>
+                  <span aria-hidden="true">1m</span>
+                  <span class="vh">1 minute ago</span>
+                </dd>
+              </div>
+              <div>
+                <dt class="vh">Category:</dt>
+                <dd>
+                  <a href="https://www.bbc.co.uk/news/business">Business</a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div class="gel-promo-image">
+            <img src="https://ichef.bbci.co.uk/news/240/cpsprodpb/D202/production/_103926735_p06p95p2_e.jpg" alt="">
+          </div>
+        </li>
+        <li class="gel-promo">
+          <div class="gel-promo-content">
+            <div class="gel-promo-headline">
+              <h3>
+                <a href="https://www.bbc.co.uk/news/world-africa-46122678">Kidnapped schoolchildren freed in Cameroon</a>
+              </h3>
+            </div>
+            <div class="gel-promo-desc">
+              <p>The students were among 82 people kidnapped on Sunday in the restive Anglophone region.</p>
+            </div>
+            <dl class="gel-metadata-strip">
+              <div>
+                <dt class="vh">Published:</dt>
+                <dd>
+                  <span aria-hidden="true">1m</span>
+                  <span class="vh">1 minute ago</span>
+                </dd>
+              </div>
+              <div>
+                <dt class="vh">From:</dt>
+                <dd>
+                  <a href="https://www.bbc.co.uk/news/world/africa">Africa</a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div class="gel-promo-image">
+            <img src="https://ichef.bbci.co.uk/news/240/cpsprodpb/E0BA/production/_104203575_school.jpg" alt="">
+          </div>
+        </li>
+        <li class="gel-promo">
+          <div class="gel-promo-content">
+            <div class="gel-promo-headline">
+              <h3>
+                <a href="https://www.bbc.co.uk/news/world-europe-46114097">Ryanair sacks staff who 'slept on floor'</a>
+              </h3>
+            </div>
+            <div class="gel-promo-desc">
+              <p>The airline says a "fake" image of cabin crew sleeping at a Spanish airport damaged its reputation.</p>
+            </div>
+            <dl class="gel-metadata-strip">
+              <div>
+                <dt class="vh">Published:</dt>
+                <dd>
+                  <span aria-hidden="true">12h</span>
+                  <span class="vh">12 hours ago</span>
+                </dd>
+              </div>
+              <div>
+                <dt class="vh">From:</dt>
+                <dd>
+                  <a href="https://www.bbc.co.uk/news/world/europe">Europe</a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div class="gel-promo-image">
+            <img src="https://ichef.bbci.co.uk/news/240/cpsprodpb/9FF3/production/_103874904_ryanaircrew.jpg" alt="">
+          </div>
+        </li>
+        <li class="gel-promo">
+          <div class="gel-promo-content">
+            <div class="gel-promo-headline">
+              <h3>
+                <a href="https://www.bbc.co.uk/news/newsbeat-46109281">'Eye-roll' Farage student gets marriage offers</a>
+              </h3>
+            </div>
+            <div class="gel-promo-desc">
+              <p>Harriet Ellis is called a "hero" after a clip of her rolling her eyes during a Brexit debate went
+                viral.</p>
+            </div>
+            <dl class="gel-metadata-strip">
+              <div>
+                <dt class="vh">Published:</dt>
+                <dd>
+                  <span aria-hidden="true">2h</span>
+                  <span class="vh">2 hours ago</span>
+                </dd>
+              </div>
+              <div>
+                <dt class="vh">By:</dt>
+                <dd>
+                  <a href="https://www.bbc.co.uk/news/newsbeat">Newsbeat</a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div class="gel-promo-image">
+            <img src="https://ichef.bbci.co.uk/news/624/cpsprodpb/6860/production/_104202762_img_1773.jpg" alt="">
+          </div>
+        </li>
+        <li class="gel-promo">
+          <div class="gel-promo-content">
+            <div class="gel-promo-headline">
+              <h3>
+                <a href="https://www.bbc.co.uk/news/world-europe-46108753">Germany tries former death camp guard</a>
+              </h3>
+            </div>
+            <div class="gel-promo-desc">
+              <p>The 94-year-old is being tried in a juvenile court because he was not yet aged 21 at the time.</p>
+            </div>
+            <dl class="gel-metadata-strip">
+              <div>
+                <dt class="vh">Published:</dt>
+                <dd>
+                  <span aria-hidden="true">6th Nov 2018</span>
+                  <span class="vh">6th November 2018</span>
+                </dd>
+              </div>
+              <div>
+                <dt class="vh">From:</dt>
+                <dd>
+                  <a href="https://www.bbc.co.uk/news/world/europe">Europe</a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div class="gel-promo-image">
+            <img src="https://ichef.bbci.co.uk/news/235/cpsprodpb/D0FA/production/_104189435_mediaitem104189434.jpg"
+              alt="">
+          </div>
+        </li>
+        <li class="gel-promo">
+          <div class="gel-promo-content">
+            <div class="gel-promo-headline">
+              <h3>
+                <a href="https://www.bbc.co.uk/news/world-europe-46114092">Six held in plot to 'attack' Macron</a>
+              </h3>
+            </div>
+            <div class="gel-promo-desc">
+              <p>French police detain five men and a woman on suspicion of planning a violent act against the
+                president.</p>
+            </div>
+            <dl class="gel-metadata-strip">
+              <div>
+                <dt class="vh">Published:</dt>
+                <dd>
+                  <span aria-hidden="true">6th Nov 2018</span>
+                  <span class="vh">6th November 2018</span>
+                </dd>
+              </div>
+              <div>
+                <dt class="vh">From:</dt>
+                <dd>
+                  <a href="https://www.bbc.co.uk/news/world/europe">Europe</a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div class="gel-promo-image">
+            <img src="https://ichef.bbci.co.uk/news/410/cpsprodpb/9E65/production/_104194504_hi050426454.jpg" alt="">
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    /* inert attribute polyfill, from https://github.com/GoogleChrome/inert-polyfill */
+    "inert" in HTMLElement.prototype || (Object.defineProperty(HTMLElement.prototype, "inert", { enumerable: !0, get: function () { return this.hasAttribute("inert") }, set: function (h) { h ? this.setAttribute("inert", "") : this.removeAttribute("inert") } }), window.addEventListener("load", function () {
+      function h(a) {
+        var b = null; try { b = new KeyboardEvent("keydown", { keyCode: 9, which: 9, key: "Tab", code: "Tab", keyIdentifier: "U+0009", shiftKey: !!a, bubbles: !0 }) } catch (g) {
+          try {
+            b = document.createEvent("KeyboardEvent"), b.initKeyboardEvent("keydown",
+              !0, !0, window, "Tab", 0, a ? "Shift" : "", !1, "en")
+          } catch (d) { }
+        } if (b) { try { Object.defineProperty(b, "keyCode", { value: 9 }) } catch (g) { } document.dispatchEvent(b) }
+      } function k(a) { for (; a && a !== document.documentElement;) { if (a.hasAttribute("inert")) return a; a = a.parentElement } return null } function e(a) { var b = a.path; return b && b[0] || a.target } function l(a) { a.path[a.path.length - 1] !== window && (m(e(a)), a.preventDefault(), a.stopPropagation()) } function m(a) {
+        var b = k(a); if (b) {
+          if (document.hasFocus() && 0 !== f) {
+            var g = (c || document).activeElement;
+            h(0 > f ? !0 : !1); if (g != (c || document).activeElement) return; var d = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT, { acceptNode: function (a) { return !a || !a.focus || 0 > a.tabIndex ? NodeFilter.FILTER_SKIP : b.contains(a) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT } }); d.currentNode = b; d = (-1 === Math.sign(f) ? d.previousNode : d.nextNode).bind(d); for (var e; e = d();)if (e.focus(), (c || document).activeElement !== g) return
+          } a.blur()
+        }
+      } (function (a) {
+        var b = document.createElement("style"); b.type = "text/css"; b.styleSheet ?
+          b.styleSheet.cssText = a : b.appendChild(document.createTextNode(a)); document.body.appendChild(b)
+      })("/*[inert]*/*[inert]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none}"); var n = function (a) { return null }; window.ShadowRoot && (n = function (a) { for (; a && a !== document.documentElement;) { if (a instanceof window.ShadowRoot) return a; a = a.parentNode } return null }); var f = 0; document.addEventListener("keydown", function (a) { f = 9 === a.keyCode ? a.shiftKey ? -1 : 1 : 0 }); document.addEventListener("mousedown",
+        function (a) { f = 0 }); var c = null; document.body.addEventListener("focus", function (a) { var b = e(a); a = b == a.target ? null : n(b); if (a != c) { if (c) { if (!(c instanceof window.ShadowRoot)) throw Error("not shadow root: " + c); c.removeEventListener("focusin", l, !0) } a && a.addEventListener("focusin", l, !0); c = a } m(b) }, !0); document.addEventListener("click", function (a) { var b = e(a); k(b) && (a.preventDefault(), a.stopPropagation()) }, !0)
+    }));
+
+
+    (function () {
+      var cards = document.querySelectorAll('.gel-carousel');
+      Array.prototype.forEach.call(cards, function (carousel) {
+        var scrollable = carousel.querySelector('.gel-carousel-scrollable');
+        var list = carousel.querySelector('.gel-carousel-list');
+        var items = list.children;
+        var scrollAmount = list.offsetWidth / 2;
+        var prev = carousel.querySelector('.gel-carousel-prev');
+        var next = carousel.querySelector('.gel-carousel-next');
+
+        prev.disabled = true;
+
+        prev.addEventListener('click', function (e) {
+          scrollable.scrollLeft += -scrollAmount;
+        });
+        next.addEventListener('click', function (e) {
+          scrollable.scrollLeft += scrollAmount;
+        });
+
+        function disableEnable() {
+          prev.disabled = scrollable.scrollLeft < 1;
+          next.disabled = scrollable.scrollLeft === list.scrollWidth - list.offsetWidth;
+        }
+
+        // Debounce the button disabling function on scroll
+        var debounced;
+        scrollable.addEventListener('scroll', function () {
+          window.clearTimeout(debounced);
+          debounced = setTimeout(disableEnable, 200);
+        });
+
+        if ('IntersectionObserver' in window) {
+          var observerSettings = {
+            root: scrollable,
+            threshold: 0.5
+          }
+
+          var callback = function (items, observer) {
+            Array.prototype.forEach.call(items, function (item) {
+              if (item.isIntersecting) {
+                item.target.removeAttribute('inert');
+              } else {
+                item.target.setAttribute('inert', 'inert');
+              }
+            });
+          }
+
+          var observer = new IntersectionObserver(callback, observerSettings);
+          Array.prototype.forEach.call(items, function (item) {
+            observer.observe(item);
+          });
+        }
+      });
+    })();
+
+    // Promos JavaScript (not part of the Carousel code)
+    (function () {
+      var promos = document.querySelectorAll('.gel-promo');
+      Array.prototype.forEach.call(promos, function (promo) {
+        var img = promo.querySelector('.gel-promo-image');
+        var link = promo.querySelector('.gel-promo-headline a');
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', function () {
+          link.click();
+        });
+      });
+    })();
+  </script>
+</div></div>
+        <p><a class="gel-button gel-button--dark gel-long-primer-bold" href="../demos/carousels/" target="_new">Open in new window <svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:undefined;"></use></svg></a></p>
+<h2 id="test-specifications">Test specifications</h2>
+<p>[TODO]</p>
+<h2 id="related-research">Related research</h2>
+<p>[TODO]</p>
+<h3 id="further-reading%2C-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>&quot;Image Carousels: Getting Control of the Merry-Go-Round&quot; — <a href="http://usability.gov">usability.gov</a>, <a href="https://www.usability.gov/get-involved/blog/2013/04/image-carousels.html">https://www.usability.gov/get-involved/blog/2013/04/image-carousels.html</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Gist of the <code>vh</code> (visually hidden) class <a href="https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472">https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>&quot;Perceived Affordances and Designing for Task Flow&quot; — Johnny Holland, <a href="http://johnnyholland.org/2010/04/perceived-affordances-and-designing-for-task-flow/">http://johnnyholland.org/2010/04/perceived-affordances-and-designing-for-task-flow/</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>&quot;The Accessibility Tree&quot; — <a href="http://developers.google.com">developers.google.com</a>, <a href="https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree">https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>Inert polyfill on Github, <a href="https://github.com/GoogleChrome/inert-polyfill">https://github.com/GoogleChrome/inert-polyfill</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>Throttling and Debouncing in JavaScript — <a href="http://Codeburst.io">Codeburst.io</a>, <a href="https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf">https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>Lazy loading images using Intersection Observer — Dean Hume,  <a href="https://deanhume.com/lazy-loading-images-using-intersection-observer/">https://deanhume.com/lazy-loading-images-using-intersection-observer/</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+
+                <div class="gel-breakout-box gel-breakout-box extra-padding" style="margin-top:36px">
+                <aside aria-label="Could you improve this documentation?">
+                    <h4 aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg> Could you improve this documentation?</h4>
+                    <p>
+                        If you think you could make anything you see here a bit better then become one of our lovely contributors!</p>
+                    </p>
+                </aside>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="gel-feedback-banner">
+        <div class="gel-wrap">
+            <div class="gel-layout">
+                <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
+                    <h2 class="gel-feedback-banner__title">Got a minute?</h2>
+                    <p>We'd love to know what you think of the Code GEL website.</p>
+                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" class="gel-button gel-button__link-button gel-feedback-banner__cta gel-button--primary">
+                        <span class="gel-button__content">Go to survey</span>
+                        <span class="gel-button__icon_wrapper">
+                            <svg class="gel-button__icon gel-icon gel-icon--text">
+                                <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                                    style="fill:undefined;"></use>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script type="text/javascript">
+        new Sticky('.sticky');
+        new MenuSpy(document.querySelector('#gel-toc__links'));
+        new SweetScroll({
+            trigger: '#gel-toc__links a',
+            quickMode: true,
+            easing: 'easeOutExpo'
+        });
+    </script>
+</body>
+
+</html>

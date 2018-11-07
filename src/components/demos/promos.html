@@ -44,7 +44,8 @@ includecss: gelui.css
           </h4>
         </div>
         <div class="gel-promo-desc">
-          <p>Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues.</p>
+          <p>Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del
+            coalescent lingues.</p>
         </div>
         <dl class="gel-metadata-strip">
           <div>
@@ -107,7 +108,8 @@ includecss: gelui.css
           </h4>
         </div>
         <div class="gel-promo-desc">
-          <p>Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues.</p>
+          <p>Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del
+            coalescent lingues.</p>
         </div>
         <dl class="gel-metadata-strip">
           <div>
@@ -215,3 +217,16 @@ includecss: gelui.css
     </li>
   </ul>
 </div>
+<script>
+  (function () {
+    var promos = document.querySelectorAll('.gel-promo');
+    Array.prototype.forEach.call(promos, function (promo) {
+      var img = promo.querySelector('.gel-promo-image');
+      var link = promo.querySelector('.gel-promo-headline a');
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', function () {
+        link.click();
+      });
+    });
+  })();
+</script>

@@ -280,10 +280,11 @@ a {
 
 .gel-carousel-list > li {
   flex-shrink: 0;
-  width: 300px; }
+  width: 266px;
+  transition: opacity 0.5s linear; }
 
 .gel-carousel-list > li[inert] {
-  opacity: 0.5; }
+  opacity: 0.3; }
 
 .gel-carousel-list > li + li {
   margin-left: 1rem; }
@@ -344,11 +345,6 @@ a {
   order: -1;
   overflow: hidden;
   height: 10rem; }
-
-.gel-promo-content {
-  order: -1;
-  height: 10rem;
-  overflow: hidden; }
 
 .gel-card-content img,
 .gel-card-content video {
