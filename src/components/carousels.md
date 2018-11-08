@@ -5,7 +5,6 @@ version: 0.1.0
 published: true
 accessibility: true
 linkback: https://www.bbc.co.uk/gel/guidelines/carousel
-includecss: gelui.css
 ---
 
 ## Introduction
@@ -100,7 +99,7 @@ On some operating systems, the horizontal scrollbar is not visible by default, m
 
 ### Obscured items
 
-Items that are less than 50% in view are made to look faint with a reduced opacity. This indicates that the item must be brought further into view before it is interactive (see [**Expected behavior**](#expected-behavior)). The opacity style is applied using a CSS transition, to avoid a distracting 'blinking' effect as the user scrolls back and forth.
+Items that are less than 50% in view are made to look faint with a reduced opacity. This indicates that the item must be brought further into view before it is interactive (see [**Expected behaviour**](#expected-behavior)). The opacity style is applied using a CSS transition, to avoid a distracting 'blinking' effect as the user scrolls back and forth.
 
 ```css
 .gel-carousel-list > li {
@@ -143,7 +142,7 @@ This not only invokes the 'fading' effect described in [**Expected layout**](#ex
 Were the inert attribute not employed, a keyboard user could scroll to the end of a long set of items, only to find that the first item was still first in focus order. Pressing tab would scroll the container back to the beginning and progress would be lost. 
 
 ::: info Inert polyfill
-The [**Reference implementation**](#reference-implementation) includes a small polyfill[^5] for the `inert` attribute, increasing the reach of the behavior it enables.
+The [**Reference implementation**](#reference-implementation) includes a small polyfill[^5] for the `inert` attribute, increasing the reach of the behaviour it enables.
 :::
 
 #### Button controls
@@ -173,7 +172,7 @@ Although it is not provided as an intrinsic part of the [**Reference implementat
 ## Reference implementation
 
 ::: alert Important
-Reference implementations are intended to demonstate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behavior of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
+Reference implementations are intended to demonstrate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
 :::
 
 <include src="components/demos/carousels.html">
