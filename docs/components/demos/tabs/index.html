@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Code GEL | Tabs Demo</title>
+
+    <script src="/code-gel/static/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/main.css">
+
+    <script type="text/javascript">
+        // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + (supports.touchevents ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + (SimpleFeatureDetector.supports({ property: 'flex-wrap' }, { property: 'flex-flow' }) ? 'flexbox' : 'no-flexbox'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    <script type="text/javascript">
+        // use reith fonts
+        (new FontFaceObserver('ReithSans')).load().then(function () {
+            document.documentElement.className += ' b-reith-sans-loaded';
+        });
+        (new FontFaceObserver('ReithSerif')).load().then(function () {
+            document.documentElement.className += ' b-reith-loaded';
+        });
+    </script>
+
+    
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/gelui.css">
+    
+</head>
+
+<body class="gel-guideline-body">
+    <main id="main" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-5/5@l" style="padding-right: 12px;">
+                <h1 class="gel-guideline-header__title">Tabs</h1>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-5/5@l">
+                
+<div style="margin-bottom: 1rem;">
+  <div class="gel-tabs">
+    <ul>
+      <li><a href="#section1">Section 1</a></li>
+      <li><a href="#section2">Section 2</a></li>
+      <li><a href="#section3">Section 3</a></li>
+    </ul>
+    <section id="section1">
+      <h2>Section 1</h2>
+      <p>Content for section 1.</p>
+    </section>
+    <section id="section2">
+      <h2>Section 2</h2>
+      <p>Content for section 1.</p>
+    </section>
+    <section id="section3">
+      <h2>Section 3</h2>
+      <p>Content for section 1.</p>
+    </section>
+  </div>
+</div>
+<script>
+  (function () {
+    var tabInterfaces = document.querySelectorAll('.gel-tabs');
+    Array.prototype.forEach.call(tabInterfaces, function (tabInterface) {
+      var tablist = tabInterface.querySelector('ul');
+      var tabs = tablist.querySelectorAll('a');
+      var panels = tabInterface.querySelectorAll('section[id]');
+
+      var tabInfo = function () {
+        var focus = true;
+        var tab = 0;
+        if (window.location.hash) {
+          tab = Array.prototype.indexOf.call(
+            tabs,
+            document.getElementById('tab-' + window.location.hash.substring(1))
+          );
+        }
+        if (tab < 0) {
+          tab = 0;
+          focus = false;
+        }
+        return {
+          index: tab,
+          focus: focus
+        };
+      }
+
+      var switchTab = function (oldIndex, tabInfo) {
+        if (oldIndex > -1) {
+          tabs[oldIndex].removeAttribute('aria-current');
+          panels[oldIndex].hidden = true;
+        }
+
+        tabs[tabInfo.index].setAttribute('aria-current', 'true');
+        panels[tabInfo.index].hidden = false;
+        if (tabInfo.focus) {
+          panels[tabInfo.index].focus();
+        }
+      }
+
+      Array.prototype.forEach.call(tabs, function (tab, i) {
+        tab.id = 'tab-' + tab.getAttribute('href').substring(1);
+
+        var panel = panels[i];
+        panel.setAttribute('tabindex', '-1');
+        panel.setAttribute('aria-labelledby', tab.id);
+        panel.hidden = true;
+      });
+
+      window.addEventListener('hashchange', function (e) {
+        var selected = tablist.querySelector('[aria-current]');
+        var oldIndex = selected ? Array.prototype.indexOf.call(tabs, selected) : undefined;
+        switchTab(oldIndex, tabInfo());
+      }, false);
+
+      window.addEventListener('DOMContentLoaded', function () {
+        switchTab(undefined, tabInfo());
+      });
+    });
+  })();
+</script>
+            </div>
+        </div>
+    </main>
+
+
+    <script type="text/javascript" src="/code-gel/static/js/gelui.js"></script>
+    
+    
+
+    <script type="text/javascript" src="/code-gel/static/js/demo.js"></script>
+</body>
+
+</html>
