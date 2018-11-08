@@ -52,15 +52,15 @@
       <li><a href="#section3">Section 3</a></li>
     </ul>
     <section id="section1">
-      <h2>Section 1</h2>
+      <h3>Section 1</h3>
       <p>Content for section 1.</p>
     </section>
     <section id="section2">
-      <h2>Section 2</h2>
+      <h3>Section 2</h3>
       <p>Content for section 1.</p>
     </section>
     <section id="section3">
-      <h2>Section 3</h2>
+      <h3>Section 3</h3>
       <p>Content for section 1.</p>
     </section>
   </div>
@@ -74,21 +74,15 @@
       var panels = tabInterface.querySelectorAll('section[id]');
 
       var tabInfo = function () {
-        var focus = true;
-        var tab = 0;
         if (window.location.hash) {
           tab = Array.prototype.indexOf.call(
             tabs,
             document.getElementById('tab-' + window.location.hash.substring(1))
           );
         }
-        if (tab < 0) {
-          tab = 0;
-          focus = false;
-        }
         return {
-          index: tab,
-          focus: focus
+          index: tab > -1 ? tab : 0,
+          focus: tab > -1 ? true : false
         };
       }
 
