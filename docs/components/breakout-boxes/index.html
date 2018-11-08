@@ -130,8 +130,8 @@
 <li><strong><code>aria-hidden=&quot;true&quot;</code>:</strong> Breakouts should not be considered part of the parent document's main structure; their headings are for labeling and presentational purposes only. The <code>aria-hidden</code> attribute removes the heading from the document outline (and screen reader navigation) but does <em>not</em> silence the text node as an associated label.</li>
 </ul>
 
-            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541678927961">
-              <h4 id="aside-1541678927961" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Tip</h4><div><p>To associate <code>aria-labelledby</code> with the respective <code>id</code>, they must share a value and that value must be unique. In your templating system, you can create a unique string at the time of compilation using <code>Date()</code>:</p>
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541684038909">
+              <h4 id="aside-1541684038909" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Tip</h4><div><p>To associate <code>aria-labelledby</code> with the respective <code>id</code>, they must share a value and that value must be unique. In your templating system, you can create a unique string at the time of compilation using <code>Date()</code>:</p>
 <pre class="hljs"><code><span class="hljs-keyword">const</span> unique = + <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(); <span class="hljs-comment">// e.g. 1540915290281</span>
 </code></pre>
 <p>An <code>id</code> that is not unique is considered a parsing error and, since it affects accessible naming associations here, would mean a failure under <strong>WCAG 4.1.1 Parsing</strong><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
@@ -144,8 +144,8 @@
 <p>The <strong>Breakout Box</strong> has no special behaviors; it is a static component.</p>
 <h2 id="reference-implementation">Reference implementation</h2>
 
-            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541678927962">
-              <h4 id="aside-1541678927962" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behavior of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541684038909">
+              <h4 id="aside-1541684038909" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behavior of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
 
             </aside>
           <p>The following implementation is a copy of the 'tip' provided in this document.</p>

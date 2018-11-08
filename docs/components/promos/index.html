@@ -201,8 +201,8 @@
 }
 </code></pre>
 
-            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541678928069">
-              <h4 id="aside-1541678928069" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>While <a href="#link-todo"><strong>Metadata Strips</strong></a> are documented as their own component, the <code>margin-top</code> and <code>padding-top</code> styles specified here are needed in the <strong>Promo</strong> context.</p>
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541684039012">
+              <h4 id="aside-1541684039012" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>While <a href="#link-todo"><strong>Metadata Strips</strong></a> are documented as their own component, the <code>margin-top</code> and <code>padding-top</code> styles specified here are needed in the <strong>Promo</strong> context.</p>
 
             </aside>
           <h3 id="the-image">The image</h3>
@@ -212,8 +212,8 @@
 }
 </code></pre>
 
-            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541678928069">
-              <h4 id="aside-1541678928069" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>Augmenting the source order can produce a <a href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html"><strong>WCAG 2.4.3 Focus Order failure</strong></a>, but the image is not focusable so there is no such issue.</p>
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541684039012">
+              <h4 id="aside-1541684039012" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>Augmenting the source order can produce a <a href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html"><strong>WCAG 2.4.3 Focus Order failure</strong></a>, but the image is not focusable so there is no such issue.</p>
 
             </aside>
           <p>The image will need to fit the available space, regardless of the promo's dimensions (which are likely to change across breakpoints) without distorting. This is possible by setting the desired height of the image box and using the <code>object-fit</code> property:</p>
@@ -236,8 +236,8 @@
 }
 </code></pre>
 
-            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541678928069">
-              <h4 id="aside-1541678928069" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>At the time of writing, the <code>object-fit</code> property is supported everywhere but Internet Explorer<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. The code uses <code>@supports</code> and falls back to showing the image at its natural width, cropping the right edge or leaving a right margin.</p>
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541684039012">
+              <h4 id="aside-1541684039012" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>At the time of writing, the <code>object-fit</code> property is supported everywhere but Internet Explorer<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. The code uses <code>@supports</code> and falls back to showing the image at its natural width, cropping the right edge or leaving a right margin.</p>
 
             </aside>
           <h3 id="horizontal-promos">Horizontal Promos</h3>
@@ -284,8 +284,8 @@ img.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; link.cli
 <p>If the metadata contains links, these will fall into focus order after the headline, as expected.</p>
 <h2 id="reference-implementation">Reference implementation</h2>
 
-            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541678928070">
-              <h4 id="aside-1541678928070" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behavior of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541684039013">
+              <h4 id="aside-1541684039013" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behavior of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
 
             </aside>
           
@@ -505,7 +505,13 @@ includecss: gelui.css
       </div>
     </li>
   </ul>
-</div></div>
+</div>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function(event) {
+    window.gelui && gelui.Promo.init();
+  });
+</script></div>
         <p><a class="gel-button gel-button--dark gel-long-primer-bold" href="../demos/promos/" target="_new">Open in new window <svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:undefined;"></use></svg></a></p>
 <h2 id="test-specifications">Test specifications</h2>
 <p>A list of gherkin-style feature specifications (including requirements for the <a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile">BBC Mobile Accessibility Guidelines</a>) for this component has been developed and published in a format suitable for use with an automated testing framework. You can review and download these feature files from <a href="#linktocome">the project Wiki page, hosted on GitHub</a>.</p>

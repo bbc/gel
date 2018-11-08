@@ -1,16 +1,16 @@
 /**
- * Promo
+ * BreakoutBox
  * @namespace gelui
  * @method gelui.BreakoutBox.init
  */
 
 (function() {
- var g = window.gelui || {};
- var self = g.BreakoutBox = {};
+  var g = window.gelui || {};
+  var self = g.BreakoutBox = {};
 
- self.init = function() {
-    console.log('BreakoutBox: init()');
- }
+  self.init = function() {
+    // nothing to initialise
+  }
 
- if (!window.gelui) { window.gelui = g; }
+  if (!window.gelui) { window.gelui = g; }
 })();
