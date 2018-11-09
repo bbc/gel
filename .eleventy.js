@@ -1,5 +1,11 @@
 const fs = require('fs');
 const nunjucks = require('nunjucks');
+const crypto = require('crypto');
+
+var count = 0;
+function counter() {
+  return count++;
+}
 
 module.exports = function (eleventyConfig) {
   const data = {
@@ -66,8 +72,9 @@ module.exports = function (eleventyConfig) {
       },
       render: function (tokens, idx) {
         var m = tokens[idx].info.trim().match(/^(info|help|alert) (.+)$/);
-        var unique = + new Date();
+        
         if (tokens[idx].nesting === 1) { // opening tag
+          var unique = counter();
           return `
             <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-${unique}">
               <h4 id="aside-${unique}" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="${data.site.basedir}static/images/gel-icons-core-set.svg#gel-icon-${m[1]}" style="fill:#404040;"></use></svg>${m[2]}</h4><div>`;
