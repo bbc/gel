@@ -1204,7 +1204,7 @@ a {
   flex: 1; }
 
 /**
- * GEL PROMO
+ * GEL PROMOS
  */
 .gel-promos {
   margin: 0;
@@ -1484,6 +1484,28 @@ a {
 
 .gel-carousel-buttons button + button {
   margin-left: 0.25rem; }
+
+/**
+* EXTERNAL LINKS
+*/
+/* list version */
+.gel-external-links {
+  list-style-type: none;
+  padding: 0; }
+
+.gel-external-links li::before {
+  content: '\200B'; }
+
+.gel-external-links li + li {
+  margin-top: 0.5rem; }
+
+/* 
+Prevent widows for inline external links
+by wrapping the icon and the last word in 
+this <span> style
+*/
+span.gel-nowrap {
+  white-space: nowrap; }
 
 @media (min-width: 56.25em) {
   .gel-pull__right\@l {
