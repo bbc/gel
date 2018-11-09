@@ -1,11 +1,10 @@
 ---
 title: External Links
-summary: When we link to content, it’s important to differentiate between internal and external links so our audience knows exactly what to expect. External links direct people outside of the BBC domain, and are clearly indicated with an icon.
+summary: When we link to content, it's important to differentiate between internal and external links so our audience knows exactly what to expect. External links direct people outside of the BBC domain, and are clearly indicated with an icon.
 version: 0.1.0
 published: true
 accessibility: true
 linkback: https://www.bbc.co.uk/gel/guidelines/external-linking
-includecss: gelui.css
 ---
 
 ## Introduction
@@ -14,7 +13,7 @@ External links point to non-BBC domains.
 
 Whether the external link is inline (e.g. inside a paragraph) or as an item belonging to a list of 'further reading', it must be accompanied by the [GEL Iconography](https://www.bbc.co.uk/gel/guidelines/iconography) external link icon.
 
-External links navugate the user to new and potentially unfamiliar user interfaces. Blind users should be warned of this context change by including some visually hidden text reading _"leave BBC site"_ or similar.
+External links navigate the user to new and potentially unfamiliar user interfaces. Blind users should be warned of this context change by including some visually hidden text reading _"leave BBC site"_ or similar.
 
 ## Expected markup
 
@@ -26,7 +25,7 @@ The example places the external link within a paragraph. The paragraph text surr
 
 ```html
 <p>...
-  <a href="link/to/exteranl/resource">
+  <a href="http://example.com/link/to/external/resource">
     <span class="vh">leave BBC site:</span>
     Football Association of 
     <span class="gel-nowrap">
@@ -51,7 +50,7 @@ The example places the external link within a paragraph. The paragraph text surr
 <h2>Further reading</h2>
 <ul class="gel-external-links">
   <li>
-    <a href="#">
+    <a href="http://example.com/external/link">
       <svg class="gel-icon gel-icon--text" focusable="false">
         <use xlink:href="{{site.basedir}}/static/images/gel-icons-all.svg#gel-icon-external-link" style="undefined"></use>
       </svg>
@@ -60,7 +59,7 @@ The example places the external link within a paragraph. The paragraph text surr
     </a>
   </li>
   <li>
-    <a href="#">
+    <a href="http://example.com/external/link">
       <svg class="gel-icon gel-icon--text" focusable="false">
         <use xlink:href="{{site.basedir}}/static/images/gel-icons-all.svg#gel-icon-external-link" style="undefined"></use>
       </svg>
@@ -69,7 +68,7 @@ The example places the external link within a paragraph. The paragraph text surr
     </a>
   </li>
   <li>
-    <a href="#">
+    <a href="http://example.com/external/link">
       <svg class="gel-icon gel-icon--text" focusable="false">
         <use xlink:href="{{site.basedir}}/static/images/gel-icons-all.svg#gel-icon-external-link" style="undefined"></use>
       </svg>
@@ -82,7 +81,7 @@ The example places the external link within a paragraph. The paragraph text surr
 
 #### Notes
 
-* The main difference between external links within listsis that the icon comes _before_ the content
+* The main difference between external links within lists is that the icon comes _before_ the content
 * **`<ul>` and `<li>`:** It is important list markup is used since it identifies itself to assistive technologies, enumerates the items, and provides navigation options in screen readers. 
 * **`<h2>`** In most cases, lists of external links should be introduced by a heading. This makes them more discoverable within the document structure, both visually and by screen reader shortcuts. Make sure the heading is of the correct level (see [**Headings**](#link-todo)) and contains suitable text, such as _"Further reading"_ or _"Read more"_.
 
@@ -119,7 +118,7 @@ Some white space is placed between external links in the list formation to impro
 ## Reference implementation
 
 ::: alert Important
-Reference implementations are intended to demonstate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behavior of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
+Reference implementations are intended to demonstrate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
 :::
 
 <include src="components/demos/external-links.html">
