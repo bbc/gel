@@ -104,7 +104,7 @@ If a video is provided, ensure the following:
 
 1. The video does not auto-play[^4]
 2. The video player's controls are accessible by screen reader and keyboard
-3. Dialog in the video is accompanied by closed captions
+3. Dialogue in the video is accompanied by closed captions
 
 If (as illustrated in the [original GEL Card documentation](https://www.bbc.co.uk/gel/guidelines/promos)) an auxiliary play/pause button is provided,  ensure that the button is accessible:
 
@@ -238,7 +238,7 @@ The `gel-card-headline`, containing the heading element, must come first in focu
 
 #### The 'More info' element
 
-This element must be absolutely positioned over the card, which means the card itself must take `position: relative`. The `bottom` positioning of the element must match the height of the `gel-card-toolbar` element so that element is npt obscured while the element is visible.
+This element must be absolutely positioned over the card, which means the card itself must take `position: relative`. The `bottom` positioning of the element must match the height of the `gel-card-toolbar` element so that element is not obscured while the element is visible.
 
 ```css
 .gel-card {
@@ -259,9 +259,9 @@ This element must be absolutely positioned over the card, which means the card i
 
 Also note `overflow-y: auto`. This is provided in case the content inside the 'More info' element is taller than its height. Since the element is not allowed to grow, it must be scrollable instead.
 
-## Expected behavior
+## Expected behaviour
 
-Aside from the toolbar behavior, the card's behavior will depend on the content it houses. See [**Card contents**](#card-contents) for pointers.
+Aside from the toolbar behaviour, the card's behaviour will depend on the content it houses. See [**Card contents**](#card-contents) for pointers.
 
 ### The 'More info' button
 
@@ -313,7 +313,7 @@ moreBtn.addEventListener('keydown', function(e) {
 ## Reference implementation
 
 ::: alert Important
-Reference implementations are intended to demonstrate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behavior of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
+Reference implementations are intended to demonstrate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
 :::
 
 <include src="components/demos/cards.html">

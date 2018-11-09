@@ -103,7 +103,7 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gel-toc__links" class="gel-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#expected-behavior">Expected behavior</a></li><li><a href="#test-specifications">Test specifications</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="gel-toc__links" class="gel-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#expected-behaviour">Expected behaviour</a></li><li><a href="#test-specifications">Test specifications</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
@@ -168,13 +168,13 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
 </code></pre>
 
-            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541697456187">
-              <h4 id="aside-1541697456187" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Part of the intention of sectioning elements (like <code>&lt;section&gt;</code> and <code>&lt;article&gt;</code>) was to automate heading levels as perceived by assistive technologies. That is, an <code>&lt;h1&gt;</code> for a  <code>&lt;section&gt;</code> inside <code>&lt;body&gt;</code> would be perceived as an <code>&lt;h2&gt;</code>. However, the algorithm was never implemented by any browser vendors<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. You still need to use explicit (h1—h6) according to your sections' nesting depth.</p>
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541759372357">
+              <h4 id="aside-1541759372357" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Part of the intention of sectioning elements (like <code>&lt;section&gt;</code> and <code>&lt;article&gt;</code>) was to automate heading levels as perceived by assistive technologies. That is, an <code>&lt;h1&gt;</code> for a  <code>&lt;section&gt;</code> inside <code>&lt;body&gt;</code> would be perceived as an <code>&lt;h2&gt;</code>. However, the algorithm was never implemented by any browser vendors<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. You still need to use explicit (h1—h6) according to your sections' nesting depth.</p>
 
             </aside>
           <h3 id="wording">Wording</h3>
 <p>As labels, headings must describe the sections they introduce<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>.</p>
-<p>Many screen readers aggregate headings into a table of contents. For example, JAWS produces a headings dialog when the user presses <kbd>Insert</kbd> + <kbd>F6</kbd>. For this reason, it's important headings are sufficiently descriptive independent of their surrounding content.</p>
+<p>Many screen readers aggregate headings into a table of contents. For example, JAWS produces a headings dialogue when the user presses <kbd>Insert</kbd> + <kbd>F6</kbd>. For this reason, it's important headings are sufficiently descriptive independent of their surrounding content.</p>
 <h4 id="bad-example-2">Bad example</h4>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Let's get baking!<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
 </code></pre>
@@ -203,7 +203,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>— Anton du Beke<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">blockquote</span>&gt;</span>
 </code></pre>
-<h2 id="expected-behavior">Expected behavior</h2>
+<h2 id="expected-behaviour">Expected behaviour</h2>
 <p>Where headings adopt <code>id</code>s and are used as document fragments to be navigated between using same-page links, they should take <code>tabindex=&quot;-1&quot;</code>. This forces browsers that would not otherwise update their sequential focus starting point<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> to move keyboard focus to the destination heading and section.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>Navigable subsection<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
 </code></pre>

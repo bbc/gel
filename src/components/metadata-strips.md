@@ -45,7 +45,7 @@ The following example assumes the content is a [**Promo**](#link-todo) and inclu
 ### Notes
 
 * **`<dl>` and `<div>`:** The most appropriate markup for key/value based information is the definition (or 'description') list. It is permitted[^1] to use `<div>` elements to wrap pairs of `<dt>` and `<dd>` elements for layout purposes. 
-* **`class="vh"` for `<dt>`:** The defition titles (`<dt>`s) are only needed for non-visual clarification in screen reader output. They are hidden visually using the `vh` class[^2].
+* **`class="vh"` for `<dt>`:** The definition titles (`<dt>`s) are only needed for non-visual clarification in screen reader output. They are hidden visually using the `vh` class[^2].
 * **`aria-hidden="true"`** In some cases, the visually displayed text may not be sufficient for synthetic voice announcement. In these cases, the displayed text (and associated iconography) is hidden from assistive technologies with `aria-hidden="true"`[^3] and an alternative wording is provided non-visually (using the `vh` class to hide this text).
 
 ## Expected layout
@@ -75,9 +75,9 @@ This is preferable to using a character such as a pip ("|") which will be announ
 
 ### Links
 
-Some metadata values may be linked, such as the 'From' value in the [**Expected markup**](#expected-markup) example. It is important these links are not differentiated by color alone[^4]. People who are colorblind or who use non-color displays cannot perceive color differences and will not be able to distinguish the link.
+Some metadata values may be linked, such as the 'From' value in the [**Expected markup**](#expected-markup) example. It is important these links are not differentiated by colour alone[^4]. People who are colour-blind or who use non-colour displays cannot perceive colour differences and will not be able to distinguish the link.
 
-Accompany any color differentiation with `text-decoration: underline`, if this style is not already being inherited.
+Accompany any colour differentiation with `text-decoration: underline`, if this style is not already being inherited.
 
 ```css
 .gel-metadata-strip a {
@@ -85,7 +85,7 @@ Accompany any color differentiation with `text-decoration: underline`, if this s
 }
 ```
 
-## Expected behavior
+## Expected behaviour
 
 Aside from linked metadata, metadata strips are largely static. If a link uses `target="_blank"`, warn the user by incorporating the external link icon[^5] and some visually hidden text for screen reader users.
 
@@ -104,7 +104,7 @@ Aside from linked metadata, metadata strips are largely static. If a link uses `
 ## Reference implementation
 
 ::: alert Important
-Reference implementations are intended to demonstrate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behavior of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
+Reference implementations are intended to demonstrate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
 :::
 
 <include src="components/demos/metadata-strips.html">

@@ -87,7 +87,7 @@ Part of the intention of sectioning elements (like `<section>` and `<article>`) 
 
 As labels, headings must describe the sections they introduce[^3]. 
 
-Many screen readers aggregate headings into a table of contents. For example, JAWS produces a headings dialog when the user presses <kbd>Insert</kbd> + <kbd>F6</kbd>. For this reason, it's important headings are sufficiently descriptive independent of their surrounding content.
+Many screen readers aggregate headings into a table of contents. For example, JAWS produces a headings dialogue when the user presses <kbd>Insert</kbd> + <kbd>F6</kbd>. For this reason, it's important headings are sufficiently descriptive independent of their surrounding content.
 
 #### Bad example
 
@@ -130,7 +130,7 @@ In the above example, classes are named after heading levels to match their size
 </blockquote>
 ```
 
-## Expected behavior
+## Expected behaviour
 
 Where headings adopt `id`s and are used as document fragments to be navigated between using same-page links, they should take `tabindex="-1"`. This forces browsers that would not otherwise update their sequential focus starting point[^4] to move keyboard focus to the destination heading and section.
 

@@ -9,12 +9,12 @@ linkback: https://www.bbc.co.uk/gel/guidelines/tabs
 
 ## Introduction
 
-Tabbed interfaces, like accordions, allow users to view long-form content one section at a time. Clearly labeled tabs representing the individual sections make it easy for users to identify and reveal the content pertinent to them.
+Tabbed interfaces, like accordions, allow users to view long-form content one section at a time. Clearly labelled tabs representing the individual sections make it easy for users to identify and reveal the content pertinent to them.
 
 Use tabs where the subject sections are not too numerous (more than four tabs in total) and the tab labels are not lengthy. Tab content should be self-sufficient: do not force users to switch back and forth between tabs to complete tasks[^1].
 
 ::: alert Divergence from authoring practices
-The GEL tabs implementation diverges from the ARIA Authoring Practices specification[^2] in both semantics and behavior. This is to address usability issues found in both internal and external research[^3] with ARIA tab interfaces. Instead, GEL tabs are an enhanced version of a table of contents pattern, using same-page links and document fragments.
+The GEL tabs implementation diverges from the ARIA Authoring Practices specification[^2] in both semantics and behaviour. This is to address usability issues found in both internal and external research[^3] with ARIA tab interfaces. Instead, GEL tabs are an enhanced version of a table of contents pattern, using same-page links and document fragments.
 :::
 
 ## Expected markup
@@ -55,7 +55,7 @@ The [**Reference implementation**](#reference-implementation) to follow is based
 
 * **`<ul>`:** The `<ul>` groups the same-page links ('tabs') together and enumerates them in screen reader output
 * **`aria-current="true"`:** This indicates the 'tab' that corresponds to the active/visible panel. Screen readers append or prepend _"current item"_ to the link's label.
-* **`aria-labelledby`:** The 'tab panels' (`<section>`s) are labeled by their tabs, so that when a user focus or enters them, they are assured of their identity and relationship to the interface as a whole. Most screen readers will announce something similar to _"region, section 1"_ when the panel is focused or entered
+* **`aria-labelledby`:** The 'tab panels' (`<section>`s) are labelled by their tabs, so that when a user focus or enters them, they are assured of their identity and relationship to the interface as a whole. Most screen readers will announce something similar to _"region, section 1"_ when the panel is focused or entered
 * **`id`s:** Note that all `id`s in the interface must unique for the larger document. In the [**Reference implementation**](#reference-implementation), the tab `id`s are created dynamically by prefixing the (already unique) tab panel `id`s with _"tab-"_.
 
 ## Expected layout
@@ -105,13 +105,13 @@ The tab elements themselves are rectangular and take a `background-color` making
 }
 ```
 
-## Expected behavior
+## Expected behaviour
 
 ### Selecting a tab
 
 By mouse or touch, clicking or pressing a tab will reveal its corresponding tab panel. For keyboard users, unselected tabs are focusable and can be activated with the <kbd>Enter</kbd> key. 
 
-To preserve the behavior of the same-page links upon which the tabs are created and to address trouble screen readers have been observed experiencing moving from the tab to the tab panel, clicking a tab programmatically moves focus to the visible tab panel. The tab panel is identified in screen readers as a tab panel, and the tab panel's label (borrowed from the corresponding tab using `aria-labelledby`) is also announced. 
+To preserve the behaviour of the same-page links upon which the tabs are created and to address trouble screen readers have been observed experiencing moving from the tab to the tab panel, clicking a tab programmatically moves focus to the visible tab panel. The tab panel is identified in screen readers as a tab panel, and the tab panel's label (borrowed from the corresponding tab using `aria-labelledby`) is also announced. 
 
 The tab panel is now the sequential focus starting point, making the first interactive element inside (or past) the tab panel next in focus order. However, the tab panel itself is not user focusable (it employs `tabindex="-1"`, not `tabindex="0"`), meaning <kbd>Shift</kbd> + <kbd>Tab</kbd> will take the user directly back to the tab list. Screen readers' reading position (or 'virtual cursor'[^4] position) will also be transported to the start of the tab panel, allowing users to read downwards from there. 
 
@@ -131,7 +131,7 @@ Whenever the hash changes to something _not_ corresponding to a tab, the first t
 
 ### Page load
 
-The tabs are permitted to continue updating the document's `hash` as tabs are selected, preserving the behavior of same-page links. When the document first loads, if the URL hash corresponds to a tab panel, that tab panel is shown by default. If there is no hash component to the URL, or the hash does not match a tab panel's `id`, the first tab panel is shown and the first tab selected.
+The tabs are permitted to continue updating the document's `hash` as tabs are selected, preserving the behaviour of same-page links. When the document first loads, if the URL hash corresponds to a tab panel, that tab panel is shown by default. If there is no hash component to the URL, or the hash does not match a tab panel's `id`, the first tab panel is shown and the first tab selected.
 
 The following code is a snippet from the reference implementation.
 
@@ -144,7 +144,7 @@ window.addEventListener('DOMContentLoaded', function () {
 ## Reference implementation
 
 ::: alert Important
-Reference implementations are intended to demonstrate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behavior of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
+Reference implementations are intended to demonstrate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
 :::
 
 <include src="components/demos/tabs.html">

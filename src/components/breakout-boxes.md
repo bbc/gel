@@ -49,16 +49,16 @@ An `id` that is not unique is considered a parsing error and, since it affects a
 
 The `<h4>` element is used to invoke a heading/label of a suitable size, despite its semantics being removed from the document outline (see [**Expected markup**](#expected-markup)).
 
-The icon supplied to the heading must be from the [GEL Iconography Set](http://bbc.github.io/gel-iconography/). It must have a fill of `currentColor` so that it matches the surround text color and respects high contrast settings.
+The icon supplied to the heading must be from the [GEL Iconography Set](http://bbc.github.io/gel-iconography/). It must have a fill of `currentColor` so that it matches the surround text colour and respects high contrast settings.
 
-## Expected behavior
+## Expected behaviour
 
-The **Breakout Box** has no special behaviors; it is a static component. 
+The **Breakout Box** has no special behaviours; it is a static component. 
 
 ## Reference implementation
 
 ::: alert Important
-Reference implementations are intended to demonstate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behavior of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
+Reference implementations are intended to demonstrate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
 :::
 
 The following implementation is a copy of the 'tip' provided in this document.

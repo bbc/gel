@@ -21,11 +21,11 @@ The **Promo** component is similar to the [**Card**](#link-todo) but exists sole
     <div class="gel-promo-content">
       <div class="gel-promo-headline">
         <h4>
-          <a href="/to/permalink/1">Suspect package found at De Niro restaurant</a>
+          <a href="/to/permalink/1">Headline text goes here</a>
         </h4>
       </div>
       <div class="gel-promo-desc">
-        <p>Police investigate a package at the New York restaurant owned by the actor, reports say.</p>
+        <p>More description copy goes here.</p>
       </div>
       <dl class="gel-metadata-strip">
         <div>
@@ -51,11 +51,11 @@ The **Promo** component is similar to the [**Card**](#link-todo) but exists sole
     <div class="gel-promo-content">
       <div class="gel-promo-headline">
         <h4>
-          <a href="/to/permalink/2">UK Sorry For Forcing DNA Tests On Immigrants</a>
+          <a href="/to/permalink/2">Another headline text goes here</a>
         </h4>
       </div>
       <div class="gel-promo-desc">
-        <p>The home secretary says people were wrongly forced to take tests to prove their right to be in the UK.</p>
+        <p>More description copy goes here.</p>
       </div>
       <dl class="gel-metadata-strip">
         <div>
@@ -153,7 +153,7 @@ At the time of writing, the `object-fit` property is supported everywhere but In
 
 ### Horizontal Promos
 
-It is permissable to create a horizontal configuration, with the image to the left of the content. In the [**Reference implementation**](../demos/promos/) this is achieved without changing the markup, except to place the class `gel-promos-horizontal` on the `<ul>` element and `gel-promo-horizontal` on each subject Promo.
+It is permissible to create a horizontal configuration, with the image to the left of the content. In the [**Reference implementation**](../demos/promos/) this is achieved without changing the markup, except to place the class `gel-promos-horizontal` on the `<ul>` element and `gel-promo-horizontal` on each subject Promo.
 
 A small amount of additional CSS is then applied. Note the switch in `flex-direction` from `column` to `row`.
 
@@ -193,7 +193,7 @@ A `text-decoration` focus style is recommended for the headline link and any lin
 
 Some items of metadata come with icons, such as a clock prefixing the 'Published' time. These should be provided from [GEL's iconography system](https://www.bbc.co.uk/gel/guidelines/iconography). Ensure their fill is applied using `currentColor` so that the icon is compatible with high contrast themes.
 
-## Expected behavior
+## Expected behaviour
 
 Mouse and touch users should be able to activate the primary (headline) link by pressing either the headline text _or_ the image. However, the image should not represent an additional, redundant tab stop to keyboard users or be perceivable as a link to screen reader users. Too many and redundant 'tab stops' can be cumbersome for keyboard-only users[^4].
 
@@ -216,7 +216,7 @@ If the metadata contains links, these will fall into focus order after the headl
 ## Reference implementation
 
 ::: alert Important
-Reference implementations are intended to demonstate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behavior of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
+Reference implementations are intended to demonstrate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
 :::
 
 <include src="components/demos/promos.html">

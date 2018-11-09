@@ -103,7 +103,7 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gel-toc__links" class="gel-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#expected-behavior">Expected behavior</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#test-specifications">Test specifications</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="gel-toc__links" class="gel-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#expected-behaviour">Expected behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#test-specifications">Test specifications</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
@@ -130,8 +130,8 @@
 <li><strong><code>aria-hidden=&quot;true&quot;</code>:</strong> Breakouts should not be considered part of the parent document's main structure; their headings are for labeling and presentational purposes only. The <code>aria-hidden</code> attribute removes the heading from the document outline (and screen reader navigation) but does <em>not</em> silence the text node as an associated label.</li>
 </ul>
 
-            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541697456178">
-              <h4 id="aside-1541697456178" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Tip</h4><div><p>To associate <code>aria-labelledby</code> with the respective <code>id</code>, they must share a value and that value must be unique. In your templating system, you can create a unique string at the time of compilation using <code>Date()</code>:</p>
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541759372396">
+              <h4 id="aside-1541759372396" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Tip</h4><div><p>To associate <code>aria-labelledby</code> with the respective <code>id</code>, they must share a value and that value must be unique. In your templating system, you can create a unique string at the time of compilation using <code>Date()</code>:</p>
 <pre class="hljs"><code><span class="hljs-keyword">const</span> unique = + <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(); <span class="hljs-comment">// e.g. 1540915290281</span>
 </code></pre>
 <p>An <code>id</code> that is not unique is considered a parsing error and, since it affects accessible naming associations here, would mean a failure under <strong>WCAG 4.1.1 Parsing</strong><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
@@ -139,13 +139,13 @@
             </aside>
           <h2 id="expected-layout">Expected layout</h2>
 <p>The <code>&lt;h4&gt;</code> element is used to invoke a heading/label of a suitable size, despite its semantics being removed from the document outline (see <a href="#expected-markup"><strong>Expected markup</strong></a>).</p>
-<p>The icon supplied to the heading must be from the <a href="http://bbc.github.io/gel-iconography/">GEL Iconography Set</a>. It must have a fill of <code>currentColor</code> so that it matches the surround text color and respects high contrast settings.</p>
-<h2 id="expected-behavior">Expected behavior</h2>
-<p>The <strong>Breakout Box</strong> has no special behaviors; it is a static component.</p>
+<p>The icon supplied to the heading must be from the <a href="http://bbc.github.io/gel-iconography/">GEL Iconography Set</a>. It must have a fill of <code>currentColor</code> so that it matches the surround text colour and respects high contrast settings.</p>
+<h2 id="expected-behaviour">Expected behaviour</h2>
+<p>The <strong>Breakout Box</strong> has no special behaviours; it is a static component.</p>
 <h2 id="reference-implementation">Reference implementation</h2>
 
-            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541697456178">
-              <h4 id="aside-1541697456178" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behavior of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541759372396">
+              <h4 id="aside-1541759372396" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
 
             </aside>
           <p>The following implementation is a copy of the 'tip' provided in this document.</p>
