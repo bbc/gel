@@ -22,7 +22,9 @@ $gel-type-enable--base-elements: true;
 /**
  * dependencies
  */
-@import "gelui";
+@import "gel-foundations";
+@import "components/common/util";
+@import "components/common/mixins";
 @import 'bbc-grandstand/dist/bbc-grandstand.min.css';
 @import 'reith.css';
 
