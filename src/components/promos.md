@@ -223,9 +223,45 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 
 <p><a class="gel-button gel-button--dark gel-long-primer-bold" href="../demos/promos/" target="_new">Open in new window <svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:undefined;"></use></svg></a></p>
 
-## Test specifications
+## Related accessibility guidelines
 
-A list of gherkin-style feature specifications (including requirements for the [BBC Mobile Accessibility Guidelines](https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile)) for this component has been developed and published in a format suitable for use with an automated testing framework. You can review and download these feature files from [the project Wiki page, hosted on GitHub](#linktocome).
+<dl>
+  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/design/actionable-elements">Actionable elements</a></dt>
+  <dd>"All users must be able to determine if an element is actionable or if it is static content."</dd>
+
+  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/design/visible-focus">Visible focus</a></dt>
+  <dd>"When focused, all actionable and focusable elements must have a visible state change."</dd>
+
+  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/focus/content-order">Content order</a></dt>
+  <dd>"All users benefit when content is logically ordered, in particular users of assistive technology that follows the flow of the page or screen."</dd>
+
+  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/focus/user-interactions">User interaction</a></dt>
+  <dd>"Actions must be triggered when appropriate for the type of user interaction."</dd>
+
+  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/links/combining-repeated-links">Combining repeated links</a></dt>
+  <dd>"Repeated links to the same resource must be combined within a single link."</dd>
+
+  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/structure/headings">Headings</a></dt>
+  <dd>"Content must provide a logical and hierarchical heading structure, as supported by the platform."</dd>
+
+  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/design/touch-target-size">Touch target size</a></dt>
+  <dd>"Touch targets must be large enough to touch accurately."</dd>
+
+  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/structure/containers-and-landmarks">Containers and landmarks</a></dt>
+  <dd>"Containers should be used to describe page/screen structure, as supported by the platform."</dd>
+
+  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/structure/grouped-elements">Grouped elements</a></dt>
+  <dd>"Controls, objects and grouped interface elements must be represented as a single accessible component."</dd>
+
+  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/text-equivalents/alternatives-for-non-text-content">Alternatives for non-text content</a></dt>
+  <dd>"Alternatives must briefly describe the editorial intent or purpose of the image, object, or element."</dd>
+
+  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/text-equivalents/decorative-content">Decorative content</a></dt>
+  <dd>"Decorative images must be hidden from assistive technology."</dd>
+
+  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/text-equivalents/visual-formatting">Visual formatting</a></dt>
+  <dd>"Visual formatting alone must not be used to convey meaning."</dd>
+</dl>
 
 ## Related research
 
