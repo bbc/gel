@@ -90,14 +90,10 @@
                     <dt>Version:</dt>
                     <dd>{{ version }}</dd>
                     {% endif %}
-                    {% if published %}
                     <dt>Status:</dt>
                     <dd>{{ "Published" if published else "Draft" }}</dd>
-                    {% endif %}
-                    {% if accessibility %}
                     <dt>Accessibility:</dt>
-                    <dd>{{ "Pass" if accessibility else "Fail" }}</dd>
-                    {% endif %}
+                    <dd>{{ "Pass" if accessibility else "Pending" }}</dd>
                 </dl>
             </div>
         </div>
