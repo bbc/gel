@@ -224,7 +224,7 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 
 ## Related accessibility guidelines
 
-<dl>
+<dl class="gel-2col-list">
   <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/design/actionable-elements">Actionable elements</a></dt>
   <dd>"All users must be able to determine if an element is actionable or if it is static content." View the <a href="https://github.com/bbc/bbc-a11y/blob/master/features/standards/mag/design/07_actionable_elements.feature">test spec for actionable elements</a>.</dd>
 
