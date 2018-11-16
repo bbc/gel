@@ -726,20 +726,20 @@ a.gel-button.gel-button__link-button {
 
 /* two-colum definition list */
 @media (min-width: 37.5em) {
-  .gel-guideline-body dl {
+  .gel-body-copy dl {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     font-family: ReithSerif, "Times New Roman", serif;
   }
 
-  .gel-guideline-body dl dt {
+  .gel-body-copy dl dt {
     padding: 1rem 0;
     flex: 0 0 35%;
     overflow: hidden; /* Prevents long words in labels from causing layout to break */
   }
 
-  .gel-guideline-body dl dd {
+  .gel-body-copy dl dd {
     padding: 1rem 0 1rem 0;
     margin-left: 0;
     flex: 65% 0 0;
@@ -747,33 +747,33 @@ a.gel-button.gel-button__link-button {
     max-width: 65%; /* Fix for IE issue in which box-sizing is not taken into account when using flex */
   }
 
-  .gel-guideline-body dl dd + dd {
+  .gel-body-copy dl dd + dd {
     margin-left: 35%;
   }
 
-  .gel-guideline-body dl dt {
+  .gel-body-copy dl dt {
     flex: 0 0 25%;
   }
-  .gel-guideline-body dl dd {
+  .gel-body-copy dl dd {
     flex: 75% 0 0;
     max-width: 75%;
   }
-  .gel-guideline-body dl dd + dd {
+  .gel-body-copy dl dd + dd {
     margin-left: 25%;
   }
 
-  .gel-guideline-body dl *, .gel-guideline-body dl *:after, .gel-guideline-body dl *:before {
+  .gel-body-copy dl *, .gel-body-copy dl *:after, .gel-body-copy dl *:before {
     box-sizing: border-box;
   }
 }
 @media (max-width: 37.5em) {
-  .gel-guideline-body dl dt {
+  .gel-body-copy dl dt {
     padding-top: 1rem;
   }
-  .gel-guideline-body dl dd {
+  .gel-body-copy dl dd {
     margin-left: 0;
   }
-  .gel-guideline-body dl dd + dd {
+  .gel-body-copy dl dd + dd {
     margin-left: 0;
   }
 }
