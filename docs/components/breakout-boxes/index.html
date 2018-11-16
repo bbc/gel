@@ -226,11 +226,13 @@ title: Breakout Boxes
 
     <script type="text/javascript">
         new Sticky('.sticky');
-        new MenuSpy(document.querySelector('#gel-toc__links'));
+        new MenuSpy(document.querySelector('#gel-toc__links'), {enableLocationHash: false});
         new SweetScroll({
             trigger: '#gel-toc__links a',
             quickMode: true,
-            easing: 'easeOutExpo'
+            easing: 'easeOutExpo',
+            cancellable: true,
+            updateURL: false, 
         });
     </script>
 </body>
