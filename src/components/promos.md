@@ -7,11 +7,22 @@ accessibility: false
 linkback: http://www.bbc.co.uk/gel/guidelines/promos
 ---
 
-## Introduction
+## Overview
 
-The **Promo** component is similar to the [**Card**](#link-todo) but exists solely for linking to permalink content. It optionally contains meta information, a description,  and/or an image. Read the [original GEL Promo documentation](https://www.bbc.co.uk/gel/guidelines/promos) for more.
+The Promo component is composed of several sub-components:
 
-## Expected markup
+* a required link
+* an optional image
+* optional badge
+* required heading text
+* optional body text
+* an optional metadata strip
+
+These are shown in more detail in the [BBC GEL Promo documentation](https://www.bbc.co.uk/gel/guidelines/promos).
+
+## Recommended markup
+
+Promos are typically presented as a set, and together must be marked up as an unordered list, with each Promo marked as a list item (`<li>`). This enables structural and navigational cues in screen reader software[^1]. Each Promo's primary link must be contained within a heading, with each promo's heading of the same level, and the set of promos introduced as its own section within the document by a heading one level higher. The wording of the Promo's primary link should resemble that of the target page's `<title>` and `<h1>`. This consistency aids cognitive accessibility and improves <abbr title="search engine optimization">SEO</abbr>[^3].
 
 ```html
 <h2>Latest news</h2>
@@ -19,12 +30,12 @@ The **Promo** component is similar to the [**Card**](#link-todo) but exists sole
   <li class="gel-promo">
     <div class="gel-promo-content">
       <div class="gel-promo-headline">
-        <h4>
-          <a href="/to/permalink/1">Headline text goes here</a>
-        </h4>
+        <h3>
+          <a href="#example/permalink/1">Headling text goes here</a>
+        </h3>
       </div>
       <div class="gel-promo-desc">
-        <p>More description copy goes here.</p>
+        <p>Description text goes here.</p>
       </div>
       <dl class="gel-metadata-strip">
         <div>
@@ -37,7 +48,7 @@ The **Promo** component is similar to the [**Card**](#link-todo) but exists sole
         <div>
           <dt class="vh">From:</dt>
           <dd>
-            <a href="link/to/category">US & Canada</a>
+            <a href="#example/link/to/category">US & Canada</a>
           </dd>
         </div>
       </dl>
@@ -49,12 +60,12 @@ The **Promo** component is similar to the [**Card**](#link-todo) but exists sole
   <li class="gel-promo">
     <div class="gel-promo-content">
       <div class="gel-promo-headline">
-        <h4>
-          <a href="/to/permalink/2">Another headline text goes here</a>
-        </h4>
+        <h3>
+          <a href="#example/permalink/2">Another heading text goes here</a>
+        </h3>
       </div>
       <div class="gel-promo-desc">
-        <p>More description copy goes here.</p>
+        <p>More description text here.</p>
       </div>
       <dl class="gel-metadata-strip">
         <div>
@@ -67,7 +78,7 @@ The **Promo** component is similar to the [**Card**](#link-todo) but exists sole
         <div>
           <dt class="vh">From:</dt>
           <dd>
-            <a href="link/to/category">UK</a>
+            <a href="#example/link/to/category">UK</a>
           </dd>
         </div>
       </dl>
@@ -79,16 +90,11 @@ The **Promo** component is similar to the [**Card**](#link-todo) but exists sole
 </ul>
 ```
 
-### Notes
+Images can be considered decorative (`alt=""`; the first Promo in our example) or non-decorative (`alt="[description of image]"`; the second Promo in our example). They must appear _after_ the textual content (`gel-promo-content`) in the markup since the heading introduces the promo content, including the image content. **Non-decorative images must have alternative text that does not simply repeat information in the headline or description**.
 
-* **`<ul>` and `<li>`:** Promos are typically presented as a set, and together must be marked up as an unordered list, with each promo marked as a list item (`<li>`). This enables structural and navigational cues in screen reader software[^1].
-* **Headings:** Each promo's primary (headline) link must be contained within a heading, each of the promo's headings must be of the same level, and the set of promos must be introduced as a section within the document by a heading one level higher. The wording of the promo's primary link should resemble that of the target page's `<title>` and `<h1>`. This consistency aids cognitive accessibility and improves <abbr title="search engine optimization">SEO</abbr>[^3].
-* **Image (optional):** Images can be considered decorative (`alt=""`; the first Promo in the code example) or non-decorative (`alt="[description of image]"`; the second Promo in the example). They must appear _after_ the textual content (`gel-promo-content`) in the markup since the headline's heading introduces the promo content. **Non-decorative images must have alternative text that does not simply repeat information in the headline or description**.
-* **Metadata (optional):** [**Metadata Strips**](#link-todo) are specified as their own component
+## Recommended layout
 
-## Expected layout
-
-As with [**Cards**](#link-todo), promos in a set should share the same height. This is possible by making the `<ul>` a CSS Flexbox or CSS Grid context. The appearance of each promo is improved by distributing the metadata (if present) to the bottom of the container. This is possible by making the promo a Flexbox context and giving the metadata element `margin-top: auto`. Padding can be combined with margin to ensure a minimum space between the metadata and the element above it.
+A group of Promos in a set should share the same height. This is possible by making the `<ul>` a CSS Flexbox or CSS Grid context. The appearance of each promo is improved by distributing the metadata (if present) to the bottom of the container. This is possible by making the promo a Flexbox context and giving the metadata element `margin-top: auto`. Padding can be combined with margin to ensure a minimum space between the metadata and the element above it.
 
 ```css
 .gel-promo {
@@ -107,12 +113,12 @@ As with [**Cards**](#link-todo), promos in a set should share the same height. T
 ```
 
 ::: info Note
-While [**Metadata Strips**](#link-todo) are documented as their own component, the `margin-top` and `padding-top` styles specified here are needed in the **Promo** context.
+While [Metadata Strips](../metadata-strips/) are documented as their own component, the `margin-top` and `padding-top` styles specified here are needed in the Promo context.
 :::
 
 ### The image
 
-As stated in **[Expected markup](#expected-markup)**, the image must come _after_ the text content in the source order. However, it is designed to appear before it visually. Using Flexbox, it is possible to augment the visual order without affecting the source order:
+As stated in [Recommended markup](#recommended-markup), the image must come _after_ the text content in the source order. However, it is designed to appear before it visually. Using Flexbox, it is possible to augment the visual order without affecting the source order:
 
 ```css
 .gel-promo-image {
@@ -121,10 +127,10 @@ As stated in **[Expected markup](#expected-markup)**, the image must come _after
 ```
 
 ::: info Note
-Augmenting the source order can produce a [**WCAG 2.4.3 Focus Order failure**](https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html), but the image is not focusable so there is no such issue.
+Augmenting the source order can produce a [WCAG 2.4.3 Focus Order failure](https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html), but the image is not focusable so there is no such issue.
 :::
 
-The image will need to fit the available space, regardless of the promo's dimensions (which are likely to change across breakpoints) without distorting. This is possible by setting the desired height of the image box and using the `object-fit` property:
+The image will need to fit the available space, regardless of the Promo's dimensions (which are likely to change across breakpoints) without distorting. This is possible by setting the desired height of the image box and using the `object-fit` property:
 
 ```css
 .gel-promo-image {
@@ -152,7 +158,7 @@ At the time of writing, the `object-fit` property is supported everywhere but In
 
 ### Horizontal Promos
 
-It is permissible to create a horizontal configuration, with the image to the left of the content. In the [**Reference implementation**](../demos/promos/) this is achieved without changing the markup, except to place the class `gel-promos-horizontal` on the `<ul>` element and `gel-promo-horizontal` on each subject Promo.
+It is permissible to create a horizontal configuration, with the image to the left of the content. In the [Example implementation](../demos/promos/) this is achieved without changing the markup, except to place the class `gel-promos-horizontal` on the `<ul>` element and `gel-promo-horizontal` on each subject Promo.
 
 A small amount of additional CSS is then applied. Note the switch in `flex-direction` from `column` to `row`.
 
@@ -192,7 +198,7 @@ A `text-decoration` focus style is recommended for the headline link and any lin
 
 Some items of metadata come with icons, such as a clock prefixing the 'Published' time. These should be provided from [GEL's iconography system](https://www.bbc.co.uk/gel/guidelines/iconography). Ensure their fill is applied using `currentColor` so that the icon is compatible with high contrast themes.
 
-## Expected behaviour
+## Recommended behaviour
 
 Mouse and touch users should be able to activate the primary (headline) link by pressing either the headline text _or_ the image. However, the image should not represent an additional, redundant tab stop to keyboard users or be perceivable as a link to screen reader users. Too many and redundant 'tab stops' can be cumbersome for keyboard-only users[^4].
 
@@ -201,7 +207,7 @@ In which case, you need to add a JavaScript `click` listener to the image and us
 ```js
 // Assuming that `link` represents the headline link node
 // and `img` represents the image node...
-img.addEventListener('click', () => link.click());
+img.addEventListener('click', function(){link.click()});
 ```
 
 This is the only JavaScript enhancement. In an environment where the card is not client rendered, the card will be functional where JavaScript is not available. Accordingly, only add the `cursor` style if JavaScript has run:
@@ -212,10 +218,10 @@ img.style.cursor = 'pointer';
 
 If the metadata contains links, these will fall into focus order after the headline, as expected.
 
-## Reference implementation
+## Example implementation
 
 ::: alert Important
-Reference implementations are intended to demonstrate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
+Example implementations are intended to demonstrate **what needs to be achieved** but not how to achieve it. To meet our recommendations your HTML semantics, layout and behaviour must conform to the example implementation. Your server-side and front-end frameworks will likely differ.
 :::
 
 <include src="components/demos/promos.html">
