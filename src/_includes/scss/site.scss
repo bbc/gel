@@ -13,7 +13,6 @@ $gel-type-enable--base-elements: true;
 /**
  * gel atoms
  */
-
 @import 'atoms/animations';
 @import 'atoms/colours';
 @import 'atoms/gel-z-index';
@@ -25,8 +24,6 @@ $gel-type-enable--base-elements: true;
 @import "gel-foundations";
 @import "components/common/util";
 @import "components/common/mixins";
-@import 'bbc-grandstand/dist/bbc-grandstand.min.css';
-@import 'reith.css';
 
 @media (min-width: 56.25em) {
   .gel-pull__right\@l {
@@ -167,19 +164,19 @@ a {
   font-family: "Times New Roman", serif;
 }
 
-.reith-serif
+.b-reith-loaded .serif
 {
-  font-family: ReithSerif, "Times New Roman", serif;
+  @include reith(true);
 }
 
 .sans
 {
-  font-family: Helvetica, Arial, freesans, sans-serif !important;
+  font-family: Helvetica, Arial, freesans, sans-serif;
 }
 
-.reith-sans
+.b-reith-sans-loaded .sans
 {
-  font-family: ReithSans, Helvetica, Arial, freesans, sans-serif !important;
+  @include reith(false);
 }
 
 
@@ -328,13 +325,15 @@ a {
 .gel-breakout-box p {
     overflow: hidden;
     margin: 0;
-    font-family: ReithSans !important;
     font-weight: 400;
     font-size: 15px;
     font-size: .9375rem;
     line-height: 18px;
     line-height: 1.125rem;
     color: #404040
+}
+.b-reith-sans-loaded .gel-breakout-box p {
+    @include reith(false);
 }
 
 @media (min-width: 37.5em) {
@@ -448,11 +447,13 @@ pre {
 
 /* body-copy */
 
-.gel-body-copy {
+.b-reith-loaded .gel-body-copy {
   p, ol, ul {
-    font-family: ReithSerif;
+    font-family: ReithSerif !important;
   }
 }
+
+
 
 /* button */
 
@@ -460,7 +461,6 @@ pre {
     border: 1px solid transparent;
     cursor: pointer;
     display: inline-block;
-    font-family: ReithSans;
     font-size: 15px;
     font-size: .9375rem;
     font-weight: 800 !important;
@@ -469,6 +469,9 @@ pre {
     margin: 16px 0;
     padding: 16px;
     text-decoration: none
+}
+.b-reith-sans-loaded .gel-button {
+    font-family: ReithSans;
 }
 a.gel-button:hover {
     color: white;
@@ -730,7 +733,10 @@ a.gel-button.gel-button__link-button {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    font-family: ReithSerif, "Times New Roman", serif;
+    font-family: "Times New Roman", serif;
+  }
+  .b-reith-loaded dl.gel-2col-list {
+      font-family: ReithSerif !important;
   }
 
   dl.gel-2col-list dt {

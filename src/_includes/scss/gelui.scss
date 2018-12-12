@@ -1,10 +1,16 @@
+/**
+ * Dependencies
+ */
 @import "gel-foundations";
 @import 'atoms/colours';
-
+@import 'bbc-grandstand/dist/bbc-grandstand.min.css';
+@import 'reith.css';
 @import "components/common/util";
 @import "components/common/mixins";
-@import "atoms/colours";
 
+/**
+ * Components
+ */
 @import "components/gel-promos";
 @import "components/gel-tabs";
 @import "components/gel-cards";

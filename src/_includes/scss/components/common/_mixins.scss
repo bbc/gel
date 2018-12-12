@@ -8,10 +8,16 @@
 
 @mixin reith($serif) {
   @if $serif {
-    font-family: ReithSerif, "Times New Roman", serif !important;
+    font-family: "Times New Roman", serif;
+    .b-reith-sans-loaded {
+      font-family: ReithSerif !important;
+    }
   }
   @else {
-    font-family: ReithSans, Helvetica, Arial, freesans, sans-serif !important;
+    font-family: Helvetica, Arial, freesans, sans-serif;
+    .b-reith-sans-loaded {
+      font-family: ReithSans !important;
+    }
   }
 }
 

@@ -7,30 +7,15 @@
 
     <title>Code GEL | Promos Demo</title>
 
-    <script src="/code-gel/static/js/main.js"></script>
     <link rel="stylesheet" type="text/css" href="/code-gel/static/css/gelui.css">
-    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/main.css">
 
-    <script type="text/javascript">
-        // feature detects
+    <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
-        document.documentElement.className += (' ' + (supports.touchevents ? 'touch' : 'no-touch'));
-        document.documentElement.className += (' ' + (SimpleFeatureDetector.supports({ property: 'flex-wrap' }, { property: 'flex-flow' }) ? 'flexbox' : 'no-flexbox'));
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
         document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
     </script>
 
-    <script type="text/javascript">
-        // use reith fonts
-        (new FontFaceObserver('ReithSans')).load().then(function () {
-            document.documentElement.className += ' b-reith-sans-loaded';
-        });
-        (new FontFaceObserver('ReithSerif')).load().then(function () {
-            document.documentElement.className += ' b-reith-loaded';
-        });
-    </script>
-
-    
-    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/gelui.css">
     
 </head>
 
@@ -46,7 +31,9 @@
             <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-5/5@l">
                 
 <div style="margin-bottom: 1rem;">
-  <h3>Fully featured promos (vertical)</h3>
+
+  <h3>Vertical Promos</h3>
+
   <ul class="gel-promos">
     <li class="gel-promo">
       <div class="gel-promo-content">
@@ -85,10 +72,6 @@
             <a href="#to/permalink/2">Animus Averted By Timely Answers</a>
           </h4>
         </div>
-        <div class="gel-promo-desc">
-          <p>Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del
-            coalescent lingues.</p>
-        </div>
         <dl class="gel-metadata-strip">
           <div>
             <dt class="vh">Published:</dt>
@@ -110,7 +93,9 @@
       </div>
     </li>
   </ul>
-  <h3>Fully featured promos (horizontal)</h3>
+
+  <h3>Horizontal promos</h3>
+
   <ul class="gel-promos gel-promos-horizontal">
     <li class="gel-promo gel-promo-horizontal">
       <div class="gel-promo-content">
@@ -119,9 +104,6 @@
             <a href="#to/permalink/1">Report: Rainstorm Disquiets Rivers Regularly</a>
           </h4>
         </div>
-        <div class="gel-promo-desc">
-          <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth.</p>
-        </div>
         <dl class="gel-metadata-strip">
           <div>
             <dt class="vh">Published:</dt>
@@ -149,89 +131,15 @@
             <a href="#to/permalink/2">Animus Averted By Timely Answers</a>
           </h4>
         </div>
-        <div class="gel-promo-desc">
-          <p>Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del
-            coalescent lingues.</p>
-        </div>
-        <dl class="gel-metadata-strip">
-          <div>
-            <dt class="vh">Published:</dt>
-            <dd>
-              <span aria-hidden="true">1m</span>
-              <span class="vh">1 minute ago</span>
-            </dd>
-          </div>
-          <div>
-            <dt class="vh">From:</dt>
-            <dd>
-              <a href="link/to/category">UK</a>
-            </dd>
-          </div>
-        </dl>
       </div>
       <div class="gel-promo-image">
         <img src="/code-gel/static/images/placeholder.png" alt="">
       </div>
     </li>
   </ul>
-  <h3>Promos without descriptions</h3>
-  <ul class="gel-promos">
-    <li class="gel-promo">
-      <div class="gel-promo-content">
-        <div class="gel-promo-headline">
-          <h4>
-            <a href="#to/permalink/1">Report: Rainstorm Disquiets Rivers Regularly</a>
-          </h4>
-        </div>
-        <dl class="gel-metadata-strip">
-          <div>
-            <dt class="vh">Published:</dt>
-            <dd>
-              <span aria-hidden="true">1h</span>
-              <span class="vh">1 hour ago</span>
-            </dd>
-          </div>
-          <div>
-            <dt class="vh">From:</dt>
-            <dd>
-              <a href="link/to/category">US & Canada</a>
-            </dd>
-          </div>
-        </dl>
-      </div>
-      <div class="gel-promo-image">
-        <img src="/code-gel/static/images/placeholder.png" alt="">
-      </div>
-    </li>
-    <li class="gel-promo">
-      <div class="gel-promo-content">
-        <div class="gel-promo-headline">
-          <h4>
-            <a href="#to/permalink/2">Animus Averted By Timely Answers</a>
-          </h4>
-        </div>
-        <dl class="gel-metadata-strip">
-          <div>
-            <dt class="vh">Published:</dt>
-            <dd>
-              <span aria-hidden="true">1m</span>
-              <span class="vh">1 minute ago</span>
-            </dd>
-          </div>
-          <div>
-            <dt class="vh">From:</dt>
-            <dd>
-              <a href="link/to/category">UK</a>
-            </dd>
-          </div>
-        </dl>
-      </div>
-      <div class="gel-promo-image">
-        <img src="/code-gel/static/images/placeholder.png" alt="">
-      </div>
-    </li>
-  </ul>
+
   <h3>Promos with just images and headlines</h3>
+
   <ul class="gel-promos">
     <li class="gel-promo">
       <div class="gel-promo-content">
@@ -273,8 +181,6 @@
     <script type="text/javascript" src="/code-gel/static/js/gelui.js"></script>
     
     
-
-    <script type="text/javascript" src="/code-gel/static/js/demo.js"></script>
 </body>
 
 </html>

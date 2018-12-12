@@ -7,8 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "sass": "sass-pack -s src/_includes/scss/main.scss -o src/static/css && sass-pack -s src/_includes/scss/gelui.scss -o src/static/css/",
-    "js": "uglifyjs node_modules/supports.js/supports.min.js node_modules/simple-feature-detector/simple-feature-detector.min.js node_modules/fontfaceobserver/fontfaceobserver.standalone.js node_modules/highlight.js/lib/highlight.js node_modules/sticky-js/dist/sticky.min.js node_modules/menuspy/dist/menuspy.min.js node_modules/sweet-scroll/sweet-scroll.min.js -o src/static/js/main.js && uglifyjs-folder src/_includes/js/components/ -o src/static/js/gelui.js",
+    "sass": "sass-pack -s src/_includes/scss/site.scss -o src/static/css/ && sass-pack -s src/_includes/scss/gelui.scss -o src/static/css/",
+    "js": "uglifyjs node_modules/fontfaceobserver/fontfaceobserver.standalone.js node_modules/highlight.js/lib/highlight.js node_modules/sticky-js/dist/sticky.min.js node_modules/menuspy/dist/menuspy.min.js node_modules/sweet-scroll/sweet-scroll.min.js -o src/static/js/site.js && uglifyjs-folder src/_includes/js/components/ -o src/static/js/gelui.js",
     "build": "eleventy --input=./src/ --output=docs/ --formats=md,html",
     "serve": "eleventy --serve",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -26,7 +26,7 @@
   "dependencies": {
     "@11ty/eleventy": "^0.5.4",
     "cheerio": "^1.0.0-rc.2",
-    "fontfaceobserver": "^2.0.13",
+    "fontfaceobserver": "^2.1.0",
     "gel-grid": "^4.0.0",
     "gel-sass-tools": "^1.2.1",
     "gel-typography": "^2.0.5",
@@ -39,9 +39,7 @@
     "menuspy": "^1.3.0",
     "normalize": "^0.3.1",
     "sass-pack": "^2.2.1",
-    "simple-feature-detector": "^1.0.0",
     "sticky-js": "^1.2.0",
-    "supports.js": "^0.5.0",
     "sweet-scroll": "^3.0.1",
     "uglify-js": "^3.4.9",
     "uglifyjs-folder": "^1.5.1"

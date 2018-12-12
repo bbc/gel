@@ -9,10 +9,6 @@
  * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
  * @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
-@import url(bbc-grandstand/dist/bbc-grandstand.min.css);
-@import url(reith.css);
-@import url(bbc-grandstand/dist/bbc-grandstand.min.css);
-@import url(reith.css);
 .gel-sr {
   border: 0;
   clip: rect(0 0 0 0);
@@ -1108,9 +1104,6 @@ h4 {
  * Settings
  */
 /**
- * Dependencies
- */
-/**
  * Generic
  */
 html {
@@ -1425,14 +1418,18 @@ a {
 .serif {
   font-family: "Times New Roman", serif; }
 
-.reith-serif {
-  font-family: ReithSerif, "Times New Roman", serif; }
+.b-reith-loaded .serif {
+  font-family: "Times New Roman", serif; }
+  .b-reith-loaded .serif .b-reith-sans-loaded {
+    font-family: ReithSerif !important; }
 
 .sans {
-  font-family: Helvetica, Arial, freesans, sans-serif !important; }
+  font-family: Helvetica, Arial, freesans, sans-serif; }
 
-.reith-sans {
-  font-family: ReithSans, Helvetica, Arial, freesans, sans-serif !important; }
+.b-reith-sans-loaded .sans {
+  font-family: Helvetica, Arial, freesans, sans-serif; }
+  .b-reith-sans-loaded .sans .b-reith-sans-loaded {
+    font-family: ReithSans !important; }
 
 .noscriptElement {
   display: none; }
@@ -1548,13 +1545,17 @@ a {
 .gel-breakout-box p {
   overflow: hidden;
   margin: 0;
-  font-family: ReithSans !important;
   font-weight: 400;
   font-size: 15px;
   font-size: .9375rem;
   line-height: 18px;
   line-height: 1.125rem;
   color: #404040; }
+
+.b-reith-sans-loaded .gel-breakout-box p {
+  font-family: Helvetica, Arial, freesans, sans-serif; }
+  .b-reith-sans-loaded .gel-breakout-box p .b-reith-sans-loaded {
+    font-family: ReithSans !important; }
 
 @media (min-width: 37.5em) {
   .gel-breakout-box p {
@@ -1656,15 +1657,14 @@ pre {
   margin-bottom: 32px; }
 
 /* body-copy */
-.gel-body-copy p, .gel-body-copy ol, .gel-body-copy ul {
-  font-family: ReithSerif; }
+.b-reith-loaded .gel-body-copy p, .b-reith-loaded .gel-body-copy ol, .b-reith-loaded .gel-body-copy ul {
+  font-family: ReithSerif !important; }
 
 /* button */
 .gel-button {
   border: 1px solid transparent;
   cursor: pointer;
   display: inline-block;
-  font-family: ReithSans;
   font-size: 15px;
   font-size: .9375rem;
   font-weight: 800 !important;
@@ -1673,6 +1673,9 @@ pre {
   margin: 16px 0;
   padding: 16px;
   text-decoration: none; }
+
+.b-reith-sans-loaded .gel-button {
+  font-family: ReithSans; }
 
 a.gel-button:hover {
   color: white; }
@@ -1882,7 +1885,9 @@ a.gel-button.gel-button__link-button {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    font-family: ReithSerif, "Times New Roman", serif; }
+    font-family: "Times New Roman", serif; }
+  .b-reith-loaded dl.gel-2col-list {
+    font-family: ReithSerif !important; }
   dl.gel-2col-list dt {
     padding: 1rem 0;
     flex: 0 0 35%;

@@ -31,11 +31,11 @@ Promos are typically presented as a set, and together must be marked up as an un
     <div class="gel-promo-content">
       <div class="gel-promo-headline">
         <h3>
-          <a href="#example/permalink/1">Headling text goes here</a>
+          <a href="#example/permalink/1">Heading text goes here</a>
         </h3>
       </div>
       <div class="gel-promo-desc">
-        <p>Description text goes here.</p>
+        <p>Some description text goes here.</p>
       </div>
       <dl class="gel-metadata-strip">
         <div>

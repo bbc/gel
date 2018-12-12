@@ -1,4 +1,7 @@
 /**
+ * Dependencies
+ */
+/**
  * GEL foundations
  */
 /* autoprefixer: off */
@@ -51,9 +54,6 @@
 
 /**
  * Settings
- */
-/**
- * Dependencies
  */
 /**
  * Generic
@@ -149,6 +149,9 @@ a {
   flex: 1; }
 
 /**
+ * Components
+ */
+/**
  * GEL PROMOS
  */
 .gel-promos {
@@ -175,7 +178,10 @@ a {
 
 .gel-promo,
 .gel-promo p {
-  font-family: ReithSans, Helvetica, Arial, freesans, sans-serif !important; }
+  font-family: Helvetica, Arial, freesans, sans-serif; }
+  .gel-promo .b-reith-sans-loaded,
+  .gel-promo p .b-reith-sans-loaded {
+    font-family: ReithSans !important; }
 
 .gel-promo-content {
   padding: 1rem;
@@ -215,7 +221,8 @@ a {
 .gel-metadata-strip > div + div::before {
   content: '';
   border-left: 1px solid;
-  margin: 0 0.25rem; }
+  margin: 0 0.25rem;
+  color: #ccc; }
 
 .gel-metadata-strip dt,
 .gel-metadata-strip dd {
@@ -231,6 +238,7 @@ a {
 
 .gel-promo.gel-promo-horizontal .gel-promo-image {
   width: 15rem;
+  max-width: 50%;
   height: auto; }
 
 .vh {
@@ -242,7 +250,12 @@ a {
   white-space: nowrap !important;
   width: 1px !important; }
 
-.gel-promo-headline a:focus {
+.gel-promo-headline a {
+  font-weight: bold;
+  text-decoration: none; }
+
+.gel-promo-headline a:focus,
+.gel-promo-headline a:hover {
   outline: none;
   text-decoration: underline; }
 
@@ -250,6 +263,14 @@ a {
   outline: 0.25rem solid; }
 
 .gel-metadata-strip a {
+  text-decoration: underline; }
+
+.gel-metadata-strip a {
+  text-decoration: none; }
+
+.gel-metadata-strip a:focus,
+.gel-metadata-strip a:hover {
+  outline: none;
   text-decoration: underline; }
 
 .gel-tabs > section {

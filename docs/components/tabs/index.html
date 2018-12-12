@@ -7,28 +7,30 @@
 
     <title>Code GEL | Tabs</title>
 
-    <script src="/code-gel/static/js/main.js"></script>
+    <script src="/code-gel/static/js/site.js"></script>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
     <link rel="stylesheet" type="text/css" href="/code-gel/static/css/gelui.css">
-    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/site.css">
 
-    <script type="text/javascript">
-        // feature detects
+    <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
-        document.documentElement.className += (' ' + (supports.touchevents ? 'touch' : 'no-touch'));
-        document.documentElement.className += (' ' + (SimpleFeatureDetector.supports({ property: 'flex-wrap' }, { property: 'flex-flow' }) ? 'flexbox' : 'no-flexbox'));
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
         document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
     </script>
 
     <script type="text/javascript">
-        // use reith fonts
-        (new FontFaceObserver('ReithSans')).load().then(function () {
-            document.documentElement.className += ' b-reith-sans-loaded';
-        });
-        (new FontFaceObserver('ReithSerif')).load().then(function () {
-            document.documentElement.className += ' b-reith-loaded';
-        });
+        try {
+            (new FontFaceObserver('ReithSans', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-sans-loaded';
+            });
+            (new FontFaceObserver('ReithSerif', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-loaded';
+            });
+        } catch( e ) {
+            console.log('Reith fonts did not load within 5 seconds.');
+        }
     </script>
 
     <script type="text/javascript">

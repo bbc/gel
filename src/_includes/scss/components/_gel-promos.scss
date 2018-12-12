@@ -86,6 +86,7 @@
   content: '';
   border-left: 1px solid;
   margin: 0 0.25rem;
+  color: $gel-color--dusty-gray;
 }
 
 .gel-metadata-strip dt,
@@ -106,6 +107,7 @@
 
 .gel-promo.gel-promo-horizontal .gel-promo-image {
   width: 15rem;
+  max-width: 50%;
   height: auto;
 }
 
@@ -119,7 +121,13 @@
   width: 1px !important;
 }
 
-.gel-promo-headline a:focus {
+.gel-promo-headline a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.gel-promo-headline a:focus,
+.gel-promo-headline a:hover {
   outline: none;
   text-decoration: underline;
 }
@@ -129,5 +137,15 @@
 }
 
 .gel-metadata-strip a {
+  text-decoration: underline;
+}
+
+.gel-metadata-strip a {
+  text-decoration: none;
+}
+
+.gel-metadata-strip a:focus,
+.gel-metadata-strip a:hover {
+  outline: none;
   text-decoration: underline;
 }

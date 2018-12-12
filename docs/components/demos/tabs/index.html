@@ -7,26 +7,13 @@
 
     <title>Code GEL | Tabs Demo</title>
 
-    <script src="/code-gel/static/js/main.js"></script>
     <link rel="stylesheet" type="text/css" href="/code-gel/static/css/gelui.css">
-    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/main.css">
 
-    <script type="text/javascript">
-        // feature detects
+    <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
-        document.documentElement.className += (' ' + (supports.touchevents ? 'touch' : 'no-touch'));
-        document.documentElement.className += (' ' + (SimpleFeatureDetector.supports({ property: 'flex-wrap' }, { property: 'flex-flow' }) ? 'flexbox' : 'no-flexbox'));
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
         document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
-    </script>
-
-    <script type="text/javascript">
-        // use reith fonts
-        (new FontFaceObserver('ReithSans')).load().then(function () {
-            document.documentElement.className += ' b-reith-sans-loaded';
-        });
-        (new FontFaceObserver('ReithSerif')).load().then(function () {
-            document.documentElement.className += ' b-reith-loaded';
-        });
     </script>
 
     
@@ -80,8 +67,6 @@
     <script type="text/javascript" src="/code-gel/static/js/gelui.js"></script>
     
     
-
-    <script type="text/javascript" src="/code-gel/static/js/demo.js"></script>
 </body>
 
 </html>
