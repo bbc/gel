@@ -8,7 +8,7 @@
   },
   "scripts": {
     "sass": "sass-pack -s src/_includes/scss/site.scss -o src/static/css/ && sass-pack -s src/_includes/scss/gelui.scss -o src/static/css/",
-    "js": "uglifyjs node_modules/fontfaceobserver/fontfaceobserver.standalone.js node_modules/highlight.js/lib/highlight.js node_modules/sticky-js/dist/sticky.min.js node_modules/menuspy/dist/menuspy.min.js node_modules/sweet-scroll/sweet-scroll.min.js -o src/static/js/site.js && uglifyjs-folder src/_includes/js/components/ -o src/static/js/gelui.js",
+    "js": "uglifyjs node_modules/fontfaceobserver/fontfaceobserver.standalone.js node_modules/highlight.js/lib/highlight.js node_modules/sticky-js/dist/sticky.min.js node_modules/menuspy/dist/menuspy.min.js node_modules/sweet-scroll/sweet-scroll.min.js -o src/static/js/site.js && cat src/_includes/js/components/*.js > src/static/js/gelui.js",
     "build": "eleventy --input=./src/ --output=docs/ --formats=md,html",
     "serve": "eleventy --serve",
     "test": "echo \"Error: no test specified\" && exit 1"
