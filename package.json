@@ -41,7 +41,6 @@
     "sass-pack": "^2.2.1",
     "sticky-js": "^1.2.0",
     "sweet-scroll": "^3.0.1",
-    "uglify-js": "^3.4.9",
-    "uglifyjs-folder": "^1.5.1"
+    "uglify-js": "^3.4.9"
   }
 }
