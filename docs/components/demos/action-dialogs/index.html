@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Code GEL | Action dialogs Demo</title>
+
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/gelui.css">
+
+    <script type="text/javascript"> // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    
+</head>
+
+<body class="gel-guideline-body">
+    <main id="main" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-5/5@l" style="padding-right: 12px;">
+                <h1 class="gel-guideline-header__title">Action dialogs</h1>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-5/5@l">
+                
+<div id="action-dialog-1" class="gel-action-dialog" role="dialog" aria-labelledby="gel-action-dialog-label-1"
+  aria-describedby="gel-action-dialog-desc-1">
+  <h2 id="gel-action-dialog-label-1" class="gel-action-dialog-title">Add to enjoy later</h2>
+  <div id="gel-action-dialog-desc-1" class="gel-action-dialog-content">
+    <p>Sign in to add to My Programmes and enjoy it later on other devices</p>
+  </div>
+  <div class="gel-action-dialog-buttons">
+    <a href="/path/to/sign-in">Sign in</a>
+    or
+    <a href="/path/to/register">Register</a>
+  </div>
+  <button class="gel-action-dialog-close">
+    <span class="vh">close</span>
+    <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+      <use xlink:href="/code-gel//static/images/gel-icons-all.svg#gel-icon-no"></use>
+    </svg>
+  </button>
+</div>
+
+<div id="action-dialog-2" class="gel-action-dialog" role="dialog" aria-labelledby="gel-action-dialog-label-1"
+  aria-describedby="gel-action-dialog-desc-1">
+  <h2 id="gel-action-dialog-label-1" class="gel-action-dialog-title">Add to enjoy later</h2>
+  <div id="gel-action-dialog-desc-1" class="gel-action-dialog-content">
+    <p>Sign in to add to My Programmes and enjoy it later on other devices</p>
+  </div>
+  <div class="gel-action-dialog-buttons">
+    <a href="/path/to/sign-in">Sign in</a>
+    or
+    <a href="/path/to/register">Register</a>
+  </div>
+  <button class="gel-action-dialog-close">
+    <span class="vh">close</span>
+    <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+      <use xlink:href="/code-gel//static/images/gel-icons-all.svg#gel-icon-no"></use>
+    </svg>
+  </button>
+</div>
+
+<p><button class="gel-button gel-button--primary" id="action-dialog-invoker-1">Open action dialog (bottom)</button></p>
+<p><button class="gel-button gel-button--primary" id="action-dialog-invoker-2">Open action dialog (center)</button></p>
+
+<script type="text/javascript">
+  // Inert attribute polyfill
+  "inert" in HTMLElement.prototype || (Object.defineProperty(HTMLElement.prototype, "inert", { enumerable: !0, get: function () { return this.hasAttribute("inert") }, set: function (h) { h ? this.setAttribute("inert", "") : this.removeAttribute("inert") } }), window.addEventListener("load", function () {
+    function h(a) {
+      var b = null; try { b = new KeyboardEvent("keydown", { keyCode: 9, which: 9, key: "Tab", code: "Tab", keyIdentifier: "U+0009", shiftKey: !!a, bubbles: !0 }) } catch (g) {
+        try {
+          b = document.createEvent("KeyboardEvent"), b.initKeyboardEvent("keydown",
+            !0, !0, window, "Tab", 0, a ? "Shift" : "", !1, "en")
+        } catch (d) { }
+      } if (b) { try { Object.defineProperty(b, "keyCode", { value: 9 }) } catch (g) { } document.dispatchEvent(b) }
+    } function k(a) { for (; a && a !== document.documentElement;) { if (a.hasAttribute("inert")) return a; a = a.parentElement } return null } function e(a) { var b = a.path; return b && b[0] || a.target } function l(a) { a.path[a.path.length - 1] !== window && (m(e(a)), a.preventDefault(), a.stopPropagation()) } function m(a) {
+      var b = k(a); if (b) {
+        if (document.hasFocus() && 0 !== f) {
+          var g = (c || document).activeElement;
+          h(0 > f ? !0 : !1); if (g != (c || document).activeElement) return; var d = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT, { acceptNode: function (a) { return !a || !a.focus || 0 > a.tabIndex ? NodeFilter.FILTER_SKIP : b.contains(a) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT } }); d.currentNode = b; d = (-1 === Math.sign(f) ? d.previousNode : d.nextNode).bind(d); for (var e; e = d();)if (e.focus(), (c || document).activeElement !== g) return
+        } a.blur()
+      }
+    } (function (a) {
+      var b = document.createElement("style"); b.type = "text/css"; b.styleSheet ?
+        b.styleSheet.cssText = a : b.appendChild(document.createTextNode(a)); document.body.appendChild(b)
+    })("/*[inert]*/*[inert]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none}"); var n = function (a) { return null }; window.ShadowRoot && (n = function (a) { for (; a && a !== document.documentElement;) { if (a instanceof window.ShadowRoot) return a; a = a.parentNode } return null }); var f = 0; document.addEventListener("keydown", function (a) { f = 9 === a.keyCode ? a.shiftKey ? -1 : 1 : 0 }); document.addEventListener("mousedown",
+      function (a) { f = 0 }); var c = null; document.body.addEventListener("focus", function (a) { var b = e(a); a = b == a.target ? null : n(b); if (a != c) { if (c) { if (!(c instanceof window.ShadowRoot)) throw Error("not shadow root: " + c); c.removeEventListener("focusin", l, !0) } a && a.addEventListener("focusin", l, !0); c = a } m(b) }, !0); document.addEventListener("click", function (a) { var b = e(a); k(b) && (a.preventDefault(), a.stopPropagation()) }, !0)
+  }));
+
+  (function () {
+    // Action dialog constructor
+    function ActionDialog(dialogElem, invokerElem, center) {
+      this.dialogElem = dialogElem;
+      // Hide the dialog element to start with
+      this.dialogElem.hidden = true;
+      // Save the invoking element 
+      // (this may not exist if the dialog is an interruption)
+      this.invokerElem = invokerElem;
+      // Save a collection of <body> children for making inert
+      this.inertElems = document.querySelectorAll('body > *');
+      // Save the first focusable link or button in the dialog
+      // (to be focused on opening the dialog)
+      this.firstControl = this.dialogElem.querySelector('a[href], button:not(:disabled)');
+      this.closeButton = this.dialogElem.querySelector('.gel-action-dialog-close');
+      // Move the dialog element to be a child of <body>
+      // (needed for the `inert` functionality to work)
+      document.body.appendChild(this.dialogElem);
+
+      // Honor the center positioning if chosen
+      if (center) {
+        this.dialogElem.classList.add('gel-action-dialog-center');
+      }
+
+      // If the invoking element exists, 
+      // listen to clicks for opening the dialog
+      if (this.invokerElem) {
+        this.invokerElem.addEventListener('click', function () {
+          this.open();
+        }.bind(this));
+      }
+
+      // If the close button exists,
+      // listen to clicks for closing the dialog
+      if (this.closeButton) {
+        this.closeButton.addEventListener('click', function () {
+          this.close();
+        }.bind(this));
+      }
+
+      // Listen on the dialog element
+      // to close the dialog on ESC
+      this.dialogElem.addEventListener('keydown', function (e) {
+        if (e.keyCode == 27) {
+          this.close();
+        }
+      }.bind(this));
+    }
+
+    // The open method
+    ActionDialog.prototype.open = function () {
+      // Add a class to the body for [inert] styling
+      document.body.classList.add('gel-action-dialog-open');
+      // Make all siblings of the dialog inert
+      Array.prototype.forEach.call(this.inertElems, function (elem) {
+        if (elem !== this.dialogElem) {
+          elem.setAttribute('inert', 'inert');
+        }
+      }.bind(this));
+      // Show the dialog
+      this.dialogElem.hidden = false;
+      // Focus the first of the controls
+      this.firstControl.focus();
+    }
+
+    // The close method
+    ActionDialog.prototype.close = function () {
+      document.body.classList.remove('gel-action-dialog-open');
+      Array.prototype.forEach.call(this.inertElems, function (elem) {
+        elem.removeAttribute('inert');
+      }.bind(this));
+      this.dialogElem.hidden = true;
+      // Refocus the invoking element
+      // if it exists
+      if (this.invokerElem) {
+        this.invokerElem.focus();
+      }
+    }
+
+    // Example 1: Dialog aligned to bottom of screen
+    var dialogBottomElem = document.getElementById('action-dialog-1');
+    var dialogBottomInvoker = document.getElementById('action-dialog-invoker-1');
+    var d1 = new ActionDialog(dialogBottomElem, dialogBottomInvoker);
+
+    // Example 2: Dialog centered in viewport
+    var dialogCenterElem = document.getElementById('action-dialog-2');
+    var dialogCenterInvoker = document.getElementById('action-dialog-invoker-2');
+    var d2 = new ActionDialog(dialogCenterElem, dialogCenterInvoker, true);
+  })();
+</script>
+            </div>
+        </div>
+    </main>
+
+
+    <script type="text/javascript" src="/code-gel/static/js/gelui.js"></script>
+    
+    
+</body>
+
+</html>
