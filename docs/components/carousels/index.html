@@ -112,11 +112,9 @@
 <p>Importantly, unlike some carousel implementations, the content does not scroll automatically<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>: the user is entirely in control of which carousel items they can see and interact with at any one time.</p>
 <h3 id="expected-markup">Expected markup</h3>
 
-            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-37">
-              <h4 id="aside-37" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Code is elided</h4><div><p>The markup is elided for brevity. The <code>&lt;li&gt;</code> elements represent the containers for the content items, such as <a href="#link-todo"><strong>Cards</strong></a> or <a href="#link-todo"><strong>Promos</strong></a>.</p>
-
-            </aside>
-          <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-carousel"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span>&gt;</span>
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-info-Code-is-elided-2">
+              <h4 id="aside-info-Code-is-elided-2" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Code is elided</h4><div><p>The markup is elided for brevity. The <code>&lt;li&gt;</code> elements represent the containers for the content items, such as <a href="#link-todo"><strong>Cards</strong></a> or <a href="#link-todo"><strong>Promos</strong></a>.</p>
+</aside><pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-carousel"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-carousel-buttons"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-carousel-prev"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">disabled</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>previous<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
@@ -215,11 +213,9 @@
 <p>This not only invokes the 'fading' effect described in <a href="#expected-layout"><strong>Expected layout</strong></a>, but also removed inert items from focus order and the accessibility tree<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. The upshot is that, like sighted mouse users, keyboard and screen reader users can only perceive and interact with items that are not inert.</p>
 <p>Were the inert attribute not employed, a keyboard user could scroll to the end of a long set of items, only to find that the first item was still first in focus order. Pressing tab would scroll the container back to the beginning and progress would be lost.</p>
 
-            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-38">
-              <h4 id="aside-38" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Inert polyfill</h4><div><p>The <a href="#reference-implementation"><strong>Reference implementation</strong></a> includes a small polyfill<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> for the <code>inert</code> attribute, increasing the reach of the behaviour it enables.</p>
-
-            </aside>
-          <h4 id="button-controls">Button controls</h4>
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-info-Inert-polyfill-1">
+              <h4 id="aside-info-Inert-polyfill-1" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Inert polyfill</h4><div><p>The <a href="#reference-implementation"><strong>Reference implementation</strong></a> includes a small polyfill<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> for the <code>inert</code> attribute, increasing the reach of the behaviour it enables.</p>
+</aside><h4 id="button-controls">Button controls</h4>
 <p>Keyboard users must scroll the content using the buttons. Each time a button is pressed, the scrollable container scrolls half of its own width (as measured on page load).</p>
 <pre class="hljs"><code><span class="hljs-keyword">var</span> scrollAmount = list.offsetWidth / <span class="hljs-number">2</span>;
 </code></pre>
@@ -235,11 +231,9 @@ scrollable.addEventListener(<span class="hljs-string">'scroll'</span>, <span cla
 <p>Although it is not provided as an intrinsic part of the <a href="#reference-implementation"><strong>Reference implementation</strong></a> to follow, it is recommended you use a lazy loading<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup> solution for images inside the carousel. Since the image containers for <a href="#link-todo"><strong>Card</strong></a> and <a href="#link-todo"><strong>Promo</strong></a> components have a fixed height, you do not need to address the scroll jumping issues associated with lazy loading.</p>
 <h2 id="reference-implementation">Reference implementation</h2>
 
-            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-39">
-              <h4 id="aside-39" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
-
-            </aside>
-          
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-alert-Important-14">
+              <h4 id="aside-alert-Important-14" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+</aside>
           <div class="gel-demo"><!-- 
 title: Carousels
  -->

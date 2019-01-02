@@ -1,10 +1,21 @@
 const fs = require('fs');
 const nunjucks = require('nunjucks');
 const crypto = require('crypto');
+const slug = require('slug')
 
-var count = 0;
-function counter() {
-  return count++;
+var slugCounts = {};
+function sluggify(content) {
+  if (typeof content === 'undefined') {
+    content = 'undefined';
+  }
+  var slugged = slug(content);
+  if ( Object.prototype.hasOwnProperty.call(slugCounts, slugged) ) {
+    slugged += '-' + slugCounts[slugged]++;
+  }
+  else {
+    slugCounts[slugged] = 1
+  }
+  return slugged;
 }
 
 module.exports = function (eleventyConfig) {
@@ -57,7 +68,7 @@ module.exports = function (eleventyConfig) {
           return '<pre class="hljs"><code>' +
             hljs.highlight(lang, str, true).value +
             '</code></pre>';
-        } catch (__) { }
+        } catch (e) { }
       }
 
       return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
@@ -67,21 +78,16 @@ module.exports = function (eleventyConfig) {
     .use(require('markdown-it-shortcode-tag'), shortcodes)
     .use(require('markdown-it-footnote'))
     .use(require('markdown-it-container'), 'breakout', {
-      validate: function (params) {
-        return params.trim().match(/^(info|help|alert)/);
-      },
+      validate: (p) => !!p.trim().match(/^(info|help|alert)/),
       render: function (tokens, idx) {
-        var m = tokens[idx].info.trim().match(/^(info|help|alert) (.+)$/);
-        
-        if (tokens[idx].nesting === 1) { // opening tag
-          var unique = counter();
+        var m = tokens[idx].info.trim().match(/^(info|help|alert) ([\s\S]+)/);
+        if (m && tokens[idx].nesting === 1) {
+          var id = sluggify( tokens[idx].info );
           return `
-            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-${unique}">
-              <h4 id="aside-${unique}" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="${data.site.basedir}static/images/gel-icons-core-set.svg#gel-icon-${m[1]}" style="fill:#404040;"></use></svg>${m[2]}</h4><div>`;
-        } else { // closing tag
-          return `
-            </aside>
-          `;
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-${id}">
+              <h4 id="aside-${id}" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="${data.site.basedir}static/images/gel-icons-core-set.svg#gel-icon-${m[1]}" style="fill:#404040;"></use></svg>${m[2]}</h4><div>`;
+        } else {
+          return `</aside>`;
         }
       }
     });
@@ -98,11 +104,11 @@ module.exports = function (eleventyConfig) {
       })
     })
   });
-  eleventyConfig.setLibrary("md", md);
-  eleventyConfig.addPassthroughCopy("src/static/css");
-  eleventyConfig.addPassthroughCopy("src/static/css/bbc-grandstand/dist");
-  eleventyConfig.addPassthroughCopy("src/static/images");
-  eleventyConfig.addPassthroughCopy("src/static/js");
+  eleventyConfig.setLibrary('md', md);
+  eleventyConfig.addPassthroughCopy('src/static/css');
+  eleventyConfig.addPassthroughCopy('src/static/css/bbc-grandstand/dist');
+  eleventyConfig.addPassthroughCopy('src/static/images');
+  eleventyConfig.addPassthroughCopy('src/static/js');
 
   return {
     htmlTemplateEngine: 'njk',

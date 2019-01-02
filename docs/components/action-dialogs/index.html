@@ -176,11 +176,9 @@
 <p>Note that the style is applied via a class placed on the <code>&lt;body&gt;</code> using the 'gel-action-dialog' namespace. This ensures the specific inert style is only applied in the presence of an open dialog (the style does not 'leak' to other <code>inert</code> instances).</p>
 <h2 id="expected-behaviour">Expected behaviour</h2>
 
-            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-28">
-              <h4 id="aside-28" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Results of actions</h4><div><p>The result of an action taken via an action dialog will depend on the purpose of your dialog and is not specified here. Attach listeners to the action dialog's controls as appropriate.</p>
-
-            </aside>
-          <h3 id="when-the-dialog-opens">When the dialog opens</h3>
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-info-Results-of-actions-1">
+              <h4 id="aside-info-Results-of-actions-1" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Results of actions</h4><div><p>The result of an action taken via an action dialog will depend on the purpose of your dialog and is not specified here. Attach listeners to the action dialog's controls as appropriate.</p>
+</aside><h3 id="when-the-dialog-opens">When the dialog opens</h3>
 <ol>
 <li>The dialog element appears in its designated position</li>
 <li>The surrounding page becomes inert (non-interactive, unavailable to assistive technologies, and not focusable by keyboard)</li>
@@ -193,21 +191,17 @@
 <li>If the dialog was originally invoked as a response to a user action, the element that invoked the action (such as a button) is refocused</li>
 </ol>
 
-            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-29">
-              <h4 id="aside-29" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Interruptions</h4><div><p>Interruptions are dialogs that appear spontaneously, without direct invocation (conscious or otherwise) on the part of the user. These are very disruptive, and should be avoided in almost all circumstances. One legitimate use case would be to inform the user of their timed session coming to an end and offering them the opportunity to extend it.</p>
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-alert-Interruptions-1">
+              <h4 id="aside-alert-Interruptions-1" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Interruptions</h4><div><p>Interruptions are dialogs that appear spontaneously, without direct invocation (conscious or otherwise) on the part of the user. These are very disruptive, and should be avoided in almost all circumstances. One legitimate use case would be to inform the user of their timed session coming to an end and offering them the opportunity to extend it.</p>
 <p>Notifications and status messages that do not require user action should not steal focus. Consider using an ARIA live region instead<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
-
-            </aside>
-          <h3 id="keyboard-and-screen-reader-experience">Keyboard and screen reader experience</h3>
+</aside><h3 id="keyboard-and-screen-reader-experience">Keyboard and screen reader experience</h3>
 <p>Focus is placed inside the dialog upon opening it, meaning keyboard users have access to the functionality and screen reader users are informed of the dialog's presence. When the dialog first opens, a screen reader user will hear the announcement of the dialog role (<em>&quot;dialog&quot;</em>), its associated label (title) and description, and the role and label of the initially focused control.</p>
 <p>Users can move focus between the supplied controls and the close button, as well as 'escape' the dialog to focus browser chrome such as the address bar. Only the dialog is available and interactive while it is open, making it modal (it presents a 'mode' that suppresses and overrides normal page functionality).</p>
 <h2 id="reference-implementation">Reference implementation</h2>
 
-            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-30">
-              <h4 id="aside-30" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
-
-            </aside>
-          
+            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-alert-Important-10">
+              <h4 id="aside-alert-Important-10" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+</aside>
           <div class="gel-demo"><!-- 
 title: Action dialogs
  -->
