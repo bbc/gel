@@ -2,8 +2,8 @@
 title: Action dialogs
 summary: Action dialogs are presented where the user must choose a course of action
 version: 0.1.0
-published: true
-accessibility: true
+published: false
+accessibility: false
 linkback: http://www.bbc.co.uk/gel/guidelines/confirmation-and-error-messages
 ---
 
@@ -24,14 +24,14 @@ In the following example, we imagine the user has tried to add a programme to 'M
 
 ```html
   <div class="gel-action-dialog" role="dialog" aria-labelledby="gel-action-dialog-label-1" aria-describedby="gel-action-dialog-desc-1">
-    <h2 id="gel-action-dialog-label-1" class="gel-action-dialog-title">Add to enjoy later</h2>
+    <h3 id="gel-action-dialog-label-1" class="gel-action-dialog-title">Add to enjoy later</h2>
     <div id="gel-action-dialog-desc-1" class="gel-action-dialog-content">
       <p>Sign in to add to My Programmes and enjoy it later on other devices</p>
     </div>
     <div class="gel-action-dialog-buttons">
-      <a href="/path/to/sign-in">Sign in</a>
+      <a href="#/path/to/sign-in">Sign in</a>
       or 
-      <a href="/path/to/register">Register</a>
+      <a href="#/path/to/register">Register</a>
     </div>
     <button class="gel-action-dialog-close">
       <span class="vh">close</span>
@@ -97,7 +97,7 @@ Note that the style is applied via a class placed on the `<body>` using the 'gel
 
 ## Expected behaviour
 
-::: note Results of actions
+::: info Results of actions
 The result of an action taken via an action dialog will depend on the purpose of your dialog and is not specified here. Attach listeners to the action dialog's controls as appropriate.
 :::
 
@@ -137,7 +137,7 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 
 ## Related research
 
-[TODO]
+This topic does not yet have any related research available.
 
 ### Further reading, elsewhere on the Web
 
