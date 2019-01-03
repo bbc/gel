@@ -1300,6 +1300,7 @@ a {
     letter-spacing: -1px;
     letter-spacing: -0.0625rem;
     font-weight: 800;
+    letter-spacing: normal;
     margin-top: 12px;
     margin-bottom: 12px; }
     @media (min-width: 20em) {
@@ -1327,8 +1328,10 @@ a {
     font-weight: bold;
     letter-spacing: -1px;
     letter-spacing: -0.0625rem;
+    letter-spacing: normal;
+    padding-top: 32px;
     margin-top: 24px;
-    margin-bottom: 16px; }
+    margin-bottom: 24px; }
     @media (min-width: 20em) {
       .gel-guideline-body h2, .gel-article-body h2 {
         font-size: 24px;
@@ -1352,6 +1355,7 @@ a {
     line-height: 22px;
     line-height: 1.375rem;
     font-weight: bold;
+    letter-spacing: normal;
     margin-top: 20px;
     margin-bottom: 12px; }
     @media (min-width: 20em) {
@@ -1373,6 +1377,7 @@ a {
     line-height: 20px;
     line-height: 1.25rem;
     font-weight: bold;
+    letter-spacing: normal;
     margin-top: 20px;
     margin-bottom: 12px; }
     @media (min-width: 20em) {
@@ -1419,17 +1424,13 @@ a {
   font-family: "Times New Roman", serif; }
 
 .b-reith-loaded .serif {
-  font-family: "Times New Roman", serif; }
-  .b-reith-loaded .serif .b-reith-sans-loaded {
-    font-family: ReithSerif !important; }
+  font-family: ReithSerif, "Times New Roman", serif; }
 
 .sans {
   font-family: Helvetica, Arial, freesans, sans-serif; }
 
 .b-reith-sans-loaded .sans {
-  font-family: Helvetica, Arial, freesans, sans-serif; }
-  .b-reith-sans-loaded .sans .b-reith-sans-loaded {
-    font-family: ReithSans !important; }
+  font-family: ReithSans, Helvetica, Arial, freesans, sans-serif; }
 
 .noscriptElement {
   display: none; }
@@ -1533,7 +1534,7 @@ a {
   width: 100%; }
 
 .gel-breakout-box.extra-padding {
-  padding: 8px 16px 16px 18px; }
+  padding: 16px 16px 16px 18px; }
 
 .gel-breakout-box.extra-margin {
   margin-top: 18px; }
@@ -1545,6 +1546,7 @@ a {
 .gel-breakout-box p {
   overflow: hidden;
   margin: 0;
+  margin-bottom: 20px;
   font-weight: 400;
   font-size: 15px;
   font-size: .9375rem;
@@ -1553,9 +1555,7 @@ a {
   color: #404040; }
 
 .b-reith-sans-loaded .gel-breakout-box p {
-  font-family: Helvetica, Arial, freesans, sans-serif; }
-  .b-reith-sans-loaded .gel-breakout-box p .b-reith-sans-loaded {
-    font-family: ReithSans !important; }
+  font-family: ReithSans, Helvetica, Arial, freesans, sans-serif !important; }
 
 @media (min-width: 37.5em) {
   .gel-breakout-box p {
@@ -1613,6 +1613,9 @@ a {
   #side-nav {
     padding-top: 36px; } }
 
+.gel-toc li {
+  margin-bottom: 2px; }
+
 .gel-toc a {
   text-decoration: none;
   font-weight: bold;
@@ -1658,7 +1661,7 @@ pre {
 
 /* body-copy */
 .b-reith-loaded .gel-body-copy p, .b-reith-loaded .gel-body-copy ol, .b-reith-loaded .gel-body-copy ul {
-  font-family: ReithSerif !important; }
+  font-family: ReithSerif, "Times New Roman", serif; }
 
 /* button */
 .gel-button {
@@ -1821,8 +1824,8 @@ a.gel-button:hover {
   line-height: 24px;
   line-height: 1.5rem;
   font-weight: 700;
-  letter-spacing: -1px;
-  letter-spacing: -.0625rem;
+  letter-spacing: normal;
+  font-stretch: 100%;
   margin-bottom: 16px;
   margin-top: 24px; }
 

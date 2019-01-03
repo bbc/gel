@@ -6,17 +6,21 @@
   }
 }
 
-@mixin reith($serif) {
+@mixin reith($serif, $important:false) {
   @if $serif {
-    font-family: "Times New Roman", serif;
-    .b-reith-sans-loaded {
-      font-family: ReithSerif !important;
+    @if $important {
+      font-family: ReithSerif, "Times New Roman", serif !important;
+    }
+    @else {
+      font-family: ReithSerif, "Times New Roman", serif;
     }
   }
   @else {
-    font-family: Helvetica, Arial, freesans, sans-serif;
-    .b-reith-sans-loaded {
-      font-family: ReithSans !important;
+    @if $important {
+      font-family: ReithSans, Helvetica, Arial, freesans, sans-serif !important;
+    }
+    @else {
+      font-family: ReithSans, Helvetica, Arial, freesans, sans-serif;
     }
   }
 }

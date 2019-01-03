@@ -102,28 +102,29 @@ a {
   h1 {
     @include gel-typography('canon-bold');
     font-weight: 800;
-
+    letter-spacing: normal;
     margin-top: $gel-alt-spacing-unit;
     margin-bottom: $gel-alt-spacing-unit;
   }
 
   h2 {
     @include gel-typography('trafalgar-bold');
-
+    letter-spacing: normal;
+    padding-top: triple($gel-alt-spacing-unit) - 4;
     margin-top: double($gel-alt-spacing-unit);
-    margin-bottom: double($gel-spacing-unit);
+    margin-bottom: triple($gel-spacing-unit);
   }
 
   h3 {
     @include gel-typography('great-primer-bold');
-
+    letter-spacing: normal;
     margin-top: double($gel-spacing-unit) + 4;
     margin-bottom: $gel-alt-spacing-unit;
   }
 
   h4 {
     @include gel-typography('pica-bold');
-
+    letter-spacing: normal;
     margin-top: double($gel-spacing-unit) + 4;
     margin-bottom: $gel-alt-spacing-unit;
   }
@@ -140,6 +141,10 @@ a {
     margin: double($gel-spacing-unit);
   }
 }
+// .gel-guideline__section h2 {
+//     padding-top: 32px;
+//     margin: 64px 0 24px;
+// }
 
 .gel-feedback-banner {
     margin-top: 192px;
@@ -311,7 +316,7 @@ a {
 }
 
 .gel-breakout-box.extra-padding {
-    padding: 8px 16px 16px 18px
+    padding: 16px 16px 16px 18px
 }
 .gel-breakout-box.extra-margin {
     margin-top: 18px;
@@ -325,15 +330,16 @@ a {
 .gel-breakout-box p {
     overflow: hidden;
     margin: 0;
+    margin-bottom: 20px;
     font-weight: 400;
     font-size: 15px;
     font-size: .9375rem;
     line-height: 18px;
     line-height: 1.125rem;
-    color: #404040
+    color: #404040;
 }
 .b-reith-sans-loaded .gel-breakout-box p {
-    @include reith(false);
+    @include reith(false, true);
 }
 
 @media (min-width: 37.5em) {
@@ -389,6 +395,9 @@ a {
   #side-nav {
     padding-top: 4 * $gel-spacing-unit + 4;
   }
+}
+.gel-toc li {
+  margin-bottom: 2px;
 }
 
 .gel-toc a {
@@ -449,7 +458,7 @@ pre {
 
 .b-reith-loaded .gel-body-copy {
   p, ol, ul {
-    font-family: ReithSerif !important;
+    @include reith(true);
   }
 }
 
@@ -653,8 +662,8 @@ a.gel-button:hover {
     line-height: 24px;
     line-height: 1.5rem;
     font-weight: 700;
-    letter-spacing: -1px;
-    letter-spacing: -.0625rem;
+    letter-spacing: normal;
+    font-stretch: 100%;
     margin-bottom: 16px;
     margin-top: 24px
 }

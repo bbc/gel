@@ -178,10 +178,7 @@ a {
 
 .gel-promo,
 .gel-promo p {
-  font-family: Helvetica, Arial, freesans, sans-serif; }
-  .gel-promo .b-reith-sans-loaded,
-  .gel-promo p .b-reith-sans-loaded {
-    font-family: ReithSans !important; }
+  font-family: ReithSans, Helvetica, Arial, freesans, sans-serif; }
 
 .gel-promo-content {
   padding: 1rem;
