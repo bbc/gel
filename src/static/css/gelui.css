@@ -509,3 +509,51 @@ span.gel-nowrap {
 
 .gel-action-dialog-open [inert] {
   opacity: 0.3; }
+
+.gel-button, .gel-cta {
+  padding: 8px;
+  color: #121212;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  border: 0;
+  font-size: inherit;
+  font-family: inherit;
+  border: 3px solid #121212; }
+
+.gel-button {
+  background-color: #121212;
+  color: #fff; }
+
+.gel-cta {
+  text-decoration: none; }
+
+.gel-button svg, .gel-cta svg {
+  fill: currentColor;
+  margin-top: .1em;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top; }
+
+.gel-button--switch [aria-hidden] {
+  display: inline-block;
+  margin-left: 8px;
+  font-weight: bold;
+  background-color: #fff;
+  color: #121212;
+  padding: 0.125rem 0.25rem;
+  vertical-align: middle; }
+
+.gel-button:hover {
+  background-color: #404040;
+  border-color: #404040; }
+
+.gel-cta:hover,
+.gel-cta:focus {
+  border-color: #404040;
+  text-decoration: underline;
+  text-decoration-skip: objects; }
+
+.gel-button:focus,
+.gel-cta:focus {
+  outline: 3px solid #006def; }

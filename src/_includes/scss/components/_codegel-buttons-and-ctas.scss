@@ -1,0 +1,55 @@
+.gel-button, .gel-cta {
+  padding: $gel-spacing-unit;
+  color: $gel-color--black;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  border: 0;
+  font-size: inherit;
+  font-family: inherit;
+  border: 3px solid $gel-color--black;
+}
+
+.gel-button {
+  background-color: $gel-color--black;
+  color: $gel-color--white;
+}
+
+.gel-cta {
+  text-decoration: none;
+}
+
+.gel-button svg, .gel-cta svg {
+  fill: currentColor;
+  margin-top: .1em;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+}
+
+.gel-button--switch [aria-hidden] {
+  display: inline-block;
+  margin-left: $gel-spacing-unit;
+  font-weight: bold;
+  background-color: $gel-color--white;
+  color: $gel-color--black;
+  padding: 0.125rem 0.25rem;
+  vertical-align: middle;
+}
+
+.gel-button:hover {
+  background-color: $gel-color--tundora;
+  border-color: $gel-color--tundora;
+}
+
+.gel-cta:hover,
+.gel-cta:focus {
+  border-color: $gel-color--tundora;
+  text-decoration: underline;
+  text-decoration-skip: objects;
+}
+
+.gel-button:focus,
+.gel-cta:focus {
+  outline: 3px solid $gel-color--blue;
+}
