@@ -1,15 +1,15 @@
 /**
  * Tabs
- * @namespace gelui
- * @method gelui.Tabs.init
+ * @namespace codegel
+ * @method codegel.Tabs.init
  */
 
 (function() {
-  var g = window.gelui || {};
-  var self = g.Tabs = {};
+  if (!window.codegel) { window.codegel = {}; }
+  var self = codegel.Tabs = {};
   
   self.init = function() {
-    var tabInterfaces = document.querySelectorAll('.gel-tabs');
+    var tabInterfaces = document.querySelectorAll('.codegel-tabs');
     Array.prototype.forEach.call(tabInterfaces, function (tabInterface) {
       var tablist = tabInterface.querySelector('ul');
       var tabs = tablist.querySelectorAll('a');
@@ -72,5 +72,4 @@
     });
   }
 
-  if (!window.gelui) { window.gelui = g; }
 })();

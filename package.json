@@ -1,14 +1,14 @@
 {
-  "name": "gelui-docs",
-  "version": "1.0.0",
+  "name": "code-gel",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "sass": "sass-pack -s src/_includes/scss/site.scss -o src/static/css/ && sass-pack -s src/_includes/scss/gelui.scss -o src/static/css/",
-    "js": "uglifyjs node_modules/fontfaceobserver/fontfaceobserver.standalone.js node_modules/highlight.js/lib/highlight.js node_modules/sticky-js/dist/sticky.min.js node_modules/menuspy/dist/menuspy.min.js node_modules/sweet-scroll/sweet-scroll.min.js -o src/static/js/site.js && cat src/_includes/js/components/*.js > src/static/js/gelui.js",
+    "sass": "sass-pack -s src/_includes/scss/geldocs.scss -o src/static/css/ && sass-pack -s src/_includes/scss/codegel.scss -o src/static/css/",
+    "js": "uglifyjs node_modules/fontfaceobserver/fontfaceobserver.standalone.js node_modules/highlight.js/lib/highlight.js node_modules/sticky-js/dist/sticky.min.js node_modules/menuspy/dist/menuspy.min.js node_modules/sweet-scroll/sweet-scroll.min.js -o src/static/js/site.js && cat src/_includes/js/components/*.js > src/static/js/codegel.js",
     "html": "eleventy --input=./src/ --output=docs/ --formats=md,html",
     "build": "npm run js && npm run sass && npm run html",
     "serve": "eleventy --serve",
@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bbc/gelui-docs.git"
+    "url": "git+https://github.com/bbc/code-gel.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bbc/gelui-docs/issues"
+    "url": "https://github.com/bbc/code-gel/issues"
   },
-  "homepage": "https://github.com/bbc/gelui-docs#readme",
+  "homepage": "https://github.com/bbc/code-gel#readme",
   "dependencies": {
     "@11ty/eleventy": "^0.5.4",
     "cheerio": "^1.0.0-rc.2",

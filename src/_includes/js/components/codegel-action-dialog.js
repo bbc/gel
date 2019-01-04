@@ -1,12 +1,12 @@
 /**
  * Promo
- * @namespace gelui
- * @method gelui.ActionDialog.init - Adds click behaviour to the image element in gel-promo components.
+ * @namespace codegel
+ * @method codegel.ActionDialog.init - Adds click behaviour to the image element in codegel-promo components.
  */
 
 (function () {
-  var g = window.gelui || {};
-  var self = g.ActionDialog = {};
+  if (!window.codegel) { window.codegel = {}; }
+  var self = codegel.ActionDialog = {};
 
   self.init = function () {
     // Inert attribute polyfill
@@ -45,14 +45,14 @@
     // Save the first focusable link or button in the dialog
     // (to be focused on opening the dialog)
     this.firstControl = this.dialogElem.querySelector('a[href], button:not(:disabled)');
-    this.closeButton = this.dialogElem.querySelector('.gel-action-dialog-close');
+    this.closeButton = this.dialogElem.querySelector('.codegel-action-dialog-close');
     // Move the dialog element to be a child of <body>
     // (needed for the `inert` functionality to work)
     document.body.appendChild(this.dialogElem);
 
     // Honor the center positioning if chosen
     if (center) {
-      this.dialogElem.classList.add('gel-action-dialog-center');
+      this.dialogElem.classList.add('codegel-action-dialog-center');
     }
 
     // If the invoking element exists, 
@@ -83,7 +83,7 @@
   // The open method
   self.constructor.prototype.open = function () {
     // Add a class to the body for [inert] styling
-    document.body.classList.add('gel-action-dialog-open');
+    document.body.classList.add('codegel-action-dialog-open');
     // Make all siblings of the dialog inert
     Array.prototype.forEach.call(this.inertElems, function (elem) {
       if (elem !== this.dialogElem) {
@@ -98,7 +98,7 @@
 
   // The close method
   self.constructor.prototype.close = function () {
-    document.body.classList.remove('gel-action-dialog-open');
+    document.body.classList.remove('codegel-action-dialog-open');
     Array.prototype.forEach.call(this.inertElems, function (elem) {
       elem.removeAttribute('inert');
     }.bind(this));
@@ -110,5 +110,4 @@
     }
   }
 
-  if (!window.gelui) { window.gelui = g; }
 })();

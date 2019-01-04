@@ -10,8 +10,8 @@
     <script src="{{site.basedir}}static/js/site.js"></script>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link rel="stylesheet" type="text/css" href="{{site.basedir}}static/css/gelui.css">
-    <link rel="stylesheet" type="text/css" href="{{site.basedir}}static/css/site.css">
+    <link rel="stylesheet" type="text/css" href="{{site.basedir}}static/css/codegel.css">
+    <link rel="stylesheet" type="text/css" href="{{site.basedir}}static/css/geldocs.css">
 
     <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
@@ -43,14 +43,14 @@
     {% endif %}
 </head>
 
-<body class="gel-guideline-body">
-    <p class="gel-sr gel-sr__focusable gel-sr__overlay" tabindex="0">
-        <a href="#main" onfocus="this.parentNode.classList.add('gel-sr__focused')" onblur="this.parentNode.classList.remove('gel-sr__focused')">Skip
+<body class="geldocs-body">
+    <p class="codegel-sr codegel-sr__focusable codegel-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('codegel-sr__focused')" onblur="this.parentNode.classList.remove('codegel-sr__focused')">Skip
             to content</a>
     </p>
 
     <header>
-        <div class="gel-guideline-header gs-u-clearfix">
+        <div class="geldocs-header gs-u-clearfix">
             <div class="gel-wrap">
                 <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
                         <title>BBC</title>
@@ -59,14 +59,14 @@
                     </svg></a>
             </div>
         </div>
-        <div class="gel-guideline-header__banner gs-u-clearfix">
+        <div class="geldocs-header__banner gs-u-clearfix">
             <div class="gel-wrap">
                 <div class="gel-layout">
                     <div class="gel-layout__item gel-2/5@l" style="text-align:left; padding-left:14px; margin-bottom:32px;">
-                        <span class="gel-logo">Code{GEL}</span>
+                        <span class="geldocs-logo">Code{GEL}</span>
                     </div>
                     <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
-                        <a class="gel-button gel-button--dark gel-long-primer-bold" href="{{linkback}}">
+                        <a class="geldocs-button geldocs-button--dark gel-long-primer-bold" href="{{linkback}}">
                             Go to BBC GEL
                         </a>
                     </div>
@@ -82,12 +82,12 @@
             </div>
 
             <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
-                <h1 class="gel-guideline-header__title">{{title}}</h1>
-                <p class="gel-guideline-header__summary gel-great-primer">{{summary}}</p>
+                <h1 class="geldocs-header__title">{{title}}</h1>
+                <p class="geldocs-header__summary gel-great-primer">{{summary}}</p>
             </div>
 
             <div class="gel-layout__item gel-1/5@l">
-                <dl class="gel-standout-box">
+                <dl class="geldocs-standout-box">
                     {% if version %}
                     <dt>Version:</dt>
                     <dd>{{ version }}</dd>
@@ -108,12 +108,12 @@
                 </nav>
             </div>
 
-            <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-3/5@l">
+            <div class="geldocs-sections geldocs-body-copy gel-layout__item gel-3/5@l">
                 {{ content | safe }}
 
-                <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
+                <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
                     <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
-                        <svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Could you improve this documentation?
+                        <svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Could you improve this documentation?
                     </h4>
                     <div>
                         <p>
@@ -126,16 +126,16 @@
         </div>
     </main>
 
-    <div class="gel-feedback-banner">
+    <div class="geldocs-feedback-banner">
         <div class="gel-wrap">
             <div class="gel-layout">
                 <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
-                    <h2 class="gel-feedback-banner__title">Got a minute?</h2>
+                    <h2 class="geldocs-feedback-banner__title">Got a minute?</h2>
                     <p>We'd love to know what you think of the Code GEL website.</p>
-                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" class="gel-button gel-button__link-button gel-feedback-banner__cta gel-button--primary">
-                        <span class="gel-button__content">Go to survey</span>
-                        <span class="gel-button__icon_wrapper">
-                            <svg class="gel-button__icon gel-icon gel-icon--text">
+                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" class="geldocs-button geldocs-button__link-button geldocs-feedback-banner__cta geldocs-button--primary">
+                        <span class="geldocs-button__content">Go to survey</span>
+                        <span class="geldocs-button__icon_wrapper">
+                            <svg class="geldocs-button__icon geldocs-icon geldocs-icon--text">
                                 <use xlink:href="{{site.basedir}}static/images/gel-icons-core-set.svg#gel-icon-external-link"
                                     style="fill:undefined;"></use>
                             </svg>
@@ -146,7 +146,7 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="{{site.basedir}}static/js/gelui.js"></script>
+    <script type="text/javascript" src="{{site.basedir}}static/js/codegel.js"></script>
 
     {% if includejs %}
     <script type="text/javascript" src="{{site.basedir}}static/js/{{ includejs }}"></script>
@@ -154,9 +154,9 @@
 
     <script type="text/javascript">
         new Sticky('.sticky');
-        new MenuSpy(document.querySelector('#gel-toc__links'), {enableLocationHash: false});
+        new MenuSpy(document.querySelector('#geldocs-toc__links'), {enableLocationHash: false});
         new SweetScroll({
-            trigger: '#gel-toc__links a',
+            trigger: '#geldocs-toc__links a',
             quickMode: true,
             easing: 'easeOutExpo',
             cancellable: true,

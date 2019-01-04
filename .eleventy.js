@@ -52,7 +52,7 @@ module.exports = function (eleventyConfig) {
         var renderedContent = nunjucks.renderString(fileContent, data);
 
         return `
-          <div class="gel-demo">${renderedContent}</div>
+          <div class="geldocs-demo">${renderedContent}</div>
         `;
       }
     }
@@ -84,8 +84,8 @@ module.exports = function (eleventyConfig) {
         if (m && tokens[idx].nesting === 1) {
           var id = sluggify( tokens[idx].info );
           return `
-            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-${id}">
-              <h4 id="aside-${id}" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="${data.site.basedir}static/images/gel-icons-core-set.svg#gel-icon-${m[1]}" style="fill:#404040;"></use></svg>${m[2]}</h4><div>`;
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-${id}">
+              <h4 id="aside-${id}" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="${data.site.basedir}static/images/gel-icons-core-set.svg#gel-icon-${m[1]}" style="fill:#404040;"></use></svg>${m[2]}</h4><div>`;
         } else {
           return `</aside>`;
         }
@@ -96,7 +96,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.namespace(pluginNamespace, () => {
       eleventyConfig.addFilter('toc', function (content, opts) {
         var $ = cheerio.load(content);
-        var result = '<ol id="gel-toc__links" class="gel-toc">';
+        var result = '<ol id="geldocs-toc__links" class="geldocs-toc">';
         $('h2').each(function (i, h2) {
           result += '<li><a href="#' + h2.attribs.id + '">' + $(h2).text() + '</a></li>';
         });

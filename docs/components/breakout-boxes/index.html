@@ -10,8 +10,8 @@
     <script src="/code-gel/static/js/site.js"></script>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/gelui.css">
-    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/site.css">
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/codegel.css">
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/geldocs.css">
 
     <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
@@ -41,14 +41,14 @@
     
 </head>
 
-<body class="gel-guideline-body">
-    <p class="gel-sr gel-sr__focusable gel-sr__overlay" tabindex="0">
-        <a href="#main" onfocus="this.parentNode.classList.add('gel-sr__focused')" onblur="this.parentNode.classList.remove('gel-sr__focused')">Skip
+<body class="geldocs-body">
+    <p class="codegel-sr codegel-sr__focusable codegel-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('codegel-sr__focused')" onblur="this.parentNode.classList.remove('codegel-sr__focused')">Skip
             to content</a>
     </p>
 
     <header>
-        <div class="gel-guideline-header gs-u-clearfix">
+        <div class="geldocs-header gs-u-clearfix">
             <div class="gel-wrap">
                 <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
                         <title>BBC</title>
@@ -57,14 +57,14 @@
                     </svg></a>
             </div>
         </div>
-        <div class="gel-guideline-header__banner gs-u-clearfix">
+        <div class="geldocs-header__banner gs-u-clearfix">
             <div class="gel-wrap">
                 <div class="gel-layout">
                     <div class="gel-layout__item gel-2/5@l" style="text-align:left; padding-left:14px; margin-bottom:32px;">
-                        <span class="gel-logo">Code{GEL}</span>
+                        <span class="geldocs-logo">Code{GEL}</span>
                     </div>
                     <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
-                        <a class="gel-button gel-button--dark gel-long-primer-bold" href="http://www.bbc.co.uk/gel/guidelines/promos">
+                        <a class="geldocs-button geldocs-button--dark gel-long-primer-bold" href="http://www.bbc.co.uk/gel/guidelines/promos">
                             Go to BBC GEL
                         </a>
                     </div>
@@ -80,12 +80,12 @@
             </div>
 
             <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
-                <h1 class="gel-guideline-header__title">Breakout Boxes</h1>
-                <p class="gel-guideline-header__summary gel-great-primer">Breakout Boxes interject supplementary content within the flow of a document</p>
+                <h1 class="geldocs-header__title">Breakout Boxes</h1>
+                <p class="geldocs-header__summary gel-great-primer">Breakout Boxes interject supplementary content within the flow of a document</p>
             </div>
 
             <div class="gel-layout__item gel-1/5@l">
-                <dl class="gel-standout-box">
+                <dl class="geldocs-standout-box">
                     
                     <dt>Version:</dt>
                     <dd>0.1.0</dd>
@@ -102,11 +102,11 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gel-toc__links" class="gel-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#expected-behaviour">Expected behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#test-specifications">Test specifications</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#expected-behaviour">Expected behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#test-specifications">Test specifications</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
-            <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-3/5@l">
+            <div class="geldocs-sections geldocs-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="introduction">Introduction</h2>
 <p>Sometimes its worth noting or alerting users to certain information, but that information cannot be considered part of the main narrative for the document. This is what the <strong>Breakout Box</strong> component is for.</p>
 <p><strong>Breakout Boxes</strong> can contain tips, warnings, research notes, interesting facts, and all sorts of tangential information.</p>
@@ -129,8 +129,8 @@
 <li><strong><code>aria-hidden=&quot;true&quot;</code>:</strong> Breakouts should not be considered part of the parent document's main structure; their headings are for labeling and presentational purposes only. The <code>aria-hidden</code> attribute removes the heading from the document outline (and screen reader navigation) but does <em>not</em> silence the text node as an associated label.</li>
 </ul>
 
-            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-info-Tip-1">
-              <h4 id="aside-info-Tip-1" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Tip</h4><div><p>To associate <code>aria-labelledby</code> with the respective <code>id</code>, they must share a value and that value must be unique. In your templating system, you can create a unique string at the time of compilation using <code>Date()</code>:</p>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Tip-1">
+              <h4 id="aside-info-Tip-1" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Tip</h4><div><p>To associate <code>aria-labelledby</code> with the respective <code>id</code>, they must share a value and that value must be unique. In your templating system, you can create a unique string at the time of compilation using <code>Date()</code>:</p>
 <pre class="hljs"><code><span class="hljs-keyword">const</span> unique = + <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(); <span class="hljs-comment">// e.g. 1540915290281</span>
 </code></pre>
 <p>An <code>id</code> that is not unique is considered a parsing error and, since it affects accessible naming associations here, would mean a failure under <strong>WCAG 4.1.1 Parsing</strong><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
@@ -141,11 +141,11 @@
 <p>The <strong>Breakout Box</strong> has no special behaviours; it is a static component.</p>
 <h2 id="reference-implementation">Reference implementation</h2>
 
-            <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-alert-Important-11">
-              <h4 id="aside-alert-Important-11" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-Important-13">
+              <h4 id="aside-alert-Important-13" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
 </aside><p>The following implementation is a copy of the 'tip' provided in this document.</p>
 
-          <div class="gel-demo"><!-- 
+          <div class="geldocs-demo"><!-- 
 title: Breakout Boxes
  -->
 
@@ -185,9 +185,9 @@ title: Breakout Boxes
 </section>
 
 
-                <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
+                <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
                     <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
-                        <svg class="gel-breakout-box__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Could you improve this documentation?
+                        <svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Could you improve this documentation?
                     </h4>
                     <div>
                         <p>
@@ -200,16 +200,16 @@ title: Breakout Boxes
         </div>
     </main>
 
-    <div class="gel-feedback-banner">
+    <div class="geldocs-feedback-banner">
         <div class="gel-wrap">
             <div class="gel-layout">
                 <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
-                    <h2 class="gel-feedback-banner__title">Got a minute?</h2>
+                    <h2 class="geldocs-feedback-banner__title">Got a minute?</h2>
                     <p>We'd love to know what you think of the Code GEL website.</p>
-                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" class="gel-button gel-button__link-button gel-feedback-banner__cta gel-button--primary">
-                        <span class="gel-button__content">Go to survey</span>
-                        <span class="gel-button__icon_wrapper">
-                            <svg class="gel-button__icon gel-icon gel-icon--text">
+                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" class="geldocs-button geldocs-button__link-button geldocs-feedback-banner__cta geldocs-button--primary">
+                        <span class="geldocs-button__content">Go to survey</span>
+                        <span class="geldocs-button__icon_wrapper">
+                            <svg class="geldocs-button__icon geldocs-icon geldocs-icon--text">
                                 <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"
                                     style="fill:undefined;"></use>
                             </svg>
@@ -220,15 +220,15 @@ title: Breakout Boxes
         </div>
     </div>
 
-    <script type="text/javascript" src="/code-gel/static/js/gelui.js"></script>
+    <script type="text/javascript" src="/code-gel/static/js/codegel.js"></script>
 
     
 
     <script type="text/javascript">
         new Sticky('.sticky');
-        new MenuSpy(document.querySelector('#gel-toc__links'), {enableLocationHash: false});
+        new MenuSpy(document.querySelector('#geldocs-toc__links'), {enableLocationHash: false});
         new SweetScroll({
-            trigger: '#gel-toc__links a',
+            trigger: '#geldocs-toc__links a',
             quickMode: true,
             easing: 'easeOutExpo',
             cancellable: true,

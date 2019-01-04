@@ -1,12 +1,12 @@
 /**
  * Carousel
- * @namespace gelui
- * @method gelui.Carousel.init
+ * @namespace codegel
+ * @method codegel.Carousel.init
  */
 
 (function() {
-  var g = window.gelui || {};
-  var self = g.Carousel = {};
+  if (!window.codegel) { window.codegel = {}; }
+  var self = codegel.Carousel = {};
   
   self.init = function() {
     /* inert attribute polyfill, from https://github.com/GoogleChrome/inert-polyfill */
@@ -33,14 +33,14 @@
     }));
 
     (function () {
-      var cards = document.querySelectorAll('.gel-carousel');
+      var cards = document.querySelectorAll('.codegel-carousel');
       Array.prototype.forEach.call(cards, function (carousel) {
-        var scrollable = carousel.querySelector('.gel-carousel-scrollable');
-        var list = carousel.querySelector('.gel-carousel-list');
+        var scrollable = carousel.querySelector('.codegel-carousel-scrollable');
+        var list = carousel.querySelector('.codegel-carousel-list');
         var items = list.children;
         var scrollAmount = list.offsetWidth / 2;
-        var prev = carousel.querySelector('.gel-carousel-prev');
-        var next = carousel.querySelector('.gel-carousel-next');
+        var prev = carousel.querySelector('.codegel-carousel-prev');
+        var next = carousel.querySelector('.codegel-carousel-next');
 
         prev.disabled = true;
 
@@ -88,5 +88,4 @@
     })();
   }
 
-  if (!window.gelui) { window.gelui = g; }
 })();

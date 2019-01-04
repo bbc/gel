@@ -226,7 +226,7 @@ Example implementations are intended to demonstrate **what needs to be achieved*
 
 <include src="components/demos/promos.html">
 
-<p><a class="gel-button gel-button--dark gel-long-primer-bold" href="../demos/promos/" target="_new">Open in new window <svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:undefined;"></use></svg></a></p>
+<p><a class="geldocs-button geldocs-button--dark geldocs-long-primer-bold" href="../demos/promos/" target="_new">Open in new window <svg class="geldocs-button__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:currentColor"></use></svg></a></p>
 
 ## Related accessibility guidelines
 
