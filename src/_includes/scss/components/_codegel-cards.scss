@@ -31,6 +31,7 @@
 }
 
 .codegel-card-content {
+  position: relative;
   order: -1;
   overflow: hidden;
   height: 10rem;
@@ -70,6 +71,7 @@
   border: none;
   font-size: inherit;
   display: inline-block;
+  color: $gel-color--tundora;
 }
 
 .codegel-card-toolbar > *:first-child {
@@ -91,4 +93,32 @@
   padding: 1rem;
   background-color: #F1F1F1;
   overflow-y: auto;
+}
+
+/* Video */
+
+.codegel-card .codegel-card-play-button,
+.codegel-card .codegel-card-mute-button {
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  border: 0;
+  border-radius: 0;
+  background-color: hsla(0, 0%, 100%, 0.5);
+  color: $gel-color--tundora;
+  position: absolute;
+  bottom: 0;
+}
+
+.codegel-card .codegel-card-play-button:focus,
+.codegel-card .codegel-card-mute-button:focus {
+  outline: 2px solid $gel-color--black;
+}
+
+.codegel-card .codegel-card-mute-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  top: 0;
+  right: 0;
 }

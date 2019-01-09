@@ -113,6 +113,31 @@ a {
 .gel-u-u-clickable {
   cursor: pointer; }
 
+/* icon */
+.gel-icon {
+  fill: currentColor; }
+
+.gel-icon--small {
+  height: 16px;
+  width: 16px; }
+
+.gel-icon--medium {
+  height: 32px;
+  width: 32px; }
+
+.gel-icon--large {
+  height: 64px;
+  width: 64px; }
+
+.gel-icon--text {
+  margin-top: .1em;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top; }
+
+.gel-icon svg {
+  fill: currentColor; }
+
 /*-- util -----------------------------*/
 .codegel-u-flex-rw {
   display: -webkit-box;
@@ -327,6 +352,7 @@ a {
   position: relative; }
 
 .codegel-card-content {
+  position: relative;
   order: -1;
   overflow: hidden;
   height: 10rem; }
@@ -359,7 +385,8 @@ a {
   background: none;
   border: none;
   font-size: inherit;
-  display: inline-block; }
+  display: inline-block;
+  color: #404040; }
 
 .codegel-card-toolbar > *:first-child {
   margin-right: auto; }
@@ -378,6 +405,30 @@ a {
   padding: 1rem;
   background-color: #F1F1F1;
   overflow-y: auto; }
+
+/* Video */
+.codegel-card .codegel-card-play-button,
+.codegel-card .codegel-card-mute-button {
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  border: 0;
+  border-radius: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #404040;
+  position: absolute;
+  bottom: 0; }
+
+.codegel-card .codegel-card-play-button:focus,
+.codegel-card .codegel-card-mute-button:focus {
+  outline: 2px solid #121212; }
+
+.codegel-card .codegel-card-mute-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  top: 0;
+  right: 0; }
 
 /**
  * GEL CAROUSELS
@@ -507,3 +558,111 @@ span.codegel-nowrap {
 
 .codegel-action-dialog-open [inert] {
   opacity: 0.3; }
+
+.codegel-video-container {
+  position: relative; }
+
+.codegel-video-container button:focus {
+  outline: 2px solid #404040; }
+
+.codegel-video {
+  display: block;
+  width: 100%;
+  height: auto; }
+
+.codegel-video-controls {
+  padding: 0.5rem;
+  background-color: #404040;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.codegel-video-play-button,
+.codegel-video-mute-button {
+  border: 0;
+  background: none;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.25rem;
+  color: #fff; }
+
+.codegel-video-timeline-container {
+  padding: 0 0.5rem;
+  flex: auto;
+  display: flex;
+  align-items: center; }
+
+.codegel-video-timeline-container input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 7px 0; }
+
+.codegel-video-timeline-container input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  background: #fff; }
+
+.codegel-video-timeline-container input[type=range]::-webkit-slider-thumb {
+  height: 20px;
+  width: 10px;
+  background: #fff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px; }
+
+.codegel-video-timeline-container input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #fff; }
+
+.codegel-video-timeline-container input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  background: #fff; }
+
+.codegel-video-timeline-container input[type=range]::-moz-range-thumb {
+  height: 20px;
+  width: 10px;
+  background: #fff;
+  cursor: pointer; }
+
+.codegel-video-timeline-container input[type=range]::-ms-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent; }
+
+.codegel-video-timeline-container input[type=range]::-ms-fill-lower {
+  background: #fff; }
+
+.codegel-video-timeline-container input[type=range]::-ms-fill-upper {
+  background: #fff; }
+
+.codegel-video-timeline-container input[type=range]::-ms-thumb {
+  height: 20px;
+  width: 10px;
+  border-radius: 0px;
+  background: #fff;
+  cursor: pointer;
+  height: 6px; }
+
+.codegel-video-timeline-container input[type=range]:focus::-ms-fill-lower {
+  background: #fff; }
+
+.codegel-video-timeline-container input[type=range]:focus::-ms-fill-upper {
+  background: #fff; }
+
+.codegel-video-button-on {
+  display: none; }
+
+[class*="codegel-video"].active .codegel-video-button-on {
+  display: block; }
+
+[class*="codegel-video"].active .codegel-video-button-off {
+  display: none; }
+
+.codegel-video-container [hidden] {
+  display: none; }
