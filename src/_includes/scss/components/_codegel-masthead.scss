@@ -187,6 +187,10 @@
     display: none;
   }
   
+  .codegel-masthead-links:not(.codegel-masthead-links-observed) + .codegel-masthead-more-option {
+    border-left: 1px solid $gel-color--dusty-gray;
+  }
+
   .codegel-masthead-links:not(.codegel-masthead-links-observed) + .codegel-masthead-more-option::before {
     content: '';
     position: absolute;

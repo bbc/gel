@@ -664,6 +664,8 @@ span.codegel-nowrap {
     margin-right: auto; }
   .codegel-masthead-more-option-icon {
     display: none; }
+  .codegel-masthead-links:not(.codegel-masthead-links-observed) + .codegel-masthead-more-option {
+    border-left: 1px solid #ccc; }
   .codegel-masthead-links:not(.codegel-masthead-links-observed) + .codegel-masthead-more-option::before {
     content: '';
     position: absolute;
@@ -682,6 +684,7 @@ span.codegel-nowrap {
     justify-content: center; }
   .codegel-masthead-search input {
     flex-grow: 1;
+    width: 100%;
     max-width: 60ch; }
   .codegel-masthead-with-js .codegel-masthead-links {
     display: flex; }
