@@ -95,6 +95,10 @@
   overflow-y: auto;
 }
 
+.codegel-card-info-heading:focus {
+  outline: none;
+}
+
 /* Video */
 
 .codegel-card .codegel-card-play-button,
