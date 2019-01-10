@@ -1,0 +1,275 @@
+.codegel-masthead {
+  font-size: 0.9rem;
+}
+
+.codegel-masthead ul,
+.codegel-masthead li {
+  margin: 0;
+  padding: 0;
+}
+
+.codegel-masthead-bar {
+  border-bottom: 1px solid $gel-color--dusty-gray;
+}
+
+.codegel-masthead-links {
+  border-left: 0;
+}
+
+.codegel-masthead-logo img {
+  height: 1em;
+  display: block;
+}
+
+.codegel-masthead-popup {
+  padding: 0.75rem;
+  border-bottom: 1px solid $gel-color--dusty-gray;
+}
+
+.codegel-masthead-more-menu {
+  border-bottom: 1px solid $gel-color--dusty-gray;
+  padding: 0;
+}
+
+.codegel-masthead-more-menu ul {
+  list-style: none;
+}
+
+.codegel-masthead-more-menu li {
+  padding: 0.75rem;
+  display: inline-block;
+}
+
+.codegel-masthead a,
+.codegel-masthead button {
+  font-size: inherit;
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  height: 100%;
+}
+
+.codegel-masthead-bar a {
+  display: inline-block;
+  padding: 0.75rem;
+}
+
+.codegel-masthead-bar a:hover,
+.codegel-masthead-bar a:focus,
+.codegel-masthead-bar button:hover,
+.codegel-masthead-bar button:focus {
+  outline: none;
+  border-color: $gel-color--tundora;
+}
+
+.codegel-masthead-search input,
+.codegel-masthead-search button {
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  border: 2px solid $gel-color--tundora;
+}
+
+.codegel-masthead-search button {
+  background-color: $gel-color--tundora;
+  color: $gel-color--white;
+}
+
+.codegel-masthead-banner {
+  padding: 1.25rem 0.75rem;
+  border-bottom: 1px solid $gel-color--dusty-gray;
+}
+
+.codegel-masthead-banner a {
+  display: inline-block;
+  height: 2.5rem;
+}
+
+.codegel-masthead-banner-logo svg {
+  height: 100%;
+  width: auto;
+}
+
+.codegel-masthead-links,
+.codegel-masthead-more-option,
+.codegel-masthead-search-option,
+.codegel-masthead-alerts-option,
+.codegel-masthead-account-option,
+.codegel-masthead-alerts {
+  display: none;
+}
+
+.codegel-masthead-with-js .gel-masthead-more-account-link,
+.codegel-masthead-with-js .gel-masthead-more-alerts-link {
+  display: none;
+}
+
+@supports (display: flex) {
+  .codegel-masthead-bar a,
+  .codegel-masthead-bar button {
+    white-space: nowrap;
+    border: 0;
+    line-height: 1;
+    padding: 1rem 0.75rem 0.75rem;
+    border-bottom: 0.25rem solid $gel-color--white;
+  }
+  
+  .codegel-masthead-bar {
+    display: flex;
+    line-height: 1;
+  }
+  
+  .codegel-masthead-bar > * + * {
+    border-left: 1px solid $gel-color--dusty-gray;
+  }
+
+  .codegel-masthead-more-option {
+    border-left: 0;
+  }
+  
+  .codegel-masthead-links {
+    border-left: 0;
+  }
+  
+  .codegel-masthead-links ul {
+    display: flex;
+    list-style: none;
+    white-space: nowrap;
+    height: 100%;
+  }
+  
+  .codegel-masthead-links li {
+    border-right: 1px solid $gel-color--dusty-gray;
+  }
+
+  .codegel-masthead-links li:first-child {
+    border-left: 1px solid $gel-color--dusty-gray;
+  }
+  
+  .codegel-masthead-bar a,
+  .codegel-masthead-bar button {
+    display: block;
+  }
+  
+  .codegel-masthead-search-option {
+    margin-left: auto;
+  }
+  
+  .codegel-masthead-links {
+    overflow-x: auto;
+  }
+  
+  .codegel-masthead-links-observed {
+    overflow-x: hidden;
+  }
+  
+  .codegel-masthead-link-hidden {
+    visibility: hidden;
+  }
+  
+  .codegel-masthead-links::-webkit-scrollbar {
+    height: 0.125rem;
+  }
+
+  .codegel-masthead-links::-webkit-scrollbar-track {
+    background-color: #ddd;
+  }
+
+  .codegel-masthead-links::-webkit-scrollbar-thumb {
+    background-color: #888;
+  }
+  
+  .codegel-masthead-more-option {
+    position: relative;
+    margin-right: auto;
+  }
+
+  .codegel-masthead-more-option-icon {
+    display: none;
+  }
+  
+  .codegel-masthead-links:not(.codegel-masthead-links-observed) + .codegel-masthead-more-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -6px;
+    width: 6px;
+    background-color: rgba(0,0,0,0.05);
+  }
+  
+  .codegel-masthead-more-menu ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .codegel-masthead-more-menu li {
+    flex: 0 1 10rem;
+  }
+  
+  .codegel-masthead-search-inner {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .codegel-masthead-search input {
+    flex-grow: 1;
+    width: 100%;
+    max-width: 60ch;
+  }
+  
+  .codegel-masthead-with-js .codegel-masthead-links {
+    display: flex;
+  }
+
+  .codegel-masthead-with-js .codegel-masthead-popup {
+    display: none;
+  }
+
+  .codegel-masthead-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .codegel-masthead-account-option {
+    position: relative;
+  }
+
+  .codegel-masthead-account-option::after {
+    content: '';
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: $gel-color--white;
+    border-style: solid;
+    border-color: $gel-color--dusty-gray;
+    border-width: 1px 1px 0 0;
+    transform: rotate(45deg);
+    position: absolute;
+    right: calc(-0.25rem - 1px);
+    top: calc(50% - 0.25rem);
+  }
+  
+  .codegel-masthead-with-js .codegel-masthead-more-option,
+  .codegel-masthead-with-js .codegel-masthead-search-option,
+  .codegel-masthead-with-js .codegel-masthead-alerts-option,
+  .codegel-masthead-with-js .codegel-masthead-account-option {
+    display: block;
+  }
+  
+  @media (max-width: 500px) {
+    .codegel-masthead-more-option {
+      border-left: 1px solid $gel-color--dusty-gray;
+    }
+
+    .codegel-masthead-more-option-icon {
+      display: block;
+    }
+    
+    .codegel-masthead-more-option-text,
+    .codegel-masthead-with-js .codegel-masthead-links, 
+    .codegel-masthead-account-text,
+    .codegel-masthead-more-option::before {
+      display: none;
+    }
+  }
+}
