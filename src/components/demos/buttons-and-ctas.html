@@ -9,8 +9,7 @@ title: Buttons and CTAs
 <h3>Button with icon</h3>
 
 <button class="codegel-button" type="button" onClick="alert('Button with icon clicked')">
-  Download
-  <svg aria-hidden="true" focusable="false" class="gel-button__icon gel-icon gel-icon--text">
+  <span class="codegel-button__label">Download</span><svg aria-hidden="true" focusable="false" class="gel-button__icon gel-icon gel-icon--text">
     <use xlink:href="{{site.basedir}}/static/images/gel-icons-all.svg#gel-icon-download"></use>
   </svg>
 </button>
@@ -18,21 +17,20 @@ title: Buttons and CTAs
 <h3>Switch button with <code>aria-pressed</code></h3>
 
 <button class="codegel-button codegel-button-switch">
-  Night theme
+  <span class="codegel-button__label">Night theme</span>
   <span aria-hidden="true">on</span>
 </button>
 
-<h3>Basic CTA</h3>
+<h3 id="basic-cta">Basic CTA</h3>
 
-<a class="codegel-cta" href="#">Help</a>
+<a class="codegel-cta" href="#basic-cta">Help</a>
 
-<h3>CTA with icon</h3>
+<h3 id="cta-with-icon">CTA with icon</h3>
 
-<a class="codegel-cta" href="#">
+<a class="codegel-cta" href="#cta-with-icon">
   <svg aria-hidden="true" focusable="false" class="gel-button__icon gel-icon gel-icon--text">
     <use xlink:href="{{site.basedir}}/static/images/gel-icons-all.svg#gel-icon-help"></use>
-  </svg>
-  Help
+  </svg><span class="codegel-button__label">Help</span>
 </a>
 
 

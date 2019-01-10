@@ -509,15 +509,18 @@ span.codegel-nowrap {
   opacity: 0.3; }
 
 .codegel-button, .codegel-cta {
-  padding: 8px;
+  padding: 16px;
   color: #121212;
   display: inline-block;
   vertical-align: middle;
   margin: 0;
   border: 0;
-  font-size: inherit;
+  font-size: 14px;
   font-family: inherit;
-  border: 3px solid #121212; }
+  font-weight: bold; }
+
+.codegel-cta, .codegel-cta a {
+  border: 1px solid #121212 !important; }
 
 .codegel-button {
   background-color: #121212;
@@ -532,6 +535,12 @@ span.codegel-nowrap {
   height: 1em;
   width: 1em;
   vertical-align: text-top; }
+
+.codegel-button svg:last-child, .codegel-cta svg:last-child {
+  margin-left: 0.9em; }
+
+.codegel-button svg:first-child, .codegel-cta svg:first-child {
+  margin-right: 0.9em; }
 
 .codegel-button-switch [aria-hidden] {
   display: inline-block;

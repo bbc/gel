@@ -60,7 +60,7 @@ Where icons are provided to buttons and calls-to-action, make sure they are take
 
 ```html
 <a class="codegel-cta" href="path/to/help-page">
-  <span>Help</span>
+  <span class="codegel-button__label">Help</span>
   <svg aria-hidden="true" focusable="false">
     <use xlink:href="#help"></use>
   </svg>
@@ -77,7 +77,7 @@ Standard `<button>` elements can be disabled using the `disabled` property/attri
 <button class="codegel-button" type="button" disabled tabindex="0">Download</button>
 ```
 
-::: note Avoid disabled submit buttons
+::: info Avoid disabled submit buttons
 There are a number of usability and accessibility issues with disabling form submit buttons until the user has entered valid/expected data[^6]. It's often better to let the user _attempt_ submission and provide explicit feedback in response.
 :::
 
@@ -184,7 +184,7 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 
 <include src="components/demos/buttons-and-ctas.html">
 
-<p><a class="gel-button gel-button--dark gel-long-primer-bold" href="../demos/buttons-and-ctas/" target="_new">Open in new window <svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+<p><a class="codegel-button gel-button--dark gel-long-primer-bold" href="../demos/buttons-and-ctas/" target="_new"><span class="codegel-button__label">Open in new window</span><svg class="codegel-button__icon codegel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
 
 ## Related research
 
