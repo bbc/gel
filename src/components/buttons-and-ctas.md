@@ -9,7 +9,7 @@ linkback: http://www.bbc.co.uk/gel/guidelines/sign-in-or-register-cta
 
 ## Introduction
 
-BBC buttons and calls-to-action are multivarious in form and purpose. But they should conform to some fundamental rules. Only where these rules are observed will the user experience comfortable interaction.
+BBC buttons and calls-to-action differ widely in form and purpose. But they should conform to some fundamental rules. Only where these rules are observed will the user experience comfortable interaction.
 
 The most important of these rules is that the `<a>` and `<button>` elements are assigned to appropriate respective tasks. That is: links should be used where navigation is elicited, and `<button>`s where a non-navigational action is being invoked. For example, a 'Sign in' control would suit a `<button>` because its job is to submit the sign in form. An adjacent 'Register' call-to-action—taking the user to a different form, in a different page or screen—would benefit from `<a>` semantics.
 
@@ -24,7 +24,7 @@ In most cases, a call-to-action should be marked up as a link, since the behavio
 A class is provided to the element as a styling hook, enabling it to be differentiated from generic links visually.
 
 ```html
-<a class="gel-cta" href="path/to/location">Enter the competition</a>
+<a class="codegel-cta" href="path/to/location">Enter the competition</a>
 ```
 
 ### Basic button
@@ -32,7 +32,7 @@ A class is provided to the element as a styling hook, enabling it to be differen
 It is imperative clickable controls not eliciting link-like behaviour are marked up as `<button>` elements. Any buttons not intended for submitting forms should take `type="button"`[^2]. This is especially important _inside_ a `<form>`, since some user agents consider any `<button>` found without an explicit type to be a form's submit button.
 
 ```html
-<button class="gel-button" type="button">Calculate tax</button>
+<button class="codegel-button" type="button">Calculate tax</button>
 ```
 
 As a rule of thumb: if a clickable control is intended for running JavaScript, it should be a `<button>` with `type="button"`.
@@ -46,7 +46,7 @@ In most cases, controls that rely on icons alone are not recommended, even where
 Where an icon-only button _is_ employed (the ubiquitous play/pause button is a good example), provide the text via a visually hidden `<span>`[^3], _not_ `aria-label`. Unfortunately, `aria-label` is not picked up by popular translation services[^4].
 
 ```html
-<button class="gel-icon" type="button">
+<button class="codegel-button" type="button">
   <!-- icon here -->
   <span class="vh">Play</span>
 </button>
@@ -59,7 +59,7 @@ Avoid using `title` attributes. These are only revealed on hover, not focus, in 
 Where icons are provided to buttons and calls-to-action, make sure they are taken from the GEL SVG Iconography library[^5]. Icons should contain text or be otherwise accessible to assistive technologies, nor should they be focusable. Hence, they should take `aria-hidden="true"` and `focusable="false"`. Note the classes, used for sizing and alignment.
 
 ```html
-<a class="gel-cta" href="path/to/help-page">
+<a class="codegel-cta" href="path/to/help-page">
   <span>Help</span>
   <svg aria-hidden="true" focusable="false">
     <use xlink:href="#help"></use>
@@ -74,7 +74,7 @@ Where icons are provided to buttons and calls-to-action, make sure they are take
 Standard `<button>` elements can be disabled using the `disabled` property/attribute. Beware that adding `disabled` makes the `<button>` unfocusable. This may cause confusion among some screen reader users and users exploring by <kbd>Tab</kbd> at a high zoom level. You can make disabled buttons focusable again by adding `tabindex="0"`.
 
 ```html
-<button class="gel-button" type="button" disabled tabindex="0">Download</button>
+<button class="codegel-button" type="button" disabled tabindex="0">Download</button>
 ```
 
 ::: note Avoid disabled submit buttons
@@ -84,7 +84,7 @@ There are a number of usability and accessibility issues with disabling form sub
 Links do not take `disabled`. You can, however, elicit announcement that a link is 'disabled' by applying the `aria-disabled="true"` attribution.
 
 ```html
-<a class="gel-cta" href="path/to/forbidden-place" aria-disabled="true">The forbidden place</a>
+<a class="codegel-cta" href="path/to/forbidden-place" aria-disabled="true">The forbidden place</a>
 ```
 
 Either apply `event.preventDefault()` or remove the `href` to functionally disable the link. As previously mentioned, removing the `href` makes the link unfocusable. As with `<button>`s, you can reinstate focus using `tabindex="0"`. 
@@ -97,10 +97,10 @@ The presence of these state attributes augments the announced role of the `<butt
 
 ```html
 <!-- collapsed -->
-<button class="gel-button gel-button--switch" type="button" aria-expanded="false">More info</button>
+<button class="codegel-button codegel-button-switch" type="button" aria-expanded="false">More info</button>
 
 <!-- expanded -->
-<button class="gel-button gel-button--switch" type="button" aria-expanded="true">More info</button>
+<button class="codegel-button codegel-button-switch" type="button" aria-expanded="true">More info</button>
 ```
 
 ::: alert Use native checked states
@@ -115,7 +115,7 @@ If the button simply moves focus to a new section within the page, or to a new p
 
 Button and CTA design differs somewhat between BBC sites and products. However, there are basic principles you should follow.
 
-1. **Be consistent:** All of your buttons should share the same basic design, and so should all of your CTAs. Be consistent with color, font size and weight, and padding.
+1. **Be consistent:** All of your buttons should share the same basic design, and so should all of your CTAs. Be consistent with colour, font size and weight, and padding.
 2. **Differentiate buttons and links:** It is recommended your CTAs are visually distinct from your `<button>`s: form should follow function. A common approach is to give all `<button>`s a background colour, but make CTAs 'ghosts' (with a transparent background but a surrounding border).
 3. **Give affordance:** Make sure your buttons and CTAs invite the user to click them. Use the site's established link color, if not just inherited; include clear hover and focus styles (see below); use imperative language.
 
@@ -127,10 +127,10 @@ No matter the brand colours employed, the contrast between the foreground (text)
 
 Hover and focus styles should be strong to differentiate them from the default state.
 
-Since buttons and CTAs tend to have a rectangular border/perimeter, the thin and feint focus outline offered by some user agent stylesheets can be very unclear. If an outline style is used, make it a solid one, optionally with an offset to separate it from the control's edges.
+Since buttons and CTAs tend to have a rectangular border/perimeter, the thin and faint focus outline offered by some user agent stylesheets can be very unclear. If an outline style is used, make it a solid one, optionally with an offset to separate it from the control's edges.
 
 ```css
-.gel-button:focus, .gel-cta:focus {
+.codegel-button:focus, .codegel-cta:focus {
   outline: 2px solid; /* adopts the font color */
   outline-offset: 2px;
 }
@@ -144,13 +144,13 @@ Toggle buttons using `aria-pressed` or `aria-expanded` (see [#toggle-states]) sh
 
 ```html
 <!-- night theme inactive -->
-<button class="gel-button" type="button" aria-pressed="false">
+<button class="codegel-button codegel-button-switch" type="button" aria-pressed="false">
   Night theme
   <span aria-hidden="true">off</span>
 </button>
 
 <!-- night theme active -->
-<button class="gel-button" type="button" aria-pressed="true">
+<button class="codegel-button codegel-button-switch" type="button" aria-pressed="true">
   Night theme
   <span aria-hidden="true">on</span>
 </button>

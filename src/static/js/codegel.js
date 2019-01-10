@@ -241,9 +241,9 @@
   }
 
 })();/**
- * Promo
+ * Switch
  * @namespace codegel
- * @method codegel.Switch.init - Adds click behaviour to the image element in gel-promo components.
+ * @method codegel.Switch.init
  */
 
 (function () {

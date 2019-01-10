@@ -34,11 +34,11 @@
                 
 <h3>Basic button</h3>
 
-<button class="gel-button" type="button" onClick="alert('Basic button clicked')">Download</button>
+<button class="codegel-button" type="button" onClick="alert('Basic button clicked')">Download</button>
 
 <h3>Button with icon</h3>
 
-<button class="gel-button" type="button" onClick="alert('Button with icon clicked')">
+<button class="codegel-button" type="button" onClick="alert('Button with icon clicked')">
   Download
   <svg aria-hidden="true" focusable="false" class="gel-button__icon gel-icon gel-icon--text">
     <use xlink:href="/code-gel//static/images/gel-icons-all.svg#gel-icon-download"></use>
@@ -47,18 +47,18 @@
 
 <h3>Switch button with <code>aria-pressed</code></h3>
 
-<button class="gel-button gel-button--switch">
+<button class="codegel-button codegel-button-switch">
   Night theme
   <span aria-hidden="true">on</span>
 </button>
 
 <h3>Basic CTA</h3>
 
-<a class="gel-cta" href="#">Help</a>
+<a class="codegel-cta" href="#">Help</a>
 
 <h3>CTA with icon</h3>
 
-<a class="gel-cta" href="#">
+<a class="codegel-cta" href="#">
   <svg aria-hidden="true" focusable="false" class="gel-button__icon gel-icon gel-icon--text">
     <use xlink:href="/code-gel//static/images/gel-icons-all.svg#gel-icon-help"></use>
   </svg>
@@ -71,7 +71,7 @@
     window.codegel && codegel.Switch.init();
 
     // Initialize switch button
-    var switchElem = document.querySelector('.gel-button--switch');
+    var switchElem = document.querySelector('.codegel-button-switch');
     var switchButton = new codegel.Switch.constructor(switchElem);
   });
 </script>

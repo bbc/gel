@@ -1,4 +1,4 @@
-.gel-button, .gel-cta {
+.codegel-button, .codegel-cta {
   padding: $gel-spacing-unit;
   color: $gel-color--black;
   display: inline-block;
@@ -10,16 +10,16 @@
   border: 3px solid $gel-color--black;
 }
 
-.gel-button {
+.codegel-button {
   background-color: $gel-color--black;
   color: $gel-color--white;
 }
 
-.gel-cta {
+.codegel-cta {
   text-decoration: none;
 }
 
-.gel-button svg, .gel-cta svg {
+.codegel-button svg, .codegel-cta svg {
   fill: currentColor;
   margin-top: .1em;
   height: 1em;
@@ -27,7 +27,7 @@
   vertical-align: text-top;
 }
 
-.gel-button--switch [aria-hidden] {
+.codegel-button-switch [aria-hidden] {
   display: inline-block;
   margin-left: $gel-spacing-unit;
   font-weight: bold;
@@ -37,19 +37,19 @@
   vertical-align: middle;
 }
 
-.gel-button:hover {
+.codegel-button:hover {
   background-color: $gel-color--tundora;
   border-color: $gel-color--tundora;
 }
 
-.gel-cta:hover,
-.gel-cta:focus {
+.codegel-cta:hover,
+.codegel-cta:focus {
   border-color: $gel-color--tundora;
   text-decoration: underline;
   text-decoration-skip: objects;
 }
 
-.gel-button:focus,
-.gel-cta:focus {
+.codegel-button:focus,
+.codegel-cta:focus {
   outline: 3px solid $gel-color--blue;
 }
