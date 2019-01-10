@@ -515,9 +515,7 @@ span.codegel-nowrap {
   vertical-align: middle;
   margin: 0;
   border: 0;
-  font-size: 14px;
-  font-family: inherit;
-  font-weight: bold; }
+  font-family: inherit; }
 
 .codegel-cta, .codegel-cta a {
   border: 1px solid #121212 !important; }
@@ -528,6 +526,25 @@ span.codegel-nowrap {
 
 .codegel-cta {
   text-decoration: none; }
+
+.codegel-button, .codegel-cta, a.codegel-cta {
+  font-size: 15px;
+  font-size: .9375rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+  font-weight: 700;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center; }
+
+@media (min-width: 37.5em) {
+  .codegel-button, .codegel-cta, a.codegel-cta {
+    line-height: 20px;
+    line-height: 1.25rem;
+    font-size: 14px;
+    font-size: .875rem;
+    line-height: 18px;
+    line-height: 1.125rem; } }
 
 .codegel-button svg, .codegel-cta svg {
   fill: currentColor;

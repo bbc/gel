@@ -184,7 +184,7 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 
 <include src="components/demos/buttons-and-ctas.html">
 
-<p><a class="codegel-button gel-button--dark gel-long-primer-bold" href="../demos/buttons-and-ctas/" target="_new"><span class="codegel-button__label">Open in new window</span><svg class="codegel-button__icon codegel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+<p><a class="codegel-cta gel-long-primer-bold" href="../demos/buttons-and-ctas/" target="_new"><span class="codegel-button__label">Open in new window</span><svg class="codegel-button__icon codegel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
 
 ## Related research
 
