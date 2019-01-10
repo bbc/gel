@@ -507,3 +507,77 @@ span.codegel-nowrap {
 
 .codegel-action-dialog-open [inert] {
   opacity: 0.3; }
+
+.codegel-button, .codegel-cta {
+  padding: 16px;
+  color: #121212;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  border: 0;
+  font-family: inherit; }
+
+.codegel-cta, .codegel-cta a {
+  border: 1px solid #121212 !important; }
+
+.codegel-button {
+  background-color: #121212;
+  color: #fff; }
+
+.codegel-cta {
+  text-decoration: none; }
+
+.codegel-button, .codegel-cta, a.codegel-cta {
+  font-size: 15px;
+  font-size: .9375rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+  font-weight: 700;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center; }
+
+@media (min-width: 37.5em) {
+  .codegel-button, .codegel-cta, a.codegel-cta {
+    line-height: 20px;
+    line-height: 1.25rem;
+    font-size: 14px;
+    font-size: .875rem;
+    line-height: 18px;
+    line-height: 1.125rem; } }
+
+.codegel-button svg, .codegel-cta svg {
+  fill: currentColor;
+  margin-top: .1em;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top; }
+
+.codegel-button svg:last-child, .codegel-cta svg:last-child {
+  margin-left: 0.9em; }
+
+.codegel-button svg:first-child, .codegel-cta svg:first-child {
+  margin-right: 0.9em; }
+
+.codegel-button-switch [aria-hidden] {
+  display: inline-block;
+  margin-left: 8px;
+  font-weight: bold;
+  background-color: #fff;
+  color: #121212;
+  padding: 0.125rem 0.25rem;
+  vertical-align: middle; }
+
+.codegel-button:hover {
+  background-color: #404040;
+  border-color: #404040; }
+
+.codegel-cta:hover,
+.codegel-cta:focus {
+  border-color: #404040;
+  text-decoration: underline;
+  text-decoration-skip: objects; }
+
+.codegel-button:focus,
+.codegel-cta:focus {
+  outline: 3px solid #006def; }
