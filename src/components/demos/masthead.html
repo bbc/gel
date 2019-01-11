@@ -5,12 +5,12 @@ title: Masthead
 <nav class="codegel-masthead">
   <div class="codegel-masthead-bar">
     <div class="codegel-masthead-logo">
-      <a href="/">
+      <a href="https://bbc.co.uk">
         <img src="https://nav.files.bbci.co.uk/orbit/2.0.0-436.0893166/img/blq-orbit-blocks_grey.svg" alt="BBC Home">
       </a>
     </div>
     <div class="codegel-masthead-account-option">
-      <a href="/">
+      <a href="https://account.bbc.com/account">
         <span class="codegel-sr">Your account,</span>
         <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
           <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-sign-in"></use>
@@ -19,26 +19,26 @@ title: Masthead
       </a>
     </div>
     <div class="codegel-masthead-alerts-option">
-      <button type="button">
+      <a href="#codegel-masthead-alerts">
         <span class="codegel-sr">Notifications</span>
         <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
           <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-alerts"></use>
         </svg>
-      </button>
+      </a>
     </div>
     <div class="codegel-masthead-links">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">News</a></li>
-        <li><a href="#">Sport</a></li>
-        <li><a href="#">Weather</a></li>
-        <li><a href="#">iPlayer</a></li>
-        <li><a href="#">Sounds</a></li>
-        <li><a href="#">CBBC</a></li>
+      <span id="sites-label" hidden>BBC sites</span>
+      <ul aria-labelledby="sites-label">
+        <li><a href="https://www.bbc.co.uk/news">News</a></li>
+        <li><a href="https://www.bbc.co.uk/sport">Sport</a></li>
+        <li><a href="https://www.bbc.co.uk/weather">Weather</a></li>
+        <li><a href="https://www.bbc.co.uk/iplayer">iPlayer</a></li>
+        <li><a href="https://www.bbc.co.uk/sounds">Sounds</a></li>
+        <li><a href="https://www.bbc.co.uk/cbbc">CBBC</a></li>
       </ul>
     </div>
     <div class="codegel-masthead-more-option">
-      <button aria-haspopup="true" aria-expanded="false">
+      <a href="#codegel-masthead-more">
         <span class="codegel-sr">More</span>
         <span class="codegel-masthead-more-option-text" aria-hidden="true">
           More
@@ -47,59 +47,39 @@ title: Masthead
         <svg class="codegel-masthead-more-option-icon gel-icon gel-icon--text" aria-hidden="true" focusable="false">
           <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-list"></use>
         </svg>
-      </button>
+      </a>
     </div>
     <div class="codegel-masthead-search-option" role="search">
-      <button aria-haspopup="true" aria-expanded="false">
-        <span class="codegel-sr">Search</span>
+      <a href="https://www.bbc.co.uk/search?q=">
+        <span>Search</span>
         <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
           <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-search"></use>
         </svg>
-      </button>
+      </a>
     </div>
   </div>
-  <div class="codegel-masthead-more-menu codegel-masthead-popup">
-    <ul>
-      <li class="gel-masthead-more-account-link">
-        <a href="#">
-          <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
-            <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-sign-in"></use>
-          </svg>
-          Sign in
-        </a>
-      </li>
-      <li class="gel-masthead-more-alerts-link">
-        <a href="#">
-          <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
-            <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-alerts"></use>
-          </svg>
-          Notifications
-        </a>
-      </li>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">News</a></li>
-      <li><a href="#">Sport</a></li>
-      <li><a href="#">Weather</a></li>
-      <li><a href="#">iPlayer</a></li>
-      <li><a href="#">Sounds</a></li>
-      <li><a href="#">CBBC</a></li>
-    </ul>
-  </div>
-  <div class="codegel-masthead-search codegel-masthead-popup">
-    <div class="codegel-masthead-search-inner">
-      <label for="search" class="vh">
-        Search
-      </label>
-      <input type="text" id="search">
-      <button type="button">
-        <span class="codegel-sr">Search</span>
-        <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
-          <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-search"></use>
-        </svg>
-      </button>
+  <div id="codegel-masthead-more" class="codegel-masthead-more-menu codegel-masthead-popup">
+    <div class="codegel-masthead-more-menu-inner">
+      <h2 aria-hidden="true" class="codegel-masthead-more-menu-label">MORE</h2>
+      <ul>
+        <li><a href="https://www.bbc.co.uk/news">News</a></li>
+        <li><a href="https://www.bbc.co.uk/sport">Sport</a></li>
+        <li><a href="https://www.bbc.co.uk/weather">Weather</a></li>
+        <li><a href="https://www.bbc.co.uk/iplayer">iPlayer</a></li>
+        <li><a href="https://www.bbc.co.uk/sounds">Sounds</a></li>
+        <li><a href="https://www.bbc.co.uk/cbbc">CBBC</a></li>
+        <li class="gel-masthead-more-account-link">
+          <a href="https://account.bbc.com/account">
+            <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+              <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-sign-in"></use>
+            </svg>
+            Your account
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
-  <div class="codegel-masthead-alerts codegel-masthead-popup">
+  <div id="codegel-masthead-alerts" class="codegel-masthead-alerts codegel-masthead-popup">
     <h2>Notifications</h2>
     <p>No notifications right now. We'll let you know when something from your favourite programmes, artists and
       playlists is available for you.</p>
@@ -107,11 +87,11 @@ title: Masthead
   </div>
   <div class="codegel-masthead-banner">
     <a href="/" class="codegel-masthead-banner-logo">
-      <span class="vh">
-        CodeGel home page
+      <span class="codegel-sr">
+        BBC CodeGel homepage
       </span>
       <svg aria-hidden="true" focusable="false" viewBox="0 0 1101.9 202.4">
-        <use xlink:href="{{site.basedir}}static/images/codegel-logo.svg#codegel-logo"></use>
+        <use xlink:href="path/to/logo.svg#logo"></use>
       </svg>
     </a>
   </div>
@@ -121,6 +101,6 @@ title: Masthead
     window.codegel && codegel.Masthead.init();
 
     var mastheadElem = document.querySelector('.codegel-masthead');
-    var masthead = codegel.Masthead.constructor(mastheadElem);
+    var masthead = new codegel.Masthead.constructor(mastheadElem);
   });
 </script>

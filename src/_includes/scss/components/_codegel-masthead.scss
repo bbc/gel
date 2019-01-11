@@ -24,6 +24,17 @@
 .codegel-masthead-popup {
   padding: 0.75rem;
   border-bottom: 1px solid $gel-color--dusty-gray;
+  position: relative;
+}
+
+.codegel-masthead-close-button {
+  font-size: 1.5rem;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
 }
 
 .codegel-masthead-more-menu {
@@ -55,23 +66,9 @@
 }
 
 .codegel-masthead-bar a:hover,
-.codegel-masthead-bar a:focus,
-.codegel-masthead-bar button:hover,
-.codegel-masthead-bar button:focus {
+.codegel-masthead-bar a:focus {
   outline: none;
   border-color: $gel-color--tundora;
-}
-
-.codegel-masthead-search input,
-.codegel-masthead-search button {
-  font-size: 1.25rem;
-  padding: 0.5rem;
-  border: 2px solid $gel-color--tundora;
-}
-
-.codegel-masthead-search button {
-  background-color: $gel-color--tundora;
-  color: $gel-color--white;
 }
 
 .codegel-masthead-banner {
@@ -91,7 +88,6 @@
 
 .codegel-masthead-links,
 .codegel-masthead-more-option,
-.codegel-masthead-search-option,
 .codegel-masthead-alerts-option,
 .codegel-masthead-account-option,
 .codegel-masthead-alerts {
@@ -171,11 +167,11 @@
   }
 
   .codegel-masthead-links::-webkit-scrollbar-track {
-    background-color: #ddd;
+    background-color: $gel-color--alto;
   }
 
   .codegel-masthead-links::-webkit-scrollbar-thumb {
-    background-color: #888;
+    background-color: $gel-color--cod-gray;
   }
   
   .codegel-masthead-more-option {
@@ -200,25 +196,28 @@
     width: 6px;
     background-color: rgba(0,0,0,0.05);
   }
+
+  .codegel-masthead-more-menu-inner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .codegel-masthead-more-menu-label {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0.75rem;
+  }
   
   .codegel-masthead-more-menu ul {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 75%;
     display: flex;
     flex-wrap: wrap;
   }
   
   .codegel-masthead-more-menu li {
     flex: 0 1 10rem;
-  }
-  
-  .codegel-masthead-search-inner {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .codegel-masthead-search input {
-    flex-grow: 1;
-    width: 100%;
-    max-width: 60ch;
   }
   
   .codegel-masthead-with-js .codegel-masthead-links {
@@ -254,7 +253,6 @@
   }
   
   .codegel-masthead-with-js .codegel-masthead-more-option,
-  .codegel-masthead-with-js .codegel-masthead-search-option,
   .codegel-masthead-with-js .codegel-masthead-alerts-option,
   .codegel-masthead-with-js .codegel-masthead-account-option {
     display: block;

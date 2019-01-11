@@ -550,7 +550,18 @@ span.codegel-nowrap {
 
 .codegel-masthead-popup {
   padding: 0.75rem;
-  border-bottom: 1px solid #ccc; }
+  border-bottom: 1px solid #ccc;
+  position: relative; }
+
+.codegel-masthead-close-button {
+  font-size: 1.5rem;
+  color: #404040;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem; }
 
 .codegel-masthead-more-menu {
   border-bottom: 1px solid #ccc;
@@ -563,8 +574,7 @@ span.codegel-nowrap {
   padding: 0.75rem;
   display: inline-block; }
 
-.codegel-masthead a,
-.codegel-masthead button {
+.codegel-masthead a {
   font-size: inherit;
   color: inherit;
   text-decoration: none;
@@ -576,21 +586,9 @@ span.codegel-nowrap {
   padding: 0.75rem; }
 
 .codegel-masthead-bar a:hover,
-.codegel-masthead-bar a:focus,
-.codegel-masthead-bar button:hover,
-.codegel-masthead-bar button:focus {
+.codegel-masthead-bar a:focus {
   outline: none;
   border-color: #404040; }
-
-.codegel-masthead-search input,
-.codegel-masthead-search button {
-  font-size: 1.25rem;
-  padding: 0.5rem;
-  border: 2px solid #404040; }
-
-.codegel-masthead-search button {
-  background-color: #404040;
-  color: #fff; }
 
 .codegel-masthead-banner {
   padding: 1.25rem 0.75rem;
@@ -606,7 +604,6 @@ span.codegel-nowrap {
 
 .codegel-masthead-links,
 .codegel-masthead-more-option,
-.codegel-masthead-search-option,
 .codegel-masthead-alerts-option,
 .codegel-masthead-account-option,
 .codegel-masthead-alerts {
@@ -674,18 +671,21 @@ span.codegel-nowrap {
     left: -6px;
     width: 6px;
     background-color: rgba(0, 0, 0, 0.05); }
+  .codegel-masthead-more-menu-inner {
+    display: flex;
+    flex-wrap: wrap; }
+  .codegel-masthead-more-menu-label {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0.75rem; }
   .codegel-masthead-more-menu ul {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 75%;
     display: flex;
     flex-wrap: wrap; }
   .codegel-masthead-more-menu li {
     flex: 0 1 10rem; }
-  .codegel-masthead-search-inner {
-    display: flex;
-    justify-content: center; }
-  .codegel-masthead-search input {
-    flex-grow: 1;
-    width: 100%;
-    max-width: 60ch; }
   .codegel-masthead-with-js .codegel-masthead-links {
     display: flex; }
   .codegel-masthead-with-js .codegel-masthead-popup {
@@ -709,7 +709,6 @@ span.codegel-nowrap {
     right: calc(-0.25rem - 1px);
     top: calc(50% - 0.25rem); }
   .codegel-masthead-with-js .codegel-masthead-more-option,
-  .codegel-masthead-with-js .codegel-masthead-search-option,
   .codegel-masthead-with-js .codegel-masthead-alerts-option,
   .codegel-masthead-with-js .codegel-masthead-account-option {
     display: block; }

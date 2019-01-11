@@ -17,62 +17,45 @@
     var links = elem.querySelector('.codegel-masthead-links');
     var menus = [
       {
-        button: elem.querySelector('.codegel-masthead-alerts-option button'),
+        link: elem.querySelector('.codegel-masthead-alerts-option a'),
         target: elem.querySelector('.codegel-masthead-alerts')
       },
       {
-        button: elem.querySelector('.codegel-masthead-more-option button'),
+        link: elem.querySelector('.codegel-masthead-more-option a'),
         target: elem.querySelector('.codegel-masthead-more-menu')
-      },
-      {
-        button: elem.querySelector('.codegel-masthead-search-option button'),
-        target: elem.querySelector('.codegel-masthead-search')
       }
     ];
 
     menus.forEach(function (menu) {
+      menu.target.tabIndex = -1;
       menu.first = menu.target.querySelector('a[href], button:not([disabled]), input');
       if (!menu.first) {
-        menu.first = menu.target;
-        menu.target.tabIndex = -1;
+        menu.first = menu.target.querySelector('h2, h3, h4');
+        menu.first.tabIndex = -1;
       }
-      menu.button.addEventListener('click', function () {
+      menu.link.addEventListener('click', function (e) {
+        e.preventDefault();
         menus.forEach(function (otherMenu) {
           if (otherMenu !== menu) {
             otherMenu.target.style.display = 'none';
-            otherMenu.button.setAttribute('aria-expanded', 'false');
           }
         });
 
-        var open = menu.button.getAttribute('aria-expanded') === 'true' || false;
-        menu.button.setAttribute('aria-expanded', !open);
+        var open = menu.target.style.display === 'block' || false;
         menu.target.style.display = open ? 'none' : 'block';
-        if (!open) menu.first.focus();
-      });
-
-      menu.button.addEventListener('keydown', function (e) {
-        if (!e.shiftKey && e.keyCode == 9) {
-          if (menu.target.style.display === 'block') {
-            e.preventDefault();
-            menu.first.focus();
-          }
+        if (!open) {
+          menu.first.focus();
         }
       });
 
-      menu.first.addEventListener('keydown', function (e) {
-        if (e.shiftKey && e.keyCode == 9) {
-          e.preventDefault();
-          menu.button.focus();
-        }
+      var closeButton = document.createElement('button');
+      closeButton.innerHTML = '<span class="codegel-sr">Close</span><svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false" viewBox="0 0 32 32"> <path d="M32 3.5L28.5 0 16 12.5 3.5 0 0 3.5 12.5 16 0 28.5 3.5 32 16 19.5 28.5 32l3.5-3.5L19.5 16"/> </svg>';
+      closeButton.classList.add('codegel-masthead-close-button');
+      closeButton.addEventListener('click', function () {
+        menu.target.style.display = 'none';
+        menu.link.focus();
       });
-
-      menu.target.addEventListener('keydown', function (e) {
-        if (e.keyCode == 27) {
-          menu.button.setAttribute('aria-expanded', 'false');
-          menu.button.focus();
-          menu.target.style.display = 'none';
-        }
-      });
+      menu.target.appendChild(closeButton);
     });
 
     // Watch the visibility of masthead link items to add
@@ -82,12 +65,12 @@
       var items = links.querySelectorAll('li');
       var observerSettings = {
         root: links,
-        threshold: 1
+        threshold: 0.98
       }
 
       var callback = function (items, observer) {
         Array.prototype.forEach.call(items, function (item) {
-          if (item.isIntersecting) {
+          if (item.intersectionRatio > 0.98) {
             item.target.classList.remove('codegel-masthead-link-hidden');
           } else {
             item.target.classList.add('codegel-masthead-link-hidden');
