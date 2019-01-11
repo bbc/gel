@@ -555,7 +555,6 @@ span.codegel-nowrap {
 
 .codegel-masthead-close-button {
   font-size: 1.5rem;
-  color: #404040;
   border: 0;
   padding: 0;
   background-color: transparent;
@@ -574,7 +573,8 @@ span.codegel-nowrap {
   padding: 0.75rem;
   display: inline-block; }
 
-.codegel-masthead a {
+.codegel-masthead a,
+.codegel-masthead button {
   font-size: inherit;
   color: inherit;
   text-decoration: none;
@@ -653,9 +653,9 @@ span.codegel-nowrap {
   .codegel-masthead-links::-webkit-scrollbar {
     height: 0.125rem; }
   .codegel-masthead-links::-webkit-scrollbar-track {
-    background-color: #ddd; }
+    background-color: #dcdcdc; }
   .codegel-masthead-links::-webkit-scrollbar-thumb {
-    background-color: #888; }
+    background-color: #767676; }
   .codegel-masthead-more-option {
     position: relative;
     margin-right: auto; }
