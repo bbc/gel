@@ -112,8 +112,8 @@
 <p>This functionality can include video playback, and options to share the card content via social media. Read the <a href="https://www.bbc.co.uk/gel/guidelines/promos">original GEL Card documentation</a> for more.</p>
 <h2 id="expected-markup">Expected markup</h2>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Note-9">
-              <h4 id="aside-info-Note-9" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>The following designates the basic card structure, consisting of the headline, description, content, and toolbar. See <strong>Card content</strong> for guidance on the structure of common types of card content.</p>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Note-8">
+              <h4 id="aside-info-Note-8" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>The following designates the basic card structure, consisting of the headline, description, content, and toolbar. See <strong>Card content</strong> for guidance on the structure of common types of card content.</p>
 </aside><pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Heading introducing the set of cards<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-card"</span>&gt;</span>
@@ -181,8 +181,8 @@
 }
 </code></pre>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Note-10">
-              <h4 id="aside-info-Note-10" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>At the time of writing, the <code>object-fit</code> property is supported everywhere but Internet Explorer. The code uses <code>@supports</code> and falls back to showing the image at its natural width, cropping the right edge or leaving a right margin.</p>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Note-9">
+              <h4 id="aside-info-Note-9" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>At the time of writing, the <code>object-fit</code> property is supported everywhere but Internet Explorer. The code uses <code>@supports</code> and falls back to showing the image at its natural width, cropping the right edge or leaving a right margin.</p>
 </aside><h4 id="a-video">A video</h4>
 <p>If a video is provided, ensure the following:</p>
 <ol>
@@ -256,8 +256,8 @@ btn.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs
 }
 </code></pre>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Note-11">
-              <h4 id="aside-info-Note-11" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>These examples use <a href="https://github.com/bbc/gel-sass-tools">GEL Sass Tools</a> for the margins.</p>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Note-10">
+              <h4 id="aside-info-Note-10" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>These examples use <a href="https://github.com/bbc/gel-sass-tools">GEL Sass Tools</a> for the margins.</p>
 </aside><h3 id="carousel-formation">Carousel formation</h3>
 <p>To achieve a carousel formation, the containing carousel element needs to have <code>overflow-x: auto</code> and the cards list must not be allowed to wrap. This is best achieved using Flexbox.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.cards</span> {
@@ -330,8 +330,8 @@ moreBtn.addEventListener(<span class="hljs-string">'click'</span>, <span class="
 });
 </code></pre>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Note-12">
-              <h4 id="aside-info-Note-12" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>GEL SVG icons have been removed from the above example for brevity.</p>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Note-11">
+              <h4 id="aside-info-Note-11" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>GEL SVG icons have been removed from the above example for brevity.</p>
 </aside><p>For the <code>focus()</code> method to succeed, the <code>class=&quot;gel-card-info-heading&quot;</code> element needs <code>tabindex=&quot;-1&quot;</code>.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-card-info"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"more-info-title-1"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-card-info-heading"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"info-title-1"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>More info<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
