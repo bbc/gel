@@ -2,19 +2,20 @@
 title: Form fields and validation
 summary: Form fields must be accessible and usable, helping the user to provide valid input
 version: 0.1.0
-published: true
-accessibility: true
+published: false
+accessibility: false
+linkback: https://www.bbc.co.uk/gel/guidelines/how-to-design-forms
 ---
 
 ## Introduction
 
-Gracefully handling user input is critical to the usability of BBC services, but also an area of interaction design fraught with potential problems. The purpose of this document is to set out robust approaches to presenting and validating form fields.
+Gracefully handling user input is critical to the usability of BBC services, but also an area of Interaction Design fraught with potential problems. The purpose of this document is to set out robust approaches to presenting and validating form fields.
 
 The focus here is on web-based forms. For further guidance specific to mobile/native applications, please consult the [BBC Mobile Accessibility Guidelines](http://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/forms/labelling-form-controls).
 
 ## Recommended markup
 
-### Labeling
+### Labelling
 
 Any field's element needs to be associated programmatically with a label. This is achieved by making the label's <code>for</code> attribute and the input's <code>id</code> attribute share the same value.
 
@@ -34,7 +35,7 @@ Sometimes multiple form elements should be grouped together under a common label
 ```html
 <fieldset>
   <legend>Group label</legend>
-  <!-- individually labeled elements -->
+  <!-- individually labelled elements -->
 </fieldset>
 ```
 
@@ -42,17 +43,17 @@ This is most important when providing radio button controls: a group of radio bu
 
 ```html
 <fieldset>
-  <legend>Your favorite pet</legend>
+  <legend>Your favourite pet</legend>
   <label>
-    <input type="radio" name="favorite-pet">
+    <input type="radio" name="favourite-pet">
     Cat
   </label>
   <label>
-    <input type="radio" name="favorite-pet">
+    <input type="radio" name="favourite-pet">
     Dog
   </label>
   <label>
-    <input type="radio" name="favorite-pet">
+    <input type="radio" name="favourite-pet">
     Seahorse
   </label>
 </fieldset>
@@ -62,12 +63,12 @@ This is most important when providing radio button controls: a group of radio bu
 Note the use of labels _wrapping_ inputs in the above example. Only when wrapping inputs in `<label>`s can you omit the `for` and `id` association. It is a common pattern for radios and checkboxes.
 :::
 
-It's quite legitimate to place headings inside `<legend>`s. In fact, this helps to give your form a semantic structure (navigable by screen reader users) without having to create separate and redundant labels.
+It's quite legitimate to place headings inside `<legend>`s. In fact, this helps to give your form a semantic structure (improving navigation by screen reader users) without having to create separate and redundant labels.
 
 ```html
 <fieldset>
   <legend><h2>Group label</h2></legend>
-  <!-- individually labeled elements -->
+  <!-- individually labelled elements -->
 </fieldset>
 ```
 
@@ -94,9 +95,9 @@ Not all form fields need descriptions.
 Where specialist HTML5 input types are well supported, it is advised they are used in place of the generic (and default) `type="text"`. The `number` `type`, for example, helpfully restricts input to numerals, allows incrementation—typically by providing up and down buttons—and elicits the display of a numerical virtual keyboard.
 
 ::: alert Avoid custom form elements
-The most efficient and robust way to implement accessible form fields is to use the native `<input>`, `<textarea>`, and `<select>` elements. These elements have predefined and expected behaviors, and automatically communicate their roles, values, and states to assistive technologies.
+The most efficient and robust way to implement accessible form fields is to use the native `<input>`, `<textarea>`, and `<select>` elements. These elements have predefined and expected behaviours, and automatically communicate their roles, values, and states to assistive technologies.
 
-It is _possible_ to emulate native form element behavior with WAI-ARIA attribution and JavaScript, but it
+It is _possible_ to emulate native form element behaviour with WAI-ARIA attribution and JavaScript, but it
 is rarely a good idea. Implementations tend towards complexity, and are necessarily more likely
 to break because they depend on JavaScript in order to function.
 
@@ -117,7 +118,7 @@ The validation process is described in [Recommended behaviour](#recommended-beha
 
 #### `aria-invalid`
 
-A field element entering into an invalid state should take `aria-invalid="true"`, and `aria-invalid="false"` where the invalidity is corrected.
+A field element in an invalid state should have `aria-invalid="true"`, and `aria-invalid="false"` once the invalidity is corrected.
 
 #### The error message
 
@@ -151,7 +152,7 @@ Error messages should be concise but descriptive. They are associated to their f
 
 #### Required fields
 
-It is assumed that any fields offered the user should be completed, otherwise they should not be present. In which case, it is considered needlessly obstructive to indicate required fields before or during individual field validation. 
+It is assumed that any fields presented to the user should be completed, otherwise they should not be present. In which case, it is considered needlessly obstructive to indicate required fields before or during individual field validation. 
 
 Only when submission is attempted should the `aria-required="true"` attribution and error message be instated. This attribution is preferred over the HTML5 `required` Boolean just as `aria-invalid` is preferred over `invalid`.
 
@@ -209,7 +210,7 @@ However, in some specific circumstances an invisible but accessible label is acc
 
 ### Error indication
 
-It is imperative errors are clearly identified as such. Do not rely on a red color to denote an error state[^5] since it will fail on monochrome displays, and for those who cannot accurately perceive color.
+It is imperative that errors are clearly identified as such. Do not rely on colour to denote an error state[^5] since it will fail on monochrome displays, and for those who cannot accurately perceive colour.
 
 Where there are errors, there should always be error messages. Prefixing the error message with 'Error:',  or a warning symbol, ensures the nature of the message is conveyed explicitly.
 
@@ -254,6 +255,16 @@ The following describes the validation journey, as exemplified by the [Reference
 * Some implementations disable the submit button until the subject form is free of errors. This is not recommended since it can be confusing and frustrating to some users[^6]. Better to allow submission and be explicit with a warning.
 * Some implementations disable fields that have been correctly completed, in an effort to make it clearer which fields need addressing. It is recommended that all fields remain enabled, so users can adjust their input at any time. In some cases, correcting one input's value may mean having to adjust another's, even if it is superficially correct in terms of format.
 * You may wish to employ 'positive validation', wherein inputs that are successfully completed display a green style and 'tick'. The difficulty here is in discerning between a correct format, and correct information. Showing a tick next to a correctly formatted bank card number, for example, is misleading: the user may believe you're aware it is the correct number for their specific card.
+
+## Reference implementation
+
+::: alert Important
+Example implementations are intended to demonstrate **what needs to be achieved** but not how to achieve it. To meet our recommendations your HTML semantics, layout and behaviour must conform to the example implementation. Your server-side and front-end frameworks will likely differ.
+:::
+
+<include src="components/demos/form-fields.html">
+
+<p><a class="codegel-cta gel-long-primer-bold" href="../demos/form-fields/" target="_new"><span class="codegel-button__label">Open in new window</span><svg class="codegel-button__icon codegel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
 
 ## Related research
 

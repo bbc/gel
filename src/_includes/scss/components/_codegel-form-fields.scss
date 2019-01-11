@@ -1,48 +1,48 @@
-.gel-form-divider * {
+.codegel-form-divider * {
   font-size: inherit;
   font-family: inherit;
 }
 
-.gel-form-divider > * + * {
+.codegel-form-divider > * + * {
   display: block;
   margin: 0;
   margin-top: 0.125rem;
 }
 
-.gel-form-divider label small {
+.codegel-form-divider label small {
   display: block;
   font-size: 0.75rem;
 }
 
-.gel-form-divider + .gel-form-divider {
+.codegel-form-divider + .codegel-form-divider {
   margin-top: 1.5rem;
 }
 
-.gel-form-divider input {
+.codegel-form-divider input {
   border: 1px solid;
   width: 100%;
   max-width: 60ch;
   padding: 0.25rem;
 }
 
-.gel-form-divider input:focus {
+.codegel-form-divider input:focus {
   outline: 2px solid;
 }
 
-.gel-form-field-error,
-.gel-form-warning {
+.codegel-form-field-error,
+.codegel-form-warning {
   padding: 0.25rem;
   background-color: $gel-color--pink;
   color: $gel-color--white;
   max-width: 60ch;
 }
 
-.gel-form-field-error:empty,
-.gel-form-warning:empty {
+.codegel-form-field-error:empty,
+.codegel-form-warning:empty {
   display: none;
 }
 
-.gel-form-warning {
+.codegel-form-warning {
   background-color: $gel-color--yellow;
   color: $gel-color--black;
 }

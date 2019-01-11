@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Code GEL | Form fields &amp; validation Demo</title>
+    <title>Code GEL | Form fields and validation Demo</title>
 
     <link rel="stylesheet" type="text/css" href="/code-gel/static/css/codegel.css">
 
@@ -23,7 +23,7 @@
     <main id="main" class="gel-wrap gs-u-clearfix">
         <div class="gel-layout">
             <div class="gel-layout__item gel-5/5@l" style="padding-right: 12px;">
-                <h1 class="gel-guideline-header__title">Form fields &amp; validation</h1>
+                <h1 class="gel-guideline-header__title">Form fields and validation</h1>
             </div>
         </div>
 
@@ -32,21 +32,23 @@
                 <h2>Reference implementation</h2>
                 
                 
-<form>
-  <div class="gel-form-divider">
+<h3>Form fields and validation</h3>
+
+<form id="myform-demo">
+  <div class="codegel-form-divider">
     <label for="username">Username</label>
     <input type="text" id="username" name="username" />
-    <div class="gel-form-field-error" id="username-error"></div>
+    <div class="codegel-form-field-error" id="username-error"></div>
   </div>
-  <div class="gel-form-divider">
+  <div class="codegel-form-divider">
     <label for="code">
       Verification code
       <small>This was sent to you by email</small>
     </label>
     <input type="text" id="code" name="code" />
-    <div class="gel-form-field-error" id="code-error"></div>
+    <div class="codegel-form-field-error" id="code-error"></div>
   </div>
-  <div class="gel-form-divider">
+  <div class="codegel-form-divider">
     <button class="gel-button" type="submit">Submit</button>
   </div>
 </form>
@@ -76,7 +78,7 @@
       }
     ];
 
-    var form = document.querySelector('form');
+    var form = document.getElementById('myform-demo');
     var formValidation = new codegel.Validation.constructor(form, rules);
   });
 </script>

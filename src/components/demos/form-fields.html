@@ -1,22 +1,24 @@
 ---
-title: Form fields & validation
+title: Form fields and validation
 ---
 
-<form>
-  <div class="gel-form-divider">
+<h3>Form fields and validation</h3>
+
+<form id="myform-demo">
+  <div class="codegel-form-divider">
     <label for="username">Username</label>
     <input type="text" id="username" name="username" />
-    <div class="gel-form-field-error" id="username-error"></div>
+    <div class="codegel-form-field-error" id="username-error"></div>
   </div>
-  <div class="gel-form-divider">
+  <div class="codegel-form-divider">
     <label for="code">
       Verification code
       <small>This was sent to you by email</small>
     </label>
     <input type="text" id="code" name="code" />
-    <div class="gel-form-field-error" id="code-error"></div>
+    <div class="codegel-form-field-error" id="code-error"></div>
   </div>
-  <div class="gel-form-divider">
+  <div class="codegel-form-divider">
     <button class="gel-button" type="submit">Submit</button>
   </div>
 </form>
@@ -46,7 +48,7 @@ title: Form fields & validation
       }
     ];
 
-    var form = document.querySelector('form');
+    var form = document.getElementById('myform-demo');
     var formValidation = new codegel.Validation.constructor(form, rules);
   });
 </script>
