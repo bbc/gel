@@ -2,8 +2,8 @@
 title: Headings
 summary: Headings provide a semantic and visual hierarchical structure to a document
 version: 0.1.0
-published: true
-accessibility: true
+published: false
+accessibility: false
 ---
 
 ## Introduction

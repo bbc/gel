@@ -2,8 +2,8 @@
 title: External Links
 summary: When we link to content, it's important to differentiate between internal and external links so our audience knows exactly what to expect. External links direct people outside of the BBC domain, and are clearly indicated with an icon.
 version: 0.1.0
-published: true
-accessibility: true
+published: false
+accessibility: false
 linkback: https://www.bbc.co.uk/gel/guidelines/external-linking
 ---
 

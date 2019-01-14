@@ -2,8 +2,8 @@
 title: Carousels
 summary: A carousel is a great way to view lots of content in a limited amount of vertical space. It presents a window to view some of a row of content, while indicating there is more out of view that can be scrolled to.
 version: 0.1.0
-published: true
-accessibility: true
+published: false
+accessibility: false
 linkback: https://www.bbc.co.uk/gel/guidelines/carousel
 ---
 

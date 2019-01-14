@@ -2,8 +2,8 @@
 title: Breakout Boxes
 summary: Breakout Boxes interject supplementary content within the flow of a document
 version: 0.1.0
-published: true
-accessibility: true
+published: false
+accessibility: false
 linkback: http://www.bbc.co.uk/gel/guidelines/promos
 ---
 

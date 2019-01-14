@@ -2,8 +2,8 @@
 title: Tabs
 summary: Tabs make it easy to view and navigate stacked panels of related content. 
 version: 0.1.0
-published: true
-accessibility: true
+published: false
+accessibility: false
 linkback: https://www.bbc.co.uk/gel/guidelines/tabs
 ---
 

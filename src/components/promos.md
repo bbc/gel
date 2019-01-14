@@ -1,7 +1,7 @@
 ---
 title: Promos
 summary: A promo is a snippet of content which links to a full piece of content elsewhere on the BBC site or app.
-version: 0
+version: 0.1.0
 published: false
 accessibility: false
 linkback: http://www.bbc.co.uk/gel/guidelines/promos
