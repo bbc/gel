@@ -4,15 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{{site.basedir}}static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/code-gel/static/images/favicon.ico" type="image/x-icon">
 
-    <title>{{site.title}} | {{title}}</title>
+    <title>Code GEL | Contributors</title>
 
-    <script src="{{site.basedir}}static/js/site.js"></script>
+    <script src="/code-gel/static/js/site.js"></script>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link rel="stylesheet" type="text/css" href="{{site.basedir}}static/css/codegel.css">
-    <link rel="stylesheet" type="text/css" href="{{site.basedir}}static/css/geldocs.css">
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/codegel.css">
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/geldocs.css">
 
     <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
@@ -39,9 +39,7 @@
         hljs.initHighlightingOnLoad();
     </script>
 
-    {% if includecss %}
-    <link rel="stylesheet" type="text/css" href="{{site.basedir}}static/css/{{ includecss }}">
-    {% endif %}
+    
 </head>
 
 <body class="geldocs-body">
@@ -55,7 +53,7 @@
             <div class="gel-wrap">
                 <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
                         <title>BBC</title>
-                        <image xlink:href="{{site.basedir}}static/images/bbc-blocks_grey.svg" src="{{site.basedir}}static/images/bbc-blocks_grey.png"
+                        <image xlink:href="/code-gel/static/images/bbc-blocks_grey.svg" src="/code-gel/static/images/bbc-blocks_grey.png"
                             width="100%" height="100%"></image>
                     </svg></a>
             </div>
@@ -64,13 +62,9 @@
             <div class="gel-wrap">
                 <div class="gel-layout">
                     <div class="gel-layout__item gel-2/5@l" style="text-align:left; padding-left:14px; margin-bottom:32px;">
-                        <a href="{{site.basedir}}" class="geldocs-logo">Code{GEL}</a>
+                        <a href="/code-gel/" class="geldocs-logo">Code{GEL}</a>
                     </div>
-                    <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
-                        <a class="geldocs-button geldocs-button--dark gel-long-primer-bold" href="{{linkback}}">
-                            Go to BBC GEL
-                        </a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -83,21 +77,8 @@
             </div>
 
             <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
-                <h1 class="geldocs-header__title">{{title}}</h1>
-                <p class="geldocs-header__summary gel-great-primer">{{summary}}</p>
-            </div>
-
-            <div class="gel-layout__item gel-1/5@l">
-                <dl class="geldocs-standout-box">
-                    {% if version %}
-                    <dt>Version:</dt>
-                    <dd>{{ version }}</dd>
-                    {% endif %}
-                    <dt>Status:</dt>
-                    <dd>{{ "Published" if published else "Draft" }}</dd>
-                    <dt>Accessibility:</dt>
-                    <dd>{{ "Pass" if accessibility else "Pending" }}</dd>
-                </dl>
+                <h1 class="geldocs-header__title">Contributors</h1>
+                <p class="geldocs-header__summary gel-great-primer">This is a community-powered project.</p>
             </div>
         </div>
 
@@ -105,23 +86,55 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    {{ content | toc | safe }}
+                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#undefined">There's no us without you</a></li><li><a href="#undefined">Our recent contributors</a></li></ol>
                 </nav>
             </div>
 
             <div class="geldocs-sections geldocs-body-copy gel-layout__item gel-3/5@l">
-                {{ content | safe }}
+                
 
-                <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
-                    <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
-                        <svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Could you improve this documentation?
-                    </h4>
-                    <div>
-                        <p>
-                        If you think you could make anything you see here a bit better then become one of <a href="{{site.basedir}}contributors/">our lovely contributors</a>!
-                        </p>
-                    </div>
-                </aside>
+<section>
+    <h2>There's no us without you</h2>
+
+    <p>We love our contributors! If you think you can improve on any of the content you see here, then we love <em>you</em> too!</p>
+    <p>To open a pull request please visit this project's github page and get forking! We can't wait to see what you've got to share.</p> 
+</section>
+
+<section>
+    <h2>Our recent contributors</h1>
+
+
+<ul class="codegel-promos">
+  
+  <li class="codegel-promo">
+    <div class="codegel-promo-content">
+      <div class="codegel-promo-headline">
+        <h3>
+          <a href="https://github.com/micmath">micmath</a>
+        </h3>
+      </div>
+    </div>
+    <div class="codegel-promo-image">
+      <img src="https://avatars0.githubusercontent.com/u/81645?v=4" alt="">
+    </div>
+  </li>
+   
+  <li class="codegel-promo">
+    <div class="codegel-promo-content">
+      <div class="codegel-promo-headline">
+        <h3>
+          <a href="https://github.com/Heydon">Heydon</a>
+        </h3>
+      </div>
+    </div>
+    <div class="codegel-promo-image">
+      <img src="https://avatars2.githubusercontent.com/u/683558?v=4" alt="">
+    </div>
+  </li>
+   
+  </ul>
+</section>
+
 
             </div>
         </div>
@@ -137,7 +150,7 @@
                         <span class="geldocs-button__content">Go to survey</span>
                         <span class="geldocs-button__icon_wrapper">
                             <svg class="geldocs-button__icon geldocs-icon geldocs-icon--text">
-                                <use xlink:href="{{site.basedir}}static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                                <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"
                                     style="fill:undefined;"></use>
                             </svg>
                         </span>
@@ -147,11 +160,9 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="{{site.basedir}}static/js/codegel.js"></script>
+    <script type="text/javascript" src="/code-gel/static/js/codegel.js"></script>
 
-    {% if includejs %}
-    <script type="text/javascript" src="{{site.basedir}}static/js/{{ includejs }}"></script>
-    {% endif %}
+    
 
     <script type="text/javascript">
         new Sticky('.sticky');

@@ -4,11 +4,11 @@ const crypto = require('crypto');
 const slug = require('slug')
 
 var slugCounts = {};
-function sluggify(content) {
-  if (typeof content === 'undefined') {
-    content = 'undefined';
+function toSlug(title) {
+  if (typeof title === 'undefined') {
+    title = 'undefined';
   }
-  var slugged = slug(content);
+  var slugged = slug(title);
   if ( Object.prototype.hasOwnProperty.call(slugCounts, slugged) ) {
     slugged += '-' + slugCounts[slugged]++;
   }
@@ -55,6 +55,16 @@ module.exports = function (eleventyConfig) {
           <div class="geldocs-demo">${renderedContent}</div>
         `;
       }
+    },
+    cta: {
+      render: function (attrs) {
+        var label = attrs.label;
+        var href = attrs.href;
+
+        return `
+          <p><a class="codegel-cta gel-long-primer-bold" href="${href}" target="_new"><span class="codegel-button__label">${label}</span><svg class="codegel-button__icon codegel-icon gel-icon--text"><use xlink:href="${data.site.basedir}static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+        `;
+      }
     }
   }
 
@@ -73,9 +83,10 @@ module.exports = function (eleventyConfig) {
 
       return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
     }
-  });
-
-  md.use(require('markdown-it-anchor'))
+  })
+    .use(require('markdown-it-anchor'), {
+      slugify: toSlug
+    })
     .use(require('markdown-it-shortcode-tag'), shortcodes)
     .use(require('markdown-it-footnote'))
     .use(require('markdown-it-container'), 'breakout', {
@@ -83,7 +94,7 @@ module.exports = function (eleventyConfig) {
       render: function (tokens, idx) {
         var m = tokens[idx].info.trim().match(/^(info|help|alert) ([\s\S]+)/);
         if (m && tokens[idx].nesting === 1) {
-          var id = sluggify( tokens[idx].info );
+          var id = toSlug( tokens[idx].info );
           return `
             <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-${id}">
               <h4 id="aside-${id}" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="${data.site.basedir}static/images/gel-icons-core-set.svg#gel-icon-${m[1]}" style="fill:#404040;"></use></svg>` + md.renderInline( (''+m[2]).trim() ) + `</h4><div>`;
@@ -99,6 +110,7 @@ module.exports = function (eleventyConfig) {
         var $ = cheerio.load(content);
         var result = '<ol id="geldocs-toc__links" class="geldocs-toc">';
         $('h2').each(function (i, h2) {
+          var id = h2.attribs.id;
           result += '<li><a href="#' + h2.attribs.id + '">' + $(h2).text() + '</a></li>';
         });
         return result + '</ol>';

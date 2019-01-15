@@ -66,11 +66,13 @@
                     <div class="gel-layout__item gel-2/5@l" style="text-align:left; padding-left:14px; margin-bottom:32px;">
                         <a href="{{site.basedir}}" class="geldocs-logo">Code{GEL}</a>
                     </div>
+                    {% if linkback %}
                     <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
                         <a class="geldocs-button geldocs-button--dark gel-long-primer-bold" href="{{linkback}}">
                             Go to BBC GEL
                         </a>
                     </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -86,19 +88,6 @@
                 <h1 class="geldocs-header__title">{{title}}</h1>
                 <p class="geldocs-header__summary gel-great-primer">{{summary}}</p>
             </div>
-
-            <div class="gel-layout__item gel-1/5@l">
-                <dl class="geldocs-standout-box">
-                    {% if version %}
-                    <dt>Version:</dt>
-                    <dd>{{ version }}</dd>
-                    {% endif %}
-                    <dt>Status:</dt>
-                    <dd>{{ "Published" if published else "Draft" }}</dd>
-                    <dt>Accessibility:</dt>
-                    <dd>{{ "Pass" if accessibility else "Pending" }}</dd>
-                </dl>
-            </div>
         </div>
 
         <div class="gel-layout">
@@ -111,18 +100,6 @@
 
             <div class="geldocs-sections geldocs-body-copy gel-layout__item gel-3/5@l">
                 {{ content | safe }}
-
-                <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
-                    <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
-                        <svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Could you improve this documentation?
-                    </h4>
-                    <div>
-                        <p>
-                        If you think you could make anything you see here a bit better then become one of <a href="{{site.basedir}}contributors/">our lovely contributors</a>!
-                        </p>
-                    </div>
-                </aside>
-
             </div>
         </div>
     </main>
