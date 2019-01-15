@@ -42,12 +42,12 @@ We are working our way through a list based closely on what's already published 
 | [headings]({{site.basedir}}components/headings/) | Draft / In Progress|
 | [promos]({{site.basedir}}components/promos/) | Draft / In Progress|
 | [tabs]({{site.basedir}}components/tabs/) | Draft / In Progress|
+| [form-fields]({{site.basedir}}components/form-fields/) | Draft / In Progress|
 
 ## What's next?
 
 Our backlog has a list of patterns we intend to document:
 
-- Forms and Validation
 - Video Player Controls
 - Pagination
 - Pocket
