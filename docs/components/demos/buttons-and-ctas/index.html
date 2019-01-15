@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/code-gel/static/images/favicon.ico" type="image/x-icon">
+
+    <title>Code GEL | Buttons and CTAs Demo</title>
+
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/codegel.css">
+
+    <script type="text/javascript"> // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    
+</head>
+
+<body class="gel-guideline-body">
+    <main id="main" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-5/5@l" style="padding-right: 12px;">
+                <h1 class="gel-guideline-header__title">Buttons and CTAs</h1>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-5/5@l">
+                <h2>Reference implementation</h2>
+                
+                
+<h3>Basic button</h3>
+
+<button class="codegel-button" type="button" onClick="alert('Basic button clicked')">Download</button>
+
+<h3>Button with icon</h3>
+
+<button class="codegel-button" type="button" onClick="alert('Button with icon clicked')">
+  <span class="codegel-button__label">Download</span><svg aria-hidden="true" focusable="false" class="gel-button__icon gel-icon gel-icon--text">
+    <use xlink:href=" /code-gel/static/images/gel-icons-all.svg#gel-icon-download"></use>
+  </svg>
+</button>
+
+<h3>Switch button with <code>aria-pressed</code></h3>
+
+<button class="codegel-button codegel-button-switch">
+  <span class="codegel-button__label">Night theme</span>
+  <span aria-hidden="true">on</span>
+</button>
+
+<h3 id="basic-cta">Basic CTA</h3>
+
+<a class="codegel-cta" href="#basic-cta">Help</a>
+
+<h3 id="cta-with-icon">CTA with icon</h3>
+
+<a class="codegel-cta" href="#cta-with-icon">
+  <svg aria-hidden="true" focusable="false" class="gel-button__icon gel-icon gel-icon--text">
+    <use xlink:href=" /code-gel/static/images/gel-icons-all.svg#gel-icon-help"></use>
+  </svg><span class="codegel-button__label">Help</span>
+</a>
+
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codegel && codegel.Switch.init();
+
+    // Initialize switch button
+    var switchElem = document.querySelector('.codegel-button-switch');
+    var switchButton = new codegel.Switch.constructor(switchElem);
+  });
+</script>
+            </div>
+        </div>
+    </main>
+
+
+    <script type="text/javascript" src="/code-gel/static/js/codegel.js"></script>
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+---
+layout: layout-index.njk
+title: Contributors
+summary: This is a community-powered project.
+---
+
+{% block pagemain %}
+<section>
+    <h2>There's no us without you</h2>
+
+    <p>We love our contributors! If you think you can improve on any of the content you see here, then we love <em>you</em> too!</p>
+    <p>To open a pull request please visit this project's github page and get forking! We can't wait to see what you've got to share.</p> 
+</section>
+
+<section>
+    <h2>Our recent contributors</h1>
+
+
+<ul class="codegel-promos">
+  {% for contributor in contributors %}
+  <li class="codegel-promo">
+    <div class="codegel-promo-content">
+      <div class="codegel-promo-headline">
+        <h3>
+          <a href="{{ contributor.url }}">{{ contributor.name }}</a>
+        </h3>
+      </div>
+    </div>
+    <div class="codegel-promo-image">
+      <img src="{{ contributor.avatar }}" alt="">
+    </div>
+  </li>
+   {% endfor %}
+  </ul>
+</section>
+
+{% endblock %}

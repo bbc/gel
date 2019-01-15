@@ -2,8 +2,8 @@
 title: External Links
 summary: When we link to content, it's important to differentiate between internal and external links so our audience knows exactly what to expect. External links direct people outside of the BBC domain, and are clearly indicated with an icon.
 version: 0.1.0
-published: true
-accessibility: true
+published: false
+accessibility: false
 linkback: https://www.bbc.co.uk/gel/guidelines/external-linking
 ---
 
@@ -41,7 +41,7 @@ The example places the external link within a paragraph. The paragraph text surr
 #### Notes
 
 * **`<span class="vh">leave BBC site:</span>`:** This text comes before the link's unique text content in both inline and list-based external links. It is visually hidden using the `vh` class[^1] and warns screen reader users of the change in context `target="_blank"` will invoke. In most screen reader software it will be read after the link role, resulting in _"link, leave BBC site: [unique link text]"_. The appended colon ensures there is a pause between _"leave BBC site"_ and the link text.
-* **`gel-icon`:** The icon must use the [GEL Iconography](https://www.bbc.co.uk/gel/guidelines/iconography) external link icon. In addition, apply `focusable="false"` to ensure Internet Explorer and some versions of Edge do not place the SVG in focus order[^2] (if JavaScript is not taking care of this already).
+* **`gel-icon`:** The icon must use the [GEL Iconography](https://www.bbc.co.uk/gel/guidelines/iconography) external link icon. In addition, apply `focusable="false"` to ensure Internet Explorer and some versions of Edge do not place the SVG in focus order[^2] if JavaScript is not taking care of this already.
 * **`gel-nowrap`:** Use this `<span>` to wrap the icon and the last word of the link's unique text. By applying `white-space: nowrap` it ensures the icon never becomes a widow (wraps onto a new link by itself)
 
 ### External link list
@@ -123,7 +123,8 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 
 <include src="components/demos/external-links.html">
 
-<p><a class="gel-button gel-button--dark gel-long-primer-bold" href="../demos/external-links/" target="_new">Open in new window <svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+<cta label="Open in new window" href="../demos/external-links/">
+
 
 ## Test specifications
 
