@@ -97,7 +97,7 @@ module.exports = function (eleventyConfig) {
           var id = toSlug( tokens[idx].info );
           return `
             <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-${id}">
-              <h4 id="aside-${id}" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="${data.site.basedir}static/images/gel-icons-core-set.svg#gel-icon-${m[1]}" style="fill:#404040;"></use></svg>${m[2]}</h4><div>`;
+              <h4 id="aside-${id}" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="${data.site.basedir}static/images/gel-icons-core-set.svg#gel-icon-${m[1]}" style="fill:#404040;"></use></svg>` + md.renderInline( (''+m[2]).trim() ) + `</h4><div>`;
         } else {
           return `</aside>`;
         }

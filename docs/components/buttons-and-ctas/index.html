@@ -103,7 +103,7 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#Introduction-11">Introduction</a></li><li><a href="#Recommended-markup-2">Recommended markup</a></li><li><a href="#Recommended-layout-2">Recommended layout</a></li><li><a href="#Recommended-behaviour-2">Recommended behaviour</a></li><li><a href="#Reference-implementation-10">Reference implementation</a></li><li><a href="#Related-research-12">Related research</a></li></ol>
+                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#Introduction-11">Introduction</a></li><li><a href="#Recommended-markup-3">Recommended markup</a></li><li><a href="#Recommended-layout-3">Recommended layout</a></li><li><a href="#Recommended-behaviour-3">Recommended behaviour</a></li><li><a href="#Reference-implementation-10">Reference implementation</a></li><li><a href="#Related-research-12">Related research</a></li></ol>
                 </nav>
             </div>
 
@@ -112,7 +112,7 @@
 <p>BBC buttons and calls-to-action differ widely in form and purpose. But they should conform to some fundamental rules. Only where these rules are observed will the user experience comfortable interaction.</p>
 <p>The most important of these rules is that the <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code> elements are assigned to appropriate respective tasks. That is: links should be used where navigation is elicited, and <code>&lt;button&gt;</code>s where a non-navigational action is being invoked. For example, a 'Sign in' control would suit a <code>&lt;button&gt;</code> because its job is to submit the sign in form. An adjacent 'Register' call-to-action—taking the user to a different form, in a different page or screen—would benefit from <code>&lt;a&gt;</code> semantics.</p>
 <p>This is especially helpful for assistive technology users, such as those running screen reader software. An element announced as a link that behaves as a button creates a confusing and off-putting experience. The visual design of buttons and calls-to-action should also be indicative of their behavior. Where button state changes, this change should be visually represented as well.</p>
-<h2 id="Recommended-markup-2">Recommended markup</h2>
+<h2 id="Recommended-markup-3">Recommended markup</h2>
 <h3 id="Basic-call-to-action-link-1">Basic call-to-action link</h3>
 <p>In most cases, a call-to-action should be marked up as a link, since the behaviour is typically to transport the user to a new page or section<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. Standard link markup should be used, including an <code>href</code> (links omitting <code>href</code> attributes are not focusable by keyboard).</p>
 <p>A class is provided to the element as a styling hook, enabling it to be differentiated from generic links visually.</p>
@@ -168,7 +168,7 @@
               <h4 id="aside-alert-Use-native-checked-states-1" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Use native checked states</h4><div><p>It is not recommended you use <code>&lt;button&gt;</code> elements with <code>aria-checked</code>. Instead, employ native checkbox and radio button elements. The basic behaviours of these elements do not rely on JavaScript and make for more robust and accessible components.</p>
 </aside><p>Buttons may move focus upon being pressed. Examples include buttons that open dialogs, or invoke menus. In these circumstances, include the <code>aria-haspopup=&quot;true&quot;</code> property<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>. This warns the screen reader user their context will change by announcing the button as a <em>&quot;popup button&quot;</em> or similar.</p>
 <p>If the button simply moves focus to a new section within the page, or to a new page entirely, it should not be a button but a link. Us a generic link or CTA instead.</p>
-<h2 id="Recommended-layout-2">Recommended layout</h2>
+<h2 id="Recommended-layout-3">Recommended layout</h2>
 <p>Button and CTA design differs somewhat between BBC sites and products. However, there are basic principles you should follow.</p>
 <ol>
 <li><strong>Be consistent:</strong> All of your buttons should share the same basic design, and so should all of your CTAs. Be consistent with colour, font size and weight, and padding.</li>
@@ -201,7 +201,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>on<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre>
-<h2 id="Recommended-behaviour-2">Recommended behaviour</h2>
+<h2 id="Recommended-behaviour-3">Recommended behaviour</h2>
 <p>Where <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code> links are employed correctly for CTAs and buttons respectively, browsers will invoke the standard and expected behaviours. These are as follows.</p>
 <h3 id="Links-2">Links</h3>
 <ul>
