@@ -62,7 +62,7 @@ module.exports = function (eleventyConfig) {
         var href = attrs.href;
 
         return `
-          <a class="codegel-cta gel-long-primer-bold" href="${href}" target="_new"><span class="codegel-button__label">${label}</span><svg class="codegel-button__icon codegel-icon gel-icon--text"><use xlink:href="${data.site.basedir}static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a>
+          <p><a class="codegel-cta gel-long-primer-bold" href="${href}" target="_new"><span class="codegel-button__label">${label}</span><svg class="codegel-button__icon codegel-icon gel-icon--text"><use xlink:href="${data.site.basedir}static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
         `;
       }
     }
