@@ -84,7 +84,7 @@
 
             <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
                 <h1 class="geldocs-header__title">Home</h1>
-                <p class="geldocs-header__summary gel-great-primer">Guidance for developers building accessible websites with BBC GEL.</p>
+                <p class="geldocs-header__summary gel-great-primer">Guidance for developers building accessible websites based on BBC GEL.</p>
             </div>
         </div>
 
@@ -99,17 +99,18 @@
             <div class="geldocs-sections geldocs-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="what's-all-this%3F">What's all this?</h2>
 <p>These documents are a working-draft of a project whose aim is to answer the BBC developer's question, &quot;What is the recommended way to code the patterns documented in BBC GEL?&quot; If you've ever sat down to build a component documented in GEL, and wondered what are the best HTML tags, attributes and behaviours to use then Welcome! you're in the right place.</p>
-<p>How do we decide what's a &quot;best&quot; implementation? We invite <em>everyone</em> to join in that conversation. It's an evolving guideline and the more voices we include, the better the advice we can offer. But there are three major areas of concern that we use to decide what constitutes &quot;good practice&quot;...</p>
+<p>How do we decide what &quot;best&quot; is? We invite <em>everyone</em> to join in that conversation. This is an evolving guideline and the more voices we include, the better the advice we can offer. But there are three major areas of concern that we use to decide what constitutes recommended practice...</p>
 <ul>
-<li><strong>Accessibility</strong>: We <em>strongly</em> believe that when we endeavour to create anything at the BBC, we must hold ourselves the highest possible standard of accessibility. The BBC is for <em>everyone</em>, and as creators it is our duty to ensure that everyone can access our content. But we acknowledge that it can be tricky to get it right, even with the best of intentions, and with the wide range of assistive technologies in use we can all benefit from sharing a collective effort. The guidance here incorporates relevant and specific thinking about exactly this, from some of the best minds across the digital accessibility community.</li>
-<li><strong>Standards</strong>: We closely follow the work of standards such as the <em>HTML 5.x Recommendation</em>, the <em>HTML Living Standard</em>, and the W3C <em>Web Accessibility Initiative – Accessible Rich Internet Applications</em> specifications; as well as the BBC's own <em>Mobile Accessibility Guidelines</em> and applicable <em>BBC Standards and Guidelines</em>. Like accessibility, this is an area rich with nuance and detail; getting it right is easier when we work together collectively towards known-good examples that we share with everyone.</li>
-<li><strong>Research Driven</strong>: Not every question about implementation can be answered in an external standards document and the BBC holds itself to be a <em>contributor</em> of knowledge to the wider industry, so we expect that in some cases we will be breaking fresh ground and innovating in ways that require hands-on research to confirm if we're heading in the right direction or not. In cases where a question cannot be clearly answered by referring to standards and guidelines we expect valid research and testing data to be documented and made available as evidence that a recommendation is a known-best technique.</li>
+<li><strong>Accessibility</strong>: We <em>strongly</em> believe that when we endeavour to create anything at the BBC, we must hold ourselves the highest possible standard of accessibility. The BBC is for <em>everyone</em>, and as creators it is our duty to ensure that everyone can access our content. But we acknowledge that it can be tricky to get it right, even with the best of intentions, and with the wide range of assistive technologies in use we can all benefit from sharing our collective experience and knowledge. The guidance here incorporates relevant and specific thinking about exactly this, collected from some of the best minds across the digital accessibility community.</li>
+<li><strong>Standards</strong>: We closely follow the work of recognised standards such as the <em>HTML 5.x Recommendation</em>, the <em>HTML Living Standard</em>, and the W3C <em>Web Accessibility Initiative – Accessible Rich Internet Applications</em> specifications; as well as the BBC's own <em>Mobile Accessibility Guidelines</em> and all applicable <em>BBC Standards and Guidelines</em>. Like accessibility, this is an area rich with nuance and detail; getting it right is easier when we work together collectively towards known-good examples that we share with everyone.</li>
+<li><strong>Research Driven</strong>: Not every question about implementation can be answered in an external standards document and the BBC holds itself to be a <em>contributor</em> of knowledge to the wider industry, so we expect that in some cases we will be breaking fresh ground and innovating in ways that require hands-on research to confirm if we're heading in the right direction. In cases where a question cannot be clearly answered by referring to standards and guidelines we expect valid research and testing data to be documented and made available as evidence that a recommendation is a known-best technique.</li>
 </ul>
-<p>Finally, in cases where none of the above are available, we seek to use what is <em>industry best practice</em>. Without any evidence to show a benefit, merely being different for the sake of being different can result in an experience that is disorientating for users. In questions of usability patterns, until we have evidence to show that being different is actually beneficial, we try to stick to what is traditional, either across the BBC or the wider web industry.</p>
+<p>Finally, in cases where none of the above are available, we seek to use what is considered <em>standard practice</em>. Without any evidence to show a benefit, merely being different for the sake of being different can result in an experience that is pointlessly confusing for users, particularly those this impairments who require assistive technologies. In questions of usability patterns, until we have evidence to show that being different is actually a benefit, we try to stick to what is traditional, either across the BBC or the wider Web.</p>
 <h2 id="but-our-product-is-special...">But our product is special...</h2>
-<p>Let me stop you there. Yes, we completely understand that the BBC, and in fact the web-at-large, is a landscape of variation when it comes to all the ways a web page can be generated. But this is not the case with how web pages are <em>interpreted</em>; standards-compliant web browsers <strong>all</strong> expect a very limited set of technologies to be used: HTML, CSS and JS. No matter how unique your back-end service is, at the time your product is actually rendered in front of the user it cannot be so technologically different that it can't be recognised by a typical web browser. That is the point where you can compare the experience of your product with the guidance provided here.</p>
+<p>Let me stop you there.</p>
+<p>Yes, we completely understand that the BBC, along with the web-at-large, is a landscape of variation when it comes to the myriad ways a web page can be generated. But this is not the case with how web pages are <em>interpreted</em>. Standards-compliant web browsers <strong>all</strong> expect a very limited set of well-defined technologies be used: HTML, CSS and JS. No matter how unique your back-end service is, at the time your product is actually rendered in front of a user it cannot be so technologically different that it can't be recognised by the typical web browser application. That is the point where you can compare the functional experience of your product with the guidance provided here.</p>
 <h2 id="what's-here%3F">What's here?</h2>
-<p>We are working our way through a list based closely on what's already published in <a href="http://www.bbc.co.uk/gel/">the BBC GEL Guidelines</a>. You should generally start there when seeking to understand any documented pattern. At the point where you're wondering about which HTML tags to use we're here for you!</p>
+<p>We are working our way through a list based closely on what's already published in <a href="http://www.bbc.co.uk/gel/">the BBC GEL Guidelines</a>. You should generally start there when seeking to understand any documented pattern but at the point where you're wondering about which HTML tags to use we're here for you!</p>
 <table>
 <thead>
 <tr>
@@ -119,43 +120,43 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="https://bbc.github.io/code-gel/components/action-dialogs/">action-dialogs</a></td>
+<td><a href="/code-gel/components/action-dialogs/">action-dialogs</a></td>
 <td>Draft / In Progress</td>
 </tr>
 <tr>
-<td><a href="https://bbc.github.io/code-gel/components/breakout-boxes/">breakout-boxes</a></td>
+<td><a href="/code-gel/components/breakout-boxes/">breakout-boxes</a></td>
 <td>Draft / In Progress</td>
 </tr>
 <tr>
-<td><a href="https://bbc.github.io/code-gel/components/buttons-and-ctas/">buttons-and-ctas</a></td>
+<td><a href="/code-gel/components/buttons-and-ctas/">buttons-and-ctas</a></td>
 <td>Draft / In Progress</td>
 </tr>
 <tr>
-<td><a href="https://bbc.github.io/code-gel/components/cards/">cards</a></td>
+<td><a href="/code-gel/components/cards/">cards</a></td>
 <td>Draft / In Progress</td>
 </tr>
 <tr>
-<td><a href="https://bbc.github.io/code-gel/components/carousels/">carousels</a></td>
+<td><a href="/code-gel/components/carousels/">carousels</a></td>
 <td>Draft / In Progress</td>
 </tr>
 <tr>
-<td><a href="https://bbc.github.io/code-gel/components/external-links/">external-links</a></td>
+<td><a href="/code-gel/components/external-links/">external-links</a></td>
 <td>Draft / In Progress</td>
 </tr>
 <tr>
-<td><a href="https://bbc.github.io/code-gel/components/metadata-strips/">metadata-strips</a></td>
+<td><a href="/code-gel/components/metadata-strips/">metadata-strips</a></td>
 <td>Draft / In Progress</td>
 </tr>
 <tr>
-<td><a href="https://bbc.github.io/code-gel/components/headings/">headings</a></td>
+<td><a href="/code-gel/components/headings/">headings</a></td>
 <td>Draft / In Progress</td>
 </tr>
 <tr>
-<td><a href="https://bbc.github.io/code-gel/components/promos/">promos</a></td>
+<td><a href="/code-gel/components/promos/">promos</a></td>
 <td>Draft / In Progress</td>
 </tr>
 <tr>
-<td><a href="https://bbc.github.io/code-gel/components/tabs/">tabs</a></td>
+<td><a href="/code-gel/components/tabs/">tabs</a></td>
 <td>Draft / In Progress</td>
 </tr>
 </tbody>

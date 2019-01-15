@@ -133,7 +133,7 @@
 <h4 id="notes">Notes</h4>
 <ul>
 <li><strong><code>&lt;span class=&quot;vh&quot;&gt;leave BBC site:&lt;/span&gt;</code>:</strong> This text comes before the link's unique text content in both inline and list-based external links. It is visually hidden using the <code>vh</code> class<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> and warns screen reader users of the change in context <code>target=&quot;_blank&quot;</code> will invoke. In most screen reader software it will be read after the link role, resulting in <em>&quot;link, leave BBC site: [unique link text]&quot;</em>. The appended colon ensures there is a pause between <em>&quot;leave BBC site&quot;</em> and the link text.</li>
-<li><strong><code>gel-icon</code>:</strong> The icon must use the <a href="https://www.bbc.co.uk/gel/guidelines/iconography">GEL Iconography</a> external link icon. In addition, apply <code>focusable=&quot;false&quot;</code> to ensure Internet Explorer and some versions of Edge do not place the SVG in focus order<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> (if JavaScript is not taking care of this already).</li>
+<li><strong><code>gel-icon</code>:</strong> The icon must use the <a href="https://www.bbc.co.uk/gel/guidelines/iconography">GEL Iconography</a> external link icon. In addition, apply <code>focusable=&quot;false&quot;</code> to ensure Internet Explorer and some versions of Edge do not place the SVG in focus order<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> if JavaScript is not taking care of this already.</li>
 <li><strong><code>gel-nowrap</code>:</strong> Use this <code>&lt;span&gt;</code> to wrap the icon and the last word of the link's unique text. By applying <code>white-space: nowrap</code> it ensures the icon never becomes a widow (wraps onto a new link by itself)</li>
 </ul>
 <h3 id="external-link-list">External link list</h3>
@@ -242,8 +242,9 @@ title: External links
     </li>
   </ul>
 </div></div>
-        <p><a class="gel-button gel-button--dark gel-long-primer-bold" href="../demos/external-links/" target="_new">Open in new window <svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
-<h2 id="test-specifications">Test specifications</h2>
+        
+          <a class="codegel-cta gel-long-primer-bold" href="../demos/external-links/" target="_new"><span class="codegel-button__label">Open in new window</span><svg class="codegel-button__icon codegel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a>
+        <h2 id="test-specifications">Test specifications</h2>
 <p>[TODO]</p>
 <h2 id="related-research">Related research</h2>
 <p>[TODO]</p>

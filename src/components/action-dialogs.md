@@ -133,7 +133,8 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 
 <include src="components/demos/action-dialogs.html">
 
-<p><a class="geldocs-button geldocs-button--dark geldocs-long-primer-bold" href="../demos/action-dialogs/" target="_new">Open in new window <svg class="geldocs-button__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:currentColor"></use></svg></a></p>
+<cta label="Open in new window" href="../demos/action-dialogs/">
+
 
 ## Related research
 

@@ -65,7 +65,8 @@ The following implementation is a copy of the 'tip' provided in this document.
 
 <include src="components/demos/breakout-boxes.html">
 
-<p><a class="gel-button gel-button--dark gel-long-primer-bold" href="../demos/breakout-boxes/" target="_new">Open in new window</a></p>
+<cta label="Open in new window" href="../demos/breakout-boxes/">
+
 
 ## Test specifications
 

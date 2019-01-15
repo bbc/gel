@@ -149,7 +149,8 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 
 <include src="components/demos/tabs.html">
 
-<p><a class="gel-button gel-button--dark gel-long-primer-bold" href="../demos/tabs/" target="_new">Open in new window <svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:undefined;"></use></svg></a></p>
+<cta label="Open in new window" href="../demos/tabs/">
+
 
 ## Test specifications
 
