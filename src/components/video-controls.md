@@ -8,8 +8,7 @@ accessibility: false
 
 ## Introduction
 
-Video is an important consideration for a broadcasting company. The BBC presents web-based video in a variety of different ways. Sometimes the video is embedded in a fully-featured player, and in other cases just a couple of basic controls are present. The purpose of this 
-documentation the recommended interaction design for custom video controls.
+Video is an important consideration for a broadcasting company. The BBC presents web-based video in a variety of different ways. Sometimes the video is embedded in a fully-featured player, and in other cases just a couple of basic controls are present. The purpose of this documentation is to set out the recommended interaction design for custom video controls.
 
 ## Recommended markup
 
@@ -82,27 +81,44 @@ Many of the controls for video playback, including **Play** and **Mute**, are si
 2. Take the `type="button"` attribution
 3. Modify their label depending on state
 
-In regards to (3), toggle buttons often have a persistent label and communicate state via `aria-pressed` (`true` or `false`). However, video player controls should be easy to voice activate, so their labels must be consistent with their iconography. For example, for the play button:
+In regards to (3), toggle buttons often have a persistent label and communicate state via `aria-pressed` (`true` or `false`). However, video player controls should be easy to activate by voice, so their labels must be consistent with their iconography. For example, for the play button:
 
 * Paused state → shows the familiar triangle-shaped icon → "play"
 * Playing state → shows the familiar two-vertical-lines icon → "pause"
 
-In the [reference implementation](#reference-implementation), an `active` class is appended to the parent button in its active state. This is used as a styling hook to toggle between the two text labels and their icons. In the following example, `class="code-gel-video-button-play-off` is hidden with `display: none` and it not available to assistive technologies. The calculated accessible name is _"Pause"_.
+In the [reference implementation](#reference-implementation), an `active` class is appended to the parent button in its active state. This is used as a styling hook to toggle between the two text labels and their icons. In the following example, `class="code-gel-video-button-play-off` is hidden with `display: none` and is not available to assistive technologies. The calculated accessible name[^2] is _"Pause"_.
 
 ```html
 <button class="codegel-video-play-button active" type="button">
   <span class="codegel-video-button-off">
-    <span class="vh">Play</span>
+    <span class="codegel-sr">Play</span>
     <svg><!-- play icon --></svg>
   </span>
   <span class="codegel-video-button-on">
-    <span class="vh">Pause</span>
+    <span class="codegel-sr">Pause</span>
     <svg><!-- pause icon --></svg>
   </span>
 </button>
 ```
 
-The text labels are included as `<span>`s and hidden visually using the `vh`[^2] class.
+The text labels are included as `<span>`s and hidden visually using the `codegel-sr` class.
+
+```css
+/*
+Visually hide an element, but leave it available for screen readers 
+ */
+.codegel-sr {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+```
 
 #### Icons
 
@@ -116,7 +132,7 @@ Icons for custom controls should be taken from the standard [GEL Iconography](ht
 
 ### The timeline
 
-AKA the 'scrub' or progress bar. It has two purposes:
+Also known as the 'scrub' or progress bar. It has two purposes:
 
 1. To indicate the current progress of the video
 2. To allow the user to select a point along this timeline
@@ -125,7 +141,7 @@ The timeline must, therefore, be keyboard and screen reader accessible. The `typ
 
 ```html
 <label for="timeline" class="codegel-video-scrub-container">
-  <span class="vh">Timeline</span>
+  <span class="codegel-sr">Timeline</span>
   <input type="range" id="timeline" min="0" max="95.2" value="14.7" />
 </label>
 ```
@@ -136,7 +152,7 @@ To make these values more readable non-visually, they are rounded up into whole 
 
 ```html
 <label for="timeline" class="codegel-video-scrub-container">
-  <span class="vh">Timeline</span>
+  <span class="codegel-sr">Timeline</span>
   <input type="range" id="timeline" min="0" aria-valuemin="0 seconds" max="95.2" aria-valuemax="1 minutes and 35 seconds" value="14.7" aria-valuenow="0 minutes and 14 seconds" />
 </label>
 ```
@@ -155,7 +171,7 @@ The `type="range"` input (for the timeline) requires a number of proprietary sty
 
 #### The controls container
 
-In the [reference implementation](#reference-implementation), the controls container uses Flexbox to distribute the controls along a horizontal axis. The timeline constiner takes `flex: auto` to take up any space not taken by surrounding buttons. This makes the control bar responsive and tolerant of different functionality complexity.
+In the [reference implementation](#reference-implementation), the controls container uses Flexbox to distribute the controls along a horizontal axis. The timeline container takes `flex: auto`[^5] to take up any space not taken by surrounding buttons. This makes the control bar responsive and tolerant of different functionality complexity.
 
 ```css
 .codegel-video-timeline-container {
@@ -167,7 +183,7 @@ In the [reference implementation](#reference-implementation), the controls conta
 
 ### Autoplay
 
-If the video is set to `autoplay`, it is imperative the video is muted by default. Some browsers handle this for users already[^5], but not all. In which case, we need to set the muted state on the `loadedmetadata` event (when the video has been appended to the DOM):
+If the video is set to `autoplay`, it is imperative the video is muted by default. Some browsers handle this for users already[^6], but not all. In which case, we need to set the muted state on the `loadedmetadata` event (when the video has been appended to the DOM):
 
 ```js
 video.addEventListener('loadedmetadata', function () {
@@ -241,7 +257,7 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 
 <include src="components/demos/video.html">
 
-<p><a class="geldocs-button geldocs-button--dark geldocs-long-primer-bold" href="../demos/video/" target="_new">Open in new window <svg class="geldocs-button__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:currentColor"></use></svg></a></p>
+<cta label="Open in new window" href="../demos/video/">
 
 ## Related research
 
@@ -250,8 +266,9 @@ This topic does not yet have any related research available.
 ### Further reading, elsewhere on the Web
 
 [^1]: Using the group role — MDN, <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_group_role>
-[^2]: Gist of the `vh` (visually hidden) class,  <https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472> 
+[^2]: What is an accessible name? — Paciello Group blog, <https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/>
 [^3]: IE focus bugs with focusable elements — Simply Accessible,  <https://simplyaccessible.com/article/7-solutions-svgs/#acc-heading-4> 
 [^4]: Styling Cross-browser compatibe range inputs — CSS Tricks, <https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/>
-[^5]: Autoplay Policy Changes — Google Developers, <https://developers.google.com/web/updates/2017/09/autoplay-policy-changes>
+[^5]: Flex — CSS Tricks, <https://css-tricks.com/almanac/properties/f/flex/>
+[^6]: Autoplay Policy Changes — Google Developers, <https://developers.google.com/web/updates/2017/09/autoplay-policy-changes>
 

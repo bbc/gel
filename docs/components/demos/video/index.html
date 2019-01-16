@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Code GEL | Cards Demo</title>
+    <title>Code GEL | Video controls Demo</title>
 
     <link rel="stylesheet" type="text/css" href="/code-gel/static/css/codegel.css">
 
@@ -23,7 +23,7 @@
     <main id="main" class="gel-wrap gs-u-clearfix">
         <div class="gel-layout">
             <div class="gel-layout__item gel-5/5@l" style="padding-right: 12px;">
-                <h1 class="gel-guideline-header__title">Cards</h1>
+                <h1 class="gel-guideline-header__title">Video controls</h1>
             </div>
         </div>
 
@@ -49,13 +49,13 @@
       </video>
       <button class="codegel-video-play-button codegel-card-play-button" type="button" hidden>
         <span class="codegel-video-button-off">
-          <span class="vh">Play</span>
+          <span class="codegel-sr">Play</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
             <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-play"></use>
           </svg>
         </span>
         <span class="codegel-video-button-on">
-          <span class="vh">Pause</span>
+          <span class="codegel-sr">Pause</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
             <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-pause"></use>
           </svg>
@@ -63,13 +63,13 @@
       </button>
       <button class="codegel-video-mute-button codegel-card-mute-button" type="button" hidden>
         <span class="codegel-video-button-off">
-          <span class="vh">Mute</span>
+          <span class="codegel-sr">Mute</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
             <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-listen"></use>
           </svg>
         </span>
         <span class="codegel-video-button-on">
-          <span class="vh">Unmute</span>
+          <span class="codegel-sr">Unmute</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
             <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-sound-off"></use>
           </svg>
@@ -90,19 +90,19 @@
           broadcasters to be much more important, meaning that idents need to stand out from the competition.</p>
       </div>
       <button type="button" aria-pressed="false">
-        <span class="vh">Love</span>
+        <span class="codegel-sr">Love</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
           <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-love-loved-state"></use>
         </svg>
       </button>
       <button type="button">
-        <span class="vh">Add</span>
+        <span class="codegel-sr">Add</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
           <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-add"></use>
         </svg>
       </button>
       <button type="button">
-        <span class="vh">Share</span>
+        <span class="codegel-sr">Share</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
           <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-share"></use>
         </svg>
@@ -115,37 +115,37 @@
       <track label="English" kind="subtitles" srclang="en" src="/code-gel/static/videos/ident.vtt" default>
       <p>
         Your browser doesn't support HTML5 video.
-        <a href="{site.basedir}}static/videos/ident_clip.mp4">Download</a> the video instead.
+        <a href="/code-gel/static/videos/ident_clip.mp4">Download</a> the video instead.
       </p>
     </video>
     <div class="codegel-video-controls" hidden>
       <button class="codegel-video-play-button" type="button">
         <span class="codegel-video-button-off">
-          <span class="vh">Play</span>
+          <span class="codegel-sr">Play</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
             <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-play"></use>
           </svg>
         </span>
         <span class="codegel-video-button-on">
-          <span class="vh">Pause</span>
+          <span class="codegel-sr">Pause</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
             <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-pause"></use>
           </svg>
         </span>
       </button>
       <label for="timeline" class="codegel-video-timeline-container">
-        <span class="vh">Timeline</span>
+        <span class="codegel-sr">Timeline</span>
         <input type="range" id="timeline" />
       </label>
       <button class="codegel-video-mute-button" type="button">
         <span class="codegel-video-button-off">
-          <span class="vh">Mute</span>
+          <span class="codegel-sr">Mute</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
             <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-listen"></use>
           </svg>
         </span>
         <span class="codegel-video-button-on">
-          <span class="vh">Unmute</span>
+          <span class="codegel-sr">Unmute</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
             <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-sound-off"></use>
           </svg>

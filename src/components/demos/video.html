@@ -1,5 +1,5 @@
 ---
-title: Cards
+title: Video controls
 ---
 
 <div style="margin-bottom: 1rem;">
@@ -19,13 +19,13 @@ title: Cards
       </video>
       <button class="codegel-video-play-button codegel-card-play-button" type="button" hidden>
         <span class="codegel-video-button-off">
-          <span class="vh">Play</span>
+          <span class="codegel-sr">Play</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
             <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-play"></use>
           </svg>
         </span>
         <span class="codegel-video-button-on">
-          <span class="vh">Pause</span>
+          <span class="codegel-sr">Pause</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
             <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-pause"></use>
           </svg>
@@ -33,13 +33,13 @@ title: Cards
       </button>
       <button class="codegel-video-mute-button codegel-card-mute-button" type="button" hidden>
         <span class="codegel-video-button-off">
-          <span class="vh">Mute</span>
+          <span class="codegel-sr">Mute</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
             <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-listen"></use>
           </svg>
         </span>
         <span class="codegel-video-button-on">
-          <span class="vh">Unmute</span>
+          <span class="codegel-sr">Unmute</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
             <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-sound-off"></use>
           </svg>
@@ -60,19 +60,19 @@ title: Cards
           broadcasters to be much more important, meaning that idents need to stand out from the competition.</p>
       </div>
       <button type="button" aria-pressed="false">
-        <span class="vh">Love</span>
+        <span class="codegel-sr">Love</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
           <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-love-loved-state"></use>
         </svg>
       </button>
       <button type="button">
-        <span class="vh">Add</span>
+        <span class="codegel-sr">Add</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
           <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-add"></use>
         </svg>
       </button>
       <button type="button">
-        <span class="vh">Share</span>
+        <span class="codegel-sr">Share</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
           <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-share"></use>
         </svg>
@@ -85,37 +85,37 @@ title: Cards
       <track label="English" kind="subtitles" srclang="en" src="{{site.basedir}}static/videos/ident.vtt" default>
       <p>
         Your browser doesn't support HTML5 video.
-        <a href="{site.basedir}}static/videos/ident_clip.mp4">Download</a> the video instead.
+        <a href="{{site.basedir}}static/videos/ident_clip.mp4">Download</a> the video instead.
       </p>
     </video>
     <div class="codegel-video-controls" hidden>
       <button class="codegel-video-play-button" type="button">
         <span class="codegel-video-button-off">
-          <span class="vh">Play</span>
+          <span class="codegel-sr">Play</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
             <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-play"></use>
           </svg>
         </span>
         <span class="codegel-video-button-on">
-          <span class="vh">Pause</span>
+          <span class="codegel-sr">Pause</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
             <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-pause"></use>
           </svg>
         </span>
       </button>
       <label for="timeline" class="codegel-video-timeline-container">
-        <span class="vh">Timeline</span>
+        <span class="codegel-sr">Timeline</span>
         <input type="range" id="timeline" />
       </label>
       <button class="codegel-video-mute-button" type="button">
         <span class="codegel-video-button-off">
-          <span class="vh">Mute</span>
+          <span class="codegel-sr">Mute</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
             <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-listen"></use>
           </svg>
         </span>
         <span class="codegel-video-button-on">
-          <span class="vh">Unmute</span>
+          <span class="codegel-sr">Unmute</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
             <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-sound-off"></use>
           </svg>

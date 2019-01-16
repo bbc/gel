@@ -111,6 +111,7 @@
   background-color: hsla(0, 0%, 100%, 0.5);
   color: $gel-color--tundora;
   position: absolute;
+  left: 0;
   bottom: 0;
 }
 
@@ -124,5 +125,6 @@
   height: 2.5rem;
   font-size: 1.5rem;
   top: 0;
+  left: auto;
   right: 0;
 }

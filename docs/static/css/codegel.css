@@ -406,6 +406,9 @@ a {
   background-color: #F1F1F1;
   overflow-y: auto; }
 
+.codegel-card-info-heading:focus {
+  outline: none; }
+
 /* Video */
 .codegel-card .codegel-card-play-button,
 .codegel-card .codegel-card-mute-button {
@@ -417,6 +420,7 @@ a {
   background-color: rgba(255, 255, 255, 0.5);
   color: #404040;
   position: absolute;
+  left: 0;
   bottom: 0; }
 
 .codegel-card .codegel-card-play-button:focus,
@@ -428,6 +432,7 @@ a {
   height: 2.5rem;
   font-size: 1.5rem;
   top: 0;
+  left: auto;
   right: 0; }
 
 /**
