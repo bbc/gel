@@ -1,7 +1,7 @@
 ---
 title: Promos
 summary: A promo is a snippet of content which links to a full piece of content elsewhere on the BBC site or app.
-version: 0
+version: 0.1.0
 published: false
 accessibility: false
 linkback: http://www.bbc.co.uk/gel/guidelines/promos
@@ -26,18 +26,18 @@ Promos are typically presented as a set, and together must be marked up as an un
 
 ```html
 <h2>Latest news</h2>
-<ul class="gel-promos">
-  <li class="gel-promo">
-    <div class="gel-promo-content">
-      <div class="gel-promo-headline">
+<ul class="codegel-promos">
+  <li class="codegel-promo">
+    <div class="codegel-promo-content">
+      <div class="codegel-promo-headline">
         <h3>
           <a href="#example/permalink/1">Heading text goes here</a>
         </h3>
       </div>
-      <div class="gel-promo-desc">
+      <div class="codegel-promo-desc">
         <p>Some description text goes here.</p>
       </div>
-      <dl class="gel-metadata-strip">
+      <dl class="codegel-metadata-strip">
         <div>
           <dt class="vh">Published:</dt>
           <dd>
@@ -53,21 +53,21 @@ Promos are typically presented as a set, and together must be marked up as an un
         </div>
       </dl>
     </div>
-    <div class="gel-promo-image">
+    <div class="codegel-promo-image">
       <img src="{{site.basedir}}static/images/placeholder.png" alt="">
     </div>
   </li>
-  <li class="gel-promo">
-    <div class="gel-promo-content">
-      <div class="gel-promo-headline">
+  <li class="codegel-promo">
+    <div class="codegel-promo-content">
+      <div class="codegel-promo-headline">
         <h3>
           <a href="#example/permalink/2">Another heading text goes here</a>
         </h3>
       </div>
-      <div class="gel-promo-desc">
+      <div class="codegel-promo-desc">
         <p>More description text here.</p>
       </div>
-      <dl class="gel-metadata-strip">
+      <dl class="codegel-metadata-strip">
         <div>
           <dt class="vh">Published:</dt>
           <dd>
@@ -83,30 +83,30 @@ Promos are typically presented as a set, and together must be marked up as an un
         </div>
       </dl>
     </div>
-    <div class="gel-promo-image">
+    <div class="codegel-promo-image">
       <img src="{{site.basedir}}static/images/placeholder.png" alt="">
     </div>
   </li>
 </ul>
 ```
 
-Images can be considered decorative (`alt=""`; the first Promo in our example) or non-decorative (`alt="[description of image]"`; the second Promo in our example). They must appear _after_ the textual content (`gel-promo-content`) in the markup since the heading introduces the promo content, including the image content. **Non-decorative images must have alternative text that does not simply repeat information in the headline or description**.
+Images can be considered decorative (`alt=""`; the first Promo in our example) or non-decorative (`alt="[description of image]"`; the second Promo in our example). They must appear _after_ the textual content (`codegel-promo-content`) in the markup since the heading introduces the promo content, including the image content. **Non-decorative images must have alternative text that does not simply repeat information in the headline or description**.
 
 ## Recommended layout
 
 A group of Promos in a set should share the same height. This is possible by making the `<ul>` a CSS Flexbox or CSS Grid context. The appearance of each promo is improved by distributing the metadata (if present) to the bottom of the container. This is possible by making the promo a Flexbox context and giving the metadata element `margin-top: auto`. Padding can be combined with margin to ensure a minimum space between the metadata and the element above it.
 
 ```css
-.gel-promo {
+.codegel-promo {
   display: flex;
   flex-diection: column;
 }
 
-.gel-promo > * + * {
+.codegel-promo > * + * {
   margin-top: 1rem; /* generic spacing between components of the promo */
 } 
 
-.gel-metadata-strip {
+.codegel-metadata-strip {
   margin-top: auto;
   padding-top: 1rem;
 }
@@ -121,7 +121,7 @@ While [Metadata Strips](../metadata-strips/) are documented as their own compone
 As stated in [Recommended markup](#recommended-markup), the image must come _after_ the text content in the source order. However, it is designed to appear before it visually. Using Flexbox, it is possible to augment the visual order without affecting the source order:
 
 ```css
-.gel-promo-image {
+.codegel-promo-image {
   order: -1;
 }
 ```
@@ -133,19 +133,19 @@ Augmenting the source order can produce a [WCAG 2.4.3 Focus Order failure](https
 The image will need to fit the available space, regardless of the Promo's dimensions (which are likely to change across breakpoints) without distorting. This is possible by setting the desired height of the image box and using the `object-fit` property:
 
 ```css
-.gel-promo-image {
+.codegel-promo-image {
   order: -1;
   height: 10rem;
   overflow: hidden;
 }
 
-.gel-promo-image img {
+.codegel-promo-image img {
   height: 100%;
   width: auto;
 }
 
 @supports (object-fit: cover) {
-  .gel-promo-image img {
+  .codegel-promo-image img {
     width: 100%;
     object-fit: cover;
   }
@@ -158,22 +158,22 @@ At the time of writing, the `object-fit` property is supported everywhere but In
 
 ### Horizontal Promos
 
-It is permissible to create a horizontal configuration, with the image to the left of the content. In the [Example implementation](../demos/promos/) this is achieved without changing the markup, except to place the class `gel-promos-horizontal` on the `<ul>` element and `gel-promo-horizontal` on each subject Promo.
+It is permissible to create a horizontal configuration, with the image to the left of the content. In the [Example implementation](../demos/promos/) this is achieved without changing the markup, except to place the class `codegel-promos-horizontal` on the `<ul>` element and `codegel-promo-horizontal` on each subject Promo.
 
 A small amount of additional CSS is then applied. Note the switch in `flex-direction` from `column` to `row`.
 
 ```css
 @supports (display: grid) {
-  .gel-promos.gel-promos-horizontal {
+  .codegel-promos.codegel-promos-horizontal {
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   }
 }
 
-.gel-promo.gel-promo-horizontal {
+.codegel-promo.codegel-promo-horizontal {
   flex-direction: row;
 }
 
-.gel-promo.gel-promo-horizontal .gel-promo-image {
+.codegel-promo.codegel-promo-horizontal .codegel-promo-image {
   width: 15rem;
   height: auto;
 }
@@ -184,12 +184,12 @@ A small amount of additional CSS is then applied. Note the switch in `flex-direc
 A `text-decoration` focus style is recommended for the headline link and any linked meta information (which should be the only focusable elements inside the promo). In addition, the promo itself can take an outline via `focus-within`, to better draw attention to the promo 'in hand':
 
 ```css
-.gel-promo-headline a:focus {
+.codegel-promo-headline a:focus {
   outline: none;
   text-decoration: underline;
 }
 
-.gel-promo:focus-within {
+.codegel-promo:focus-within {
   outline: 0.25rem solid;
 }
 ```
@@ -226,11 +226,12 @@ Example implementations are intended to demonstrate **what needs to be achieved*
 
 <include src="components/demos/promos.html">
 
-<p><a class="geldocs-button geldocs-button--dark geldocs-long-primer-bold" href="../demos/promos/" target="_new">Open in new window <svg class="geldocs-button__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:currentColor"></use></svg></a></p>
+<cta label="Open in new window" href="../demos/promos/">
+
 
 ## Related accessibility guidelines
 
-<dl class="gel-2col-list">
+<dl class="geldocs-2col-list">
   <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/design/actionable-elements">Actionable elements</a></dt>
   <dd>"All users must be able to determine if an element is actionable or if it is static content." View the <a href="https://github.com/bbc/bbc-a11y/blob/master/features/standards/mag/design/07_actionable_elements.feature">test spec for actionable elements</a>.</dd>
 
