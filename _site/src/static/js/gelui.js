@@ -1,12 +1,12 @@
 /**
  * Promo
- * @namespace codegel
- * @method codegel.ActionDialog.init - Adds click behaviour to the image element in codegel-promo components.
+ * @namespace gelui
+ * @method gelui.ActionDialog.init - Adds click behaviour to the image element in gel-promo components.
  */
 
 (function () {
-  if (!window.codegel) { window.codegel = {}; }
-  var self = codegel.ActionDialog = {};
+  var g = window.gelui || {};
+  var self = g.ActionDialog = {};
 
   self.init = function () {
     // Inert attribute polyfill
@@ -45,14 +45,14 @@
     // Save the first focusable link or button in the dialog
     // (to be focused on opening the dialog)
     this.firstControl = this.dialogElem.querySelector('a[href], button:not(:disabled)');
-    this.closeButton = this.dialogElem.querySelector('.codegel-action-dialog-close');
+    this.closeButton = this.dialogElem.querySelector('.gel-action-dialog-close');
     // Move the dialog element to be a child of <body>
     // (needed for the `inert` functionality to work)
     document.body.appendChild(this.dialogElem);
 
     // Honor the center positioning if chosen
     if (center) {
-      this.dialogElem.classList.add('codegel-action-dialog-center');
+      this.dialogElem.classList.add('gel-action-dialog-center');
     }
 
     // If the invoking element exists, 
@@ -83,7 +83,7 @@
   // The open method
   self.constructor.prototype.open = function () {
     // Add a class to the body for [inert] styling
-    document.body.classList.add('codegel-action-dialog-open');
+    document.body.classList.add('gel-action-dialog-open');
     // Make all siblings of the dialog inert
     Array.prototype.forEach.call(this.inertElems, function (elem) {
       if (elem !== this.dialogElem) {
@@ -98,7 +98,7 @@
 
   // The close method
   self.constructor.prototype.close = function () {
-    document.body.classList.remove('codegel-action-dialog-open');
+    document.body.classList.remove('gel-action-dialog-open');
     Array.prototype.forEach.call(this.inertElems, function (elem) {
       elem.removeAttribute('inert');
     }.bind(this));
@@ -110,29 +110,31 @@
     }
   }
 
+  if (!window.gelui) { window.gelui = g; }
 })();/**
  * BreakoutBox
- * @namespace codegel
- * @method codegel.BreakoutBox.init
+ * @namespace gelui
+ * @method gelui.BreakoutBox.init
  */
 
 (function() {
-  if (!window.codegel) { window.codegel = {}; }
-  var self = codegel.BreakoutBox = {};
+  var g = window.gelui || {};
+  var self = g.BreakoutBox = {};
 
   self.init = function() {
     // nothing to initialise
   }
 
+  if (!window.gelui) { window.gelui = g; }
 })();/**
  * Carousel
- * @namespace codegel
- * @method codegel.Carousel.init
+ * @namespace gelui
+ * @method gelui.Carousel.init
  */
 
 (function() {
-  if (!window.codegel) { window.codegel = {}; }
-  var self = codegel.Carousel = {};
+  var g = window.gelui || {};
+  var self = g.Carousel = {};
   
   self.init = function() {
     /* inert attribute polyfill, from https://github.com/GoogleChrome/inert-polyfill */
@@ -159,14 +161,14 @@
     }));
 
     (function () {
-      var cards = document.querySelectorAll('.codegel-carousel');
+      var cards = document.querySelectorAll('.gel-carousel');
       Array.prototype.forEach.call(cards, function (carousel) {
-        var scrollable = carousel.querySelector('.codegel-carousel-scrollable');
-        var list = carousel.querySelector('.codegel-carousel-list');
+        var scrollable = carousel.querySelector('.gel-carousel-scrollable');
+        var list = carousel.querySelector('.gel-carousel-list');
         var items = list.children;
         var scrollAmount = list.offsetWidth / 2;
-        var prev = carousel.querySelector('.codegel-carousel-prev');
-        var next = carousel.querySelector('.codegel-carousel-next');
+        var prev = carousel.querySelector('.gel-carousel-prev');
+        var next = carousel.querySelector('.gel-carousel-next');
 
         prev.disabled = true;
 
@@ -214,120 +216,23 @@
     })();
   }
 
-})();/**
- * Load more
- * @namespace codegel
- * @method codegel.LoadMore.init
- */
-
-(function () {
-  if (!window.codegel) { window.codegel = {}; }
-  var self = codegel.LoadMore = {};
-
-  self.init = function () { }
-
-  self.constructor = function (elem, amount, start, baseURL) {
-    this.elem = elem;
-    // Save refs to key elements
-    this.loadBay = this.elem.querySelector('.codegel-loader-items');
-    this.pages = this.elem.querySelector('.codegel-pages');
-    this.paginator = this.elem.querySelector('.codegel-pages');
-    this.button = this.elem.querySelector('.codegel-loader-button');
-    this.loading = this.elem.querySelector('.codegel-loader-loading');
-    this.loadingText = this.loading.querySelector('.codegel-loader-loading-text');
-
-    // Only run if Promises are supported
-    if (typeof Promise !== "undefined" && Promise.toString().indexOf("[native code]") !== -1) {
-      // Reveal load more button
-      this.button.hidden = false;
-      // Hide fallback paginator
-      this.paginator.hidden = true;
-
-      this.amount = amount;
-      this.start = start;
-
-      this.loadItems = function (amount, start) {
-        // Make array of URLs to request using the base URL
-        var urls = [];
-        for (i = this.start; i < this.start + this.amount; i++) {
-          urls.push(baseURL + i);
-        }
-
-        // Factory to create the separator element that marks
-        // the start of the new results and takes focus
-        var createSeparator = function (message) {
-          var sep = document.createElement('li');
-          sep.setAttribute('role', 'separator');
-          sep.tabIndex = 0;
-          sep.textContent = message;
-          return sep;
-        }
-
-        // Factory to create elements to wrap request data
-        var createItem = function (item) {
-          var itemElem = document.createElement('li');
-          itemElem.classList.add('codegel-loader-item');
-          itemElem.innerHTML = '<p>' + item.title + '</p>';
-          itemElem.innerHTML += '<a class="codegel-cta" href="/path/to/1">Read more about result ' + item.id + '</a>';
-          return itemElem;
-        }
-
-        // Enter loading state by appending to
-        // live region
-        this.loading.hidden = false;
-        this.loadingText.textContent = 'Loading, please wait.';
-
-        var results = [];
-
-        Promise.all(urls.map(url => fetch(url)
-          .then(resp => resp.json())))
-          .then(items => {
-            items.forEach(function (item) {
-              results.push(createItem(item));
-            });
-            var sep = createSeparator('Results ' + items[0].id + ' to ' + items[items.length - 1].id);
-            results.unshift(sep);
-            results.forEach(function (result) {
-              this.loadBay.appendChild(result);
-            }.bind(this));
-            // Focus the 'continue' element above the
-            // new results
-            sep.focus();
-            // Exit loading state
-            this.loading.hidden = true;
-            this.loadingText.textContent = '';
-            // Increment this.start for next run
-            this.start = this.start + this.amount;
-          });
-      }
-
-      // Listen on the 'load more' button
-      this.button.addEventListener('click', function () {
-        this.load();
-      }.bind(this));
-    }
-  }
-
-  // The load method
-  self.constructor.prototype.load = function () {
-    this.loadItems(this.start, this.amount);
-  }
+  if (!window.gelui) { window.gelui = g; }
 })();/**
  * Promo
- * @namespace codegel
- * @method codegel.Promo.init - Adds click behaviour to the image element in codegel-promo components.
+ * @namespace gelui
+ * @method gelui.Promo.init - Adds click behaviour to the image element in gel-promo components.
  */
 
 (function() {
-  if (!window.codegel) { window.codegel = {}; }
-  var self = codegel.Promo = {};
+  var g = window.gelui || {};
+  var self = g.Promo = {};
   
   self.init = function() {
-    var promos = document.querySelectorAll('.codegel-promo');
+    var promos = document.querySelectorAll('.gel-promo');
     
     Array.prototype.forEach.call(promos, function (promo) {
-      var img = promo.querySelector('.codegel-promo-image');
-      var link = promo.querySelector('.codegel-promo-headline a');
+      var img = promo.querySelector('.gel-promo-image');
+      var link = promo.querySelector('.gel-promo-headline a');
 
       if (img && link) {
         img.style.cursor = 'pointer';
@@ -338,17 +243,19 @@
     });
   }
 
+  if (!window.gelui) { window.gelui = g; }
 })();/**
- * Switch
- * @namespace codegel
- * @method codegel.Switch.init
+ * Promo
+ * @namespace gelui
+ * @method gelui.Switch.init - Adds click behaviour to the image element in gel-promo components.
  */
 
 (function () {
-  var g = window.codegel || {};
+  var g = window.gelui || {};
   var self = g.Switch = {};
 
   self.init = function () {
+    console.log('init');
   }
 
   self.constructor = function (button) {
@@ -367,19 +274,19 @@
     this.onOffSpan.textContent = currentState ? 'off' : 'on';
   }
 
-  if (!window.codegel) { window.codegel = g; }
+  if (!window.gelui) { window.gelui = g; }
 })();/**
  * Tabs
- * @namespace codegel
- * @method codegel.Tabs.init
+ * @namespace gelui
+ * @method gelui.Tabs.init
  */
 
 (function() {
-  if (!window.codegel) { window.codegel = {}; }
-  var self = codegel.Tabs = {};
+  var g = window.gelui || {};
+  var self = g.Tabs = {};
   
   self.init = function() {
-    var tabInterfaces = document.querySelectorAll('.codegel-tabs');
+    var tabInterfaces = document.querySelectorAll('.gel-tabs');
     Array.prototype.forEach.call(tabInterfaces, function (tabInterface) {
       var tablist = tabInterface.querySelector('ul');
       var tabs = tablist.querySelectorAll('a');
@@ -442,4 +349,5 @@
     });
   }
 
+  if (!window.gelui) { window.gelui = g; }
 })();

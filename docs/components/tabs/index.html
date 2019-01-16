@@ -103,18 +103,18 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#Introduction-16">Introduction</a></li><li><a href="#Expected-markup-14">Expected markup</a></li><li><a href="#Expected-layout-14">Expected layout</a></li><li><a href="#Expected-behaviour-13">Expected behaviour</a></li><li><a href="#Reference-implementation-14">Reference implementation</a></li><li><a href="#Test-specifications-12">Test specifications</a></li><li><a href="#Related-research-17">Related research</a></li></ol>
+                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#Introduction-13">Introduction</a></li><li><a href="#Expected-markup-11">Expected markup</a></li><li><a href="#Expected-layout-11">Expected layout</a></li><li><a href="#Expected-behaviour-10">Expected behaviour</a></li><li><a href="#Reference-implementation-11">Reference implementation</a></li><li><a href="#Test-specifications-10">Test specifications</a></li><li><a href="#Related-research-14">Related research</a></li></ol>
                 </nav>
             </div>
 
             <div class="geldocs-sections geldocs-body-copy gel-layout__item gel-3/5@l">
-                <h2 id="Introduction-16">Introduction</h2>
+                <h2 id="Introduction-13">Introduction</h2>
 <p>Tabbed interfaces, like accordions, allow users to view long-form content one section at a time. Clearly labelled tabs representing the individual sections make it easy for users to identify and reveal the content pertinent to them.</p>
 <p>Use tabs where the subject sections are not too numerous (more than four tabs in total) and the tab labels are not lengthy. Tab content should be self-sufficient: do not force users to switch back and forth between tabs to complete tasks<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p>
 
             <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-Divergence-from-authoring-practices-1">
               <h4 id="aside-alert-Divergence-from-authoring-practices-1" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Divergence from authoring practices</h4><div><p>The GEL tabs implementation diverges from the ARIA Authoring Practices specification<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> in both semantics and behaviour. This is to address usability issues found in both internal and external research<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> with ARIA tab interfaces. Instead, GEL tabs are an enhanced version of a table of contents pattern, using same-page links and document fragments.</p>
-</aside><h2 id="Expected-markup-14">Expected markup</h2>
+</aside><h2 id="Expected-markup-11">Expected markup</h2>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-tabs"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
@@ -144,14 +144,14 @@
 
             <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Progressive-enhancement-1">
               <h4 id="aside-info-Progressive-enhancement-1" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Progressive enhancement</h4><div><p>The <a href="#reference-implementation"><strong>Reference implementation</strong></a> to follow is based progressive enhancement, and the tab ARIA semantics and relationships are created using JavaScript. In the absence of JavaScript, the interface acts as a basic table of contents for a set of document fragments.</p>
-</aside><h3 id="Notes-13">Notes</h3>
+</aside><h3 id="Notes-10">Notes</h3>
 <ul>
 <li><strong><code>&lt;ul&gt;</code>:</strong> The <code>&lt;ul&gt;</code> groups the same-page links ('tabs') together and enumerates them in screen reader output</li>
 <li><strong><code>aria-current=&quot;true&quot;</code>:</strong> This indicates the 'tab' that corresponds to the active/visible panel. Screen readers append or prepend <em>&quot;current item&quot;</em> to the link's label.</li>
 <li><strong><code>aria-labelledby</code>:</strong> The 'tab panels' (<code>&lt;section&gt;</code>s) are labelled by their tabs, so that when a user focus or enters them, they are assured of their identity and relationship to the interface as a whole. Most screen readers will announce something similar to <em>&quot;region, section 1&quot;</em> when the panel is focused or entered</li>
 <li><strong><code>id</code>s:</strong> Note that all <code>id</code>s in the interface must unique for the larger document. In the <a href="#reference-implementation"><strong>Reference implementation</strong></a>, the tab <code>id</code>s are created dynamically by prefixing the (already unique) tab panel <code>id</code>s with <em>&quot;tab-&quot;</em>.</li>
 </ul>
-<h2 id="Expected-layout-14">Expected layout</h2>
+<h2 id="Expected-layout-11">Expected layout</h2>
 <p>The <a href="https://www.bbc.co.uk/gel/guidelines/tabs">main GEL page</a> covers visual design considerations in detail.</p>
 <p>Shortened labels are preferred to wrapped text, so <code>white-space: nowrap</code> and <code>text-overflow: ellipsis</code> are applied by default. Note that this only works where <code>min-width: 0</code> is applied to the flex child (the <code>&lt;li&gt;</code>).</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gel-tabs</span> &gt; <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span> {
@@ -186,7 +186,7 @@
   <span class="hljs-attribute">outline-offset</span>: -<span class="hljs-number">2px</span>;
 }
 </code></pre>
-<h2 id="Expected-behaviour-13">Expected behaviour</h2>
+<h2 id="Expected-behaviour-10">Expected behaviour</h2>
 <h3 id="Selecting-a-tab-1">Selecting a tab</h3>
 <p>By mouse or touch, clicking or pressing a tab will reveal its corresponding tab panel. For keyboard users, unselected tabs are focusable and can be activated with the <kbd>Enter</kbd> key.</p>
 <p>To preserve the behaviour of the same-page links upon which the tabs are created and to address trouble screen readers have been observed experiencing moving from the tab to the tab panel, clicking a tab programmatically moves focus to the visible tab panel. The tab panel is identified in screen readers as a tab panel, and the tab panel's label (borrowed from the corresponding tab using <code>aria-labelledby</code>) is also announced.</p>
@@ -207,10 +207,10 @@
   switchTab(<span class="hljs-literal">undefined</span>, tabInfo());
 });
 </code></pre>
-<h2 id="Reference-implementation-14">Reference implementation</h2>
+<h2 id="Reference-implementation-11">Reference implementation</h2>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-Important-19">
-              <h4 id="aside-alert-Important-19" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-Important-15">
+              <h4 id="aside-alert-Important-15" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
 </aside>
           <div class="geldocs-demo"><!-- 
 title: Tabs
@@ -245,11 +245,11 @@ title: Tabs
 </script></div>
         
           <p><a class="codegel-cta gel-long-primer-bold" href="../demos/tabs/" target="_new"><span class="codegel-button__label">Open in new window</span><svg class="codegel-button__icon codegel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
-        <h2 id="Test-specifications-12">Test specifications</h2>
+        <h2 id="Test-specifications-10">Test specifications</h2>
 <p>[TODO]</p>
-<h2 id="Related-research-17">Related research</h2>
+<h2 id="Related-research-14">Related research</h2>
 <p>[TODO]</p>
-<h3 id="Further-reading-elsewhere-on-the-Web-17">Further reading, elsewhere on the Web</h3>
+<h3 id="Further-reading-elsewhere-on-the-Web-14">Further reading, elsewhere on the Web</h3>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">

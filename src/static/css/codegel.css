@@ -113,6 +113,40 @@ a {
 .gel-u-u-clickable {
   cursor: pointer; }
 
+/* icon */
+.gel-icon {
+  fill: currentColor; }
+
+.gel-icon--small {
+  height: 16px;
+  width: 16px; }
+
+.gel-icon--medium {
+  height: 32px;
+  width: 32px; }
+
+.gel-icon--large {
+  height: 64px;
+  width: 64px; }
+
+.gel-icon--text {
+  margin-top: .1em;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top; }
+
+@keyframes gel-spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+.gel-icon-loading {
+  animation-name: gel-spin;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; }
+
 /*-- util -----------------------------*/
 .codegel-u-flex-rw {
   display: -webkit-box;
@@ -581,3 +615,92 @@ span.codegel-nowrap {
 .codegel-button:focus,
 .codegel-cta:focus {
   outline: 3px solid #006def; }
+
+.codegel-loader [hidden] {
+  display: none !important; }
+
+.codegel-loader-items {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.codegel-loader-item {
+  border: 2px solid;
+  padding: 1rem; }
+
+.codegel-loader-loading {
+  color: inherit;
+  margin-bottom: 0.5rem; }
+
+.codegel-loader-loading svg {
+  font-size: 2rem; }
+
+.codegel-loader-item + .codegel-loader-item {
+  margin-top: 1rem; }
+
+.codegel-loader-items [role="separator"] {
+  font-weight: bold;
+  margin: 1rem 0; }
+
+@keyframes focus {
+  0% {
+    outline: 2px dotted #404040; }
+  100% {
+    outline: 2px dotted transparent; } }
+
+.codegel-loader-items [role="separator"]:focus {
+  outline-width: 0;
+  outline-offset: 2px;
+  animation: focus 1s linear 1; }
+
+.codegel-loader-foot {
+  margin: 1rem 0;
+  text-align: center; }
+
+.codegel-pages {
+  text-align: center; }
+
+.codegel-pages > *,
+.codegel-pages-numbered li {
+  display: inline-block;
+  vertical-align: middle; }
+
+.codegel-pages-numbered {
+  display: none;
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+.codegel-pages a,
+.codegel-pages-numbered [role="separator"] {
+  width: 4.5ch;
+  height: 4.5ch;
+  line-height: 4.5ch; }
+
+.codegel-pages a {
+  color: inherit;
+  text-decoration: none;
+  background-color: #ccc;
+  display: inline-block; }
+
+.codegel-pages a:hover,
+.codegel-pages a:focus,
+.codegel-pages-numbered [aria-current] {
+  outline: none;
+  color: #fff;
+  background-color: #404040; }
+
+.codegel-pages a:not([href]) {
+  opacity: 0.5; }
+
+.codegel-pages [hidden] {
+  display: none; }
+
+.codegel-pages-text {
+  padding: 0 0.25rem; }
+
+@media (min-width: 650px) {
+  .codegel-pages-text {
+    display: none; }
+  .codegel-pages-numbered {
+    display: inline-block; } }
