@@ -118,7 +118,9 @@ module.exports = function (eleventyConfig) {
         var result = '<ol id="geldocs-toc__links" class="geldocs-toc">';
         $('h2').each(function (i, h2) {
           var id = h2.attribs.id;
-          result += '<li><a href="#' + h2.attribs.id + '">' + $(h2).text() + '</a></li>';
+          if ( !h2.attribs || !h2.attribs.class || !h2.attribs.class.match( /(^| )no-toc( |$)/ ) ) {
+            result += '<li><a href="#' + h2.attribs.id + '">' + $(h2).text() + '</a></li>';
+          }
         });
         return result + '</ol>';
       });
