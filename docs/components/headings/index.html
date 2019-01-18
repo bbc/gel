@@ -103,14 +103,14 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#Introduction-12">Introduction</a></li><li><a href="#Expected-markup-9">Expected markup</a></li><li><a href="#Expected-layout-9">Expected layout</a></li><li><a href="#Expected-behaviour-8">Expected behaviour</a></li><li><a href="#Test-specifications-8">Test specifications</a></li><li><a href="#Related-research-13">Related research</a></li></ol>
+                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#Introduction-17">Introduction</a></li><li><a href="#Expected-markup-12">Expected markup</a></li><li><a href="#Expected-layout-12">Expected layout</a></li><li><a href="#Expected-behaviour-11">Expected behaviour</a></li><li><a href="#Test-specifications-10">Test specifications</a></li><li><a href="#Related-research-18">Related research</a></li></ol>
                 </nav>
             </div>
 
             <div class="geldocs-sections geldocs-body-copy gel-layout__item gel-3/5@l">
-                <h2 id="Introduction-12">Introduction</h2>
+                <h2 id="Introduction-17">Introduction</h2>
 <p>Buttons, links, and form elements all have labels. Labels tell users what these elements are for. Headings are also labels, and describe sections of the document. A correct use of heading elements is especially important when supporting screen reader users<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> because headings together create a table of contents, navigable by a variety of shortcuts and other means.</p>
-<h2 id="Expected-markup-9">Expected markup</h2>
+<h2 id="Expected-markup-12">Expected markup</h2>
 <h3 id="The-lessh1greater-1">The <code>&lt;h1&gt;</code></h3>
 <p>The <code>&lt;h1&gt;</code> is the principle heading in the document, and labels the document itself. The following must be true for <code>&lt;h1&gt;</code> elements:</p>
 <ol>
@@ -168,8 +168,8 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
 </code></pre>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-Important-14">
-              <h4 id="aside-alert-Important-14" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Part of the intention of sectioning elements (like <code>&lt;section&gt;</code> and <code>&lt;article&gt;</code>) was to automate heading levels as perceived by assistive technologies. That is, an <code>&lt;h1&gt;</code> for a  <code>&lt;section&gt;</code> inside <code>&lt;body&gt;</code> would be perceived as an <code>&lt;h2&gt;</code>. However, the algorithm was never implemented by any browser vendors<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. You still need to use explicit (h1—h6) according to your sections' nesting depth.</p>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-Important-20">
+              <h4 id="aside-alert-Important-20" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Part of the intention of sectioning elements (like <code>&lt;section&gt;</code> and <code>&lt;article&gt;</code>) was to automate heading levels as perceived by assistive technologies. That is, an <code>&lt;h1&gt;</code> for a  <code>&lt;section&gt;</code> inside <code>&lt;body&gt;</code> would be perceived as an <code>&lt;h2&gt;</code>. However, the algorithm was never implemented by any browser vendors<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. You still need to use explicit (h1—h6) according to your sections' nesting depth.</p>
 </aside><h3 id="Wording-1">Wording</h3>
 <p>As labels, headings must describe the sections they introduce<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>.</p>
 <p>Many screen readers aggregate headings into a table of contents. For example, JAWS produces a headings dialogue when the user presses <kbd>Insert</kbd> + <kbd>F6</kbd>. For this reason, it's important headings are sufficiently descriptive independent of their surrounding content.</p>
@@ -179,7 +179,7 @@
 <h4 id="Good-example-3">Good example</h4>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>A delicious cookie recipe<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
 </code></pre>
-<h2 id="Expected-layout-9">Expected layout</h2>
+<h2 id="Expected-layout-12">Expected layout</h2>
 <p>To establish a logical visual hierarchy, heading font sizes should decrease along with depth. An <code>&lt;h1&gt;</code> should have the greatest <code>font-size</code>, and an <code>&lt;h6&gt;</code> the smallest. There are other means to differentiate heading levels but font size is the most conventional, and therefore the most widely understood.</p>
 <pre class="hljs"><code><span class="hljs-selector-tag">h1</span>,
 <span class="hljs-selector-class">.h1</span> {
@@ -201,15 +201,15 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>— Anton du Beke<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">blockquote</span>&gt;</span>
 </code></pre>
-<h2 id="Expected-behaviour-8">Expected behaviour</h2>
+<h2 id="Expected-behaviour-11">Expected behaviour</h2>
 <p>Where headings adopt <code>id</code>s and are used as document fragments to be navigated between using same-page links, they should take <code>tabindex=&quot;-1&quot;</code>. This forces browsers that would not otherwise update their sequential focus starting point<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> to move keyboard focus to the destination heading and section.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>Navigable subsection<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
 </code></pre>
-<h2 id="Test-specifications-8">Test specifications</h2>
+<h2 id="Test-specifications-10">Test specifications</h2>
 <p>[TODO]</p>
-<h2 id="Related-research-13">Related research</h2>
+<h2 id="Related-research-18">Related research</h2>
 <p>[TODO]</p>
-<h3 id="Further-reading-elsewhere-on-the-Web-13">Further reading, elsewhere on the Web</h3>
+<h3 id="Further-reading-elsewhere-on-the-Web-18">Further reading, elsewhere on the Web</h3>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">

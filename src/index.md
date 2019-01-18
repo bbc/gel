@@ -32,23 +32,23 @@ We are working our way through a list based closely on what's already published 
 
 | Component | Status |
 |-----------|--------|
-| [action-dialogs]({{site.basedir}}components/action-dialogs/) | Draft / In Progress|
-| [breakout-boxes]({{site.basedir}}components/breakout-boxes/) | Draft / In Progress|
-| [buttons-and-ctas]({{site.basedir}}components/buttons-and-ctas/) | Draft / In Progress|
-| [cards]({{site.basedir}}components/cards/) | Draft / In Progress|
-| [carousels]({{site.basedir}}components/carousels/) | Draft / In Progress|
-| [external-links]({{site.basedir}}components/external-links/) | Draft / In Progress|
-| [metadata-strips]({{site.basedir}}components/metadata-strips/) | Draft / In Progress|
-| [headings]({{site.basedir}}components/headings/) | Draft / In Progress|
-| [promos]({{site.basedir}}components/promos/) | Draft / In Progress|
-| [tabs]({{site.basedir}}components/tabs/) | Draft / In Progress|
-| [form-fields]({{site.basedir}}components/form-fields/) | Draft / In Progress|
+| [Action dialogs]({{site.basedir}}components/action-dialogs/) | Draft / Pending|
+| [Breakout boxes]({{site.basedir}}components/breakout-boxes/) | Draft / Pending|
+| [Buttons and CTAs]({{site.basedir}}components/buttons-and-ctas/) | Draft / Pending|
+| [Cards]({{site.basedir}}components/cards/) | Draft / Pending|
+| [Carousels]({{site.basedir}}components/carousels/) | Draft / Pending|
+| [External links]({{site.basedir}}components/external-links/) | Draft / Pending|
+| [Metadata strips]({{site.basedir}}components/metadata-strips/) | Draft / Pending|
+| [Headings]({{site.basedir}}components/headings/) | Draft / Pending|
+| [Promos]({{site.basedir}}components/promos/) | Draft / Pending|
+| [Tabs]({{site.basedir}}components/tabs/) | Draft / Pending|
+| [Form fields and validation]({{site.basedir}}components/form-fields/) | Draft / Pending|
+| [Video controls]({{site.basedir}}components/video-controls/) | Draft / Pending|
 
 ## What's next?
 
 Our backlog has a list of patterns we intend to document:
 
-- Video Player Controls
 - Pagination
 - Pocket
 - Information Panel

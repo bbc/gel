@@ -103,12 +103,12 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#Introduction-18">Introduction</a></li><li><a href="#Recommended-markup-4">Recommended markup</a></li><li><a href="#Recommended-layout-4">Recommended layout</a></li><li><a href="#Recommended-behaviour-4">Recommended behaviour</a></li><li><a href="#Reference-implementation-16">Reference implementation</a></li><li><a href="#Related-research-19">Related research</a></li></ol>
+                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#Introduction-13">Introduction</a></li><li><a href="#Recommended-markup-4">Recommended markup</a></li><li><a href="#Recommended-layout-4">Recommended layout</a></li><li><a href="#Recommended-behaviour-4">Recommended behaviour</a></li><li><a href="#Reference-implementation-12">Reference implementation</a></li><li><a href="#Related-research-14">Related research</a></li></ol>
                 </nav>
             </div>
 
             <div class="geldocs-sections geldocs-body-copy gel-layout__item gel-3/5@l">
-                <h2 id="Introduction-18">Introduction</h2>
+                <h2 id="Introduction-13">Introduction</h2>
 <p>BBC buttons and calls-to-action differ widely in form and purpose. But they should conform to some fundamental rules. Only where these rules are observed will the user experience comfortable interaction.</p>
 <p>The most important of these rules is that the <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code> elements are assigned to appropriate respective tasks. That is: links should be used where navigation is elicited, and <code>&lt;button&gt;</code>s where a non-navigational action is being invoked. For example, a 'Sign in' control would suit a <code>&lt;button&gt;</code> because its job is to submit the sign in form. An adjacent 'Register' call-to-action—taking the user to a different form, in a different page or screen—would benefit from <code>&lt;a&gt;</code> semantics.</p>
 <p>This is especially helpful for assistive technology users, such as those running screen reader software. An element announced as a link that behaves as a button creates a confusing and off-putting experience. The visual design of buttons and calls-to-action should also be indicative of their behavior. Where button state changes, this change should be visually represented as well.</p>
@@ -203,7 +203,7 @@
 </code></pre>
 <h2 id="Recommended-behaviour-4">Recommended behaviour</h2>
 <p>Where <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code> links are employed correctly for CTAs and buttons respectively, browsers will invoke the standard and expected behaviours. These are as follows.</p>
-<h3 id="Links-3">Links</h3>
+<h3 id="Links-2">Links</h3>
 <ul>
 <li>The element is identified as a link via assistive technologies</li>
 <li>The element is focusable by keyboard</li>
@@ -211,7 +211,7 @@
 <li>The link-specific context menu can be invoked using the right mouse button, or <kbd>Shift</kbd> + <kbd>F10</kbd> (Windows)</li>
 <li>The element can be dragged by mouse to the browser bookmarks bar</li>
 </ul>
-<h3 id="Buttons-3">Buttons</h3>
+<h3 id="Buttons-2">Buttons</h3>
 <ul>
 <li>The element is identified as a button via assistive technologies</li>
 <li>The element is focusable by keyboard</li>
@@ -219,10 +219,10 @@
 <li>The <code>type=&quot;submit&quot;</code> attribution enables the button to submit a parent <code>&lt;form&gt;</code></li>
 <li>The <code>disabled</code> attribution (Boolean) makes the button unfocusable (by default; see <a href="#disabled-state">disabled state</a>) and identifies the button as disabled via assistive technologies</li>
 </ul>
-<h2 id="Reference-implementation-16">Reference implementation</h2>
+<h2 id="Reference-implementation-12">Reference implementation</h2>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-Important-21">
-              <h4 id="aside-alert-Important-21" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-Important-15">
+              <h4 id="aside-alert-Important-15" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
 </aside>
           <div class="geldocs-demo"><!-- 
 title: Buttons and CTAs
@@ -271,9 +271,9 @@ title: Buttons and CTAs
 </script></div>
         
           <p><a class="codegel-cta gel-long-primer-bold" href="../demos/buttons-and-ctas/" target="_new"><span class="codegel-button__label">Open in new window</span><svg class="codegel-button__icon codegel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
-        <h2 id="Related-research-19">Related research</h2>
+        <h2 id="Related-research-14">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
-<h3 id="Further-reading-elsewhere-on-the-Web-19">Further reading, elsewhere on the Web</h3>
+<h3 id="Further-reading-elsewhere-on-the-Web-14">Further reading, elsewhere on the Web</h3>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">

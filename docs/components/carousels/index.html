@@ -103,15 +103,15 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#Introduction-16">Introduction</a></li><li><a href="#Expected-layout-13">Expected layout</a></li><li><a href="#Reference-implementation-14">Reference implementation</a></li><li><a href="#Test-specifications-11">Test specifications</a></li><li><a href="#Related-research-17">Related research</a></li></ol>
+                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#Introduction-15">Introduction</a></li><li><a href="#Expected-layout-11">Expected layout</a></li><li><a href="#Reference-implementation-14">Reference implementation</a></li><li><a href="#Test-specifications-9">Test specifications</a></li><li><a href="#Related-research-16">Related research</a></li></ol>
                 </nav>
             </div>
 
             <div class="geldocs-sections geldocs-body-copy gel-layout__item gel-3/5@l">
-                <h2 id="Introduction-16">Introduction</h2>
+                <h2 id="Introduction-15">Introduction</h2>
 <p>The carousel component is a component for browsing sets of thematically similar content. It must be implemented so that it can be operated by mouse, keyboard, and touch.</p>
 <p>Importantly, unlike some carousel implementations, the content does not scroll automatically<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>: the user is entirely in control of which carousel items they can see and interact with at any one time.</p>
-<h3 id="Expected-markup-13">Expected markup</h3>
+<h3 id="Expected-markup-11">Expected markup</h3>
 
             <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Code-is-elided-2">
               <h4 id="aside-info-Code-is-elided-2" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Code is elided</h4><div><p>The markup is elided for brevity. The <code>&lt;li&gt;</code> elements represent the containers for the content items, such as <a href="#link-todo"><strong>Cards</strong></a> or <a href="#link-todo"><strong>Promos</strong></a>.</p>
@@ -148,7 +148,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<h3 id="Notes-12">Notes</h3>
+<h3 id="Notes-11">Notes</h3>
 <ul>
 <li><strong><code>role=&quot;group&quot;</code></strong> This is a generic ARIA role, used here to indicate that the buttons and the scrollable area they control are related</li>
 <li><strong>previous and next buttons:</strong> One can scroll the through the content in incremental steps using the previous and next buttons. It's important these are <code>&lt;button&gt;</code> elements with <code>type=&quot;button&quot;</code>. Their labels are provided using visually hidden text (the <code>vh</code> class<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>) because, unlike <code>aria-label</code> it will be translated by browser translation extensions. Buttons that are not applicable (e.g. the previous button on page load) receive the <code>disabled</code> property. The button is removed from focus order and identified as disabled (or 'dimmed') in screen reader output.</li>
@@ -156,7 +156,7 @@
 <li><strong><code>gel-carousel-scrollable</code>:</strong> This is the scrollable 'window' for the list of carousel content items (see <a href="#expected-layout"><strong>Expected layout</strong></a>)</li>
 <li><strong><code>gel-carousel-list</code>:</strong> The singular child element of <code>gel-carousel-scrollable</code> must be a <code>&lt;ul&gt;</code>, with each item as an <code>&lt;li&gt;</code>. List markup is identified as such in assistive technologies, and the items are enumerated. This lets screen reader users know they are met with a set of related content, and how much of it there is.</li>
 </ul>
-<h2 id="Expected-layout-13">Expected layout</h2>
+<h2 id="Expected-layout-11">Expected layout</h2>
 <p>The basic scrolling functionality is achieved without JavaScript by making sure:</p>
 <ol>
 <li>The items do not wrap</li>
@@ -194,13 +194,13 @@
   <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.3</span>;
 }
 </code></pre>
-<h3 id="Buttons-2">Buttons</h3>
+<h3 id="Buttons-3">Buttons</h3>
 <p>The previous and next buttons, <code>gel-carousel-buttons</code>, is absolutely positioned over the carousel at the top right, necessitating <code>position: relative</code> on the parent <code>gel-carousel</code> element. Disabled buttons take a reduced opacity.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gel-carousel-buttons</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-attr">[disabled]</span> {
   <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.5</span>;
 }
 </code></pre>
-<h3 id="Expected-behaviour-12">Expected behaviour</h3>
+<h3 id="Expected-behaviour-10">Expected behaviour</h3>
 <h4 id="Scrolling-1">Scrolling</h4>
 <p>As the user scrolls by mouse, touch, gesture, or by using the auxiliary buttons, browsers that support <code>IntersectionObserver</code> add the <code>inert</code> attribute to items that go out of view and remove it from items that come into view.</p>
 <pre class="hljs"><code><span class="hljs-built_in">Array</span>.prototype.forEach.call(items, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item</span>) </span>{
@@ -482,11 +482,11 @@ title: Carousels
 </script></div>
         
           <p><a class="codegel-cta gel-long-primer-bold" href="../demos/carousels/" target="_new"><span class="codegel-button__label">Open in new window</span><svg class="codegel-button__icon codegel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
-        <h2 id="Test-specifications-11">Test specifications</h2>
+        <h2 id="Test-specifications-9">Test specifications</h2>
 <p>[TODO]</p>
-<h2 id="Related-research-17">Related research</h2>
+<h2 id="Related-research-16">Related research</h2>
 <p>[TODO]</p>
-<h3 id="Further-reading-elsewhere-on-the-Web-17">Further reading, elsewhere on the Web</h3>
+<h3 id="Further-reading-elsewhere-on-the-Web-16">Further reading, elsewhere on the Web</h3>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
