@@ -125,6 +125,42 @@
   }
 
 })();/**
+ * Card
+ * @namespace codegel
+ * @method codegel.Card.init - Adds click behaviour to the image element in codegel-promo components.
+ */
+
+(function () {
+  if (!window.codegel) { window.codegel = {}; }
+  var self = codegel.Card = {};
+
+  self.init = function () {
+  }
+
+  self.constructor = function (cardElem) {
+    var moreBtn = cardElem.querySelector('[aria-haspopup="true"]');
+    var moreElem = cardElem.querySelector('.codegel-card-info');
+    var moreHeading = moreElem.querySelector('.codegel-card-info-heading');
+
+    moreBtn.addEventListener('click', function () {
+      moreElem.hidden = !moreElem.hidden;
+      if (!moreElem.hidden) {
+        moreHeading.focus();
+        moreBtn.textContent = 'Close';
+      } else {
+        moreBtn.textContent = 'More info';
+      }
+    });
+
+    moreElem.addEventListener('keydown', function (e) {
+      if (e.which === 27) {
+        moreElem.hidden = true;
+        moreBtn.textContent = 'More info';
+        moreBtn.focus();
+      }
+    });
+  }
+})();/**
  * Carousel
  * @namespace codegel
  * @method codegel.Carousel.init
@@ -467,4 +503,250 @@
     });
   }
 
+})();/**
+ * Promo
+ * @namespace codegel
+ * @method codegel.Validation.init - Adds click behaviour to the image element in codegel-promo components.
+ */
+
+(function () {
+  if (!window.codegel) { window.codegel = {}; }
+  var self = codegel.Validation = {};
+
+  self.init = function () {
+    // Polyfill the `find` array method
+    Array.prototype.find || Object.defineProperty(Array.prototype, 'find', { value: function (r) { if (null == this) throw new TypeError('"this" is null or not defined'); var e = Object(this), t = e.length >>> 0; if ("function" != typeof r) throw new TypeError('predicate must be a function'); for (var n = arguments[1], i = 0; i < t;) { var o = e[i]; if (r.call(n, o, i, e)) return o; i++; } }, configurable: !0, writable: !0 });
+  }
+
+  self.constructor = function (formElem, rules, options) {
+    // Defaults for the options object
+    var settings = {
+      warning: 'Please fix the errors in the form before continuing',
+      prefix: '<strong>Error:</strong>',
+      debounce: 500
+    };
+
+    // Overwrite defaults where they are provided in options
+    for (var setting in options) {
+      if (options.hasOwnProperty(setting)) {
+        settings[setting] = options[setting];
+      }
+    }
+
+    // Turn off native browser validation
+    formElem.setAttribute('novalidate', true);
+
+    // Initialize errors array for tracking
+    var allErrors = [];
+
+    // Get submit button
+    var submit = formElem.querySelector('[type="submit"]');
+    // Create and insert general message live region
+    var warn = document.createElement('div');
+    warn.setAttribute('aria-live', 'assertive');
+    warn.classList.add('gel-form-warning');
+    submit.parentNode.insertBefore(warn, submit);
+
+    // Do not initially bother users by validating for required
+    var testRequired = false;
+
+    // Add errors if they don't already exist
+    function saveError(name) {
+      if (allErrors.indexOf(name) < 0) {
+        allErrors.push(name);
+      }
+    }
+
+    // Delete errors
+    function deleteError(name) {
+      allErrors = allErrors.filter(function (f) {
+        return f !== name;
+      });
+    }
+
+    // Function to show or hide warning live region
+    function showHideWarn() {
+      var message = allErrors.length > 0 ? settings.prefix + ' ' + settings.warning : '';
+      warn.innerHTML = message;
+    }
+
+    // Switch field to valid state
+    function toValid(field, errorElem) {
+      field.setAttribute('aria-invalid', 'false');
+      errorElem.innerHTML = '';
+    }
+
+    // Switch field to invalid state
+    function toInvalid(field, errorElem, message) {
+      field.setAttribute('aria-invalid', 'true');
+      errorElem.innerHTML = settings.prefix + ' ' + message;
+    }
+
+    // Field validation function
+    function validate(field) {
+      // Get the error element
+      var errorElem = document.getElementById(field.name + '-error');
+
+      // Find the relevant rule
+      var rule = rules.find(function (r) {
+        return r.name === field.name;
+      });
+
+      // Validate for required first
+      // if its being observed
+      if (rule.required) {
+        if (field.value.trim() === '' && testRequired) {
+          toInvalid(field, errorElem, 'This field is required');
+          saveError(field.name);
+          return;
+        } else {
+          toValid(field, errorElem);
+          deleteError(field.name);
+          showHideWarn();
+        }
+      }
+
+      // Test against each rule in `test`
+      if (rule.tests) {
+        // Find the first test that returns true if it exists
+        var errored = rule.tests.find(function (t) {
+          return t.error(field.value);
+        });
+
+        // Switch validation state
+        if (errored) {
+          toInvalid(field, errorElem, errored.message);
+          saveError(field.name);
+        } else {
+          toValid(field, errorElem);
+          deleteError(field.name);
+          showHideWarn();
+        }
+      }
+    }
+
+    // Get all elements defined in the rules object
+    var fields = rules.map(function (rule) {
+      return document.querySelector('[name="' + rule.name + '"]');
+    });
+
+    // Initialize error markup and bindings
+    fields.forEach(function (field, index) {
+      // Set aria-describedby
+      field.setAttribute('aria-describedby', field.name + '-error');
+
+      // If `required`, set `aria-required`
+      if (rules[index].required) {
+        field.setAttribute('aria-required', 'true');
+      }
+
+      // Bind to keyup event
+      var debounced;
+      field.addEventListener('keyup', function (e) {
+        var key = e.which || e.keyCode;
+        // Don't run on the Tab and Shift keys
+        if (key !== 9 && key !== 16) {
+          window.clearTimeout(debounced);
+          debounced = setTimeout(function () {
+            validate(field);
+          }, settings.debounce);
+        }
+      });
+    });
+
+    // Listen on submit
+    formElem.addEventListener('submit', function (e) {
+      e.preventDefault();
+      fields.forEach(function (field) {
+        testRequired = true;
+        validate(field);
+      });
+      showHideWarn();
+    });
+  }
+})();/**
+ * Video
+ * @namespace codegel
+ * @method codegel.Video.init - Adds click behaviour to the image element in codegel-promo components.
+ */
+
+(function () {
+  if (!window.codegel) { window.codegel = {}; }
+  var self = codegel.Video = {};
+
+  self.init = function () { }
+
+  self.videoInit = function (video, captions) {
+    // Listen for when the video is ready
+    video.addEventListener('loadedmetadata', function () {
+      // Remove the native controls
+      video.controls = false;
+      if (captions) {
+        // Show captions track
+        // (This method only supports one track)
+        video.textTracks[0].mode = 'showing';
+      }
+    });
+  }
+
+  self.playButton = function (button, video) {
+    button.addEventListener('click', function () {
+      // Pause or play the video based on its current state
+      video.paused || video.ended ? video.play() : video.pause();
+      // Add the active class for affecting the button's labeling
+      button.classList.toggle('active');
+    });
+
+    // Revert the play button when the video ends
+    video.addEventListener('ended', function () {
+      button.classList.remove('active');
+    });
+  }
+
+  self.muteButton = function (button, video) {
+    var toggleMute = function () {
+      // Toggle the muted property
+      video.muted = !video.muted;
+      button.classList.toggle('active');
+    }
+    button.addEventListener('click', toggleMute);
+    video.addEventListener('loadedmetadata', function () {
+      // If the video is set to autoplay, mute by default
+      if (video.autoplay) {
+        toggleMute();
+      }
+    });
+  }
+
+  self.scrub = function (range, video) {
+    var getMins = function (secs) {
+      let mins = Math.floor(secs / 60);
+      let remainder = secs - mins * 60;
+      return mins + ' minutes and ' + Math.round(remainder) + ' seconds';
+    }
+
+    video.addEventListener('loadedmetadata', function () {
+      // Map range input's props to the video's
+      range.min = 0;
+      range.max = video.duration;
+      range.value = 0;
+      // Translate the values for assistive technologies
+      range.setAttribute('aria-valuemin', '0 seconds');
+      range.setAttribute('aria-valuemax', getMins(video.duration));
+      range.setAttribute('aria-valuenow', '0 seconds');
+    });
+
+    video.addEventListener('timeupdate', function () {
+      // map the value to the currentTime of the video
+      range.value = video.currentTime;
+      // Translate this for assistive technologies
+      range.setAttribute('aria-valuenow', getMins(video.currentTime));
+    });
+
+    // 
+    range.addEventListener('input', function () {
+      // map the currentTime of the video to the value
+      video.currentTime = range.value;
+    });
+  }
 })();

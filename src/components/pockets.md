@@ -38,7 +38,6 @@ Note that the **Pocket** is intended for truncating the _main_ content of a page
   </div>
 </main>
 ```
-:::
 
 ## Recommended layout
 

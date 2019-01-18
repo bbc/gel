@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/code-gel/static/images/favicon.ico" type="image/x-icon">
+
+    <title>Code GEL | Form fields and validation Demo</title>
+
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/codegel.css">
+
+    <script type="text/javascript"> // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    
+</head>
+
+<body class="gel-guideline-body">
+    <main id="main" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-5/5@l" style="padding-right: 12px;">
+                <h1 class="gel-guideline-header__title">Form fields and validation</h1>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-5/5@l">
+                <h2>Reference implementation</h2>
+                
+                
+<h3>Form fields and validation</h3>
+
+<form id="myform-demo">
+  <div class="codegel-form-divider">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" />
+    <div class="codegel-form-field-error" id="username-error"></div>
+  </div>
+  <div class="codegel-form-divider">
+    <label for="code">
+      Verification code
+      <small>This was sent to you by email</small>
+    </label>
+    <input type="text" id="code" name="code" />
+    <div class="codegel-form-field-error" id="code-error"></div>
+  </div>
+  <div class="codegel-form-divider">
+    <button class="gel-button" type="submit">Submit</button>
+  </div>
+</form>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codegel && codegel.Validation.init();
+
+    var rules = [
+      {
+        name: 'code',
+        required: true,
+        tests: [
+          {
+            error: function (val) { return !/^\d+$/.test(val) },
+            message: 'The verification code must not contain letters'
+          },
+          {
+            error: function (val) { return val.length !== 5 },
+            message: 'The verification code must be five digits in length'
+          }
+        ]
+      },
+      {
+        name: 'username',
+        required: true
+      }
+    ];
+
+    var form = document.getElementById('myform-demo');
+    var formValidation = new codegel.Validation.constructor(form, rules);
+  });
+</script>
+            </div>
+        </div>
+    </main>
+
+
+    <script type="text/javascript" src="/code-gel/static/js/codegel.js"></script>
+    
+    
+</body>
+
+</html>

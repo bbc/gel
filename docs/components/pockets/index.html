@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/code-gel/static/images/favicon.ico" type="image/x-icon">
 
     <title>Code GEL | Pockets</title>
 
@@ -61,7 +62,7 @@
             <div class="gel-wrap">
                 <div class="gel-layout">
                     <div class="gel-layout__item gel-2/5@l" style="text-align:left; padding-left:14px; margin-bottom:32px;">
-                        <span class="geldocs-logo">Code{GEL}</span>
+                        <a href="/code-gel/" class="geldocs-logo">Code{GEL}</a>
                     </div>
                     <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
                         <a class="geldocs-button geldocs-button--dark gel-long-primer-bold" href="https://www.bbc.co.uk/gel/guidelines/pocket">
@@ -119,8 +120,8 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Main-content-1">
-              <h4 id="aside-info-Main-content-1" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Main content</h4><div><p>Note that the <strong>Pocket</strong> is intended for truncating the <em>main</em> content of a page. In most circumstances, you should be nesting the <code>class=&quot;codegel-pocket&quot;</code> element directly inside a <code>&lt;main&gt;</code> element or, alternatively, <em>making</em> it the <code>&lt;main&gt;</code> element. The page should contain a skip link that navigates the user to <code>&lt;main&gt;</code>, in accordance with WCAG 2.4.1 Bypass Blocks<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. The <code>tabindex=&quot;-1&quot;</code> in the example to follow ensures all browsers move focus to the link when it is navigated to via the skip link.</p>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-main-content">
+              <h4 id="aside-info-main-content" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Main content</h4><div><p>Note that the <strong>Pocket</strong> is intended for truncating the <em>main</em> content of a page. In most circumstances, you should be nesting the <code>class=&quot;codegel-pocket&quot;</code> element directly inside a <code>&lt;main&gt;</code> element or, alternatively, <em>making</em> it the <code>&lt;main&gt;</code> element. The page should contain a skip link that navigates the user to <code>&lt;main&gt;</code>, in accordance with WCAG 2.4.1 Bypass Blocks<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. The <code>tabindex=&quot;-1&quot;</code> in the example to follow ensures all browsers move focus to the link when it is navigated to via the skip link.</p>
 </aside><pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">main</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"main"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-pocket"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-pocket-truncated"</span>&gt;</span>
@@ -129,7 +130,6 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
 </code></pre>
-<p>:::</p>
 <h2 id="recommended-layout">Recommended layout</h2>
 <p>The <code>class=&quot;codegel-pocket-truncated&quot;</code> needs to adopt a reasonable fixed height on initialization. Something set in viewport units<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> is recommended since they pertain to a proportion of the viewport and would befit a viewport of any physical height: <code>50vh</code> is 50% of the height of any screen. This value is set as one of the parameters of the <a href="#reference-implementation">Reference implementation</a>'s constructor.</p>
 <p>The same element must, of course, take <code>overflow-y: hidden</code> for the truncation to work.</p>
@@ -145,6 +145,23 @@
 <p>When the <strong>Pocket</strong> is in its unveiled/showing state, the button's text changes to 'Show less' (see <a href="#recommended-behaviour">Recommended behaviour</a>, below) and a class of <code>codegel-pocket-foot-shown</code> is applied, enabling a <code>margin-top</code> style to separate the transformed button from the now unveiled content.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.codegel-pocket-foot</span><span class="hljs-selector-class">.codegel-pocket-foot-shown</span> {
   <span class="hljs-attribute">margin-top</span>: <span class="hljs-built_in">double</span>($gel-spacing-unit);
+}
+</code></pre>
+<p>When the <em>&quot;Continue below...&quot;</em> element is focused, it draws attention by showing a brief <code>outline</code> animation:</p>
+<pre class="hljs"><code>@<span class="hljs-keyword">keyframes</span> focus {
+  0%{
+    <span class="hljs-attribute">outline-color</span>: transparent;
+  }
+  50% {
+    <span class="hljs-attribute">outline-color</span>: $gel-color--tundora;
+  }
+  100% {
+    <span class="hljs-attribute">outline-color</span>: transparent;
+  }
+}
+
+<span class="hljs-selector-class">.codegel-pocket-continue</span><span class="hljs-selector-pseudo">:focus</span> {
+  <span class="hljs-attribute">animation</span>: focus <span class="hljs-number">1s</span> linear <span class="hljs-number">1</span>;
 }
 </code></pre>
 <h2 id="recommended-behaviour">Recommended behaviour</h2>
@@ -173,13 +190,13 @@
 }
 </code></pre>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-previousElementSibling-1">
-              <h4 id="aside-info-previousElementSibling-1" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>`previousElementSibling`</h4><div><p>Instead of placing the <em>&quot;Continue reading&quot;</em> element directly before the first of the originally hidden elements, it goes one element before that. This addresses a quirk with <code>isIntersecting</code> and makes browser behaviour more consistent.</p>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-previouselementsibling">
+              <h4 id="aside-info-previouselementsibling" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg><code>previousElementSibling</code></h4><div><p>Instead of placing the <em>&quot;Continue reading&quot;</em> element directly before the first of the originally hidden elements, it goes one element before that. This addresses a quirk with <code>isIntersecting</code> and makes browser behaviour more consistent.</p>
 </aside><p>In this state, the 'Show more' button now reads 'Show less', and pressing it switches the <strong>Pocket</strong> back into its initial truncated state. In this case, focus is not moved anywhere. It remains on the button. The screen reader user can browse back into just the preview content from this point, or continue down into the footer.</p>
 <h2 id="reference-implementation">Reference implementation</h2>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-Important-14">
-              <h4 id="aside-alert-Important-14" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
+              <h4 id="aside-alert-important" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
 </aside>
           <div class="geldocs-demo"><!-- 
 title: Pockets
@@ -188,54 +205,39 @@ title: Pockets
 <div style="max-width: 90ch;">
   <div class="codegel-pocket">
     <div class="codegel-pocket-truncated">
-      <p>Cras molestie risus a enim convallis vitae luctus libero lacinia. Aliquam tincidunt velit sit (amet ante
-        hendrerit tempus). Nulla lobortis tempus commodo. Nulla auctor eleifend turpis consequat pharetra. Fusce ac
-        sodales <abbr title='Cascading Style Sheets'>CSS</abbr> magna. Aliquam tincidunt velit sit amet ante hendrerit
-        tempus. Maecenas sit <q cite='http://www.heydonworks.com'>amet tellus nec mi gravida posuere</q> non pretium
-        magna. <strong>Donec a congue leo. </strong></p>
-      <p>Nulla auctor eleifend turpis consequat pharetra: Aliquam nisl enim, tristique tempus placerat at, posuere in
-        lectus. Suspendisse potenti. Vestibulum sit amet ipsum lacus. Nulla lobortis tempus commodo? Lorem ipsum dolor
-        sit amet, consectetur adipiscing elit. Potenti et eros sed justo &ndash; commodo bibendum non at nunc. </p>
-      <p>Donec tempus tempus tellus, ac lacinia turpis mattis ac. <strong>Donec a congue leo. </strong>Cras molestie
-        risus a enim &#8216;convallis vitae&#8217; luctus libero lacinia. </p>
-      <p>Cras molestie risus a enim &#8216;convallis vitae&#8217; luctus libero lacinia. Donec et nisi dictum felis,
-        sollicitudin, congue Heydon&#8482;. Duis sagittis, est sit amet <strong>gravida tristique</strong>, purus
-        lectus
-        venenatis urna, id <code>#FFFFFF</code> risus ut nunc. Fusce ac sodales magna &hellip; Curabitur consectetur;
-        faucibus nisl ac varius. Maecenas sit <em>amet tellus</em> nec mi gravida posuere non <a href='#'>pretium magna</a>.
-      </p>
-      <p>Suspendisse potenti H<sub>2</sub>0. Vestibulum <code>text-align : justify</code> lacus. Potenti et eros sed
-        justo &ndash; commodo bibendum non at nunc. Nulla auctor eleifend 23<sup>rd</sup> of May turpis consequat
-        pharetra. Donec tempus tempus tellus, ac lacinia turpis mattis ac! Sed dapibus, lectus sit amet adipiscing
-        egestas, mauris est viverra nibh, iaculis pretium sem orci aliquet mauris. </p>
-      <p>Fusce ac sodales <abbr title='Cascading Style Sheets'>CSS</abbr> magna. Fusce ac sodales magna &hellip; Lorem
-        ipsum dolor sit amet, consectetur <em>adipiscing elit</em>. Donec tempus tempus tellus, ac lacinia turpis
-        mattis
-        ac! Nulla lobortis tempus commodo? Nunc iaculis risus vel &#8216;Orci Ornare&#8217; dignissim sed vitae nulla.
-      </p>
-      <p>Maecenas sit amet tellus &ndash; nec mi gravida posuere non pretium magna. Vestibulum sit amet ipsum lacus.
-        Fusce ac sodales <abbr title='Cascading Style Sheets'>CSS</abbr> magna. Sed dapibus, lectus sit amet adipiscing
-        egestas, mauris est viverra nibh, iaculis pretium sem orci aliquet mauris. </p>
-      <p>Lorem ipsum dolor sit amet, &mdash; consectetur adipiscing &mdash; elit. Donec et nisi dictum felis,
-        sollicitudin, congue Heydon&#8482;. Sed dapibus, lectus sit amet adipiscing egestas, mauris est viverra nibh
-        (iaculis pretium sem orci aliquet mauris). Aliquam nisl enim&hellip; tristique tempus placerat at, posuere in
-        lectus. Nulla lobortis tempus <strong>commodo</strong>. Cras molestie risus a enim convallis vitae luctus
-        libero
-        lacinia. Nulla lobortis tempus commodo? Suspendisse potenti cras molestie, risus a enim convallis vitae luctus
-        libero lacinia. </p>
-      <p>Suspendisse <em>potenti</em>. Nulla auctor eleifend turpis consequat pharetra: Sed mauris arcu, aliquet
-        ultrices
-        malesuada sed, pretium id <kbd>CTRL</kbd> + <kbd>V</kbd> massa. Donec a congue leo. Duis sagittis, est sit amet
-        gravida tristique, purus lectus venenatis urna, id &#8216;molestie&#8217; magna risus ut nunc. Nulla auctor
-        eleifend turpis consequat pharetra. </p>
-      <p>Donec tempus tempus tellus, ac lacinia turpis mattis ac. Donec et nisi dictum felis, sollicitudin, congue
-        Heydon&#8482;. Cras molestie risus a <q cite='http://www.heydonworks.com'>enim convallis vitae</q> luctus
-        libero
-        lacinia. Nulla lobortis tempus <strong>commodo</strong>. Maecenas sit <q cite='http://www.heydonworks.com'>amet
-          tellus nec mi gravida posuere</q> non pretium magna. Donec a congue leo. Cras molestie risus a enim
-        Convallis;
-        vitae luctus libero lacinia. Sed mauris arcu, aliquet ultrices malesuada sed, pretium id <kbd>CTRL</kbd> + <kbd>V</kbd>
-        massa. </p>
+      <p>Mane apud me tuebatur armis
+      lectiones, quae maxime competit homini est facultas modern communicationis
+      inter hominum. Credo enim fieri potest, ut signa ostendere societatis,
+      ut Ecclesias faciunt nexum successu cavendum sit.</p>
+      <p>Et ludunt
+      essential parte cerebri actio constituendum praecepta Dei facere qui maxime operam.
+      Nostra confirmare animi magnitudinem communicationis in illos Adversus
+      habitat. Dat signum aliis dependentia nostrae memoria potenti repente
+      respondeo, primo clamore atque elicere nostris.</p>
+      <p>Nunc volo experior ut has ideas
+      et progressus communicationis auxilio, ut altius et in historia stadio
+      et cuiusque personae momentum. Idque et consilii causa principalis
+      His prolatis quorum religione precari facti sunt, maxima ex praesentis vitae magna.
+      Multo minus in natura agunt animalia fera cooperatores. Solitum se reflecti
+      pugna aut fuga. Sed qui prima illa initia erant, munera coram communicationis
+      venit autem vir.</p>
+      <p>Reproductio operam inter duorum hominum
+      feminae. Utrumque iumentum igitur singula signa marium feminarumque
+      producendum oppositum est super feminas varios motus per membra feminae. Ad hunc autem finem animalibus
+      Suspendisse turpis et magna modis intendere sibi a
+      mirum in modum pennas avium ac similibus, et usque ad vesperum vestem et
+      ducendos choros ex hominibus.</p>
+      <p>Omnes demonstrationes de rebus dici signum. sunt
+      quibus primo instrumentorum communicationis socialis. Nostrum vigorem intensionem
+      quemadmodum si ea ex antiquitate. Ad litteram centena
+      decies annis maiorum et portavit; ad talia signa, ueneris amare lasciuiam. Nee mirum,
+      quae inopinato intrat in sexus tot facies nostrae cogitationes, loquelas et actiones.
+      Est quidem est vetus Adam.</p>
+      <p>Sed apud unumquemvis hominem quiqui admittit motus magis develop lente. ante
+      iam plene didicerat sunt activae singula unicuique operanti cooperantibus aliis de modi. Quod
+      communicet cum infantem mater ejus, et clamor, et risu; hoc est dicere in minimis
+      sexualem modo imaginabile. Postea successive puer sexus rationes profectae sunt alii
+      hominum, sed iuxta cerebrum non habet diversas vias didicit ex actione.</p>
     </div>
   </div>
 </div>
@@ -252,7 +254,7 @@ title: Pockets
         <p><a class="geldocs-button geldocs-button--dark geldocs-long-primer-bold" href="../demos/pockets/" target="_new">Open in new window <svg class="geldocs-button__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:currentColor"></use></svg></a></p>
 <h2 id="related-research">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
-<h3 id="further-reading%2C-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
+<h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -274,7 +276,7 @@ title: Pockets
                     </h4>
                     <div>
                         <p>
-                        If you think you could make anything you see here a bit better then become one of our lovely contributors!
+                        If you think you could make anything you see here a bit better then become one of <a href="/code-gel/contributors/">our lovely contributors</a>!
                         </p>
                     </div>
                 </aside>

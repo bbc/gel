@@ -2,8 +2,8 @@
 title: Breakout Boxes
 summary: Breakout Boxes interject supplementary content within the flow of a document
 version: 0.1.0
-published: true
-accessibility: true
+published: false
+accessibility: false
 linkback: http://www.bbc.co.uk/gel/guidelines/promos
 ---
 
@@ -65,7 +65,8 @@ The following implementation is a copy of the 'tip' provided in this document.
 
 <include src="components/demos/breakout-boxes.html">
 
-<p><a class="gel-button gel-button--dark gel-long-primer-bold" href="../demos/breakout-boxes/" target="_new">Open in new window</a></p>
+<cta label="Open in new window" href="../demos/breakout-boxes/">
+
 
 ## Test specifications
 

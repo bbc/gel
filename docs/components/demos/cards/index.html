@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/code-gel/static/images/favicon.ico" type="image/x-icon">
 
     <title>Code GEL | Cards Demo</title>
 
@@ -36,52 +37,67 @@
                 
 <div style="margin-bottom: 1rem;">
   <h3>Astronomy Photographer of the Year 2018</h3>
-  <ul class="gel-cards">
-    <li class="gel-card">
-      <div class="gel-card-headline">
+  <ul class="codegel-cards">
+    <li class="codegel-card">
+      <div class="codegel-card-headline">
         <h4>Living Space</h4>
       </div>
-      <div class="gel-card-content">
+      <div class="codegel-card-content">
         <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/E134/production/_104025675_livingspaceandrewwhyte.jpg"
           alt="A silhouette of a lamppost reaches up from suburbia into the milky way" />
       </div>
-      <div class="gel-card-desc">
+      <div class="codegel-card-desc">
         <p>Taken in Pagham, West Sussex, Whyte's photograph aims to show how accustomed we have become to the loss of
           night sky views because of light pollution, with the unlit street lamps allowing for awe-inspiring views.</p>
         <p><small>Runner-up: Andrew Whyte</small></p>
       </div>
-      <div class="gel-card-toolbar">
+      <div class="codegel-card-toolbar">
         <button type="button" aria-haspopup="true">More info</button>
-        <div class="gel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
-          <h5 class="gel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
+        <div class="codegel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
+          <h5 class="codegel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin posuere mauris, at sagittis
             odio aliquam sed. Nunc neque diam, euismod ut purus et, scelerisque vulputate tortor. Donec non commodo
             turpis. Nunc ac magna in diam molestie posuere eget eu elit. Suspendisse ut lectus porta eros dapibus
             tempor. Curabitur tempus purus eu consequat semper. Ut a lectus non metus imperdiet finibus. Sed vestibulum
             enim congue, finibus augue ut, dictum justo.</p>
         </div>
-        <button type="button" aria-pressed="false">Love</button>
-        <button type="button">Add</button>
-        <button type="button">Share</button>
+        <button type="button" aria-pressed="false">
+          <span class="vh">Love</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+            <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-love-loved-state"></use>
+          </svg>
+        </button>
+        <button type="button">
+          <span class="vh">Add</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+            <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-add"></use>
+          </svg>
+        </button>
+        <button type="button">
+          <span class="vh">Share</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+            <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-share"></use>
+          </svg>
+        </button>
       </div>
     </li>
-    <li class="gel-card">
-      <div class="gel-card-headline">
+    <li class="codegel-card">
+      <div class="codegel-card-headline">
         <h4>Speeding on the Aurora Lane</h4>
       </div>
-      <div class="gel-card-content">
+      <div class="codegel-card-content">
         <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/12F54/production/_104025677_speedingontheauroralanenicolaslefaudeux.jpg"
           alt="A shimmering green sheet reaches through a sky of stars towards a glowing green horizon" />
       </div>
-      <div class="gel-card-desc">
+      <div class="codegel-card-desc">
         <p>A hazy auroral band is seen drifting across the sky above Sirkka, Finland, seeming like a road disappearing
           over the horizon.</p>
         <p><small>Winner: Nicolas Lefaudeux</small></p>
       </div>
-      <div class="gel-card-toolbar">
+      <div class="codegel-card-toolbar">
         <button type="button" aria-haspopup="true">More info</button>
-        <div class="gel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
-          <h5 class="gel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
+        <div class="codegel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
+          <h5 class="codegel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
           <p>Vestibulum consectetur, lectus sed porta pulvinar, turpis nunc placerat nisl, non blandit augue leo in
             nunc. Vivamus in mi lectus. Vivamus ex orci, finibus non massa nec, viverra sollicitudin nibh. Nunc semper
             imperdiet ante, et mattis magna hendrerit a. Quisque libero nibh, hendrerit at tortor vitae, cursus
@@ -89,69 +105,81 @@
             ullamcorper ac libero sed iaculis. Duis pulvinar leo at feugiat dapibus. Aenean sagittis felis massa,
             sodales ullamcorper tellus consectetur ac.</p>
         </div>
-        <button type="button" aria-pressed="false">Love</button>
-        <button type="button">Add</button>
-        <button type="button">Share</button>
+        <button type="button" aria-pressed="false">
+          <span class="vh">Love</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+            <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-love-loved-state"></use>
+          </svg>
+        </button>
+        <button type="button">
+          <span class="vh">Add</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+            <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-add"></use>
+          </svg>
+        </button>
+        <button type="button">
+          <span class="vh">Share</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+            <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-share"></use>
+          </svg>
+        </button>
       </div>
     </li>
-    <li class="gel-card">
-      <div class="gel-card-headline">
+    <li class="codegel-card">
+      <div class="codegel-card-headline">
         <h4>Castlerigg Stone Circle</h4>
       </div>
-      <div class="gel-card-content">
+      <div class="codegel-card-content">
         <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/40B2/production/_104026561_castleriggstonecirclematthewjamesturner.jpg"
           alt="The sun creeps over bright green hills to gently illuminate a circle of ancient stones. A few lights emanate from a distant village." />
       </div>
-      <div class="gel-card-desc">
+      <div class="codegel-card-desc">
         <p>Turner's image depicts standing stones illuminated by moonlight, while auroras beyond the mountains gives
           the appearance that the hills are emitting an ethereal green glow.</p>
         <p><small>Runner-up: Matthew James Turner</small></p>
       </div>
-      <div class="gel-card-toolbar">
+      <div class="codegel-card-toolbar">
         <button type="button" aria-haspopup="true">More info</button>
-        <div class="gel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
-          <h5 class="gel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
+        <div class="codegel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
+          <h5 class="codegel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
           <p>Quisque sit amet magna lacus. Donec in fringilla velit. Curabitur vulputate magna euismod turpis luctus
             bibendum. Donec fringilla risus eget felis aliquet, vel vestibulum nibh bibendum. In laoreet ut nisi nec
             gravida. Nullam scelerisque posuere mollis. Donec ac mauris maximus, placerat enim vitae, placerat libero.
             Maecenas eget magna quis diam faucibus suscipit at et velit. Nulla placerat vehicula nunc in maximus. Nulla
             euismod neque vel imperdiet dignissim.</p>
         </div>
-        <button type="button" aria-pressed="false">Love</button>
-        <button type="button">Add</button>
-        <button type="button">Share</button>
+        <button type="button" aria-pressed="false">
+          <span class="vh">Love</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+            <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-love-loved-state"></use>
+          </svg>
+        </button>
+        <button type="button">
+          <span class="vh">Add</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+            <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-add"></use>
+          </svg>
+        </button>
+        <button type="button">
+          <span class="vh">Share</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+            <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-share"></use>
+          </svg>
+        </button>
       </div>
     </li>
   </ul>
 </div>
 
 <script>
-  (function () {
-    var cards = document.querySelectorAll('.gel-card');
-    Array.prototype.forEach.call(cards, function (card) {
-      var moreBtn = card.querySelector('[aria-haspopup="true"]');
-      var moreElem = card.querySelector('.gel-card-info');
-      var moreHeading = moreElem.querySelector('.gel-card-info-heading');
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codegel && codegel.Card.init();
 
-      moreBtn.addEventListener('click', function () {
-        moreElem.hidden = !moreElem.hidden;
-        if (!moreElem.hidden) {
-          moreHeading.focus();
-          moreBtn.textContent = 'Close';
-        } else {
-          moreBtn.textContent = 'More info';
-        }
-      });
-
-      moreElem.addEventListener('keydown', function (e) {
-        if (e.which === 27) {
-          moreElem.hidden = true;
-          moreBtn.textContent = 'More info';
-          moreBtn.focus();
-        }
-      });
+    var cards = document.querySelectorAll('.codegel-card');
+    Array.prototype.forEach.call(cards, function (c) {
+      var card = new codegel.Card.constructor(c);
     });
-  })();
+  });
 </script>
             </div>
         </div>

@@ -1,0 +1,54 @@
+---
+title: Form fields and validation
+---
+
+<h3>Form fields and validation</h3>
+
+<form id="myform-demo">
+  <div class="codegel-form-divider">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" />
+    <div class="codegel-form-field-error" id="username-error"></div>
+  </div>
+  <div class="codegel-form-divider">
+    <label for="code">
+      Verification code
+      <small>This was sent to you by email</small>
+    </label>
+    <input type="text" id="code" name="code" />
+    <div class="codegel-form-field-error" id="code-error"></div>
+  </div>
+  <div class="codegel-form-divider">
+    <button class="gel-button" type="submit">Submit</button>
+  </div>
+</form>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codegel && codegel.Validation.init();
+
+    var rules = [
+      {
+        name: 'code',
+        required: true,
+        tests: [
+          {
+            error: function (val) { return !/^\d+$/.test(val) },
+            message: 'The verification code must not contain letters'
+          },
+          {
+            error: function (val) { return val.length !== 5 },
+            message: 'The verification code must be five digits in length'
+          }
+        ]
+      },
+      {
+        name: 'username',
+        required: true
+      }
+    ];
+
+    var form = document.getElementById('myform-demo');
+    var formValidation = new codegel.Validation.constructor(form, rules);
+  });
+</script>
