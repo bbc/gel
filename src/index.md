@@ -44,13 +44,13 @@ We are working our way through a list based closely on what's already published 
 | [Tabs]({{site.basedir}}components/tabs/) | Draft / Pending|
 | [Form fields and validation]({{site.basedir}}components/form-fields/) | Draft / Pending|
 | [Video controls]({{site.basedir}}components/video-controls/) | Draft / Pending|
+| [Pocket]({{site.basedir}}components/pockets/) | Draft / Pending|
 
 ## What's next?
 
 Our backlog has a list of patterns we intend to document:
 
 - Pagination
-- Pocket
 - Information Panel
 - Share Tools
 - Accordion

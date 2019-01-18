@@ -103,24 +103,24 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#Introduction-16">Introduction</a></li><li><a href="#Recommended-markup-5">Recommended markup</a></li><li><a href="#Recommended-layout-5">Recommended layout</a></li><li><a href="#Recommended-behaviour-5">Recommended behaviour</a></li><li><a href="#Reference-implementation-15">Reference implementation</a></li><li><a href="#Related-research-17">Related research</a></li></ol>
+                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
             <div class="geldocs-sections geldocs-body-copy gel-layout__item gel-3/5@l">
-                <h2 id="Introduction-16">Introduction</h2>
+                <h2 id="introduction">Introduction</h2>
 <p>Gracefully handling user input is critical to the usability of BBC services, but also an area of Interaction Design fraught with potential problems. The purpose of this document is to set out robust approaches to presenting and validating form fields.</p>
 <p>The focus here is on web-based forms. For further guidance specific to mobile/native applications, please consult the <a href="http://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/forms/labelling-form-controls">BBC Mobile Accessibility Guidelines</a>.</p>
-<h2 id="Recommended-markup-5">Recommended markup</h2>
-<h3 id="Labelling-1">Labelling</h3>
+<h2 id="recommended-markup">Recommended markup</h2>
+<h3 id="labelling">Labelling</h3>
 <p>Any field's element needs to be associated programmatically with a label. This is achieved by making the label's <code>for</code> attribute and the input's <code>id</code> attribute share the same value.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"username"</span>&gt;</span>Username<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"username"</span> /&gt;</span>
 </code></pre>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-name-and-id-1">
-              <h4 id="aside-info-name-and-id-1" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg><code>name</code> and <code>id</code></h4><div><p>It is a common misconception that the <code>name</code> attribute is used in label calculation. Although it often takes the same value as the <code>id</code>, it is only the <code>id</code> that associates the label to the input.</p>
-</aside><h4 id="Group-labels-1">Group labels</h4>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-name-and-id">
+              <h4 id="aside-info-name-and-id" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg><code>name</code> and <code>id</code></h4><div><p>It is a common misconception that the <code>name</code> attribute is used in label calculation. Although it often takes the same value as the <code>id</code>, it is only the <code>id</code> that associates the label to the input.</p>
+</aside><h4 id="group-labels">Group labels</h4>
 <p>Sometimes multiple form elements should be grouped together under a common label. The standard method for creating such a group is with the <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> elements. The <code>&lt;legend&gt;</code> must be the first child inside the <code>&lt;fieldset&gt;</code>.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>Group label<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
@@ -145,15 +145,15 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
 </code></pre>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Label-wrappers-1">
-              <h4 id="aside-info-Label-wrappers-1" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Label wrappers</h4><div><p>Note the use of labels <em>wrapping</em> inputs in the above example. Only when wrapping inputs in <code>&lt;label&gt;</code>s can you omit the <code>for</code> and <code>id</code> association. It is a common pattern for radios and checkboxes.</p>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-label-wrappers">
+              <h4 id="aside-info-label-wrappers" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Label wrappers</h4><div><p>Note the use of labels <em>wrapping</em> inputs in the above example. Only when wrapping inputs in <code>&lt;label&gt;</code>s can you omit the <code>for</code> and <code>id</code> association. It is a common pattern for radios and checkboxes.</p>
 </aside><p>It's quite legitimate to place headings inside <code>&lt;legend&gt;</code>s. In fact, this helps to give your form a semantic structure (improving navigation by screen reader users) without having to create separate and redundant labels.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Group label<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
   <span class="hljs-comment">&lt;!-- individually labelled elements --&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
 </code></pre>
-<h3 id="Descriptions-not-placeholders-1">Descriptions, not placeholders</h3>
+<h3 id="descriptions-not-placeholders">Descriptions, not placeholders</h3>
 <p>The <code>placeholder</code> attribute is often misused to supplant the primary label. Not only is the <code>placeholder</code> less reliable for accessible name calculation, but it also presents a number of issues relating to cognition, translation, and interoperability<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p>
 <p>Where they <em>are</em> used, placeholders should only give supplemental information, such as a hint regarding the expected input format. It is strongly recommended you use descriptions instead of <code>placeholders</code> for this purpose. Descriptions are appended to the <code>&lt;label&gt;</code> and, therefore, counted in the accessible name calculation. Unlike <code>placeholder</code>s, they persist during input and their text content can wrap, so is not in danger of being obscured.</p>
 <p>In the following example, the <code>&lt;small&gt;</code> element is used to demarcate the description visually. By default, it will display smaller text. You can place it on a new line by applying <code>display: block</code>. Note that <code>&lt;label&gt;</code> elements are inline level, so it is non-conforming to include block elements inside them.</p>
@@ -164,11 +164,11 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"username"</span> /&gt;</span>
 </code></pre>
 <p>Not all form fields need descriptions.</p>
-<h3 id="Input-types-1">Input types</h3>
+<h3 id="input-types">Input types</h3>
 <p>Where specialist HTML5 input types are well supported, it is advised they are used in place of the generic (and default) <code>type=&quot;text&quot;</code>. The <code>number</code> <code>type</code>, for example, helpfully restricts input to numerals, allows incrementation—typically by providing up and down buttons—and elicits the display of a numerical virtual keyboard.</p>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-Avoid-custom-form-elements-1">
-              <h4 id="aside-alert-Avoid-custom-form-elements-1" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Avoid custom form elements</h4><div><p>The most efficient and robust way to implement accessible form fields is to use the native <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements. These elements have predefined and expected behaviours, and automatically communicate their roles, values, and states to assistive technologies.</p>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-avoid-custom-form-elements">
+              <h4 id="aside-alert-avoid-custom-form-elements" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Avoid custom form elements</h4><div><p>The most efficient and robust way to implement accessible form fields is to use the native <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements. These elements have predefined and expected behaviours, and automatically communicate their roles, values, and states to assistive technologies.</p>
 <p>It is <em>possible</em> to emulate native form element behaviour with WAI-ARIA attribution and JavaScript, but it<br>
 is rarely a good idea. Implementations tend towards complexity, and are necessarily more likely<br>
 to break because they depend on JavaScript in order to function.</p>
@@ -178,12 +178,12 @@ to break because they depend on JavaScript in order to function.</p>
 <span class="hljs-comment">&lt;!-- WAI-ARIA (requiring JavaScript to switch the checked state) --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">aria-checked</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-</aside><h3 id="Error-states-1">Error states</h3>
+</aside><h3 id="error-states">Error states</h3>
 <p>When a field has an invalid value, its invalidity and an associated error message must be communicated clearly and accessibly. Since HTML5 native form validation is implemented inconsistently<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>, it is recommended <code>novalidate</code> is placed on each field or the parent form, preferring a custom validation process.</p>
 <p>The validation process is described in <a href="#recommended-behaviour">Recommended behaviour</a>.</p>
-<h4 id="aria-invalid-1"><code>aria-invalid</code></h4>
+<h4 id="aria-invalid"><code>aria-invalid</code></h4>
 <p>A field element in an invalid state should have <code>aria-invalid=&quot;true&quot;</code>, and <code>aria-invalid=&quot;false&quot;</code> once the invalidity is corrected.</p>
-<h4 id="The-error-message-1">The error message</h4>
+<h4 id="the-error-message">The error message</h4>
 <p>Error messages should be concise but descriptive. They are associated to their field element as an accessible description via <code>aria-describedby</code>. This element is populated with an appropriate error message when the field becomes invalid, and emptied when it is corrected.</p>
 <pre class="hljs"><code><span class="hljs-comment">&lt;!-- indeterminate (initial) state --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"username"</span>&gt;</span>
@@ -209,7 +209,7 @@ to break because they depend on JavaScript in order to function.</p>
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"username-error"</span> <span class="hljs-attr">aria-invalid</span>=<span class="hljs-string">"false"</span> /&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username-error"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<h4 id="Required-fields-1">Required fields</h4>
+<h4 id="required-fields">Required fields</h4>
 <p>It is assumed that any fields presented to the user should be completed, otherwise they should not be present. In which case, it is considered needlessly obstructive to indicate required fields before or during individual field validation.</p>
 <p>Only when submission is attempted should the <code>aria-required=&quot;true&quot;</code> attribution and error message be instated. This attribution is preferred over the HTML5 <code>required</code> Boolean just as <code>aria-invalid</code> is preferred over <code>invalid</code>.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"username"</span>&gt;</span>
@@ -223,11 +223,11 @@ to break because they depend on JavaScript in order to function.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"fact"</span>&gt;</span>Interesting fact (optional)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"fact"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"fact"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"username-error"</span> /&gt;</span>
 </code></pre>
-<h2 id="Recommended-layout-5">Recommended layout</h2>
-<h3 id="Order-and-orientation-1">Order and orientation</h3>
+<h2 id="recommended-layout">Recommended layout</h2>
+<h3 id="order-and-orientation">Order and orientation</h3>
 <p>Place labels (and their descriptions, if present) <em>above</em> form elements. This is especially important on mobile platforms because the invoked virtual keyboard has a habit of obscuring labels to the side or below inputs.</p>
 <p>Animated labels that appear as <code>placeholder</code>s, then animate upwards to assume the position of a label, should be avoided for their pressure on cognition<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. A label <em>over</em> an input, similar to a <code>placeholder</code>, can misidentify the field as having a value and being already completed.</p>
-<h4 id="The-general-error-message-1">The 'general' error message</h4>
+<h4 id="the-general-error-message">The 'general' error message</h4>
 <p>When the user attempts to submit a form containing errors, a general error message appears (and is alerted to screen reader users as an ARIA live region, see <a href="#reference-implementation">Reference implementation</a>). This error message should appear directly above the submit button, making it visible to the user without the need for scrolling.</p>
 <p>The general error message will appear when submission fails and the live region is populated with the error message.</p>
 <pre class="hljs"><code><span class="hljs-comment">&lt;!-- Initial state --&gt;</span>
@@ -238,58 +238,58 @@ to break because they depend on JavaScript in order to function.</p>
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span>&gt;</span>Errors: Please fix the errors in the form before continuing<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre>
-<h3 id="Invisible-labels-1">Invisible labels</h3>
+<h3 id="invisible-labels">Invisible labels</h3>
 <p>It is strongly recommended that form fields have visible and persistent labels; labels that do not disappear upon focus or input.</p>
 <p>However, in some specific circumstances an invisible but accessible label is acceptable. For example, a single input search form may have a submit button that reads &quot;Search&quot; — effectively providing a label for both the input and the button itself. In this case, you can hide the <code>&lt;label&gt;</code> visually, using a class that keeps the label available to assistive technologies<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"search"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>Your search term<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"search"</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>Search<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre>
-<h3 id="Error-indication-1">Error indication</h3>
+<h3 id="error-indication">Error indication</h3>
 <p>It is imperative that errors are clearly identified as such. Do not rely on colour to denote an error state<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> since it will fail on monochrome displays, and for those who cannot accurately perceive colour.</p>
 <p>Where there are errors, there should always be error messages. Prefixing the error message with 'Error:',  or a warning symbol, ensures the nature of the message is conveyed explicitly.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username-error"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Error:<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span> Your username cannot contain spaces<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<h2 id="Recommended-behaviour-5">Recommended behaviour</h2>
+<h2 id="recommended-behaviour">Recommended behaviour</h2>
 <p>Form validation should comprise of two phases:</p>
 <ol>
 <li>Individual field validation</li>
 <li>Form submission and validation</li>
 </ol>
 <p>The following describes the validation journey, as exemplified by the <a href="#reference-implementation">Reference implementation</a>.</p>
-<h3 id="1-Initial-state-1">1. Initial state</h3>
+<h3 id="1-initial-state">1. Initial state</h3>
 <ul>
 <li>No fields have the <code>aria-required</code> or <code>aria-invalid</code> attribution</li>
 <li>The general error live region is present in the DOM, but not yet populated</li>
 </ul>
-<h3 id="2-Individual-field-validation-1">2. Individual field validation</h3>
+<h3 id="2-individual-field-validation">2. Individual field validation</h3>
 <ul>
 <li>Fields are validated as the user types subject to a debouncing function, giving the user a chance to type a full valid entry before an error message is displayed.</li>
 <li><code>aria-invalid</code> is toggled between <code>true</code> and <code>false</code> as the field becomes valid or invalid.</li>
 <li>The error element is populated with a priority error message when the field is in an invalid state (priority depends on the order the <code>tests</code> array is populated in the <code>rules</code> object; see the <a href="#reference-implementation">Reference implementation</a>).</li>
 <li>Fields are <em>not</em> tested as required; only specific formatting errors are addressed.</li>
 </ul>
-<h3 id="3-Failed-submission-1">3. Failed submission</h3>
+<h3 id="3-failed-submission">3. Failed submission</h3>
 <ul>
 <li>Any empty required fields are indicated as such with a suitable error message and take the <code>aria-required=&quot;true&quot;</code> attribution.</li>
 <li>The general error message live region is populated.</li>
 <li>Focus remains on the submit button.</li>
 </ul>
-<h3 id="4-Correcting-errors-after-failed-submission-1">4. Correcting errors after failed submission</h3>
+<h3 id="4-correcting-errors-after-failed-submission">4. Correcting errors after failed submission</h3>
 <ul>
 <li>Both formatting errors and the required mandate (if present) are now tested against.</li>
 <li>Upon all individual errors being corrected, the general error message is removed.</li>
 </ul>
-<h3 id="Variants-and-caveats-1">Variants and caveats</h3>
+<h3 id="variants-and-caveats">Variants and caveats</h3>
 <ul>
 <li>Some implementations disable the submit button until the subject form is free of errors. This is not recommended since it can be confusing and frustrating to some users<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>. Better to allow submission and be explicit with a warning.</li>
 <li>Some implementations disable fields that have been correctly completed, in an effort to make it clearer which fields need addressing. It is recommended that all fields remain enabled, so users can adjust their input at any time. In some cases, correcting one input's value may mean having to adjust another's, even if it is superficially correct in terms of format.</li>
 <li>You may wish to employ 'positive validation', wherein inputs that are successfully completed display a green style and 'tick'. The difficulty here is in discerning between a correct format, and correct information. Showing a tick next to a correctly formatted bank card number, for example, is misleading: the user may believe you're aware it is the correct number for their specific card.</li>
 </ul>
-<h2 id="Reference-implementation-15">Reference implementation</h2>
+<h2 id="reference-implementation">Reference implementation</h2>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-Important-19">
-              <h4 id="aside-alert-Important-19" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Example implementations are intended to demonstrate <strong>what needs to be achieved</strong> but not how to achieve it. To meet our recommendations your HTML semantics, layout and behaviour must conform to the example implementation. Your server-side and front-end frameworks will likely differ.</p>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
+              <h4 id="aside-alert-important" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Example implementations are intended to demonstrate <strong>what needs to be achieved</strong> but not how to achieve it. To meet our recommendations your HTML semantics, layout and behaviour must conform to the example implementation. Your server-side and front-end frameworks will likely differ.</p>
 </aside>
           <div class="geldocs-demo"><!-- 
 title: Form fields and validation
@@ -346,9 +346,9 @@ title: Form fields and validation
   });
 </script></div>
         <p><a class="codegel-cta gel-long-primer-bold" href="../demos/form-fields/" target="_new"><span class="codegel-button__label">Open in new window</span><svg class="codegel-button__icon codegel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
-<h2 id="Related-research-17">Related research</h2>
+<h2 id="related-research">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
-<h3 id="Further-reading-elsewhere-on-the-Web-17">Further reading, elsewhere on the Web</h3>
+<h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">

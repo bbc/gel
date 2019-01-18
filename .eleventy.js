@@ -15,7 +15,7 @@ function toSlug(title) {
   else {
     slugCounts[slugged] = 1
   }
-  return slugged;
+  return slugged.toLowerCase();
 }
 
 module.exports = function (eleventyConfig) {
@@ -103,6 +103,13 @@ module.exports = function (eleventyConfig) {
         }
       }
     });
+
+    let origRender = md.render;
+    md.render = function() {
+      //console.log('new render!', arguments);
+      slugCounts = {};
+      return origRender.apply(md, arguments);
+    };
 
   eleventyConfig.addPlugin(function (eleventyConfig, pluginNamespace) {
     eleventyConfig.namespace(pluginNamespace, () => {
