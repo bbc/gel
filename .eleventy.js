@@ -15,7 +15,7 @@ function toSlug(title) {
   else {
     slugCounts[slugged] = 1
   }
-  return slugged;
+  return slugged.toLowerCase();
 }
 
 module.exports = function (eleventyConfig) {
@@ -97,12 +97,19 @@ module.exports = function (eleventyConfig) {
           var id = toSlug( tokens[idx].info );
           return `
             <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-${id}">
-              <h4 id="aside-${id}" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="${data.site.basedir}static/images/gel-icons-core-set.svg#gel-icon-${m[1]}" style="fill:#404040;"></use></svg>${m[2]}</h4><div>`;
+              <h4 id="aside-${id}" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="${data.site.basedir}static/images/gel-icons-core-set.svg#gel-icon-${m[1]}" style="fill:#404040;"></use></svg>` + md.renderInline( (''+m[2]).trim() ) + `</h4><div>`;
         } else {
           return `</aside>`;
         }
       }
     });
+
+    let origRender = md.render;
+    md.render = function() {
+      //console.log('new render!', arguments);
+      slugCounts = {};
+      return origRender.apply(md, arguments);
+    };
 
   eleventyConfig.addPlugin(function (eleventyConfig, pluginNamespace) {
     eleventyConfig.namespace(pluginNamespace, () => {
@@ -111,16 +118,19 @@ module.exports = function (eleventyConfig) {
         var result = '<ol id="geldocs-toc__links" class="geldocs-toc">';
         $('h2').each(function (i, h2) {
           var id = h2.attribs.id;
-          result += '<li><a href="#' + h2.attribs.id + '">' + $(h2).text() + '</a></li>';
+          if ( !h2.attribs || !h2.attribs.class || !h2.attribs.class.match( /(^| )no-toc( |$)/ ) ) {
+            result += '<li><a href="#' + h2.attribs.id + '">' + $(h2).text() + '</a></li>';
+          }
         });
         return result + '</ol>';
-      })
-    })
+      });
+    });
   });
   eleventyConfig.setLibrary('md', md);
   eleventyConfig.addPassthroughCopy('src/static/css');
   eleventyConfig.addPassthroughCopy('src/static/css/bbc-grandstand/dist');
   eleventyConfig.addPassthroughCopy('src/static/images');
+  eleventyConfig.addPassthroughCopy('src/static/videos');
   eleventyConfig.addPassthroughCopy('src/static/js');
 
   return {

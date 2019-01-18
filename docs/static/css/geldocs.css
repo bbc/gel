@@ -1195,6 +1195,9 @@ a {
   animation-iteration-count: infinite;
   animation-timing-function: linear; }
 
+.gel-icon svg {
+  fill: currentColor; }
+
 /*-- util -----------------------------*/
 .codegel-u-flex-rw {
   display: -webkit-box;

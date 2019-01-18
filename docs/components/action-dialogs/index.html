@@ -103,12 +103,12 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#Introduction-14">Introduction</a></li><li><a href="#Expected-markup-12">Expected markup</a></li><li><a href="#Expected-layout-12">Expected layout</a></li><li><a href="#Expected-behaviour-11">Expected behaviour</a></li><li><a href="#Reference-implementation-12">Reference implementation</a></li><li><a href="#Related-research-15">Related research</a></li></ol>
+                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#expected-behaviour">Expected behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
             <div class="geldocs-sections geldocs-body-copy gel-layout__item gel-3/5@l">
-                <h2 id="Introduction-14">Introduction</h2>
+                <h2 id="introduction">Introduction</h2>
 <p>GEL defines two generic kinds of alert message:</p>
 <ol>
 <li><strong>Purely informative:</strong> indicating something has happened already (and requiring no input on the part of the user).</li>
@@ -116,7 +116,7 @@
 </ol>
 <p>The <strong>Action dialog</strong> defines the second of these. It is a type of modal window<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>, restricting interaction to itself until one of the options it presents the user has been chosen. <strong>Action dialogs</strong> should be used sparingly, and only where the user's immediate input is critical to the continuation of their session.</p>
 <p>For more context, consult the <a href="http://www.bbc.co.uk/gel/guidelines/confirmation-and-error-messages">Confirmation &amp; Error Messages GEL page</a>.</p>
-<h2 id="Expected-markup-12">Expected markup</h2>
+<h2 id="expected-markup">Expected markup</h2>
 <p>In the following example, we imagine the user has tried to add a programme to 'My Programmes'. Since this functionality is only available to authenticated users, an action dialog asks the user to either sign in or register in order to continue.</p>
 <pre class="hljs"><code>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-action-dialog"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"dialog"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"codegel-action-dialog-label-1"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"codegel-action-dialog-desc-1"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"codegel-action-dialog-label-1"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-action-dialog-title"</span>&gt;</span>Add to enjoy later<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
@@ -137,7 +137,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 </code></pre>
-<h3 id="Notes-11">Notes</h3>
+<h3 id="notes">Notes</h3>
 <ul>
 <li><strong><code>role=&quot;dialog&quot;</code>:</strong> This <code>role</code> is critical for making the dialog behave in an expected way in assistive technologies such as screen reader software. It also identifies the dialog <em>as</em> a dialog when it is opened and focus is placed inside it.</li>
 <li><strong><code>aria-labelledby</code> and <code>aria-describedby</code>:</strong> These relationship attributes associate the text of the dialog's heading/label and content with the dialog element itself. Along with the dialog role, this information is announced upon the dialog being opened. You will need to write or generate unique identifiers for the <code>id</code>s required here.</li>
@@ -145,7 +145,7 @@
 <li><strong><code>class=&quot;codegel-action-dialog-close&quot;</code>:</strong> Provide a close button if doing <em>nothing</em> (not authenticating to add a programme after all, in this example) is a viable option. The visually hidden <code>vh</code><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> class is provided here to include accessible, translatable text alongside the screen reader inaccessible icon. The close button is deprioritized in favour of the named actions, appearing last in source and focus order.</li>
 <li><strong><code>&lt;/body&gt;</code>:</strong> For the overlay/inert characteristic to function correctly, the dialog must be a child of the <code>&lt;body&gt;</code> element. See <a href="#expected-behaviour">Expected behaviour</a></li>
 </ul>
-<h2 id="Expected-layout-12">Expected layout</h2>
+<h2 id="expected-layout">Expected layout</h2>
 <p>Action dialogs can appear in the center, or at the bottom, of the page. In the <a href="#reference-implementation"><strong>reference implementation</strong></a> they appear at the bottom by default. The <code>fixed</code> position value ensures they cannot be scrolled out of view.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.codegel-action-dialog</span> {
   <span class="hljs-attribute">position</span>: fixed;
@@ -175,33 +175,33 @@
 }
 </code></pre>
 <p>Note that the style is applied via a class placed on the <code>&lt;body&gt;</code> using the 'codegel-action-dialog' namespace. This ensures the specific inert style is only applied in the presence of an open dialog (the style does not 'leak' to other <code>inert</code> instances).</p>
-<h2 id="Expected-behaviour-11">Expected behaviour</h2>
+<h2 id="expected-behaviour">Expected behaviour</h2>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Results-of-actions-1">
-              <h4 id="aside-info-Results-of-actions-1" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Results of actions</h4><div><p>The result of an action taken via an action dialog will depend on the purpose of your dialog and is not specified here. Attach listeners to the action dialog's controls as appropriate.</p>
-</aside><h3 id="When-the-dialog-opens-1">When the dialog opens</h3>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-results-of-actions">
+              <h4 id="aside-info-results-of-actions" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Results of actions</h4><div><p>The result of an action taken via an action dialog will depend on the purpose of your dialog and is not specified here. Attach listeners to the action dialog's controls as appropriate.</p>
+</aside><h3 id="when-the-dialog-opens">When the dialog opens</h3>
 <ol>
 <li>The dialog element appears in its designated position</li>
 <li>The surrounding page becomes inert (non-interactive, unavailable to assistive technologies, and not focusable by keyboard)</li>
 <li>Focus is moved to the first control (a link or button that is not disabled) inside the <code>class=&quot;codegel-action-dialog-buttons&quot;</code> element</li>
 </ol>
-<h3 id="When-the-dialog-closes-1">When the dialog closes</h3>
+<h3 id="when-the-dialog-closes">When the dialog closes</h3>
 <ol>
 <li>The dialog is hidden</li>
 <li>The surrounding page ceases to be inert</li>
 <li>If the dialog was originally invoked as a response to a user action, the element that invoked the action (such as a button) is refocused</li>
 </ol>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-Interruptions-1">
-              <h4 id="aside-alert-Interruptions-1" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Interruptions</h4><div><p>Interruptions are dialogs that appear spontaneously, without direct invocation (conscious or otherwise) on the part of the user. These are very disruptive, and should be avoided in almost all circumstances. One legitimate use case would be to inform the user of their timed session coming to an end and offering them the opportunity to extend it.</p>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-interruptions">
+              <h4 id="aside-alert-interruptions" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Interruptions</h4><div><p>Interruptions are dialogs that appear spontaneously, without direct invocation (conscious or otherwise) on the part of the user. These are very disruptive, and should be avoided in almost all circumstances. One legitimate use case would be to inform the user of their timed session coming to an end and offering them the opportunity to extend it.</p>
 <p>Notifications and status messages that do not require user action should not steal focus. Consider using an ARIA live region instead<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
-</aside><h3 id="Keyboard-and-screen-reader-experience-1">Keyboard and screen reader experience</h3>
+</aside><h3 id="keyboard-and-screen-reader-experience">Keyboard and screen reader experience</h3>
 <p>Focus is placed inside the dialog upon opening it, meaning keyboard users have access to the functionality and screen reader users are informed of the dialog's presence. When the dialog first opens, a screen reader user will hear the announcement of the dialog role (<em>&quot;dialog&quot;</em>), its associated label (title) and description, and the role and label of the initially focused control.</p>
 <p>Users can move focus between the supplied controls and the close button, as well as 'escape' the dialog to focus browser chrome such as the address bar. Only the dialog is available and interactive while it is open, making it modal (it presents a 'mode' that suppresses and overrides normal page functionality).</p>
-<h2 id="Reference-implementation-12">Reference implementation</h2>
+<h2 id="reference-implementation">Reference implementation</h2>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-Important-16">
-              <h4 id="aside-alert-Important-16" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
+              <h4 id="aside-alert-important" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
 </aside>
           <div class="geldocs-demo"><!-- 
 title: Action dialogs
@@ -265,9 +265,9 @@ title: Action dialogs
 </script></div>
         
           <p><a class="codegel-cta gel-long-primer-bold" href="../demos/action-dialogs/" target="_new"><span class="codegel-button__label">Open in new window</span><svg class="codegel-button__icon codegel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
-        <h2 id="Related-research-15">Related research</h2>
+        <h2 id="related-research">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
-<h3 id="Further-reading-elsewhere-on-the-Web-15">Further reading, elsewhere on the Web</h3>
+<h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">

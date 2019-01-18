@@ -6,27 +6,27 @@ title: Load more
   <ul class="codegel-loader-items">
     <li class="codegel-loader-item">
       <p>delectus ullam et corporis nulla voluptas sequi</p>
-      <a class="codegel-cta" href="path/to/1">Read more about result 1</a>
+      <a class="codegel-cta" href="http://www.example.com/path/to/1">Read more about result 1</a>
     </li>
     <li class="codegel-loader-item">
       <p>iusto eius quod necessitatibus culpa ea</p>
-      <a class="codegel-cta" href="path/to/2">Read more about result 2</a>
+      <a class="codegel-cta" href="http://www.example.com/path/to/2">Read more about result 2</a>
     </li>
     <li class="codegel-loader-item">
       <p>a quo magni similique perferendis</p>
-      <a class="codegel-cta" href="path/to/3">Read more about result 3</a>
+      <a class="codegel-cta" href="http://www.example.com/path/to/3">Read more about result 3</a>
     </li>
     <li class="codegel-loader-item">
       <p>ullam ut quidem id aut vel consequuntur</p>
-      <a class="codegel-cta" href="path/to/4">Read more about result 4</a>
+      <a class="codegel-cta" href="http://www.example.com/path/to/4">Read more about result 4</a>
     </li>
     <li class="codegel-loader-item">
       <p>doloremque illum aliquid sunt</p>
-      <a class="codegel-cta" href="path/to/5">Read more about result 5</a>
+      <a class="codegel-cta" href="http://www.example.com/path/to/5">Read more about result 5</a>
     </li>
     <li class="codegel-loader-item">
       <p>qui explicabo molestiae dolorem</p>
-      <a class="codegel-cta" href="path/to/6">Read more about result 6</a>
+      <a class="codegel-cta" href="http://www.example.com/path/to/6">Read more about result 6</a>
     </li>
   </ul>
   <div class="codegel-loader-foot">
@@ -71,12 +71,37 @@ title: Load more
   document.addEventListener('DOMContentLoaded', function () {
     window.codegel && codegel.LoadMore.init();
 
-    // For demonstration purposes, we're pulling numbered items from 
-    // this dummy API
-    var baseURL = 'https://jsonplaceholder.typicode.com/posts/';
+    // You can pull numbered results from an API
+    // var dataURL = 'https://jsonplaceholder.typicode.com/posts/';
+    // var dataProvider = function(i) {
+    //   return fetch(dataURL + i); // => Promise
+    // };
+
+    // But any function that returns a promise can be used
+    var dataProvider = function(i) {
+      return new Promise(function (resolve, reject) {
+        resolve({
+          json: function() {
+            return {
+              userId: i, id: i, title: randomTitle(8)
+            };
+          }
+        });
+      });
+    };
 
     // Initialize
     var loaderElem = document.querySelector('.codegel-loader');
-    var loader = new codegel.LoadMore.constructor(loaderElem, 6, 7, baseURL);
+    var loader = new codegel.LoadMore.constructor(loaderElem, 6, 7, dataProvider);
   });
+  
+  // Fake content generator for demonstration purposes only
+  function randomTitle(len) {
+    var words = ['ipsum', 'dolor', 'sit', 'amet', 'et', 'per', 'qui', 'iillum', 'fatto', 'riempire', 'fuori', 'amore', 'che', 'dopo', 'andato', 'adat', 'tarsi', 'fets', 'potuto', 'fico', 'figda', 'uso', 'feltro', 'in', 'ludere', 'depulci', 'char', 'giro', 'noi'];
+    var result = [];
+    while (len--) {
+      result.push(words[Math.floor(Math.random() * words.length)]);
+    }
+    return result.join(' ')
+  }
 </script>

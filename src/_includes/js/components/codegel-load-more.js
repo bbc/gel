@@ -10,7 +10,7 @@
 
   self.init = function () { }
 
-  self.constructor = function (elem, amount, start, baseURL) {
+  self.constructor = function (elem, /* number */amount, /* number */start, /* fn => Promise */dataProvider) {
     this.elem = elem;
     // Save refs to key elements
     this.loadBay = this.elem.querySelector('.codegel-loader-items');
@@ -32,10 +32,12 @@
 
       this.loadItems = function (amount, start) {
         // Make array of URLs to request using the base URL
-        var urls = [];
+        var requestQueue = [];
         for (i = this.start; i < this.start + this.amount; i++) {
-          urls.push(baseURL + i);
+          requestQueue.push(i);
         }
+
+        i = this.start;
 
         // Factory to create the separator element that marks
         // the start of the new results and takes focus
@@ -52,7 +54,7 @@
           var itemElem = document.createElement('li');
           itemElem.classList.add('codegel-loader-item');
           itemElem.innerHTML = '<p>' + item.title + '</p>';
-          itemElem.innerHTML += '<a class="codegel-cta" href="/path/to/1">Read more about result ' + item.id + '</a>';
+          itemElem.innerHTML += '<a class="codegel-cta" href="http://www.example.com/path/to/' + item.id + '">Read more about result ' + item.id + '</a>';
           return itemElem;
         }
 
@@ -63,7 +65,7 @@
 
         var results = [];
 
-        Promise.all(urls.map(url => fetch(url)
+        Promise.all(requestQueue.map(i => dataProvider(i)
           .then(resp => resp.json())))
           .then(items => {
             items.forEach(function (item) {

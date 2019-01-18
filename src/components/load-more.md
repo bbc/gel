@@ -1,6 +1,6 @@
 ---
 title: Load more
-summary: Loading content must be a smooth experience, and one under the user's direct control
+summary: Loading content must be a smooth experience and under the user's direct control
 version: 0.1.0
 published: false
 accessibility: false
@@ -42,14 +42,14 @@ The [Reference implementation](#reference-implementation)'s script acts upon the
 ```
 
 ::: info The main element
-The main element[^3] takes `id="main"` and `tabindex="-1"`. This is because it is expected to be the focus target of a same-page 'skip link'. In circumstances where the JavaScript does not run and the user must rely on the pagination component, the skip link lets them bypass the page's header/masthead to reach each successive page's content.
+The main element[^3] has attributes `id="main"` and `tabindex="-1"`. This is because it is expected to be the focus target of a same-page 'skip link'. In circumstances where the JavaScript does not run and the user must rely on the pagination component, the skip link lets them bypass the page's header/masthead to reach each successive page's content.
 :::
 
 ### `codegel-loader-items`
 
 The loaded content items are presented as a list. List items are enumerated in screen reader software, letting the user know how many items are present in total, and which one they are interacting with (_"4 of 37"_).
 
-As elaborated in [Expected behaviour](#expected-behaviour), each time a new set of items is loaded, that set's arrival is confirmed with an introductory 'separator' element. Taking the `role="separator"` ARIA attribution[^4],  the element is not counted in the list's total, meaning the number of results continues to be reported accurately to assistive technologies.
+As elaborated in [Expected behaviour](#expected-behaviour), each time a new set of items is loaded, that set's arrival is confirmed with an introductory 'separator' element. Taking the `role="separator"` ARIA attribution[^4], the element is not counted in the list's total, meaning the number of results continues to be reported accurately to assistive technologies.
 
 ```html
 <li role="separator">
@@ -92,7 +92,7 @@ You may introduce each result with a heading, but each result's heading must be 
 
 ### The pagination component
 
-The pagination component is [documented on GEL](https://www.bbc.co.uk/gel/guidelines/numbered-pagination). This implementation incorporates a labeled navigation landmark. Screen readers tend to provide aggregated lists of landmark elements for quick navigation.
+The pagination component is [documented on GEL](https://www.bbc.co.uk/gel/guidelines/numbered-pagination). This implementation incorporates a labelled navigation landmark. Screen readers tend to provide aggregated lists of landmark elements for quick navigation.
 
 Note the use of `role="separator"` to remove the ellipsis element from enumeration. Where the previous or next link is not applicable it is 'disabled' by having its `href` removed. This removes it from focus order. The current page is identified accessibly with `aria-current="page"`[^6].
 
@@ -132,7 +132,7 @@ This fallback mechanism is presented to users whose browsers do not support Java
 
 The aesthetic of your search results is not prescribed by this pattern, but there are a few general rules to follow:
 
-* Each result/item should be distinct from its neighboring results/items
+* Each result/item should be distinct from its neighbouring results/items
 * The separator elements that introduce batches of results (see [Recommended behaviour](#recommended-behaviour)) should be distinct from the results themselves
 * The 'load more' button should adopt the standard button style (applied via `class="codegel-button"`) here
 
