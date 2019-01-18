@@ -125,6 +125,42 @@
   }
 
 })();/**
+ * Card
+ * @namespace codegel
+ * @method codegel.Card.init - Adds click behaviour to the image element in codegel-promo components.
+ */
+
+(function () {
+  if (!window.codegel) { window.codegel = {}; }
+  var self = codegel.Card = {};
+
+  self.init = function () {
+  }
+
+  self.constructor = function (cardElem) {
+    var moreBtn = cardElem.querySelector('[aria-haspopup="true"]');
+    var moreElem = cardElem.querySelector('.codegel-card-info');
+    var moreHeading = moreElem.querySelector('.codegel-card-info-heading');
+
+    moreBtn.addEventListener('click', function () {
+      moreElem.hidden = !moreElem.hidden;
+      if (!moreElem.hidden) {
+        moreHeading.focus();
+        moreBtn.textContent = 'Close';
+      } else {
+        moreBtn.textContent = 'More info';
+      }
+    });
+
+    moreElem.addEventListener('keydown', function (e) {
+      if (e.which === 27) {
+        moreElem.hidden = true;
+        moreBtn.textContent = 'More info';
+        moreBtn.focus();
+      }
+    });
+  }
+})();/**
  * Carousel
  * @namespace codegel
  * @method codegel.Carousel.init
@@ -503,6 +539,91 @@
         validate(field);
       });
       showHideWarn();
+    });
+  }
+})();/**
+ * Video
+ * @namespace codegel
+ * @method codegel.Video.init - Adds click behaviour to the image element in codegel-promo components.
+ */
+
+(function () {
+  if (!window.codegel) { window.codegel = {}; }
+  var self = codegel.Video = {};
+
+  self.init = function () { }
+
+  self.videoInit = function (video, captions) {
+    // Listen for when the video is ready
+    video.addEventListener('loadedmetadata', function () {
+      // Remove the native controls
+      video.controls = false;
+      if (captions) {
+        // Show captions track
+        // (This method only supports one track)
+        video.textTracks[0].mode = 'showing';
+      }
+    });
+  }
+
+  self.playButton = function (button, video) {
+    button.addEventListener('click', function () {
+      // Pause or play the video based on its current state
+      video.paused || video.ended ? video.play() : video.pause();
+      // Add the active class for affecting the button's labeling
+      button.classList.toggle('active');
+    });
+
+    // Revert the play button when the video ends
+    video.addEventListener('ended', function () {
+      button.classList.remove('active');
+    });
+  }
+
+  self.muteButton = function (button, video) {
+    var toggleMute = function () {
+      // Toggle the muted property
+      video.muted = !video.muted;
+      button.classList.toggle('active');
+    }
+    button.addEventListener('click', toggleMute);
+    video.addEventListener('loadedmetadata', function () {
+      // If the video is set to autoplay, mute by default
+      if (video.autoplay) {
+        toggleMute();
+      }
+    });
+  }
+
+  self.scrub = function (range, video) {
+    var getMins = function (secs) {
+      let mins = Math.floor(secs / 60);
+      let remainder = secs - mins * 60;
+      return mins + ' minutes and ' + Math.round(remainder) + ' seconds';
+    }
+
+    video.addEventListener('loadedmetadata', function () {
+      // Map range input's props to the video's
+      range.min = 0;
+      range.max = video.duration;
+      range.value = 0;
+      // Translate the values for assistive technologies
+      range.setAttribute('aria-valuemin', '0 seconds');
+      range.setAttribute('aria-valuemax', getMins(video.duration));
+      range.setAttribute('aria-valuenow', '0 seconds');
+    });
+
+    video.addEventListener('timeupdate', function () {
+      // map the value to the currentTime of the video
+      range.value = video.currentTime;
+      // Translate this for assistive technologies
+      range.setAttribute('aria-valuenow', getMins(video.currentTime));
+    });
+
+    // 
+    range.addEventListener('input', function () {
+      // map the currentTime of the video to the value
+      video.currentTime = range.value;
     });
   }
 })();

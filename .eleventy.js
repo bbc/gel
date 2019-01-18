@@ -114,13 +114,14 @@ module.exports = function (eleventyConfig) {
           result += '<li><a href="#' + h2.attribs.id + '">' + $(h2).text() + '</a></li>';
         });
         return result + '</ol>';
-      })
-    })
+      });
+    });
   });
   eleventyConfig.setLibrary('md', md);
   eleventyConfig.addPassthroughCopy('src/static/css');
   eleventyConfig.addPassthroughCopy('src/static/css/bbc-grandstand/dist');
   eleventyConfig.addPassthroughCopy('src/static/images');
+  eleventyConfig.addPassthroughCopy('src/static/videos');
   eleventyConfig.addPassthroughCopy('src/static/js');
 
   return {
