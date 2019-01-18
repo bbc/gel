@@ -1,0 +1,1814 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <!-- Core -->
+    <symbol id="gel-icon-alarm" viewBox="0 0 32 32">
+        <path d="M17 17.4V11h-2v7.6l6.6 3.8 1-1.8M29.2 9c1.7-2.9.7-6.5-2.2-8.2C24.1-.9 20.5.1 18.8 3l10.4 6zM2.8 9C1.1 6.1 2.1 2.5 5 .8 7.9-.9 11.5.1 13.2 3L2.8 9z"/>
+        <path d="M29 17.5C29 10.3 23.2 4 16 4S3 10.3 3 17.5c0 3.4 1.3 6.7 3.4 9L4 29l2.8 2.9 2.7-2.7c1.9 1.1 4.1 1.7 6.5 1.7 2.3 0 4.5-.6 6.5-1.7l2.7 2.7 2.8-2.8-2.4-2.7c2.1-2.2 3.4-5.5 3.4-8.9zM6.5 18c0-2.5 1-5.2 2.8-7 1.8-1.8 4.2-3 6.7-3 5.2 0 9.5 4.5 9.5 9.8s-4.3 9.6-9.5 9.6-9.5-4.2-9.5-9.4z"/>
+    </symbol>
+    <symbol id="gel-icon-alert" viewBox="0 0 32 32">
+        <path d="M16 2L0 30h32L16 2zm2 25h-4v-4h4v4zm-4-6V11h4v10h-4z"/>
+    </symbol>
+    <symbol id="gel-icon-back-to-start" viewBox="0 0 32 32">
+        <path d="M2 0v32h3V0m25 0L5 16l25 16v-8l-13.3-8L30 8"/>
+    </symbol>
+    <symbol id="gel-icon-calendar" viewBox="0 0 32 32">
+        <path d="M24 13h4v4h-4zM22 0h2v5h-2zM8 0h2v5H8zm11 13h4v4h-4zm-5 0h4v4h-4zm-5 0h4v4H9zm15 5h4v4h-4zm-5 0h4v4h-4zm-5 0h4v4h-4zm-5 0h4v4H9zm-5 0h4v4H4zm15 5h4v4h-4zm-5 0h4v4h-4zm-5 0h4v4H9zm-5 0h4v4H4z"/>
+        <path d="M2 9h30V2h-7v4h-4V2H11v4H7V2H0v7m30 2v19H2V11H0v21h32V11"/>
+    </symbol>
+    <symbol id="gel-icon-chapters" viewBox="0 0 32 32">
+        <path d="M8 0h24v8H8zm8 12h16v8H16zM8 24h24v8H8zm-8-1l12-7L0 9"/>
+    </symbol>
+    <symbol id="gel-icon-countdown" viewBox="0 0 32 32">
+        <path d="M16.4 18.4V12h-2v7.6l6.6 3.8 1-1.8m2.982-16.725l4.242 4.242-2.828 2.83-4.243-4.244z"/>
+        <path d="M15 6C7.8 6 2 11.8 2 19s5.8 13 13 13 13-5.8 13-13S22.2 6 15 6zm0 22.5c-5.2 0-9.5-4.3-9.5-9.5S9.8 9.5 15 9.5s9.5 4.3 9.5 9.5-4.3 9.5-9.5 9.5zM15 6c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm0-5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/>
+    </symbol>
+    <symbol id="gel-icon-degraded" viewBox="0 0 32 32">
+        <path d="M30 0h-9l2 2h7v28H2V2h7.2l8.6 8.6L9.4 19l7.8 9.5V19l8.2-8.1L14.5 0H0v32h32V0"/>
+    </symbol>
+    <symbol id="gel-icon-delete" viewBox="0 0 32 32">
+        <style>.st0{fill:#FFF}</style>
+        <path d="M26 32H6L5 11h4l.053 15h1.95L11 11h4l.023 15L17 25.97V11h4v15h2.014L23 11h4zM20.982 0h-9l-1 1v1h11V1zM28 9H4V5l2-1h20l2 1z" id="ahLayer_2"/>
+    </symbol>
+    <symbol id="gel-icon-down" viewBox="0 0 32 32">
+        <path d="M16 29L32 3h-7.2L16 18.3 7.2 3H0"/>
+    </symbol>
+    <symbol id="gel-icon-download" viewBox="0 0 32 32">
+        <path d="M28.2 12.2L19 21.4V0h-6v21.4l-9.2-9.2L0 16l14 14H2v-6H0v8h16l16-16m-2 14h-8l-2 2h12v-8h-2"/>
+    </symbol>
+    <symbol id="gel-icon-duplicate" viewBox="0 0 32 32">
+        <style>.st0{fill:#FFF}</style>
+        <g id="akLayer_2">
+            <path d="M15 0H0v26h13V8h8V6l-6-6zm-4 6v17.988L2 24V2h12.172l4 4H11z"/>
+            <path d="M5.734 10.738H11v2H5.734zm0 3H11v2H5.734zm0 3.25H11v2H5.734zM26 6H11v26h21V12l-6-6zm4 24H13V8h12.172L30 12.83V30z"/>
+            <path d="M16.734 16.738h9v2h-9zm0 3h9v2h-9zm0 3.25h9v2h-9z"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-duration" viewBox="0 0 32 32">
+        <path d="M17 15.4V6h-2v10.6l8.8 5.1 1-1.8"/>
+        <path d="M16 4c6.6 0 12 5.4 12 12s-5.4 12-12 12S4 22.6 4 16 9.4 4 16 4m0-4C7.2 0 0 7.2 0 16s7.2 16 16 16 16-7.2 16-16S24.8 0 16 0z"/>
+    </symbol>
+    <symbol id="gel-icon-edit-draft" viewBox="0 0 32 32">
+        <style>.st0{fill:#FFF}</style>
+        <path d="M24.89.04l7.07 7.07L9.948 29.126l-7.07-7.07zM7.115 31.96H.04v-7.075l.707-.707 7.075 7.075z" id="amLayer_2"/>
+    </symbol>
+    <symbol id="gel-icon-email" viewBox="0 0 32 32">
+        <path d="M16 19.4l16-15V3H0v26h32V8l-4 4v13H4V8.2l12 11.2zm0-2.8L5.8 7h20.4L16 16.6z"/>
+    </symbol>
+    <symbol id="gel-icon-embed" viewBox="0 0 32 32">
+        <path d="M10 6.2V0L0 10l10 10v-6.2L6.2 10M22 13.8V20l10-10L22 0v6.2l3.8 3.8m-14.397 3.183l7.78-7.778 1.413 1.414-7.778 7.776z"/>
+    </symbol>
+    <symbol id="gel-icon-embed-off-grid" viewBox="0 0 36 32">
+        <path d="M11 29v-7l-5-6 5-6V3L0 16M25 3v7l5 6-5 6v7l11-13m-23 9h2l8-18h-2"/>
+    </symbol>
+    <symbol id="gel-icon-embed-on-grid" viewBox="0 0 32 32">
+        <path d="M10 27v-6l-4.5-5 4.5-5V5L0 16M22 5v6l4.5 5-4.5 5v6l10-11m-20 8h2l6-16h-2"/>
+    </symbol>
+    <symbol id="gel-icon-expires" viewBox="0 0 32 32">
+        <path d="M16 0c-.3 0-.7 0-1 .1v4c.3-.1.7-.1 1-.1 6.6 0 12 5.4 12 12s-5.4 12-12 12S4 22.6 4 16H0c0 8.8 7.2 16 16 16s16-7.2 16-16S24.8 0 16 0z"/>
+        <path d="M23.8 21.7l1-1.8-7.8-4.5V6h-2v10.6"/>
+    </symbol>
+    <symbol id="gel-icon-export" viewBox="0 0 32 32">
+        <path d="M6 0v22.5l-6 6L3.5 32 22 13.5V21h5V5H11v5h7.5L8 20.5V2h22v22H15.8l-2 2H32V0"/>
+    </symbol>
+    <symbol id="gel-icon-external-link" viewBox="0 0 32 32">
+        <path d="M12 0v5h11.5l-5 5H0v22h22V17.5l-2 2V30H2V12h14.5l-7.8 7.7 3.6 3.6L27 8.5V20h5V0"/>
+    </symbol>
+    <symbol id="gel-icon-filter" viewBox="0 0 32 32">
+        <style>.st0{fill:#FFF}</style>
+        <path d="M19.878 13l-.018 17-1 1-6.982-6V13L0 1h32z" id="auLayer_2"/>
+    </symbol>
+    <symbol id="gel-icon-grid" viewBox="0 0 32 32">
+        <path d="M0 0h8v8H0zm0 12h8v8H0zm0 12h8v8H0zM12 0h8v8h-8zm0 12h8v8h-8zm0 12h8v8h-8zM24 0h8v8h-8zm0 12h8v8h-8zm0 12h8v8h-8z"/>
+    </symbol>
+    <symbol id="gel-icon-help" viewBox="0 0 32 32">
+        <path d="M16 0C7.2 0 0 7.2 0 16s7.2 16 16 16 16-7.2 16-16S24.8 0 16 0zm2 26h-4v-4h4v4zm2.6-10c-1.2.9-2.6 1.6-2.6 3.2v.8h-4v-1c0-2.4 1.4-3.4 2.5-4.3 1.1-.8 2.5-1.5 2.5-2.9 0-1.7-1.4-2.4-2.8-2.4-2 0-3.7 1.6-3.7 3.6H9c.1-4 3.1-6.8 7-6.8 5.1 0 7.3 3.1 7.3 5.2 0 2.7-1.5 3.7-2.7 4.6z"/>
+    </symbol>
+    <symbol id="gel-icon-home" viewBox="0 0 32 31.9">
+        <path d="M16 5.4l-12 12v14.5h9V22h6v9.9h9V17.4l-12-12"/>
+        <path d="M28 12V4h-4v4l-6.6-6.6L16 0l-1.4 1.4L0 16v2.8l16-16 16 16V16"/>
+    </symbol>
+    <symbol id="gel-icon-import" viewBox="0 0 32 32">
+        <style>.st0{fill:#FFF}</style>
+        <path d="M0 25h17l-2-2H2V2h21v17.465L10.03 6.495 6.494 10.03 23.464 27H17v5h15V17h-5v6.465l-2-2V0H0z" id="ayLayer_2"/>
+    </symbol>
+    <symbol id="gel-icon-info" viewBox="0 0 32 32">
+        <path d="M16 0C7.2 0 0 7.2 0 16s7.2 16 16 16 16-7.2 16-16S24.8 0 16 0zm2 25h-4V13h4v12zm0-14h-4V7h4v4z"/>
+    </symbol>
+    <symbol id="gel-icon-label" viewBox="0 0 32 32">
+        <style>.st0{fill:#FFF}</style>
+        <path d="M12.888.102L0 .08v12.75l19.252 19.09L31.98 19.194 12.888.104zm-5.734 9.56a2.52 2.52 0 0 1 0-5.042 2.52 2.52 0 1 1 0 5.04z" id="baLayer_2"/>
+    </symbol>
+    <symbol id="gel-icon-launch-application" viewBox="0 0 32 32">
+        <path d="M10 26H2v-6h2v-2H0v10h12v-6h-2m12 4h8v-6h-2v-2h4v10H20v-6h2"/>
+        <path d="M6 20h20V4H6v16zm16-4H10V8h12v8z"/>
+    </symbol>
+    <symbol id="gel-icon-link" viewBox="0 0 32 32">
+        <path d="M18.5 4.6l-1.7-1.7C13-1 6.7-1 2.9 2.9-1 6.7-1 13 2.9 16.8l3.4 3.4c3.8 3.8 10.1 3.8 13.9 0l-3.5-3.5c-1.9 1.9-5 1.9-7 0l-3.4-3.4c-1.9-1.9-1.9-5 0-7 1.9-1.9 5-1.9 7 0L15 8l3.5-3.4z"/>
+        <path d="M13.4 27.4l1.7 1.7c3.8 3.8 10.1 3.8 13.9 0 3.8-3.8 4-10 .1-13.8l-3.5-3.5c-3.7-3.8-10-3.8-13.8 0l3.5 3.5c1.9-1.9 5-1.9 7 0l3.4 3.4c1.9 1.9 1.9 5 0 7-1.9 1.9-5 1.9-7 0L17 24l-3.6 3.4z"/>
+    </symbol>
+    <symbol id="gel-icon-list" viewBox="0 0 32 32">
+        <path d="M0 0v8h32V0M0 17v3h32v-8H0m0 17v3h32v-8H0"/>
+    </symbol>
+    <symbol id="gel-icon-list-thumb" viewBox="0 0 32 32">
+        <path d="M0 0h8v8H0zm0 12h8v8H0zm0 12h8v8H0zM11 0v8h21V0M11 17v3h21v-8H11m0 17v3h21v-8H11"/>
+    </symbol>
+    <symbol id="gel-icon-loading" viewBox="0 0 32 32">
+        <path d="M29.8 8l-3.5 2c1 1.8 1.6 3.8 1.6 6 0 6.6-5.4 12-12 12S4 22.6 4 16 9.4 4 16 4V0C7.2 0 0 7.2 0 16s7.2 16 16 16 16-7.2 16-16c0-2.9-.8-5.6-2.2-8z"/>
+    </symbol>
+    <symbol id="gel-icon-location" viewBox="0 0 32 32">
+        <path d="M16 0C7.2 0 0 7.2 0 16s7.2 16 16 16 16-7.2 16-16S24.8 0 16 0zm2 27.8V23h-4v4.8C9 27 5 23 4.2 18H9v-4H4.2C5 9 9 5 14 4.2V9h4V4.2C23 5 27 9 27.8 14H23v4h4.8c-.8 5-4.8 9-9.8 9.8z"/>
+    </symbol>
+    <symbol id="gel-icon-lock" viewBox="0 0 32 31.9">
+        <path d="M25 13.9V8.3C25 3.7 20.9 0 16 0S7 3.7 7 8.3v5.6H3v18h26v-18h-4zM12 8.3c0-2 1.8-3.7 4-3.7s4 1.6 4 3.7v5.6h-8V8.3z"/>
+    </symbol>
+    <symbol id="gel-icon-more-horizontal" viewBox="0 0 32 32">
+        <path d="M0 12h8v8H0zm12 0h8v8h-8zm12 0h8v8h-8z"/>
+    </symbol>
+    <symbol id="gel-icon-more-vertical" viewBox="0 0 32 32">
+        <path d="M12 0h8v8h-8zm0 12h8v8h-8zm0 12h8v8h-8z"/>
+    </symbol>
+    <symbol id="gel-icon-new" viewBox="0 0 56 32">
+        <path d="M0 0h56v32H0z"/>
+        <path d="M4 7.9h4.3l5.6 9.8V7.9h3.9v16h-4.3L8 13.9v10H4v-16zm16.2 0h11.4v3.3h-7.2V14h6.5v3.2h-6.5v3h7.4v3.6H20.2V7.9zm28.3 16h-3.8l-2-11-2 11h-3.9l-3.9-16h3.8l2.1 11.7 2.1-11.7h3.6l2.1 11.7 2.1-11.7h3.8l-4 16z" fill="#FFF"/>
+    </symbol>
+    <symbol id="gel-icon-next" viewBox="0 0 31.9 32">
+        <path d="M29 16L3 0v7.2L17.6 16 3 24.8V32"/>
+    </symbol>
+    <symbol id="gel-icon-no" viewBox="0 0 32 32">
+        <path d="M32 3.5L28.5 0 16 12.5 3.5 0 0 3.5 12.5 16 0 28.5 3.5 32 16 19.5 28.5 32l3.5-3.5L19.5 16"/>
+    </symbol>
+    <symbol id="gel-icon-previous" viewBox="0 0 32 32">
+        <path d="M3 16l26 16v-7.2L14.4 16 29 7.2V0"/>
+    </symbol>
+    <symbol id="gel-icon-print" viewBox="0 0 32 32">
+        <path d="M26 12V5l-5-5H6v12H0v12.1L5.9 30H6v2h20v-2h.1l5.9-5.9V12h-6zM8 12V2h12.2L24 5.8V18H8v-6zm0 18v-5h16v5H8z"/>
+    </symbol>
+    <symbol id="gel-icon-quote" viewBox="0 0 32 32">
+        <path d="M0 17v15h15V17H7c.2-5.9 2.4-8.8 8-9.9V0C6.7 1.2.2 8.3 0 17zm32-9.9V0c-8.3 1.2-14.8 8.3-15 17v15h15V17h-8c.2-5.9 2.4-8.8 8-9.9z"/>
+    </symbol>
+    <symbol id="gel-icon-re-order" viewBox="0 0 32 32">
+        <path d="M18.033 25.5v-19l5.6 5.7 2.4-2.4-10-9.8-10 9.8 2.4 2.4 5.6-5.7v19l-5.6-5.7-2.4 2.4 10 9.8 10-9.8-2.4-2.4"/>
+    </symbol>
+    <symbol id="gel-icon-refresh" viewBox="0 0 32 32">
+        <path d="M32 0H20v12h4V7.1c2.4 2.2 4 5.4 4 8.9 0 6.6-5.4 12-12 12v4c8.8 0 16-7.2 16-16 0-4.8-2.1-9.1-5.4-12H32V0zM8 24.9c-2.4-2.2-4-5.4-4-8.9C4 9.4 9.4 4 16 4V0C7.2 0 0 7.2 0 16c0 4.8 2.1 9.1 5.4 12H0v4h12V20H8v4.9z"/>
+    </symbol>
+    <symbol id="gel-icon-save" viewBox="0 0 32 32">
+        <style>.st0{fill:#FFF}</style>
+        <path d="M27.746 0H0v32h32V7.018L27.746 0zM16 2h4v8h-4V2zm14 28h-6V18H8v12H2V2h8v10h12V2h4.912L30 7.85V30z" id="bsLayer_2"/>
+    </symbol>
+    <symbol id="gel-icon-search" viewBox="0 0 32 32">
+        <path d="M32 28.5l-8.2-8.2c3.4-5.1 2.9-12-1.6-16.4C19.7 1.3 16.3 0 13 0 9.7 0 6.3 1.3 3.8 3.8c-5.1 5.1-5.1 13.3 0 18.4C6.3 24.7 9.7 26 13 26c2.5 0 5.1-.7 7.3-2.2l8.2 8.2 3.5-3.5zM6.6 19.4C4.9 17.7 4 15.4 4 13s.9-4.7 2.6-6.4C8.3 4.9 10.6 4 13 4c2.4 0 4.7.9 6.4 2.6 3.5 3.5 3.5 9.2 0 12.7-1.7 1.7-4 2.6-6.4 2.6s-4.7-.8-6.4-2.5z"/>
+    </symbol>
+    <symbol id="gel-icon-settings" viewBox="0 0 32 32">
+        <path d="M31.7 19.7l-3.6-1.5c.3-1.5.3-3 0-4.5l3.6-1.5c.3-.1.4-.4.3-.7l-1.6-3.8c-.1-.3-.4-.4-.7-.3L26.1 9c-.9-1.3-1.9-2.3-3.2-3.2l1.5-3.6c.1-.3 0-.6-.3-.7L20.4 0c-.3-.1-.6 0-.7.3l-1.5 3.6c-1.5-.3-3-.3-4.5 0L12.2.3c-.1-.3-.4-.4-.7-.3L7.8 1.6c-.2.1-.4.4-.3.7L9 5.9C7.8 6.7 6.7 7.8 5.9 9L2.3 7.5c-.3-.1-.6.1-.7.3L0 11.6c-.1.3 0 .6.3.7l3.6 1.5c-.3 1.5-.3 3 0 4.5L.3 19.8c-.3.1-.4.4-.3.7l1.6 3.8c.1.3.4.4.7.3L5.9 23c.9 1.3 1.9 2.3 3.2 3.2l-1.5 3.6c-.1.3 0 .6.3.7l3.8 1.6c.3.1.6 0 .7-.3l1.5-3.6c1.5.3 3 .3 4.5 0l1.5 3.6c.1.3.4.4.7.3l3.8-1.6c.3-.1.4-.4.3-.7L23 26.1c1.3-.9 2.3-1.9 3.2-3.2l3.6 1.5c.3.1.6 0 .7-.3l1.6-3.8c0-.2-.2-.5-.4-.6zm-14.2 0c-2 .8-4.4-.1-5.2-2.2-.8-2 .1-4.4 2.2-5.2 2-.8 4.4.1 5.2 2.2.8 2-.1 4.4-2.2 5.2z"/>
+    </symbol>
+    <symbol id="gel-icon-to-bottom" viewBox="0 0 32 31.9">
+        <path d="M0 26.9h32v3H0zm16 0L0 1.9h8.2L16 15.1l7.8-13.2H32"/>
+    </symbol>
+    <symbol id="gel-icon-to-top" viewBox="0 0 32 31.9">
+        <path d="M0 1.9h32v3H0zm16 3l16 25h-8.2L16 16.6 8.2 29.9H0"/>
+    </symbol>
+    <symbol id="gel-icon-toggle-horizontal" viewBox="0 0 32 32">
+        <path d="M25 16L0 32v-8l13-8L0 8.2V0"/>
+        <path d="M21 0v2h9v28h-9v2h11V0"/>
+    </symbol>
+    <symbol id="gel-icon-unlink" viewBox="0 0 32 32">
+        <style>.st0{fill:#FFF}</style>
+        <path d="M16.677 9.714l-3.357-3.36a4.928 4.928 0 0 0-6.963 0 4.923 4.923 0 0 0 0 6.96l1.737 1.74-3.48 3.48-1.74-1.736c-3.832-3.83-3.83-10.096 0-13.924 3.83-3.83 10.096-3.83 13.924 0l3.357 3.356-3.478 3.484zm-1.35 12.508l3.356 3.36a4.927 4.927 0 0 0 6.96 0c1.918-1.922 1.923-5.043 0-6.962l-1.74-1.74 3.483-3.478 1.74 1.74c3.833 3.832 3.828 10.095 0 13.925-3.83 3.825-9.972 3.952-13.8.12l-3.485-3.48 3.487-3.485z" id="byLayer_2"/>
+    </symbol>
+    <symbol id="gel-icon-unlock" viewBox="0 0 32 32">
+        <path d="M23 0c-5 0-9 4.1-9 9v5H0v18h23V14h-4V9c0-2.2 1.8-4 4-4s4 1.8 4 4v5h5V9c0-4.9-4-9-9-9z"/>
+    </symbol>
+    <symbol id="gel-icon-up" viewBox="0 0 32 32">
+        <path d="M16 3L0 29h7.2L16 13.7 24.8 29H32"/>
+    </symbol>
+    <symbol id="gel-icon-upload" viewBox="0 0 32 32">
+        <style>.st0{fill:#FFF}</style>
+        <path d="M20.5 30v-2H30v-6h2v8zm-2 0H0v-8h2v6h11.48l.02-16.438-7.45 7.46-3.532-3.536L15.988 2 29.48 15.47 25.947 19 18.5 11.562z" id="cbLayer_2"/>
+    </symbol>
+    <symbol id="gel-icon-vocab" viewBox="0 0 32 32">
+        <path d="M0 0v18h12.7l1.2 2 2.5 4 2.5-4 1.2-2H32V0H0zm22 14H4v-4h18v4zm6-6H4V4h24v4zM0 26h32v6H0z"/>
+    </symbol>
+    <symbol id="gel-icon-yes" viewBox="0 0 31.8 32">
+        <path d="M12.8 28.9l19-22.6L28 3.1 12.2 21.9l-9-7.5L0 18.2"/>
+    </symbol>
+    <symbol id="gel-icon-zoom-in" viewBox="0 0 32 32">
+        <path d="M15 20h-4v-5H6v-4h5V6h4v5h5v4h-5v5z"/>
+        <path d="M32 28.5l-8.2-8.2c3.4-5.1 2.9-12-1.6-16.4C19.7 1.3 16.3 0 13 0 9.7 0 6.3 1.3 3.8 3.8c-5.1 5.1-5.1 13.3 0 18.4C6.3 24.7 9.7 26 13 26c2.5 0 5.1-.7 7.3-2.2l8.2 8.2 3.5-3.5zM6.6 19.4C4.9 17.7 4 15.4 4 13c0-2.4.9-4.7 2.6-6.4C8.3 4.9 10.6 4 13 4s4.7.9 6.4 2.6c3.5 3.5 3.5 9.2 0 12.7-1.7 1.7-4 2.6-6.4 2.6-2.4.1-4.7-.8-6.4-2.5z"/>
+    </symbol>
+    <symbol id="gel-icon-zoom-out" viewBox="0 0 32 32">
+        <path d="M6 15v-4h14v4H6z"/>
+        <path d="M32 28.5l-8.2-8.2c3.4-5.1 2.9-12-1.6-16.4C19.7 1.3 16.3 0 13 0 9.7 0 6.3 1.3 3.8 3.8c-5.1 5.1-5.1 13.3 0 18.4C6.3 24.7 9.7 26 13 26c2.5 0 5.1-.7 7.3-2.2l8.2 8.2 3.5-3.5zM6.6 19.4C4.9 17.7 4 15.4 4 13c0-2.4.9-4.7 2.6-6.4C8.3 4.9 10.6 4 13 4s4.7.9 6.4 2.6c3.5 3.5 3.5 9.2 0 12.7-1.7 1.7-4 2.6-6.4 2.6-2.4.1-4.7-.8-6.4-2.5z"/>
+    </symbol>
+    
+    <!-- Platforms -->
+    <symbol id="gel-icon-games-console" viewBox="0 0 32 32">
+        <path d="M8 7.5c-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5 3.5-1.6 3.5-3.5S9.9 7.5 8 7.5z"/>
+        <path d="M24 3c-2 0-3.9.8-5.3 2h-5.4C11.9 3.8 10 3 8 3c-4.4 0-8 3.6-8 8v18h6l6.4-10h7.1L26 29h6V11c0-4.4-3.6-8-8-8zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zM8 17c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6zm12-4c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm4 4c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm4-4c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+    </symbol>
+    <symbol id="gel-icon-mobile" viewBox="0 0 32 32">
+        <path d="M22 0v2H6v30h20V0h-4zm-9 28h-3v-2h3v2zm0-4h-3v-2h3v2zm0-4h-3v-2h3v2zm5 8h-4v-2h4v2zm0-4h-4v-2h4v2zm0-4h-4v-2h4v2zm4 8h-3v-2h3v2zm0-4h-3v-2h3v2zm0-4h-3v-2h3v2zm0-5H10V6h12v9z"/>
+    </symbol>
+    <symbol id="gel-icon-mobile-smart" viewBox="0 0 32 32">
+        <path d="M6 0v32h20V0H6zm8 2h4v1h-4V2zm3 28h-2v-2h2v2zm7-3H8V4h16v23z"/>
+    </symbol>
+    <symbol id="gel-icon-pc" viewBox="0 0 32 32">
+        <path d="M28 4v14H4V5h25m3-4H0v21h32V1zm-5.9 26l2.3 2H3.6l2.3-2h20.2m.9-2H5l-5 4v2h32v-2l-5-4z"/>
+    </symbol>
+    <symbol id="gel-icon-radio" viewBox="0 0 32 32">
+        <path d="M30 7V1H2v6H0v24h32V7h-2zM4 3h24v4H4V3zm2 18c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm0-6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm14 12c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/>
+    </symbol>
+    <symbol id="gel-icon-set-top-box" viewBox="0 0 32 32">
+        <path d="M16 4c4.7 0 9 1.7 12.3 4.5L29.6 7C25.9 3.9 21.2 2 16 2S6.1 3.9 2.4 7l1.3 1.5C7 5.7 11.3 4 16 4"/>
+        <path d="M6.3 11.5L7.7 13c2.3-1.9 5.2-3 8.3-3 3.2 0 6.1 1.1 8.3 3l1.3-1.5C23 9.3 19.7 8 16 8s-7 1.3-9.7 3.5M7 21c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2"/>
+        <path d="M0 18v12h4l2-2h19l2 2h5V18H0zm7 8c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3m13-2h-2v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"/>
+    </symbol>
+    <symbol id="gel-icon-smart-watch" viewBox="0 0 32 32">
+        <path d="M22 5H10l1-5h10m0 32H11l-1-5h12m1-20H9L7 9v14l2 2h14l2-2V9l-2-2zm0 15.3l-.7.7H9.8l-.8-.8V9.8l.8-.8h12.4l.8.8v12.5z"/>
+    </symbol>
+    <symbol id="gel-icon-tablet" viewBox="0 0 32 32">
+        <path d="M2 0v32h28V0H2zm16 30h-4v-2h4v2zm8-4H6V4h20v22z"/>
+    </symbol>
+    <symbol id="gel-icon-tv" viewBox="0 0 32 32">
+        <path d="M32 26V1H0v25h12v2.5H6V31h20v-2.5h-6V26h12zm-20-3.8H4V4.8h24v17.5H12z"/>
+    </symbol>
+    
+    <!-- Audio and Visual -->
+    <symbol id="gel-icon-3d" viewBox="0 0 48 32">
+        <path d="M0 0h48v32H0z"/>
+        <path d="M25 8h6.9c4.9 0 7.8 3 7.8 7.9 0 5.2-3 8.1-7.8 8.1H25V8zm4.2 12.4h2c3.2-.1 4.4-1.3 4.4-4.5 0-2.9-1.6-4.3-4.4-4.3h-2v8.8zm-14.1-6.2h1c1.2 0 2.6-.3 2.6-1.7 0-1-1-1.6-2.3-1.6-1.6 0-2.5.8-2.5 2.3h-3.7c.1-3.6 2.7-5.5 6.2-5.5 2.8 0 6.1 1.2 6.1 4.5 0 1.4-.8 2.9-2.3 3.2 1.9.5 2.8 1.8 2.8 3.7 0 3.7-3.4 5.2-6.6 5.2-3.8 0-6.9-1.9-6.6-6.1h3.7c0 1.9.9 2.9 2.9 2.9 1.4 0 2.6-.6 2.6-2 0-1.8-1.3-2.2-2.9-2.2h-1v-2.7z" fill="#FFF"/>
+    </symbol>
+    <symbol id="gel-icon-audio-description" viewBox="0 0 48 32">
+        <path d="M0 0h48v32H0z"/>
+        <path d="M26 8h6.9c4.9 0 7.8 3 7.8 7.9 0 5.2-3 8.1-7.8 8.1H26V8zm4.2 12.4h2c3.2-.1 4.4-1.3 4.4-4.5 0-2.9-1.6-4.3-4.4-4.3h-2v8.8zM14 8h4.2l6 16h-4.3l-1-2.9h-5.6l-1 2.9H8l6-16zm.2 10h3.6L16 12.4 14.2 18z" fill="#FFF"/>
+    </symbol>
+    <symbol id="gel-icon-continous-play" viewBox="0 0 32 32">
+        <path d="M24 0H0v24h24V0zm-3 21H3V3h18v18z"/>
+        <path d="M28 5h-2v21H5v2h23"/>
+        <path d="M30 8v22H8v2h24V8M8 6v12l9.6-6"/>
+    </symbol>
+    <symbol id="gel-icon-exit-fullscreen" viewBox="0 0 32 32">
+        <path d="M28 12h-8V4M4 12h8V4m16 16h-8v8M4 20h8v8M1 0h30v2H1zm0 30h30v2H1z"/>
+        <path d="M0 0h2v32H0zm30 0h2v32h-2z"/>
+    </symbol>
+    <symbol id="gel-icon-expand" viewBox="0 0 32 32">
+        <path d="M22 4v18H2V2h20m2-2H0v24h24V0zm-3 32h11V21"/>
+    </symbol>
+    <symbol id="gel-icon-forward" viewBox="0 0 32 32">
+        <path d="M27 0h3v32h-3zm0 16L2 32v-8.2L15.3 16 2 8.2V0"/>
+    </symbol>
+    <symbol id="gel-icon-fullscreen" viewBox="0 0 32 32">
+        <path d="M22 12v10H10V10h12m2-2H8v16h16V8zm-3-8h11v11M11 0H0v11m21 21h11V21M11 32H0V21"/>
+    </symbol>
+    <symbol id="gel-icon-fx" viewBox="0 0 32 32">
+        <path d="M.3 7h13.3v3.8H4.9v3.7h7.4v3.6H4.9V25H.3V7zM20 15.5L14.1 7h5.5l3 5.6L25.9 7h5.3l-5.8 8.5 6.4 9.5H26l-3.4-6-3.6 6h-5.4l6.4-9.5z"/>
+    </symbol>
+    <symbol id="gel-icon-fx-off" viewBox="0 0 44 32">
+        <path d="M0 7h13.3v3.8H4.7v3.7h7.4v3.6H4.7V25H0V7zm19.7 8.5L13.9 7h5.5l3 5.6L25.6 7H31l-5.8 8.5 6.4 9.5h-5.7l-3.4-6-3.7 6h-5.4l6.3-9.5zm24.3-4L42.5 10 38 14.5 33.5 10 32 11.5l4.5 4.5-4.5 4.5 1.5 1.5 4.5-4.5 4.5 4.5 1.5-1.5-4.5-4.5"/>
+    </symbol>
+    <symbol id="gel-icon-hd" viewBox="0 0 48 32">
+        <path d="M0 0h48v32H0z"/>
+        <path d="M9 8h4.2v5.8h5.5V8h4.2v16h-4.2v-6.6h-5.5V24H9V8zm17 0h6.9c4.9 0 7.8 3 7.8 7.9 0 5.2-3 8.1-7.8 8.1H26V8zm4.2 12.4h2c3.2-.1 4.4-1.3 4.4-4.5 0-2.9-1.6-4.3-4.4-4.3h-2v8.8z" fill="#FFF"/>
+    </symbol>
+    <symbol id="gel-icon-iplayer" viewBox="0 0 32 32">
+        <path d="M11 0H3v8h8V4.7L24 16 11 27.3V12H3v20h8l18-16"/>
+    </symbol>
+    <symbol id="gel-icon-iplayer-radio" viewBox="0 0 32 32">
+        <path d="M21.5 6.2l-1.6 1.6c4.2 4.6 4.2 11.7 0 16.3l1.6 1.6c5.1-5.5 5.1-13.9 0-19.5z"/>
+        <path d="M26.2 1.5l-1.6 1.6c6.8 7.3 6.8 18.6 0 25.8l1.6 1.6c7.7-8.1 7.7-20.9 0-29zM5.7 3.7H0v5.7h5.7V7l9.8 9-9.8 9V13.2H0v15.1h5.7L19 16"/>
+    </symbol>
+    <symbol id="gel-icon-last-watched" viewBox="0 0 32 32">
+        <path d="M10.5 18.5c0 3 2.5 5.5 5.5 5.5s5.5-2.5 5.5-5.5S19 13 16 13s-5.5 2.5-5.5 5.5"/>
+        <path d="M0 8v21h7l-1 3h15l-2-6H3V11h26v15h-8l1 3h10V8M4 4h24v2H4zm4-4h16v2H8z"/>
+    </symbol>
+    <symbol id="gel-icon-listen" viewBox="0 0 32 32">
+        <path d="M21.4 4.8L20 6.2c2.5 2.5 4 6 4 9.8s-1.5 7.3-4 9.8l1.4 1.4C24.2 24.3 26 20.4 26 16c0-4.4-1.8-8.3-4.6-11.2z"/>
+        <path d="M25.6.5L24.2 2c3.6 3.6 5.8 8.6 5.8 14s-2.2 10.4-5.8 14l1.4 1.4C29.6 27.5 32 22 32 16S29.6 4.5 25.6.5zM16 4l-6 6H0v12h10l6 6"/>
+    </symbol>
+    <symbol id="gel-icon-live" viewBox="0 0 56 32">
+        <path d="M0 0h56v32H0z"/>
+        <path d="M4 7.9h4.2v12.4h7.5v3.6H4v-16zm13 0h4.2v16H17v-16zm15.8 16H28l-5-16h4.3l3.1 11.9 3.1-11.9H38l-5.2 16zm6.2-16h12.7v3.3h-8.6V14H51v3.2h-7.8v3H52v3.6H39V7.9z" fill="#FFF"/>
+    </symbol>
+    <symbol id="gel-icon-live-restart" viewBox="0 0 32 32">
+        <path d="M16 4h-1l2-2-2-2-6 6 6 6 2-2-2-2h1c5.5 0 10 4.5 10 10s-4.5 10-10 10S6 23.5 6 18H2c0 7.7 6.3 14 14 14s14-6.3 14-14S23.7 4 16 4"/>
+        <path d="M10 10L6 6l4-4-2-2-6 6 6 6"/>
+    </symbol>
+    <symbol id="gel-icon-music" viewBox="0 0 32 32">
+        <path d="M12 6.6v14.9c-1.1-1-2.5-1.5-4-1.5-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6V14.6l14-5.3v7.2c-1.1-1-2.5-1.5-4-1.5-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6V0L12 6.6zM8 29c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm16-5c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>
+    </symbol>
+    <symbol id="gel-icon-music-off" viewBox="0 0 44 32">
+        <path d="M10 6.6v14.9c-1.1-1-2.5-1.5-4-1.5-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6V14.6l14-5.3v7.2c-1.1-1-2.5-1.5-4-1.5-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6V0L10 6.6zM6 29c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm16-5c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm22-12.5L42.5 10 38 14.5 33.5 10 32 11.5l4.5 4.5-4.5 4.5 1.5 1.5 4.5-4.5 4.5 4.5 1.5-1.5-4.5-4.5"/>
+    </symbol>
+    <symbol id="gel-icon-now-watching" viewBox="0 0 32 32">
+        <path d="M15 13v19l17-10m-19 2H0V0h4v20h9"/>
+    </symbol>
+    <symbol id="gel-icon-parental" viewBox="0 0 32 32">
+        <circle cx="16" cy="16" r="16"/>
+        <path d="M23.4 24h-2.7l-.2-1.7c-1.1 1.5-3 2.1-4.5 2.1-4.8 0-8-3.7-8-8.3s3.1-8.3 8-8.3c3.3 0 6.8 1.8 7.2 5.8H19c-.1-1.4-1.5-2.2-3.2-2.2-2.7 0-3.7 2.4-3.7 4.7 0 2.4 1 4.7 3.7 4.7 2.1 0 3.4-1 3.7-2.4h-2.9v-3.1h6.7V24z" fill="#FFF"/>
+    </symbol>
+    <symbol id="gel-icon-pause" viewBox="0 0 32 32">
+        <path d="M3 0h9v32H3zm17 0h9v32h-9z"/>
+    </symbol>
+    <symbol id="gel-icon-play" viewBox="0 0 32 32">
+        <path d="M3 32l26-16L3 0"/>
+    </symbol>
+    <symbol id="gel-icon-pop-out" viewBox="0 0 32 32">
+        <path d="M20 30H2V12h6v-2H0v22h22v-8h-2"/>
+        <path d="M28 4v14H14V4h14m4-4H10v22h22V0z"/>
+    </symbol>
+    <symbol id="gel-icon-premier" viewBox="0 0 121 32">
+        <path d="M31.5 11.3h-3.3v3.6h3.5c1.3 0 1.9-.7 1.9-1.9 0-1.1-.9-1.7-2.1-1.7zm-15.5 0h-2.8v4.1H16c1.3 0 2.2-.5 2.2-2s-1-2.1-2.2-2.1zm90.4 0h-3.3v3.6h3.5c1.3 0 1.9-.7 1.9-1.9 0-1.1-.9-1.7-2.1-1.7z"/>
+        <path d="M0 0v32h121V0H0zm16.6 18.7h-3.4V24H9V8h7.6c3 0 5.8 1.4 5.8 5.2 0 3.9-2.3 5.5-5.8 5.5zM34.2 24c-.4-.5-.4-2.1-.5-2.6-.1-1.6-.4-3.3-2.3-3.3h-3.2V24H24V8h8.2c2.8 0 5.6 1.3 5.6 4.5 0 1.7-.8 3.4-2.5 4 1.7.4 2.2 2.3 2.3 3.8 0 .7.1 3 .7 3.6h-4.1zm19.1 0h-13V8H53v3.3h-8.6v2.8h7.8v3.2h-7.8v3h8.8V24zm20.3 0h-3.9V11.9L66.2 24H63l-3.4-12.1V24h-3.9V8h6.1l2.8 10.7L67.4 8h6.1v16zm7.1 0h-4.2V8h4.2v16zm15.8 0h-13V8h12.7v3.3h-8.6v2.8h7.8v3.2h-7.8v3h8.8V24zm12.6 0c-.4-.5-.4-2.1-.5-2.6-.1-1.6-.4-3.3-2.3-3.3h-3.2V24h-4.2V8h8.2c2.8 0 5.6 1.3 5.6 4.5 0 1.7-.8 3.4-2.5 4 1.7.4 2.2 2.3 2.3 3.8 0 .7.1 3 .7 3.6h-4.1z"/>
+    </symbol>
+    <symbol id="gel-icon-preview" viewBox="0 0 32 32">
+        <path d="M16 12c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4z"/>
+        <path d="M21 7.4c-1.3-.7-2.8-1.2-4.3-1.3h-1.4c-1.6.1-3 .6-4.3 1.3C5.3 10.1 0 16 0 16s5.3 5.9 10.9 8.6c1.3.7 2.8 1.2 4.3 1.3h1.4c1.6-.1 3-.6 4.3-1.3 5.6-2.7 11-8.6 11-8.6S26.7 10.1 21 7.4zM16 23c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7z"/>
+    </symbol>
+    <symbol id="gel-icon-recent-activity" viewBox="0 0 32 32">
+        <path d="M16 28C9.4 28 4 22.6 4 16S9.4 4 16 4c.3 0 .7 0 1 .1v-4c-.3-.1-.7-.1-1-.1C7.2 0 0 7.2 0 16s7.2 16 16 16c6.3 0 11.7-3.6 14.3-8.9l-3.5-2c-1.9 4.1-6 6.9-10.8 6.9z"/>
+        <path d="M15 6v10.6l8.8 5.1 1-1.8-7.8-4.5V6"/>
+        <circle cx="30" cy="16" r="2"/>
+        <circle cx="28" cy="9" r="2"/>
+        <circle cx="23" cy="4" r="2"/>
+    </symbol>
+    <symbol id="gel-icon-record" viewBox="0 0 32 32">
+        <circle cx="16" cy="16" r="16"/>
+        <path d="M23.9 24l-3.2-5.9c1.8-.7 2.8-2.3 2.8-5 0-3.8-2.8-5.1-5.8-5.1h-7.6v16h4.2v-5.3h2.5l2.9 5.3h4.2zm-9.6-12.6h2.8c1.3 0 2.2.6 2.2 2.1s-.9 2-2.2 2h-2.8v-4.1z" fill="#FFF"/>
+    </symbol>
+    <symbol id="gel-icon-replay" viewBox="0 0 32 32">
+        <path d="M25 18.5c0 5.2-4.3 9.5-9.5 9.5S6 23.7 6 18.5 10.3 9 15.5 9h.5V5h-.5C8 5 2 11 2 18.5S8 32 15.5 32 29 26 29 18.5V18h-4v.5z"/>
+        <path d="M18 0v14l12-7"/>
+    </symbol>
+    <symbol id="gel-icon-rewind" viewBox="0 0 32 32">
+        <path d="M2 0h3v32H2zm3 16L30 0v8.2L16.7 16 30 23.8V32"/>
+    </symbol>
+    <symbol id="gel-icon-sd" viewBox="0 0 48 32">
+        <path d="M0 0h48v32H0z"/>
+        <path d="M26 8h6.9c4.9 0 7.8 3 7.8 7.9 0 5.2-3 8.1-7.8 8.1H26V8zm4.2 12.4h2c3.2-.1 4.4-1.3 4.4-4.5 0-2.9-1.6-4.3-4.4-4.3h-2v8.8zm-17-1.8c.1 1.9 1.3 2.5 3 2.5 1.3 0 2.6-.4 2.6-1.6 0-1.4-2.3-1.7-4.6-2.3-2.3-.6-4.7-1.7-4.7-4.6C9.5 9 13 7.7 16 7.7c3.2 0 6.4 1.5 6.4 5.1h-4.2c.1-1.5-1.3-1.9-2.6-1.9-.9 0-2 .3-2 1.4 0 1.2 2.3 1.5 4.6 2.1 2.3.7 4.6 1.7 4.6 4.6 0 4-3.4 5.3-7 5.3-3.7 0-6.9-1.6-6.9-5.7h4.3z" fill="#FFF"/>
+    </symbol>
+    <symbol id="gel-icon-series-catch-up" viewBox="0 0 32 32">
+        <path d="M10 5v22h22V5H10zm19 19H13V8h16v16zM5 27h3v-2H7V7h1V5H5M0 27h3v-2H2V7h1V5H0"/>
+        <path d="M17 11v10l9-5"/>
+    </symbol>
+    <symbol id="gel-icon-series-stack" viewBox="0 0 32 32">
+        <path d="M4 6h22v22h2V4H4"/>
+        <path d="M8 0v2h22v22h2V0"/>
+        <path d="M0 32h24V8H0v24zm4-20h16v16H4V12z"/>
+    </symbol>
+    <symbol id="gel-icon-sign-language-22" viewBox="0 0 56 32">
+        <path d="M0 0h56v32H0z"/>
+        <path d="M37.7 7.9h4.2v12.4h7.5v3.6H37.7v-16zM26.4 18.1c.1 1.9 1.3 2.5 3 2.5 1.3 0 2.6-.4 2.6-1.6 0-1.4-2.3-1.7-4.6-2.3-2.3-.7-4.7-1.7-4.7-4.7 0-3.5 3.5-4.9 6.5-4.9 3.2 0 6.4 1.5 6.4 5.1h-4.2c.1-1.5-1.3-1.9-2.6-1.9-.9 0-2 .3-2 1.4 0 1.2 2.3 1.5 4.6 2.1 2.3.6 4.6 1.7 4.6 4.6 0 4.1-3.4 5.3-7 5.3-3.7 0-6.9-1.6-6.9-5.7h4.3zM7.7 7.9h7.5c2.8 0 5.8.7 5.8 4 0 1.4-.8 2.6-2.1 3.2 1.7.5 2.8 2 2.8 3.8 0 3.8-2.8 5-6.2 5H7.7v-16zm4.1 6.3H15c.7 0 1.7-.4 1.7-1.5 0-1.2-.8-1.5-1.7-1.5h-3.2v3zm0 6.3h3.3c1.3 0 2.2-.5 2.2-1.8 0-1.4-1-1.9-2.2-1.9h-3.3v3.7z" fill="#FFF"/>
+    </symbol>
+    <symbol id="gel-icon-sign-language-35" viewBox="0 0 48 32">
+        <path d="M0 32h48V0H0v32zm18.2-7.7c-3.7 0-6.9-1.6-6.9-5.7h4.2c.1 1.9 1.3 2.5 3 2.5 1.3 0 2.6-.4 2.6-1.6 0-1.4-2.3-1.7-4.6-2.3-2.3-.7-4.7-1.7-4.7-4.6 0-3.5 3.5-4.9 6.5-4.9 3.2 0 6.4 1.5 6.4 5.2h-4.2c.1-1.5-1.3-1.9-2.6-1.9-.9 0-2 .3-2 1.4 0 1.2 2.3 1.5 4.6 2.1 2.3.7 4.6 1.7 4.6 4.6 0 3.9-3.4 5.2-6.9 5.2m20.6-.3H27.2V8h4.2v12.4h7.5V24z"/>
+    </symbol>
+    <symbol id="gel-icon-sound-off" viewBox="0 0 32 32">
+        <path d="M16.1 4l-6 6H.1v12h10l6 6m15.8-16.5L30.4 10l-4.5 4.5-4.5-4.5-1.5 1.5 4.5 4.5-4.5 4.5 1.5 1.5 4.5-4.5 4.5 4.5 1.5-1.5-4.5-4.5"/>
+    </symbol>
+    <symbol id="gel-icon-subtitles" viewBox="0 0 32 32">
+        <path d="M0 0h32v32H0z"/>
+        <path d="M13.2 18.6c.1 1.9 1.3 2.5 3 2.5 1.3 0 2.6-.4 2.6-1.6 0-1.4-2.3-1.7-4.6-2.3-2.3-.6-4.7-1.7-4.7-4.6C9.5 9 13 7.7 16 7.7c3.2 0 6.4 1.5 6.4 5.1h-4.2c.1-1.5-1.3-1.9-2.6-1.9-.9 0-2 .3-2 1.4 0 1.2 2.3 1.5 4.6 2.1 2.4.6 4.8 1.7 4.8 4.6 0 4.1-3.4 5.3-7 5.3-3.7 0-6.9-1.6-6.9-5.7h4.1z" fill="#FFF"/>
+    </symbol>
+    <symbol id="gel-icon-volume" viewBox="0 0 58 32">
+        <path d="M0 20h4v12H0zm6 0h4v12H6zm6 0h4v12h-4zm12 0h4v12h-4zm6 0h4v12h-4zm6 0h4v12h-4zm6 0h4v12h-4zm6 0h4v12h-4zm6 0h4v12h-4zm-36-8h4v20h-4z"/>
+    </symbol>
+    <symbol id="gel-icon-widescreen" viewBox="0 0 48 32">
+        <path d="M0 0h48v32H0z"/>
+        <path d="M32.2 18.6c.1 1.9 1.3 2.5 3 2.5 1.3 0 2.6-.4 2.6-1.6 0-1.4-2.3-1.7-4.6-2.3-2.3-.6-4.7-1.7-4.7-4.6C28.5 9 32 7.7 35 7.7c3.2 0 6.4 1.5 6.4 5.1h-4.2c.1-1.5-1.3-1.9-2.6-1.9-.9 0-2 .3-2 1.4 0 1.2 2.3 1.5 4.6 2.1 2.3.7 4.6 1.7 4.6 4.6 0 4-3.4 5.3-7 5.3-3.7 0-6.9-1.6-6.9-5.7h4.3zM23.1 24H19l-2.2-11-2.2 11h-4.2L6 8h4.2l2.3 11.7L14.8 8h3.9l2.4 11.7L23.4 8h4.2l-4.5 16z" fill="#FFF"/>
+    </symbol>
+    
+    <!-- Media -->
+    <symbol id="gel-icon-360-image" viewBox="0 0 32 32">
+        <path d="M12.4 21.6c-4.9-.9-8.7-3.5-8.7-6.4 0-1.7 1.4-3.4 3.5-4.6L4.5 8.2C1.7 10 0 12.5 0 15.3c0 4.8 5.3 8.8 12.4 9.8V31l8.6-7.9-8.6-7.9v6.4z"/>
+        <path d="M24 6.5V2H12V1h-2v1H8v12h16v-3.7c2.6 1.3 4.3 3.1 4.3 5s-1.7 3.7-4.2 4.9V24c4.7-1.8 7.9-5 7.9-8.7 0-3.8-3.2-7-8-8.8zM12 6h-2V4h2v2zm6 6c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"/>
+        <circle cx="18" cy="8" r="2.2"/>
+    </symbol>
+    <symbol id="gel-icon-360-video" viewBox="0 0 32 32">
+        <style>.st0{fill:#000101}</style>
+        <g id="abLayer_2">
+            <path d="M11.2 26.5l10-6.5-10-6.5z"/>
+            <path d="M16 5.1C7.2 5.1.1 8.9.1 13.6c0 3.1 2.9 5.8 7.9 7.3v-3.1c-3-1-4.4-2.5-4.4-4.2 0-3 5.6-5.5 12.5-5.5s12.5 2.5 12.5 5.5c0 1.7-1.5 3.2-4.5 4.2V21c5-1.5 8-4.2 8-7.4C32 8.9 24.8 5.1 16 5.1z"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-activity" viewBox="0 0 32 32">
+        <path d="M27.2 12.9c1 .3 2.1.1 3-.4 1.9-1.1 2.6-3.5 1.5-5.4-1.1-1.9-3.5-2.6-5.4-1.5-1 .5-1.6 1.4-1.9 2.4l-.1-.2-3.6-6.4-7.2 4.1c.9.3 1.6.9 2.1 1.8 1.1 1.9.4 4.3-1.5 5.4-1.9 1.1-4.3.4-5.4-1.5-.6-.8-.7-1.8-.5-2.7l-7 4 4 6.9c-1.1-.4-2.3-.4-3.4.2C-.1 20.7-.8 23.1.3 25c1.1 1.9 3.5 2.6 5.4 1.5 1.1-.6 1.7-1.7 1.9-2.8l3.9 6.9 6.9-3.9c-.8-.3-1.4-.9-1.9-1.7-1.1-1.9-.4-4.3 1.5-5.4 1.9-1.1 4.3-.4 5.4 1.5.5.8.6 1.7.5 2.5l7.1-4-3.6-6.4-.2-.3z"/>
+    </symbol>
+    <symbol id="gel-icon-apps" viewBox="0 0 32 32">
+        <style>.st0{fill:#000101}</style>
+        <path d="M12 14H2l-2-2V2l2-2h10l2 2v10zm18 0H20l-2-2V2l2-2h10l2 2v10zm0 18H20l-2-2V20l2-2h10l2 2v10zm-18 0H2l-2-2V20l2-2h10l2 2v10z" id="adLayer_2"/>
+    </symbol>
+    <symbol id="gel-icon-audio" viewBox="0 0 32 32">
+        <path d="M21.4 4.8L20 6.2c2.5 2.5 4 6 4 9.8s-1.5 7.3-4 9.8l1.4 1.4C24.2 24.3 26 20.4 26 16c0-4.4-1.8-8.3-4.6-11.2z"/>
+        <path d="M25.6.5L24.2 2c3.6 3.6 5.8 8.6 5.8 14s-2.2 10.4-5.8 14l1.4 1.4C29.6 27.5 32 22 32 16S29.6 4.5 25.6.5zM16 4l-6 6H0v12h10l6 6"/>
+    </symbol>
+    <symbol id="gel-icon-chart" viewBox="0 0 32 32">
+        <path d="M1 9h8v23H1zm11 9h8v14h-8zM23 0h8v32h-8z"/>
+    </symbol>
+    <symbol id="gel-icon-collection" viewBox="0 0 32 32">
+        <path d="M4 26h22V4h2v24H4"/>
+        <path d="M8 32v-2h22V8h2v24"/>
+        <path d="M0 24h24V0H0v24z"/>
+    </symbol>
+    <symbol id="gel-icon-curriculum-key-fact" viewBox="0 0 32 32">
+        <path d="M12 26h8v2h-8zm1 6h6l1-2h-8m3-30h2v2h-2zm12 12h2v2h-2zM3 12h2v2H3zm2-9h2v2H5zm20 0h2v2h-2zM6 21h2v2H6zm18 0h2v2h-2zM16 4c-4.7 0-8.5 3.8-8.5 8.5 0 2.3.9 4.3 2.3 5.8S12 21.8 12 24h8c0-2.2.8-4.2 2.2-5.7 1.4-1.5 2.3-3.6 2.3-5.8C24.5 7.8 20.7 4 16 4zm4.7 12.9c-1.3 1.4-2.2 3.1-2.6 5.1h-4.4c-.4-1.9-1.2-3.7-2.5-5-1.1-1.2-1.8-2.8-1.8-4.5.1-3.6 3-6.5 6.6-6.5s6.5 2.9 6.5 6.5c0 1.7-.6 3.3-1.8 4.4z"/>
+    </symbol>
+    <symbol id="gel-icon-document" viewBox="0 0 32 32">
+        <path d="M21.3 3L27 8.7V29H5V3h16.3m.7-3H2v32h28V8l-8-8z"/>
+        <path d="M10 13h12v3H10zm0 4h12v3H10zm0 4h12v3H10z"/>
+    </symbol>
+    <symbol id="gel-icon-film" viewBox="0 0 32 32">
+        <path d="M28 10l-2 4h-3l2-4h-3l-2 4h-3l2-4h-3l-2 4h-3l2-4h-3l-2 4-3-3-.1-.1 2-.6-3.1-3.2-1.8.6V32h28V10h-2zm-2 16H6v-2h20v2zm0-4H6v-2h20v2zM24.1 4.9L21 1.7l-2.8.9 3.1 3.2m-2.9.9l-3.1-3.2-2.8.9 3 3.2"/>
+        <path d="M12.7 8.5L9.6 5.3l-2.9.9 3.1 3.2m18.1-5.6L26.7 0l-2.8.9L27 4"/>
+    </symbol>
+    <symbol id="gel-icon-game" viewBox="0 0 32 32">
+        <path d="M8 7.5c-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5 3.5-1.6 3.5-3.5S9.9 7.5 8 7.5z"/>
+        <path d="M24 3c-2 0-3.9.8-5.3 2h-5.4C11.9 3.8 10 3 8 3c-4.4 0-8 3.6-8 8v18h6l6.4-10h7.1L26 29h6V11c0-4.4-3.6-8-8-8zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zM8 17c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6zm12-4c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm4 4c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm4-4c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+    </symbol>
+    <symbol id="gel-icon-image" viewBox="0 0 32 32">
+        <path d="M9 5V3H4v2H0v24h32V5H9zm-2.5 8C5.1 13 4 11.9 4 10.5S5.1 8 6.5 8 9 9.1 9 10.5 7.9 13 6.5 13zM20 26c-5 0-9-4-9-9s4-9 9-9 9 4 9 9-4 9-9 9z"/>
+        <path d="M20 11.5c-3 0-5.5 2.5-5.5 5.5s2.5 5.5 5.5 5.5 5.5-2.5 5.5-5.5-2.5-5.5-5.5-5.5z"/>
+    </symbol>
+    <symbol id="gel-icon-infographics" viewBox="0 0 32 32">
+        <path d="M24 18.1v-6.2c2.8-.5 5-2.9 5-5.9 0-3.3-2.7-6-6-6s-6 2.7-6 6c0 3 2.2 5.4 5 5.9v6.2c-1.3.2-2.5.7-3.4 1.5l-5.1-5.1c.3-.6.5-1.3.5-2C14 10 12 8 9.5 8S5 10 5 12.5 7 17 9.5 17c1 0 2-.4 2.7-.9l5 5c-.6.9-1 1.9-1.1 2.9H7.8c-.4-1.2-1.5-2-2.8-2-1.7 0-3 1.3-3 3s1.3 3 3 3c1.3 0 2.4-.8 2.8-2h8.3c.5 3.4 3.4 6 6.9 6 3.9 0 7-3.1 7-7 0-3.5-2.6-6.4-6-6.9z"/>
+    </symbol>
+    <symbol id="gel-icon-interactive" viewBox="0 0 32 32">
+        <path d="M12.5 0l-1 20-6-4-2 2 10 14h15V14l-3-1.4V17h-1v-4.8l-3-1.4V17h-1v-6.6l-3-1.4v8h-1V0"/>
+    </symbol>
+    <symbol id="gel-icon-iptv-guide" viewBox="0 0 32 32">
+        <path d="M0 0h8v8H0zm12 0h20v8H12zm12 24h8v8h-8zM0 24h20v8H0zm0-12h32v8H0z"/>
+    </symbol>
+    <symbol id="gel-icon-list" viewBox="0 0 32 32">
+        <path d="M0 0v8h32V0M0 17v3h32v-8H0m0 17v3h32v-8H0"/>
+    </symbol>
+    <symbol id="gel-icon-map" viewBox="0 0 32 32">
+        <path d="M25.1 17.2c1.2-1.8 1.9-3.9 1.9-6.2 0-6.1-4.9-11-11-11S5 4.9 5 11c0 2.3.7 4.4 1.9 6.2L16 32l9.1-14.8zM16 7c2.2 0 4 1.8 4 4s-1.8 4-4 4-4-1.8-4-4 1.8-4 4-4z"/>
+    </symbol>
+    <symbol id="gel-icon-music-tracks" viewBox="0 0 32 32">
+        <path d="M16 13c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3"/>
+        <path d="M16 0C7.2 0 0 7.2 0 16s7.2 16 16 16 16-7.2 16-16S24.8 0 16 0m0 22c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6m8-6c0-4.4-3.6-8-8-8V6c5.5 0 10 4.5 10 10h-2zM16 4V2c7.7 0 14 6.3 14 14h-2c0-6.6-5.4-12-12-12"/>
+    </symbol>
+    <symbol id="gel-icon-newsletter" viewBox="0 0 32 32">
+        <path d="M5 3h22v12h3V0H2v15h3"/>
+        <path d="M10 12h12v3H10zm0 4h12v3H10zm0-8h12v3H10z"/>
+        <path d="M29.5 16l-.5.3-13 8.1-13-8.1-.5-.3H0v16h32V16h-2.5zM29 29H3V17.5l13 8.1 13-8.1V29z"/>
+    </symbol>
+    <symbol id="gel-icon-podcast" viewBox="0 0 32 32">
+        <circle cx="16" cy="14" r="4"/>
+        <path d="M16 6c2.2 0 4.2.9 5.7 2.3l1.4-1.4C21.3 5.1 18.8 4 16 4s-5.3 1.1-7.1 2.9l1.4 1.4C11.8 6.9 13.8 6 16 6z"/>
+        <path d="M16 2c3.3 0 6.3 1.3 8.5 3.5l1.4-1.4C23.4 1.6 19.9 0 16 0c-3.9 0-7.4 1.6-9.9 4.1l1.4 1.4C9.7 3.3 12.7 2 16 2zm3 30h-6l-3-13h12"/>
+    </symbol>
+    <symbol id="gel-icon-project" viewBox="0 0 32 32">
+        <style>.st0{fill:#000101}</style>
+        <g id="auLayer_2">
+            <path d="M5 7h11.7l3 3H23V4H11.9l-3-3H1v20h4z"/>
+            <path d="M8.5 30.6v-20h7l3 3h12v17z"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-quiz" viewBox="0 0 32 32">
+        <path d="M8 28c0 2.2-1.8 4-4 4s-4-1.8-4-4 1.8-4 4-4 4 1.8 4 4zm9-20.7c-3.3 0-4.5 2.7-4.5 5.5 0 2.7 1.2 5.4 4.5 5.4.5 0 1.3.1 1.5-.1l-1.9-1.7 1.7-1.8 2.2 1.9c.6-.8 1-2 1-3.7 0-2.8-1.2-5.5-4.5-5.5z"/>
+        <path d="M16.9 0C8.7 0 2 5.9 2 13.1 2 20.2 8.8 26 17.1 26s15-5.9 14.9-13.1C32 5.8 25.2 0 16.9 0zm7.9 20.4l-1.7 1.7-2.1-1.8c-1.1.6-2.4.9-4 .9-5.1 0-8.1-3.7-8.1-8.4 0-4.8 3-8.5 8.1-8.5s8.1 3.7 8.1 8.5c0 2.3-.8 4.4-2.1 5.9l1.8 1.7z"/>
+    </symbol>
+    <symbol id="gel-icon-radio-dials" viewBox="0 0 32 32">
+        <circle cx="16" cy="3" r="3"/>
+        <circle cx="7" cy="7" r="3"/>
+        <circle cx="25" cy="7" r="3"/>
+        <circle cx="29" cy="16" r="3"/>
+        <circle cx="3" cy="16" r="3"/>
+        <circle cx="16" cy="29" r="3"/>
+        <circle cx="7" cy="25" r="3"/>
+        <circle cx="25" cy="25" r="3"/>
+    </symbol>
+    <symbol id="gel-icon-revision-guide" viewBox="0 0 32 32">
+        <circle cx="16" cy="5" r="5"/>
+        <path d="M28 12.4l-5.1 2.3L21 12H11l-1.9 2.8L4 12.4v14.2L16 32l12-5.5V12.4zM6 15.5l9 4.1v9.8l-9-4.1v-9.8zm11 13.9v-9.8l9-4.1v9.8l-9 4.1z"/>
+    </symbol>
+    <symbol id="gel-icon-rss" viewBox="0 0 32 32">
+        <circle cx="5" cy="27" r="5"/>
+        <path d="M25 32h7C32 14.3 17.7 0 0 0v7c13.8 0 25 11.2 25 25z"/>
+        <path d="M15 32h7c0-12.1-9.9-22-22-22v7c8.3 0 15 6.7 15 15z"/>
+    </symbol>
+    <symbol id="gel-icon-slideshow" viewBox="0 0 32 32">
+        <path d="M22 13l-5-3-5-3v12l5-3"/>
+        <path d="M30 0H0v26h13.9l-3.5 6H13l2.9-5.1 2.9 5.1h2.6l-3.5-6H32V0h-2zm0 22H2V4h28v18z"/>
+    </symbol>
+    <symbol id="gel-icon-special-content" viewBox="0 0 32 32">
+        <path d="M16 0l3.8 6.8L28 4l-2.8 8.2L32 16l-6.8 3.8L28 28l-8.2-2.8L16 32l-3.8-6.8L4 28l2.8-8.2L0 16l6.8-3.8L4 4l8.2 2.8"/>
+    </symbol>
+    <symbol id="gel-icon-stations" viewBox="0 0 32 32">
+        <g fill="#000101">
+            <path d="M13 16c0-1.7 1.3-3 3-3s3 1.3 3 3-1.3 3-3 3-3-1.3-3-3m10.1-7.1L21 11c2.7 2.7 2.7 7.2 0 9.9l2.1 2.1c3.9-3.8 3.9-10.2 0-14.1"/>
+            <path d="M27.3 4.7l-2.1 2.1c5.1 5.1 5.1 13.3 0 18.4l2.1 2.1c6.3-6.2 6.3-16.4 0-22.6M8.9 23.1L11 21c-2.7-2.7-2.7-7.2 0-9.9L8.9 8.9C5 12.8 5 19.2 8.9 23.1"/>
+            <path d="M4.7 27.3l2.1-2.1c-5.1-5.1-5.1-13.3 0-18.4L4.7 4.7c-6.3 6.2-6.3 16.4 0 22.6"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-streams" viewBox="0 0 32 32">
+        <path d="M0 0h14v14H0zm18 0h14v14H18zM0 18h14v14H0zm18 0h14v14H18z"/>
+    </symbol>
+    <symbol id="gel-icon-timeline" viewBox="0 0 32 32">
+        <path d="M26 8.5h6v6h-6zm-18 0h6v6H8zm-8 0h6v6H0zm24-2h-8v10h8v-10zm-2 8h-4v-6h4v6zm-9 11h14l-7-7"/>
+    </symbol>
+    <symbol id="gel-icon-tv-channels" viewBox="0 0 32 32">
+        <path d="M23 4v6l9-1V1M0 9l9 1V4L0 1m12 3h8v6h-8zm11 15l9 1v-8l-9 1M0 20l9-1v-6l-9-1m12 1h8v6h-8zm11 15l9 3v-8l-9-1M0 31l9-3v-6l-9 1m12-1h8v6h-8z"/>
+    </symbol>
+    <symbol id="gel-icon-tv-schedule" viewBox="0 0 32 32">
+        <path d="M0 0h6v6H0zm0 10h6v6H0zm0 10h6v6H0zM8 0h24v6H8zm20.7 16H32v-6H8v6h9.3c-1.3 1-2.3 2.4-2.8 4H8v6h6.5c1.2 3.5 4.6 6 8.5 6 5 0 9-4 9-9 0-2.8-1.3-5.3-3.3-7M23 30c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7"/>
+        <path d="M27.6 25.2L24 22.5V18h-2v5.5l4.4 3.3"/>
+    </symbol>
+    <symbol id="gel-icon-video" viewBox="0 0 32 32">
+        <path d="M3 32l26-16L3 0"/>
+    </symbol>
+
+    <!-- Controls -->
+    <symbol id="gel-icon-exit" viewBox="0 0 32 32">
+        <path d="M8 0v5l2-2V2h20v28H10v-1l-2-2v5h24V0"/>
+        <path d="M12 4L0 16l12 12 4-4-5.4-5H27v-6H10.6L16 8"/>
+    </symbol>
+    <symbol id="gel-icon-keyboard" viewBox="0 0 32 32">
+        <path d="M0 6.5v19h32v-19H0zm18 3h3v3h-3v-3zm0 5h3v3h-3v-3zm-5-5h3v3h-3v-3zm0 5h3v3h-3v-3zm-5-5h3v3H8v-3zm0 5h3v3H8v-3zm-2 8H3v-3h3v3zm0-5H3v-3h3v3zm0-5H3v-3h3v3zm17 10H8v-3h15v3zm6 0h-4v-5h-2v-3h6v8zm0-10h-6v-3h6v3z"/>
+    </symbol>
+    <symbol id="gel-icon-microphone" viewBox="0 0 32 32">
+        <path d="M18 24h-4v5H9v3h14v-3h-5m6-17v3.8L21.4 21H10.6L8 15.8V12H6v4.2L9.4 23h13.2l3.4-6.8V12m-4-6l-3-6h-6l-3 6v6h12"/>
+        <path d="M20 19l2-4v-1H10v1l2 4"/>
+    </symbol>
+    <symbol id="gel-icon-mouse" viewBox="0 0 32 32">
+        <path d="M10.2 9.1V16h5.6l-.1-1.4c-.4-2.8-2.6-5.1-5.5-5.5zm-2 0c-2.8.4-5.1 2.7-5.5 5.5 0 0 0 .5-.1 1.4h5.6V9.1zm7.9 8.9H2.4c-.3 2.9-.7 6.5-.7 6.5 0 4.1 3.4 7.5 7.5 7.5s7.5-3.4 7.5-7.5l-.6-6.5z"/>
+        <path d="M28.8 16h-.4c-2.8-.2-5.1-2.6-5.1-5.5v-3c0-4.1-3.4-7.5-7.5-7.5S8.2 3.4 8.2 7.5V9h2V7.5c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5v3c0 3.9 3 7.2 6.9 7.5h2.1v-2h-1.4z"/>
+    </symbol>
+    <symbol id="gel-icon-movement-off" viewBox="0 0 32 32">
+        <path d="M28 .1l-4 4H4v14h4v-10h12L2.5 25.6 4 27.1 29.5 1.6M25 22.1h-7l3.2-3.2-2.4-2.5-7.8 7.7 7.8 7.8 2.4-2.5-3.2-3.3h11v-20l-4 4"/>
+    </symbol>
+    <symbol id="gel-icon-movement-on" viewBox="0 0 32 32">
+        <path d="M28.5 2h-25v14h4V6h17v14h-7l3.5-3.5-2.5-2.5-8 8 8 8 2.5-2.5-3.5-3.5h11"/>
+    </symbol>
+    <symbol id="gel-icon-rotate-device-to-play-game-l-to-p" viewBox="0 0 32 32">
+        <path d="M21 29H7v-8h11v-2H4v12h20v-4h-3"/>
+        <path d="M20 5v20h12V5H20zm10 17h-8V8h8v14zM11.5 9h.5l-3 3 2 2 6.5-6.5L11 1 9 3l3 3h-.5C5.1 6 0 11.1 0 17.5v.5h3v-.5C3 12.8 6.8 9 11.5 9z"/>
+    </symbol>
+    <symbol id="gel-icon-rotate-device-to-play-game-p-to-l" viewBox="0 0 32 32">
+        <path d="M3 7h8v11h2V4H1v20h4v-3H3"/>
+        <path d="M7 20v12h20V20H7zm17 10H10v-8h14v8zm-1-18.5v.5l-3-3-2 2 6.5 6.5L31 11l-2-2-3 3v-.5C26 5.1 20.9 0 14.5 0H14v3h.5c4.7 0 8.5 3.8 8.5 8.5z"/>
+    </symbol>
+    <symbol id="gel-icon-switch-controlled" viewBox="0 0 32 32">
+        <ellipse cx="16" cy="24" fill="#E92224" rx="12" ry="6"/>
+        <path d="M21 6l-3 3V2h-4v7l-3-3-2.5 2.5L16 16l7.5-7.5"/>
+    </symbol>
+    <symbol id="gel-icon-webcam" viewBox="0 0 32 32">
+        <path d="M7.5 27l-3 5h23l-3-5"/>
+        <circle cx="16" cy="12.5" r="3.5"/>
+        <path d="M16 25c6.9 0 12.5-5.6 12.5-12.5S22.9 0 16 0 3.5 5.6 3.5 12.5 9.1 25 16 25zm0-19c3.6 0 6.5 2.9 6.5 6.5S19.6 19 16 19s-6.5-2.9-6.5-6.5S12.4 6 16 6z"/>
+    </symbol>
+    
+    <!-- Social -->
+    <symbol id="gel-icon-add" viewBox="0 0 32 32">
+        <path d="M31.5 13.5h-13V.5h-5v13H.5v5h13v13h5v-13h13z" id="aLayer_2"/>
+    </symbol>
+    <symbol id="gel-icon-blog" viewBox="0 0 32 32">
+        <path d="M7 18.6v6h6l.7-.6-6-6"/>
+        <path d="M26-.4L9.3 16.4l6 6L26 11.6v18H2v-24h12v-2H0v28h28v-22l4-4"/>
+    </symbol>
+    <symbol id="gel-icon-comments" viewBox="0 0 32 32">
+        <path d="M0 0v32l8-8h24V0H0zm4 10h18v4H4v-4zm24 10H4v-4h24v4zm0-12H4V4h24v4z"/>
+    </symbol>
+    <symbol id="gel-icon-digg" viewBox="0 0 32 32">
+        <path d="M3.1 13.4v5.9H5s.4 0 .4-.4V13H3.5s-.4 0-.4.4z" fill="none"/>
+        <path d="M5.7 6.5s-.4 0-.4.4v3.7h-5s-.4 0-.4.4v10.7h8.2s.4 0 .4-.4V6.5H5.7zm-.3 12.4c0 .4-.4.4-.4.4H3.1v-5.9c0-.4.4-.4.4-.4h1.9v5.9zM9.5 11v10.7h2.8s.4 0 .4-.4V10.6H9.9s-.4 0-.4.4zm.4-4.5s-.4 0-.4.4v2h2.8s.4 0 .4-.4v-2H9.9zm13.9 4.1s-.4 0-.4.4v10.7h5.4v1.4h-5s-.4 0-.4.4v2h8.2s.4 0 .4-.4V10.6h-8.2zm5 8.3c0 .4-.4.4-.4.4h-1.9v-5.9c0-.4.4-.4.4-.4h1.9v5.9zm-14.7-8.3s-.4 0-.4.4v10.7h5.4v1.4h-5s-.4 0-.4.4v2H22s.4 0 .4-.4V10.6h-8.3zm5.1 8.3c0 .4-.4.4-.4.4h-1.9v-5.9c0-.4.4-.4.4-.4h1.9v5.9z"/>
+    </symbol>
+    <symbol id="gel-icon-facebook" viewBox="0 0 32 32">
+        <path d="M12.1 32V17H8v-5.4h4.1V7c0-3.6 2.4-7 8-7 2.2 0 3.9.2 3.9.2l-.1 5.1h-3.6c-2 0-2.3.9-2.3 2.4v3.9h6l-.3 5.4H18v15h-5.9z"/>
+    </symbol>
+    <symbol id="gel-icon-favourites" viewBox="0 0 32 32">
+        <path d="M13 3h19v6H13zm4 10h15v6H17zm-4 10h19v6H13zm1-9H9V9H5v5H0v4h5v5h4v-5h5"/>
+    </symbol>
+    <symbol id="gel-icon-feedback" viewBox="0 0 32 32">
+        <path d="M14 2v6h6v8h6l6 6V2H14zm16 12h-8v-2h8v2zm0-4h-8V8h8v2zm0-4H16V4h14v2z"/>
+        <path d="M0 24v6l6-6h12V10H0v14zm2-12h14v2H2v-2zm0 4h10v2H2v-2zm0 4h12v2H2v-2z"/>
+    </symbol>
+    <symbol id="gel-icon-google-plus" viewBox="0 0 32 32">
+        <path d="M32 14.2h-4.2V10h-2.2v4.2h-4.2v2.1h4.2v4.2h2.2v-4.2H32M18.6 1.7h-2.5C17 2.5 19 4 19 7.2c0 3.1-1.8 4.6-3.6 6-.6.5-1.2 1.1-1.2 2.1 0 .9.6 1.4 1.1 1.8l1.5 1.2c1.9 1.6 3.6 3 3.6 5.9 0 3.9-4 8-11.4 8-6.1-.2-9-3.1-9-6.2 0-1.5.8-3.6 3.3-5.1 2.7-1.6 6.2-1.8 8.2-1.9-.6-.8-1.3-1.5-1.3-2.8 0-.7.2-1.1.4-1.6-.5 0-.9.1-1.4.1-4.5 0-7.1-3.3-7.1-6.6 0-1.9.6-4.2 2.4-5.8C7 .2 10.1 0 12.4 0h8.9l-2.7 1.7zM7.4 20.8c-.9.3-3.7 1.3-3.7 4.3s3 5.1 7.5 5.1c4.1 0 6.3-1.9 6.3-4.5 0-2.1-1.4-3.3-4.7-5.5h-1c-.3-.1-2.6 0-4.4.6M9.8 1.5c-1.1 0-2.3.4-3 1.3-.7.9-.9 2.1-.9 3.2 0 2.8 1.7 7.5 5.3 7.5 1.1 0 2.2-.6 2.9-1.3 1-1 1.1-2.2 1.1-3 0-3-1.8-7.7-5.4-7.7" fill="#010101"/>
+    </symbol>
+    <symbol id="gel-icon-instagram" viewBox="0 0 32 32">
+        <path clip-rule="evenodd" d="M28.3 13.5h-2.8c.2.8.3 1.6.3 2.5 0 5.4-4.4 9.8-9.8 9.8S6.2 21.4 6.2 16c0-.8.1-1.7.3-2.5H3.7V27c0 .7.6 1.2 1.2 1.2H27c.7 0 1.2-.5 1.2-1.2V13.5zm0-8.6c0-.7-.6-1.2-1.2-1.2h-3.7c-.7 0-1.2.6-1.2 1.2v3.7c0 .7.5 1.2 1.2 1.2h3.7c.7 0 1.2-.6 1.2-1.2V4.9zM16 9.9c-3.4 0-6.1 2.7-6.1 6.1 0 3.4 2.8 6.1 6.1 6.1s6.1-2.8 6.1-6.1c0-3.4-2.7-6.1-6.1-6.1M28.3 32H3.7c-2 0-3.7-1.7-3.7-3.7V3.7C0 1.7 1.7 0 3.7 0h24.6c2 0 3.7 1.6 3.7 3.7v24.6c0 2-1.7 3.7-3.7 3.7" fill-rule="evenodd"/>
+    </symbol>
+    <symbol id="gel-icon-linkedin" viewBox="0 0 32 32">
+        <path d="M7.3 31.5V10.6H.4v20.9h6.9zM3.8 7.7c2.4 0 3.9-1.6 3.9-3.6S6.2.5 3.9.5C1.5.5 0 2.1 0 4.1s1.5 3.6 3.8 3.6zm7.3 23.8H18V19.8c0-.6 0-1.3.2-1.7.5-1.2 1.6-2.5 3.5-2.5 2.5 0 3.5 1.9 3.5 4.7v11.2H32v-12c0-6.4-3.4-9.4-7.9-9.4-3.7 0-5.3 2.1-6.2 3.5v-3H11c.2 1.9.1 20.9.1 20.9z"/>
+    </symbol>
+    <symbol id="gel-icon-love-loved-state" viewBox="0 0 32 32">
+        <path d="M29.4 4.3c-3.5-3.5-9-3.5-12.5 0-.3.4-.6.7-.9 1.1-.3-.4-.6-.7-.9-1.1-3.5-3.5-9-3.5-12.5 0s-3.5 9 0 12.5L16 30.2l13.4-13.4c3.5-3.4 3.5-9 0-12.5z"/>
+    </symbol>
+    <symbol id="gel-icon-love-unlove-state" viewBox="0 0 32 32">
+        <path d="M29.3 3.8C27.4 1.9 25 1 22.6 1c-2.4 0-4.8 1-6.6 2.8C14.2 2 11.8 1 9.4 1 7 1 4.6 1.9 2.7 3.8-.9 7.5-1 13.6 3 17.7c4.5 4.6 11.7 12 13 13.3 1.3-1.3 8.5-8.7 13-13.3 4-4.1 3.9-10.2.3-13.9zm-3.2 10.9L16 24.7l-10.1-10c-1-1-1.6-2.4-1.6-3.8S4.9 8 5.9 7s2.4-1.6 3.8-1.6c1.5 0 2.7.5 4 1.3.4.3 2.3 1.8 2.3 1.8s1.9-1.5 2.2-1.8c1.3-.9 2.5-1.3 4-1.3S25 6 26.1 7c1 1 1.6 2.4 1.6 3.8s-.6 2.9-1.6 3.9z"/>
+    </symbol>
+    <symbol id="gel-icon-my-radio" viewBox="0 0 32 32">
+        <path d="M30 7V1H2v6H0v24h12l2-5h11l2 5h5V7h-2zM6 21c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm0-6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm13.5 9c-3.6 0-6.5-2.9-6.5-6.5s2.9-6.5 6.5-6.5 6.5 2.9 6.5 6.5-2.9 6.5-6.5 6.5zM28 7H4V3h24v4z"/>
+    </symbol>
+    <symbol id="gel-icon-pinterest" viewBox="0 0 32 32">
+        <path d="M16 0C7.2 0 0 7.2 0 16c0 6.6 3.9 12.2 9.6 14.7 0-1.1 0-2.5.3-3.7.3-1.3 2.1-8.7 2.1-8.7s-.5-1-.5-2.5c0-2.4 1.4-4.1 3.1-4.1 1.5 0 2.2 1.1 2.2 2.4 0 1.5-.9 3.7-1.4 5.7-.4 1.7.9 3.1 2.5 3.1 3 0 5.1-3.9 5.1-8.5 0-3.5-2.4-6.1-6.7-6.1-4.9 0-7.9 3.6-7.9 7.7 0 1.4.4 2.4 1.1 3.1.3.4.3.5.2.9-.1.3-.3 1-.3 1.3-.1.4-.4.6-.8.4-2.2-.9-3.3-3.4-3.3-6.1 0-4.5 3.8-10 11.4-10 6.1 0 10.1 4.4 10.1 9.2 0 6.3-3.5 11-8.6 11-1.7 0-3.4-.9-3.9-2 0 0-.9 3.7-1.1 4.4-.3 1.2-1 2.5-1.6 3.4 1.4.4 3 .7 4.5.7 8.8 0 16-7.2 16-16S24.8 0 16 0z"/>
+    </symbol>
+    <symbol id="gel-icon-recommend" viewBox="0 0 32 32">
+        <path d="M16 28C9.4 28 4 22.6 4 16S9.4 4 16 4c3.1 0 6 1.2 8.1 3.2l-8.7 10.4-5.4-3.8-3 3.5 8.8 6.8 11-13.1 2.8-3.3C26.8 3.1 21.8 0 16 0 7.2 0 0 7.2 0 16s7.2 16 16 16 16-7.2 16-16h-4c0 6.6-5.4 12-12 12"/>
+    </symbol>
+    <symbol id="gel-icon-share" viewBox="0 0 32 32">
+        <path d="M6.8 22.2c1.6 0 3-.7 4-1.8l9 4.8c-.1.4-.2.8-.2 1.3 0 3 2.5 5.5 5.5 5.5s5.5-2.4 5.5-5.5-2.5-5.5-5.5-5.5c-1.6 0-3 .7-4 1.8l-9.5-5.2-.1-2.8 9.7-5.5c1 1 2.3 1.5 3.8 1.5 3 0 5.5-2.5 5.5-5.5S28.2 0 25.2 0s-5.5 2.4-5.5 5.5c0 .6.1 1.1.2 1.6l-9.3 5.7c-1-.9-2.3-1.5-3.8-1.5-3 0-5.5 2.4-5.5 5.5.1 2.9 2.5 5.4 5.5 5.4z"/>
+    </symbol>
+    <symbol id="gel-icon-sign-in" viewBox="0 0 32 32">
+        <g>
+            <path d="M1 1v30h30V1H1zm19.8 22.6L19.5 21h-7l-1.4 2.6C8.7 22 7 19.2 7 16c0-5 4-9 9-9s9 4 9 9c0 3.2-1.7 6-4.2 7.6z"/>
+            <circle cx="16" cy="16" r="3.5"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-sign-out" viewBox="0 0 32 32">
+        <path d="M1 1v30h30V1H1zm21.1 21.6l-.5-1.1c1.4-1.4 2.3-3.4 2.3-5.6 0-4.3-3.5-7.9-7.9-7.9s-7.9 3.7-7.9 8c0 2.7 1.4 5.2 3.5 6.6l.8-1.6h7l1.3 2.6c-1.3.9-2.9 1.4-4.7 1.4-5 0-9-4-9-9s4-9 9-9 9 4 9 9c0 2.6-1.1 5-2.9 6.6zM19.5 16c0 1.9-1.6 3.5-3.5 3.5s-3.5-1.6-3.5-3.5 1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5z"/>
+    </symbol>
+    <symbol id="gel-icon-status" viewBox="0 0 32 32">
+        <g id="sLayer_2">
+            <path d="M0 2v30l6-6h26V9.6L24.4 2H0z"/>
+            <path class="sst3" d="M5 16.6h5v5H5zm8 0h5v5h-5zm8 0h5v5h-5z"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-stumble-upon" viewBox="0 0 32 32">
+        <path d="M16 0C7.2 0 0 7.2 0 16s7.2 16 16 16 16-7.2 16-16S24.8 0 16 0zm0 13c-.8 0-1.5.7-1.6 1.5v3.1c-.1 2.2-1.9 3.9-4.1 3.9-2.2 0-4-1.7-4.1-3.9V16h2.5v1.6c0 .8.7 1.5 1.5 1.5s1.5-.6 1.5-1.5v-3.1c.1-2.2 1.9-3.9 4.1-3.9 2.2 0 4 1.7 4 3.9l-1.5.4-1-.4c.2-.9-.5-1.5-1.3-1.5zm9.7 4.6c-.1 2.2-1.9 3.9-4.1 3.9-2.2 0-4-1.7-4.1-3.9V16l1 .4L20 16v1.6c0 .8.7 1.5 1.5 1.5s1.5-.6 1.5-1.5V16h2.5v1.6z"/>
+    </symbol>
+    <symbol id="gel-icon-subscribe-to-podcast" viewBox="0 0 32 32">
+        <path d="M22 6c2.2 0 4.2.9 5.7 2.3l1.4-1.4C27.3 5.1 24.8 4 22 4s-5.3 1.1-7.1 2.9l1.4 1.4C17.8 6.9 19.8 6 22 6"/>
+        <path d="M22 2c3.3 0 6.3 1.3 8.5 3.5L32 4.1C29.4 1.6 25.9 0 22 0c-3.9 0-7.4 1.6-9.9 4.1l1.4 1.4C15.7 3.3 18.7 2 22 2m-8 10H9V7H5v5H0v4h5v5h4v-5h5m12-2c0 2.2-1.8 4-4 4s-4-1.8-4-4 1.8-4 4-4 4 1.8 4 4m-10 5h12l-3 13h-6"/>
+    </symbol>
+    <symbol id="gel-icon-terms-conditions" viewBox="0 0 32 32">
+        <path d="M25 4v3h1v22H6V7h3v2h14V3h-4c0-1.7-1.3-3-3-3s-3 1.3-3 3H9v1H3v28h26V4h-4z"/>
+        <path d="M11.5 16.2l-2 2.3 5.3 4.5 7.5-9-2.3-1.9-5.5 6.6"/>
+    </symbol>
+    <symbol id="gel-icon-trending" viewBox="0 0 32 32">
+        <path d="M2.9 26.3L0 23.5l13.1-13.1 5.7 5.7 5.7-5.8L20 5.7h12v12l-4.6-4.6-8.6 8.6-5.7-5.6z" id="wLayer_2"/>
+    </symbol>
+    <symbol id="gel-icon-tumblr" viewBox="0 0 32 32">
+        <path d="M18 0v8.2h6.3V13h-6.4v8.3c0 1.9.2 2.8.4 3.3s.5.9 1 1.2c.5.3 1 .4 1.8.4.4 0 1.4-.1 2.5-.6l1.5 4.6c-.6.5-1.5 1.1-2.9 1.5-1.2.2-2 .3-3.2.3-1.4 0-2.3-.2-3.4-.6-1.1-.4-1.8-.9-2.6-1.6-.8-.7-1.3-1.4-1.7-2.2-.5-.8-1-2.2-1.1-3.8V13H7V8.8c1.2-.4 2.1-1 3-1.8 1.2-1.1 1.7-2 2.1-2.9.5-1 .9-2.5 1.1-4.1H18z"/>
+    </symbol>
+    <symbol id="gel-icon-twitter" viewBox="0 0 32 32">
+        <path d="M32 6.1c-1.2.5-2.4.9-3.8 1 1.4-.8 2.4-2.1 2.9-3.6-1.3.8-2.7 1.3-4.2 1.6C25.7 3.8 24 3 22.2 3c-3.6 0-6.6 2.9-6.6 6.6 0 .5.1 1 .2 1.5-5.5-.3-10.3-2.9-13.6-6.9-.6 1-.9 2.1-.9 3.3 0 2.3 1.2 4.3 2.9 5.5-1.1 0-2.1-.3-3-.8v.1c0 3.2 2.3 5.8 5.3 6.4-.6.1-1.1.2-1.7.2-.4 0-.8 0-1.2-.1.8 2.6 3.3 4.5 6.1 4.6-2.2 1.8-5.1 2.8-8.2 2.8-.5 0-1.1 0-1.6-.1 3 1.8 6.5 2.9 10.2 2.9 12.1 0 18.7-10 18.7-18.7v-.9c1.2-.9 2.3-2 3.2-3.3z"/>
+    </symbol>
+    
+    <!-- Food -->
+    <symbol id="gel-icon-baking" viewBox="0 0 32 32">
+        <path d="M16.5 14h-13v12h13V14zM10 24c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
+        <path d="M10.5 20l-.25-3H9.5v3m10-14c-.48 3.4-4.637 6-9.5 6C5.142 12 .988 9.394.5 6h19zm3 0h9v20h-9zm5-1l1-1V0h-3v4l1 1m0 22l-1 1v4h3v-4l-1-1"/>
+    </symbol>
+    <symbol id="gel-icon-biscuits-sweets-treats" viewBox="0 0 32 32">
+        <path d="M28.494.002h-8.988l-2.006 2v28l2.006 2h8.988l2.006-2v-28l-2.006-2zm-7.485 29a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-.03-8.012a1.5 1.5 0 1 1 .002-3 1.5 1.5 0 0 1 0 3zm.02-6.988a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0-8a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm6.008 23.01a1.5 1.5 0 0 1 0-3c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5zM27 21.007a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0-7.005a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm.007-8c-.828 0-1.5-.657-1.5-1.485 0-.828.672-1.515 1.5-1.515a1.5 1.5 0 0 1 0 3zM11.332.875c-1.14-.146-1.848-.883-3.22-.877-1.45.006-2.4.762-3.566.93-1.166.168-2.548-.254-2.868.067-.95.948 2.093 5.02 4.447 7.075-2.463 1.155-4.24 4.335-4.24 8.077 0 3.636 1.68 6.74 4.032 7.975-2.32 2.107-5.156 5.963-4.235 6.884.32.32 1.7-.1 2.867.066 1.164.168 2.114.924 3.566.93 1.37.006 2.078-.73 3.22-.877 1.272-.164 2.924.243 3.286-.12.987-.987-1.868-4.803-4.208-6.89 2.35-1.238 4.02-4.338 4.02-7.97 0-3.738-1.774-6.917-4.234-8.074 2.375-2.036 5.438-6.06 4.42-7.076-.363-.36-2.014.046-3.288-.118z"/>
+    </symbol>
+    <symbol id="gel-icon-chefs-tips" viewBox="0 0 32 32">
+        <path d="M23.848 5.094C22.498 2.096 19.5 0 16 0S9.502 2.096 8.152 5.094C3.525 5.898 0 9.91 0 14.77c0 4.582 3.145 8.4 7.385 9.497V32h17.23v-7.733C28.856 23.17 32 19.352 32 14.77c0-4.86-3.525-8.872-8.152-9.676zm.266 17.236l-1.5.39V26H9.387v-1.41c.153.01.304.025.46.025 2.34 0 4.39-.922 6.154-2.688V19.24c-1.31 2.028-3.56 3.392-6.153 3.392a6.916 6.916 0 0 1-1.636-.22l-.323-.082C4.42 21.434 2 18.324 2 14.77c0-3.81 2.732-7.05 6.496-7.705l1.045-.182.438-.97C11.048 3.538 13.41 2 16 2s4.953 1.536 6.023 3.914l.436.97 1.043.18A7.816 7.816 0 0 1 30 14.77c0 3.554-2.42 6.664-5.886 7.56z" fill="#0D0D0D"/>
+    </symbol>
+    <symbol id="gel-icon-cooking-ingredients" viewBox="0 0 32 32">
+        <path d="M15 19h2v4.025h-2z"/>
+        <path d="M26 14l-1-1H7l-1 1v17l1 1h18l1-1V14zM16 29c-3.534 0-6.5-2.965-6.5-6.5S12.466 16 16 16s6.5 2.965 6.5 6.5S19.534 29 16 29zM31 0c-.77 5.438-7.22 10-15 10C8.227 10 1.78 5.43 1 0c4.688 0 23 .02 30 0z"/>
+    </symbol>
+    <symbol id="gel-icon-dairy" viewBox="0 0 32 32">
+        <path d="M27.5 22c0-4.418-2.292-8-5.5-8s-5.5 3.582-5.5 8h11zm1 4.008V24h-13v2.008l3 2.992v1h-1l-1 1v1h11v-1l-1-1h-1v-1m-10 1v-1l-2-2v-5h1c0-1.9.364-3.52 1-5v-6l-2-6V4h-8v1l-2 6v19l2 2h8l1-1 1-1z"/>
+        <path d="M28.5 26.008V24h-13v2.008l3 2.992v1h-1l-1 1v1h11v-1l-1-1h-1v-1m-11-27h-10V1l1-1h8l1 1"/>
+    </symbol>
+    <symbol id="gel-icon-drinks" viewBox="0 0 32 32">
+        <path d="M9.5 7h10v7h-10V7zm-2-2v25.586L8.914 32h11.172l1.414-1.414V5h-14z"/>
+        <path d="M14.583 15.333l-1.93-.52L16.968 0H24.5v2h-6"/>
+    </symbol>
+    <symbol id="gel-icon-fast-food-1" viewBox="0 0 32 32">
+        <path d="M23.566 5.697a27.568 27.568 0 0 0-11.443 6.848A25.567 25.567 0 0 0 6.07 22.75L31.513 32l-7.95-26.303zm-4.232 7.807a1.984 1.984 0 0 1 2.538-1.184 1.984 1.984 0 0 1 1.182 2.54 1.978 1.978 0 0 1-2.536 1.18 1.976 1.976 0 0 1-1.184-2.536zm-5.287 9.677a3.46 3.46 0 0 1-2.077-4.437 3.467 3.467 0 0 1 4.442-2.07 3.472 3.472 0 0 1 2.07 4.44 3.466 3.466 0 0 1-4.435 2.07zm9.773 3.723a2.482 2.482 0 0 1-1.487-3.176 2.476 2.476 0 0 1 3.17-1.48 2.472 2.472 0 0 1 1.48 3.17 2.472 2.472 0 0 1-3.163 1.486z"/>
+        <path d="M11.026 10.826A27.538 27.538 0 0 1 22.99 3.79L21.843 0A31.464 31.464 0 0 0 8.225 8.026 31.46 31.46 0 0 0 .485 20.72l3.72 1.35a27.566 27.566 0 0 1 6.82-11.245z"/>
+    </symbol>
+    <symbol id="gel-icon-fast-food-2" viewBox="0 0 32 32">
+        <path d="M0 8h17v2H0zm32 18c0 2.08-1.493 5-4 5H14c-2.515 0-5-2.92-5-5h12l3 3 3-3h5z"/>
+        <path d="M6 26v-2c0-3.086 4.296-7 8-7h1.325L16 10H1l2 21h6.46C7.98 29.595 6 27.677 6 26z"/>
+        <path d="M27 19H14c-2.515 0-5 2.914-5 5h23c0-2.086-2.493-5-5-5zM6.944 16.262l1.993-.162L7.367.75 5.5 2.44"/>
+    </symbol>
+    <symbol id="gel-icon-fish-chicken-meat" viewBox="0 0 32 32">
+        <path d="M32 14c0-7.456-6.013-14-7.5-14S17 6.544 17 14c0 5.92 4.07 10.624 6.268 12.314L17.938 32h13.125l-5.33-5.686C27.93 24.624 32 19.92 32 14zm-9.375-6c0-1.104.84-2 1.875-2s1.875.896 1.875 2-.84 2-1.875 2-1.875-.896-1.875-2zM4.99 23h5v5.568h-5z"/>
+        <path d="M9.5 26.88c-.814 0-1.53.386-2 .978a2.548 2.548 0 0 0-2-.98A2.56 2.56 0 0 0 5.5 32c.814 0 1.53-.387 2-.98.47.593 1.186.98 2 .98a2.56 2.56 0 0 0 0-5.12zM10 21s5-6.316 5-13.5C15 3.744 11.638.002 7.505 0 3.373.002 0 3.744 0 7.5 0 14.684 4.997 21 4.997 21H10z"/>
+    </symbol>
+    <symbol id="gel-icon-fruit-veg" viewBox="0 0 32 32">
+        <path d="M11.07 1.356C10.67.558 9.884 0 8.85 0S7.025.558 6.626 1.356C5.256 1.57 4.18 2.64 4.18 3.934c0 1.22 1.193 2.274 2.448 2.566V12h4.443V6.5c1.256-.292 2.413-1.346 2.413-2.566 0-1.294-1.043-2.363-2.412-2.578zM21.294 9v1.678c1-1.384 3.265-1.72 4.02-1.72.167 0 .18.017.205.042.135.137.03 1.922-1.048 3-.626.626-1.506.902-2.147 1.002L24.438 13c2.23.296 4.98 2.06 4.98 6.03 0 4.006-2.603 8.97-6.02 8.97-1.09 0-1.743-.5-2.033-.5-.393 0-1.004.5-2.063.5-3.078 0-6.125-5.066-6.125-8.97 0-4.06 2.67-5.79 4.933-6.023l2.184-.003V9h1z"/>
+        <path d="M11.177 19.03c0-3.455 1.418-5.632 3.22-6.84.002-.063.007-.126.007-.19 0-1.473-1.508-3.398-3.334-3.98-.72-.228-1.492-.31-2.24-.31-.736-.002-1.493.066-2.202.29-1.828.577-3.334 2.52-3.334 4 0 3.434 3.275 15.912 3.744 18 .235 1.046.84 2 1.81 2s1.543-.983 1.777-2.008c.112-.49.805-3.568 1.46-6.487-.575-1.465-.908-3.017-.908-4.476z"/>
+    </symbol>
+    <symbol id="gel-icon-in-season" viewBox="0 0 32 32">
+        <path d="M27 9.067V0l-5.5 4.84L16 0l-5.5 4.84L5 0v9.067C5 17.012 9.347 21.327 14.874 22H15v6.592L2 21.056v4.204L13.664 32H17V21.996c5.583-.6 10-4.936 10-12.93z"/>
+        <path d="M19.085 27.373v4.184L30 25.25v-4.188"/>
+    </symbol>
+    <symbol id="gel-icon-recommended-wine" viewBox="0 0 32 32">
+        <path d="M28.804 8.702c-.002-.478.013-.96-.02-1.434l-.068-.904L17.816.05l-.836.404c-.42.203-.822.454-1.23.686l13.054 7.562zm-19.1 3.882c.488 2.584 1.957 4.698 4.13 5.953a8.288 8.288 0 0 0 4.187 1.126c4.193 0 8.35-3.132 10.107-7.614A11.97 11.97 0 0 0 28.71 10H9.547c-.05.872-.002 1.74.156 2.58z"/>
+        <path d="M10.198 27.752l6.54-11.326h-2.31L8.47 26.752l-4.274-2.466-1 1.732 10.278 5.934 1-1.733"/>
+    </symbol>
+    <symbol id="gel-icon-required-techniques" viewBox="0 0 32 32">
+        <path d="M16.356 6.392L4.978 18.008h22.755" fill="none"/>
+        <path d="M17.777 4.97l2.116-2.117 7.11 7.11 1.424-1.42-7.11-7.112L19.892.01 18.47 1.43l-2.114 2.117L12.8 7.103l-8.534 8.533-.712.71L0 19.904h7.11l12.09 12.09h2L32 21.19v-2L17.777 4.97zm-12.8 13.038l11.38-11.616 11.376 11.616H4.978z" fill="#0D0D0D"/>
+    </symbol>
+    <symbol id="gel-icon-techniques-skill-rating" viewBox="0 0 32 32">
+        <circle cx="6" cy="26" fill="#0D0D0D" r="4.5"/>
+        <circle cx="16" cy="26" fill="#0D0D0D" r="4.5"/>
+        <circle cx="26" cy="26" fill="#0D0D0D" r="4.5"/>
+        <circle cx="6" cy="16" fill="#0D0D0D" r="4.5"/>
+        <circle cx="16" cy="16" fill="#0D0D0D" r="4.5"/>
+        <path d="M26 13.5a2.5 2.5 0 0 1 0 5 2.5 2.5 0 0 1 0-5m0-2c-2.486 0-4.5 2.014-4.5 4.5s2.014 4.5 4.5 4.5 4.5-2.014 4.5-4.5-2.014-4.5-4.5-4.5z" fill="#0D0D0D"/>
+        <circle cx="6" cy="6" fill="#0D0D0D" r="4.5"/>
+        <path d="M16 3.5a2.5 2.5 0 0 1 0 5 2.5 2.5 0 0 1 0-5m0-2c-2.486 0-4.5 2.014-4.5 4.5s2.014 4.5 4.5 4.5 4.5-2.014 4.5-4.5-2.014-4.5-4.5-4.5zm10 2a2.5 2.5 0 0 1 0 5 2.5 2.5 0 0 1 0-5m0-2c-2.486 0-4.5 2.014-4.5 4.5s2.014 4.5 4.5 4.5 4.5-2.014 4.5-4.5-2.014-4.5-4.5-4.5z" fill="#0D0D0D"/>
+    </symbol>
+    <symbol id="gel-icon-tins-jars-packets" viewBox="0 0 32 32">
+        <path d="M25 2a2 2 0 0 1-2 2H9a2 2 0 0 1 0-4h14a2 2 0 0 1 2 2zm-1 4H8L6 8.016l.016 22L8 32h16l2-2V8l-2-2zM10 26l-2 1V10l2 1v15z"/>
+    </symbol>
+    <symbol id="gel-icon-vegetarian-a" viewBox="0 0 32 32">
+        <circle cx="16" cy="16" r="16"/>
+        <path d="M18.328 25h-4.79L7.453 9h4.343l4.183 11.985h.042L20.205 9h4.342l-6.22 16z" fill="#FFF"/>
+    </symbol>
+    <symbol id="gel-icon-vegetarian-b" viewBox="0 0 32 32">
+        <path d="M16 2c7.72 0 14 6.28 14 14s-6.28 14-14 14S2 23.72 2 16 8.28 2 16 2m0-2C7.164 0 0 7.163 0 16s7.164 16 16 16 16-7.163 16-16S24.836 0 16 0z"/>
+        <path d="M18.328 25h-4.79L7.453 9h4.343l4.183 11.985h.042L20.205 9h4.342l-6.22 16z"/>
+    </symbol>
+    <symbol id="gel-icon-western-food" viewBox="0 0 32 32">
+        <path d="M24 32h-3V18.033L19 17V2l1-2h4v32zM13 0h1v11l-1 2-1 1v18H9V14.086l-1-1.03L7 11V0h1v9h1V0h1v9h1V0h1v9h1"/>
+    </symbol>
+
+    <!-- Sport -->
+    <symbol id="gel-icon-10-wicket" viewBox="0 0 32 32">
+        <path d="M13.5 26.3c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5V32h-5v-5.7zm15.8-11.4l-.7-1.1-2.1 1.2-.6-1-6.5 3.7.6 1.1-2.1 1.2.6 1.1 2.2-1.3.6 1.1 6.4-3.7-.6-1.1m-13 3.9L12 18.7l.6-1-6.5-3.8-.6 1.1-2.1-1.2-.7 1 2.2 1.3-.6 1.1 6.4 3.7.7-1.1 2.1 1.3M21.4 32h5.1l1.5-8.5v-.3c0-1.4-1.1-2.5-2.5-2.5-1.2 0-2.2.8-2.5 2L21.4 32z"/>
+        <circle cx="16" cy="10" r="7"/>
+        <path d="M13.2 8.5h-1.6v-1h.1c.5 0 .9-.1 1.2-.3.3-.2.5-.5.6-1h1.2V14h-1.6V8.5zm2.5.3c0-.5.1-.9.3-1.3s.4-.7.7-.9.8-.3 1.4-.3c.5 0 .9.1 1.2.2.3.1.6.4.7.7.2.3.3.7.4 1.2.1.5.1 1.1.1 1.8 0 .5 0 1.1-.1 1.6 0 .5-.1.9-.3 1.3-.2.4-.4.7-.7.9-.3.2-.8.3-1.4.3-.5 0-.9-.1-1.2-.2-.3-.1-.6-.3-.8-.6-.2-.3-.3-.7-.4-1.2s-.1-1.1-.1-1.8c.2-.7.2-1.2.2-1.7zm1.6 3.1c0 .3.1.6.1.7s.2.3.3.4c.1.1.2.1.4.1s.3 0 .4-.1c.1-.1.2-.2.3-.4s.1-.5.1-.8V8.5c0-.3-.1-.6-.1-.7-.1-.2-.2-.3-.3-.4-.1-.1-.2-.1-.4-.1s-.3 0-.4.1c-.1.1-.2.2-.3.4-.1.2-.1.5-.1.8v3.3z" fill="#FFF"/>
+        <path d="M10.7 32H5.6l-1.5-8.5v-.3c0-1.4 1.1-2.5 2.5-2.5 1.2 0 2.2.8 2.5 2l1.6 9.3z"/>
+    </symbol>
+    <symbol id="gel-icon-100" viewBox="0 0 32 32">
+        <path d="M0 0h32v32H0z" fill="#1C1C1C"/>
+        <path d="M10 10h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm2-8h1v1h-1zm0 2h1v1h-1zm-2 12h1v1h-1zm2 0h1v1h-1zm0 2h1v1h-1zm2-16h1v1h-1zm2 2h1v1h-1zm-2 0h1v1h-1zm2 6h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm-2 0h1v1h-1zm0 2h1v1h-1zm-4-10h1v1h-1zm0 6h1v1h-1zm0-2h1v1h-1zm6-4h1v1h-1zm0-2h1v1h-1zm0 8h1v1h-1zM19 10h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm2-8h1v1h-1zm0 2h1v1h-1zm-2 12h1v1h-1zm2 0h1v1h-1zm0 2h1v1h-1zm2-16h1v1h-1zm2 2h1v1h-1zm-2 0h1v1h-1zm2 6h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm-2 0h1v1h-1zm0 2h1v1h-1zm-4-10h1v1h-1zm0 6h1v1h-1zm0-2h1v1h-1zm6-4h1v1h-1zm0-2h1v1h-1zm0 8h1v1h-1zM7 8h1v1H7zm0 2h1v1H7zm0 2h1v1H7zm0 4h1v1H7zm0 6h1v1H7zm0 2h1v1H7zm0-10h1v1H7zm0 6h1v1H7zm0-2h1v1H7zm-2-8h1v1H5z" fill="#FFE710"/>
+    </symbol>
+    <symbol id="gel-icon-150" viewBox="0 0 32 32">
+        <path d="M0 0h32v32H0z" fill="#1C1C1C"/>
+        <path d="M10 10h1v1h-1zm0-2h1v1h-1zm6 0h1v1h-1zm-6 4h1v1h-1zm0 4h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1zm-2-8h1v1h-1zm0 2h1v1h-1zm-2 12h1v1h-1zm2 0h1v1h-1zm0 2h1v1h-1zm2-16h1v1h-1zm2 2h1v1h-1zm-2 0h1v1h-1zm2 6h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm-2 0h1v1h-1zm0 2h1v1h-1zm-4-10h1v1h-1zm6 6h1v1h-1zM19 10h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm2-8h1v1h-1zm0 2h1v1h-1zm-2 12h1v1h-1zm2 0h1v1h-1zm0 2h1v1h-1zm2-16h1v1h-1zm2 2h1v1h-1zm-2 0h1v1h-1zm2 6h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm-2 0h1v1h-1zm0 2h1v1h-1zm-4-10h1v1h-1zm0 6h1v1h-1zm0-2h1v1h-1zm6-4h1v1h-1zm0-2h1v1h-1zm0 8h1v1h-1zM7 8h1v1H7zm0 2h1v1H7zm0 2h1v1H7zm0 4h1v1H7zm0 6h1v1H7zm0 2h1v1H7zm0-10h1v1H7zm0 6h1v1H7zm0-2h1v1H7zm-2-8h1v1H5z" fill="#FFE710"/>
+    </symbol>
+    <symbol id="gel-icon-200" viewBox="0 0 32 32">
+        <path d="M0 0h32v32H0z" fill="#1C1C1C"/>
+        <path d="M13 10h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm2-8h1v1h-1zm0 2h1v1h-1zm-2 12h1v1h-1zm2 0h1v1h-1zm0 2h1v1h-1zm2-16h1v1h-1zm2 2h1v1h-1zm-2 0h1v1h-1zm2 6h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm-2 0h1v1h-1zm0 2h1v1h-1zm-4-10h1v1h-1zm0 6h1v1h-1zm0-2h1v1h-1zm6-4h1v1h-1zm0-2h1v1h-1zm0 8h1v1h-1zM22 10h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm2-8h1v1h-1zm0 2h1v1h-1zm-2 12h1v1h-1zm2 0h1v1h-1zm0 2h1v1h-1zm2-16h1v1h-1zm2 2h1v1h-1zm-2 0h1v1h-1zm2 6h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm-2 0h1v1h-1zm0 2h1v1h-1zm-4-10h1v1h-1zm0 6h1v1h-1zm0-2h1v1h-1zm6-4h1v1h-1zm0-2h1v1h-1zm0 8h1v1h-1zM4 10h1v1H4zm2 6h1v1H6zm-2 2h1v1H4zm0 2h1v1H4zm2-2h1v1H6zm-2 4h1v1H4zm0 2h1v1H4zM8 8h1v1H8zm2 2h1v1h-1zm-2 0h1v1H8zm0 6h1v1H8zm2 6h1v1h-1zm0 2h1v1h-1zm-2-2h1v1H8zm-2 0h1v1H6zm2 2h1v1H8zm-2 0h1v1H6zM6 8h1v1H6zm2 6h1v1H8zm2 0h1v1h-1zm0-2h1v1h-1z" fill="#FFE710"/>
+    </symbol>
+    <symbol id="gel-icon-250" viewBox="0 0 32 32">
+        <path d="M0 0h32v32H0z" fill="#1C1C1C"/>
+        <path d="M13 10h1v1h-1zm0-2h1v1h-1zm6 0h1v1h-1zm-6 4h1v1h-1zm0 4h1v1h-1zm2 0h1v1h-1zm2 0h1v1h-1zm-2-8h1v1h-1zm0 2h1v1h-1zm-2 12h1v1h-1zm2 0h1v1h-1zm0 2h1v1h-1zm2-16h1v1h-1zm2 2h1v1h-1zm-2 0h1v1h-1zm2 6h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm-2 0h1v1h-1zm0 2h1v1h-1zm-4-10h1v1h-1zm6 6h1v1h-1zM22 10h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm2-8h1v1h-1zm0 2h1v1h-1zm-2 12h1v1h-1zm2 0h1v1h-1zm0 2h1v1h-1zm2-16h1v1h-1zm2 2h1v1h-1zm-2 0h1v1h-1zm2 6h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm-2 0h1v1h-1zm0 2h1v1h-1zm-4-10h1v1h-1zm0 6h1v1h-1zm0-2h1v1h-1zm6-4h1v1h-1zm0-2h1v1h-1zm0 8h1v1h-1zM4 10h1v1H4zm2 6h1v1H6zm-2 2h1v1H4zm0 2h1v1H4zm2-2h1v1H6zm-2 4h1v1H4zm0 2h1v1H4zM8 8h1v1H8zm2 2h1v1h-1zm-2 0h1v1H8zm0 6h1v1H8zm2 6h1v1h-1zm0 2h1v1h-1zm-2-2h1v1H8zm-2 0h1v1H6zm2 2h1v1H8zm-2 0h1v1H6zM6 8h1v1H6zm2 6h1v1H8zm2 0h1v1h-1zm0-2h1v1h-1z" fill="#FFE710"/>
+    </symbol>
+    <symbol id="gel-icon-300" viewBox="0 0 32 32">
+        <path d="M0 0h32v32H0z" fill="#1C1C1C"/>
+        <path d="M13 10h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm2-8h1v1h-1zm0 2h1v1h-1zm-2 12h1v1h-1zm2 0h1v1h-1zm0 2h1v1h-1zm2-16h1v1h-1zm2 2h1v1h-1zm-2 0h1v1h-1zm2 6h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm-2 0h1v1h-1zm0 2h1v1h-1zm-4-10h1v1h-1zm0 6h1v1h-1zm0-2h1v1h-1zm6-4h1v1h-1zm0-2h1v1h-1zm0 8h1v1h-1zM22 10h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm2-8h1v1h-1zm0 2h1v1h-1zm-2 12h1v1h-1zm2 0h1v1h-1zm0 2h1v1h-1zm2-16h1v1h-1zm2 2h1v1h-1zm-2 0h1v1h-1zm2 6h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm-2 0h1v1h-1zm0 2h1v1h-1zm-4-10h1v1h-1zm0 6h1v1h-1zm0-2h1v1h-1zm6-4h1v1h-1zm0-2h1v1h-1zm0 8h1v1h-1zM4 10h1v1H4zm2 6h1v1H6zm-2 6h1v1H4zM8 8h1v1H8zm2 2h1v1h-1zm-2 0h1v1H8zm0 6h1v1H8zm2 2h1v1h-1zm-2 0h1v1H8zm2 4h1v1h-1zm-2 0h1v1H8zm0 2h1v1H8zm-2 0h1v1H6zM6 8h1v1H6zm2 6h1v1H8zm2 0h1v1h-1zm0-2h1v1h-1zm0 8h1v1h-1z" fill="#FFE710"/>
+    </symbol>
+    <symbol id="gel-icon-5-wicket" viewBox="0 0 32 32">
+        <circle cx="16" cy="10" r="7"/>
+        <path d="M13.5 26.3c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5V32h-5v-5.7zm15.8-11.4l-.7-1.1-2.1 1.2-.6-1-6.5 3.7.6 1.1-2.1 1.2.6 1.1 2.2-1.3.6 1.1 6.4-3.7-.6-1.1m-13 3.9L12 18.7l.6-1-6.5-3.8-.6 1.1-2.1-1.2-.7 1 2.2 1.3-.6 1.1 6.4 3.7.7-1.1 2.1 1.3M21.4 32h5.1l1.5-8.5v-.3c0-1.4-1.1-2.5-2.5-2.5-1.2 0-2.2.8-2.5 2L21.4 32zm-10.7 0H5.6l-1.5-8.5v-.3c0-1.4 1.1-2.5 2.5-2.5 1.2 0 2.2.8 2.5 2l1.6 9.3z"/>
+        <path d="M15.1 7.6L15 9.4c.1-.2.3-.4.6-.4.2-.1.5-.1.9-.1s.7.1.9.2c.2.1.4.3.6.6.1.2.2.5.3.8.1.3.1.6.1.9 0 .4 0 .8-.1 1.2s-.2.7-.4.9c-.2.3-.4.4-.8.6-.3.1-.7.2-1.2.2s-.9-.1-1.2-.2c-.3-.1-.5-.3-.7-.5-.2-.2-.3-.5-.3-.7-.1-.3-.1-.5-.1-.7V12H15v.4c0 .1 0 .3.1.4.1.1.1.2.2.3s.2.1.4.1c.3 0 .6-.1.7-.4.1-.3.2-.6.2-1.1v-.8c0-.2-.1-.4-.1-.5l-.3-.3c-.1-.1-.3-.1-.4-.1-.2 0-.4.1-.5.2-.1.1-.2.3-.2.5h-1.4l.3-4.2h4v1.2h-2.9z" fill="#FFF"/>
+    </symbol>
+    <symbol id="gel-icon-50" viewBox="0 0 32 32">
+        <path d="M0 0h32v32H0z" fill="#1C1C1C"/>
+        <path d="M8 10h1v1H8zm0-2h1v1H8zm6 0h1v1h-1zm-6 4h1v1H8zm0 4h1v1H8zm2 0h1v1h-1zm2 0h1v1h-1zm-2-8h1v1h-1zm0 2h1v1h-1zM8 22h1v1H8zm2 0h1v1h-1zm0 2h1v1h-1zm2-16h1v1h-1zm2 2h1v1h-1zm-2 0h1v1h-1zm2 6h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm-2 0h1v1h-1zm0 2h1v1h-1zM8 14h1v1H8zm6 6h1v1h-1zM17 10h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm2-8h1v1h-1zm0 2h1v1h-1zm-2 12h1v1h-1zm2 0h1v1h-1zm0 2h1v1h-1zm2-16h1v1h-1zm2 2h1v1h-1zm-2 0h1v1h-1zm2 6h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm-2 0h1v1h-1zm0 2h1v1h-1zm-4-10h1v1h-1zm0 6h1v1h-1zm0-2h1v1h-1zm6-4h1v1h-1zm0-2h1v1h-1zm0 8h1v1h-1z" fill="#FFE710"/>
+    </symbol>
+    <symbol id="gel-icon-alerts" viewBox="0 0 32 32">
+        <path d="M12 28h8v4h-8zm14-10v-6c-.2-4.6-3.6-8.4-8-9.3V0h-4v2.7c-4.4.9-7.8 4.7-8 9.3v6l-6 8h32l-6-8z"/>
+    </symbol>
+    <symbol id="gel-icon-all-teams" viewBox="0 0 32 32">
+        <path d="M10.5 7C12.4 7 14 5.4 14 3.5S12.4 0 10.5 0 7 1.6 7 3.5 8.6 7 10.5 7zm11 0C23.4 7 25 5.4 25 3.5S23.4 0 21.5 0 18 1.6 18 3.5 19.6 7 21.5 7zM5 21c1.9 0 3.5-1.6 3.5-3.5C8.6 15.6 7 14 5 14c-1.9 0-3.5 1.6-3.5 3.5S3.1 21 5 21zM2 32h6l2-10H0m12.5-4.5c0 1.9 1.6 3.5 3.5 3.5s3.5-1.6 3.5-3.5S17.9 14 16 14s-3.5 1.6-3.5 3.5zM13 32h6l2-10H11m12.5-4.5c0 1.9 1.6 3.5 3.5 3.5s3.5-1.6 3.5-3.5S28.9 14 27 14s-3.5 1.6-3.5 3.5zM22 22l2 10h6l2-10m-11.1-7h1.2c.7-1.4 2-2.4 3.6-2.8l.8-4.2h-10l.8 4.1c1.6.4 2.9 1.5 3.6 2.9zm-11 0h1.2c.7-1.4 2-2.4 3.6-2.8l.8-4.2h-10l.8 4.1c1.6.4 2.9 1.5 3.6 2.9z"/>
+    </symbol>
+    <symbol id="gel-icon-american-football" viewBox="0 0 32 32">
+        <path d="M.5 18.6c-1.2 6.3.2 11.6.3 11.9l.2.6.5.2c.1 0 2.8.8 6.6.8 1.6 0 3.3-.1 5.2-.5L.5 18.6zm31-5.2c1.2-6.3-.2-11.6-.3-11.9L31 .9l-.5-.2c-.1 0-2.8-.8-6.7-.8-1.6 0-3.3.1-5.2.5l12.9 13zm-16.2-12c-2.9 1-5.8 2.7-8.5 5.3-2.7 2.7-4.3 5.6-5.4 8.5l15.3 15.3c2.9-1 5.8-2.7 8.5-5.3 2.7-2.7 4.3-5.6 5.4-8.5L15.3 1.4zm1.8 9.5l-1.6-1.6-2.8 2.7 1.6 1.6-.7.7-1.6-1.6-2.8 2.8 1.6 1.6-.7.7-1.6-1.6-1.1 1.1-.8-.8 1.1-1.1-1.6-1.6.7-.7 1.6 1.6 2.8-2.8-1.6-1.6.7-.7 1.6 1.6 2.8-2.8-1.6-1.6.7-.7 1.6 1.6 1.1-1.1.8.8-1.1 1.1 1.6 1.6-.7.8z"/>
+    </symbol>
+    <symbol id="gel-icon-archery" viewBox="0 0 32 32">
+        <path d="M24.9 7h2.6l3-3h-4V0l-3 3v2.6l-2.3 2.3c-1.6-1.4-3.6-2.3-5.7-2.7V3h-4v2.2c-5.7 1-10 5.9-10 11.8 0 4.4 2.4 8.2 5.9 10.3L4.9 32h3.4l1.8-3.5c1.1.3 2.2.5 3.4.5 1.2 0 2.3-.2 3.4-.5l1.9 3.5h3.4l-2.5-4.7c3.5-2.1 5.8-5.9 5.8-10.3 0-2.2-.6-4.3-1.7-6.1l-2.2 2.2c.6 1.2.9 2.5.9 3.9 0 5-4 9-9 9s-9-4-9-9 4-9 9-9c2.1 0 4.1.7 5.6 2l-1.4 1.4c-1.2-.9-2.6-1.4-4.2-1.4-3.9 0-7 3.1-7 7s3.1 7 7 7 7-3.1 7-7c0-.8-.2-1.6-.4-2.4l-.8.8c.1.5.2 1 .2 1.6 0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c1.3 0 2.5.4 3.5 1.1l-2.2 2.2c-.4-.2-.8-.3-1.3-.3-1.7 0-3 1.3-3 3s1.3 3 3 3c1.3 0 2.4-.8 2.8-2h-2.4l11-11z"/>
+    </symbol>
+    <symbol id="gel-icon-athletics" viewBox="0 0 32 32">
+        <path d="M23.1 13.3L26 15l3-5-1-1-2 3-2.2-2.7m-12.4 14L4 25l-1 2 10-1 5-4.4-4-1.4"/>
+        <path d="M22.6 7.5L22 7l-4-2-7 2-1 6.4 1.4.1 1.2-5L16 8l1 6-2 5 9 3-1 9 2 1 2-12-6-3m1.5-12h.1l2.1-3.6C24.3.6 23.5 0 22.5 0 21.1 0 20 1.1 20 2.5S21.1 5 22.5 5z"/>
+    </symbol>
+    <symbol id="gel-icon-bad-light-stops-play" viewBox="0 0 32 32">
+        <path d="M0 0h32v32H0z"/>
+        <circle cx="11.5" cy="10.5" fill="#FFE710" r="1"/>
+        <circle cx="8.5" cy="10.5" fill="#FFE710" r="1"/>
+        <circle cx="8.5" cy="7.5" fill="#FFE710" r="1"/>
+        <circle cx="11.5" cy="7.5" fill="#FFE710" r="1"/>
+        <circle cx="11.5" cy="4.5" fill="#FFE710" r="1"/>
+        <circle cx="8.5" cy="4.5" fill="#FFE710" r="1"/>
+        <path d="M0 28h32v4H0zm11 0H9l.7-16h.6" fill="#B3B3B3"/>
+        <path d="M26 25.9V32h1.9v-7.1c0-.5-.4-.9-.9-.9s-.9.4-.9.9v.1H25v-.1c0-.5-.4-.9-.9-.9s-.9.4-.9.9v.1H22v-.1c0-.5-.4-.9-.9-.9s-.9.4-.9.9V32h1.9v-6.1h1.2V32H25v-6.1h1z" fill="#FFF"/>
+    </symbol>
+    <symbol id="gel-icon-badminton" viewBox="0 0 32 32">
+        <path d="M24 15V8h-7l-2-8L4.9 16.5 6 17.6 8.2 14l2 2-2.6 3.3.8.7 2.6-3.3 1.8 1.8-2.9 2.9.7.7 2.9-2.9 1.8 1.8-3.3 2.6.7.7 3.3-2.6 2 2-3.6 2.3 1.1 1.1L32 17l-8-2zm-2.2-5.5L17 14.3l-2.4-2.4 1.9-2.4h5.3zm.7.7v5.3l-2.4 1.9-2.4-2.4 4.8-4.8zm-8.1-6.4l1.3 5.1-1.8 2.3-2.5-2.5 3-4.9zm-3.5 11.4l-2.1-2.1 2.1-3.5 2.4 2.4-2.4 3.2zm.7.7l2.4-3.2 2.3 2.3-2.8 2.8-1.9-1.9zm2.6 2.6l2.8-2.8 2.3 2.3-3.2 2.4-1.9-1.9zm4.7 4.7l-2.1-2.1 3.2-2.4 2.4 2.4-3.5 2.1zm1.9-5.1l2.3-1.8 5.1 1.3-4.9 3-2.5-2.5zM2 20.1C-.7 22.8-.7 27.3 2 30c1.4 1.4 3.2 2 4.9 2 1.8 0 3.6-.7 5-2l1.4-1.4-9.9-9.9L2 20.1zm8.5 8.4C9.6 29.5 8.3 30 7 30c-1.3 0-2.6-.5-3.5-1.5-1.9-2-2-5.1 0-7.1l7 7.1z"/>
+    </symbol>
+    <symbol id="gel-icon-baseball" viewBox="0 0 32 32">
+        <path d="M27.2 4.6l-.7-.7C23.7 1.5 20 0 16 0S8.3 1.5 5.5 4c-.3.2-.5.4-.8.6C1.8 7.5 0 11.6 0 16c0 8.8 7.2 16 16 16s16-7.2 16-16c0-4.5-1.8-8.5-4.8-11.4zM1.5 16c0-4 1.7-7.7 4.3-10.3.7.7 1.2 1.4 1.8 2.2l-1.2.6.6 1.3 1.3-.6c.5.9.9 1.9 1.1 2.9.1.2.1.4.1.6l-1.3.1.1 1.5 1.5-.1c.2 1.3.2 2.5 0 3.7l-1.3-.4-.4 1.5 1.4.4c-.3 1.2-.7 2.4-1.3 3.5l-1.1-.8-.9 1.2 1.2.8c-.5.8-1.1 1.5-1.7 2.1C3.2 23.7 1.5 20 1.5 16zM16 30.5c-3.6 0-6.9-1.3-9.4-3.5.7-.7 1.3-1.4 1.8-2.2l1.2.9.9-1.2-1.3-.9c.6-1.2 1.1-2.5 1.4-3.8l1.4.2.4-1.4-1.6-.4c.2-1.3.2-2.7 0-4.1l1.5-.1-.1-1.5-1.6.1c-.1-.3-.1-.5-.2-.8-.3-1.1-.7-2.1-1.2-3.1l1.4-.6-.6-1.3-1.5.7C7.9 6.6 7.3 5.8 6.6 5c2.5-2.2 5.8-3.5 9.4-3.5 3.6 0 6.9 1.3 9.4 3.5-.7.8-1.4 1.6-2 2.5L22 6.8l-.6 1.4 1.4.6c-.5 1-.9 2-1.2 3.1-.1.3-.1.5-.2.8l-1.6-.1-.2 1.4 1.5.1c-.2 1.4-.2 2.7 0 4.1l-1.6.4.4 1.4 1.5-.4c.3 1.3.8 2.6 1.4 3.8l-1.3.9.9 1.2 1.2-.9c.5.8 1.1 1.6 1.8 2.3-2.5 2.3-5.8 3.6-9.4 3.6zm10.2-4.2c-.6-.7-1.2-1.4-1.7-2.2l1.2-.8-.9-1.2-1.1.8c-.6-1.1-1-2.3-1.3-3.5l1.4-.4-.4-1.4-1.3.4c-.2-1.2-.2-2.5 0-3.7l1.5.1.1-1.5-1.3-.1c0-.2.1-.4.1-.6.3-1 .7-2 1.1-2.9l1.4.5.6-1.4-1.2-.6c.5-.8 1.1-1.6 1.8-2.2 2.7 2.6 4.4 6.3 4.4 10.3-.1 4.1-1.8 7.8-4.4 10.4z"/>
+    </symbol>
+    <symbol id="gel-icon-basketball" viewBox="0 0 32 32">
+        <path d="M7.2 14.1c-1.9-1.5-4.6-1.6-6.6 0l-.6.5c-.3 3.2.4 6.4 2 9.2 1.2-3.5 3-6.8 5.2-9.7zM12.4.4C9.8 1 7.3 2.3 5.2 4.2L11 9.9c.6-.6 1.3-1.2 1.9-1.7-1.8-2.2-2-5.4-.5-7.8z"/>
+        <path d="M14.1.7c-1.6 1.9-1.6 4.6 0 6.6 3-2.2 6.2-4 9.7-5.2C21 .5 17.7-.1 14.6.1l-.5.6zM8.2 12.9c.5-.7 1.1-1.3 1.7-1.9L4.2 5.2C2.3 7.3 1 9.8.4 12.4c2.4-1.5 5.5-1.3 7.8.5zm6.9-4.6c.5.3 1 .6 1.6.8l15 4c-.6-3.1-2-6-4.4-8.4-.6-.6-1.3-1.1-1.9-1.6-3.7 1.1-7.2 2.9-10.3 5.2zm1.3 2.2c-.9-.2-1.7-.7-2.4-1.2-.7.5-1.3 1.1-1.9 1.7l15.8 15.8C31 23.4 32.4 19 32 14.7l-15.6-4.2zM11 12c-.6.6-1.2 1.3-1.7 1.9.6.7 1 1.6 1.2 2.4l4.2 15.6c4.3.4 8.7-1 12.1-4.1L11 12zm-2 4.8c-.2-.6-.4-1.1-.8-1.6-2.2 3.1-4 6.5-5.1 10.2.5.7 1 1.3 1.6 1.9 2.4 2.4 5.3 3.8 8.4 4.4L9 16.8z"/>
+    </symbol>
+    <symbol id="gel-icon-bowls" viewBox="0 0 32 32">
+        <path d="M5.4 15.8c1.7-4.1 5.5-7.1 10.1-7.5C15.2 4.4 12 1.2 8 1.2 3.9 1.2.5 4.6.5 8.7c0 3.3 2 6 4.9 7.1zm26.1-6.1c0-3-2.5-5.5-5.5-5.5-2.8 0-5.1 2.1-5.4 4.7l1.5.6c.1-2.1 1.8-3.9 4-3.9s4 1.8 4 4c0 2-1.5 3.7-3.5 3.9.3.4.5.9.8 1.4 2.3-.4 4.1-2.6 4.1-5.2z"/>
+        <circle cx="14" cy="20.8" r="2.5"/>
+        <path d="M16.5 9.8C10.7 9.8 6 14.5 6 20.2s4.7 10.5 10.5 10.5C22.3 30.8 27 26 27 20.2S22.3 9.8 16.5 9.8zM14 24.2c-1.9 0-3.5-1.6-3.5-3.5s1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5c0 2-1.6 3.5-3.5 3.5z"/>
+    </symbol>
+    <symbol id="gel-icon-boxing" viewBox="0 0 32 32">
+        <path d="M17.2 15.9l-3.8-1.3-.1.1-.8 2.5v.2l2.9 1-.3.9-1.6-.5c.1 1.1.8 2.2 2 2.5.3.1.6.2.9.2 1.2 0 2.3-.8 2.7-2 .5-1.5-.4-3.1-1.9-3.6zM0 31h6l1.1-1.8-4.4-6.9M31.9 5.4c-.3-1.3-1.5-2.1-2.8-2.1-.2 0-.5 0-.7.1l-3.9 1.1.8 2.8 3-.8.3 1-1.6.4c.4.7 1.2 1.1 2.1 1.1.2 0 .5 0 .7-.1 1.6-.4 2.5-2 2.1-3.5zm-17.2-.6l1.8-2.1c-.6-1-1.7-1.6-3-1.6C11.6 1 10 2.6 10 4.5c0 .4.1.8.2 1.2l4.5-.9z"/>
+        <path d="M6 8l-2 3-1 9 7 11h7l-6-10v-4l1-3 3-4 8.8-2.2-.9-3.1"/>
+    </symbol>
+    <symbol id="gel-icon-boxing-alt" viewBox="0 0 32 32">
+        <path d="M14 25.98L12.02 24 14 22.02 15.98 24z"/>
+        <path d="M28 9h-3v5l-2 2V4l-4-4H7L3 4v12l3 7v9h16v-6l7-7v-9l-1-1zM17 19l-2 2 2 2v2l-2 2 2 2v1h-1l-2-2-2 2h-1v-1l2-2-2-2v-2l2-2-2-2v-1h1l2 2 2-2h1v1zm5-10l-3 2H7L4 9V5l3 4h12l3-4v4z"/>
+    </symbol>
+    <symbol id="gel-icon-bronze-medal" viewBox="0 0 32 32">
+        <g fill="#C19555">
+            <circle cx="16" cy="21" r="6"/>
+            <path d="M16 0H4l6 6m8-6l-7 7 5 5L28 0"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-canoeing" viewBox="0 0 32 32">
+        <path d="M19 13c-1.7 0-3 1.3-3 3 0 .3 0 .6.1.8l1.8 1.5 4-3.2c-.4-1.2-1.6-2.1-2.9-2.1z"/>
+        <path d="M22.6 11.1h-.2l2.2 8.1L20 22l-1.8-1.5-1.9 2.3L20 25l5.1-3.9.5 1.8-1.4 2.4.7 2.6.1-.1 3 1 2.1-.7L29 24l-2.4-1.4-3.2-11.8"/>
+        <path d="M7 27.8l3 1 3-1 3 1s3.1-1 3-1c-1.7-1.4-3.8-2.3-6-2.6v-.7l2-2.5 2-2.5-3-2.5v-2l2-3 6.1-2.3.9-.4-.6-2.1 1.4-2.4L22.5 0l-4.8 1.3L19 6.1l2.5 1.4.1.5-7.6 2L2.2 28.2l1.8.6 3-1zm24 2.1l-3 1-3-1-3 1-3-1-3 1-3-1-3 1-3-1-3 1-3-1-1 .4v1l1-.3 3 1 3-1 3 1 3-1 3 1 3-1 3 1 3-1 3 1 3-1 1 .3v-1"/>
+    </symbol>
+    <symbol id="gel-icon-champagne-moment" viewBox="0 0 32 32">
+        <path d="M3 23.1l-.7.7.7-.7-.7.7c-.4.4-.5.8-.1 1.2l4.4 4.4c.4.4.9.4 1.3 0l.1-.1.6-.6L3 23.1zm16.8-12.6l-2.4 2.4s-1.2 1.2-2.7 2c-1.5.8-4.3 2-5.5 2.7-1.2.7-2 1.4-2.7 1.9l5.5 5.6.1-.1c.5-.7 1.2-1.5 1.9-2.7.7-1.2 2-3.9 2.8-5.3.8-1.5 2-2.6 2-2.6l2.5-2.4-1.5-1.5z" fill="#4E7A22"/>
+        <path d="M14.8 21.4c-.2-.1-2.2-.7-3-1.5-.8-.8-1.4-2.8-1.5-3l.9-.3c.2.5.7 2 1.3 2.6.5.5 2 1.1 2.6 1.3l-.3.9z" fill="#FFF"/>
+        <path d="M25.566 5.908l.707.707-3.606 3.606-.707-.705zM26.1 14.9c-.6 0-1.2-.2-1.6-.7-.8-.8-.8-2 0-2.7l.7.7c-.2.2-.3.4-.3.7 0 .2.1.5.3.7.5.5 1.3.5 1.8 0 .7-.7.7-1.8 0-2.4-.9-.9-2.7-1-3.6-.1l-.7-.7c.6-.6 1.5-.9 2.5-.9s1.9.4 2.5 1c1.1 1.1 1.1 2.8 0 3.9-.4.3-1 .5-1.6.5zm-4.2-5.5l-.7-.7c.8-.9.8-2.6-.1-3.5-.7-.7-1.8-.7-2.4 0-.5.5-.5 1.3 0 1.8l-.7.7c-.9-.9-.9-2.3 0-3.2 1.1-1.1 2.8-1.1 3.9 0 .6.6 1 1.5 1 2.5-.1.9-.4 1.8-1 2.4z" fill="#CCC"/>
+        <path d="M8.6 28.7L3 23.1l3.5-3.5 5.5 5.6"/>
+        <path d="M28 6.8l1-1.5c.2.1.5.1.7-.1l.2-.2c.3-.3.3-.7 0-1l-1-1c-.3-.3-.7-.2-.9 0l-.2.2c-.2.2-.2.5-.1.7l-1.5.9 1.8 2z" fill="#C7B299"/>
+    </symbol>
+    <symbol id="gel-icon-checkered-flag" viewBox="0 0 32 32">
+        <path d="M0 3h17v1H0zm0 21h17v1H0zm17-3h15v1H17zM15 0h17v1H15zM1 4h4v4H1z"/>
+        <path d="M5 4h4v4H5zM1 8h4v4H1z" fill="#FFF"/>
+        <path d="M9 4h4v4H9zM5 8h4v4H5z"/>
+        <path d="M9 8h4v4H9z" fill="#FFF"/>
+        <path d="M13 8h4v4h-4z"/>
+        <path d="M13 4h4v4h-4z" fill="#FFF"/>
+        <path d="M1 12h4v4H1z"/>
+        <path d="M5 12h4v4H5zm-4 4h4v4H1z" fill="#FFF"/>
+        <path d="M9 12h4v4H9zm-4 4h4v4H5z"/>
+        <path d="M9 16h4v4H9z" fill="#FFF"/>
+        <path d="M13 16h4v4h-4z"/>
+        <path d="M13 12h4v4h-4z" fill="#FFF"/>
+        <path d="M1 20h4v4H1zM27 1h4v4h-4z"/>
+        <path d="M27 5h4v4h-4z" fill="#FFF"/>
+        <path d="M27 9h4v4h-4zm-4-4h4v4h-4zm0 8h4v4h-4z"/>
+        <path d="M27 13h4v4h-4z" fill="#FFF"/>
+        <path d="M27 17h4v4h-4zM19 1h4v4h-4z"/>
+        <path d="M19 5h4v4h-4z" fill="#FFF"/>
+        <path d="M19 9h4v4h-4z"/>
+        <path d="M19 13h4v4h-4z" fill="#FFF"/>
+        <path d="M19 17h4v4h-4z"/>
+        <path d="M5 20h4v4H5z" fill="#FFF"/>
+        <path d="M9 20h4v4H9z"/>
+        <path d="M13 20h4v4h-4zM23 1h4v4h-4zm0 8h4v4h-4zm0 8h4v4h-4z" fill="#FFF"/>
+        <path d="M18 5h1v4h-1z"/>
+        <path d="M18 1h1v4h-1z" fill="#FFF"/>
+        <path d="M15 1h4v2h-4z" fill="#FFF"/>
+        <path d="M18 13h1v4h-1z"/>
+        <path d="M17 9h2v4h-2zm1 8h1v4h-1z" fill="#FFF"/>
+        <path d="M0 3h1v27H0zm17 0h1v21h-1zm15 18h-1V0h1"/>
+        <path d="M18 3l-3-3v3" fill="#1C1C1C"/>
+        <path d="M17 25v-1h1"/>
+    </symbol>
+    <symbol id="gel-icon-close-of-play" viewBox="0 0 32 32">
+        <path d="M0 28h32v4H0z" fill="#4E7A22"/>
+        <path d="M30 22v-3H19v.7L15.9 16H13l-2.9 2.9.2 2.3.4 3.2-2.9-6.7-1.1 1.1 1.9 7.3 2.4.7V32h8.9l-1-5.9.9-4.1m-5-7.8c-1 .2-2 0-2.7-.5l1.1-6.3h.1c1.9-.4 3.8.7 4.2 2.6.3 1.9-.9 3.8-2.7 4.2zM9 15.7c0-.5-.3-1-.8-1.1-.1-.3-.3-.6-.6-.9-1-1-2.6-1-3.6 0s-1 2.6 0 3.6h.1c-.9 1.2-1.4 2.3-1 2.7.5.5 2.1-.3 3.6-1.8.3-.2.5-.4.6-.6l.3-.3c.2-.1.3-.3.4-.4.6-.1 1-.6 1-1.2z"/>
+    </symbol>
+    <symbol id="gel-icon-cricket" viewBox="0 0 32 32">
+        <path d="M3.3 21.7l1.4 1.4L2.8 25c.4.6.8 1.1 1.3 1.6L26.6 4c-.5-.5-1-.9-1.6-1.3l-1.9 1.9-1.4-1.4 1.6-1.6c-6-3-13.5-2.1-18.5 3-5 5-6 12.5-3 18.6l1.5-1.5zm17-17l1.4 1.4-2.8 2.8-1.4-1.4 2.8-2.8zM16 8.9l1.4 1.4-2.8 2.8-1.4-1.4L16 8.9zm-4.2 4.3l1.4 1.4-2.8 2.8L8.9 16l2.9-2.8zm-4.3 4.2l1.4 1.4-2.8 2.8-1.4-1.4 2.8-2.8zm22.8-8.6l-1.6 1.6L27.3 9l1.9-2c-.4-.6-.8-1.1-1.3-1.6L5.4 28c.5.5 1 .9 1.6 1.3l1.9-1.9 1.4 1.4-1.6 1.6c6 3 13.5 2.1 18.5-3 5.1-5.1 6.1-12.6 3.1-18.6zM11.7 27.3l-1.4-1.4 2.8-2.8 1.4 1.4-2.8 2.8zm4.3-4.2l-1.4-1.4 2.8-2.8 1.4 1.4-2.8 2.8zm4.2-4.3l-1.4-1.4 2.8-2.8L23 16l-2.8 2.8zm4.3-4.2l-1.4-1.4 2.8-2.8 1.4 1.4-2.8 2.8z"/>
+    </symbol>
+    <symbol id="gel-icon-cycling" viewBox="0 0 32 32">
+        <path d="M17 13.2l-.5.1v2.8l-.1.2-1.1 4.1L20 15m9.9-6.8c.1-.2.1-.5.1-.7C30 6.1 28.9 5 27.5 5S25 6.1 25 7.5c0 .7.3 1.3.7 1.8l4.2-1.1z"/>
+        <path d="M23 14h6v-1l-5-1-1-4-2-2-9 2-2 3 1.6 5.7-.3 1.6c-1-1.9-3-3.3-5.3-3.3-3.3 0-6 2.7-6 6s2.7 6 6 6c1.5 0 2.9-.6 4-1.5l3-2.5 2-7.1V12l6-1 2 3zM6 25.5c-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5 4.5 2 4.5 4.5-2 4.5-4.5 4.5z"/>
+        <path d="M26 15c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 10.5c-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5 4.5 2 4.5 4.5-2 4.5-4.5 4.5z"/>
+    </symbol>
+    <symbol id="gel-icon-darts" viewBox="0 0 32 32">
+        <path d="M20.2 15H27l5-5-3.8-3.8M0 31.3v.7h.7l5-4.9-.8-.8M32 1l-1-1-4.5 4.5L22 0l-5 5v8l-7.5 6.8 2.6 2.6L26.9 6M6 23l-1 2 2 2 2-1 .1-.1 2.5-2.5-3-3"/>
+    </symbol>
+    <symbol id="gel-icon-disability-sports" viewBox="0 0 32 32">
+        <path d="M27.5 16.9c-1.4 0-2.7.7-3.5 1.7l-4.7-3-.5.8 2.3 1.4h-8.2c0-.2-.1-.3-.1-.5L11.5 19v.4c0 2.8-2.2 5-5 5s-5-2.2-5-5 2.2-5 5-5c1 0 2 .3 2.8.9L7 19.9l1 1 4-5 4-2v-4l-2-1-10 4.5c-2.3 1-4 3.3-4 6 0 3.6 2.9 6.5 6.5 6.5 3.4 0 6.2-2.7 6.5-6h11.2l3.4 2.1.5-.8-3.3-2.1c.6-.8 1.6-1.2 2.7-1.2 1.9 0 3.5 1.6 3.5 3.5s-1.6 3.5-3.5 3.5-3.5-1.6-3.5-3.5v-.5h-1v.5c0 2.5 2 4.5 4.5 4.5s4.5-2 4.5-4.5-2-4.5-4.5-4.5z"/>
+        <path d="M19.8 12.4l3.7-3.7c-.1-.4-.4-.7-.6-1-1.1-1.1-2.9-1.1-4 0s-1.1 2.9 0 4c.2.4.5.6.9.7z"/>
+    </symbol>
+    <symbol id="gel-icon-diving" viewBox="0 0 32 31.9">
+        <path d="M31 29.8l-3 1-3-1-3 1-3-1-3 1-3-1-3 1-3-1-3 1-3-1-1 .3v1.1l1-.3 3 1 3-1 3 1 3-1 3 1 3-1 3 1 3-1 3 1 3-1 1 .3v-1.1M25 23l1.4-9.3-3.9.5.5 9.8m5-12v-1h-1.2L28 3l-3-3h-4L10 9v3l1.4 2.1L28 12zm-9-2l3-4 .3 5H17l2-1zm-7.6 7.8c.1-.2.1-.5.1-.7 0-.3-.1-.6-.2-.9-.1-.2-.1-.3-.2-.5 0-.1-.1-.2-.1-.2-.3-.5-.8-.8-1.3-1.1-.4-.3-.8-.4-1.2-.4-1.7 0-3 1.4-3 3 0 .8.3 1.5.8 2l5.1-1.2z"/>
+    </symbol>
+    <symbol id="gel-icon-drinks-break" viewBox="0 0 32 32">
+        <path d="M4 9.4L5.6 7h2.7L10 9.4v.6H4m6 17H4v-8l.8-2h-.7c-.1 0-.1-.1-.1-.1V16h6v.9c0 .1 0 .1-.1.1h-.8l.9 1.9V27c.1 0 0 0 0 0z" fill="#0087FF" opacity=".2"/>
+        <path d="M11 16.9V9.1L8.8 6H5L3 9.1v7.8c0 .4.2.7.4.9l-.4.8V27c0 .6.4 1 1 1h6c.6 0 1-.4 1-1v-8.1l-.4-1.1c.2-.2.4-.6.4-.9zM4 9.4L5.6 7h2.7L10 9.4v.6H4v-.6zM10 27H4v-8l.8-2h-.7c-.1 0-.1-.1-.1-.1V16h6v.9c0 .1 0 .1-.1.1h-.8l.9 1.9V27c.1 0 0 0 0 0z"/>
+        <path d="M14.9 18l.6 9h7l.6-9" fill="#0087FF" opacity=".2"/>
+        <path d="M23.4 28h-8.8l-1-14h1l.9 13h7l.9-13h1"/>
+        <path d="M16.5 26.2l-.9-.5 7.1-14.5 6.1-1.1.2 1-5.7 1M9 5.4c0 .3-.3.6-.6.6H5.6c-.3 0-.6-.3-.6-.6v-.8c0-.3.3-.6.6-.6h2.7c.4 0 .7.3.7.6v.8z"/>
+    </symbol>
+    <symbol id="gel-icon-drivers" viewBox="0 0 32 32">
+        <path d="M31.9 18c.1-.7.1-1.3.1-2 0-8.8-7.2-16-16-16S0 7.2 0 16c0 .7.1 1.3.1 2H9l5 5v4.8C9.7 27.1 6.1 24 4.7 20H.5c1.8 6.9 8 12 15.5 12s13.7-5.1 15.5-12h-4.2c-1.4 4-5 7.1-9.3 7.8V23l5-5h8.9zM8 15H3C3.6 8.3 9.2 3 16 3s12.4 5.3 13 12v1-1h-5l-4-4h-8l-4 4zm8 4c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>
+        <circle cx="16" cy="16" r="2"/>
+    </symbol>
+    <symbol id="gel-icon-drop-catch" viewBox="0 0 32 32">
+        <path d="M11.9 26.9l.4.4-.5.5c.1.2.2.3.4.5l6.3-6.3c-.1-.1-.3-.2-.5-.4l-.5.5-.4-.4.4-.4c-1.7-.9-3.8-.6-5.2.8-1.4 1.4-1.7 3.5-.8 5.2l.4-.4zm4.8-4.8l.4.4-.8.8-.4-.4.8-.8zm-1.2 1.2l.4.4-.8.8-.4-.4.8-.8zm-1.2 1.2l.4.4-.8.8-.4-.4.8-.8zm-1.2 1.2l.4.4-.8.8-.4-.4.8-.8zm6.4-2.4l-.4.4-.4-.4.5-.5c-.1-.2-.2-.3-.4-.5l-6.3 6.3c.1.1.3.2.5.4l.5-.5.4.4-.4.4c1.7.9 3.8.6 5.2-.8 1.4-1.4 1.7-3.5.8-5.2zm-5.2 5.2l-.4-.4.8-.8.4.4-.8.8zm1.2-1.2l-.4-.4.8-.8.4.4-.8.8zm1.2-1.2l-.4-.4.8-.8.4.4-.8.8zm1.2-1.2l-.4-.4.8-.8.4.4-.8.8z" fill="#C1272D"/>
+        <path d="M13 15.8h.9v4H13zm3 3.4h-1v-4.6h1m1 1.2h1v4h-1z" fill="#1C1C1C"/>
+        <path d="M20.4 28c-.9 2-2.8 3-4.9 3s-4-1-4.9-3H0v4h32v-4H20.4z" fill="#4E7A22"/>
+        <path d="M14 6.7L6 5.3l-3.3 6 .5.7L6 10.4l-.7 3.4L6.8 17h3.9l3.3-6.5M7.3 4L14 5.3l.7-4.3-6.8-1m8.8 6.7l8-1.4 3.3 6-.5.7-2.8-1.6.6 3.4-1.4 3.2H20l-3.3-6.5M23.3 4l-6.6 1.3L16 1l6.8-1"/>
+    </symbol>
+    <symbol id="gel-icon-equestrian" viewBox="0 0 32 32">
+        <path d="M6.6 23.1L0 20.6V32h7.6M6.7 5.2c.2 0 .4.1.6.1h.1l2.2-3.7C9.3.6 8.4 0 7.4 0 5.9 0 4.7 1.2 4.7 2.6c0 .8.4 1.6 1 2 .3.3.7.5 1 .6zM29 23h3v-1.5h-3.7"/>
+        <path d="M30 9h-3s-10 0-13.7 7.7L8 14V8L7 7 3 5 1 8l1 6-2 5 8 3 1 9 2 1h8l2-5 .9-6.4-16-2.9.1-.7.1-.5L27 20h5V7l-2 2zm-2.9 10l-4.4-.7L24 15c.2 1.5 1.3 2.7 2.8 2.9l.5 1.1h-.2zm2.9-4h-1v-2l1 1v1z"/>
+    </symbol>
+    <symbol id="gel-icon-fencing" viewBox="0 0 32 32">
+        <path d="M25.422 31.95l-2.398-4.158 2.6-1.5 2.397 4.16zM19.9 21c-2.4 1.8-3.1 5.1-1.6 7.8l10.4-6c-1.5-2.6-4.8-3.7-7.5-2.5l-3.8-6.5-.9 1.5 3.4 5.7z"/>
+        <path d="M22.5 3V0L16 11.3 9.5 0v3l5.7 9.8-4.3 7.5c-2.8-1.2-6-.1-7.5 2.5l10.4 6c1.5-2.6.8-6-1.6-7.8L22.5 3zM4 30.5L6.6 32 9 27.8l-2.6-1.5"/>
+    </symbol>
+    <symbol id="gel-icon-fixtures" viewBox="0 0 32 32">
+        <path d="M24 13h4v4h-4zM22 0h2v5h-2zM8 0h2v5H8zm11 13h4v4h-4zm-5 0h4v4h-4zm-5 0h4v4H9zm15 5h4v4h-4zm-5 0h4v4h-4zm-5 0h4v4h-4zm-5 0h4v4H9zm-5 0h4v4H4zm15 5h4v4h-4zm-5 0h4v4h-4zm-5 0h4v4H9zm-5 0h4v4H4z"/>
+        <path d="M25 2v4h-4V2H11v4H7V2H0v7h32V2m-2 28H2V11H0v21h32V11h-2"/>
+    </symbol>
+    <symbol id="gel-icon-fixtures-results" viewBox="0 0 32 32">
+        <path d="M2.4 10h-2v17h12v-2h-10m23-15h2v4h-2zm-1-2h3V2h-5v4h-4V2h-9v4h-4V2h-5v6h2"/>
+        <path d="M21.4 2V0h-2v5h2m-13-3V0h-2v5h2m11 9.2l-.4-1.5c-2.5.7-4.7 2.3-6 4.5l1.4.8c1-1.8 2.8-3.2 5-3.8M10 15.8l1.4.8c1.6-2.5 4-4.5 7-5.3L18 9.8c-3.4.9-6.2 3.1-8 6M21.4 20h2v5h-2z"/>
+        <path d="M29.6 20l2.1-2.1-3.2-3.2-2 2.1.9.9c-.8-.7-1.8-1.1-2.9-1.4V16c0-1.1-.9-2-2-2s-2 .9-2 2v.3c-3.5.9-6 4-6 7.7 0 4.4 3.6 8 8 8s8-3.6 8-8c0-1.8-.6-3.5-1.7-4.9l.8.9zm-7.2 10c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6"/>
+    </symbol>
+    <symbol id="gel-icon-football" viewBox="0 0 32 32">
+        <path d="M10.8 14.4l2 6h6.3l2-6-5.1-3.7"/>
+        <path d="M16 0C7.2 0 0 7.2 0 16s7.2 16 16 16 16-7.2 16-16S24.8 0 16 0zm11.3 25l-.3-2.3-5.3 1.1-2.7 4.7 2.1 1c-1.6.6-3.3 1-5.1 1-1.8 0-3.5-.3-5.1-.9l2.1-1-2.7-4.7L5 22.7l-.3 2.4c-2-2.5-3.2-5.6-3.2-9.1v-.6l1.6 1.7 3.7-4-.6-5.5-2.3.5C5.8 5.2 8.7 3 12.1 2L11 4.1l5 2.2 5-2.2L19.8 2c3.4.9 6.4 3.1 8.3 6l-2.3-.4-.6 5.4 3.7 4 1.6-1.7v.7c0 3.4-1.2 6.6-3.2 9z"/>
+    </symbol>
+    <symbol id="gel-icon-formula-1" viewBox="0 0 32 32">
+        <path d="M14.3 8h3.4l.8 2H23V6H9v4h4.5"/>
+        <path d="M31 14h-4l-1 1v3l-3-1v-1l-1-2h2v-2h-2l-1 1v1h-2l-2-5h-2l-2 5h-2v-1l-1-1H8v2h2l-1 2v1l-3 1v-3l-1-1H1l-1 1v10l1 1h4l1-1v-2h4l1 1h10l1-1h4v2l1 1h4l1-1V15l-1-1zm-16-2h2l1 2h-4l1-2zm-9 7h3-3zm5 2H6v-1h6l-1 1zm6-1h-2l-2-3h6l-2 3zm9 1h-5l-1-1h6v1zm0-2h-3 3z"/>
+    </symbol>
+    <symbol id="gel-icon-gaelic-games" viewBox="0 0 32 32">
+        <path d="M20.9 28.1l2.7-4.7-4-4.2-2.7 3.6M23 31l1 1h6l2-2v-4l-7-1-2.8 4.9M32 2l-2-2-14 15.2L2 0 0 2v2h3l10.4 14-5 5.4 2.7 4.7L29 4h3M7 25l-7 1v4l2 2h6l1-1 .8-1.1"/>
+        <path d="M19.5 1.5C18.5.5 17.2 0 16 0c-1.3 0-2.6.5-3.5 1.5-1.9 2-1.9 5.1 0 7.1 1 1 2.3 1.5 3.5 1.5s2.6-.5 3.5-1.5c2-2 2-5.2 0-7.1zm-5.4 5.4l.2.1c.5.5 1.2.8 1.9.8s1.4-.3 1.9-.8.8-1.2.8-1.9-.3-1.4-.8-1.9c-.1 0-.1-.1-.2-.1l-2.5-1.9c.2 0 .4-.1.5-.1 1 0 2 .4 2.7 1.1.9.8 1.3 1.8 1.3 2.8 0 1-.4 2-1.1 2.7-.8.8-1.8 1.2-2.8 1.2s-2-.4-2.8-1.1c-.9-.9-1.3-2.2-1.1-3.4l2 2.5zM17.3 4c.3.3.5.7.5 1.1 0 .4-.2.8-.5 1.1-.6.6-1.6.6-2.3 0l-.1-.1-2.3-3 .6-.9c.3-.3.6-.5.9-.7L17.3 4z"/>
+    </symbol>
+    <symbol id="gel-icon-game-set-match" viewBox="0 0 32 32.1">
+        <path d="M3.9 8.1l-1.4-3 .3-.6 1.5 1.7.4-.1.4-.9.3.6.1 1.7m22.2 3.4l1.2-1.1-.8-.5-.4.1-.3-.2-.4-.6-.3.1-.4 1.7M9.5 32l-.7-5.7-1.9-5.8-2-6.4-.7-4.6 1.6-.7 4 10.3L13 21l3.1.3 5.2-4.2 4.6-5.9 1.4.5-3.7 7.3-4.6 5.2-.1 2.4-.6 5.4"/>
+        <path d="M13.6 18.6c1 .2 2 0 2.8-.5l-1.1-6.3h-.1c-1.9-.4-3.8.7-4.2 2.6-.5 1.9.7 3.8 2.6 4.2zm4-17.8c.7.1 1.4.4 2.1.8 2.1 1.2 3.2 3.3 2.4 4.6-.5.9-1.7 1.2-3.1 1-.7-.1-1.4-.4-2.1-.8-2.1-1.2-3.2-3.3-2.4-4.6.4-.9 1.6-1.3 3.1-1m.1-.7c-1.7-.3-3.2.2-3.8 1.3-.9 1.7.3 4.2 2.7 5.6.8.4 1.6.7 2.3.8 1.7.3 3.2-.2 3.8-1.3 1-1.7-.3-4.2-2.7-5.6-.8-.4-1.6-.7-2.3-.8z"/>
+        <path d="M19.8 7.9v-.7c2.1-.1 5.1.2 5.9.6l-.4.6c-.5-.3-3.3-.6-5.5-.5z"/>
+        <path d="M25.3 8.4c-.7-.4-2.5-2.9-3.5-4.8l.6-.3c1 2 2.7 4.2 3.2 4.5l-.3.6zm4.2 1.6l-.4.7L26 8.9l.4-.7"/>
+        <path d="M25.7 7.9l-.3.6-.7-.4.4-.6"/>
+    </symbol>
+    <symbol id="gel-icon-generic-events" viewBox="0 0 32 32">
+        <path d="M0 21h5v2H0v2h5v2H0v3h9v-5h6v5h2v-5h6v5h9v-3h-5v-2h5v-2h-5v-2h5v-2H0m2-6l-2 2v2h32v-2l-2-2M5 2h1v10H5zm19 0h1v10h-1zM11 4l2-2H7v4h6m19-4h-6v4h6l-2-2"/>
+    </symbol>
+    <symbol id="gel-icon-generic-goal" viewBox="0 0 32 32">
+        <path d="M16 27.3c-5.7 0-10.3-4.6-10.3-10.3S10.3 6.7 16 6.7 26.3 11.3 26.3 17 21.7 27.3 16 27.3z" fill="#FFF"/>
+        <path d="M16 7.4c5.3 0 9.6 4.3 9.6 9.6s-4.3 9.6-9.6 9.6-9.6-4.3-9.6-9.6 4.3-9.6 9.6-9.6M16 6C9.9 6 5 10.9 5 17s4.9 11 11 11 11-4.9 11-11S22.1 6 16 6z"/>
+        <path d="M0 0v16h2v-4h3c.5-.9 1.3-2.6 2-3.3V7h2c.8-.5 2-1.3 3-1.6V2h3v3h2V2h3v3.3c.9.3 2.2 1.1 3 1.6h2v1.7c.7.8 1.5 2.3 2 3.3h3v4h2V0H0zm5 10H2V7h3v3zm0-5H2V2h3v3zm5 0H7V2h3v3zm15 0h-3V2h3v3zm5 5h-3V7h3v3zm0-5h-3V2h3v3zM16 24.6c-4.2 0-7.6-3.4-7.6-7.6h.7c0 3.8 3.1 6.9 6.9 6.9v.7z"/>
+    </symbol>
+    <symbol id="gel-icon-generic-sport" viewBox="0 0 32 32">
+        <path d="M29.5 0h-1L26 5h-7l-2.5-5h-1L13 5H6L3.5 0h-1L0 5v14h4v-3h3v3h2v-3h6v3h2v-3h6v3h2v-3h3v3h4V5l-2.5-5zM16 1.2L17.9 5h-3.8L16 1.2zm-13 0L4.9 5H1.1L3 1.2zM11 9H2V7h10l-1 2zm1.1 0l1-2h5.8l1 2h-7.8zM30 9h-9l-1-2h10v2zm-2.9-4L29 1.2 30.9 5h-3.8z"/>
+    </symbol>
+    <symbol id="gel-icon-goal" viewBox="0 0 32 32">
+        <path d="M0 0v16h2v-4h3c.5-.9 1.3-2.6 2-3.3V7h2c.8-.5 2-1.3 3-1.6V2h3v3h2V2h3v3.3c.9.3 2.2 1.1 3 1.6h2v1.7c.7.8 1.5 2.3 2 3.3h3v4h2V0H0zm5 10H2V7h3v3zm0-5H2V2h3v3zm5 0H7V2h3v3zm15 0h-3V2h3v3zm5 5h-3V7h3v3zm0-5h-3V2h3v3z"/>
+        <circle cx="16" cy="16.7" fill="#FFF" r="10"/>
+        <path d="M12.6 15.6l1.3 4h4.2l1.3-4-3.4-2.5"/>
+        <path d="M16 6C9.9 6 5 10.9 5 17s4.9 11 11 11 11-4.9 11-11S22.1 6 16 6zm7.8 17.2l-.2-1.6-3.7.8-1.9 3.2 1.5.7c-1.1.4-2.3.7-3.5.7-1.2 0-2.4-.2-3.5-.6l1.5-.7-1.9-3.2-3.7-.8-.2 1.6C6.9 21.5 6 19.4 6 17v-.4l1.1 1.2L9.7 15l-.4-3.7-1.6.3c1.3-2 3.3-3.5 5.7-4.1l-.8 1.4 3.4 1.5 3.4-1.5-.8-1.4c2.4.5 4.4 2 5.7 4l-1.6-.3-.4 3.7 2.5 2.8 1.1-1.2v.5c.1 2.3-.8 4.5-2.1 6.2z"/>
+    </symbol>
+    <symbol id="gel-icon-goal-medal" viewBox="0 0 32 32">
+        <g fill="#FFD324">
+            <circle cx="16" cy="21" r="6"/>
+            <path d="M16 0H4l6 6m8-6l-7 7 5 5L28 0"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-golf" viewBox="0 0 32 32">
+        <path d="M16 0C10.2 0 5.5 4.7 5.5 10.5S10.2 21 16 21s10.5-4.7 10.5-10.5S21.8 0 16 0zm0 19.5c-5 0-9-4-9-9s4-9 9-9 9 4 9 9-4 9-9 9zM12.5 24l2 2v6h1l2-2v-4l2-2v-1h-7"/>
+    </symbol>
+    <symbol id="gel-icon-gossip" viewBox="0 0 32 32">
+        <path d="M0 24v6l6-6h12V10H0v14zm10.1-1.9H7.5v-2.6h2.6v2.6zm-1-10.2c1.8 0 3.5.9 3.5 2.9 0 1.4-.7 1.8-1.7 2.5-.7.5-.9.7-.9 1.5H7.7v-.7c0-1.1.6-1.6 1.1-1.9.6-.4 1.1-.7 1.1-1.4 0-.5-.4-.9-.9-.9-.8 0-1.2.5-1.2 1.2v.3H5.4c0-2.2 1.5-3.5 3.7-3.5z"/>
+        <path d="M14 2v6h6v8h6l6 6V2H14zm9.1 2h2.5v2.5l-.6 4.2h-1.2l-.6-4.2V4zm2.5 10H23v-2.6h2.6V14z"/>
+    </symbol>
+    <symbol id="gel-icon-gymnastics" viewBox="0 0 32 32">
+        <path d="M0 27v3l6 2h20l6-2v-3H21v-3h4v2h1v-2l-1-1h-4l-1 1v3H7v-3h4v2h1v-2l-1-1H7l-1 1v3M8 5.5C8 4.1 6.9 3 5.5 3 4.2 3 3.1 4 3 5.3L5.2 8h.7l2-2c.1-.2.1-.4.1-.5zM12 8l3.7-1 1.4-2L10 6l-5 5v2l2 4 1.4 5H10l-1-6-1-3 2 2 19 6.4 1-1.4-12-6 6-14h-2l-7 11"/>
+    </symbol>
+    <symbol id="gel-icon-handball" viewBox="0 0 32 32">
+        <path d="M27 0c-1.9 0-3.5 1.6-3.5 3.5 0 .6.2 1.1.4 1.6L21.5 8l-5-2-4-1h-4l-4 1-3 4 1 1 4-3h2l1 1v9l10 14h2l-5-10-1-6-1-2 3-4 5 1 4-6-1.4-1.3-.5.6c-.1-.2-.1-.5-.1-.8C24.5 2.1 25.6 1 27 1s2.5 1.1 2.5 2.5c0 1.1-.8 2.1-1.8 2.4L27 7c1.9 0 3.5-1.6 3.5-3.5S28.9 0 27 0zM10.5 28h4.3l-5.2-7.3"/>
+        <path d="M12.9 3.5l1.2.3c.2-.4.4-.8.4-1.3C14.5 1.1 13.4 0 12 0c-.2 0-.3 0-.5.1l-.7 3.4h2.1z"/>
+    </symbol>
+    <symbol id="gel-icon-headlines" viewBox="0 0 32 32">
+        <path d="M4 20h14v3H4zm0 5h14v3H4zM4 4h24v13H4z"/>
+        <path d="M0 0v32h21l11-11V0H0zm22 28v-6h6l-6 6zm8-8H20v10H2V2h28v18z"/>
+    </symbol>
+    <symbol id="gel-icon-hockey" viewBox="0 0 32 32">
+        <path d="M11.6 23.9l5.3-1.1L13 18m9-12h.4v-.1L24.8 2C24.4.8 23.3 0 22 0c-1.7 0-3 1.3-3 3s1.3 3 3 3z"/>
+        <path d="M29.8 30.5c-.2 0-.4-.1-.4-.1L19.7 20 18 17l3-7V8l-4-2h-2l-8 6-1 2v7.5L0 24v2l4.6-.9L0 32h2l8-8 2-8 5-4-1.4 3.5L15 17l13.3 14.4c.4.4.9.6 1.5.6 1.2 0 2.1-.9 2.2-2h-1.5c-.2.3-.4.5-.7.5z"/>
+        <path d="M30 28c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0-3c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1z"/>
+    </symbol>
+    <symbol id="gel-icon-horse-racing" viewBox="0 0 32 32">
+        <path d="M17 31.5l1-1-3-6-3.7-.6M0 12.1v4.6l3.5-3.3M32 11.5l-.9-1-2.3 2.4 1.2.6"/>
+        <path d="M18.6 14.2L8.5 4.5H5l-5 4v2l6.3 2.4L0 18.7v1.8l17.9 3h.1l7 5 1-1-6-6-5-2 3.6-5.3zM6 9.5l2-2 3 2-2 1-3-1zm24.1-.1L22 .5v3l-7.9 4.3 5.7 5.5c.9.8 2 1.2 3.2 1.2 1.1 0 2.3-.4 3.2-1.2l.5-.5 3.4-3.4zM26 6.5l.7.7-.7.7-1.4-1.4H26zm-.1 5.7l-.4.4c-1.5 1.2-3.8 1.1-5.2-.1l-.3-.4 1.5-2c.1.1.2.3.3.4 1 1 2.4 1.3 3.7.8l.9.4-.5.5zM12.2 6h.7l1.8-3.6c-.4-.8-1.2-1.3-2.2-1.3-1.4 0-2.5 1.1-2.5 2.5v.5L12.2 6z"/>
+    </symbol>
+    <symbol id="gel-icon-ice-hockey" viewBox="0 0 32 32">
+        <path d="M6 16.5l-6 15h2l7.7-11.7 3 3L7 31.5h2l7.3-7.3-9.7-8.7m13.4-9h.2l2.5-4.3c-.5-1-1.5-1.7-2.7-1.7-1.7 0-3 1.3-3 3s1.3 3 3 3zm4.8 22L20 24.2V9.8l-2.6 4.7 1.1 8.4-.7-.6-3.8-4.8 5-9-7-4H5v7.6l19.6 17.7.4.8h7v-2h-7.2zm-17-15.2l-1.3-1.2.5-4.6h4l-3.2 5.8z"/>
+    </symbol>
+    <symbol id="gel-icon-interval" viewBox="0 0 32 32">
+        <path d="M15.6 8.8c-5.2 0-9.3 4.2-9.3 9.3 0 5.2 4.2 9.3 9.3 9.3 5.2 0 9.3-4.2 9.3-9.3 0-5.1-4.2-9.3-9.3-9.3zm0 16.2c-3.8 0-6.8-3.1-6.8-6.8 0-3.8 3.1-6.8 6.8-6.8s6.8 3.1 6.8 6.8c0 3.7-3.1 6.8-6.8 6.8z"/>
+        <path d="M22.738 8.005l3.04 3.04-2.05 2.05-3.04-3.04zM17.7 6.7c0-1.2-1-2.2-2.2-2.2-1.2 0-2.2 1-2.2 2.2s1 2.2 2.2 2.2c1.3-.1 2.2-1.1 2.2-2.2zm-2.1 1.4c-.8 0-1.4-.6-1.4-1.4 0-.8.6-1.4 1.4-1.4s1.4.6 1.4 1.4c0 .7-.6 1.4-1.4 1.4z"/>
+        <path d="M15.6 12.7c3 0 5.5 2.5 5.5 5.5s-2.5 5.5-5.5 5.5" fill="#C1272D"/>
+    </symbol>
+    <symbol id="gel-icon-its-sunny" viewBox="0 0 32 32">
+        <path d="M0 0h32v32H0z" fill="#3F7693"/>
+        <g fill="#F8D34C">
+            <circle cx="16" cy="13.1" r="7.1"/>
+            <path d="M17.2 4.8h-2.4V0h2.4v4.8m-6.3 1.7L8.5 2.3l2-1.1 2.4 4.1-2 1.2m10.6 18.4l-2.4-4.1 2-1.2 2.4 4.2-2 1.1m5.2-4.3l-4.1-2.4 1.1-2 4.2 2.4-1.2 2m-19-6.4H2.9v-2.3h4.8v2.3m21.4 0h-4.8v-2.3h4.8v2.3M5.3 20.6l-1.2-2 4.2-2.4 1.1 2-4.1 2.4M23.7 9.9l-1.1-2 4.1-2.4 1.2 2-4.2 2.4m-2.6-3.4l-2-1.2 2.4-4.1 2 1.1-2.4 4.2M10.5 24.9l-2-1.1 2.4-4.2 2 1.2-2.4 4.1m6.7 1.2h-2.4v-4.8h2.4v4.8M8.3 9.9L4.1 7.5l1.2-2 4.1 2.4-1.1 2"/>
+        </g>
+        <path d="M0 28h32v4H0z" fill="#4E7A22"/>
+        <path d="M26 25.9V32h1.9v-7.1c0-.5-.4-.9-.9-.9s-.9.4-.9.9v.1H25v-.1c0-.5-.4-.9-.9-.9s-.9.4-.9.9v.1H22v-.1c0-.5-.4-.9-.9-.9s-.9.4-.9.9V32h1.9v-6.1h1.2V32H25v-6.1h1z"/>
+    </symbol>
+    <symbol id="gel-icon-judo" viewBox="0 0 32 32">
+        <path d="M29 19l3-6-1-1-5 7v.4l4.5 4.9M13 12h7l8.4-5L27 6l-8 3-1.8-.6"/>
+        <path d="M8 14l5-4 6-5 5.4-3L23 1l-9 3-9 5-2 2v5l7 3 4 3v7l2 2h7l8-4-13-14h-2l8 12-2 1h-4l-2-5M2.5 17h-.1c-.3 0-.6.1-.8.2-.9.4-1.6 1.3-1.6 2.3 0 .9.5 1.7 1.2 2.1L5 19.2c0-.2-.1-.4-.2-.6-.1-.3-.3-.5-.4-.7-.5-.6-1.1-.9-1.9-.9z"/>
+        <path d="M13 25.5v-.1c0-.5-.2-1-.5-1.4-.1-.2-.2-.3-.4-.4l-4 1.3c-.1.1-.1.4-.1.6 0 1.4 1.1 2.5 2.5 2.5.8 0 1.5-.4 2-1 .3-.4.5-.9.5-1.4v-.1z"/>
+    </symbol>
+    <symbol id="gel-icon-leagues-competitions" viewBox="0 0 32 32">
+        <path d="M9 29v3h14v-3m1-27V0H8v2H1v7l5 5h2v2l5 5 .6 3.4L11 27h10l-2.6-2.6.6-3.4 5-5v-2h2l5-5V2h-7zM8 12H6.8L3 8.2V4h5v8zm21-3.8L25.2 12H24V4h5v4.2z"/>
+    </symbol>
+    <symbol id="gel-icon-live-scores" viewBox="0 0 56 32">
+        <path d="M0 0h56v32H0z"/>
+        <path d="M4 7.9h4.2v12.4h7.5v3.6H4v-16zm13 0h4.2v16H17v-16zm15.8 16H28l-5-16h4.3l3.1 11.9 3.1-11.9H38l-5.2 16zm6.2-16h12.7v3.3h-8.6V14H51v3.2h-7.8v3H52v3.6H39V7.9z" fill="#FFF"/>
+    </symbol>
+    <symbol id="gel-icon-man-of-the-match" viewBox="0 0 32 32">
+        <path d="M3.9 8.2L2.5 5.1l.4-.5 1.4 1.6h.4l.4-1 .4.6v1.8M27.8 11L29 9.8l-.8-.5-.4.1-.4-.1-.4-.6-.2.1-.4 1.7"/>
+        <path d="M0 28h32v4H0z" fill="#4E7A22"/>
+        <path d="M9.5 32l-.7-5.7L7 20.6l-2.1-6.5-.6-4.6 1.6-.6 3.9 10.2 3.2 2 3.2.3 5.2-4.2 4.6-6 1.3.5-3.6 7.3-4.6 5.3-.2 2.4-.5 5.3"/>
+        <path d="M13.7 18.7c1 .2 2 0 2.8-.5l-1.1-6.4h-.1c-1.9-.4-3.8.8-4.2 2.7-.5 1.9.7 3.8 2.6 4.2z"/>
+    </symbol>
+    <symbol id="gel-icon-man-of-the-series" viewBox="0 0 32 31.9">
+        <path d="M0 27.9h32v4H0zM0 20h32v4H0zm0-8h32v4H0zm0-8h32v4H0z" fill="#4E7A22"/>
+        <path d="M0 23.9h32v4H0zM0 16h32v4H0zm0-8h32v4H0zm0-8h32v4H0z" fill="#6C9148"/>
+        <path d="M27.8 10.9L29 9.7l-.8-.5-.4.1-.3-.1-.4-.6-.3.1-.4 1.7" fill="#FFF"/>
+        <g fill="#FFF">
+            <path d="M3.9 8.1L2.6 5l.3-.5 1.5 1.6h.4l.3-1 .4.6v1.8m4.1 24.4l-.7-5.6L7 20.5 4.9 14l-.6-4.6 1.6-.6 4 10.2 3.2 1.9 3.1.4 5.2-4.2 4.6-6 1.3.5-3.6 7.3-4.6 5.2-.1 2.5-.6 5.3"/>
+            <path d="M13.7 18.6c1 .2 2 0 2.8-.5l-1.1-6.3h-.1c-1.9-.4-3.8.7-4.2 2.6-.5 1.8.7 3.7 2.6 4.2z"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-medal-table" viewBox="0 0 32 32">
+        <path d="M23 11l5-11h-9l-1.9 4.2 3.1 6.8M18 11L13 0H4l5 11m7.5 2C11.3 13 7 17.3 7 22.5s4.3 9.5 9.5 9.5 9.5-4.3 9.5-9.5-4.3-9.5-9.5-9.5m0 17C12.4 30 9 26.6 9 22.5s3.4-7.5 7.5-7.5 7.5 3.4 7.5 7.5-3.4 7.5-7.5 7.5"/>
+    </symbol>
+    <symbol id="gel-icon-modern-pentathlon" viewBox="0 0 32.1 32">
+        <path d="M26.3 13.3l2.9 1.6 2.9-5-1-1-2 3-2.2-2.6M14.7 23.5l-7.4 1.8-.9 2 10-1.2 4.9-4.5-4.1-1.2"/>
+        <path d="M25.7 7.5l-.6-.5L21 5.1l-6.9 2.1-.9 6.3 1.4.2 1.1-5 3.4-.6 1.1 6-1.9 5 9 2.9-.9 9 2.1 1 1.8-12.1-6.1-2.9m1.3-12h.1l2.1-3.6C27.3.6 26.5 0 25.5 0 24.1 0 23 1.2 23 2.5 23 3.9 24.2 5 25.5 5z"/>
+        <circle cx="2" cy="2.4" r="2"/>
+        <circle cx="8" cy="2.3" r="2"/>
+        <circle cx="2.2" cy="12.4" r="2"/>
+        <circle cx="8.2" cy="12.3" r="2"/>
+        <circle cx="5.1" cy="7.3" r="2"/>
+    </symbol>
+    <symbol id="gel-icon-moto-gp" viewBox="0 0 32 32">
+        <path d="M5.5 18c-1.5 0-2.7-.9-3.2-2.2v-.1c-.2-.3-.3-.8-.3-1.2 0-1.1.5-2 1.3-2.7.6-.5 1.4-.8 2.2-.8 1.5 0 2.8.9 3.3 2.3l2.2.6C10.6 11.1 8.3 9 5.5 9 2.5 9 0 11.5 0 14.5S2.5 20 5.5 20c2.1 0 3.8-1.1 4.8-2.8l-2.2-.4c-.6.7-1.6 1.2-2.6 1.2z"/>
+        <path d="M3.5 15l8 1.4 1-1.1L4 13m23.8-3.8L30 7l-1-3-3-3-3-1-3 3 7 3-10 4-3 2 2 2-5 5h9l1.5-2.2c.9 1.9 2.8 3.2 5 3.2.6 0 1.1-.1 1.7-.3C30.4 19 32 17 32 14.5c0-2.6-1.8-4.8-4.2-5.3zM26.5 18c-1.9 0-3.4-1.6-3.4-3.5v-.1L24 13l1.3-1.3.7 3.3h1l1-3 .4-.4c.9.6 1.6 1.7 1.6 2.9 0 1.9-1.6 3.5-3.5 3.5z"/>
+        <path d="M13 11l3.2-2.2 5.3-2.2L20 5h-6l-2 2-3-1-2-2H2L1 5l9 3"/>
+    </symbol>
+    <symbol id="gel-icon-netball" viewBox="0 0 32 32">
+        <path d="M4 18h3v14H4zm4 0v3l2.5 9h1.4l-.8-3H15v3h1v-3h4v3h1v-3h3.9l-.8 3h1.4l2.5-9v-3H8zm7 8h-4.2l-.5-2H15v2zm0-3h-5v.1L9.4 21H15v2zm5 3h-4v-2h4v2zm0-3h-4v-2h4v2zm5.2 3H21v-2h4.7l-.5 2zm.8-2.9l-5-.1v-2h5.6l-.6 2.1zM18 16c4.4 0 8-3.6 8-8s-3.6-8-8-8-8 3.6-8 8 3.6 8 8 8zm2-1.8l-5.3-5.3 2.2-.6 4.9 4.9c-.5.5-1.2.8-1.8 1zM18 8zm6.5 0c0 1.8-.7 3.4-1.9 4.6l-1.3-1.3 1.9-7.2c.8 1.1 1.3 2.4 1.3 3.9zm-2.1-4.8l-1.9 7.2-1.6-1.6L20.7 2c.6.3 1.2.7 1.7 1.2zM18 1.5c.6 0 1.1.1 1.7.2l-.5 1.8-7.2 2c1-2.4 3.3-4 6-4zM11.5 8c0-.5.1-1 .2-1.4l7.2-1.9-.6 2.2-6.8 1.8V8zm2 1.2l5.2 5.3c-.3 0-.5.1-.8.1-3 0-5.5-2-6.3-4.8l1.9-.6z"/>
+    </symbol>
+    <symbol id="gel-icon-new-ball" viewBox="0 0 32 32">
+        <path d="M4.3 9.9l.4.4-.6.6c.1.2.2.3.4.5l6.6-6.6c-.2-.1-.3-.3-.5-.4L10 5l-.3-.5.5-.5c-1.8-.8-4-.5-5.5.9-1.4 1.5-1.7 3.7-.8 5.4l.4-.4zm5-5l.4.4-.8.9-.4-.4.8-.9zM8 6.2l.4.4-.8.8-.4-.4.8-.8zM6.8 7.4l.4.4-.8.8-.4-.4.8-.8zM5.6 8.7l.4.4-.9.8-.4-.4.9-.8zm6.6-2.6l-.5.5-.4-.4.6-.6c-.1-.2-.2-.3-.4-.5L5 11.7c.2.1.3.3.5.4l.5-.6.4.4-.5.5c1.8.9 3.9.6 5.4-.9 1.5-1.4 1.8-3.6.9-5.4zm-5.4 5.4l-.4-.4.8-.8.4.4-.8.8zM8 10.3l-.4-.4.8-.8.4.4-.8.8zm1.3-1.2l-.4-.4.8-.8.4.4-.8.8zm1.2-1.3l-.4-.4.8-.8.4.4-.8.8z" fill="#C1272D"/>
+        <path d="M14.4 24.3l.7.7-1 1c.2.3.4.5.6.8L26 15.5c-.3-.2-.5-.4-.8-.6l-1 1-.7-.7.8-.8c-3-1.5-6.8-1-9.3 1.5s-3 6.3-1.5 9.3l.9-.9zm8.5-8.5l.7.7-1.4 1.4-.7-.7 1.4-1.4zm-2.1 2.1l.7.7-1.4 1.4-.7-.7 1.4-1.4zm-2.1 2.2l.7.7-1.4 1.4-.7-.7 1.4-1.4zm-2.1 2.1l.7.7-1.4 1.4-.7-.7 1.4-1.4zm11.3-4.4l-.8.8-.7-.7 1-1c-.2-.3-.4-.5-.6-.8L15.5 27.5c.3.2.5.4.8.6l1-1 .7.7-.8.8c3 1.5 6.8 1 9.3-1.5 2.5-2.5 2.9-6.3 1.4-9.3zm-9.2 9.3l-.7-.7 1.4-1.4.7.7-1.4 1.4zm2.1-2.1l-.7-.7 1.4-1.4.7.7-1.4 1.4zm2.1-2.1l-.7-.7 1.4-1.4.7.7-1.4 1.4zm2.1-2.2l-.7-.7 1.4-1.4.7.7-1.4 1.4z"/>
+        <path d="M14.2 28.8L11 26.2l-.2 1.3c-4.1-1.4-6.9-5.3-6.9-9.7 0-.4-.3-.7-.7-.7s-.7.3-.7.7c0 5 3.3 9.5 8 11.1l-.2 1.4 3.9-1.5z" fill="#C1272D"/>
+        <path d="M21.5 3.1l.2-1.4-3.8 1.5L21 5.8l.2-1.3c4.1 1.4 6.9 5.3 6.9 9.7 0 .4.3.7.7.7s.7-.3.7-.7c0-5.1-3.3-9.6-8-11.1z"/>
+    </symbol>
+    <symbol id="gel-icon-ouch" viewBox="0 0 32 32">
+        <path d="M27.6 18.2L32 16l-4.4-2.2 1.3-1.9-2.9-.6L28 7l-6.6 1.6-.3-1.8-2 1.2-3-4L13 8l-2.1-1.2-.3 1.8L4 7l2 4.3-2.9.6 1.3 1.9L0 16l4.4 2.2-1.3 1.9 2.9.6L4 25l6.6-1.6.3 1.8 2-1.2 3 4 3.1-4 2.1 1.2.3-1.8L28 25l-2-4.3 2.9-.6" fill="#C1272D"/>
+        <path d="M5.2 16.2c0-.5.1-.9.2-1.2.1-.2.3-.5.4-.7.2-.2.4-.3.7-.4.3-.1.6-.2 1-.2.7 0 1.3.2 1.7.7s.6 1 .6 1.8-.2 1.4-.6 1.8c-.4.4-1 .6-1.7.6s-1.3-.2-1.7-.6c-.4-.5-.6-1.1-.6-1.8zm1 0c0 .5.1.9.4 1.2s.6.4.9.4c.4 0 .7-.1.9-.4.2-.3.4-.7.4-1.2s-.1-.9-.4-1.2c-.2-.3-.6-.4-1-.4s-.7.1-1 .4c-.1.2-.2.6-.2 1.2zm4.5-2.4h1v3.4c0 .2.1.3.3.5.2.1.4.2.6.2.3 0 .5-.1.6-.2.1-.1.2-.2.2-.4v-3.4h1v2.5c0 .6 0 1-.1 1.2-.1.2-.1.4-.3.6-.1.2-.3.3-.6.4-.2.1-.5.1-.9.1-.5 0-.8-.1-1-.2-.2-.1-.4-.2-.6-.4-.1-.2-.2-.3-.3-.5-.1-.3-.1-.7-.1-1.2v-2.6zm7.9 3l.9.3c-.1.5-.4.9-.7 1.2-.3.3-.8.4-1.3.4-.6 0-1.1-.2-1.6-.6-.4-.4-.6-1-.6-1.8s.2-1.4.6-1.8c.4-.4.9-.7 1.6-.7.6 0 1.1.2 1.4.5.2.2.4.5.5.9l-.9.2c-.1-.2-.2-.4-.4-.6-.2-.1-.4-.2-.7-.2-.4 0-.6.1-.9.4-.2.3-.3.7-.3 1.2 0 .6.1 1 .3 1.3.2.3.5.4.8.4.3 0 .5-.1.7-.2.4-.3.6-.6.6-.9zm1.9 1.7v-4.7h1v1.9h1.9v-1.9h1v4.7h-1v-2.1h-1.9v2.1h-1zm5.2-1.2l-.2-2.4v-1.1h1v1.1l-.2 2.4h-.6zm-.2 1.2v-.9h.9v.9h-.9z" fill="#FFF"/>
+    </symbol>
+    <symbol id="gel-icon-pole-position" viewBox="0 0 32 32">
+        <path d="M27 23.1v-9h-4v4h-4.6l-.5-5.4.1-.1V9.1h1l3 2h3v-6h-6v-1h-6v1H7v6h3l3-2h1v3.4l.1.1-.5 5.4H8.9 9v-4H5v9h4v-4l4 3-.5 4.5-1.5 1.6-1-1H5v2h4l-2 3h7v-2h-1l2-3h2l2 3h-1v2h7l-2-3h4v-2h-5l-1 1-1.5-1.5-.5-4.5 4-3v4h4zm-14-3l-1-1h1v1zm6 0v-1h1l-1 1z"/>
+        <path d="M29.1 0H2v11h2V2h24v9h2V0"/>
+    </symbol>
+    <symbol id="gel-icon-rain-stops-play" viewBox="0 0 32 32">
+        <path d="M0 0h32v32H0z" fill="#3F7693"/>
+        <path d="M0 28h32v4H0z" fill="#B3B3B3"/>
+        <path d="M23 8.7h-.6c-.8-2.9-3.4-5-6.4-5-3.1 0-5.7 2.1-6.4 5H9c-2.8 0-5 2.2-5 4.9s2.2 4.9 4.9 4.9H12v-2.3H8.9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.2-1.5-1.6C12.1 7.6 13.9 6 16 6c2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6 0 1.4-1.2 2.6-2.6 2.6H20v2.3h3c2.7 0 4.9-2.2 4.9-4.9S25.7 8.7 23 8.7z"/>
+        <path d="M11.6 24.6s0-.1 0 0l.4-4.7-4 2.3c-.7.4-1.2 1.2-1.2 2.1 0 1.3 1.1 2.4 2.4 2.4 1.2.1 2.2-.9 2.4-2.1zm6.5-5.7s.1-.1 0 0l.4-4.7-4 2.3c-.7.4-1.2 1.2-1.2 2.1 0 1.3 1.1 2.4 2.4 2.4 1.3 0 2.3-.9 2.4-2.1z" fill="#5996CB"/>
+        <path d="M26 25.9V32h1.9v-7.1c0-.5-.4-.9-.9-.9s-.9.4-.9.9v.1H25v-.1c0-.5-.4-.9-.9-.9s-.9.4-.9.9v.1H22v-.1c0-.5-.4-.9-.9-.9s-.9.4-.9.9V32h1.9v-6.1h1.2V32H25v-6.1h1z"/>
+    </symbol>
+    <symbol id="gel-icon-red-flag" viewBox="0 0 32 32">
+        <path d="M0 3h1v27H0z"/>
+        <path d="M1 3h16v22H1z" fill="#C00"/>
+        <path d="M15 0h17v21H15z" fill="#C00"/>
+        <path d="M18 24l-1 1V3h1" fill="#FFF"/>
+        <path d="M18 3l-3-3v3" fill="#1C1C1C"/>
+    </symbol>
+    <symbol id="gel-icon-results" viewBox="0 0 32 31.7">
+        <path d="M27.29 8.8l4.243 4.243-2.828 2.828-4.242-4.24zm-5.69-.6c0-1.4-1.1-2.5-2.5-2.5s-2.5 1.1-2.5 2.5 1.1 2.5 2.5 2.5 2.5-1.2 2.5-2.5zm-2.5 1.5c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5 1.5.7 1.5 1.5-.7 1.5-1.5 1.5z"/>
+        <path d="M19.1 10.7c-5.8 0-10.5 4.7-10.5 10.5s4.7 10.5 10.5 10.5S29.6 27 29.6 21.2s-4.7-10.5-10.5-10.5zm0 18c-4.1 0-7.5-3.4-7.5-7.5s3.4-7.5 7.5-7.5 7.5 3.4 7.5 7.5-3.4 7.5-7.5 7.5zM12.2 1.9L11.5 0C7 1.6 3.2 4.7.5 8.5l1.6 1.2c2.5-3.6 6-6.3 10.1-7.8zm.6 1.9c-3.7 1.3-6.9 3.8-9 7.1L5.4 12c1.9-2.9 4.8-5.1 8.1-6.3l-.7-1.9zm2.1 5.6l-.7-1.9c-2.9 1.1-5.4 3-7.1 5.6l1.6 1.1c1.5-2.1 3.6-3.9 6.2-4.8z"/>
+        <path d="M18.6 15.7h2v6h-2z"/>
+    </symbol>
+    <symbol id="gel-icon-rowing" viewBox="0 0 32 32">
+        <path d="M17.5 18.9L16 21h2l1.1-1.4M28 29.9l-3-1-3 1-3-1-3 1-3-1-3 1-3-1-3 1-3-1-1 .4v1l1-.3 3 1 3-1 3 1 3-1 3 1 3-1 3 1 3-1 3 1 3-1 1 .3v-1l-1-.4m-21-1.1l3-1 1 .4-8.4-13.5-.9.4L9.6 22H0"/>
+        <path d="M28 9l-5-4-16 8 .8 1.4L15 12l4-2 6 5v1l-9-3-4 8h2l3-4 9 4h4l2-2v-3M16.2 27.8l2.8-1 3 1 3-1 3 1 3-1 1 .4V22H12.6m6-16.5c.7-.9.9-2.1.2-3.2C18 1 16.3.6 15 1.4 14.2 2 13.7 3 13.8 4l3.7 2 1.1-.5z"/>
+    </symbol>
+    <symbol id="gel-icon-rugby-league" viewBox="0 0 32 32">
+        <path d="M29.7 2.3C28.2.8 26.1 0 23.5 0c-1.1 0-2.3.1-3.5.4-4.2 1-8.6 3.6-12.3 7.3C4 11.4 1.4 15.8.4 20c-1 4.1-.3 7.6 1.8 9.7C3.8 31.2 5.9 32 8.5 32c1.1 0 2.3-.1 3.5-.4 4.2-1 8.6-3.6 12.3-7.3 3.7-3.7 6.3-8 7.3-12.3.9-4.1.3-7.6-1.9-9.7zm.4 9.4c-.9 3.9-3.4 8-6.9 11.5-3.5 3.5-7.6 5.9-11.5 6.9-1.1.3-2.2.4-3.2.4-1.9 0-3.5-.5-4.7-1.4l4.1-8.2-1.1-1.1-4.1 8.1c-1.3-1.8-1.6-4.4-.8-7.6.9-3.9 3.4-8 6.9-11.5 3.5-3.5 7.6-5.9 11.5-6.9 1.1-.3 2.2-.4 3.2-.4 1.7 0 3.2.4 4.4 1.2L20 7l1.1 1.1 8-4.3c1.4 1.8 1.8 4.6 1 7.9z"/>
+        <path d="M15.3 7l-8.2 8.2 5.8 5.8 1.4-1.4-4.1-4.1L17 8.6"/>
+    </symbol>
+    <symbol id="gel-icon-rugby-sevens" viewBox="0 0 32 32">
+        <path d="M29.7 2.3C28.2.8 26.1 0 23.5 0c-1.1 0-2.3.1-3.5.4-4.2 1-8.6 3.6-12.3 7.3C4 11.4 1.4 15.8.4 20c-1 4.1-.3 7.6 1.8 9.7C3.8 31.2 5.9 32 8.5 32c1.1 0 2.3-.1 3.5-.4 4.2-1 8.6-3.6 12.3-7.3 3.7-3.7 6.3-8 7.3-12.3.9-4.1.3-7.6-1.9-9.7zm.4 9.4c-.9 3.9-3.4 8-6.9 11.5s-7.6 5.9-11.5 6.9c-1.1.3-2.2.4-3.2.4-1.9 0-3.5-.5-4.7-1.4l4.1-8.2-1.1-1.1-4.1 8.1c-1.3-1.8-1.6-4.4-.8-7.6.9-3.9 3.4-8 6.9-11.5 3.5-3.5 7.6-5.9 11.5-6.9 1.1-.3 2.2-.4 3.2-.4 1.7 0 3.2.4 4.4 1.2L20 7l1.1 1.1 8-4.3c1.4 1.8 1.8 4.6 1 7.9z"/>
+        <path d="M17.2 14.6c-.8.3-1.6.8-2.3 1.3s-1.4 1.1-2.1 1.7c-.6.6-1.2 1.2-1.6 1.8l-2-1.4c1.1-1.3 2.4-2.4 3.8-3.2 1.4-.9 3-1.5 4.6-1.9l-4.3-3.1 1.2-1.7 6.2 4.5-1.1 1.4c-.8.1-1.6.3-2.4.6z"/>
+    </symbol>
+    <symbol id="gel-icon-rugby-union" viewBox="0 0 32 32">
+        <path d="M29.7 2.3C28.2.8 26.1 0 23.5 0c-1.1 0-2.3.1-3.5.4-4.2 1-8.6 3.6-12.3 7.3C4 11.4 1.4 15.8.4 20c-1 4.1-.3 7.6 1.8 9.7C3.8 31.2 5.9 32 8.5 32c1.1 0 2.3-.1 3.5-.4 4.2-1 8.6-3.6 12.3-7.3 3.7-3.7 6.3-8 7.3-12.3.9-4.1.3-7.6-1.9-9.7zm.4 9.4c-.9 3.9-3.4 8-6.9 11.5-3.5 3.5-7.6 5.9-11.5 6.9-1.1.3-2.2.4-3.2.4-1.9 0-3.5-.5-4.7-1.4l4.1-8.2-1.1-1.1-4.1 8.1c-1.3-1.8-1.6-4.4-.8-7.6.9-3.9 3.4-8 6.9-11.5 3.5-3.5 7.6-5.9 11.5-6.9 1.1-.3 2.2-.4 3.2-.4 1.7 0 3.2.4 4.4 1.2L20 7l1.1 1.1 8-4.3c1.4 1.8 1.8 4.6 1 7.9z"/>
+        <path d="M15.5 16.3c-.7.7-1.2 1.1-1.5 1.3-.3.2-.7.3-1.2.3s-.9-.3-1.4-.8c-.5-.5-.7-.9-.8-1.4-.1-.5 0-.9.3-1.3.2-.3.6-.7 1.3-1.5l4.5-4.5L15 6.7l-4.4 4.4c-.9.9-1.6 1.7-1.9 2.3-.2.4-.4.9-.4 1.4s0 1.1.3 1.7c.2.6.7 1.3 1.5 2.1.7.7 1.3 1.1 1.8 1.3s1.1.3 1.7.3c.5 0 1-.2 1.5-.5s1.3-1 2.2-2l4.4-4.4-1.7-1.6-4.5 4.6z"/>
+    </symbol>
+    <symbol id="gel-icon-sailing" viewBox="0 0 32 32">
+        <path d="M19.5 6v19h8m-9-21l-1-4h-1l-3 5-.9 2h2.9v1h-3.3l-1.7 4h3v1h-3.3l-1.1 4h3.4v1H8.9l-1.4 5h11m-14 5v3h1l.9-2.8 6.1.8h1v3h2l3-3h6l3-3h-22"/>
+    </symbol>
+    <symbol id="gel-icon-shooting" viewBox="0 0 32 32">
+        <path d="M15.4 5.6l.4-.1-.2-.6h-.2" fill="none"/>
+        <path d="M12.3 1.2C11.8.4 10.9 0 9.9 0 8.4.2 7.3 1.4 7.5 2.9c0 .2.1.4.1.6h3.6l1.1-2.3zm3.1 4.4v-.7h.2L21 3.7l10.6-2.2-.2-.5-.2-1-18.8 4-.7.4-1.2.6H4.4L3.1 6.4l3.4 2.8"/>
+        <path d="M15.9 7.1l-.5.9-.7-.4-8.4 3.3L2.7 8l1.7 8-1 7-3 9h2.4l4.1-9 1.2-3.9 2.3 3.9 1.7 9h2.3l-1-9-2-8-1-3 1-2 5.1 1 2.3-5.5-2.4.5"/>
+    </symbol>
+    <symbol id="gel-icon-silver-medal" viewBox="0 0 32 32">
+        <g fill="#AAA">
+            <circle cx="16" cy="21" r="6"/>
+            <path d="M16 0H4l6 6m8-6l-7 7 5 5L28 0"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-six" viewBox="0 0 32 32">
+        <path d="M0 0h32v32H0z" fill="#1C1C1C"/>
+        <path d="M22 12h1v1h-1zm0 8h1v1h-1zm4-8h1v1h-1zm-4 2h1v1h-1zm4 0h1v1h-1zm-4 4h1v1h-1zm4 0h1v1h-1zM20 8h1v1h-1zm8 0h1v1h-1zm-8 16h1v1h-1zm8 0h1v1h-1zm-8-2h1v1h-1zm8 0h1v1h-1zm-8-12h1v1h-1zm8 0h1v1h-1zm-2 10h1v1h-1zm-2-4h1v1h-1zm0-2h1v1h-1zm0 4h1v1h-1zM13 8h1v1h-1zm0 16h1v1h-1zm2-16h1v1h-1zm2 0h1v1h-1zm0 16h1v1h-1zm-2-14h1v1h-1zm0 12h1v1h-1zm0 2h1v1h-1zm0-12h1v1h-1zm0 4h1v1h-1zm0-2h1v1h-1zm0 6h1v1h-1zm0-2h1v1h-1zM4 10h1v1H4zm0 2h1v1H4zm2-4h1v1H6zm0 2h1v1H6zM4 22h1v1H4zm2 0h1v1H6zm0 2h1v1H6zM8 8h1v1H8zm2 2h1v1h-1zm-2 0h1v1H8zm2 8h1v1h-1zm0 4h1v1h-1zm-2 0h1v1H8zm0 2h1v1H8zM4 14h1v1H4zm2 2h1v1H6zm2 0h1v1H8zm2 4h1v1h-1z" fill="#FFE710"/>
+    </symbol>
+    <symbol id="gel-icon-snooker" viewBox="0 0 32 30.4">
+        <circle cx="11" cy="19.4" r="2"/>
+        <circle cx="16" cy="19.4" r="2"/>
+        <circle cx="21" cy="19.4" r="2"/>
+        <circle cx="13.5" cy="14.4" r="2"/>
+        <circle cx="18.5" cy="14.4" r="2"/>
+        <circle cx="13.5" cy="24.4" r="2"/>
+        <circle cx="18.5" cy="24.4" r="2"/>
+        <circle cx="23.4" cy="24.4" r="2"/>
+        <circle cx="8.5" cy="24.4" r="2"/>
+        <circle cx="16" cy="9.4" r="2"/>
+        <path d="M31.3 26.1L18.8 1.9C18.3.8 17.3 0 16 0s-2.3.8-2.8 1.9L.7 26c-.2.4-.3.9-.3 1.3 0 1.7 1.3 3 3 3h25.3c1.7 0 3-1.3 3-3-.1-.4-.2-.8-.4-1.2zM3.4 27.4l12.4-24h.4l12.4 24H3.4z"/>
+    </symbol>
+    <symbol id="gel-icon-sports-data" viewBox="0 0 32 31.9">
+        <path d="M8 15.9c0-3.7 2.6-6.8 6-7.7V0C6.1 1 0 7.7 0 15.9c0 3.7 1.3 7.1 3.4 9.8L9.1 20C8.4 18.7 8 17.3 8 15.9M18 0v8.1c3.4.9 6 4 6 7.7 0 4.4-3.6 8-8 8-1.5 0-2.9-.4-4.1-1.1l-5.7 5.7c2.7 2.1 6.1 3.4 9.8 3.4 8.8 0 16-7.2 16-16C32 7.7 25.9 1 18 0"/>
+    </symbol>
+    <symbol id="gel-icon-sports-personality" viewBox="0 0 32 32">
+        <path d="M23.5 11h8V8h-8V6h7V3h-7V0h-19v14h5.6L4.5 28h-4v4h26v-4h-4l-5.6-14h6.6v-3zm-11-7h3v3h-3V4zm-5 3V4h3v3h-3zm-1 21l5.2-8.2.8 8.2h-6zm14 0h-6l.8-8.2 5.2 8.2zm0-21h-3V4h3v3z"/>
+    </symbol>
+    <symbol id="gel-icon-squash" viewBox="0 0 32 32">
+        <path d="M19.8 16.5h-.5l2.3-2.3 1.3 1.3c.2-.2.5-.4.8-.6l-1.4-1.4 2.3-2.3 2.5 2.5c-.1.1-.2.2-.4.3.7 0 1.3.2 1.9.4l.4-.4c3.6-3.6 4-9 1-12-1.4-1.4-3.2-2-5.1-2C22.5 0 20 1 18 3c-2.5 2.5-4.2 6.5-4 9.8l-2.6 6.5-3.8 3.8-.6-.6-7 6.9L2.6 32l6.9-6.9-.5-.6 4-4 6.4-2.6h.5c.5 0 1-.1 1.5-.1.2-.6.5-1.2.9-1.7-1 .3-1.8.4-2.5.4zm-1.8-.2c-.5-.2-1-.4-1.5-.8-.4-.4-.6-.9-.8-1.4l2.8-2.8 2.3 2.3-2.8 2.7zm3.5-3.5l-2.3-2.3 2.3-2.3 2.3 2.3-2.3 2.3zm-3-3l-2-2c.5-1 1-2 1.7-2.9l2.6 2.6-2.3 2.3zm3.7-2.3l2.3-2.3 2.3 2.3-2.3 2.3-2.3-2.3zm5.7 5.5l-.1.1-2.6-2.6 2.3-2.3 2.2 2.2c-.4.9-1 1.8-1.8 2.6zm2.6-5.3c0 .6-.2 1.2-.4 1.7l-1.9-1.9 2.1-2.1c.2.7.2 1.5.2 2.3zm-.6-3.3l-2.4 2.4-2.3-2.3 2.4-2.4c.5.2 1 .5 1.3.9.4.5.7.9 1 1.4zm-3.4-2.7l-2 2-1.9-1.9c.8-.2 1.5-.4 2.3-.4.6.1 1.1.2 1.6.3zm-4.9.6l2.2 2.2-2.3 2.3-2.6-2.6.1-.1c.8-.8 1.7-1.4 2.6-1.8zm-5.9 8c.1-.5.2-1 .4-1.4l1.7 1.7-2.3 2.3c0-.9 0-1.7.2-2.6zm-1.6 7.6l.9-2.1c.2.2.3.5.6.7.2.2.5.4.7.6l-2.2.8z"/>
+        <path d="M26.5 15C24 15 22 17 22 19.5s2 4.5 4.5 4.5 4.5-2 4.5-4.5-2-4.5-4.5-4.5zM25 19c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.5 1-1 1zm3 0c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.5 1-1 1z"/>
+    </symbol>
+    <symbol id="gel-icon-standings-tables" viewBox="0 0 32 32">
+        <path d="M0 9.5h12l-6-9m0 31l6-9H0m15-20h17v5H15zm0 22h17v5H15zm0-11h17v5H15zm-15 0h12v5H0z"/>
+    </symbol>
+    <symbol id="gel-icon-swimming" viewBox="0 0 32 32">
+        <path d="M1.2 12.7l2.8.9 3-1 3 1 3-1 3 1 3-1 3 1V10l-1-3-7-7h-2L5 7l1 1 7-4 2 3v1m10 4.6l3 1 1.6-.5c.2-.5.4-1 .4-1.6C30 9.6 28.4 8 26.5 8S23 9.6 23 11.5c0 .6.2 1.2.4 1.6l1.6-.5zm6 2.1l-3 1-3-1-3 1-3-1-3 1-3-1-3 1-3-1-3 1-3-1-1 .3v1.1l1-.4 3 1 3-1 3 1 3-1 3 1 3-1 3 1 3-1 3 1 3-1 1 .4V15"/>
+    </symbol>
+    <symbol id="gel-icon-synchronised-swimming" viewBox="0 0 32 32">
+        <path d="M21.3 13.2c0 .6-.2 1.1-.5 1.5l-2.5.7-.5.2-.8-4s.2-.2.4-.3c.4-.3.9-.5 1.5-.5 1.3-.1 2.4 1 2.4 2.4zm-9.9 2.3c0 .6-.2 1.1-.5 1.5l-2.5.7-.5.1-.8-4s.2-.2.4-.3c.3-.3.8-.5 1.4-.5 1.4 0 2.5 1.1 2.5 2.5zM31 26.9l-3 1-3-1-3 1-3-1-3 1-3-1-3 1-3-1-3 1-3-1-1 .4v1l1-.3 3 1 3-1 3 1 3-1 3 1 3-1 3 1 3-1 3 1 3-1 1 .3v-1"/>
+        <path d="M19 17l1 1-5 2-5 2-2 3.3-1-.3-3 1-3-1 2-5v-8l1-8 1 1v7l1 7h6"/>
+        <path d="M21 19l-4 5-1 2-3-1-3 1v-1l1-2m2-6v-6l1-8 1 1v8l1 4m12-2l1 1-7 3-1.6-1.6.6-.2"/>
+    </symbol>
+    <symbol id="gel-icon-table-tennis" viewBox="0 0 32 32">
+        <path d="M27.3 21c.1-.1.2-.2.4-.3C32.9 15.4 33.5 7.6 29 3 24.5-1.5 16.6-.9 11.4 4.3 8.5 7.1 7.1 10.6 7 14v7l-7 7 4 4 7-7h7.1c-.1.3-.1.6-.1 1 0 3.3 2.7 6 6 6s6-2.7 6-6c0-2.1-1.1-3.9-2.7-5zm-16.9 2.5L4 29.9 2.1 28l6.3-6.3V16l3.4 3.4-2.2 2.2.7.7 2.2-2.2 3.4 3.4h-5.5zm13.6 7c-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5 4.5 2 4.5 4.5-2 4.5-4.5 4.5z"/>
+    </symbol>
+    <symbol id="gel-icon-taekwondo" viewBox="0 0 32 32">
+        <path d="M3.7 12l-1.2 3-1 2 1 1 2-2 1.3-1.7-.2-.2M3.7 4.6l.4-.1L6.5 4V.5C6.1.2 5.6 0 5 0 3.8 0 2.8.9 2.6 2c0 .2-.1.3-.1.5 0 .9.5 1.7 1.2 2.1z"/>
+        <path d="M13.5 10l-2-2 5-1 4.1-2H8.5l-4 1-1 2v1.6l3.2 3.5 3.8 1.9-2 5-1 12h2l2-10 4-6 7-7 8-5V2"/>
+    </symbol>
+    <symbol id="gel-icon-tennis" viewBox="0 0 32 32">
+        <path d="M10.7 9.2c-.6 1-1.3 1.8-2.1 2.5l-.1.1c-.6.6-1.1 1.2-1.5 1.9-2.1 3.6-.8 8.2 2.7 10.2 1.7 1 3.8 1.3 5.7.7 1.9-.5 3.6-1.8 4.6-3.5.4-.6.6-1.3.8-2l.1-.3c.2-1.1.6-2.1 1.1-3.1 1.3-2.2 3.3-3.8 5.8-4.4 1.2-.3 2.3-.4 3.5-.3C30 7.4 27.6 4.2 24 2.1 20-.2 15.3-.6 11.2.8c1.1 2.6 1 5.7-.5 8.4z"/>
+        <path d="M28.2 13.2c-1.9.5-3.6 1.8-4.6 3.5-.3.6-.6 1.2-.8 1.9l-.1.6c-.2 1-.6 2-1.1 3-1.3 2.2-3.3 3.8-5.8 4.4-2.5.7-5 .3-7.2-.9-4.5-2.6-6.1-8.4-3.5-13 .5-.9 1.2-1.7 2-2.4l.3-.3c.5-.5 1-1.1 1.4-1.7 1.2-2.1 1.3-4.6.4-6.7C6.4 2.8 3.9 5 2.1 8-2.3 15.6.3 25.4 8 29.9c7.7 4.4 17.4 1.8 21.9-5.9 2-3.4 2.5-7.3 1.9-10.9-1.2-.2-2.4-.2-3.6.1z"/>
+    </symbol>
+    <symbol id="gel-icon-touch-down" viewBox="0 0 32 32">
+        <path d="M19 21h-6l-4 5v6h14v-6" fill="#FFF"/>
+        <path d="M19 21h-6l-4 5v6h14v-6" fill="#FFF"/>
+        <path d="M18 6V.7l-.6-.7L16 3.3l-.6.4-1.1-1.4-.3 1L15.3 6"/>
+        <path d="M14 6V.7l.6-.7L16 3.3l.6.4 1-1.4.4 1L16.7 6M26 7l-1.3 9.7-3.4 3.3H11l-3.3-3.3L6 7H4v12l3 4 2 3 4-5h6l4 5 2-3 3-4V7"/>
+        <path d="M16 8l-4 1.4v4.9c.2 2.1 1.9 3.7 4 3.7s3.8-1.6 4-3.7V9.4L16 8z"/>
+        <path d="M19 10l-3-1-3 1v-.1V12h6v-2" fill="#FFF"/>
+        <path d="M9 26v6h2v-8.5m2-2.5l-1 1.2V32h2V21m2 0h-1v11h2V21m2 0h-1v11h2v-9.8m1 9.8h2v-6l-2-2.5"/>
+    </symbol>
+    <symbol id="gel-icon-transfers" viewBox="0 0 32 32">
+        <path d="M15.5 11l7.5 7.5V14h2v8h-8v-2h4.7L14 12.4v7.7c0 6.1 3.8 10.5 9 12 5.2-1.4 9-5.9 9-12v-9H15.5z"/>
+        <path d="M13.5 9H18V0l-4 2-5-2-5 2-4-2v9c0 6.1 3.8 10.5 9 12 1.1-.3 2.1-.7 3-1.3v-9.4L7.6 6 9 4.6 13.5 9z"/>
+    </symbol>
+    <symbol id="gel-icon-triathlon" viewBox="0 0 32 32">
+        <circle cx="2" cy="2" r="2"/>
+        <circle cx="2" cy="10" r="2"/>
+        <circle cx="7" cy="6" r="2"/>
+        <path d="M26.1 13.3L29 15l3-5-1-1-2 3-2.2-2.7m-12.4 14L7 25l-1 2 10-1 5-4.4-4-1.4"/>
+        <path d="M25.6 7.5L25 7l-4-2-7 2-1 6.4 1.4.1 1.2-5L19 8l1 6-2 5 9 3-1 9 2 1 2-12-6-3m1.5-12h.1l2.1-3.6C27.3.6 26.5 0 25.5 0 24.1 0 23 1.1 23 2.5S24.1 5 25.5 5z"/>
+    </symbol>
+    <symbol id="gel-icon-try" viewBox="0 0 32 32">
+        <path d="M2 14v8h5l8-8m2 1l-7 7h20v-7" fill="#4E7A22"/>
+        <path d="M26.8 13.7c-.5 0-.9-.2-1.2-.6-.4-.5-.5-1.1-.2-1.8.2-.7.7-1.3 1.3-1.9.6-.5 1.4-.9 2.1-1h.6c.5 0 .9.2 1.2.6.4.5.5 1.1.2 1.8-.2.7-.7 1.3-1.3 1.9-.6.5-1.4.9-2.1 1-.2.1-.4.1-.6 0z" fill="#FFF"/>
+        <path d="M30.6 8.7c-.3-.4-.8-.6-1.4-.6h-.7c-.8.1-1.7.5-2.4 1.2-.7.6-1.3 1.4-1.5 2.2-.3.8-.2 1.6.3 2.1.3.4.8.6 1.3.6h.7c.8-.1 1.7-.5 2.4-1.2.7-.6 1.3-1.4 1.5-2.2.3-.9.2-1.6-.2-2.1zm-4.3 4.5c-.2 0-.5-.1-.7-.3-.2-.3-.2-.7-.1-1.2.2-.6.6-1.2 1.2-1.7.7-.5 1.3-.9 2-1h.5c.3 0 .5.1.7.3.2.3.2.7.1 1.2-.2.6-.6 1.2-1.2 1.7s-1.3.8-1.9.9c-.3.1-.5.1-.6.1m1.4-10.7c1.4-.5 2.9.3 3.3 1.7l-3.7 3.2c-.6-.3-1.2-.9-1.4-1.6-.4-1.4.4-2.9 1.8-3.3zM8 2H6.7l2 6.8 3.3-.3"/>
+        <path d="M23.3 8l-6.5 2.3-3.3-.8L7 10 1.3 0H0l5 13 11 2h5.5l-.8-1.6m4.2-.9l1.8-3L25.3 8h-.6L22 13.3l.7 1.7H32v-1.7"/>
+    </symbol>
+    <symbol id="gel-icon-umpire-review" viewBox="0 0 32 32">
+        <path d="M0 28.1h32V32H0z" fill="#4E7A22"/>
+        <path d="M23 32v-7.1l-4.4-3.2 4.4-.3v-1.8L8.9 18.4l-2.3 2.3 2.4 4V32" fill="#FFF"/>
+        <path d="M24 18.9l-6.4-.5c1.4-.7 2.3-2.2 2.4-3.7V12h3v-1.1l-3-.4V9.1l-4-2.3-4 2.3v1.4l-3 .4V12h3v2.8c.1 1.3.8 2.6 2 3.4l-5.1-.4-3.2 2.8L8 24.9V32h1v-7.3l-2.3-4L9 18.5l14 1v1.9l-13.7.8.1.7 4.2-.2-.9.9h.8l-.1.5-.6-.1.5 1 2.8.9 1.8-1.8-1.6-1.6 3.2-.2 3.5 2.6V31h-1.5l-4.2-4.6 1.1-1.2 3.3 1.2.2-.6-3.7-1.4-1.9 2.2 4.8 5.4H24v-7.4l-3.2-2.4L24 22v-3.1z" fill="#0F0F0F"/>
+        <path d="M19.1 9.4L16 7.8l-3.1 1.6v1l3.1-.1 3.1.1v-1" fill="#FFF"/>
+        <path d="M24.7 18.9h3.9l.1 3.3-.6-.6-.3.4.6.4-1.1.4-2.6-1.4"/>
+    </symbol>
+    <symbol id="gel-icon-volleyball" viewBox="0 0 32 32">
+        <path d="M6.5 13L6 7H4.5v10l5.4-2.4-2.2-2.2m4.9-3.5c.7-.2 1.2-.6 1.6-1.2L11.5 4c-1.3.3-2.2 1.7-1.8 3s1.6 2.3 2.9 1.9zM20.5 6c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.4 3 3 3zm0-5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/>
+        <path d="M13.5 26l-10 4.7V32l13-3.4 2-10.6-1-6h5l6-3-1-1.5-5 2.1-6-.6-6 2-1.4.7 2.3 2.2 3.1 3.1-1 3"/>
+        <path d="M6.5 24.5V26l6-1.5v-3"/>
+    </symbol>
+    <symbol id="gel-icon-water-polo" viewBox="0 0 35 32">
+        <path d="M8.5 5C10.4 5 12 6.5 12 8.5c0 .6-.2 1.1-.4 1.6L14 13l5-2 4-.9h4l4 2 3 2.9-1 1-4-3h-2l-1 1v9l-1 1-3-1-3 1 1-3 1-2-3-4-5 1-4-6 1.4-1.3.5.6c0-.3.1-.6.1-.8C11 7.1 9.9 6 8.5 6S6 7.1 6 8.5c0 1.1.8 2.1 1.8 2.4l.7 1.1C6.6 12 5 10.4 5 8.5S6.6 5 8.5 5z"/>
+        <path d="M21.6 8.5l-1.2.3c-.3-.4-.4-.8-.4-1.3C20 6.1 21.1 5 22.5 5h.5l.7 3.4h-2.1zM34 25l-3 1-3-1-3 1-3-1-3 1-3-1-3 1-3-1-3 1-6-2-1 .3v1.1l1-.4 6 2 3-1 3 1 3-1 3 1 3-1 3 1 3-1 3 1 3-1 1 .4v-1.1"/>
+    </symbol>
+    <symbol id="gel-icon-weightlifting" viewBox="0 0 32 32">
+        <path d="M31 4V1l-1-1h-2l-1 1v7l1 1h2l1-1V5h1V4M2 0L1 1v3H0v1h1v3l1 1h2l1-1V1L4 0m10.8 11.8c.3.2.7.2 1 .2.8 0 1.6-.5 2-1.2.6-1.1.1-2.5-1-3-.3-.2-.7-.2-1-.2h-.2L13.9 11c.2.3.5.6.9.8z"/>
+        <path d="M6 5h1l2 5 3 5 1 4-4 6v7h2l1-6 3.4-3 1.8 3.5L21 32h2l-2.3-6.1L19 19v-2l1-2 3-5 2-5h1V4H6v1zm2.6 0h14.8L21 9l-2 3-2 1h-2l-2-1-2-3-2.4-4z"/>
+    </symbol>
+    <symbol id="gel-icon-wicket" viewBox="0 0 32 32">
+        <path d="M10.4 11.5l.6.6-.8.8c.2.2.3.5.6.7l9.9-9.9c-.2-.2-.5-.4-.7-.5l-.9.8-.6-.6.7-.7c-2.7-1.3-6-.8-8.2 1.3-2.2 2.2-2.6 5.5-1.3 8.1l.7-.6zm7.4-7.4l.6.6-1.2 1.2-.6-.6 1.2-1.2zM16 5.9l.6.6-1.2 1.2-.6-.6L16 5.9zm-1.9 1.9l.6.6-1.2 1.2-.6-.6 1.2-1.2zm-1.8 1.8l.6.6-1.2 1.2-.7-.5 1.3-1.3zm9.9-3.8l-.7.7-.6-.6.8-.8c-.2-.2-.3-.5-.5-.7l-9.9 9.9c.2.2.5.4.7.6l.8-.8.6.6-.7.7c2.6 1.3 5.9.9 8.1-1.3 2.3-2.3 2.7-5.6 1.4-8.3zm-8.1 8.1l-.6-.6 1.2-1.2.6.6-1.2 1.2zm1.9-1.8l-.6-.6 1.2-1.2.6.6-1.2 1.2zm1.8-1.9l-.6-.6 1.2-1.2.7.6-1.3 1.2zm1.9-1.8l-.6-.6 1.2-1.2.6.6-1.2 1.2zm9.6 6.5l-.7-1.1-2.1 1.2-.6-1-6.5 3.7.6 1.1-2.1 1.2.6 1.1 2.2-1.3.6 1.1 6.4-3.7-.6-1.1m-13 3.9L12 18.7l.6-1-6.5-3.8-.6 1.1-2.1-1.2-.7 1 2.2 1.3-.6 1.1 6.4 3.7.7-1.1 2.1 1.3m5 5c0-1.4-1.1-2.4-2.5-2.4s-2.5 1-2.5 2.4V26H13v6h6v-6h-.5v.1zM5.5 32h5.1L9 22.7v.3c-.3-2-1.3-2.2-2.5-2.2-1.4 0-2.5 1-2.5 2.4v.2-.4c0 1 0 .4.1.5L5.5 32zM28 23c0-1.5-1.1-2.3-2.5-2.3-1.2 0-2.2.3-2.5 2.3v-.2L21.4 32h5.1l1.4-8.2v-.5l.1-.3z"/>
+    </symbol>
+    <symbol id="gel-icon-winter-sports" viewBox="0 0 32 32">
+        <path d="M25.5 4.4c-1.4 0-2.5 1.1-2.5 2.5 0 1.2.9 2.2 2 2.5l3-2.9c-.2-1.2-1.2-2.1-2.5-2.1zM4 4.6l-.4 1.1 1 .3 1-3.1-1-.3-.3 1L2 2.9v1l2 .7"/>
+        <path d="M23.9 10.4l.4 1.2 2.3.8H23l-2-6-3-2-6.7 1.7-4.9-1.7-.3.9 13.2 4.5 2.8 5.5 7-2v-1.2l-5.2-1.7z"/>
+        <path d="M30.6 27.7c0 .1-.1.1-.1.1h-.2l-16.4-5.6 5.5-7.9-1.4-2.6-1.7-1.3L9.2 8l-.2.4v3l3 2 3 1-3.1 7.2L0 17.5v1.6l28.6 9.8 1.2.4c.2.1.3.1.5.1.3 0 .6-.1.8-.2.4-.2.7-.6.9-1l-1.4-.5z"/>
+    </symbol>
+    <symbol id="gel-icon-world-record" viewBox="0 0 32 31.9">
+        <path d="M0 0h32v31.9H0z" fill="#1C1C1C"/>
+        <path d="M2 8h1v1H2zm2 0h1v1H4zm-2 2h1v1H2zm2 0h1v1H4zm-2 2h1v1H2zm2 0h1v1H4zm-2 2h1v1H2zm2 0h1v1H4zm-2 2h1v1H2zm2 0h1v1H4zm-2 2h1v1H2zm2 0h1v1H4zm-2 2h1v1H2zm2 0h1v1H4zm0 2h1v1H4zm2-2h1v1H6zm2 0h1v1H8zm2 0h1v1h-1zm-2-2h1v1H8zm2 0h1v1h-1zm-2-2h1v1H8zm2 0h1v1h-1zm-4 6h1v1H6zM16 8h1v1h-1zm-2 0h1v1h-1zm2 2h1v1h-1zm-2 0h1v1h-1zm2 2h1v1h-1zm-2 0h1v1h-1zm2 2h1v1h-1zm-2 0h1v1h-1zm2 2h1v1h-1zm-2 0h1v1h-1zm2 2h1v1h-1zm-2 0h1v1h-1zm2 2h1v1h-1zm-2 0h1v1h-1zm0 2h1v1h-1zm-2-2h1v1h-1zm0 2h1v1h-1zM19 8h1v1h-1zm0 2h1v1h-1zm0 2h1v1h-1zm0 2h1v1h-1zm0 2h1v1h-1zm0 2h1v1h-1zm0 2h1v1h-1zm0 2h1v1h-1zM21 8h1v1h-1zm0 2h1v1h-1zm0 2h1v1h-1zm0 2h1v1h-1zm0 2h1v1h-1zm0 2h1v1h-1zm0 2h1v1h-1zm0 2h1v1h-1zM23 8h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm0 2h1v1h-1zm2-8h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm0 2h1v1h-1zM27 10h1v1h-1zm0 2h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm0 2h1v1h-1zm0 2h1v1h-1zm2-12h1v1h-1zm0 2h1v1h-1zm0 2h1v1h-1zm0 4h1v1h-1zm0 2h1v1h-1zm0 2h1v1h-1z" fill="#FFE710"/>
+    </symbol>
+    <symbol id="gel-icon-wrestling" viewBox="0 0 32 32">
+        <path d="M15.5 5c.2-1 .7-2 1.5-2.6V.5c-.4-.3-.9-.5-1.5-.5C14.1 0 13 1.1 13 2.5S14.1 5 15.5 5zm-2.9 11.3l-3.5-2.7L7 15l-1 7-6 10h3l6.3-8.3m1.3.8l-.8 1.1L9 32h2l3-8-.8-5.3m5.5-11.5l.3-.4 3-1v-.3C22 4.1 20.9 3 19.5 3S17 4.1 17 5.5l1.7 1.7zM30 24l1.5-6.1-4 5.6-.8 1.8L30 32h2"/>
+        <path d="M31 14l-4-6-4-1-3 1-3 5-1.9.4 2.8-4.8-2.4-2.5V6H12l-4.5 4.5 6.4 4.9L18 15l3-3 3 1 1 2-3 7-2 10h2l4-9 5-7"/>
+    </symbol>
+    <symbol id="gel-icon-yellow-flag" viewBox="0 0 32 32">
+        <path d="M0 3h1v27H0z"/>
+        <path d="M1 3h16v22H1z" fill="#FFD324"/>
+        <path d="M15 0h17v21H15z" fill="#FFD324"/>
+        <path d="M18 24l-1 1V3h1" fill="#FFF"/>
+        <path d="M18 3l-3-3v3" fill="#1C1C1C"/>
+    </symbol>
+
+    <!-- Travel -->
+    <symbol id="gel-icon-a-roads" viewBox="0 0 32 32">
+        <path d="M18.7 32H32L20 0h-3.4l.5 6h-2.2l.5-6h-3.3L0 32h13.3l.6-9h4.2l.6 9zm-4.6-14l.7-8h2.5l.7 8h-3.9z"/>
+    </symbol>
+    <symbol id="gel-icon-accident-or-general-incident" viewBox="0 0 32 32">
+        <path d="M16 2L0 30h32L16 2zm2 25h-4v-4h4v4zm-4-6V11h4v10h-4z"/>
+    </symbol>
+    <symbol id="gel-icon-bicycle" viewBox="0 0 32 32">
+        <path d="M23.3 7.5H27v-2h-5.3l1.2 4H12.2L11.8 8l2.2-.5v-1H9v2l1.8-.4.5 1.6-3.1 5.2c-.7-.3-1.4-.4-2.2-.4-3.3 0-6 2.7-6 6s2.7 6 6 6c2.6 0 4.8-1.7 5.7-4H9.4c-.7 1.2-2 2-3.4 2-2.2 0-4-1.8-4-4s1.8-4 4-4c.4 0 .8.1 1.1.2L5 20.2v1.3h10.1l8.5-9.4.8 2.6c-2.5.7-4.4 3-4.4 5.8 0 3.3 2.7 6 6 6s6-2.7 6-6c0-3.2-2.5-5.7-5.6-6l.6 2.1c1.7.5 3 2 3 3.8 0 2.2-1.8 4-4 4s-4-1.8-4-4c0-1.1.4-2.1 1.2-2.8.5-.5 1.1-.8 1.8-1l1.4 4.8h1L23.3 7.5zm-10 4h8.1l-6.1 6.7-2-6.7zm-7.3 9l2-3.4c1.2.7 2 2 2 3.4H6zm6 0c0-2.2-1.2-4.1-2.9-5.1l2.2-3.7 2.4 7.9.3 1h-2z"/>
+    </symbol>
+    <symbol id="gel-icon-bus" viewBox="0 0 32 32">
+        <path d="M29 7.5v-6H3v6H0v5h2v-3l1-1v20h1v2h4v-2h16v2h4v-2h1v-20l1 1v3h2v-5h-3zm-20 19l-4-1v-1h4v2zm3-8H5v-13h22v17h-8l-7-4zm11 6h4v1l-4 1v-2z"/>
+    </symbol>
+    <symbol id="gel-icon-car" viewBox="0 0 32 32">
+        <path d="M30 12L27 2H5L2 12H0v18h4v-3h24v3h4V12h-2zM6.5 4h19l1.9 7h-23l2.1-7zM3 19v-4l6 2v2H3zm24 6H5l-1-1h24l-1 1zm2.1-6H23v-2l6.1-2v4z"/>
+    </symbol>
+    <symbol id="gel-icon-commercial-flight" viewBox="0 0 32 32">
+        <path d="M12.2 23.4l5.5-5.6L26.4 32l1-1-4.6-18.2 5.9-6 2.6-4.2.7-2.3-.3-.3-2.3.7-4.2 2.6-6 5.9L1 4.6l-1 1 14.2 8.7-5.6 5.5-1.4-.3-5-.9-1.3 1.3 3.9 2 1.2.6h-.1l-1.6 4.8.4.4 4.8-1.6V26l.6 1.2 2 3.9 1.3-1.3-.9-5"/>
+    </symbol>
+    <symbol id="gel-icon-congestion-traffic" viewBox="0 0 32 32">
+        <path d="M30 8l-3-8H11L8 8H6v2h16.4l.5 1.3L25 17h3v3h4V8h-2zM10.4 7l1.9-5h13.5l1.9 5H10.4zM30 13h-5v-1.5l5-1.5v3z"/>
+        <path d="M26 20h-2l-3-8H5l-3 8H0v12h4v-3h18v3h4V20zM7 25H2v-3l5 1.5V25zm-2.6-6l1.9-5h13.5l1.9 5H4.4zM24 25h-5v-1.5l5-1.5v3z"/>
+    </symbol>
+    <symbol id="gel-icon-disruption" viewBox="0 0 32 32">
+        <path d="M32 1H0v18h6L3 31h4l3-12h11l4 12h4l-4-12h7V1zM2 3h5l-5 7.8V3zm3 14l9-14h7l-9 14H5zm25-4.7L27 17h-8l9-14h2v9.3z"/>
+    </symbol>
+    <symbol id="gel-icon-ferry" viewBox="0 0 32 32">
+        <path d="M6 10h20l-2-4h4l-2-3h-7V0h-6v3H6L4 6h4m5 15l-3-1v2h3m6.3-7h-6.6l-.9 3h8.4"/>
+        <path d="M7 27.8l3 1 3-1 3 1 3-1 3 1 3-1 2.4.8L32 12H0l4.6 16.6 2.4-.8zM9 24v-5h1.5l.6-1.8 1-3.2h8l.9 3.2.5 1.6.1.2H23v7h-2v-2H11v2H9v-2z"/>
+        <path d="M19 22h3v-2l-3 1m12 8.9l-3 1-3-1-3 1-3-1-3 1-3-1-3 1-3-1-3 1-3-1-1 .4v1l1-.3 3 1 3-1 3 1 3-1 3 1 3-1 3 1 3-1 3 1 3-1 1 .3v-1"/>
+    </symbol>
+    <symbol id="gel-icon-fuel-and-petrol" viewBox="0 0 32 32">
+        <path d="M21 11V0H5v29H2v3h22v-3h-3V13m-2 3H7V4h12v12z"/>
+        <path d="M26 27.4l-3-3V14h-2v-2h4v11.6l1 1 1-1V8.4l-3.7-3.7 1.4-1.4L29 7.6v16.8"/>
+    </symbol>
+    <symbol id="gel-icon-motorcycle" viewBox="0 0 32 32">
+        <path d="M5.5 19C7.4 19 9 20.6 9 22.5S7.4 26 5.5 26 2 24.4 2 22.5 3.6 19 5.5 19m0-2c-3 0-5.5 2.5-5.5 5.5S2.5 28 5.5 28s5.5-2.5 5.5-5.5S8.5 17 5.5 17m21 2c1.9 0 3.5 1.6 3.5 3.5S28.4 26 26.5 26 23 24.4 23 22.5s1.6-3.5 3.5-3.5m0-2c-3 0-5.5 2.5-5.5 5.5s2.5 5.5 5.5 5.5 5.5-2.5 5.5-5.5-2.5-5.5-5.5-5.5"/>
+        <path clip-rule="evenodd" d="M5 22v2h10l8.4-8.4 2.7 7.8 1.6-.5L25 14l3-2v-2h-2l-1-3h-6v2h4v2l-7 1-3 3-2-2H3v2l10 3" fill-rule="evenodd"/>
+    </symbol>
+    <symbol id="gel-icon-road-works" viewBox="0 0 32 32">
+        <path d="M24 27L18 0h-4L8 27l-8 3v2h32v-2l-8-3zm-12.9-5l2.7-12h4.4l2.7 12h-9.8z"/>
+    </symbol>
+    <symbol id="gel-icon-traffic-cameras" viewBox="0 0 32 32">
+        <path d="M9 32h4.9V20.2L9 17.3M5.7 0L0 9.9l22.2 12.8 1.9-3.3 6.5-1.7 1.4-2.5"/>
+    </symbol>
+    <symbol id="gel-icon-train" viewBox="0 0 32 32">
+        <path d="M23 0c-4.5 0-7.1 3.1-9 5L4 15h4l-3 3H1l-1 1 8 8h5v-4h19V0h-9zm-3 13h-7v-3l5-5h2v8zm6 0h-4V5h4v8z"/>
+        <path d="M15 27.6c0 2.4 2.1 4.4 4.5 4.4 2 0 3.6-1.3 4.2-3h4.1c.6 1.7 2.2 3 4.2 3v-7H15v2.6z"/>
+    </symbol>
+    <symbol id="gel-icon-tram-and-metro" viewBox="0 0 32 32">
+        <path d="M16 7l2-5h-4l2 5M7 25l4 1v-2H7m0-14h2v9H7zm16 0h2v9h-2zm-2 16l4-1v-1h-4" fill="none"/>
+        <path d="M25 7h-7l2-5h1l1 1h3l-3-3H10L7 3h3l1-1h1l2 5H7L5 9v18l2 2v1h2v2h2v-2h10v2h2v-2h2v-1l2-2V9l-2-2zm-7-5l-2 5-2-5h4zM7 10h2v9H7v-9zm4 16l-4-1v-1h4v2zm0-16h10v12H11V10zm14 15l-4 1v-2h4v1zm0-6h-2v-9h2v9z"/>
+    </symbol>
+    <symbol id="gel-icon-tube-a" viewBox="0 0 32 32">
+        <path d="M18 4.2c-.6-.1-1.3-.2-2-.2s-1.4.1-2 .2V6h4V4.2zM7 10v6h3l2-2V7H9m5 0h4v7h-4z"/>
+        <circle cx="8.5" cy="19.5" r="1.5"/>
+        <path d="M16 0C7.2 0 0 7.2 0 16s7.2 16 16 16 16-7.2 16-16S24.8 0 16 0zm9 23v3h-2v-3H9v3H7v-3H4V11l1-2.1s3.9-5.8 10.9-5.8c7.1 0 10.9 5.8 10.9 5.8L28 11v12h-3z"/>
+        <circle cx="23.5" cy="19.5" r="1.5"/>
+        <path d="M25 16v-6l-2-3h-3v7l2 2"/>
+    </symbol>
+    <symbol id="gel-icon-tube-b" viewBox="0 0 32 32">
+        <path clip-rule="evenodd" d="M32 13h-3.4C27.3 7.3 22.1 3 16 3S4.7 7.3 3.4 13H0v6h3.4C4.7 24.7 9.9 29 16 29s11.3-4.3 12.6-10H32v-6zM16 8c3.3 0 6.2 2.1 7.4 5H8.6c1.2-2.9 4.1-5 7.4-5zm0 16c-3.3 0-6.2-2.1-7.4-5h14.8c-1.2 2.9-4.1 5-7.4 5z" fill-rule="evenodd"/>
+    </symbol>
+    <symbol id="gel-icon-walking" viewBox="0 0 32 32">
+        <path d="M12.2 24l-4.8 7.2 1.7.8 6.1-7v-1.7l-3-3.1m8-6.2l3.6 3 .8-1-3.4-4-1.3-2.3-.6 3.1"/>
+        <path d="M17.2 16l1.6-8.5-.6-.5-4-1-5 3-1.4 6.8 1.4.2 1.4-5.2 1.6-.8 1 4-1 4 5.5 5.7 2.5 8.3h2l-2-10M19.1 4.9c.1 0 .1 0 0 0V.4c-.8-.5-1.8-.5-2.7 0-1.3.7-1.7 2.3-1 3.6.9 1.2 2.5 1.7 3.7.9z"/>
+    </symbol>
+
+    <!-- Weather -->
+     <symbol id="gel-icon-clear-sky-night" viewBox="0 0 32 32">
+        <path d="M14.4 10.4c0-1.6.5-3.1 1.5-4.3-3.5.4-6.2 3.4-6.2 7.1 0 3.9 3.2 7.1 7.1 7.1 2.3 0 4.4-1.1 5.7-2.8-.3 0-.6.1-.9.1-4.1-.1-7.2-3.3-7.2-7.2z" fill="#969696"/>
+    </symbol>
+    <symbol id="gel-icon-drizzle" viewBox="0 0 32 32">
+        <g fill="#68A5D8">
+            <circle cx="10.8" cy="20" r=".6"/>
+            <circle cx="13.4" cy="20" r=".6"/>
+            <circle cx="16" cy="20" r=".6"/>
+            <circle cx="18.6" cy="20" r=".6"/>
+            <circle cx="21.2" cy="20" r=".6"/>
+            <circle cx="10.8" cy="22.6" r=".6"/>
+            <circle cx="13.4" cy="22.6" r=".6"/>
+            <circle cx="16" cy="22.6" r=".6"/>
+            <circle cx="18.6" cy="22.6" r=".6"/>
+            <circle cx="21.2" cy="22.6" r=".6"/>
+            <circle cx="13.4" cy="25.2" r=".6"/>
+            <circle cx="16" cy="25.2" r=".6"/>
+            <circle cx="18.6" cy="25.2" r=".6"/>
+        </g>
+        <path d="M23.1 8.2h-.6c-.8-2.9-3.4-5-6.5-5s-5.7 2.1-6.5 5h-.6C6.2 8.2 4 10.4 4 13.1S6.2 18 8.9 18h14.2c2.7 0 4.9-2.2 4.9-4.9s-2.2-4.9-4.9-4.9zm0 7.5H8.9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.3 1.3l2-1.2c-.4-.6-.9-1.1-1.5-1.6.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6 0 1.4-1.2 2.6-2.6 2.6z"/>
+    </symbol>
+    <symbol id="gel-icon-flood" viewBox="0 0 32 32">
+        <path d="M15.9 0L0 26.9h32L15.9 0zm-5.8 15.2L16 9.3l2.5 2.5v-1.7h1.7v3.4l1.7 1.7v2.5l-.8-.8V21l-3.4-1.1v-3h-3.4v3l-3.4 1.2v-4.2l-.8.8v-2.5zm-4.2 5.9l4.2 1.7 5.9-1.7 5.9 1.8 4.2-1.8 1.7 3.4H4.2l1.7-3.4z"/>
+    </symbol>
+    <symbol id="gel-icon-fob-b" viewBox="0 0 62 32">
+        <path d="M28.9 11.3c-2.7 0-3.7 2.4-3.7 4.7 0 2.4 1 4.7 3.7 4.7s3.7-2.4 3.7-4.7c0-2.4-1-4.7-3.7-4.7"/>
+        <path d="M0 32h62V0H0v32zm20.2-20.7h-7.6v3.3h6.6v3.2h-6.6V24H8.4V8h11.8v3.3zm8.7 13c-5 0-7.9-3.7-7.9-8.3 0-4.6 2.8-8.3 7.9-8.3s7.9 3.7 7.9 8.3c0 4.6-2.9 8.3-7.9 8.3m24.7-.3h-2.7l-.2-1.7c-1.1 1.5-3 2.1-4.5 2.1-4.8 0-8-3.7-8-8.3 0-4.6 3.1-8.3 8-8.3 3.3 0 6.9 1.8 7.2 5.8h-4.2c-.1-1.4-1.5-2.2-3.2-2.2-2.7 0-3.7 2.4-3.7 4.7 0 2.4 1 4.7 3.7 4.7 2.1 0 3.4-1 3.7-2.4h-2.9v-3.1h6.7V24z"/>
+    </symbol>
+    <symbol id="gel-icon-fog-a" viewBox="0 0 32 32">
+        <path d="M4.3 9.6h5.9v1.5H6.1V13h3.5v1.4H6.1V18H4.3V9.6zM15 9.4c2.6 0 4.1 1.9 4.1 4.4 0 2.4-1.5 4.4-4.1 4.4-2.6 0-4.1-1.9-4.1-4.4-.1-2.5 1.5-4.4 4.1-4.4zm0 7.2c1.7 0 2.3-1.4 2.3-2.8 0-1.5-.6-2.9-2.3-2.9-1.7 0-2.3 1.4-2.3 2.9 0 1.4.6 2.8 2.3 2.8zm11.3.4c-.6.8-1.5 1.2-2.3 1.2-2.6 0-4.1-1.9-4.1-4.4 0-2.5 1.5-4.4 4.1-4.4 1.7 0 3.3 1.1 3.5 3h-1.8c-.1-1-.8-1.4-1.7-1.4-1.7 0-2.3 1.4-2.3 2.9 0 1.4.6 2.8 2.3 2.8 1.2 0 1.9-.6 2-1.8h-1.9v-1.4h3.5V18h-1.2l-.1-1z"/>
+    </symbol>
+    <symbol id="gel-icon-grey-cloud" viewBox="0 0 32 32">
+        <path d="M23 8.3h-.6c-.8-2.9-3.4-5-6.4-5s-5.7 2.1-6.4 5H9c-2.7 0-4.9 2.2-4.9 4.9s2.2 4.9 4.9 4.9h14c2.7 0 4.9-2.2 4.9-4.9S25.7 8.3 23 8.3zm0 7.5H9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.2-1.5-1.6.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6-.1 1.4-1.2 2.6-2.7 2.6z"/>
+    </symbol>
+    <symbol id="gel-icon-hail" viewBox="0 0 32 32">
+        <path d="M23 8.2h-.6c-.8-2.9-3.4-5-6.4-5-3.1 0-5.7 2.1-6.4 5H9c-2.7 0-4.9 2.2-4.9 4.9S6.3 18 9 18h3v-2.3H9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.2-1.5-1.6.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6 0 1.4-1.2 2.6-2.6 2.6H20V18h3c2.7 0 4.9-2.2 4.9-4.9S25.7 8.2 23 8.2z"/>
+        <g fill="#A8A8A8">
+            <path d="M14.4 16.1l3.1 3.1m-2.1.6l1.2-4.3m1.5 1.6l-4.2 1.1"/>
+            <circle cx="16" cy="17.7" r="2.2"/>
+            <path d="M9.1 20.4l3.1 3.1m-2.1.6l1.1-4.3m1.6 1.6l-4.3 1.1"/>
+            <circle cx="10.6" cy="22" r="2.2"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-hail-shower" viewBox="0 0 32 32">
+        <path d="M20.1 4.8h-2.3V0h2.3v4.8m0 21.5h-2.3v-4.9h2.3v4.9m7.1-12V12H32v2.3h-4.8m-2.7 10.8l-2.4-4.2 2-1.2 2.4 4.2-2 1.2M26.7 10l-1.2-2 4.2-2.4 1.1 2-4.1 2.4m3 10.7l-4.2-2.4 1.2-2 4.1 2.4-1.1 2M24.1 6.5l-2-1.1 2.4-4.2 2 1.1-2.4 4.2" fill="#FCC342"/>
+        <path d="M19 8.2h-.6c-.8-2.9-3.4-5-6.4-5-3.1 0-5.7 2.1-6.4 5H5c-2.8 0-5 2.2-5 4.9S2.2 18 4.9 18H8v-2.3H4.9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.1-1.4-1.5.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6 0 1.4-1.2 2.6-2.6 2.6H16v2.3h3c2.7 0 4.9-2.2 4.9-4.9 0-2.8-2.2-5-4.9-5z"/>
+        <g fill="#A8A8A8">
+            <path d="M10.4 16.1l3.1 3.1m-2.2.6l1.2-4.3m1.5 1.6l-4.2 1.1"/>
+            <circle cx="11.9" cy="17.7" r="2.2"/>
+            <path d="M5 20.4l3.1 3.1m-2.1.6l1.1-4.3m1.6 1.6l-4.3 1.1"/>
+            <circle cx="6.6" cy="22" r="2.2"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-hail-shower-night" viewBox="0 0 32 32">
+        <path d="M19 8.2h-.6c-.8-2.9-3.4-5-6.4-5-3.1 0-5.7 2.1-6.4 5H5c-2.8 0-5 2.2-5 4.9S2.2 18 4.9 18H8v-2.3H4.9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.1-1.4-1.5.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6 0 1.4-1.2 2.6-2.6 2.6H16v2.3h3c2.7 0 4.9-2.2 4.9-4.9s-2.2-5-4.9-5z"/>
+        <path d="M31.1 11.4c-3.9 0-7.1-3.2-7.1-7.1 0-1.6.5-3.1 1.5-4.3-3.5.4-6.2 3.4-6.2 7 3.2.2 5.7 2.8 5.7 6 0 .3 0 .6-.1.9.5.1.9.1 1.4.1 2.3 0 4.3-1.1 5.6-2.8-.2.2-.5.2-.8.2z" fill="#969696"/>
+        <g fill="#A8A8A8">
+            <path d="M10.3 16l3.1 3.1m-2.1.6l1.1-4.3M14 17l-4.3 1.1"/>
+            <circle cx="11.8" cy="17.6" r="2.2"/>
+            <path d="M4.9 20.3L8 23.4m-2.1.6L7 19.7m1.6 1.6l-4.3 1.1"/>
+            <circle cx="6.5" cy="21.9" r="2.2"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-hazy" viewBox="0 0 32 32">
+        <path d="M0 9.6h1.8v3.2h3.4V9.6H7V18H5.2v-3.6H1.8V18H0V9.6zm10.9 0h1.9L16 18h-2l-.6-1.9h-3.1L9.6 18H7.7l3.2-8.4zm-.1 5.1H13l-1.1-3.1-1.1 3.1zm5.8 1.8l4.5-5.4H17V9.6h6.6v1.5L19 16.4h4.6V18h-7.1v-1.5zM27 14.7l-3-5.1h2l2 3.3 1.9-3.3H32l-3.1 5.2V18H27v-3.3z"/>
+    </symbol>
+    <symbol id="gel-icon-heavy-rain" viewBox="0 0 32 32">
+        <path d="M23 8.2h-.6c-.8-2.9-3.4-5-6.4-5-3.1 0-5.7 2.1-6.4 5H9c-2.7 0-4.9 2.2-4.9 4.9S6.3 18 9 18h3v-2.3H9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.2-1.5-1.6.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6 0 1.4-1.2 2.6-2.6 2.6H20V18h3c2.7 0 4.9-2.2 4.9-4.9S25.7 8.2 23 8.2z"/>
+        <path d="M11.6 24.1l.4-4.7-4 2.3c-.7.4-1.2 1.2-1.2 2.1 0 1.3 1.1 2.4 2.4 2.4 1.3.1 2.3-.9 2.4-2.1zm6.6-5.7l.4-4.7-4 2.3c-.7.4-1.2 1.2-1.2 2.1 0 1.3 1.1 2.4 2.4 2.4 1.2.1 2.2-.9 2.4-2.1z" fill="#68A5D8"/>
+    </symbol>
+    <symbol id="gel-icon-heavy-rain-shower" viewBox="0 0 32 32">
+        <path d="M20.1 4.8h-2.3V0h2.3v4.8m0 21.5h-2.3v-4.9h2.3v4.9m7.1-12V12H32v2.3h-4.8m-2.7 10.8l-2.4-4.2 2-1.2 2.4 4.2-2 1.2M26.7 10l-1.2-2 4.2-2.4 1.1 2-4.1 2.4m3 10.7l-4.2-2.4 1.2-2 4.1 2.4-1.1 2M24.1 6.5l-2-1.1 2.4-4.2 2 1.1-2.4 4.2" fill="#FCC342"/>
+        <path d="M19 8.2h-.6c-.8-2.9-3.4-5-6.4-5s-5.7 2.1-6.4 5H5c-2.8 0-5 2.2-5 4.9S2.2 18 4.9 18H8v-2.3H4.9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.1-1.4-1.5.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6 0 1.4-1.2 2.6-2.6 2.6H16v2.3h3c2.7 0 4.9-2.2 4.9-4.9 0-2.8-2.2-5-4.9-5z"/>
+        <path d="M7.6 24.1l.4-4.6-4 2.3c-.7.4-1.2 1.2-1.2 2.1 0 1.3 1.1 2.4 2.4 2.4 1.2 0 2.2-1 2.4-2.2zm6.5-5.7l.4-4.7-4 2.3c-.7.4-1.2 1.2-1.2 2.1 0 1.3 1.1 2.4 2.4 2.4 1.3.1 2.3-.9 2.4-2.1z" fill="#68A5D8"/>
+    </symbol>
+    <symbol id="gel-icon-heavy-rain-shower-night" viewBox="0 0 32 32">
+        <path d="M19 8.2h-.6c-.8-2.9-3.4-5-6.4-5-3.1 0-5.7 2.1-6.4 5H5c-2.8 0-5 2.2-5 4.9S2.2 18 4.9 18H8v-2.3H4.9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.1-1.4-1.5.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6 0 1.4-1.2 2.6-2.6 2.6H16v2.3h3c2.7 0 4.9-2.2 4.9-4.9s-2.2-5-4.9-5z"/>
+        <path d="M7.6 24.1l.4-4.6-4 2.3c-.7.4-1.2 1.2-1.2 2.1 0 1.3 1.1 2.4 2.4 2.4 1.2 0 2.2-.9 2.4-2.2zm6.5-5.7l.4-4.7-4 2.3c-.7.4-1.2 1.2-1.2 2.1 0 1.3 1.1 2.4 2.4 2.4 1.3.1 2.3-.8 2.4-2.1z" fill="#68A5D8"/>
+        <path d="M31.1 11.4c-3.9 0-7.1-3.2-7.1-7.1 0-1.6.5-3.1 1.5-4.3-3.5.4-6.2 3.4-6.2 7 3.2.2 5.7 2.8 5.7 6 0 .3 0 .6-.1.9.5.1.9.1 1.4.1 2.3 0 4.3-1.1 5.6-2.8-.2.2-.5.2-.8.2z" fill="#969696"/>
+    </symbol>
+    <symbol id="gel-icon-heavy-snow" viewBox="0 0 32 32">
+        <path d="M23 8.2h-.6c-.8-2.9-3.4-5-6.4-5-3.1 0-5.7 2.1-6.4 5H9c-2.7 0-4.9 2.2-4.9 4.9S6.3 18 9 18h3v-2.3H9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.2-1.5-1.6.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6 0 1.4-1.2 2.6-2.6 2.6H20V18h3c2.7 0 4.9-2.2 4.9-4.9S25.7 8.2 23 8.2z"/>
+        <g fill="#A8A8A8">
+            <path d="M17.4 20.1l-3.5-3.5.7-.7 3.5 3.5-.7.7"/>
+            <path d="M15.8 20.5l-.9-.3 1.3-4.7.9.3-1.3 4.7"/>
+            <path d="M13.8 19.1l-.3-.9 4.7-1.3.3.9-4.7 1.3"/>
+        </g>
+        <g fill="#A8A8A8">
+            <path d="M12.1 24.2l-3.4-3.5.7-.7 3.4 3.5-.7.7"/>
+            <path d="M10.6 24.6l-1-.3 1.3-4.7 1 .3-1.3 4.7"/>
+            <path d="M8.5 23.2l-.2-.9L13 21l.2.9-4.7 1.3"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-heavy-snow-shower" viewBox="0 0 32 32">
+        <path d="M20.1 4.8h-2.3V0h2.3v4.8m0 21.5h-2.3v-4.9h2.3v4.9m7.1-12V12H32v2.3h-4.8m-2.7 10.8l-2.4-4.2 2-1.2 2.4 4.2-2 1.2M26.7 10l-1.2-2 4.2-2.4 1.1 2-4.1 2.4m3 10.7l-4.2-2.4 1.2-2 4.1 2.4-1.1 2M24.1 6.5l-2-1.1 2.4-4.2 2 1.1-2.4 4.2" fill="#FCC342"/>
+        <path d="M19 8.2h-.6c-.8-2.9-3.4-5-6.4-5-3.1 0-5.7 2.1-6.4 5H5c-2.8 0-5 2.2-5 4.9S2.2 18 4.9 18H8v-2.3H4.9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.1-1.4-1.5.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6 0 1.4-1.2 2.6-2.6 2.6H16v2.3h3c2.7 0 4.9-2.2 4.9-4.9 0-2.8-2.2-5-4.9-5z"/>
+        <g fill="#A8A8A8">
+            <path d="M13.3 20.1l-3.5-3.5.7-.7 3.5 3.5-.7.7"/>
+            <path d="M11.8 20.5l-1-.3 1.3-4.7.9.3-1.2 4.7"/>
+            <path d="M9.7 19.1l-.3-.9 4.8-1.3.2.9-4.7 1.3"/>
+        </g>
+        <g fill="#A8A8A8">
+            <path d="M8.1 24.2l-3.5-3.5.7-.7 3.5 3.5-.7.7"/>
+            <path d="M6.5 24.6l-.9-.3 1.2-4.7 1 .3-1.3 4.7"/>
+            <path d="M4.4 23.2l-.2-.9L8.9 21l.3.9-4.8 1.3"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-heavy-snow-shower-night" viewBox="0 0 32 32">
+        <path d="M19 8.3h-.6c-.8-2.9-3.4-5-6.4-5-3.1 0-5.7 2.1-6.4 5H5c-2.8 0-5 2.2-5 4.9s2.2 4.9 4.9 4.9H8v-2.3H4.9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.2-1.5-1.6.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6 0 1.4-1.2 2.6-2.6 2.6h-3.1v2.3H19c2.7 0 4.9-2.2 4.9-4.9S21.7 8.3 19 8.3z"/>
+        <path d="M31.1 11.5c-3.9 0-7.1-3.2-7.1-7.1 0-1.6.5-3.1 1.5-4.3-3.5.4-6.2 3.4-6.2 7 3.2.2 5.7 2.8 5.7 6 0 .3 0 .6-.1.9.5.1.9.1 1.4.1 2.3 0 4.3-1.1 5.6-2.8-.2.2-.5.2-.8.2z" fill="#969696"/>
+        <g fill="#A8A8A8">
+            <path d="M13.3 20.1l-3.5-3.4.7-.7 3.5 3.4-.7.7"/>
+            <path d="M11.8 20.5l-1-.2 1.3-4.8.9.3-1.2 4.7"/>
+            <path d="M9.7 19.1l-.3-.9 4.8-1.3.2 1-4.7 1.2"/>
+        </g>
+        <g fill="#A8A8A8">
+            <path d="M8.1 24.2l-3.5-3.4.7-.7 3.4 3.4-.6.7"/>
+            <path d="M6.5 24.6l-.9-.2 1.2-4.8 1 .3-1.3 4.7"/>
+            <path d="M4.4 23.2l-.2-.9L8.9 21l.3 1-4.8 1.2"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-ice" viewBox="0 0 32 32">
+        <path d="M20.9 17.1l2.3.3.4-2.5.9-5.9-.9-.1-.3-1.5-.9-4L22 2l-1.4-.2L11.9.5 10.5.3l-.6 1.3-2 3.6-.8 1.4-.9-.2-.9 5.9-.3 2.5 2.3.3.3-2.3 13.7 2-.4 2.3zM9.6 6.1l2-3.6 8.7 1.3.9 4L9.6 6.1zm6.6 18.4L4 18.4l1.6-1.5-.9-.2-1.6-.2L.7 19l11.8 5.9-8.7 6.7H7m24.3-4.2l-12.2-6 2.2-2.2-.6-.1-1.9-.3-3 3.1 11.8 5.9-5 3.8h3.3"/>
+    </symbol>
+    <symbol id="gel-icon-light-rain" viewBox="0 0 32 32">
+        <path d="M23 8.2h-.6c-.8-2.9-3.4-5-6.4-5-3.1 0-5.7 2.1-6.4 5H9c-2.7 0-4.9 2.2-4.9 4.9S6.3 18 9 18h3v-2.3H9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.2-1.5-1.6.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6 0 1.4-1.2 2.6-2.6 2.6H20V18h3c2.7 0 4.9-2.2 4.9-4.9S25.7 8.2 23 8.2z"/>
+        <path d="M18.2 18.4l.4-4.7-4 2.3c-.7.4-1.2 1.2-1.2 2.1 0 1.3 1.1 2.4 2.4 2.4 1.2.1 2.2-.9 2.4-2.1z" fill="#68A5D8"/>
+    </symbol>
+    <symbol id="gel-icon-light-rain-shower" viewBox="0 0 32 32">
+        <path d="M20.1 4.8h-2.3V0h2.3v4.8m0 21.5h-2.3v-4.9h2.3v4.9m7.1-12V12H32v2.3h-4.8m-2.7 10.8l-2.4-4.2 2-1.2 2.4 4.2-2 1.2M26.7 10l-1.2-2 4.2-2.4 1.1 2-4.1 2.4m3 10.7l-4.2-2.4 1.2-2 4.1 2.4-1.1 2M24.1 6.5l-2-1.1 2.4-4.2 2 1.1-2.4 4.2" fill="#FCC342"/>
+        <path d="M19 8.2h-.6c-.8-2.9-3.4-5-6.4-5s-5.7 2.1-6.4 5H5c-2.8 0-5 2.2-5 4.9S2.2 18 4.9 18H8v-2.3H4.9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.1-1.4-1.5.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6 0 1.4-1.2 2.6-2.6 2.6H16v2.3h3c2.7 0 4.9-2.2 4.9-4.9 0-2.8-2.2-5-4.9-5z"/>
+        <path d="M14.1 18.4l.4-4.7-4 2.3c-.7.4-1.2 1.2-1.2 2.1 0 1.3 1.1 2.4 2.4 2.4 1.3.1 2.3-.9 2.4-2.1z" fill="#68A5D8"/>
+    </symbol>
+    <symbol id="gel-icon-light-rain-shower-night" viewBox="0 0 32 32">
+        <path d="M19 8.2h-.6c-.8-2.9-3.4-5-6.4-5-3.1 0-5.7 2.1-6.4 5H5c-2.8 0-5 2.2-5 4.9S2.2 18 4.9 18H8v-2.3H4.9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.1-1.4-1.5.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6 0 1.4-1.2 2.6-2.6 2.6H16v2.3h3c2.7 0 4.9-2.2 4.9-4.9s-2.2-5-4.9-5z"/>
+        <path d="M14.1 18.4l.4-4.7-4 2.3c-.7.4-1.2 1.2-1.2 2.1 0 1.3 1.1 2.4 2.4 2.4 1.3.1 2.3-.8 2.4-2.1z" fill="#68A5D8"/>
+        <path d="M31.1 11.4c-3.9 0-7.1-3.2-7.1-7.1 0-1.6.5-3.1 1.5-4.3-3.5.4-6.2 3.4-6.2 7 3.2.2 5.7 2.8 5.7 6 0 .3 0 .6-.1.9.5.1.9.1 1.4.1 2.3 0 4.3-1.1 5.6-2.8-.2.2-.5.2-.8.2z" fill="#969696"/>
+    </symbol>
+    <symbol id="gel-icon-light-snow" viewBox="0 0 32 32">
+        <path d="M23 8.2h-.6c-.8-2.9-3.4-5-6.4-5-3.1 0-5.7 2.1-6.4 5H9c-2.7 0-4.9 2.2-4.9 4.9S6.3 18 9 18h3v-2.3H9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.2-1.5-1.6.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6 0 1.4-1.2 2.6-2.6 2.6H20V18h3c2.7 0 4.9-2.2 4.9-4.9S25.7 8.2 23 8.2z"/>
+        <g fill="#A8A8A8">
+            <path d="M17.4 20.1l-3.5-3.5.7-.7 3.5 3.5-.7.7"/>
+            <path d="M15.8 20.5l-.9-.3 1.3-4.7.9.3-1.3 4.7"/>
+            <path d="M13.8 19.1l-.3-.9 4.7-1.3.3.9-4.7 1.3"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-light-snow-shower" viewBox="0 0 32 32">
+        <path d="M20.1 4.8h-2.3V0h2.3v4.8m0 21.5h-2.3v-4.9h2.3v4.9m7.1-12V12H32v2.3h-4.8m-2.7 10.8l-2.4-4.2 2-1.2 2.4 4.2-2 1.2M26.7 10l-1.2-2 4.2-2.4 1.1 2-4.1 2.4m3 10.7l-4.2-2.4 1.2-2 4.1 2.4-1.1 2M24.1 6.5l-2-1.1 2.4-4.2 2 1.1-2.4 4.2" fill="#FCC342"/>
+        <path d="M19 8.2h-.6c-.8-2.9-3.4-5-6.4-5-3.1 0-5.7 2.1-6.4 5H5c-2.8 0-5 2.2-5 4.9S2.2 18 4.9 18H8v-2.3H4.9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.1-1.4-1.5.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6 0 1.4-1.2 2.6-2.6 2.6H16v2.3h3c2.7 0 4.9-2.2 4.9-4.9 0-2.8-2.2-5-4.9-5z"/>
+        <g fill="#A8A8A8">
+            <path d="M13.3 20.1l-3.5-3.5.7-.7 3.5 3.5-.7.7"/>
+            <path d="M11.8 20.5l-1-.3 1.3-4.7.9.3-1.2 4.7"/>
+            <path d="M9.7 19.1l-.3-.9 4.8-1.3.2.9-4.7 1.3"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-light-snow-shower-night" viewBox="0 0 32 32">
+        <path d="M31 11.3c-3.9 0-7.1-3.2-7.1-7 0-1.6.5-3.1 1.5-4.3-3.5.4-6.2 3.4-6.2 6.9 3.2.2 5.7 2.8 5.7 6 0 .3 0 .6-.1.9.5.1.9.1 1.4.1 2.3 0 4.3-1.1 5.6-2.8-.2.2-.5.2-.8.2z" fill="#969696"/>
+        <path d="M18.9 8.2h-.6c-.8-2.9-3.3-5-6.4-5-3.1 0-5.7 2.1-6.4 5h-.6C2.2 8.2 0 10.4 0 13.1S2.2 18 4.9 18H8v-2.3H4.9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.1-1.5-1.5.4-2 2.2-3.5 4.3-3.5 2.4 0 4.3 2 4.3 4.4 0 .9-.3 1.8-.8 2.5H18c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6 0 1.4-1.2 2.6-2.6 2.6h-3.1V18h3.1c2.7 0 4.9-2.2 4.9-4.9s-2.2-4.9-4.9-4.9z"/>
+        <g fill="#A8A8A8">
+            <path d="M13.2 20l-3.4-3.4.7-.7 3.4 3.5-.7.6"/>
+            <path d="M11.7 20.5l-1-.3 1.3-4.7 1 .2-1.3 4.8"/>
+            <path d="M9.6 19.1l-.2-1 4.7-1.2.2.9-4.7 1.3"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-mist" viewBox="0 0 32 32">
+        <path d="M2.3 9.7h2.6l2 5.8 1.9-5.8h2.6v8.4H9.7v-5.9l-2.1 5.9H6.2l-2.1-5.9v5.9H2.3V9.7zm10.4 0h1.8v8.4h-1.8V9.7zm4.7 5.6c0 1.1.9 1.6 1.9 1.6.6 0 1.6-.2 1.6-1 0-.9-1.3-1.1-2.5-1.4-1.2-.3-2.5-.8-2.5-2.4 0-1.7 1.6-2.5 3.1-2.5 1.8 0 3.4.8 3.4 2.7h-1.8c-.1-1-.8-1.3-1.7-1.3-.6 0-1.3.2-1.3 1 0 .6.4.7 2.5 1.3.6.2 2.5.5 2.5 2.4 0 1.5-1.2 2.7-3.5 2.7-1.9 0-3.6-.9-3.6-3h1.9zm8.1-4H23V9.7h6.9v1.6h-2.5v6.8h-1.8v-6.8z"/>
+    </symbol>
+    <symbol id="gel-icon-partly-cloudly-night" viewBox="0 0 32 32">
+        <path d="M18.9 8.2h-.6c-.8-2.9-3.3-5-6.4-5-3.1 0-5.7 2.1-6.4 5h-.6C2.2 8.2 0 10.4 0 13.1S2.2 18 4.9 18h14c2.7 0 4.9-2.2 4.9-4.9s-2.2-4.9-4.9-4.9zm0 7.5h-14c-1.4 0-2.6-1.2-2.6-2.6s1.2-2.6 2.6-2.6c.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.1-1.5-1.5.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6s-1.2 2.5-2.7 2.5z" fill="#CECECE"/>
+        <path d="M31 11.3c-3.9 0-7.1-3.2-7.1-7.1 0-1.6.5-3.1 1.5-4.3-3.5.4-6.2 3.4-6.2 7 3.2.2 5.7 2.8 5.7 6 0 .3 0 .6-.1.9.5.1.9.1 1.4.1 2.3 0 4.3-1.1 5.6-2.8-.2.2-.5.2-.8.2z" fill="#969696"/>
+    </symbol>
+    <symbol id="gel-icon-rain" viewBox="0 0 32 32">
+        <path d="M3 8.5c0 3 2.5 5.5 5.5 5.5 2.4 0 4.5-1.6 5.2-3.8L16 1 7 3.2C4.7 3.9 3 6 3 8.5zm19-.3c-2.3.7-4 2.8-4 5.3 0 3 2.5 5.5 5.5 5.5 2.4 0 4.5-1.6 5.2-3.8L31 6l-9 2.2zM1 25.5c0 3 2.5 5.5 5.5 5.5 2.4 0 4.5-1.6 5.2-3.8L14 18l-9 2.2c-2.3.7-4 2.8-4 5.3z"/>
+    </symbol>
+    <symbol id="gel-icon-sandstorm" viewBox="0 0 32 32">
+        <path d="M1.4 7.9c0 .8.7 1.1 1.4 1.1.5 0 1.3-.1 1.3-.8 0-.7-1-.8-1.9-1.1-1-.2-2-.6-2-1.8C.2 4 1.5 3.4 2.6 3.4c1.4 0 2.6.6 2.6 2H3.9c0-.8-.6-1-1.3-1-.5 0-1 .2-1 .7 0 .5.3.6 2 1 .4.2 1.9.5 1.9 2 0 1.2-.9 2-2.7 2-1.5 0-2.8-.7-2.8-2.2h1.4zm6.7-4.3h1.5L12 10h-1.5L10 8.6H7.6L7.1 10H5.6l2.5-6.4zM8 7.5h1.7l-.9-2.3L8 7.5zm4.5-3.9H14l2.7 4.3V3.6H18V10h-1.4l-2.7-4.3V10h-1.3V3.6zm6.8 0h2.8c1.7 0 3 1 3 3.1 0 1.8-1 3.2-3 3.2h-2.8V3.6zm1.4 5.2H22c.8 0 1.6-.5 1.6-1.9 0-1.3-.5-2.1-1.9-2.1h-1v4zM1.4 15.9c0 .8.7 1.2 1.4 1.2.5 0 1.3-.1 1.3-.8 0-.7-1-.8-1.9-1.1-1-.2-2-.6-2-1.8 0-1.3 1.3-1.9 2.4-1.9 1.4 0 2.6.6 2.6 2H3.9c0-.8-.6-1-1.3-1-.5 0-1 .2-1 .7 0 .5.3.6 2 1 .5.1 1.9.4 1.9 1.9 0 1.2-.9 2-2.7 2-1.4 0-2.8-.7-2.8-2.3h1.4zm6.2-3.1h-2v-1.2H11v1.2H9V18H7.6v-5.2zm7-1.3c2 0 3.2 1.5 3.2 3.4 0 1.8-1.2 3.3-3.2 3.3s-3.2-1.5-3.2-3.3c0-2 1.2-3.4 3.2-3.4zm0 5.5c1.3 0 1.8-1.1 1.8-2.1 0-1.1-.5-2.2-1.8-2.2s-1.8 1.1-1.8 2.2c0 1 .5 2.1 1.8 2.1zm4-5.4h3.5c1.2 0 1.9.8 1.9 1.8 0 .7-.3 1.3-1 1.6.7.2.9.8 1 1.5 0 .4 0 1.1.3 1.5h-1.4c-.2-.4-.2-1-.2-1.5-.1-.7-.4-1-1.1-1H20V18h-1.4v-6.4zm1.4 2.9h1.6c.6 0 1-.3 1-.9 0-.6-.3-.9-1-.9H20v1.8zm5-2.9h2l1.5 4.4 1.4-4.4h2V18h-1.3v-4.5L29 18h-1.1l-1.6-4.5V18H25v-6.4z"/>
+    </symbol>
+    <symbol id="gel-icon-sleet" viewBox="0 0 32 32">
+        <path d="M23 8.2h-.6c-.8-2.9-3.4-5-6.4-5-3.1 0-5.7 2.1-6.4 5H9c-2.7 0-4.9 2.2-4.9 4.9S6.3 18 9 18h3v-2.3H9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.2-1.5-1.6.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6 0 1.4-1.2 2.6-2.6 2.6H20V18h3c2.7 0 4.9-2.2 4.9-4.9S25.7 8.2 23 8.2z"/>
+        <path d="M11.6 24.1l.4-4.7-4 2.3c-.7.4-1.2 1.2-1.2 2.1 0 1.3 1.1 2.4 2.4 2.4 1.3.1 2.3-.9 2.4-2.1z" fill="#68A5D8"/>
+        <g fill="#A8A8A8">
+            <path d="M17.4 20.1l-3.5-3.5.7-.7 3.5 3.5-.7.7"/>
+            <path d="M15.8 20.5l-.9-.3 1.3-4.7.9.3-1.3 4.7"/>
+            <path d="M13.8 19.1l-.3-.9 4.7-1.3.3.9-4.7 1.3"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-sleet-shower" viewBox="0 0 32 32">
+        <path d="M20.1 4.8h-2.3V0h2.3v4.8m0 21.5h-2.3v-4.9h2.3v4.9m7.1-12V12H32v2.3h-4.8m-2.7 10.8l-2.4-4.2 2-1.2 2.4 4.2-2 1.2M26.7 10l-1.2-2 4.2-2.4 1.1 2-4.1 2.4m3 10.7l-4.2-2.4 1.2-2 4.1 2.4-1.1 2M24.1 6.5l-2-1.1 2.4-4.2 2 1.1-2.4 4.2" fill="#FCC342"/>
+        <path d="M19 8.2h-.6c-.8-2.9-3.4-5-6.4-5-3.1 0-5.7 2.1-6.4 5H5c-2.8 0-5 2.2-5 4.9S2.2 18 4.9 18H8v-2.3H4.9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.1-1.4-1.5.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6 0 1.4-1.2 2.6-2.6 2.6H16v2.3h3c2.7 0 4.9-2.2 4.9-4.9 0-2.8-2.2-5-4.9-5z"/>
+        <path d="M7.6 24.1l.4-4.6-4 2.3c-.7.4-1.2 1.2-1.2 2.1 0 1.3 1.1 2.4 2.4 2.4 1.2 0 2.2-1 2.4-2.2z" fill="#68A5D8"/>
+        <g fill="#A8A8A8">
+            <path d="M13.3 20.1l-3.5-3.5.7-.7 3.5 3.5-.7.7"/>
+            <path d="M11.8 20.5l-1-.3 1.3-4.7.9.3-1.2 4.7"/>
+            <path d="M9.7 19.1l-.3-.9 4.8-1.3.2.9-4.7 1.3"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-sleet-shower-night" viewBox="0 0 32 32">
+        <path d="M31 11.3c-3.9 0-7.1-3.2-7.1-7 0-1.6.5-3.1 1.5-4.3-3.5.4-6.2 3.4-6.2 6.9 3.2.2 5.7 2.8 5.7 6 0 .3 0 .6-.1.9.5.1.9.1 1.4.1 2.3 0 4.3-1.1 5.6-2.8-.2.2-.5.2-.8.2z" fill="#969696"/>
+        <path d="M7.5 23.8s0-.1 0 0l.4-4.6-4 2.3c-.7.4-1.2 1.2-1.2 2.1 0 1.3 1.1 2.4 2.4 2.4 1.3-.1 2.3-1 2.4-2.2z" fill="#68A5D8"/>
+        <path d="M18.9 8.2h-.6c-.8-2.9-3.3-5-6.4-5-3.1 0-5.7 2.1-6.4 5h-.6C2.2 8.2 0 10.4 0 13.1S2.2 18 4.9 18H8v-2.3H4.9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.1-1.5-1.5.4-2 2.2-3.5 4.3-3.5 2.4 0 4.3 2 4.3 4.4 0 .9-.3 1.8-.8 2.5H18c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6 0 1.4-1.2 2.6-2.6 2.6h-3.1V18h3.1c2.7 0 4.9-2.2 4.9-4.9s-2.2-4.9-4.9-4.9z"/>
+        <g fill="#A8A8A8">
+            <path d="M13.2 20l-3.4-3.4.7-.7 3.4 3.4-.7.7"/>
+            <path d="M11.7 20.5l-1-.3 1.3-4.7 1 .2-1.3 4.8"/>
+            <path d="M9.6 19.1l-.2-1 4.7-1.2.2.9-4.7 1.3"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-snow" viewBox="0 0 32 32">
+        <path d="M30 19.1l-.5-1.9-6.4 1.7L18 16l5.1-2.9 6.4 1.7.5-1.9-4.5-1.2 4.9-2.8-1-1.8-4.9 2.8 1.2-4.5-1.9-.5-1.7 6.4-5.1 3V8.4l4.7-4.7-1.4-1.4L17 5.6V0h-2v5.6l-3.3-3.3-1.4 1.4L15 8.4v5.9l-5.1-3-1.7-6.4-1.9.5 1.2 4.5-4.9-2.8-1 1.8 4.9 2.8L2 12.9l.5 1.9 6.4-1.7L14 16l-5.1 2.9-6.4-1.7-.5 1.9 4.5 1.2-4.9 2.8 1 1.8 4.9-2.8-1.2 4.5 1.9.5 1.7-6.4 5.1-3v5.9l-4.7 4.7 1.4 1.4 3.3-3.3V32h2v-5.6l3.3 3.3 1.4-1.4-4.7-4.7v-5.9l5.1 3 1.7 6.4 1.9-.5-1.2-4.5 4.9 2.8 1-1.8-4.9-2.8"/>
+    </symbol>
+    <symbol id="gel-icon-sunny" viewBox="0 0 32 32">
+        <g fill="#F7C843">
+            <circle cx="16" cy="13.1" r="7.1"/>
+            <path d="M17.2 4.8h-2.4V0h2.4v4.8m-6.4 1.7L8.4 2.3l2-1.1 2.5 4.2-2.1 1.1m10.8 18.6l-2.5-4.2 2.1-1.2 2.4 4.2-2 1.2m5.2-4.4l-4.2-2.4 1.2-2 4.1 2.4-1.1 2M7.7 14.3H2.9V12h4.8v2.3m21.4 0h-4.8V12h4.8v2.3M5.2 20.7l-1.1-2 4.1-2.4 1.2 2-4.2 2.4M23.8 10l-1.2-2 4.2-2.4 1.1 2-4.1 2.4m-2.6-3.5l-2.1-1.1 2.5-4.2 2 1.1-2.4 4.2M10.4 25.1l-2-1.2 2.4-4.2 2.1 1.2-2.5 4.2m6.8 1.1h-2.4v-4.8h2.4v4.8M8.2 10L4.1 7.6l1.1-2L9.4 8l-1.2 2"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-sunny-intervals" viewBox="0 0 32 32">
+        <path d="M20.1 4.8h-2.3V0h2.3v4.8m0 21.5h-2.3v-4.9h2.3v4.9m7.1-12V12H32v2.3h-4.8m-2.7 10.8l-2.4-4.2 2-1.2 2.4 4.2-2 1.2M26.7 10l-1.2-2 4.2-2.4 1.1 2-4.1 2.4m3 10.7l-4.2-2.4 1.2-2 4.1 2.4-1.1 2M24.1 6.5l-2-1.1 2.4-4.2 2 1.1-2.4 4.2" fill="#FCC342"/>
+        <path d="M19 8.2h-.6c-.8-2.9-3.4-5-6.4-5s-5.7 2.1-6.4 5H5c-2.8 0-5 2.2-5 4.9S2.2 18 4.9 18h14c2.7 0 4.9-2.2 4.9-4.9.1-2.7-2.1-4.9-4.8-4.9zm0 7.5H5c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.5-.6-1-1.1-1.5-1.5.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6-.1 1.4-1.3 2.5-2.7 2.5z" fill="#CECECE"/>
+    </symbol>
+    <symbol id="gel-icon-thunder-storm" viewBox="0 0 32 32">
+        <path d="M23 8.2h-.6c-.8-2.9-3.4-5-6.4-5s-5.7 2.1-6.4 5H9c-2.7 0-4.9 2.2-4.9 4.9S6.3 18 9 18h3v-2.3H9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.2-1.5-1.6.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6 0 1.4-1.2 2.6-2.6 2.6H20V18h3c2.7 0 4.9-2.2 4.9-4.9S25.7 8.2 23 8.2z"/>
+        <path d="M15.4 14.8L12 21.4h3.9l-2.8 7.2.2.2 6.3-9.4h-3.7l2.9-4.6" fill="#F7DF4D"/>
+    </symbol>
+    <symbol id="gel-icon-thundery-shower" viewBox="0 0 32 32">
+        <path d="M20.1 4.8h-2.3V0h2.3v4.8m0 21.5h-2.3v-4.9h2.3v4.9m7.1-12V12H32v2.3h-4.8m-2.7 10.8l-2.4-4.2 2-1.2 2.4 4.2-2 1.2M26.7 10l-1.2-2 4.2-2.4 1.1 2-4.1 2.4m3 10.7l-4.2-2.4 1.2-2 4.1 2.4-1.1 2M24.1 6.5l-2-1.1 2.4-4.2 2 1.1-2.4 4.2" fill="#FCC342"/>
+        <path d="M19 8.2h-.6c-.8-2.9-3.4-5-6.4-5s-5.7 2.1-6.4 5H5c-2.8 0-5 2.2-5 4.9S2.2 18 4.9 18H8v-2.3H4.9c-1.4 0-2.6-1.2-2.6-2.6 0-1.4 1.2-2.6 2.6-2.6.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.1-1.4-1.5.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6 0 1.4-1.2 2.6-2.6 2.6H16v2.3h3c2.7 0 4.9-2.2 4.9-4.9 0-2.8-2.2-5-4.9-5z"/>
+        <path d="M11.3 14.8L8 21.4h3.8L9 28.6l.3.2 6.2-9.4h-3.7l2.9-4.6" fill="#F7DF4D"/>
+    </symbol>
+    <symbol id="gel-icon-thundery-shower-night" viewBox="0 0 32 32">
+        <path d="M11.3 14.8L8 21.4h3.8L9 28.6l.3.2 6.2-9.4h-3.7l2.9-4.6" fill="#F7DF4D"/>
+        <path d="M31.1 11.4c-3.9 0-7.1-3.2-7.1-7.1 0-1.6.5-3.1 1.5-4.3-3.5.4-6.1 3.4-6.2 7 3.2.2 5.7 2.8 5.7 6 0 .3 0 .6-.1.9.5.1.9.1 1.4.1 2.3 0 4.3-1.1 5.6-2.8-.2.2-.5.2-.8.2z" fill="#969696"/>
+        <path d="M19 8.2h-.6c-.8-2.9-3.4-5-6.4-5s-5.7 2.1-6.4 5H5c-2.8 0-5 2.2-5 5 0 2.7 2.2 4.9 4.9 4.9H8v-2.3H4.9c-1.4 0-2.6-1.2-2.6-2.6s1.2-2.6 2.6-2.6c.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.7-.9-1.2-1.4-1.6.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6s-1.2 2.6-2.6 2.6H16v2.3h3c2.7 0 4.9-2.2 4.9-4.9-.1-2.8-2.2-5-4.9-5z"/>
+    </symbol>
+    <symbol id="gel-icon-tropical-storm" viewBox="0 0 32 32">
+        <path d="M11.3 14.7s-.6-.8-1.2-2.2c-.3-.7-.5-1.7-.5-2.8 0-.6.1-1.1.2-1.7.1-.6.3-1.2.6-1.8s.6-1.2 1-1.7.9-1.1 1.4-1.5c.5-.5 1.1-.9 1.7-1.2.6-.3 1.2-.6 1.7-.8 1.2-.4 2.2-.6 2.9-.8.9-.2 1.3-.2 1.3-.2s-1.4.2-3.3.9c-1 .3-1.9.9-2.7 1.6-.8.7-1.5 1.5-2 2.3-.5.8-.7 1.7-.8 2.4s-.1 1.3 0 1.7c.2.9.5 1.3.5 1.3s.2-1 .9-2.4c.3-.7.9-1.5 1.8-2.2.8-.7 1.9-1.3 3.2-1.6.6-.2 1.3-.3 2-.3s1.4 0 2.1.1 1.4.3 2 .5c.6.2 1.2.5 1.7.8 1.1.6 1.9 1.2 2.5 1.7.4.5.7.8.7.8s-1.1-1-2.9-1.9c-.9-.5-1.9-.8-3-1-1.1-.2-2.1-.2-3 .1-.9.2-1.7.5-2.3.9-.6.4-1 .8-1.3 1.2-.5.6-.6 1.1-.6 1.1s.8-.5 2.3-.9c.8-.2 1.7-.2 2.8-.1 1.1.2 2.2.6 3.3 1.3.5.4 1.1.8 1.5 1.3.5.5.9 1 1.3 1.6.4.6.7 1.2.9 1.8.2.6.4 1.2.5 1.8.2 1.2.3 2.2.3 3V19s0-1.4-.4-3.4c-.2-1-.6-2-1.2-2.9-.5-.9-1.2-1.7-2-2.2-.8-.6-1.5-.9-2.2-1.1-.7-.2-1.2-.3-1.7-.2-.9.1-1.3.3-1.3.3s.9.3 2.1 1.2c.6.4 1.3 1.2 1.8 2.1s.9 2.1 1 3.4c.1.6.1 1.3 0 2s-.2 1.3-.4 2c-.2.6-.5 1.3-.8 1.8-.3.6-.7 1.1-1.1 1.5-.8.9-1.5 1.6-2.1 2.1s-.9.7-.9.7 1.1-.9 2.4-2.4c.6-.8 1.1-1.7 1.5-2.6.3-1 .5-2 .5-2.9 0-.9-.2-1.7-.5-2.3-.2-.6-.5-1.1-.8-1.4-.6-.6-1-.8-1-.8s.3.9.3 2.4c0 .8-.2 1.7-.6 2.7-.4 1-1.1 2-2.1 2.9-.5.4-1 .8-1.6 1.2-.6.3-1.2.6-1.9.8s-1.3.4-1.9.5c-.6.1-1.3.1-1.9.1-1.2-.1-2.2-.3-2.9-.4-.7-.2-1.1-.3-1.1-.3s1.4.3 3.3.4c1 0 2-.1 3-.4 1-.3 1.9-.8 2.6-1.3.7-.6 1.2-1.2 1.6-1.7.4-.6.6-1.1.6-1.5.1-.8 0-1.3 0-1.3s-.6.8-1.8 1.7c-.6.5-1.5.9-2.6 1.1-1.1.2-2.3.3-3.6 0-.6-.1-1.3-.3-1.9-.6-.6-.3-1.2-.6-1.8-1-.4-.5-.9-.9-1.4-1.4-.5-.5-.9-1-1.2-1.5-.7-1-1.1-2-1.4-2.6-.3-.7-.4-1.1-.4-1.1s.5 1.3 1.6 3c.5.8 1.3 1.6 2.1 2.2.8.6 1.7 1.1 2.6 1.3.9.2 1.7.3 2.4.3s1.2-.2 1.6-.4c.8-.4 1.1-.7 1.1-.7s-1 0-2.5-.4c-.8-.2-1.6-.7-2.5-1.4-.4-.4-.8-.8-1.2-1.3-.4-.5-.7-1-1-1.6-.2-.6-.5-1.3-.6-1.9-.2-.7-.3-1.4-.3-2.1 0-.7 0-1.4.1-2 .1-.7.3-1.3.5-1.9.4-1.2.9-2.1 1.3-2.8.4-.7.6-1 .6-1S8 3.2 7.4 5.1c-.4.9-.5 2-.5 3 0 1.1.2 2.1.6 3 .4.9.8 1.6 1.3 2.1s.9.9 1.3 1.1c.7.4 1.2.4 1.2.4z"/>
+    </symbol>
+    <symbol id="gel-icon-white-cloud" viewBox="0 0 32 32">
+        <path d="M23 8.2h-.6c-.8-2.9-3.3-5-6.4-5-3.1 0-5.7 2.1-6.4 5H9c-2.7 0-4.9 2.2-4.9 4.9S6.3 18 9 18h14c2.7 0 4.9-2.2 4.9-4.9S25.7 8.2 23 8.2zm0 7.5H9c-1.4 0-2.6-1.2-2.6-2.6s1.2-2.6 2.6-2.6c.9 0 1.8.5 2.2 1.3l2-1.2c-.4-.6-.9-1.2-1.5-1.6.4-2 2.2-3.5 4.3-3.5 2.4 0 4.4 2 4.4 4.4 0 .9-.3 1.8-.8 2.5h2.6c.2-.6.4-1.3.5-1.9h.4c1.4 0 2.6 1.2 2.6 2.6s-1.2 2.6-2.7 2.6z" fill="#CECECE"/>
+    </symbol>
+    <symbol id="gel-icon-wind" viewBox="0 0 32 32">
+        <path d="M0 5h2v27H0zm11-5L3 5.5 5.7 15 30 18.5l2-5.5L11 0zm1.8 3.5l5.5 3.4-2.7 7.5-6.4-.9 3.6-10zm9.9 6.1l4.8 3-1.2 3.4-5.7-.8 2.1-5.6z"/>
+    </symbol>
+    <symbol id="gel-icon-wind-gust-info-a" viewBox="0 0 32 32">
+        <path d="M32 10H22v3h4.7l-8.3 9.4C16.7 24 14.5 25 12 25c-5 0-9-4-9-9s4-9 9-9c1.6 0 3.2.4 4.5 1.2L18 5.6c-1.8-1-3.8-1.6-6-1.6C5.4 4 0 9.4 0 16s5.4 12 12 12c3.3 0 6.2-1.3 8.4-3.4l.1-.1 8.5-9.6V20h3V10z"/>
+    </symbol>
+    <symbol id="gel-icon-wind-gust-info-b" viewBox="0 0 32 32">
+        <path d="M18.5 5c-3.2 0-6.1 1.1-8.4 3l-5-5H11V0H0v11h3V5.1l5 5c-1.8 2.3-3 5.2-3 8.4C5 25.9 11.1 32 18.5 32S32 25.9 32 18.5 25.9 5 18.5 5m0 24C12.7 29 8 24.3 8 18.5S12.7 8 18.5 8 29 12.7 29 18.5 24.3 29 18.5 29"/>
+    </symbol>
+
+    <!-- Children -->
+    <symbol id="gel-icon-15-mins" viewBox="0 0 32 32">
+        <path d="M15.4 6c-7.2 0-13 5.8-13 13s5.8 13 13 13 13-5.8 13-13-5.8-13-13-13zm0 22.5c-5.2 0-9.5-4.3-9.5-9.5s4.3-9.5 9.5-9.5 9.5 4.3 9.5 9.5-4.3 9.5-9.5 9.5zm9.978-23.62l4.242 4.24-2.828 2.828-4.243-4.242zM15.4 6c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm0-5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/>
+        <path d="M8.6 16.2v1.4h2.3v5.9h1.8v-9.1h-1.5c-.1 1.4-1.3 1.8-2.6 1.8zm9.5 1.1c-.7 0-1.3.2-1.8.7l.4-2.1h3.8v-1.5h-5.1l-.9 5h1.7c.4-.5.7-.7 1.4-.7 1 0 1.6.8 1.6 1.7 0 .9-.6 1.8-1.6 1.8-.8 0-1.4-.6-1.5-1.4h-1.8c0 1.9 1.6 2.9 3.4 2.9 1.8 0 3.4-1.4 3.4-3.3-.2-1.7-1.2-3.1-3-3.1z"/>
+    </symbol>
+    <symbol id="gel-icon-30-mins" viewBox="0 0 32 32">
+        <path d="M15.4 6c-7.2 0-13 5.8-13 13s5.8 13 13 13 13-5.8 13-13-5.8-13-13-13zm0 22.5c-5.2 0-9.5-4.3-9.5-9.5s4.3-9.5 9.5-9.5 9.5 4.3 9.5 9.5-4.3 9.5-9.5 9.5zm9.978-23.62l4.243 4.243-2.827 2.828-4.243-4.24zM18.4 3c0-1.7-1.3-3-3-3s-3 1.3-3 3 1.3 3 3 3 3-1.3 3-3zm-3 2c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+        <path d="M13.4 18.6c.8-.3 1.3-1 1.3-1.9 0-1.6-1.6-2.5-3.1-2.5-1.9 0-3.1 1.3-3.1 3.1h1.8c0-.9.5-1.6 1.4-1.6.7 0 1.3.4 1.3 1.2 0 1-1.1 1.2-1.9 1.1v1.3c.9 0 2.1 0 2.1 1.4 0 .9-.7 1.4-1.5 1.4-1.1 0-1.6-.8-1.6-1.8H8.3c0 2.1 1.3 3.3 3.4 3.3 1.8 0 3.4-1.1 3.4-3-.1-.9-.7-1.8-1.7-2zm5.7-4.4c-1.8 0-3.3 1.1-3.3 4.7s1.5 4.8 3.3 4.8c1.8 0 3.4-1.1 3.4-4.8 0-3.5-1.6-4.7-3.4-4.7zm0 8c-1.5 0-1.5-2.2-1.5-3.2 0-.9 0-3.2 1.5-3.2s1.5 2.2 1.5 3.2c0 .9 0 3.2-1.5 3.2z"/>
+    </symbol>
+    <symbol id="gel-icon-5-mins" viewBox="0 0 32 32">
+        <path d="M15.4 6c-7.2 0-13 5.8-13 13s5.8 13 13 13 13-5.8 13-13-5.8-13-13-13zm0 22.5c-5.2 0-9.5-4.3-9.5-9.5s4.3-9.5 9.5-9.5 9.5 4.3 9.5 9.5-4.3 9.5-9.5 9.5zm9.978-23.62l4.243 4.242-2.827 2.83-4.242-4.244zM18.4 3c0-1.7-1.3-3-3-3s-3 1.3-3 3 1.3 3 3 3 3-1.3 3-3zm-3 2c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+        <path d="M16 17.3c-.7 0-1.3.2-1.8.7l.4-2.1h3.8v-1.5h-5.1l-.9 5H14c.4-.5.7-.7 1.4-.7 1 0 1.6.8 1.6 1.7 0 .9-.6 1.8-1.6 1.8-.8 0-1.4-.6-1.5-1.4H12c0 1.9 1.6 2.9 3.4 2.9 1.8 0 3.4-1.4 3.4-3.3 0-1.7-1-3.1-2.8-3.1z"/>
+    </symbol>
+    <symbol id="gel-icon-60-mins" viewBox="0 0 32 32">
+        <path d="M15.4 6c-7.2 0-13 5.8-13 13s5.8 13 13 13 13-5.8 13-13-5.8-13-13-13zm0 22.5c-5.2 0-9.5-4.3-9.5-9.5s4.3-9.5 9.5-9.5 9.5 4.3 9.5 9.5-4.3 9.5-9.5 9.5zm9.978-23.62l4.242 4.24-2.828 2.828-4.242-4.242zM15.4 6c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm0-5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/>
+        <path d="M12.3 17.4c-.9 0-1.5.3-2.1 1 .1-1 .4-2.8 1.7-2.8.6 0 1.1.5 1.2 1.1H15c-.2-1.6-1.4-2.5-3-2.5-2.6 0-3.6 2.5-3.6 4.8s.7 4.7 3.5 4.7c1.9 0 3.2-1.5 3.2-3.3 0-.7-.2-1.5-.7-2-.5-.7-1.3-1-2.1-1zm-.4 4.8c-.9 0-1.5-.8-1.5-1.7 0-.9.5-1.7 1.5-1.7.9 0 1.4.9 1.4 1.7 0 .8-.5 1.7-1.4 1.7zm7.1-8c-1.8 0-3.3 1.1-3.3 4.7s1.5 4.8 3.3 4.8c1.8 0 3.4-1.1 3.4-4.8-.1-3.5-1.6-4.7-3.4-4.7zm0 8c-1.5 0-1.5-2.2-1.5-3.2 0-.9 0-3.2 1.5-3.2s1.5 2.2 1.5 3.2c0 .9 0 3.2-1.5 3.2z"/>
+    </symbol>
+    <symbol id="gel-icon-activity-themes" viewBox="0 0 32 32">
+        <path d="M0 0h8v8H0zm0 12h8v8H0zm0 12h8v8H0zM11 0h21v8H11zm0 24h21v8H11zm0-12h21v8H11z"/>
+    </symbol>
+    <symbol id="gel-icon-animals-and-nature" viewBox="0 0 32 32">
+        <path d="M5.7 16.2c1.8-.7 2.4-3.3 1.5-6-1-2.6-3.2-4.2-5-3.5-1.8.7-2.4 3.3-1.5 6 1 2.6 3.2 4.2 5 3.5z"/>
+        <ellipse cx="28" cy="11.4" rx="5.1" ry="3.4" transform="rotate(-69.805 28.044 11.447)"/>
+        <path d="M12 10.1c1.9-.3 3.1-2.7 2.7-5.5-.4-2.8-2.2-4.8-4.1-4.6-1.8.3-3 2.8-2.6 5.5.3 2.8 2.2 4.9 4 4.6zm8.1 0c1.9.2 3.6-1.9 3.9-4.7.3-2.8-1-5.2-2.9-5.4-1.9-.2-3.6 1.9-3.9 4.7-.2 2.8 1 5.2 2.9 5.4zm2 9.9c.1-.3.1-.6.1-.9 0-3.4-2.7-6.1-6.1-6.1-3.3 0-6.1 2.7-6.1 6.1 0 .3 0 .5.1.8-3.2.2-5.7 2.8-5.7 6.1 0 3.4 2.7 6.1 6.1 6.1 2.1 0 4-1.1 5.1-2.8 1.1 1.7 3 2.8 5.1 2.8 3.4 0 6.1-2.7 6.1-6.1-.2-2.9-2.1-5.3-4.7-6z"/>
+    </symbol>
+    <symbol id="gel-icon-apps" viewBox="0 0 32 32">
+        <path d="M0 14h14V0H0v14zM3 2l8 5-8 5V2zm15 12h14V0H18v14zm2-2v-2l2 2h-2zm4-1l-3-3 6-6 3 3-6 6zM0 32h14V18H0v14zm2-11h1v-1h2v1h7v8H2v-8zm16 11h14V18H18v14zm3-11l2.6.5L25 19l1.4 2.5L29 21l-.5 2.6L31 25l-2.5 1.4.5 2.6-2.6-.5L25 31l-1.4-2.5-2.6.5.5-2.6L19 25l2.5-1.4L21 21z"/>
+        <path d="M8 22c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3m0 5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2"/>
+    </symbol>
+    <symbol id="gel-icon-babies-and-toddlers" viewBox="0 0 32 32">
+        <path d="M26.8 17.9L13.4 4.5c-.8-.8-1.8-1.2-2.8-1.2-.9 0-1.8.3-2.6 1L.5 11.7v2.8l8.9-8.8c.3-.2.7-.4 1.2-.4s1 .2 1.4.6l.7.7L1.1 18.2c-.8.8-.8 2 0 2.8l9.2 9.2c.4.4.9.6 1.4.6.5 0 1-.2 1.4-.6l11.6-11.6.7.7c.8.8.8 2 0 2.8l-8.8 8.6h2.9l7.3-7.2.1-.1c1.5-1.4 1.5-3.9-.1-5.5zM11.7 28.8l-9.2-9.2 1.8-1.8h18.4l-11 11zm16.8-19l3-5-2-2-5 3-4-4c-.8-.8-2.2-.8-3 0l-2 2 12 12 2-2 .1-.1c.8-.8.7-2.2-.1-3l-1-.9z"/>
+    </symbol>
+    <symbol id="gel-icon-baby" viewBox="0 0 32 32">
+        <path d="M17.8 22H29l3-11h-3.2m-5.6 0H0l3 11h12L32 5V2.2"/>
+        <path d="M15 0H9C4 0 0 4 0 9h15V0zM9 24c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm13-6c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+    </symbol>
+    <symbol id="gel-icon-be-on-a-show" viewBox="0 0 32 32">
+        <path d="M16.3 14.5c2.4 0 4.3-1.9 4.3-4.3s-1.9-4.3-4.3-4.3S12 7.8 12 10.2s1.9 4.3 4.3 4.3zm4.3 1.6H12l-1.6 4.8h11.8"/>
+        <path d="M32 26V1H0v25h12v2.5H6V31h20v-2.5h-6V26h12zm-20-3.8H4V4.8h24v17.5H12z"/>
+    </symbol>
+    <symbol id="gel-icon-behind-the-scenes" viewBox="0 0 32 32">
+        <path d="M1.1 11.6c-.1 0-.1 0 0 0H0v1c0 1 .5 1 1 1h2.2v6h2v-8H1.1zm30.9 0h-4.8v8h2v-6h1.7c.6 0 1 0 1-1v-1h.1zm-8.5-7.7H8.9V2.5H6.8v17.9h1.4l6.1 3.6-6 3.5c-.5.3-.6.9-.4 1.4.2.3.5.5.9.5.2 0 .3 0 .5-.1l7-4.1 7 4.1c.2.1.3.1.5.1.3 0 .7-.2.9-.5.3-.5.1-1.1-.4-1.4l-6-3.6 6.1-3.6h1.3V2.5h-2.2v1.4zm-7.2 19l-4.2-2.5h8.4l-4.2 2.5zm7.2-5.5H8.9v-6.6h14.6v6.6z"/>
+    </symbol>
+    <symbol id="gel-icon-being-creative" viewBox="0 0 32 32">
+        <path d="M0 12h12v20H0zM28.2 0l-1.6 6c-1.6.7-2.9 2.3-3.5 4.4-.5 1.8-.3 3.7.4 5l5.3 1.4c1.3-.8 2.4-2.3 2.8-4.1.2-.7.3-1.3.3-2C32.4 6 31 1.9 28.2 0zM18 32h8l1.8-13-4.4-1.2M6 0L2 7h8"/>
+    </symbol>
+    <symbol id="gel-icon-birthdays-and-parties" viewBox="0 0 32 32">
+        <path d="M15 7l2-.4c.8-.3 1.1-1.9.8-3.6-.2-1-1.3-3.2-2.1-3.1l-.2 2.4c-.7.3-1.2 1.4-1.2 2.5 0 .9.3.6.7 2.2zm12.8 23V16h-9.2V9.9h-5V16H4.2v14H.7v2h30.5v-2h-3.4zm-2.1 0H6.3v-4h19.3v4zm0-7.5H6.3v-4h19.3v4z"/>
+    </symbol>
+    <symbol id="gel-icon-cbbc-songs" viewBox="0 0 32 32">
+        <path d="M15.1 12.2v11.6c-.8-.7-1.9-1.2-3.1-1.2-2.6 0-4.7 2.1-4.7 4.7S9.4 32 12 32s4.7-2.1 4.7-4.7v-8.8l10.9-4.1V20c-.8-.7-1.9-1.2-3.1-1.2-2.6 0-4.7 2.1-4.7 4.7s2.1 4.7 4.7 4.7 4.7-2.1 4.7-4.7V7l-14.1 5.2zm-3.2 17.5c-1.3 0-2.3-1.1-2.3-2.3 0-1.3 1-2.3 2.3-2.3 1.3 0 2.3 1.1 2.3 2.3.1 1.2-1 2.3-2.3 2.3zm12.5-3.9c-1.3 0-2.3-1.1-2.3-2.3 0-1.3 1.1-2.3 2.3-2.3 1.3 0 2.3 1.1 2.3 2.3.1 1.2-1 2.3-2.3 2.3zm-14-10.4V7.3l5-1.9V0L9.1 2.3v10.3c-.7-.6-1.5-1-2.5-1-2.1 0-3.7 1.7-3.7 3.7S4.6 19 6.6 19c2.1.2 3.8-1.5 3.8-3.6zm-3.8 1.9c-1 0-1.9-.8-1.9-1.9 0-1 .8-1.9 1.9-1.9 1 0 1.9.8 1.9 1.9 0 1-.8 1.9-1.9 1.9z"/>
+    </symbol>
+    <symbol id="gel-icon-cbeebies-information" viewBox="0 0 32 32">
+        <path d="M16 0C7.2 0 0 7.2 0 16s7.2 16 16 16 16-7.2 16-16S24.8 0 16 0zm2 25h-4V13h4v12zm0-14h-4V7h4v4z"/>
+    </symbol>
+    <symbol id="gel-icon-character-profiles" viewBox="0 0 32 32">
+        <path d="M0 .5v23.1h32V.5H0zm16 3.1c2.7 0 4.9 2.2 4.9 4.9s-2.2 4.9-4.9 4.9-4.9-2.2-4.9-4.9 2.2-4.9 4.9-4.9zM9.3 20.5l1.8-5.3h9.7l1.8 5.3H9.3zm-9.3 7h32v3.9H0z"/>
+    </symbol>
+    <symbol id="gel-icon-chats" viewBox="0 0 32 32">
+        <path d="M0 0v32l8-8h24V0H0zm4 10h18v4H4v-4zm24 10H4v-4h24v4zm0-12H4V4h24v4z"/>
+    </symbol>
+    <symbol id="gel-icon-communication" viewBox="0 0 32 32">
+        <path d="M20 16h6l6 6V2H14v6h6"/>
+        <path d="M0 30l6-6h12V10H0"/>
+    </symbol>
+    <symbol id="gel-icon-cooking" viewBox="0 0 32 32">
+        <path d="M17 6h9v20h-9zm4.8-1L23 3.5V0h-3v3.5l.8 1.5m0 22l-.8.5V32h3v-4.5l-1.2-.5M9.6 0C7.6 0 6 2.5 6 5.6s1.6 5.6 3.6 5.6 3.6-2.5 3.6-5.6S11.6 0 9.6 0zm-.1 13.5c-.5 0-1.4-.1-1.4-.2V31c0 .5.6 1 1.5 1s1.5-.4 1.5-1V13.2c-.1.2-1 .3-1.6.3z"/>
+    </symbol>
+    <symbol id="gel-icon-craft-and-cooking" viewBox="0 0 32 32">
+        <circle cx="16" cy="27" fill="none" r="3"/>
+        <circle cx="10" cy="17" fill="none" r="1"/>
+        <circle cx="5" cy="27" fill="none" r="3"/>
+        <path d="M23 6h9v20h-9zm5-1l1-1V0h-3v4l1 1m0 22l-1 1v4h3v-4l-1-1M14 15l3.9-12.9c.3-.8 0-1.6-.8-2-.8-.3-1.7 0-2 .8l-3.5 8.4L14 15z"/>
+        <path d="M16 22c-.5 0-.9.1-1.3.2L5.9 1c-.2-.6-.7-1-1.4-1C3.7 0 3 .7 3 1.5v.3L8 17l-1.7 5.2c-.4-.1-.9-.2-1.3-.2-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5c0-1.5-.7-2.8-1.7-3.7L10 20l2.6 3.4c-1 .9-1.6 2.2-1.6 3.6 0 2.8 2.2 5 5 5s5-2.2 5-5-2.2-5-5-5zM5 30c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm5-12c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm6 12c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>
+    </symbol>
+    <symbol id="gel-icon-dance-moves" viewBox="0 0 32 32">
+        <path d="M14.8 6.9c1.3 0 2.4-1.1 2.4-2.4 0-1.3-1.1-2.4-2.4-2.4-1.3 0-2.4 1.1-2.4 2.4-.1 1.3 1 2.4 2.4 2.4z"/>
+        <path d="M18.9 11.3L21 7.5l2.9-6L22.5 0l-5.2 8.3s-2.3-.1-4.7.4c0 0-2.7.7-3.8 1.7 0 0-.1 0-.3.3-.1.1-.1.2-.2.4-.3.8-.5 2.4-.2 5.8h2s-1-4.7 1.9-5.3c0 0 .9 7 .8 7.6L8.5 29.6l-.5 1 2 1.4 6.2-10.8 3.3 2.6.4 8.1H22l.4-9.8-4.7-4.1 1.2-6.7z"/>
+    </symbol>
+    <symbol id="gel-icon-dress-up" viewBox="0 0 32 32">
+        <path d="M0 27.6c.4-.1.8-.3 1.2-.4.4-.1.8-.2 1.1-.3.1 0 .2 0 .3-.1.3-.1.6-.2 1-.2.1 0 .2-.1.4-.1.3-.1.6-.1.9-.2.1 0 .3 0 .4-.1.3 0 .5-.1.8-.1.2 0 .3 0 .5-.1.2 0 .5-.1.7-.1h.6c.2 0 .4 0 .6-.1h4c.3 0 .6 0 .9.1h.4c.3 0 .5.1.8.1h.3c.4 0 .7.1 1.1.1h.1c.3 0 .6.1.9.2.1 0 .2 0 .3.1.2 0 .4.1.6.1.1 0 .2 0 .3.1.2 0 .4.1.6.1.1 0 .1 0 .2.1.2.1.5.1.7.2 1.1.3 1.7.5 1.7.5L10.6.1S-.1 27.6 0 27.6zm8.1-12.8c.7 0 1.3.6 1.3 1.3 0 .7-.6 1.3-1.3 1.3-.7 0-1.3-.6-1.3-1.3 0-.7.6-1.3 1.3-1.3zm2.6 8c-.7 0-1.3-.6-1.3-1.3 0-.7.6-1.3 1.3-1.3.7 0 1.3.6 1.3 1.3 0 .7-.6 1.3-1.3 1.3zm-5.3-2.1c.7 0 1.3.6 1.3 1.3s-.6 1.3-1.3 1.3-1.3-.6-1.3-1.3.6-1.3 1.3-1.3zm10.5 0c.7 0 1.3.6 1.3 1.3 0 .7-.6 1.3-1.3 1.3-.7 0-1.3-.6-1.3-1.3 0-.7.6-1.3 1.3-1.3zm-2.7-5.8c.7 0 1.3.6 1.3 1.3s-.6 1.3-1.3 1.3c-.7 0-1.3-.6-1.3-1.3s.5-1.3 1.3-1.3zM12 11.1c0 .7-.6 1.3-1.3 1.3s-1.3-.6-1.3-1.3.6-1.3 1.3-1.3 1.3.6 1.3 1.3zm-1.3 16.7c-3.4 0-6.8.5-10.1 1.6l-.3.1c1.2 1.4 5.3 2.4 10.2 2.4 4.9 0 9-1 10.2-2.4l-.3-.1s-3.9-1.6-9.7-1.6zM32 4.7L27.6 4 25.7.1l-2 3.9-4.4.6 3.2 3.1-.8 4.4 3.9-2.1 1.9 1v.1l2 1-.7-4.3m-5.2 5.6v18.4h4V13.5l-2-1.1"/>
+    </symbol>
+    <symbol id="gel-icon-emotions-and-behaviour" viewBox="0 0 32 32">
+        <path d="M30 12.5c0-.9-.1-1.8-.3-2.7-1-4.6-4.6-8.3-9.1-9.4-1-.3-2-.4-3.1-.4h-.6C10.3.4 5 5.8 5 12.5v.5l-1 3-2 2v2l2 1 1 7 6 1 1 3h14l-1.9-8.9C27.6 20.9 30 17 30 12.5zm-7.8.3s-.2.3-.6.7l-1.9 2.3-2 2.1-1.8-1.9-2-2.4c-.4-.4-.5-.7-.6-.8-.3-.5-.6-1.2-.6-1.9 0-1.4 1.1-2.5 2.5-2.5.9 0 1.7.5 2.1 1.2l.4.7.4-.7c.5-.8 1.2-1.2 2.1-1.2 1.4 0 2.5 1.1 2.5 2.5.1.7-.1 1.4-.5 1.9z"/>
+    </symbol>
+    <symbol id="gel-icon-entertainment" viewBox="0 0 32 32">
+        <path d="M28.5 10L27 13.8h-3.4L25 10h-3.2l-1.5 3.8H17l1.5-3.8h-3.2l-1.5 3.8h-3.3L12 10H8.8l-1.1 2.8-2.2-2.2.9-.3-2.7-3.4-1.5.5V32h27.7V10h-1.4zM26 26.3H6v-1.9h20v1.9zm0-4.8H6v-1.9h20v1.9zM18.3 6.9l-2.6-3.5-2.8.9 2.5 3.4m13.1-3.8L27.4 0l-2.6.8 2.6 3.4"/>
+        <path d="M12.4 8.6L9.8 5.2l-3 .8 2.6 3.5m14.9-4.4l-2.6-3.4-2.9.8L21.4 6"/>
+    </symbol>
+    <symbol id="gel-icon-events" viewBox="0 0 32 32">
+        <path d="M26.3 10.1h2v4h-2zm-23 0h-2v17h12v-2h-10m22-17h3v-6h-5v4h-4v-4h-9v4h-4v-4h-5v6h2"/>
+        <path d="M22.3 2.1v-2h-2v5h2m-13-3v-2h-2v5h2"/>
+        <path d="M19.3 12.1l4.4 5.6 7-1.2-3.9 6 3.3 6.3-6.9-2-5 5.1-.3-7.1-6.3-3.2 6.6-2.4" fill="#000100"/>
+    </symbol>
+    <symbol id="gel-icon-family-activities" viewBox="0 0 32 32">
+        <path d="M18.1 19.1v.3c1.1.6 2.3.9 3.7.9 4.3 0 7.7-3.4 7.7-7.6 0-4.2-3.5-7.6-7.7-7.6-4.3 0-7.7 3.4-7.7 7.6v.8c2.4.8 4 3 4 5.6zm11.4 2.8H17.4c-.3.6-.7 1.1-1.2 1.6H18l1.9 6.4H32l-2.5-8zM12 23.5c2.5 0 4.5-2 4.5-4.4 0-2.4-2-4.4-4.5-4.4s-4.5 2-4.5 4.4c.1 2.4 2.1 4.4 4.5 4.4zm-4.4 1.6L5.9 30h12.3l-1.7-4.9M12.3 7.4c.4.2.8.3 1.3.2.9-.2 1.4-1.1 1.2-2-.2-.9-1.2-1.4-2-1.2-.4.1-.8.4-1 .8v-.1l-.8-3-3.5.8c.3.2.6.5.7.9.2.9-.3 1.8-1.2 2-.9.3-1.8-.2-2-1.1-.1-.4 0-.8.1-1.2l-3.3.9.8 3.2c-.3-.2-.8-.4-1.3-.2-.9.2-1.4 1.2-1.2 2 .2.9 1.2 1.4 2 1.2.5-.1.9-.5 1.1-.9l.8 3.2 3.2-.8c-.3-.2-.5-.5-.6-.9-.2-.9.3-1.8 1.2-2 .9-.2 1.8.3 2 1.2.1.4.1.7-.1 1.1l3.3-.9-.8-3 .1-.2z"/>
+    </symbol>
+    <symbol id="gel-icon-family-learning-and-education" viewBox="0 0 32 32">
+        <path d="M16.1 5.1L0 13l1.7.8v6.5c-.9.3-1.5 1.2-1.5 2.2 0 1.3 1.1 2.3 2.3 2.3 1.3 0 2.3-1.1 2.3-2.3 0-.9-.6-1.8-1.4-2.1v-5.6l4.1 2s8.2-4.5 17.2 0L32 13 16.1 5.1z"/>
+        <path d="M16.2 18c-4.7 0-8.5 1.3-8.5 2.9v3.2c0 1.6 3.8 2.9 8.5 2.9s8.5-1.3 8.5-2.9v-3.3c-.1-1.6-3.9-2.8-8.5-2.8z"/>
+    </symbol>
+    <symbol id="gel-icon-fan-clubs" viewBox="0 0 32 32">
+        <path d="M16 17.7A6.7 6.7 0 1 0 9.3 11c.1 3.7 3 6.7 6.7 6.7z"/>
+        <path d="M6.6 19.7c2 0 3.6-1.1 4.5-2.8-1.7-1.4-2.7-3.5-2.7-5.8 0-.4 0-.8.1-1.2-.6-.3-1.3-.4-1.9-.4-2.8 0-5.1 2.3-5.1 5.1s2.3 5.1 5.1 5.1zm2.3.1l-2.7 7.8h19.6l-2.7-7.8m7 1.7h-5.3l1.9 5.6H32M1.9 21.5L0 27.1h5.3l1.9-5.6M21 16.9c.8 1.7 2.5 2.8 4.5 2.8 2.8 0 5.1-2.3 5.1-5.1s-2.3-5.1-5.1-5.1c-.7 0-1.4.1-2 .4.1.4.1.8.1 1.2.1 2.3-1 4.4-2.6 5.8z"/>
+    </symbol>
+    <symbol id="gel-icon-feeling-good" viewBox="0 0 32 32">
+        <path d="M16 6C10.5 6 6 10.5 6 16s4.5 10 10 10 10-4.5 10-10S21.5 6 16 6zm0 17c-2.8 0-5-2.2-5-5h10c0 2.8-2.2 5-5 5zM15 0h2v4h-2zm0 28h2v4h-2zM8.855 1.656l2 3.464-1.73 1-2.002-3.464zM23.12 30.37l-2-3.465 1.733-1 2 3.464zM2.67 7.142l3.463 2-1 1.732-3.464-2zm26.716 17.732l-3.464-2 1-1.732 3.464 2zm-26.732-.027l-1-1.732 3.465-2 1 1.733zm26.688-17.74l1 1.733-3.464 2-1-1.732zM8.872 30.364l-1.73-1 2-3.463 1.73 1zm14.248-28.7l1.73 1-2 3.464-1.73-1zM28 15h4v2h-4zM0 15h4v2H0z"/>
+    </symbol>
+    <symbol id="gel-icon-festivals-and-celebrations" viewBox="0 0 32 32">
+        <path d="M16.3 7.1l-7.9 5.3 2.9 2.9 7.9-5.3m1 1l-7.9 5.3 2.9 2.9 7.9-5.3M2.4 0v10L12.5 0m-.1 3.3L5.8 9.9l1.6 1.6 8-5.3m5.4 15.4l5-4.9-1.6-1.6-7.9 5.3 1.3 1.3L27.9 32l1.7-1.7"/>
+    </symbol>
+    <symbol id="gel-icon-funny" viewBox="0 0 32 32">
+        <path d="M30.9 15.8s-1.1-7.4-8.6-3.4c0 0-.1 0-.2.1 0-3.5 1.4-7.5 6.7-8.8 0 0-4-4.8-8.7-2.9 0 0-6.5 2.5-5.8 10.3-.3-.4-.5-.6-.5-.6C4.9 1.4 0 11.7 0 11.7c4-.1 6.4 1.6 7.7 3.8v9.4h16.6V18c1.3-1.8 3.4-3.3 6.6-2.2z"/>
+        <circle cx="2.3" cy="16.6" r="2.3"/>
+        <path d="M29.7 18.2c-1.3 0-2.3 1-2.3 2.3 0 1.3 1 2.3 2.3 2.3 1.3 0 2.3-1 2.3-2.3 0-1.2-1-2.3-2.3-2.3zM27.4 7.8c0 1.3 1 2.3 2.3 2.3 1.3 0 2.3-1 2.3-2.3 0-1.3-1-2.3-2.3-2.3-1.3 0-2.3 1.1-2.3 2.3zM7.8 26.7h16.6v4.9H7.8z"/>
+    </symbol>
+    <symbol id="gel-icon-game-control" viewBox="0 0 32 32">
+        <path d="M8 7.5c-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5 3.5-1.6 3.5-3.5S9.9 7.5 8 7.5z"/>
+        <path d="M24 3c-2 0-3.9.8-5.3 2h-5.4C11.9 3.8 10 3 8 3c-4.4 0-8 3.6-8 8v18h6l6-10h8l6 10h6V11c0-4.4-3.6-8-8-8zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zM8 17c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6zm12-4c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm4 4c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm4-4c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+    </symbol>
+    <symbol id="gel-icon-how-to" viewBox="0 0 32 32">
+        <path d="M15.1 11.7c.2-.2.6-.4 1-.4s.6.1.8.2c.2.2.3.4.3.7 0 .3-.2.6-.7 1-.8.7-1.4 1.1-1.6 1.4-.2.3-.4.6-.5.9-.1.3-.2.7-.2 1.3v.3h3.1c0-.4.1-.8.2-1 .1-.3.5-.6 1-1 .8-.6 1.3-1.1 1.6-1.6.3-.4.4-.9.4-1.3 0-1.1-.5-2-1.5-2.6-.7-.5-1.7-.7-2.9-.7-1.5 0-2.6.4-3.4 1.1-.7.7-1.2 1.6-1.3 2.8l3.2.4c.1-.8.2-1.3.5-1.5zM14 17.9h3.3v2.9H14z"/>
+        <path d="M2 0v32h28V0H2zm16 30h-4v-2h4v2zm8-4H6V4h20v22z"/>
+    </symbol>
+    <symbol id="gel-icon-incredible-world" viewBox="0 0 32 32">
+        <path d="M29.2 12.1C29.2 6 24.2 1 18.1 1S6.9 6 6.9 12.1c0 6.2 5 11.2 11.2 11.2 2.3 0 4.4-.7 6.1-1.8l1.3 1.7c-2.6 1.8-5.8 2.6-9 2.2-3.5-.4-6.6-2.2-8.9-5-2.2-2.8-3.2-6.3-2.8-9.8.4-3.6 2.2-6.7 5-9L8.6 0C5.4 2.6 3.3 6.2 2.9 10.3c-.5 4.1.7 8.1 3.2 11.3 2.6 3.2 6.2 5.2 10.2 5.7.3 0 .6 0 .9.1V30h-4.9v2h10.8v-2h-3.9v-2.6c3-.2 5.9-1.3 8.4-3.3l.8-.6-2.6-3.2c2.1-2.1 3.4-5 3.4-8.2zm-10 8.1c-.2.4-.4.7-.7 1.1h-.4c-2 0-3.9-.7-5.4-1.8l.4-.4c.3-.3.3-.4-.1-.7-.4-.4-.7-.8-1.1-1.2-.1-.1 0-.2-.1-.2-.1-.4-.1-.8-.2-1.2-.2-.6-.5-1.2-.7-1.7-.1-.4-.2-.8-.2-1.2.1-.8.4-1 1-.5s1.2 1.1 1.8 1.7c.4.4.9.7 1.3 1.1.3.2.6.2 1 0 .1-.1.3-.2.4-.2.4-.2.9-.5 1.3-.7.6-.2 1.1.2 1.2.8 0 .3 0 .6-.1.9l-.6 2.1c-.1.2-.1.4-.1.6 0 .2.1.3.3.1.2-.1.3-.2.4-.4.2-.1.3-.1.4.1.3.5.5 1.1.2 1.7zm3.1-10.3l-1.2.9c-.7.5-1.4.9-2.3 1-.9.1-1.6-.1-2-1-.3-.6-.5-1.2-.7-1.8-.3-.8-.5-1.7-.8-2.5-.1-.5-.2-.9-.3-1.4 0-.4.1-.9.6-1.1.4-.2.7 0 1.1.3.8.6 1.4 1.3 2 2 .5.6 1 1 1.8 1.2.2.1.5.1.7.3.5.3.8.6 1 1.2.1.4.3.5.6.4.5-.2 1-.4 1.6-.6.6-.2 1.2-.2 1.7-.1.2.1.4.1.6.2.4 1 .6 2.1.6 3.3 0 1.5-.4 2.9-1 4.2-.8.2-1.4-.1-1.6-.9-.1-.5-.2-1.1-.1-1.6.1-.6.4-1.3.6-1.9.1-.5.2-.9.4-1.4.1-.3-.1-.5-.4-.5-.3-.1-.6-.1-.9-.1-.3 0-.5 0-.8-.1-.5-.3-.8-.3-1.2 0z"/>
+    </symbol>
+    <symbol id="gel-icon-interviews" viewBox="0 0 32 32">
+        <path d="M7.1 18.5l2.6 4.4 14.2-6-3.4-6.6M0 23.3l1.5 2.9 7.2-3-2.3-3.9M31.1 8.4c-1.6-2.5-4.9-3.3-7.4-1.9-.1 0-.1.1-.2.1-.9.5-1.7 1.3-2.2 2.2-.1.1-.1.4 0 .5 1.2 2.5 2.5 4.9 3.7 7.4.1.2.2.3.4.3 1.7.3 3.3-.3 4.5-1.4 2.2-1.7 2.8-4.8 1.2-7.2z"/>
+    </symbol>
+    <symbol id="gel-icon-just-for-fun" viewBox="0 0 32 32">
+        <path d="M18.5 19.2c5.1-1.4 8.1-6.6 6.7-11.6C23.8 2.5 18.6-.5 13.6.9 8.5 2.2 5.5 7.4 6.8 12.5c1.4 5 6.6 8 11.7 6.7zm2.3-7.7c.6 2.4-.8 4.9-3.2 5.5-2.4.6-4.9-.8-5.5-3.2l8.7-2.3zm4.7 10h-19l-3 10h25"/>
+    </symbol>
+    <symbol id="gel-icon-learning-areas" viewBox="0 0 32 32">
+        <path d="M30 12.5c0-.9-.1-1.8-.3-2.7-1-4.6-4.6-8.3-9.1-9.4-1-.3-2-.4-3.1-.4h-.6C10.3.4 5 5.8 5 12.5v.5l-1 3-2 2v2l2 1 1 7 6 1 1 3h14l-1.9-8.9C27.6 20.9 30 17 30 12.5zM25 14h-2.2c-.1.5-.4 1-.7 1.5l1.3 1.3-2.1 2.1-1.3-1.5c-.3.2-.6.3-.9.4V20h-3v-2.2c-.5-.1-.9-.3-1.4-.6l-1.8 1.7-2.1-2.1 1.9-1.9-.3-.9H10v-3h2.2l.3-.9-1.8-1.8 2.2-2.1 1.7 1.7c.4-.2.9-.4 1.3-.6V5h3v2.2c.3.1.6.2.9.4l1.3-1.5 2.1 2.1-1.3 1.3c.3.4.5.9.7 1.5H25v3z"/>
+        <circle cx="17.5" cy="12.5" r="2.5"/>
+    </symbol>
+    <symbol id="gel-icon-make-a-picture" viewBox="0 0 32 32">
+        <path d="M24.2 2.1c.5 1.1.8 2.5.9 3.9v20.2H6.8V6h7.6c.5-1.1 1.3-2 2.2-2.6l.4-1.3H3V32h26V2.1h-4.8zM18 30h-4v-2h4v2z"/>
+        <path d="M12.8 23.2h5.7l1.3-9.3-3.2-.8m.1-2.2l3.7 1c.9-.6 1.7-1.6 2-2.9.1-.5.2-.9.2-1.4C23 4.2 22 1.3 20 0l-1.1 4.3c-1.1.5-2.1 1.6-2.5 3.2-.4 1.2-.2 2.5.3 3.4z"/>
+    </symbol>
+    <symbol id="gel-icon-maths-and-puzzles" viewBox="0 0 32 32">
+        <path d="M27.2 17c.5-.5.8-1.2.8-2 0-1.7-1.3-3-3-3s-3 1.3-3 3c0 .8.3 1.5.8 2H18v5.8c.5-.5 1.2-.8 2-.8 1.7 0 3 1.3 3 3s-1.3 3-3 3c-.8 0-1.5-.3-2-.8V32h14V17h-4.8zM12 14c-.8 0-1.5.3-2 .8V9h4.8c-.5-.5-.8-1.2-.8-2 0-1.7 1.3-3 3-3s3 1.3 3 3c0 .8-.3 1.5-.8 2H24V0H0v24h10v-4.8c.5.5 1.2.8 2 .8 1.7 0 3-1.3 3-3s-1.3-3-3-3z"/>
+    </symbol>
+    <symbol id="gel-icon-music-and-art" viewBox="0 0 32 32">
+        <path d="M18 32h8l2-13-5-1m5-18l-1.5 6.1c-1.9.4-3.6 2.4-4.1 5-.3 1.9 0 3.7.8 4.9h.1l4.9 1h.1c2.1-.4 3.7-4 3.7-8.5C32 6 30.2 0 28 0zm-8 1.3L10 5v16.5c-1.1-1-2.5-1.5-4-1.5-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6V13l8-3V1.3zM6 29c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>
+    </symbol>
+    <symbol id="gel-icon-music-and-dance" viewBox="0 0 32 32">
+        <path d="M12 6.6v14.9c-1.1-1-2.5-1.5-4-1.5-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6V14.6l14-5.3v7.2c-1.1-1-2.5-1.5-4-1.5-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6V0L12 6.6zM8 29c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm16-5c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>
+    </symbol>
+    <symbol id="gel-icon-news" viewBox="0 0 32 32">
+        <path d="M4 20h14v3H4zm0 5h14v3H4zM4 4h24v13H4z"/>
+        <path d="M0 0v32h21l11-11V0H0zm22 28v-6h6l-6 6zm8-8H20v10H2V2h28v18z"/>
+    </symbol>
+    <symbol id="gel-icon-parenting-help" viewBox="0 0 32 32">
+        <path d="M15 18v.4c1.3.7 2.9 1.1 4.5 1.1 5.2 0 9.5-4.3 9.5-9.5S24.7.5 19.5.5 10 4.8 10 10v1c2.9 1 5 3.8 5 7zm14 3.5H14.1c-.4.7-.9 1.4-1.5 2h2.2l2.4 8H32l-3-10zm-21.5 2c3 0 5.5-2.5 5.5-5.5s-2.5-5.5-5.5-5.5S2 15 2 18s2.5 5.5 5.5 5.5zm-5.5 2l-2 6h15l-2-6"/>
+    </symbol>
+    <symbol id="gel-icon-phonics" viewBox="0 0 32 32">
+        <path d="M17 17v15h15V17H17zm11.3 10c-.2.5-.5.9-.9 1.2-.4.3-.8.6-1.2.8s-1 .3-1.6.3c-.7 0-1.3-.1-1.9-.4-.6-.2-1-.6-1.4-1-.4-.4-.7-.9-.9-1.5-.2-.6-.3-1.2-.3-1.9s.1-1.3.3-1.9c.2-.6.5-1.1.9-1.5.4-.4.9-.8 1.4-1 .6-.3 1.2-.4 1.9-.4.5 0 1 .1 1.4.2.5.1.9.4 1.2.6.4.3.7.6.9 1 .2.4.4.9.4 1.4h-2c0-.2-.1-.4-.2-.6-.1-.2-.3-.4-.5-.5-.2-.1-.4-.3-.6-.3-.2-.1-.5-.1-.7-.1-.5 0-.8.1-1.2.3-.3.2-.6.4-.8.7-.2.3-.3.6-.4 1-.1.4-.1.8-.1 1.2 0 .4 0 .8.1 1.1.1.4.2.7.4 1 .2.3.5.5.8.7.3.2.7.3 1.2.3.6 0 1.1-.2 1.5-.6.3-.4.6-.9.6-1.5h2c.1.4-.1 1-.3 1.4zM16.2 5.1L15 8.5h2.4l-1.1-3.4"/>
+        <path d="M23.9 0h-15v15h15V0zm-5.2 12.1L18 10h-3.5l-.7 2.1h-2l3.5-9.2h2.1l3.5 9.2h-2.2zM8.9 27.2l.3-.3c.1-.2.1-.4.1-.6 0-.5-.1-.8-.4-1s-.6-.3-1-.3H5.7v2.5h2.2c.2 0 .4 0 .6-.1s.3-.1.4-.2zm-.3-3.9c.3-.2.4-.4.4-.8 0-.2 0-.4-.1-.5l-.3-.3c-.1-.1-.3-.1-.4-.2H5.7v2.2h2.1c.3-.1.6-.2.8-.4z"/>
+        <path d="M0 32h15V17H0v15zm3.6-12.2H8c.4 0 .8 0 1.2.1s.7.2.9.4c.3.2.5.4.6.7s.2.7.2 1.1c0 .5-.1.9-.3 1.2-.2.3-.5.6-.9.8.6.2 1 .5 1.3.9.3.4.4.9.4 1.5 0 .5-.1.9-.3 1.2-.2.3-.4.6-.7.8-.3.2-.7.4-1 .5-.4.1-.8.2-1.2.2H3.6v-9.4z"/>
+    </symbol>
+    <symbol id="gel-icon-physical-development" viewBox="0 0 32 32">
+        <circle cx="13" cy="2" r="2"/>
+        <circle cx="8.5" cy="2" r="1.5"/>
+        <circle cx="4.5" cy="3" r="1.5"/>
+        <circle cx="1.5" cy="5.5" r="1.5"/>
+        <path d="M12 18v-3l1-1.4c.6-.9 1-1.9 1-3.1 0-3-2.5-5.5-5.5-5.5S3 7.5 3 10.5c0 .5.1 1 .2 1.5l3.5 11.4c.5 1.5 1.9 2.6 3.5 2.6 2.1 0 3.7-1.7 3.7-3.8 0-.7-.2-1.4-.6-2L12 18z"/>
+        <circle cx="19" cy="8" r="2"/>
+        <circle cx="23.5" cy="8" r="1.5"/>
+        <circle cx="27.5" cy="9" r="1.5"/>
+        <circle cx="30.5" cy="11.5" r="1.5"/>
+        <path d="M23.5 11c-3 0-5.5 2.5-5.5 5.5 0 1.1.4 2.2 1 3.1l1 1.4v3l-1.4 2.3c-.4.6-.6 1.2-.6 2 0 2.1 1.7 3.8 3.7 3.8 1.7 0 3-1.1 3.5-2.6L28.8 18c.1-.5.2-1 .2-1.5 0-3-2.5-5.5-5.5-5.5z"/>
+    </symbol>
+    <symbol id="gel-icon-platform" viewBox="0 0 32 32">
+        <path d="M8.5 25.5h11.7V32H8.5zm11.8-6.6H32v6.5H20.3zm-6.1-.8l1 6.5h1.4l-.2-7.7-4-2.2L13.6 9s1.8 3.5 3.6 2.4c1.6-1 2.5-4.9 2.5-4.9l-1.2-.6-2 3.3L15.1 7c-1.4-2.2-3.6-2.1-3.6-2.1-2.2-.3-4.6 1.6-4.6 1.6s-1.2.7-2.8 2.6C2.6 11 1.9 13 1.9 13l1.1.6 2.6-3.3 2.8-1.9-1.3 6-1 3.4L0 20.1l.6 1.3 7.6-1.8 1.9-2.6 4.1 1.1z"/>
+        <circle cx="12.3" cy="2" r="2"/>
+    </symbol>
+    <symbol id="gel-icon-pop-songs" viewBox="0 0 32 32">
+        <path d="M10 13.8v10.7c0-.7-1.6-1.1-2.7-1.1-2.4 0-4.2 1.9-4.2 4.3s2 4.3 4.4 4.3c2.4 0 4.5-1.9 4.5-4.3v-8.2l9.8-3.8v5.1c-1-.7-1.8-1.1-2.9-1.1-2.4 0-4.3 1.9-4.3 4.3s1.7 4.3 4.1 4.3c2.4 0 4.1-1.9 4.1-4.3V9L10 13.8zm-2.6 16c-1.2 0-2.1-1-2.1-2.1s1-2.1 2.1-2.1c1.2 0 2.1 1 2.1 2.1s-.9 2.1-2.1 2.1zm11.5-3.5c-1.2 0-2.1-1-2.1-2.1s1-2.1 2.1-2.1 2.1 1 2.1 2.1-.9 2.1-2.1 2.1zM8.8 5l-.2 3.7 2.9 2.2-3.5 1-1.2 3.4-2-3-3.7-.1 2.3-2.9-1-3.5 3.4 1.3M28.1 0l-.2 3.7 3 2.2-3.6 1-1.2 3.4-2-3.1h-3.6l2.2-2.9-1-3.5 3.4 1.3M14.4.7l1.2 2.4 2.6.4-1.9 1.9.4 2.6-2.3-1.2L12 8l.4-2.6-1.9-1.9 2.7-.4m12.9 9.4l1.9 1.4 2.2-.7-.8 2.2 1.3 1.9-2.3-.1-1.4 1.9-.6-2.2-2.2-.8 1.9-1.3"/>
+    </symbol>
+    <symbol id="gel-icon-pre-school" viewBox="0 0 32 32">
+        <path d="M5.5 12l-1-5.3c-.1-1-1-1.7-2-1.7-1.1 0-2 .9-2 2l1.1 5.5c.2.9 1 1.5 1.9 1.5 1.1 0 2-.9 2-2m10-1c1.1 0 1.9-.8 2-1.9l1-6.7c0-.1.1-.2.1-.4 0-1.1-.9-2-2-2s-1.9.9-2 1.9l-1 6.7v.3c-.1 1.2.8 2.1 1.9 2.1m6 2c.6 0 1.2-.3 1.5-.7l3.1-5.2c.2-.3.3-.7.3-1.1 0-1.1-.9-2-2-2-.6 0-1.2.3-1.5.7l-.3.5-2.7 4.5c-.3.3-.4.8-.4 1.2 0 1.2.9 2.1 2 2.1M7.8 9.3c.1 1 .9 1.7 1.8 1.7s1.7-.7 1.9-1.6V1.9c0-1.1-.9-1.9-2-1.9s-2 .9-2 2l.3 7.3zM29.5 20c-.2 0-.4 0-.6.1L21.5 23c-1.1 0-2-.9-2-2v-3.5c0-2.4-1.9-4.4-4.3-4.5h-3.7l-9 5 1 9s1 5 6 5h2v-3l-2-2v-2s0-3 3-3c.5 0 .9.1 1.2.2.2.1.4.2.5.3 1.2.8 1.2 2.5 1.2 2.5v2l-2 1v4h1s2.5 0 9-4l7.2-4.4c.5-.4.8-.9.8-1.6.1-1.1-.8-2-1.9-2"/>
+    </symbol>
+    <symbol id="gel-icon-printable" viewBox="0 0 32 32">
+        <path d="M26 12V5l-5-5H6v12H0v12.1L5.9 30H6v2h20v-2h.1l5.9-5.9V12h-6zM8 12V2h12.2L24 5.8V18H8v-6zm0 18v-5h16v5H8z"/>
+    </symbol>
+    <symbol id="gel-icon-puzzles" viewBox="0 0 32 32">
+        <path d="M27.1 12.9c1 .3 2 .1 3-.4 1.9-1.1 2.5-3.5 1.4-5.4-1.1-1.9-3.5-2.5-5.4-1.4-.9.5-1.6 1.4-1.8 2.3l-.1-.2-3.6-6.3-7.1 4.1c.9.3 1.6.9 2.1 1.7 1.1 1.9.4 4.3-1.4 5.4-1.9 1.1-4.3.4-5.4-1.4-.5-.9-.6-1.8-.4-2.7l-6.9 3.9 3.9 6.8c-1.1-.4-2.4-.3-3.4.3C.1 20.7-.5 23.1.5 25c1.1 1.9 3.5 2.5 5.4 1.4 1.1-.6 1.7-1.6 1.9-2.8l3.9 6.8 6.8-3.9c-.8-.3-1.4-.9-1.9-1.6-1.1-1.9-.4-4.3 1.4-5.4 1.9-1.1 4.3-.4 5.4 1.4.4.8.6 1.6.5 2.5l7-4-3.6-6.3-.2-.2z"/>
+    </symbol>
+    <symbol id="gel-icon-quick-play" viewBox="0 0 32 32">
+        <path d="M15.4 6c-7.2 0-13 5.8-13 13s5.8 13 13 13 13-5.8 13-13-5.8-13-13-13zm0 22.5c-5.2 0-9.5-4.3-9.5-9.5s4.3-9.5 9.5-9.5 9.5 4.3 9.5 9.5-4.3 9.5-9.5 9.5zm9.978-23.62l4.244 4.242-2.827 2.83-4.245-4.24zM18.4 3c0-1.7-1.3-3-3-3s-3 1.3-3 3 1.3 3 3 3 3-1.3 3-3zm-3 2c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+        <path d="M11.9 24l9.9-4.8-9.9-4.9"/>
+    </symbol>
+    <symbol id="gel-icon-quiz" viewBox="0 0 32 32">
+        <path d="M4 24c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zM17 7.3c-3.3 0-4.5 2.7-4.5 5.5 0 2.7 1.2 5.4 4.5 5.4.5 0 1.3.1 1.5-.1l-1.9-1.7 1.7-1.8 2.2 2c.6-.8 1-2 1-3.7 0-2.9-1.2-5.6-4.5-5.6z"/>
+        <path d="M16.9 0C8.7 0 2 5.9 2 13.1 2 20.2 8.8 26 17.1 26S32 20.1 32 12.9C32 5.8 25.2 0 16.9 0zm7.9 20.4l-1.7 1.7-2.1-1.8c-1.1.6-2.4.9-4 .9-5.1 0-8.1-3.7-8.1-8.4 0-4.8 3-8.5 8.1-8.5s8.1 3.7 8.1 8.5c0 2.3-.8 4.4-2.1 5.9l1.8 1.7z"/>
+    </symbol>
+    <symbol id="gel-icon-reading-and-writing" viewBox="0 0 32 32">
+        <path d="M8 0h18v9H8zm22 0h-2v9h2c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zM4 2L0 4.5 4 7m0 10h9v2H4z"/>
+        <path d="M16 14l-2-2H0v20h14l2-2 2 2h14V12H18l-2 2zm-1 16H2V14h13v16zm15 0H17V14h13v16z"/>
+        <path d="M4 21h9v2H4zm0 4h9v2H4zm15-8h9v2h-9zm0 4h9v2h-9zm0 4h9v2h-9z"/>
+    </symbol>
+    <symbol id="gel-icon-school-age" viewBox="0 0 32 32">
+        <path d="M0 6v5c0 1.6 1.3 3 3 3h26c1.7 0 3-1.3 3-3V6H0zm11.5-2.5c0-.3.2-.5.5-.5h9c.3 0 .5.2.5.5V4h3v-.5C24.5 1.6 22.9 0 21 0h-9c-1.9 0-3.5 1.6-3.5 3.5V4h3v-.5zM25 19h2v6h-2v3l-1.5 1-1.5-1v-3h-2v-6h2v-3H10v3h2v6h-2v3l-1.5 1L7 28v-3H5v-6h2v-3H1v16h30V16h-6"/>
+        <path d="M7 21h3v2H7zm15 0h3v2h-3z"/>
+    </symbol>
+    <symbol id="gel-icon-science-experiments" viewBox="0 0 32 32">
+        <g clip-rule="evenodd" fill-rule="evenodd">
+            <path d="M27.7 24.3l-7.1-11.5c-.3-.4-.4-.8-.4-.8V4.8c0-.9.7-2.5 1.1-3.3.2-.3.2-.7 0-1-.2-.3-.5-.5-.9-.5h-9c-.4 0-.7.2-.9.5-.2.3-.1.7.1 1 .7 1 1 2.6 1.1 3.3V12c0 .4-.2.8-.3.8l-6.3 9.9c-.7 1-1.3 2.2-1.3 2.2-1 2-1.1 3.7-.3 5 1.2 1.9 4 2.1 4.8 2.1h.1s11.2-.1 14 0h.6c1.8 0 2.6-.2 2.9-.3 1.7-.6 2.3-1.7 2.6-2.5 1-2.3-.6-4.7-.8-4.9zm-.8 4.2c-.2.5-.6 1-1.4 1.2 0 0-.1 0-.1.1-.1 0-.8.2-2.6.1H8.6c-1.1 0-2.6-.3-3.2-1.1-.5-.8-.1-2.1.4-3 0 0 .6-1.1 1.2-2l6.2-9.8c.1-.1.6-.9.6-2V4.7c0-.1-.2-1.3-.7-2.6h5.8c-.3.8-.7 1.9-.7 2.7V12c0 .1.1.9.7 1.8L26 25.4c.4.5 1.2 2 .9 3.1z"/>
+            <path d="M21.7 21.4c-.8-1.3-1.6-2.7-2.4-4-.1.1-.1.2-.2.2-.6.5-1.3.8-2.1.6-.5-.1-.9-.4-1.4-.8-.3-.3-.7-.6-1.1-.8-1-.5-1.8.3-2.3 1.3-1.7 2.9-3.7 5.3-5.3 8.5-.8 1.3.2 2 .9 2h16c.8 0 1.1-1.1.7-1.7-.9-1.7-1.7-3.4-2.8-5.3zm-7.8 4.2c-.8.3-1.7 0-2-.8-.3-.8 0-1.7.8-2 .8-.3 1.7 0 2 .8.3.8 0 1.7-.8 2zm1.2-4.1c-.3-.7 0-1.4.7-1.7.7-.3 1.4 0 1.7.7.3.7 0 1.4-.7 1.7-.6.2-1.4-.1-1.7-.7zm5.7 3.8c-.2 1-1.1 1.7-2.1 1.6-1-.2-1.7-1.1-1.6-2.1.2-1 1.1-1.7 2.1-1.6 1 .1 1.7 1 1.6 2.1z"/>
+        </g>
+    </symbol>
+    <symbol id="gel-icon-send-ins" viewBox="0 0 32 32">
+        <path d="M30.9 18.3l1-10.9-4-.4-1.2-4.5-12 3.2L2.1 4.6l-.4 4.6-1.7.5 1.2 4.4L.2 25l4 .4 1.1 4.1 11-2.9L30 27.8l.5-5.1 1.5-.4-1.1-4zm-2.7 7.3L2.4 23.2 3.9 6.8l25.9 2.5-1.6 16.3z"/>
+        <path d="M15.5 14.2c1 .1 1.8-.6 1.9-1.6.1-1-.6-1.8-1.6-1.9-1-.1-1.8.6-1.9 1.6-.1 1 .6 1.8 1.6 1.9zm-.1 7.3h.1l-2.4-5.7-4.2 5.1 6.3.6m1.9-.7l5.2.5-2.5-7.7-4.3 3.2"/>
+    </symbol>
+    <symbol id="gel-icon-shows-information" viewBox="0 0 32 32">
+        <path d="M8 15.5c0 3.6 2.9 6.5 6.5 6.5s6.5-2.9 6.5-6.5S18.1 9 14.5 9 8 11.9 8 15.5z"/>
+        <path d="M0 1v26h7l-1 4h17l-2-7H3V4h26v20h-6l1 3h8V1"/>
+    </symbol>
+    <symbol id="gel-icon-sneak-peeks" viewBox="0 0 38 32">
+        <path d="M19 11.3c-2.6 0-4.7 2.1-4.7 4.7s2.1 4.7 4.7 4.7 4.7-2.1 4.7-4.7-2.1-4.7-4.7-4.7z"/>
+        <path d="M25 5.7c-1.5-.9-3.3-1.4-5.1-1.6h-1.8c-1.9.1-3.6.7-5.1 1.6C6.3 9 0 16 0 16s6.3 7 13 10.3c1.5.9 3.3 1.4 5.1 1.6h1.8c1.9-.1 3.6-.7 5.1-1.6C31.7 23 38 16 38 16S31.7 9 25 5.7zm-6 18.6c-4.6 0-8.3-3.7-8.3-8.3 0-4.6 3.7-8.3 8.3-8.3s8.3 3.7 8.3 8.3c0 4.6-3.7 8.3-8.3 8.3z"/>
+    </symbol>
+    <symbol id="gel-icon-special-needs" viewBox="0 0 32 32">
+        <path d="M16 22.5l1-2h5v-3h-5.8l-4-4.8c-.7-.8-1.1-1.5-1.1-1.5-.7-1-1.1-2.5-1.1-3.8 0-2.7 2.2-4.9 4.9-4.9 1.7 0 3.3.9 4.2 2.4l.9 1.4.9-1.4c.9-1.5 2.5-2.4 4.2-2.4 2.7 0 4.9 2.2 4.9 4.9 0 1.3-.4 2.8-1.1 3.8 0 0-.4.6-1.1 1.4L24 17.2v3.1l5.3-6.3c.8-1 1.3-1.7 1.3-1.7.9-1.4 1.4-3.2 1.4-4.9C32 3.6 28.9.5 25.1.5c-2 0-3.8.8-5.1 2.2C18.7 1.3 16.9.5 14.9.5 11.1.5 8 3.6 8 7.4c0 1.7.5 3.5 1.4 4.9 0 0 .5.7 1.3 1.7l2.9 3.5H13l-7 6v7h8l9-2 9-4v-4l-7 2h-9zm-16 0h4v9H0z"/>
+    </symbol>
+    <symbol id="gel-icon-sport" viewBox="0 0 32 32">
+        <path d="M12.5 17.2c1-1.6 2.5-3.2 4.5-4.5l-3.2-2.4-3.6 2.7 1.4 4.2h.9z"/>
+        <path d="M4.4 18.9l-.1 1.9c-1.7-1.9-2.9-4.4-3-7.2v-.5l1.4 1.3L5.4 11l-.7-4.3-1.9.5c1.4-2.4 3.7-4.3 6.4-5.3l-.8 1.7 4.1 1.6 3.9-2-1-1.6c2.8.6 5.3 2.2 7 4.5l-1.9-.2-.2 4.4 2.7-.5c.8-.2 1.6-.2 2.4-.3-1.7-5.6-7-9.6-13.1-9.2C5.1.5-.4 6.6 0 13.7c.3 5.6 4.2 10.2 9.3 11.6 0-.8.1-1.6.3-2.5l.2-1.3v-.2l-1.2-1.8-4.2-.6zM11.8 31l.1.3.3.1c.1 0 1.8.5 4.3.5 1 0 2.1-.1 3.3-.3l-8.3-8.3c-.7 4.1.2 7.5.3 7.7zm19.7-18.8l-.1-.3-.4-.1c-.1 0-1.8-.5-4.3-.5-1 0-2.1.1-3.3.3l8.3 8.3c.7-4.1-.2-7.5-.2-7.7z"/>
+        <path d="M21.9 13l-.8-.8c-1.8.7-3.7 1.7-5.5 3.4-1.7 1.7-2.8 3.6-3.4 5.5l.8.8 8.3 8.3.8.8c1.8-.7 3.7-1.7 5.5-3.4 1.7-1.7 2.8-3.6 3.4-5.5l-.8-.8-8.3-8.3zm.5 5.3l-1-1-1.9 1.7 1 1-.5.5-1-1-1.8 1.8 1 1-.5.5-1-1.1-.7.7-.4-.4.7-.7-1-1 .5-.5 1 1 1.8-1.8-1-1 .5-.5 1 1 1.8-1.8-1-1 .5-.5 1 1 .7-.7.5.5-.7.7 1 1-.5.6z"/>
+    </symbol>
+    <symbol id="gel-icon-strategy" viewBox="0 0 32 32">
+        <path d="M13.6 7.4H27V0h-5.3v2.9h-2.9V0h-5.3v2.9h-3.3V0H5.3v7.4h5M3.5 26.6h25v5.3h-25zm2.8-2h19.5l-2-15.2H8.2L6.3 24.6zm8-9.2c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v3.3h-3.7v-3.3z"/>
+    </symbol>
+    <symbol id="gel-icon-switch" viewBox="0 0 32 32">
+        <path d="M16 16l8.6-8.6-2.9-2.8L18.3 8V0h-4.6v8l-3.4-3.4-2.9 2.8L16 16"/>
+        <ellipse cx="16" cy="25.1" rx="13.7" ry="6.9"/>
+    </symbol>
+    <symbol id="gel-icon-target" viewBox="0 0 32 32">
+        <path d="M15.1 5.7c3 .4 4.6 1.4 6.4 2.9l2.6-2.5V3.3l3-3.3v4.4H32l-3.3 3h-2.8L13.7 19.7l2.7.2c-.5 1.3-1.7 2.2-3.1 2.2-1.8 0-3.3-1.5-3.3-3.3 0-1.8 1.5-3.3 3.3-3.3.5 0 1 .1 1.4.3l2.4-2.4c-1.1-.8-2.4-1.2-3.8-1.2-3.6 0-6.6 3-6.6 6.6s3 6.6 6.6 6.6c3.6 0 6.6-3 6.6-6.6 0-.6-.1-1.2-.2-1.7l.9-.9c.3.8.5 1.7.5 2.6 0 4.3-3.5 7.7-7.7 7.7-4.3 0-7.7-3.5-7.7-7.7 0-4.3 3.4-7.7 7.7-7.7 1.7 0 3.3.6 4.6 1.5l1.6-1.6c-1.7-1.4-3.8-2.2-6.2-2.2-5.4 0-9.9 4.4-9.9 9.9v1.4c0 .2 0 .4.1.5 0 .2.1.4.1.5 0 .1.1.3.1.4.1.2.1.4.2.7 0 .1 0 .1.1.2.5 1.2 1.2 2.3 2.2 3.3.5.5 1 .9 1.5 1.3 1.6 1.1 3.5 1.7 5.5 1.7h.6c2.2-.2 4.2-1 5.9-2.4.6-.6 1.2-1.2 1.7-1.9.2-.2.3-.5.4-.7 0 0 0-.1.1-.1.1-.2.2-.5.3-.7 0-.1.1-.1.1-.2.1-.2.2-.4.2-.6 0-.1.1-.2.1-.3.1-.2.1-.4.1-.5 0-.1.1-.3.1-.4 0-.2.1-.4.1-.5 0-.1 0-.3.1-.4v-.9c0-1.5-.4-3-1-4.3l2.4-2.4c1.1 1.9 1.8 4.3 1.8 6.3v.4c0 3.6-1.5 6.9-3.8 9.3l-.2.2c-.2.1-.3.3-.5.4-2.4 2.2-5.5 3.3-8.7 3.3-2.8 0-5.6-1-7.9-2.7 0-.4-.1-.5-.2-.6-.1-.1-.3-.2-.4-.3-2.8-2.4-4.6-6-4.6-10 0-6.5 5.1-12 11-13 .1 0 1.5-.3 4.1 0z"/>
+    </symbol>
+    <symbol id="gel-icon-time-it-will-take" viewBox="0 0 32 32">
+        <path d="M16 0C7.2 0 0 7.2 0 16s7.2 16 16 16 16-7.2 16-16S24.8 0 16 0zm0 28C9.4 28 4 22.6 4 16S9.4 4 16 4s12 5.4 12 12-5.4 12-12 12z"/>
+        <path d="M17 15.4V6h-2v10.6l8.8 5.1 1-1.8"/>
+    </symbol>
+    <symbol id="gel-icon-understanding-the-world" viewBox="0 0 32 32">
+        <path d="M3 21.5l-3 10h25l-3.1-10m-9.4-2c2 0 3.9-.6 5.5-1.7-1-.4-1.9-1-2.7-1.7-.8.6-1.7.9-2.7.9C10 17 8 15 8 12.5h4.7c-.4-1.1-.7-2.3-.7-3.5 0-3.2 1.6-6.1 4.1-7.8C15 .7 13.8.5 12.5.5 7.3.5 3 4.8 3 10s4.3 9.5 9.5 9.5z"/>
+        <path d="M28.1 12.5c.6-1 .9-2.2.9-3.5 0-4.1-3.4-7.5-7.5-7.5S14 4.9 14 9s3.4 7.5 7.5 7.5c1.8 0 3.4-.6 4.7-1.7l3.7 3.7 2.1-2.1-3.9-3.9zm-6.6 1c-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5S26 6.5 26 9s-2 4.5-4.5 4.5z"/>
+    </symbol>
+    <symbol id="gel-icon-videos" viewBox="0 0 32 32">
+        <path d="M3 32l26-16L3 0"/>
+    </symbol>
+    <symbol id="gel-icon-votes" viewBox="0 0 32 32">
+        <path d="M16 0C7.2 0 0 7.2 0 16s7.2 16 16 16 16-7.2 16-16S24.8 0 16 0zm2.4 9.5h4v4h-4v-4zm-10 0h4v4h-4v-4zm7.6 18c-4.4 0-8-4-8-8h16c0 4-3.6 8-8 8z"/>
+    </symbol>
+    <symbol id="gel-icon-webisodes-online-episodes" viewBox="0 0 32 32">
+        <path d="M12.3 15.5l8.4-4.1-8.4-4.1"/>
+        <path d="M0 1v21h32V1H0zm4 17V5h24v13H4zm1 7l-5 4v2h32v-2l-5-4H5zm-1.4 4l2.3-2H26l2.3 2H3.6z"/>
+    </symbol>
+</svg>

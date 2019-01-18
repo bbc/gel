@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/code-gel/static/images/favicon.ico" type="image/x-icon">
+
+    <title>Code GEL | Action dialogs Demo</title>
+
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/codegel.css">
+
+    <script type="text/javascript"> // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    
+</head>
+
+<body class="gel-guideline-body">
+    <main id="main" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-5/5@l" style="padding-right: 12px;">
+                <h1 class="gel-guideline-header__title">Action dialogs</h1>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-5/5@l">
+                <h2>Reference implementation</h2>
+                
+                
+<div id="my-action-dialog-1" class="codegel-action-dialog" role="dialog" aria-labelledby="my-action-dialog-label-1"
+  aria-describedby="my-action-dialog-desc-1">
+  <h3 id="my-action-dialog-label-1" class="codegel-action-dialog-title">Add to enjoy later</h2>
+  <div id="my-action-dialog-desc-1" class="codegel-action-dialog-content">
+    <p>Sign in to add to My Programmes and enjoy it later on other devices</p>
+  </div>
+  <div class="codegel-action-dialog-buttons">
+    <a href="#/path/to/sign-in">Sign in</a>
+    or
+    <a href="#/path/to/register">Register</a>
+  </div>
+  <button class="codegel-action-dialog-close">
+    <span class="vh">close</span>
+    <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+      <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-no"></use>
+    </svg>
+  </button>
+</div>
+
+<div id="my-action-dialog-2" class="codegel-action-dialog" role="dialog" aria-labelledby="my-action-dialog-label-2"
+  aria-describedby="my-action-dialog-desc-2">
+  <h3 id="my-action-dialog-label-2" class="codegel-action-dialog-title">Add to enjoy later</h2>
+  <div id="my-action-dialog-desc-2" class="codegel-action-dialog-content">
+    <p>Sign in to add to My Programmes and enjoy it later on other devices</p>
+  </div>
+  <div class="codegel-action-dialog-buttons">
+    <a href="#/path/to/sign-in">Sign in</a>
+    or
+    <a href="#/path/to/register">Register</a>
+  </div>
+  <button class="codegel-action-dialog-close">
+    <span class="vh">close</span>
+    <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+      <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-no"></use>
+    </svg>
+  </button>
+</div>
+
+<p><button class="geldocs-button geldocs-button--primary" id="codegel-action-dialog-invoker-1">Open action dialog (bottom)</button></p>
+<p><button class="geldocs-button geldocs-button--primary" id="codegel-action-dialog-invoker-2">Open action dialog (center)</button></p>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codegel && codegel.ActionDialog.init();
+
+    // Example 1: Dialog aligned to bottom of screen
+    var dialogBottomElem = document.getElementById('my-action-dialog-1');
+    var dialogBottomInvoker = document.getElementById('codegel-action-dialog-invoker-1');
+    var d1 = new codegel.ActionDialog.constructor(dialogBottomElem, dialogBottomInvoker);
+
+    // Example 2: Dialog centered in viewport
+    var dialogCenterElem = document.getElementById('my-action-dialog-2');
+    var dialogCenterInvoker = document.getElementById('codegel-action-dialog-invoker-2');
+    var d2 = new codegel.ActionDialog.constructor(dialogCenterElem, dialogCenterInvoker, true);
+  });
+</script>
+            </div>
+        </div>
+    </main>
+
+
+    <script type="text/javascript" src="/code-gel/static/js/codegel.js"></script>
+    
+    
+</body>
+
+</html>

@@ -2,8 +2,8 @@
 title: Cards
 summary: Cards let you preview and share content quickly, without having to leave the page you're on.
 version: 0.1.0
-published: true
-accessibility: true
+published: false
+accessibility: false
 linkback: http://www.bbc.co.uk/gel/guidelines/cards
 ---
 
@@ -318,7 +318,8 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 
 <include src="components/demos/cards.html">
 
-<p><a class="gel-button gel-button--dark gel-long-primer-bold" href="../demos/cards/" target="_new">Open in new window <svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:currentColor"></use></svg></a></p>
+<cta label="Open in new window" href="../demos/cards/">
+
 
 ## Test specifications
 

@@ -2,8 +2,8 @@
 title: Carousels
 summary: A carousel is a great way to view lots of content in a limited amount of vertical space. It presents a window to view some of a row of content, while indicating there is more out of view that can be scrolled to.
 version: 0.1.0
-published: true
-accessibility: true
+published: false
+accessibility: false
 linkback: https://www.bbc.co.uk/gel/guidelines/carousel
 ---
 
@@ -177,7 +177,8 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 
 <include src="components/demos/carousels.html">
 
-<p><a class="gel-button gel-button--dark gel-long-primer-bold" href="../demos/carousels/" target="_new">Open in new window <svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:undefined;"></use></svg></a></p>
+<cta label="Open in new window" href="../demos/carousels/">
+
 
 ## Test specifications
 

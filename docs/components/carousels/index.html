@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/code-gel/static/images/favicon.ico" type="image/x-icon">
+
+    <title>Code GEL | Carousels</title>
+
+    <script src="/code-gel/static/js/site.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/codegel.css">
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/geldocs.css">
+
+    <script type="text/javascript"> // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    <script type="text/javascript">
+        try {
+            (new FontFaceObserver('ReithSans', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-sans-loaded';
+            });
+            (new FontFaceObserver('ReithSerif', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-loaded';
+            });
+        } catch( e ) {
+            console.log('Reith fonts did not load within 5 seconds.');
+        }
+    </script>
+
+    <script type="text/javascript">
+        // syntax highlight
+        hljs.initHighlightingOnLoad();
+    </script>
+
+    
+</head>
+
+<body class="geldocs-body">
+    <p class="codegel-sr codegel-sr__focusable codegel-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('codegel-sr__focused')" onblur="this.parentNode.classList.remove('codegel-sr__focused')">Skip
+            to content</a>
+    </p>
+
+    <header>
+        <div class="geldocs-header gs-u-clearfix">
+            <div class="gel-wrap">
+                <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
+                        <title>BBC</title>
+                        <image xlink:href="/code-gel/static/images/bbc-blocks_grey.svg" src="/code-gel/static/images/bbc-blocks_grey.png"
+                            width="100%" height="100%"></image>
+                    </svg></a>
+            </div>
+        </div>
+        <div class="geldocs-header__banner gs-u-clearfix">
+            <div class="gel-wrap">
+                <div class="gel-layout">
+                    <div class="gel-layout__item gel-2/5@l" style="text-align:left; padding-left:14px; margin-bottom:32px;">
+                        <a href="/code-gel/" class="geldocs-logo">Code{GEL}</a>
+                    </div>
+                    <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
+                        <a class="geldocs-button geldocs-button--dark gel-long-primer-bold" href="https://www.bbc.co.uk/gel/guidelines/carousel">
+                            Go to BBC GEL
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" tabindex="-1" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <!-- column placeholder-->
+            </div>
+
+            <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
+                <h1 class="geldocs-header__title">Carousels</h1>
+                <p class="geldocs-header__summary gel-great-primer">A carousel is a great way to view lots of content in a limited amount of vertical space. It presents a window to view some of a row of content, while indicating there is more out of view that can be scrolled to.</p>
+            </div>
+
+            <div class="gel-layout__item gel-1/5@l">
+                <dl class="geldocs-standout-box">
+                    
+                    <dt>Version:</dt>
+                    <dd>0.1.0</dd>
+                    
+                    <dt>Status:</dt>
+                    <dd>Draft</dd>
+                    <dt>Accessibility:</dt>
+                    <dd>Pending</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
+                    <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
+                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#test-specifications">Test specifications</a></li><li><a href="#related-research">Related research</a></li></ol>
+                </nav>
+            </div>
+
+            <div class="geldocs-sections geldocs-body-copy gel-layout__item gel-3/5@l">
+                <h2 id="introduction">Introduction</h2>
+<p>The carousel component is a component for browsing sets of thematically similar content. It must be implemented so that it can be operated by mouse, keyboard, and touch.</p>
+<p>Importantly, unlike some carousel implementations, the content does not scroll automatically<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>: the user is entirely in control of which carousel items they can see and interact with at any one time.</p>
+<h3 id="expected-markup">Expected markup</h3>
+
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-code-is-elided">
+              <h4 id="aside-info-code-is-elided" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Code is elided</h4><div><p>The markup is elided for brevity. The <code>&lt;li&gt;</code> elements represent the containers for the content items, such as <a href="#link-todo"><strong>Cards</strong></a> or <a href="#link-todo"><strong>Promos</strong></a>.</p>
+</aside><pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-carousel"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-carousel-buttons"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-carousel-prev"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">disabled</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>previous<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#gel-icon-previous"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-carousel-next"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>next<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#gel-icon-next"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-carousel-scrollable"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-carousel-list"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h3 id="notes">Notes</h3>
+<ul>
+<li><strong><code>role=&quot;group&quot;</code></strong> This is a generic ARIA role, used here to indicate that the buttons and the scrollable area they control are related</li>
+<li><strong>previous and next buttons:</strong> One can scroll the through the content in incremental steps using the previous and next buttons. It's important these are <code>&lt;button&gt;</code> elements with <code>type=&quot;button&quot;</code>. Their labels are provided using visually hidden text (the <code>vh</code> class<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>) because, unlike <code>aria-label</code> it will be translated by browser translation extensions. Buttons that are not applicable (e.g. the previous button on page load) receive the <code>disabled</code> property. The button is removed from focus order and identified as disabled (or 'dimmed') in screen reader output.</li>
+<li><strong><code>gel-icon</code> SVGs:</strong> These must be the official <code>#gel-icon-previous</code> and <code>#gel-icon-next</code> icons from the <a href="http://bbc.github.io/gel-iconography/">GEL Iconography</a> set.</li>
+<li><strong><code>gel-carousel-scrollable</code>:</strong> This is the scrollable 'window' for the list of carousel content items (see <a href="#expected-layout"><strong>Expected layout</strong></a>)</li>
+<li><strong><code>gel-carousel-list</code>:</strong> The singular child element of <code>gel-carousel-scrollable</code> must be a <code>&lt;ul&gt;</code>, with each item as an <code>&lt;li&gt;</code>. List markup is identified as such in assistive technologies, and the items are enumerated. This lets screen reader users know they are met with a set of related content, and how much of it there is.</li>
+</ul>
+<h2 id="expected-layout">Expected layout</h2>
+<p>The basic scrolling functionality is achieved without JavaScript by making sure:</p>
+<ol>
+<li>The items do not wrap</li>
+<li>The parent has <code>overflow-x: auto</code></li>
+</ol>
+<p>Since flex children do not wrap by default, simply adding <code>display: flex</code> to the <code>gel-carousel-list</code> (<code>&lt;ul&gt;</code>) element is sufficient. It also ensures that each item adopts the height of the tallest item.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-carousel-scrollable</span> {
+  <span class="hljs-attribute">overflow-x</span>: auto;
+}
+
+<span class="hljs-selector-class">.gel-carousel-list</span> {
+  <span class="hljs-attribute">display</span>: flex;
+}
+</code></pre>
+<p>On some operating systems, the horizontal scrollbar is not visible by default, meaning the scrollable container lacks perceived affordance<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. It's possible to reveal the scrollbar in webkit browsers by giving them a custom styling:</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-carousel-scrollable</span><span class="hljs-selector-pseudo">::-webkit-scrollbar</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">0.5rem</span>;
+}
+
+<span class="hljs-selector-class">.gel-carousel-scrollable</span><span class="hljs-selector-pseudo">::-webkit-scrollbar-track</span> {
+  <span class="hljs-attribute">background-color</span>: $gel-color--dusty-gray;
+}
+
+<span class="hljs-selector-class">.gel-carousel-scrollable</span><span class="hljs-selector-pseudo">::-webkit-scrollbar-thumb</span> {
+  <span class="hljs-attribute">background-color</span>: $gel-color--tundora;
+}
+</code></pre>
+<h3 id="obscured-items">Obscured items</h3>
+<p>Items that are less than 50% in view are made to look faint with a reduced opacity. This indicates that the item must be brought further into view before it is interactive (see <a href="#expected-behaviour"><strong>Expected behaviour</strong></a>). The opacity style is applied using a CSS transition, to avoid a distracting 'blinking' effect as the user scrolls back and forth.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-carousel-list</span> &gt; <span class="hljs-selector-tag">li</span> {
+  <span class="hljs-attribute">transition</span>: opacity <span class="hljs-number">0.5s</span> linear;
+}
+
+<span class="hljs-selector-class">.gel-carousel-list</span> &gt; <span class="hljs-selector-tag">li</span><span class="hljs-selector-attr">[inert]</span> {
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.3</span>;
+}
+</code></pre>
+<h3 id="buttons">Buttons</h3>
+<p>The previous and next buttons, <code>gel-carousel-buttons</code>, is absolutely positioned over the carousel at the top right, necessitating <code>position: relative</code> on the parent <code>gel-carousel</code> element. Disabled buttons take a reduced opacity.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-carousel-buttons</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-attr">[disabled]</span> {
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.5</span>;
+}
+</code></pre>
+<h3 id="expected-behaviour">Expected behaviour</h3>
+<h4 id="scrolling">Scrolling</h4>
+<p>As the user scrolls by mouse, touch, gesture, or by using the auxiliary buttons, browsers that support <code>IntersectionObserver</code> add the <code>inert</code> attribute to items that go out of view and remove it from items that come into view.</p>
+<pre class="hljs"><code><span class="hljs-built_in">Array</span>.prototype.forEach.call(items, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item</span>) </span>{
+  <span class="hljs-keyword">if</span> (item.isIntersecting) {
+    item.target.removeAttribute(<span class="hljs-string">'inert'</span>);
+  } <span class="hljs-keyword">else</span> {
+    item.target.setAttribute(<span class="hljs-string">'inert'</span>, <span class="hljs-string">'inert'</span>);
+  }
+});
+</code></pre>
+<p>This not only invokes the 'fading' effect described in <a href="#expected-layout"><strong>Expected layout</strong></a>, but also removed inert items from focus order and the accessibility tree<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. The upshot is that, like sighted mouse users, keyboard and screen reader users can only perceive and interact with items that are not inert.</p>
+<p>Were the inert attribute not employed, a keyboard user could scroll to the end of a long set of items, only to find that the first item was still first in focus order. Pressing tab would scroll the container back to the beginning and progress would be lost.</p>
+
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-inert-polyfill">
+              <h4 id="aside-info-inert-polyfill" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Inert polyfill</h4><div><p>The <a href="#reference-implementation"><strong>Reference implementation</strong></a> includes a small polyfill<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> for the <code>inert</code> attribute, increasing the reach of the behaviour it enables.</p>
+</aside><h4 id="button-controls">Button controls</h4>
+<p>Keyboard users must scroll the content using the buttons. Each time a button is pressed, the scrollable container scrolls half of its own width (as measured on page load).</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> scrollAmount = list.offsetWidth / <span class="hljs-number">2</span>;
+</code></pre>
+<p>Buttons that are not applicable (the previous button if the user is scrolled all the way left, or the next button if the user is scrolled all the way to the right) are <code>disabled</code>. This is made possible by listening to the <code>scroll</code> event, which necessitates debouncing<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> to address performance concerns.</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> debounced;
+scrollable.addEventListener(<span class="hljs-string">'scroll'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">window</span>.clearTimeout(debounced);
+  debounced = setTimeout(disableEnable, <span class="hljs-number">200</span>);
+});
+</code></pre>
+<p>Buttons taking the <code>disabled</code> attribute are removed from focus order and identified as &quot;disabled&quot; or &quot;dimmed&quot; in screen reader output.</p>
+<h4 id="lazy-loading">Lazy loading</h4>
+<p>Although it is not provided as an intrinsic part of the <a href="#reference-implementation"><strong>Reference implementation</strong></a> to follow, it is recommended you use a lazy loading<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup> solution for images inside the carousel. Since the image containers for <a href="#link-todo"><strong>Card</strong></a> and <a href="#link-todo"><strong>Promo</strong></a> components have a fixed height, you do not need to address the scroll jumping issues associated with lazy loading.</p>
+<h2 id="reference-implementation">Reference implementation</h2>
+
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
+              <h4 id="aside-alert-important" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+</aside>
+          <div class="geldocs-demo"><!-- 
+title: Carousels
+ -->
+
+<div style="margin-bottom: 1rem;">
+  <div class="gel-carousel" role="group">
+    <div class="gel-carousel-buttons">
+      <button class="gel-carousel-prev">
+        <span class="vh">previous</span>
+        <svg viewBox="0 0 20 20" width="20" height="20" focusable="false">
+          <polyline points="14 6, 6 10, 14 14"></polyline>
+        </svg>
+      </button>
+      <button class="gel-carousel-next">
+        <span class="vh">next</span>
+        <svg viewBox="0 0 20 20" width="20" height="20" focusable="false">
+          <polyline points="6 6, 14 10, 6 14"></polyline>
+        </svg>
+      </button>
+    </div>
+    <div class="gel-carousel-scrollable">
+      <ul class="gel-carousel-list">
+        <li class="gel-promo">
+          <div class="gel-promo-content">
+            <div class="gel-promo-headline">
+              <h3>
+                <a href="#link-0">Definitive supreme statements still stand</a>
+              </h3>
+            </div>
+            <div class="gel-promo-desc">
+              <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.</p>
+            </div>
+            <dl class="gel-metadata-strip">
+              <div>
+                <dt class="vh">Published:</dt>
+                <dd>
+                  <span aria-hidden="true">1h</span>
+                  <span class="vh">1 hour ago</span>
+                </dd>
+              </div>
+              <div>
+                <dt class="vh">From:</dt>
+                <dd>
+                  <a href="https://www.bbc.co.uk/news/england/sussex">Sussex</a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div class="gel-promo-image">
+            <img src="/code-gel/static/images/placeholder/002_600x400.jpg"
+              alt="">
+          </div>
+        </li>
+        <li class="gel-promo">
+          <div class="gel-promo-content">
+            <div class="gel-promo-headline">
+              <h3>
+                <a href="#link-1">Psychologists revise retroactive reports</a>
+              </h3>
+            </div>
+            <div class="gel-promo-desc">
+              <p>Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.</p>
+            </div>
+            <dl class="gel-metadata-strip">
+              <div>
+                <dt class="vh">Published:</dt>
+                <dd>
+                  <span aria-hidden="true">1m</span>
+                  <span class="vh">1 minute ago</span>
+                </dd>
+              </div>
+              <div>
+                <dt class="vh">Category:</dt>
+                <dd>
+                  <a href="https://www.bbc.co.uk/news/business">Business</a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div class="gel-promo-image">
+            <img src="/code-gel/static/images/placeholder/001_600x400.jpg" alt="">
+          </div>
+        </li>
+        <li class="gel-promo">
+          <div class="gel-promo-content">
+            <div class="gel-promo-headline">
+              <h3>
+                <a href="#link-2">Mercury gains in galaxy</a>
+              </h3>
+            </div>
+            <div class="gel-promo-desc">
+              <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu commun paroles.</p>
+            </div>
+            <dl class="gel-metadata-strip">
+              <div>
+                <dt class="vh">Published:</dt>
+                <dd>
+                  <span aria-hidden="true">1m</span>
+                  <span class="vh">1 minute ago</span>
+                </dd>
+              </div>
+              <div>
+                <dt class="vh">From:</dt>
+                <dd>
+                  <a href="https://www.bbc.co.uk/news/world/africa">Africa</a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div class="gel-promo-image">
+            <img src="/code-gel/static/images/placeholder/003_600x400.jpg" alt="">
+          </div>
+        </li>
+        <li class="gel-promo">
+          <div class="gel-promo-content">
+            <div class="gel-promo-headline">
+              <h3>
+                <a href="#link-3">Staff said to summarily 'suspend assaults'</a>
+              </h3>
+            </div>
+            <div class="gel-promo-desc">
+              <p>Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues.</p>
+            </div>
+            <dl class="gel-metadata-strip">
+              <div>
+                <dt class="vh">Published:</dt>
+                <dd>
+                  <span aria-hidden="true">12h</span>
+                  <span class="vh">12 hours ago</span>
+                </dd>
+              </div>
+              <div>
+                <dt class="vh">From:</dt>
+                <dd>
+                  <a href="https://www.bbc.co.uk/news/world/europe">Europe</a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div class="gel-promo-image">
+            <img src="/code-gel/static/images/placeholder/004_600x400.jpg" alt="">
+          </div>
+        </li>
+        <li class="gel-promo">
+          <div class="gel-promo-content">
+            <div class="gel-promo-headline">
+              <h3>
+                <a href="#link-4">Engineers eye exploits</a>
+              </h3>
+            </div>
+            <div class="gel-promo-desc">
+              <p>Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental.</p>
+            </div>
+            <dl class="gel-metadata-strip">
+              <div>
+                <dt class="vh">Published:</dt>
+                <dd>
+                  <span aria-hidden="true">2h</span>
+                  <span class="vh">2 hours ago</span>
+                </dd>
+              </div>
+              <div>
+                <dt class="vh">By:</dt>
+                <dd>
+                  <a href="https://www.bbc.co.uk/news/newsbeat">Newsbeat</a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div class="gel-promo-image">
+            <img src="/code-gel/static/images/placeholder/005_600x400.jpg" alt="">
+          </div>
+        </li>
+        <li class="gel-promo">
+          <div class="gel-promo-content">
+            <div class="gel-promo-headline">
+              <h3>
+                <a href="#link-5">Transmitter reaches realistic perspectives</a>
+              </h3>
+            </div>
+            <div class="gel-promo-desc">
+              <p>A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es.</p>
+            </div>
+            <dl class="gel-metadata-strip">
+              <div>
+                <dt class="vh">Published:</dt>
+                <dd>
+                  <span aria-hidden="true">6th Nov 2018</span>
+                  <span class="vh">6th November 2018</span>
+                </dd>
+              </div>
+              <div>
+                <dt class="vh">From:</dt>
+                <dd>
+                  <a href="https://www.bbc.co.uk/news/world/europe">Europe</a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div class="gel-promo-image">
+            <img src="/code-gel/static/images/placeholder/006_600x400.jpg"
+              alt="">
+          </div>
+        </li>
+        <li class="gel-promo">
+          <div class="gel-promo-content">
+            <div class="gel-promo-headline">
+              <h3>
+                <a href="#link-6">Passengers point to potential differential</a>
+              </h3>
+            </div>
+            <div class="gel-promo-desc">
+              <p>At solmen va esser necessi far uniform grammatica, pronunciation e plu commun paroles. Ma quande lingues coalesce.</p>
+            </div>
+            <dl class="gel-metadata-strip">
+              <div>
+                <dt class="vh">Published:</dt>
+                <dd>
+                  <span aria-hidden="true">6th Nov 2018</span>
+                  <span class="vh">6th November 2018</span>
+                </dd>
+              </div>
+              <div>
+                <dt class="vh">From:</dt>
+                <dd>
+                  <a href="https://www.bbc.co.uk/news/world/europe">Europe</a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div class="gel-promo-image">
+            <img src="/code-gel/static/images/placeholder/007_600x400.jpg" alt="">
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function(event) {
+    gelui.Carousel.init();
+    gelui.Promo.init();
+  });
+</script></div>
+        
+          <p><a class="codegel-cta gel-long-primer-bold" href="../demos/carousels/" target="_new"><span class="codegel-button__label">Open in new window</span><svg class="codegel-button__icon codegel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+        <h2 id="test-specifications">Test specifications</h2>
+<p>[TODO]</p>
+<h2 id="related-research">Related research</h2>
+<p>[TODO]</p>
+<h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>&quot;Image Carousels: Getting Control of the Merry-Go-Round&quot; — <a href="http://usability.gov">usability.gov</a>, <a href="https://www.usability.gov/get-involved/blog/2013/04/image-carousels.html">https://www.usability.gov/get-involved/blog/2013/04/image-carousels.html</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Gist of the <code>vh</code> (visually hidden) class <a href="https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472">https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>&quot;Perceived Affordances and Designing for Task Flow&quot; — Johnny Holland, <a href="http://johnnyholland.org/2010/04/perceived-affordances-and-designing-for-task-flow/">http://johnnyholland.org/2010/04/perceived-affordances-and-designing-for-task-flow/</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>&quot;The Accessibility Tree&quot; — <a href="http://developers.google.com">developers.google.com</a>, <a href="https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree">https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>Inert polyfill on Github, <a href="https://github.com/GoogleChrome/inert-polyfill">https://github.com/GoogleChrome/inert-polyfill</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>Throttling and Debouncing in JavaScript — <a href="http://Codeburst.io">Codeburst.io</a>, <a href="https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf">https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>Lazy loading images using Intersection Observer — Dean Hume,  <a href="https://deanhume.com/lazy-loading-images-using-intersection-observer/">https://deanhume.com/lazy-loading-images-using-intersection-observer/</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+
+                <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
+                    <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
+                        <svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Could you improve this documentation?
+                    </h4>
+                    <div>
+                        <p>
+                        If you think you could make anything you see here a bit better then become one of <a href="/code-gel/contributors/">our lovely contributors</a>!
+                        </p>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="geldocs-feedback-banner">
+        <div class="gel-wrap">
+            <div class="gel-layout">
+                <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
+                    <h2 class="geldocs-feedback-banner__title">Got a minute?</h2>
+                    <p>We'd love to know what you think of the Code GEL website.</p>
+                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" class="geldocs-button geldocs-button__link-button geldocs-feedback-banner__cta geldocs-button--primary">
+                        <span class="geldocs-button__content">Go to survey</span>
+                        <span class="geldocs-button__icon_wrapper">
+                            <svg class="geldocs-button__icon geldocs-icon geldocs-icon--text">
+                                <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                                    style="fill:undefined;"></use>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/code-gel/static/js/codegel.js"></script>
+
+    
+
+    <script type="text/javascript">
+        new Sticky('.sticky');
+        new MenuSpy(document.querySelector('#geldocs-toc__links'), {enableLocationHash: false});
+        new SweetScroll({
+            trigger: '#geldocs-toc__links a',
+            quickMode: true,
+            easing: 'easeOutExpo',
+            cancellable: true,
+            updateURL: false, 
+        });
+    </script>
+</body>
+
+</html>
