@@ -111,13 +111,13 @@
     // But any function that returns a promise can be used
     var dataProvider = function(i) {
       return new Promise(function (resolve, reject) {
-        resolve({
+        setTimeout(function() { resolve({
           json: function() {
             return {
               userId: i, id: i, title: randomTitle(8)
             };
           }
-        });
+        })}, 800);
       });
     };
 
