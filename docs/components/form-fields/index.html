@@ -103,15 +103,15 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#Introduction-15">Introduction</a></li><li><a href="#Recommended-markup-4">Recommended markup</a></li><li><a href="#Recommended-layout-4">Recommended layout</a></li><li><a href="#Recommended-behaviour-4">Recommended behaviour</a></li><li><a href="#Reference-implementation-14">Reference implementation</a></li><li><a href="#Related-research-16">Related research</a></li></ol>
+                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#Introduction-20">Introduction</a></li><li><a href="#Recommended-markup-6">Recommended markup</a></li><li><a href="#Recommended-layout-6">Recommended layout</a></li><li><a href="#Recommended-behaviour-6">Recommended behaviour</a></li><li><a href="#Reference-implementation-18">Reference implementation</a></li><li><a href="#Related-research-21">Related research</a></li></ol>
                 </nav>
             </div>
 
             <div class="geldocs-sections geldocs-body-copy gel-layout__item gel-3/5@l">
-                <h2 id="Introduction-15">Introduction</h2>
+                <h2 id="Introduction-20">Introduction</h2>
 <p>Gracefully handling user input is critical to the usability of BBC services, but also an area of Interaction Design fraught with potential problems. The purpose of this document is to set out robust approaches to presenting and validating form fields.</p>
 <p>The focus here is on web-based forms. For further guidance specific to mobile/native applications, please consult the <a href="http://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/forms/labelling-form-controls">BBC Mobile Accessibility Guidelines</a>.</p>
-<h2 id="Recommended-markup-4">Recommended markup</h2>
+<h2 id="Recommended-markup-6">Recommended markup</h2>
 <h3 id="Labelling-1">Labelling</h3>
 <p>Any field's element needs to be associated programmatically with a label. This is achieved by making the label's <code>for</code> attribute and the input's <code>id</code> attribute share the same value.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"username"</span>&gt;</span>Username<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
@@ -223,7 +223,7 @@ to break because they depend on JavaScript in order to function.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"fact"</span>&gt;</span>Interesting fact (optional)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"fact"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"fact"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"username-error"</span> /&gt;</span>
 </code></pre>
-<h2 id="Recommended-layout-4">Recommended layout</h2>
+<h2 id="Recommended-layout-6">Recommended layout</h2>
 <h3 id="Order-and-orientation-1">Order and orientation</h3>
 <p>Place labels (and their descriptions, if present) <em>above</em> form elements. This is especially important on mobile platforms because the invoked virtual keyboard has a habit of obscuring labels to the side or below inputs.</p>
 <p>Animated labels that appear as <code>placeholder</code>s, then animate upwards to assume the position of a label, should be avoided for their pressure on cognition<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. A label <em>over</em> an input, similar to a <code>placeholder</code>, can misidentify the field as having a value and being already completed.</p>
@@ -250,7 +250,7 @@ to break because they depend on JavaScript in order to function.</p>
 <p>Where there are errors, there should always be error messages. Prefixing the error message with 'Error:',  or a warning symbol, ensures the nature of the message is conveyed explicitly.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username-error"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Error:<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span> Your username cannot contain spaces<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<h2 id="Recommended-behaviour-4">Recommended behaviour</h2>
+<h2 id="Recommended-behaviour-6">Recommended behaviour</h2>
 <p>Form validation should comprise of two phases:</p>
 <ol>
 <li>Individual field validation</li>
@@ -286,10 +286,10 @@ to break because they depend on JavaScript in order to function.</p>
 <li>Some implementations disable fields that have been correctly completed, in an effort to make it clearer which fields need addressing. It is recommended that all fields remain enabled, so users can adjust their input at any time. In some cases, correcting one input's value may mean having to adjust another's, even if it is superficially correct in terms of format.</li>
 <li>You may wish to employ 'positive validation', wherein inputs that are successfully completed display a green style and 'tick'. The difficulty here is in discerning between a correct format, and correct information. Showing a tick next to a correctly formatted bank card number, for example, is misleading: the user may believe you're aware it is the correct number for their specific card.</li>
 </ul>
-<h2 id="Reference-implementation-14">Reference implementation</h2>
+<h2 id="Reference-implementation-18">Reference implementation</h2>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-Important-18">
-              <h4 id="aside-alert-Important-18" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Example implementations are intended to demonstrate <strong>what needs to be achieved</strong> but not how to achieve it. To meet our recommendations your HTML semantics, layout and behaviour must conform to the example implementation. Your server-side and front-end frameworks will likely differ.</p>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-Important-23">
+              <h4 id="aside-alert-Important-23" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Example implementations are intended to demonstrate <strong>what needs to be achieved</strong> but not how to achieve it. To meet our recommendations your HTML semantics, layout and behaviour must conform to the example implementation. Your server-side and front-end frameworks will likely differ.</p>
 </aside>
           <div class="geldocs-demo"><!-- 
 title: Form fields and validation
@@ -346,9 +346,9 @@ title: Form fields and validation
   });
 </script></div>
         <p><a class="codegel-cta gel-long-primer-bold" href="../demos/form-fields/" target="_new"><span class="codegel-button__label">Open in new window</span><svg class="codegel-button__icon codegel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
-<h2 id="Related-research-16">Related research</h2>
+<h2 id="Related-research-21">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
-<h3 id="Further-reading-elsewhere-on-the-Web-16">Further reading, elsewhere on the Web</h3>
+<h3 id="Further-reading-elsewhere-on-the-Web-21">Further reading, elsewhere on the Web</h3>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">

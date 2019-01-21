@@ -101,3 +101,31 @@ a {
 .gel-u-u-clickable {
   cursor: pointer;
 }
+
+/* icon */
+
+.gel-icon {
+  fill: currentColor
+}
+
+.gel-icon--small {
+  height: 16px;
+  width: 16px
+}
+
+.gel-icon--medium {
+  height: 32px;
+  width: 32px
+}
+
+.gel-icon--large {
+  height: 64px;
+  width: 64px
+}
+
+.gel-icon--text {
+  margin-top: .1em;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top
+}

@@ -103,7 +103,7 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#Overview-1">Overview</a></li><li><a href="#Recommended-markup-5">Recommended markup</a></li><li><a href="#Recommended-layout-5">Recommended layout</a></li><li><a href="#Recommended-behaviour-5">Recommended behaviour</a></li><li><a href="#Example-implementation-1">Example implementation</a></li><li><a href="#Related-accessibility-guidelines-1">Related accessibility guidelines</a></li><li><a href="#Related-research-20">Related research</a></li></ol>
+                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#Overview-1">Overview</a></li><li><a href="#Recommended-markup-7">Recommended markup</a></li><li><a href="#Recommended-layout-7">Recommended layout</a></li><li><a href="#Recommended-behaviour-7">Recommended behaviour</a></li><li><a href="#Example-implementation-1">Example implementation</a></li><li><a href="#Related-accessibility-guidelines-1">Related accessibility guidelines</a></li><li><a href="#Related-research-22">Related research</a></li></ol>
                 </nav>
             </div>
 
@@ -119,7 +119,7 @@
 <li>an optional metadata strip</li>
 </ul>
 <p>These are shown in more detail in the <a href="https://www.bbc.co.uk/gel/guidelines/promos">BBC GEL Promo documentation</a>.</p>
-<h2 id="Recommended-markup-5">Recommended markup</h2>
+<h2 id="Recommended-markup-7">Recommended markup</h2>
 <p>Promos are typically presented as a set, and together must be marked up as an unordered list, with each Promo marked as a list item (<code>&lt;li&gt;</code>). This enables structural and navigational cues in screen reader software<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. Each Promo's primary link must be contained within a heading, with each promo's heading of the same level, and the set of promos introduced as its own section within the document by a heading one level higher. The wording of the Promo's primary link should resemble that of the target page's <code>&lt;title&gt;</code> and <code>&lt;h1&gt;</code>. This consistency aids cognitive accessibility and improves <abbr title="search engine optimization">SEO</abbr><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Latest news<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-promos"</span>&gt;</span>
@@ -186,7 +186,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 </code></pre>
 <p>Images can be considered decorative (<code>alt=&quot;&quot;</code>; the first Promo in our example) or non-decorative (<code>alt=&quot;[description of image]&quot;</code>; the second Promo in our example). They must appear <em>after</em> the textual content (<code>codegel-promo-content</code>) in the markup since the heading introduces the promo content, including the image content. <strong>Non-decorative images must have alternative text that does not simply repeat information in the headline or description</strong>.</p>
-<h2 id="Recommended-layout-5">Recommended layout</h2>
+<h2 id="Recommended-layout-7">Recommended layout</h2>
 <p>A group of Promos in a set should share the same height. This is possible by making the <code>&lt;ul&gt;</code> a CSS Flexbox or CSS Grid context. The appearance of each promo is improved by distributing the metadata (if present) to the bottom of the container. This is possible by making the promo a Flexbox context and giving the metadata element <code>margin-top: auto</code>. Padding can be combined with margin to ensure a minimum space between the metadata and the element above it.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.codegel-promo</span> {
   <span class="hljs-attribute">display</span>: flex;
@@ -267,7 +267,7 @@
 </code></pre>
 <h3 id="Metadata-icons-1">Metadata icons</h3>
 <p>Some items of metadata come with icons, such as a clock prefixing the 'Published' time. These should be provided from <a href="https://www.bbc.co.uk/gel/guidelines/iconography">GEL's iconography system</a>. Ensure their fill is applied using <code>currentColor</code> so that the icon is compatible with high contrast themes.</p>
-<h2 id="Recommended-behaviour-5">Recommended behaviour</h2>
+<h2 id="Recommended-behaviour-7">Recommended behaviour</h2>
 <p>Mouse and touch users should be able to activate the primary (headline) link by pressing either the headline text <em>or</em> the image. However, the image should not represent an additional, redundant tab stop to keyboard users or be perceivable as a link to screen reader users. Too many and redundant 'tab stops' can be cumbersome for keyboard-only users<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>.</p>
 <p>In which case, you need to add a JavaScript <code>click</code> listener to the image and use it to trigger the link's <code>click</code> event by proxy. In plain JavaScript this would look something like the following:</p>
 <pre class="hljs"><code><span class="hljs-comment">// Assuming that `link` represents the headline link node</span>
@@ -280,8 +280,8 @@ img.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs
 <p>If the metadata contains links, these will fall into focus order after the headline, as expected.</p>
 <h2 id="Example-implementation-1">Example implementation</h2>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-Important-22">
-              <h4 id="aside-alert-Important-22" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Example implementations are intended to demonstrate <strong>what needs to be achieved</strong> but not how to achieve it. To meet our recommendations your HTML semantics, layout and behaviour must conform to the example implementation. Your server-side and front-end frameworks will likely differ.</p>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-Important-24">
+              <h4 id="aside-alert-Important-24" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Example implementations are intended to demonstrate <strong>what needs to be achieved</strong> but not how to achieve it. To meet our recommendations your HTML semantics, layout and behaviour must conform to the example implementation. Your server-side and front-end frameworks will likely differ.</p>
 </aside>
           <div class="geldocs-demo"><!-- 
 title: Promos
@@ -459,9 +459,9 @@ title: Promos
   <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/text-equivalents/visual-formatting">Visual formatting</a></dt>
   <dd>"Visual formatting alone must not be used to convey meaning." View the <a href="https://github.com/bbc/bbc-a11y/blob/master/features/standards/mag/text_equivalents/05_visual_formatting.feature">test spec for visual formatting</a>.</dd>
 </dl>
-<h2 id="Related-research-20">Related research</h2>
+<h2 id="Related-research-22">Related research</h2>
 <p>This component was originally developed and tested at the BBC in a prototype of the BBC Homepage. During user research we tested with X users, including subjects with a variety of impairments and a range of digital skills. You can read more about our research and findings on <a href="#linktocome">the project Wiki page, hosted on GitHub</a>.</p>
-<h3 id="Further-reading-elsewhere-on-the-Web-20">Further reading, elsewhere on the Web</h3>
+<h3 id="Further-reading-elsewhere-on-the-Web-22">Further reading, elsewhere on the Web</h3>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">

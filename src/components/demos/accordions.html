@@ -1,0 +1,72 @@
+---
+title: Accordions
+---
+
+<div class="codegel-accordion-controls">
+  <button class="codegel-button" id="openAll">Open all</button>
+  <button class="codegel-button" id="closeAll">Close all</button>
+</div>
+<div class="codegel-accordion">
+  <section id="how-can-I-purchase-bbc-dvds-merchandise">
+    <h3>How can I purchase BBC DVDs/Merchandise?</h3>
+    <p>It is no longer possible to buy DVDs, Blu-ray discs, games, toys or other BBC related products direct from the
+      BBC in the UK.</p>
+    <p>We will continue to publish a range of DVDs, Blu-ray discs and other merchandising which can be bought from a
+      wide range of retailers both online, on the high street as well as in supermarkets.</p>
+    <p>Please note that not all BBC programmes are commercially available. To check if a DVD, Blu-ray disc is
+      commercially available email: <a href="mailto:DVDenquiry@bbc.com">DVDenquiry@bbc.com</a> For faulty DVDs and
+      Blu-ray discs email: <a href="mailto:DVDSupport@bbc.com">DVDSupport@bbc.com</a></p>
+    <p>If you are a student/journalist/member of the public and wish to view an archive TV programme, please contact
+      the BFI’s National Archive.</p>
+  </section>
+  <section id="bbc-studios-youtube-enquiries-feedback">
+    <h3>BBC Studios YouTube enquiries/feedback</h3>
+    <p>Enquiries and feedback about our YouTube channels can be emailed to the team at: <a href="mailto:BBCStudios.YouTube.Channels@bbc.com">BBCStudios.YouTube.Channels@bbc.com</a></p>
+  </section>
+  <section id="where-can-i-buy-mugs-games-toys-and-other-merchandise">
+    <h3>Where can I buy mugs, games, toys, and other merchandise?</h3>
+    <p>BBC Studios works with external organisations to create a range of great BBC merchandise of BBC favourites such
+      as Doctor Who and CBeebies, You can buy these products from many high street and online retailers as well as
+      supermarkets.</p>
+  </section>
+  <section id="dvds-for-educational-or-training-purposes">
+    <h3>DVDs for educational or training purposes?</h3>
+    <p>It is sometimes possible to arrange for legitimate educational establishments to obtain a copy of a programme.
+      For more information, please contact <a href="mailto:%20BBCStudiosLearning@bbc.com">BBC Studios Learning </a></p>
+  </section>
+  <section id="can-i-get-a-copy-of-a-bbc-programme">
+    <h3>Can I get a copy of a BBC programme?</h3>
+    <p>If you are interested in purchasing a copy of a programme or series you have watched on our channels, please
+      check commercial availability via online or local retailers. Please note that not all programmes are commercially
+      available.</p>
+    <p>For a number of reasons related to rights and resources, the BBC is unable to loan out programme material to
+      members of the public and it does not hold a stock of review copies to give away.</p>
+    <p>If you are a student/journalist/member of the public and wish to view an archive TV programme, please contact
+      the <a href="http://www.bfi.org.uk/bfi-national-archive-enquiry">BFI’s National Archive</a>.</p>
+    <p>If you, or your company, organisation or property has been featured in a BBC programme, you may be able to
+      purchase a copy. If you would like to request a copy please fill out the form on the <a href="http://www.bbc.co.uk/faqs/tv/contributor_access_process">BBC
+        website</a>.</p>
+  </section>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codegel && codegel.Accordion.init();
+
+    // Initialize on the `class="codegel-accordion"` parent element
+    var accordionElem = document.querySelector('.codegel-accordion');
+    var accordion = new codegel.Accordion.constructor(accordionElem);
+
+    // Support for opening all the drawers at once
+    var openAllButton = document.getElementById('openAll');
+    openAllButton.addEventListener('click', function () {
+      accordion.openAll();
+    });
+
+    // Support for closing all the drawers at once
+    var closeAllButton = document.getElementById('closeAll');
+    closeAllButton.addEventListener('click', function () {
+      accordion.closeAll();
+    });
+  });
+</script>
