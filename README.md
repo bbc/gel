@@ -1,6 +1,6 @@
-# bbc/code-gel
+# bbc/gef-docs
 
-Static documentation generator for GEL components.
+Static documentation generator for GEF components.
 
 ## Installation
 
@@ -37,7 +37,7 @@ Or, if you're feeling like you want it all, try this...
 
 ## Example
 
-This is only an example: https://bbc.github.io/code-gel/components/hello-world/
+This is only an example: https://bbc.github.io/gef-docs/components/hello-world/
 
 ## Testing
 
