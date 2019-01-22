@@ -48,7 +48,7 @@ The example places the external link within a paragraph. The paragraph text surr
 
 ```html
 <h2>Further reading</h2>
-<ul class="gel-external-links">
+<ul class="gef-external-links">
   <li>
     <a href="http://example.com/external/link">
       <svg class="gel-icon gel-icon--text" focusable="false">
@@ -98,11 +98,11 @@ The link itself does not need any special styling, and should inherit link styli
 Unfortunately, upon removing the bullets from the list using `list-style: none`, some Voiceover versions cease to identify the list. This can be remedied by placing some arbitrary pseudo-content before each item. In the following solution[^3], a zero-width space is added:
 
 ```css
-.gel-external-links {
+.gef-external-links {
   list-style-type: none;
 }
 
-.gel-external-links li::before {
+.gef-external-links li::before {
   content: '\200B';
 }
 ```
@@ -110,7 +110,7 @@ Unfortunately, upon removing the bullets from the list using `list-style: none`,
 Some white space is placed between external links in the list formation to improve demarcation and legibility:
 
 ```css
-.gel-external-links li + li {
+.gef-external-links li + li {
   margin-top: 0.5rem;
 }
 ```
@@ -126,13 +126,9 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 <cta label="Open in new window" href="../demos/external-links/">
 
 
-## Test specifications
-
-[TODO]
-
 ## Related research
 
-[TODO]
+This topic does not yet have any related research available.
 
 ### Further reading, elsewhere on the Web
 

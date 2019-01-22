@@ -18,21 +18,21 @@ A 'Show more' button at the foot of the **Pocket** allows the reader to unveil t
 The markup is quite simple, since the [Reference implementation](#reference-implementation) uses progressive enhancement, and only adds the button functionality where JavaScript runs. Just two nested wrapping elements are needed.
 
 ```html
-<div class="codegel-pocket">
-  <div class="codegel-pocket-truncated">
+<div class="gef-pocket">
+  <div class="gef-pocket-truncated">
     <!-- content here -->
   </div>
 </div>
 ```
 
 ::: info Main content
-Note that the **Pocket** is intended for truncating the _main_ content of a page. In most circumstances, you should be nesting the `class="codegel-pocket"` element directly inside a `<main>` element or, alternatively, _making_ it the `<main>` element. The page should contain a skip link that navigates the user to `<main>`, in accordance with WCAG 2.4.1 Bypass Blocks[^1]. The `tabindex="-1"` in the example to follow ensures all browsers move focus to the link when it is navigated to via the skip link.
+Note that the **Pocket** is intended for truncating the _main_ content of a page. In most circumstances, you should be nesting the `class="gef-pocket"` element directly inside a `<main>` element or, alternatively, _making_ it the `<main>` element. The page should contain a skip link that navigates the user to `<main>`, in accordance with WCAG 2.4.1 Bypass Blocks[^1]. The `tabindex="-1"` in the example to follow ensures all browsers move focus to the link when it is navigated to via the skip link.
 :::
 
 ```html
 <main id="main" tabindex="-1">
-  <div class="codegel-pocket">
-    <div class="codegel-pocket-truncated">
+  <div class="gef-pocket">
+    <div class="gef-pocket-truncated">
       <!-- content here -->
     </div>
   </div>
@@ -41,12 +41,12 @@ Note that the **Pocket** is intended for truncating the _main_ content of a page
 
 ## Recommended layout
 
-The `class="codegel-pocket-truncated"` needs to adopt a reasonable fixed height on initialization. Something set in viewport units[^2] is recommended since they pertain to a proportion of the viewport and would befit a viewport of any physical height: `50vh` is 50% of the height of any screen. This value is set as one of the parameters of the [Reference implementation](#reference-implementation)'s constructor.
+The `class="gef-pocket-truncated"` needs to adopt a reasonable fixed height on initialization. Something set in viewport units[^2] is recommended since they pertain to a proportion of the viewport and would befit a viewport of any physical height: `50vh` is 50% of the height of any screen. This value is set as one of the parameters of the [Reference implementation](#reference-implementation)'s constructor.
 
 The same element must, of course, take `overflow-y: hidden` for the truncation to work.
 
 ```css
-.codegel-pocket-truncated {
+.gef-pocket-truncated {
   overflow-y: hidden;
 }
 ```
@@ -54,15 +54,15 @@ The same element must, of course, take `overflow-y: hidden` for the truncation t
 The 'foot' of the **Pocket** element contains the 'Show more' button, centrally justified. It has no height and appears as a single line, with the button placed centrally over it on the vertical axis, using a transform.
 
 ```css
-.codegel-pocket-foot button {
+.gef-pocket-foot button {
   transform: translateY(-50%);
 }
 ```
 
-When the **Pocket** is in its unveiled/showing state, the button's text changes to 'Show less' (see [Recommended behaviour](#recommended-behaviour), below) and a class of `codegel-pocket-foot-shown` is applied, enabling a `margin-top` style to separate the transformed button from the now unveiled content.
+When the **Pocket** is in its unveiled/showing state, the button's text changes to 'Show less' (see [Recommended behaviour](#recommended-behaviour), below) and a class of `gef-pocket-foot-shown` is applied, enabling a `margin-top` style to separate the transformed button from the now unveiled content.
 
 ```css
-.codegel-pocket-foot.codegel-pocket-foot-shown {
+.gef-pocket-foot.gef-pocket-foot-shown {
   margin-top: double($gel-spacing-unit);
 }
 ```
@@ -82,7 +82,7 @@ When the _"Continue below..."_ element is focused, it draws attention by showing
   }
 }
 
-.codegel-pocket-continue:focus {
+.gef-pocket-continue:focus {
   animation: focus 1s linear 1;
 }
 ```
@@ -91,7 +91,7 @@ When the _"Continue below..."_ element is focused, it draws attention by showing
 
 The **Pocket** is treated as a progressive enhancement. It does not initialize at all if JavaScript does not run or `IntersectionObserver` is not supported. Support for `IntersectionObserver` is covered by Chrome, Edge, Firefox, Opera, and various Android browsers at the time of writing[^3]. Browsers that do not enhance to a **Pocket** simply show the content in its expanded form.
 
-The purpose of the `IntersectionObserver` is to apply (polyfilled) `inert`[^4] status to all the visually obscured children within the `class="codegel-pocket-truncated"` element.
+The purpose of the `IntersectionObserver` is to apply (polyfilled) `inert`[^4] status to all the visually obscured children within the `class="gef-pocket-truncated"` element.
 
 ```js
 if (!item.isIntersecting) {
@@ -136,7 +136,7 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 
 <include src="components/demos/pockets.html">
 
-<p><a class="geldocs-button geldocs-button--dark geldocs-long-primer-bold" href="../demos/pockets/" target="_new">Open in new window <svg class="geldocs-button__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:currentColor"></use></svg></a></p>
+<cta label="Open in new window" href="../demos/pockets/">
 
 ## Related research
 

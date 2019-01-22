@@ -8,7 +8,7 @@
 
     <title>Code GEL | Load more Demo</title>
 
-    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/codegel.css">
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/gef.css">
 
     <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
@@ -33,50 +33,50 @@
                 <h2>Reference implementation</h2>
                 
                 
-<div class="codegel-loader">
-  <ul class="codegel-loader-items">
-    <li class="codegel-loader-item">
+<div class="gef-loader">
+  <ul class="gef-loader-items">
+    <li class="gef-loader-item">
       <p>delectus ullam et corporis nulla voluptas sequi</p>
-      <a class="codegel-cta" href="http://www.example.com/path/to/1">Read more about result 1</a>
+      <a class="gef-cta" href="http://www.example.com/path/to/1">Read more about result 1</a>
     </li>
-    <li class="codegel-loader-item">
+    <li class="gef-loader-item">
       <p>iusto eius quod necessitatibus culpa ea</p>
-      <a class="codegel-cta" href="http://www.example.com/path/to/2">Read more about result 2</a>
+      <a class="gef-cta" href="http://www.example.com/path/to/2">Read more about result 2</a>
     </li>
-    <li class="codegel-loader-item">
+    <li class="gef-loader-item">
       <p>a quo magni similique perferendis</p>
-      <a class="codegel-cta" href="http://www.example.com/path/to/3">Read more about result 3</a>
+      <a class="gef-cta" href="http://www.example.com/path/to/3">Read more about result 3</a>
     </li>
-    <li class="codegel-loader-item">
+    <li class="gef-loader-item">
       <p>ullam ut quidem id aut vel consequuntur</p>
-      <a class="codegel-cta" href="http://www.example.com/path/to/4">Read more about result 4</a>
+      <a class="gef-cta" href="http://www.example.com/path/to/4">Read more about result 4</a>
     </li>
-    <li class="codegel-loader-item">
+    <li class="gef-loader-item">
       <p>doloremque illum aliquid sunt</p>
-      <a class="codegel-cta" href="http://www.example.com/path/to/5">Read more about result 5</a>
+      <a class="gef-cta" href="http://www.example.com/path/to/5">Read more about result 5</a>
     </li>
-    <li class="codegel-loader-item">
+    <li class="gef-loader-item">
       <p>qui explicabo molestiae dolorem</p>
-      <a class="codegel-cta" href="http://www.example.com/path/to/6">Read more about result 6</a>
+      <a class="gef-cta" href="http://www.example.com/path/to/6">Read more about result 6</a>
     </li>
   </ul>
-  <div class="codegel-loader-foot">
-    <div class="codegel-loader-loading" role="status" hidden>
+  <div class="gef-loader-foot">
+    <div class="gef-loader-loading" role="status" hidden>
       <svg class="gel-icon gel-icon--text gel-icon-loading" focusable="false" aria-hidden="true">
         <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-loading"></use>
       </svg>
-      <div class="codegel-loader-loading-text codegel-sr"></div>
+      <div class="gef-loader-loading-text gef-sr"></div>
     </div>
-    <button class="codegel-loader-button codegel-button" type="button" hidden>Load more</button>
-    <nav class="codegel-pages" aria-labelledby="codegel-pagination-label">
-      <div id="codegel-pages-label" hidden>Page</div>
-      <a class="codegel-pages-prev">
-        <span class="codegel-sr">Previous page</span>
+    <button class="gef-loader-button gef-button" type="button" hidden>Load more</button>
+    <nav class="gef-pages" aria-labelledby="gef-pagination-label">
+      <div id="gef-pages-label" hidden>Page</div>
+      <a class="gef-pages-prev">
+        <span class="gef-sr">Previous page</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
           <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-previous"></use>
         </svg>
       </a>
-      <ol class="codegel-pages-numbered">
+      <ol class="gef-pages-numbered">
         <li><a href="?page=1" aria-current="page">1</a></li>
         <li><a href="?page=2">2</a></li>
         <li><a href="?page=3">3</a></li>
@@ -87,9 +87,9 @@
         <li role="separator">&hellip;</li>
         <li><a href="?page=999">999</a></li>
       </ol>
-      <div class="codegel-pages-text">Page 1 of 999</div>
-      <a class="codegel-pages-next" href="?page=2">
-        <span class="codegel-sr">Next page</span>
+      <div class="gef-pages-text">Page 1 of 999</div>
+      <a class="gef-pages-next" href="?page=2">
+        <span class="gef-sr">Next page</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
           <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-next"></use>
         </svg>
@@ -100,7 +100,7 @@
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function () {
-    window.codegel && codegel.LoadMore.init();
+    window.gef && gef.LoadMore.init();
 
     // You can pull numbered results from an API
     // var dataURL = 'https://jsonplaceholder.typicode.com/posts/';
@@ -122,8 +122,8 @@
     };
 
     // Initialize
-    var loaderElem = document.querySelector('.codegel-loader');
-    var loader = new codegel.LoadMore.constructor(loaderElem, 6, 7, dataProvider);
+    var loaderElem = document.querySelector('.gef-loader');
+    var loader = new gef.LoadMore.constructor(loaderElem, 6, 7, dataProvider);
   });
   
   // Fake content generator for demonstration purposes only
@@ -141,7 +141,7 @@
     </main>
 
 
-    <script type="text/javascript" src="/code-gel/static/js/codegel.js"></script>
+    <script type="text/javascript" src="/code-gel/static/js/gef.js"></script>
     
     
 </body>

@@ -1,0 +1,88 @@
+.gef-button, .gef-cta  {
+  padding: double($gel-spacing-unit);
+  color: $gel-color--black;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  border: 0;
+  font-family: inherit;
+}
+
+.gef-cta, .gef-cta a {
+  border: 1px solid $gel-color--black !important;
+}
+
+
+.gef-button {
+  background-color: $gel-color--black;
+  color: $gel-color--white;
+}
+
+.gef-cta {
+  text-decoration: none;
+}
+
+.gef-button, .gef-cta, a.gef-cta {
+  font-size: 15px;
+  font-size: .9375rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+  font-weight: 700;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center
+}
+
+@media (min-width: 37.5em) {
+  .gef-button, .gef-cta, a.gef-cta {
+      line-height:20px;
+      line-height: 1.25rem;
+      font-size: 14px;
+      font-size: .875rem;
+      line-height: 18px;
+      line-height: 1.125rem
+  }
+}
+
+.gef-button svg, .gef-cta svg {
+  fill: currentColor;
+  margin-top: .1em;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+}
+
+.gef-button svg:last-child, .gef-cta svg:last-child {
+  margin-left: 0.9em;
+}
+
+.gef-button svg:first-child, .gef-cta svg:first-child {
+  margin-right: 0.9em;
+}
+
+.gef-button-switch [aria-hidden] {
+  display: inline-block;
+  margin-left: $gel-spacing-unit;
+  font-weight: bold;
+  background-color: $gel-color--white;
+  color: $gel-color--black;
+  padding: 0.125rem 0.25rem;
+  vertical-align: middle;
+}
+
+.gef-button:hover {
+  background-color: $gel-color--tundora;
+  border-color: $gel-color--tundora;
+}
+
+.gef-cta:hover,
+.gef-cta:focus {
+  border-color: $gel-color--tundora;
+  text-decoration: underline;
+  text-decoration-skip: objects;
+}
+
+.gef-button:focus,
+.gef-cta:focus {
+  outline: 3px solid $gel-color--blue;
+}

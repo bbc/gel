@@ -5,24 +5,24 @@ includecss: gelui.css
 
 <div style="margin-bottom: 1rem;">
   <h3>Astronomy Photographer of the Year 2018</h3>
-  <ul class="codegel-cards">
-    <li class="codegel-card">
-      <div class="codegel-card-headline">
+  <ul class="gef-cards">
+    <li class="gef-card">
+      <div class="gef-card-headline">
         <h4>Living Space</h4>
       </div>
-      <div class="codegel-card-content">
+      <div class="gef-card-content">
         <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/E134/production/_104025675_livingspaceandrewwhyte.jpg"
           alt="A silhouette of a lamppost reaches up from suburbia into the milky way" />
       </div>
-      <div class="codegel-card-desc">
+      <div class="gef-card-desc">
         <p>Taken in Pagham, West Sussex, Whyte's photograph aims to show how accustomed we have become to the loss of
           night sky views because of light pollution, with the unlit street lamps allowing for awe-inspiring views.</p>
         <p><small>Runner-up: Andrew Whyte</small></p>
       </div>
-      <div class="codegel-card-toolbar">
+      <div class="gef-card-toolbar">
         <button type="button" aria-haspopup="true">More info</button>
-        <div class="codegel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
-          <h5 class="codegel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
+        <div class="gef-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
+          <h5 class="gef-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin posuere mauris, at sagittis
             odio aliquam sed. Nunc neque diam, euismod ut purus et, scelerisque vulputate tortor. Donec non commodo
             turpis. Nunc ac magna in diam molestie posuere eget eu elit. Suspendisse ut lectus porta eros dapibus
@@ -49,23 +49,23 @@ includecss: gelui.css
         </button>
       </div>
     </li>
-    <li class="codegel-card">
-      <div class="codegel-card-headline">
+    <li class="gef-card">
+      <div class="gef-card-headline">
         <h4>Speeding on the Aurora Lane</h4>
       </div>
-      <div class="codegel-card-content">
+      <div class="gef-card-content">
         <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/12F54/production/_104025677_speedingontheauroralanenicolaslefaudeux.jpg"
           alt="A shimmering green sheet reaches through a sky of stars towards a glowing green horizon" />
       </div>
-      <div class="codegel-card-desc">
+      <div class="gef-card-desc">
         <p>A hazy auroral band is seen drifting across the sky above Sirkka, Finland, seeming like a road disappearing
           over the horizon.</p>
         <p><small>Winner: Nicolas Lefaudeux</small></p>
       </div>
-      <div class="codegel-card-toolbar">
+      <div class="gef-card-toolbar">
         <button type="button" aria-haspopup="true">More info</button>
-        <div class="codegel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
-          <h5 class="codegel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
+        <div class="gef-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
+          <h5 class="gef-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
           <p>Vestibulum consectetur, lectus sed porta pulvinar, turpis nunc placerat nisl, non blandit augue leo in
             nunc. Vivamus in mi lectus. Vivamus ex orci, finibus non massa nec, viverra sollicitudin nibh. Nunc semper
             imperdiet ante, et mattis magna hendrerit a. Quisque libero nibh, hendrerit at tortor vitae, cursus
@@ -93,23 +93,23 @@ includecss: gelui.css
         </button>
       </div>
     </li>
-    <li class="codegel-card">
-      <div class="codegel-card-headline">
+    <li class="gef-card">
+      <div class="gef-card-headline">
         <h4>Castlerigg Stone Circle</h4>
       </div>
-      <div class="codegel-card-content">
+      <div class="gef-card-content">
         <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/40B2/production/_104026561_castleriggstonecirclematthewjamesturner.jpg"
           alt="The sun creeps over bright green hills to gently illuminate a circle of ancient stones. A few lights emanate from a distant village." />
       </div>
-      <div class="codegel-card-desc">
+      <div class="gef-card-desc">
         <p>Turner's image depicts standing stones illuminated by moonlight, while auroras beyond the mountains gives
           the appearance that the hills are emitting an ethereal green glow.</p>
         <p><small>Runner-up: Matthew James Turner</small></p>
       </div>
-      <div class="codegel-card-toolbar">
+      <div class="gef-card-toolbar">
         <button type="button" aria-haspopup="true">More info</button>
-        <div class="codegel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
-          <h5 class="codegel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
+        <div class="gef-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
+          <h5 class="gef-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
           <p>Quisque sit amet magna lacus. Donec in fringilla velit. Curabitur vulputate magna euismod turpis luctus
             bibendum. Donec fringilla risus eget felis aliquet, vel vestibulum nibh bibendum. In laoreet ut nisi nec
             gravida. Nullam scelerisque posuere mollis. Donec ac mauris maximus, placerat enim vitae, placerat libero.
@@ -141,11 +141,11 @@ includecss: gelui.css
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    window.codegel && codegel.Card.init();
+    window.gef && gef.Card.init();
 
-    var cards = document.querySelectorAll('.codegel-card');
+    var cards = document.querySelectorAll('.gef-card');
     Array.prototype.forEach.call(cards, function (c) {
-      var card = new codegel.Card.constructor(c);
+      var card = new gef.Card.constructor(c);
     });
   });
 </script>

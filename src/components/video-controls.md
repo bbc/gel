@@ -45,7 +45,7 @@ If your video has dialog and you are using custom controls, do one of the follow
 Custom controls should be added progressively. Until JavaScript is run, the `<video>` should take `controls` to provide the native controls, and any custom controls should be hidden with `hidden`:
 
 ```html
-<div class="codegel-video-container" role="group">
+<div class="gef-video-container" role="group">
   <video controls>
     <source src="path/to/video.webm" type="video/webm">
     <source src="path/to/video.mp4" type="video/mp4">
@@ -54,7 +54,7 @@ Custom controls should be added progressively. Until JavaScript is run, the `<vi
       <a href="path/to/video.mp4" download>Download</a> the video instead.
     </p>
   </video>
-  <div class="codegel-video-controls" hidden>
+  <div class="gef-video-controls" hidden>
     <!-- custom controls here -->
   </div>
 </div>
@@ -89,25 +89,25 @@ In regards to (3), toggle buttons often have a persistent label and communicate 
 In the [reference implementation](#reference-implementation), an `active` class is appended to the parent button in its active state. This is used as a styling hook to toggle between the two text labels and their icons. In the following example, `class="code-gel-video-button-play-off` is hidden with `display: none` and is not available to assistive technologies. The calculated accessible name[^2] is _"Pause"_.
 
 ```html
-<button class="codegel-video-play-button active" type="button">
-  <span class="codegel-video-button-off">
-    <span class="codegel-sr">Play</span>
+<button class="gef-video-play-button active" type="button">
+  <span class="gef-video-button-off">
+    <span class="gef-sr">Play</span>
     <svg><!-- play icon --></svg>
   </span>
-  <span class="codegel-video-button-on">
-    <span class="codegel-sr">Pause</span>
+  <span class="gef-video-button-on">
+    <span class="gef-sr">Pause</span>
     <svg><!-- pause icon --></svg>
   </span>
 </button>
 ```
 
-The text labels are included as `<span>`s and hidden visually using the `codegel-sr` class.
+The text labels are included as `<span>`s and hidden visually using the `gef-sr` class.
 
 ```css
 /*
 Visually hide an element, but leave it available for screen readers 
  */
-.codegel-sr {
+.gef-sr {
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -140,8 +140,8 @@ Also known as the 'scrub' or progress bar. It has two purposes:
 The timeline must, therefore, be keyboard and screen reader accessible. The `type="range"` input is a robust solution.
 
 ```html
-<label for="timeline" class="codegel-video-scrub-container">
-  <span class="codegel-sr">Timeline</span>
+<label for="timeline" class="gef-video-scrub-container">
+  <span class="gef-sr">Timeline</span>
   <input type="range" id="timeline" min="0" max="95.2" value="14.7" />
 </label>
 ```
@@ -151,8 +151,8 @@ Note `min`, `max`, and `value`, which determine the range and the current play p
 To make these values more readable non-visually, they are rounded up into whole numbers and converted into minutes and seconds to be represented by the `aria-valuemin`, `aria-valuemax`, and `aria-valuenow` properties.
 
 ```html
-<label for="timeline" class="codegel-video-scrub-container">
-  <span class="codegel-sr">Timeline</span>
+<label for="timeline" class="gef-video-scrub-container">
+  <span class="gef-sr">Timeline</span>
   <input type="range" id="timeline" min="0" aria-valuemin="0 seconds" max="95.2" aria-valuemax="1 minutes and 35 seconds" value="14.7" aria-valuenow="0 minutes and 14 seconds" />
 </label>
 ```
@@ -162,7 +162,7 @@ To make these values more readable non-visually, they are rounded up into whole 
 The layout will differ depending on the context and number of simultaneous controls that are implemented. It is, however, recommended the controls are sufficiently large enough to be targeted by mouse and touch, and they carry clear focus styles.
 
 ```css
-.codegel-video-container button:focus {
+.gef-video-container button:focus {
   outline: 2px solid $gel-color--tundora;
 }
 ```
@@ -174,7 +174,7 @@ The `type="range"` input (for the timeline) requires a number of proprietary sty
 In the [reference implementation](#reference-implementation), the controls container uses Flexbox to distribute the controls along a horizontal axis. The timeline container takes `flex: auto`[^5] to take up any space not taken by surrounding buttons. This makes the control bar responsive and tolerant of different functionality complexity.
 
 ```css
-.codegel-video-timeline-container {
+.gef-video-timeline-container {
   flex: auto;
 }
 ```

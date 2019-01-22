@@ -8,7 +8,7 @@
 
     <title>Code GEL | Buttons and CTAs Demo</title>
 
-    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/codegel.css">
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/gef.css">
 
     <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
@@ -35,43 +35,43 @@
                 
 <h3>Basic button</h3>
 
-<button class="codegel-button" type="button" onClick="alert('Basic button clicked')">Download</button>
+<button class="gef-button" type="button" onClick="alert('Basic button clicked')">Download</button>
 
 <h3>Button with icon</h3>
 
-<button class="codegel-button" type="button" onClick="alert('Button with icon clicked')">
-  <span class="codegel-button__label">Download</span><svg aria-hidden="true" focusable="false" class="gel-button__icon gel-icon gel-icon--text">
-    <use xlink:href=" /code-gel/static/images/gel-icons-all.svg#gel-icon-download"></use>
+<button class="gef-button" type="button" onClick="alert('Button with icon clicked')">
+  <span class="gef-button__label">Download</span><svg aria-hidden="true" focusable="false" class="gel-button__icon gel-icon gel-icon--text">
+    <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-download"></use>
   </svg>
 </button>
 
 <h3>Switch button with <code>aria-pressed</code></h3>
 
-<button class="codegel-button codegel-button-switch">
-  <span class="codegel-button__label">Night theme</span>
+<button class="gef-button gef-button-switch">
+  <span class="gef-button__label">Night theme</span>
   <span aria-hidden="true">on</span>
 </button>
 
 <h3 id="basic-cta">Basic CTA</h3>
 
-<a class="codegel-cta" href="#basic-cta">Help</a>
+<a class="gef-cta" href="#basic-cta">Help</a>
 
 <h3 id="cta-with-icon">CTA with icon</h3>
 
-<a class="codegel-cta" href="#cta-with-icon">
+<a class="gef-cta" href="#cta-with-icon">
   <svg aria-hidden="true" focusable="false" class="gel-button__icon gel-icon gel-icon--text">
     <use xlink:href=" /code-gel/static/images/gel-icons-all.svg#gel-icon-help"></use>
-  </svg><span class="codegel-button__label">Help</span>
+  </svg><span class="gef-button__label">Help</span>
 </a>
 
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function () {
-    window.codegel && codegel.Switch.init();
+    window.gef && gef.Switch.init();
 
     // Initialize switch button
-    var switchElem = document.querySelector('.codegel-button-switch');
-    var switchButton = new codegel.Switch.constructor(switchElem);
+    var switchElem = document.querySelector('.gef-button-switch');
+    var switchButton = new gef.Switch.constructor(switchElem);
   });
 </script>
             </div>
@@ -79,7 +79,7 @@
     </main>
 
 
-    <script type="text/javascript" src="/code-gel/static/js/codegel.js"></script>
+    <script type="text/javascript" src="/code-gel/static/js/gef.js"></script>
     
     
 </body>

@@ -2,18 +2,18 @@
 title: Action dialogs
 ---
 
-<div id="my-action-dialog-1" class="codegel-action-dialog" role="dialog" aria-labelledby="my-action-dialog-label-1"
+<div id="my-action-dialog-1" class="gef-action-dialog" role="dialog" aria-labelledby="my-action-dialog-label-1"
   aria-describedby="my-action-dialog-desc-1">
-  <h3 id="my-action-dialog-label-1" class="codegel-action-dialog-title">Add to enjoy later</h2>
-  <div id="my-action-dialog-desc-1" class="codegel-action-dialog-content">
+  <h3 id="my-action-dialog-label-1" class="gef-action-dialog-title">Add to enjoy later</h2>
+  <div id="my-action-dialog-desc-1" class="gef-action-dialog-content">
     <p>Sign in to add to My Programmes and enjoy it later on other devices</p>
   </div>
-  <div class="codegel-action-dialog-buttons">
+  <div class="gef-action-dialog-buttons">
     <a href="#/path/to/sign-in">Sign in</a>
     or
     <a href="#/path/to/register">Register</a>
   </div>
-  <button class="codegel-action-dialog-close">
+  <button class="gef-action-dialog-close">
     <span class="vh">close</span>
     <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
       <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-no"></use>
@@ -21,18 +21,18 @@ title: Action dialogs
   </button>
 </div>
 
-<div id="my-action-dialog-2" class="codegel-action-dialog" role="dialog" aria-labelledby="my-action-dialog-label-2"
+<div id="my-action-dialog-2" class="gef-action-dialog" role="dialog" aria-labelledby="my-action-dialog-label-2"
   aria-describedby="my-action-dialog-desc-2">
-  <h3 id="my-action-dialog-label-2" class="codegel-action-dialog-title">Add to enjoy later</h2>
-  <div id="my-action-dialog-desc-2" class="codegel-action-dialog-content">
+  <h3 id="my-action-dialog-label-2" class="gef-action-dialog-title">Add to enjoy later</h2>
+  <div id="my-action-dialog-desc-2" class="gef-action-dialog-content">
     <p>Sign in to add to My Programmes and enjoy it later on other devices</p>
   </div>
-  <div class="codegel-action-dialog-buttons">
+  <div class="gef-action-dialog-buttons">
     <a href="#/path/to/sign-in">Sign in</a>
     or
     <a href="#/path/to/register">Register</a>
   </div>
-  <button class="codegel-action-dialog-close">
+  <button class="gef-action-dialog-close">
     <span class="vh">close</span>
     <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
       <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-no"></use>
@@ -40,21 +40,21 @@ title: Action dialogs
   </button>
 </div>
 
-<p><button class="geldocs-button geldocs-button--primary" id="codegel-action-dialog-invoker-1">Open action dialog (bottom)</button></p>
-<p><button class="geldocs-button geldocs-button--primary" id="codegel-action-dialog-invoker-2">Open action dialog (center)</button></p>
+<p><button class="geldocs-button geldocs-button--primary" id="gef-action-dialog-invoker-1">Open action dialog (bottom)</button></p>
+<p><button class="geldocs-button geldocs-button--primary" id="gef-action-dialog-invoker-2">Open action dialog (center)</button></p>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function () {
-    window.codegel && codegel.ActionDialog.init();
+    window.gef && gef.ActionDialog.init();
 
     // Example 1: Dialog aligned to bottom of screen
     var dialogBottomElem = document.getElementById('my-action-dialog-1');
-    var dialogBottomInvoker = document.getElementById('codegel-action-dialog-invoker-1');
-    var d1 = new codegel.ActionDialog.constructor(dialogBottomElem, dialogBottomInvoker);
+    var dialogBottomInvoker = document.getElementById('gef-action-dialog-invoker-1');
+    var d1 = new gef.ActionDialog.constructor(dialogBottomElem, dialogBottomInvoker);
 
     // Example 2: Dialog centered in viewport
     var dialogCenterElem = document.getElementById('my-action-dialog-2');
-    var dialogCenterInvoker = document.getElementById('codegel-action-dialog-invoker-2');
-    var d2 = new codegel.ActionDialog.constructor(dialogCenterElem, dialogCenterInvoker, true);
+    var dialogCenterInvoker = document.getElementById('gef-action-dialog-invoker-2');
+    var d2 = new gef.ActionDialog.constructor(dialogCenterElem, dialogCenterInvoker, true);
   });
 </script>

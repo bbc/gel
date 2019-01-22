@@ -20,7 +20,7 @@ The GEL tabs implementation diverges from the ARIA Authoring Practices specifica
 ## Expected markup
 
 ```html
-<div class="gel-tabs">
+<div class="gef-tabs">
   <ul>
     <li>
       <a id="tab-section1" href="#section1" aria-current="true">Section 1</a>
@@ -65,11 +65,11 @@ The [main GEL page](https://www.bbc.co.uk/gel/guidelines/tabs) covers visual des
 Shortened labels are preferred to wrapped text, so `white-space: nowrap` and `text-overflow: ellipsis` are applied by default. Note that this only works where `min-width: 0` is applied to the flex child (the `<li>`).
 
 ```css
-.gel-tabs > ul li {
+.gef-tabs > ul li {
   min-width: 0;
 }
 
-.gel-tabs > ul a {
+.gef-tabs > ul a {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -80,11 +80,11 @@ However, this can easily result in illegible labels for very narrow viewports. I
 
 ```css
 @media (max-width: 400px) {
-  .gel-tabs > ul {
+  .gef-tabs > ul {
     flex-wrap: wrap;
   }
 
-  .gel-tabs > ul li {
+  .gef-tabs > ul li {
     flex-shrink: 0;
     flex-basis: 100%;
     margin: 0;
@@ -98,8 +98,8 @@ However, this can easily result in illegible labels for very narrow viewports. I
 The tab elements themselves are rectangular and take a `background-color` making some user agents' default focus styling unclear. It is recommended a solid `outline` style is applied.
 
 ```css
-.gel-tabs > ul a:focus,
-.gel-tabs > section:focus {
+.gef-tabs > ul a:focus,
+.gef-tabs > section:focus {
   outline: 2px solid;
   outline-offset: -2px;
 }
@@ -151,14 +151,9 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 
 <cta label="Open in new window" href="../demos/tabs/">
 
-
-## Test specifications
-
-[TODO]
-
 ## Related research
 
-[TODO]
+This topic does not yet have any related research available.
 
 ### Further reading, elsewhere on the Web
 

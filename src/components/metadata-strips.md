@@ -9,16 +9,16 @@ linkback: http://www.bbc.co.uk/gel/guidelines/cards
 
 ## Introduction
 
-The **Metadata Strip** is a simple component to be provided as part of content such as a [**Promo**](#link-todo). It defines key information attributed to the content like its publish date, and derivation.
+The **Metadata Strip** is a simple component to be provided as part of content such as a [Promo](../promos). It defines key information attributed to the content like its publish date, and derivation.
 
 ## Expected markup
 
 ::: info Note
-The following example assumes the content is a [**Promo**](#link-todo) and includes just publishing and derivation information. Other definitions may be applicable elsewhere.
+The following example assumes the content is a [Promo](../promos) and includes just publishing and derivation information. Other definitions may be applicable elsewhere.
 :::
 
 ```html
-<dl class="gel-metadata-strip">
+<dl class="gef-metadata-strip">
   <div>
     <dt class="vh">Published:</dt>
     <dd>
@@ -53,7 +53,7 @@ The following example assumes the content is a [**Promo**](#link-todo) and inclu
 The `<dl>`, `<dt>`, and `<dd>` must have their user agent styles removed. The child `<div>`s are set to `inline-block`, with `white-space: nowrap`.
 
 ```css
-.gel-metadata-strip > div {
+.gef-metadata-strip > div {
   display: inline-block;
   white-space: nowrap;
 }
@@ -64,7 +64,7 @@ The purpose of `nowrap` is to ensure pairs of definition titles and their defini
 A border separator is included between—and only between—definition `<div>`s using pseudo-content:
 
 ```css
-.gel-metadata-strip > div + div::before {
+.gef-metadata-strip > div + div::before {
   content: '';
   border-left: 1px solid;
   margin: 0 0.25rem;
@@ -80,7 +80,7 @@ Some metadata values may be linked, such as the 'From' value in the [**Expected 
 Accompany any colour differentiation with `text-decoration: underline`, if this style is not already being inherited.
 
 ```css
-.gel-metadata-strip a {
+.gef-metadata-strip a {
   text-decoration: underline;
 }
 ```
@@ -112,13 +112,9 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 <cta label="Open in new window" href="../demos/metadata-strips/">
 
 
-## Test specifications
-
-[TODO]
-
 ## Related research
 
-[TODO]
+This topic does not yet have any related research available.
 
 ### Further reading, elsewhere on the Web
 

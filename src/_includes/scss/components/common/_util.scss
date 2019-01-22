@@ -1,6 +1,6 @@
 /*-- util -----------------------------*/
 
-.codegel-u-flex-rw {
+.gef-u-flex-rw {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -8,13 +8,13 @@
   display: flex;
  }
 
-.codegel-u-flex-rw, .codegel-u-flex-rw * {
+.gef-u-flex-rw, .gef-u-flex-rw * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.codegel-u-flex-rt {
+.gef-u-flex-rt {
   -webkit-box-ordinal-group: 2;
   -moz-box-ordinal-group: 2;
   -ms-flex-order: 2;
@@ -24,7 +24,7 @@
   -moz-box-flex: 1;
 }
 
-.codegel-u-flex-lf {
+.gef-u-flex-lf {
   -webkit-box-ordinal-group: 1;
   -moz-box-ordinal-group: 1;
   -ms-flex-order: 1;

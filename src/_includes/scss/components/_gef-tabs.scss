@@ -1,0 +1,40 @@
+.gef-tabs>section {
+  background-color: $gel-color--dusty-gray;
+  padding: 1rem;
+}
+
+.gef-tabs>ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  margin: -0.5rem;
+}
+
+.gef-tabs ul>li {
+  flex: 1 1 auto;
+  margin: 0.5rem;
+  min-width: 0;
+}
+
+.gef-tabs>ul a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  text-align: center;
+  color: inherit;
+  background-color: $gel-color--alto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gef-tabs>ul a:focus,
+.gef-tabs>section:focus {
+  outline: 2px solid;
+  outline-offset: -2px;
+}
+
+.gef-tabs [aria-current] {
+  background-color: $gel-color--dusty-gray;
+}

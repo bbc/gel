@@ -32,6 +32,7 @@ We are working our way through a list based closely on what's already published 
 
 | Component | Status |
 |-----------|--------|
+| [Accordions]({{site.basedir}}components/accordions/) | Draft / Pending|
 | [Action dialogs]({{site.basedir}}components/action-dialogs/) | Draft / Pending|
 | [Breakout boxes]({{site.basedir}}components/breakout-boxes/) | Draft / Pending|
 | [Buttons and CTAs]({{site.basedir}}components/buttons-and-ctas/) | Draft / Pending|
@@ -53,7 +54,6 @@ Our backlog has a list of patterns we intend to document:
 
 - Information Panel
 - Share Tools
-- Accordion
 - Promo Collection
 - GEL Foundations
 

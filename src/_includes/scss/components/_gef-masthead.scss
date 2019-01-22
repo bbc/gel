@@ -1,0 +1,277 @@
+.gef-masthead {
+  font-size: 0.9rem;
+}
+
+.gef-masthead ul,
+.gef-masthead li {
+  margin: 0;
+  padding: 0;
+}
+
+.gef-masthead-bar {
+  border-bottom: 1px solid $gel-color--dusty-gray;
+}
+
+.gef-masthead-links {
+  border-left: 0;
+}
+
+.gef-masthead-logo img {
+  height: 1em;
+  display: block;
+}
+
+.gef-masthead-popup {
+  padding: 0.75rem;
+  border-bottom: 1px solid $gel-color--dusty-gray;
+  position: relative;
+}
+
+.gef-masthead-close-button {
+  font-size: 1.5rem;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+.gef-masthead-more-menu {
+  border-bottom: 1px solid $gel-color--dusty-gray;
+  padding: 0;
+}
+
+.gef-masthead-more-menu ul {
+  list-style: none;
+}
+
+.gef-masthead-more-menu li {
+  padding: 0.75rem;
+  display: inline-block;
+}
+
+.gef-masthead a,
+.gef-masthead button {
+  font-size: inherit;
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  height: 100%;
+}
+
+.gef-masthead-bar a {
+  display: inline-block;
+  padding: 0.75rem;
+}
+
+.gef-masthead-bar a:hover,
+.gef-masthead-bar a:focus {
+  outline: none;
+  border-color: $gel-color--tundora;
+}
+
+.gef-masthead-banner {
+  padding: 1.25rem 0.75rem;
+  border-bottom: 1px solid $gel-color--dusty-gray;
+}
+
+.gef-masthead-banner a {
+  display: inline-block;
+  height: 2.5rem;
+}
+
+.gef-masthead-banner-logo svg {
+  height: 100%;
+  width: auto;
+}
+
+.gef-masthead-links,
+.gef-masthead-more-option,
+.gef-masthead-alerts-option,
+.gef-masthead-account-option,
+.gef-masthead-alerts {
+  display: none;
+}
+
+.gef-masthead-with-js .gel-masthead-more-account-link,
+.gef-masthead-with-js .gel-masthead-more-alerts-link {
+  display: none;
+}
+
+@supports (display: flex) {
+  .gef-masthead-bar a,
+  .gef-masthead-bar button {
+    white-space: nowrap;
+    border: 0;
+    line-height: 1;
+    padding: 1rem 0.75rem 0.75rem;
+    border-bottom: 0.25rem solid $gel-color--white;
+  }
+  
+  .gef-masthead-bar {
+    display: flex;
+    line-height: 1;
+  }
+  
+  .gef-masthead-bar > * + * {
+    border-left: 1px solid $gel-color--dusty-gray;
+  }
+
+  .gef-masthead-more-option {
+    border-left: 0;
+  }
+  
+  .gef-masthead-links {
+    border-left: 0;
+  }
+  
+  .gef-masthead-links ul {
+    display: flex;
+    list-style: none;
+    white-space: nowrap;
+    height: 100%;
+  }
+  
+  .gef-masthead-links li {
+    border-right: 1px solid $gel-color--dusty-gray;
+  }
+
+  .gef-masthead-links li:first-child {
+    border-left: 1px solid $gel-color--dusty-gray;
+  }
+  
+  .gef-masthead-bar a,
+  .gef-masthead-bar button {
+    display: block;
+  }
+  
+  .gef-masthead-search-option {
+    margin-left: auto;
+  }
+  
+  .gef-masthead-links {
+    overflow-x: auto;
+  }
+  
+  .gef-masthead-links-observed {
+    overflow-x: hidden;
+  }
+  
+  .gef-masthead-link-hidden {
+    visibility: hidden;
+  }
+  
+  .gef-masthead-links::-webkit-scrollbar {
+    height: 0.125rem;
+  }
+
+  .gef-masthead-links::-webkit-scrollbar-track {
+    background-color: $gel-color--alto;
+  }
+
+  .gef-masthead-links::-webkit-scrollbar-thumb {
+    background-color: $gel-color--cod-gray;
+  }
+  
+  .gef-masthead-more-option {
+    position: relative;
+    margin-right: auto;
+  }
+
+  .gef-masthead-more-option-icon {
+    display: none;
+  }
+  
+  .gef-masthead-links:not(.gef-masthead-links-observed) + .gef-masthead-more-option {
+    border-left: 1px solid $gel-color--dusty-gray;
+  }
+
+  .gef-masthead-links:not(.gef-masthead-links-observed) + .gef-masthead-more-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -6px;
+    width: 6px;
+    background-color: rgba(0,0,0,0.05);
+  }
+
+  .gef-masthead-more-menu-inner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .gef-masthead-more-menu-label {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0.75rem;
+  }
+  
+  .gef-masthead-more-menu ul {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .gef-masthead-more-menu li {
+    flex: 0 1 10rem;
+  }
+  
+  .gef-masthead-with-js .gef-masthead-links {
+    display: flex;
+  }
+
+  .gef-masthead-with-js .gef-masthead-popup {
+    display: none;
+  }
+
+  .gef-masthead-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .gef-masthead-account-option {
+    position: relative;
+  }
+
+  .gef-masthead-account-option::after {
+    content: '';
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: $gel-color--white;
+    border-style: solid;
+    border-color: $gel-color--dusty-gray;
+    border-width: 1px 1px 0 0;
+    transform: rotate(45deg);
+    position: absolute;
+    right: calc(-0.25rem - 1px);
+    top: calc(50% - 0.25rem);
+  }
+  
+  .gef-masthead-with-js .gef-masthead-more-option,
+  .gef-masthead-with-js .gef-masthead-alerts-option,
+  .gef-masthead-with-js .gef-masthead-account-option {
+    display: block;
+  }
+  
+  @media (max-width: 500px) {
+    .gef-masthead-more-option {
+      border-left: 1px solid $gel-color--dusty-gray;
+    }
+
+    .gef-masthead-more-option-icon {
+      display: block;
+    }
+    
+    .gef-masthead-more-option-text,
+    .gef-masthead-with-js .gef-masthead-links, 
+    .gef-masthead-account-text,
+    .gef-masthead-more-option::before {
+      display: none;
+    }
+  }
+}

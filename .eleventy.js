@@ -52,7 +52,7 @@ module.exports = function (eleventyConfig) {
         var renderedContent = nunjucks.renderString(fileContent, data);
 
         return `
-          <div class="geldocs-demo">${renderedContent}</div>
+          <div class="gefdocs-demo">${renderedContent}</div>
         `;
       }
     },
@@ -62,7 +62,7 @@ module.exports = function (eleventyConfig) {
         var href = attrs.href;
 
         return `
-          <p><a class="codegel-cta gel-long-primer-bold" href="${href}" target="_new"><span class="codegel-button__label">${label}</span><svg class="codegel-button__icon codegel-icon gel-icon--text"><use xlink:href="${data.site.basedir}static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+          <p><a class="gef-cta gel-long-primer-bold" href="${href}" target="_new"><span class="gef-button__label">${label}</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="${data.site.basedir}static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
         `;
       }
     }
@@ -96,8 +96,8 @@ module.exports = function (eleventyConfig) {
         if (m && tokens[idx].nesting === 1) {
           var id = toSlug( tokens[idx].info );
           return `
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-${id}">
-              <h4 id="aside-${id}" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="${data.site.basedir}static/images/gel-icons-core-set.svg#gel-icon-${m[1]}" style="fill:#404040;"></use></svg>` + md.renderInline( (''+m[2]).trim() ) + `</h4><div>`;
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-${id}">
+              <h4 id="aside-${id}" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="${data.site.basedir}static/images/gel-icons-core-set.svg#gel-icon-${m[1]}" style="fill:#404040;"></use></svg>` + md.renderInline( (''+m[2]).trim() ) + `</h4><div>`;
         } else {
           return `</aside>`;
         }
@@ -115,7 +115,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.namespace(pluginNamespace, () => {
       eleventyConfig.addFilter('toc', function (content, opts) {
         var $ = cheerio.load(content);
-        var result = '<ol id="geldocs-toc__links" class="geldocs-toc">';
+        var result = '<ol id="gefdocs-toc__links" class="gefdocs-toc">';
         $('h2').each(function (i, h2) {
           var id = h2.attribs.id;
           if ( !h2.attribs || !h2.attribs.class || !h2.attribs.class.match( /(^| )no-toc( |$)/ ) ) {

@@ -4,7 +4,7 @@ summary: Breakout Boxes interject supplementary content within the flow of a doc
 version: 0.1.0
 published: false
 accessibility: false
-linkback: http://www.bbc.co.uk/gel/guidelines/promos
+linkback: http://www.bbc.co.uk/gel
 ---
 
 ## Introduction
@@ -18,7 +18,7 @@ Sometimes its worth noting or alerting users to certain information, but that in
 The following example is a "Note" type breakout. The same structure should be used for other types of breakout, differing only in terms of content and iconography.
 
 ```html
-<aside class="gel-breakout-box" aria-labelledby="aside-1540915290281">
+<aside class="gef-breakout-box" aria-labelledby="aside-1540915290281">
   <h4 aria-hidden="true" id="aside-1540915290281">
     <svg class="gel-icon gel-icon--text">
       <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info"></use>
@@ -68,13 +68,9 @@ The following implementation is a copy of the 'tip' provided in this document.
 <cta label="Open in new window" href="../demos/breakout-boxes/">
 
 
-## Test specifications
-
-[TODO]
-
 ## Related research
 
-[TODO]
+This topic does not yet have any related research available.
 
 ### Further reading, elsewhere on the Web
 

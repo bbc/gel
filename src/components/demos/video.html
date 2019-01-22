@@ -5,11 +5,11 @@ title: Video controls
 <div style="margin-bottom: 1rem;">
   <h3>Simple card play/pause</h3>
   <p>This minimal implementation reveals the mute button while the video is playing.</p>
-  <div class="codegel-card" style="width: 300px;">
-    <div class="codegel-card-headline">
+  <div class="gef-card" style="width: 300px;">
+    <div class="gef-card-headline">
       <h4>The 2001 BBC2 Ident</h4>
     </div>
-    <div class="codegel-card-content">
+    <div class="gef-card-content">
       <video controls src="{{site.basedir}}static/videos/ident_clip.mp4">
         <track label="English" kind="subtitles" srclang="en" src="{{site.basedir}}static/videos/ident.vtt" default>
         <p>
@@ -17,42 +17,42 @@ title: Video controls
           <a href="{{site.basedir}}static/videos/ident_clip.mp4">Download</a> the video instead.
         </p>
       </video>
-      <button class="codegel-video-play-button codegel-card-play-button" type="button" hidden>
-        <span class="codegel-video-button-off">
-          <span class="codegel-sr">Play</span>
+      <button class="gef-video-play-button gef-card-play-button" type="button" hidden>
+        <span class="gef-video-button-off">
+          <span class="gef-sr">Play</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
             <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-play"></use>
           </svg>
         </span>
-        <span class="codegel-video-button-on">
-          <span class="codegel-sr">Pause</span>
+        <span class="gef-video-button-on">
+          <span class="gef-sr">Pause</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
             <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-pause"></use>
           </svg>
         </span>
       </button>
-      <button class="codegel-video-mute-button codegel-card-mute-button" type="button" hidden>
-        <span class="codegel-video-button-off">
-          <span class="codegel-sr">Mute</span>
+      <button class="gef-video-mute-button gef-card-mute-button" type="button" hidden>
+        <span class="gef-video-button-off">
+          <span class="gef-sr">Mute</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
             <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-listen"></use>
           </svg>
         </span>
-        <span class="codegel-video-button-on">
-          <span class="codegel-sr">Unmute</span>
+        <span class="gef-video-button-on">
+          <span class="gef-sr">Unmute</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
             <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-sound-off"></use>
           </svg>
         </span>
       </button>
     </div>
-    <div class="codegel-card-desc">
+    <div class="gef-card-desc">
       <p>Do you remember the radio controlled car?</p>
     </div>
-    <div class="codegel-card-toolbar">
+    <div class="gef-card-toolbar">
       <button type="button" aria-haspopup="true">More info</button>
-      <div class="codegel-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
-        <h5 class="codegel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
+      <div class="gef-card-info" role="group" aria-labelledby="more-info-title-1" hidden>
+        <h5 class="gef-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
         <p>The history of BBC television idents begins in the early 1950s, when the BBC first displayed a logo between
           programmes to identify its service. As new technology has become available, these devices have evolved from
           simple still black and white images to the sophisticated full colour short films seen today. With the arrival
@@ -60,19 +60,19 @@ title: Video controls
           broadcasters to be much more important, meaning that idents need to stand out from the competition.</p>
       </div>
       <button type="button" aria-pressed="false">
-        <span class="codegel-sr">Love</span>
+        <span class="gef-sr">Love</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
           <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-love-loved-state"></use>
         </svg>
       </button>
       <button type="button">
-        <span class="codegel-sr">Add</span>
+        <span class="gef-sr">Add</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
           <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-add"></use>
         </svg>
       </button>
       <button type="button">
-        <span class="codegel-sr">Share</span>
+        <span class="gef-sr">Share</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
           <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-share"></use>
         </svg>
@@ -80,42 +80,42 @@ title: Video controls
     </div>
   </div>
   <h3>Play, mute, and scrub</h3>
-  <div class="codegel-video-container" style="max-width: 400px">
-    <video class=" codegel-video" controls src="{{site.basedir}}static/videos/ident_clip.mp4">
+  <div class="gef-video-container" style="max-width: 400px">
+    <video class=" gef-video" controls src="{{site.basedir}}static/videos/ident_clip.mp4">
       <track label="English" kind="subtitles" srclang="en" src="{{site.basedir}}static/videos/ident.vtt" default>
       <p>
         Your browser doesn't support HTML5 video.
         <a href="{{site.basedir}}static/videos/ident_clip.mp4">Download</a> the video instead.
       </p>
     </video>
-    <div class="codegel-video-controls" hidden>
-      <button class="codegel-video-play-button" type="button">
-        <span class="codegel-video-button-off">
-          <span class="codegel-sr">Play</span>
+    <div class="gef-video-controls" hidden>
+      <button class="gef-video-play-button" type="button">
+        <span class="gef-video-button-off">
+          <span class="gef-sr">Play</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
             <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-play"></use>
           </svg>
         </span>
-        <span class="codegel-video-button-on">
-          <span class="codegel-sr">Pause</span>
+        <span class="gef-video-button-on">
+          <span class="gef-sr">Pause</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
             <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-pause"></use>
           </svg>
         </span>
       </button>
-      <label for="timeline" class="codegel-video-timeline-container">
-        <span class="codegel-sr">Timeline</span>
+      <label for="timeline" class="gef-video-timeline-container">
+        <span class="gef-sr">Timeline</span>
         <input type="range" id="timeline" />
       </label>
-      <button class="codegel-video-mute-button" type="button">
-        <span class="codegel-video-button-off">
-          <span class="codegel-sr">Mute</span>
+      <button class="gef-video-mute-button" type="button">
+        <span class="gef-video-button-off">
+          <span class="gef-sr">Mute</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
             <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-listen"></use>
           </svg>
         </span>
-        <span class="codegel-video-button-on">
-          <span class="codegel-sr">Unmute</span>
+        <span class="gef-video-button-on">
+          <span class="gef-sr">Unmute</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
             <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-sound-off"></use>
           </svg>
@@ -127,17 +127,17 @@ title: Video controls
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    window.codegel && codegel.Card.init() && codegel.Video.init();
+    window.gef && gef.Card.init() && gef.Video.init();
 
     // Simple card play/pause
-    var cardElem = document.querySelector('.codegel-card');
-    var card = new codegel.Card.constructor(cardElem);
+    var cardElem = document.querySelector('.gef-card');
+    var card = new gef.Card.constructor(cardElem);
     var videoElem1 = cardElem.querySelector('video');
-    var video1 = new codegel.Video.videoInit(videoElem1);
-    var playElem1 = cardElem.querySelector('.codegel-card-play-button');
-    var playButton1 = new codegel.Video.playButton(playElem1, videoElem1);
-    var muteElem1 = cardElem.querySelector('.codegel-card-mute-button');
-    var mute2 = new codegel.Video.muteButton(muteElem1, videoElem1);
+    var video1 = new gef.Video.videoInit(videoElem1);
+    var playElem1 = cardElem.querySelector('.gef-card-play-button');
+    var playButton1 = new gef.Video.playButton(playElem1, videoElem1);
+    var muteElem1 = cardElem.querySelector('.gef-card-mute-button');
+    var mute2 = new gef.Video.muteButton(muteElem1, videoElem1);
     // Show custom play and mute buttons when video is initialized
     playElem1.hidden = false;
     muteElem1.hidden = false
@@ -152,17 +152,17 @@ title: Video controls
     })
 
     // Play, mute, and scrub
-    var videoContainer = document.querySelector('.codegel-video-container');
-    var videoControls = document.querySelector('.codegel-video-controls');
+    var videoContainer = document.querySelector('.gef-video-container');
+    var videoControls = document.querySelector('.gef-video-controls');
     // Show custom controls when video is initialized
     videoControls.hidden = false
-    var videoElem2 = videoContainer.querySelector('.codegel-video');
-    var video2 = new codegel.Video.videoInit(videoElem2);
-    var playElem2 = videoContainer.querySelector('.codegel-video-play-button');
-    var playButton2 = new codegel.Video.playButton(playElem2, videoElem2);
-    var muteElem2 = videoContainer.querySelector('.codegel-video-mute-button');
-    var mute2 = new codegel.Video.muteButton(muteElem2, videoElem2);
+    var videoElem2 = videoContainer.querySelector('.gef-video');
+    var video2 = new gef.Video.videoInit(videoElem2);
+    var playElem2 = videoContainer.querySelector('.gef-video-play-button');
+    var playButton2 = new gef.Video.playButton(playElem2, videoElem2);
+    var muteElem2 = videoContainer.querySelector('.gef-video-mute-button');
+    var mute2 = new gef.Video.muteButton(muteElem2, videoElem2);
     var scrubElem = videoContainer.querySelector('[type="range"]');
-    var scrub = new codegel.Video.scrub(scrubElem, videoElem2);
+    var scrub = new gef.Video.scrub(scrubElem, videoElem2);
   });
 </script>

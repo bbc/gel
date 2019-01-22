@@ -1,0 +1,130 @@
+.gef-cards {
+  margin: 0;
+  padding: 0;
+}
+
+.gef-cards>*+* {
+  margin-top: 1rem;
+}
+
+@supports (display: grid) {
+  .gef-cards>*+* {
+    margin-top: 0;
+  }
+
+  .gef-card {
+    margin: 0;
+  }
+
+  .gef-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
+    grid-gap: 1rem;
+  }
+}
+
+.gef-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #F1F1F1;
+  position: relative;
+}
+
+.gef-card-content {
+  position: relative;
+  order: -1;
+  overflow: hidden;
+  height: 10rem;
+}
+
+.gef-card-content img,
+.gef-card-content video {
+  height: 100%;
+  width: auto;
+}
+
+@supports (object-fit: cover) {
+  .gef-card-content img, 
+  .gef-card-content video {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.gef-card-headline, .gef-card-desc {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.gef-card-toolbar {
+  height: 2.5rem;
+  list-style: none;
+  display: flex;
+  padding: 0.5rem 1rem;
+  background-color: #e5e5e5;
+  margin-top: auto;
+}
+
+.gef-card-toolbar button {
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: inherit;
+  display: inline-block;
+  color: $gel-color--tundora;
+}
+
+.gef-card-toolbar > *:first-child {
+  margin-right: auto;
+}
+
+.gef-card-toolbar > * + * {
+  margin: 0;
+  margin-left: 0.5rem;
+}
+
+.gef-card-info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 2.5rem;
+  left: 0;
+  margin: 0;
+  padding: 1rem;
+  background-color: #F1F1F1;
+  overflow-y: auto;
+}
+
+.gef-card-info-heading:focus {
+  outline: none;
+}
+
+/* Video */
+
+.gef-card .gef-card-play-button,
+.gef-card .gef-card-mute-button {
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  border: 0;
+  border-radius: 0;
+  background-color: hsla(0, 0%, 100%, 0.5);
+  color: $gel-color--tundora;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.gef-card .gef-card-play-button:focus,
+.gef-card .gef-card-mute-button:focus {
+  outline: 2px solid $gel-color--black;
+}
+
+.gef-card .gef-card-mute-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  top: 0;
+  left: auto;
+  right: 0;
+}

@@ -41,46 +41,46 @@ For example, content that represents the major sections of a page's content migh
 </section>
 ```
 
-Wrapping this set of `<section>`s in a `class="codegel-accordion"` element produces the following enhanced markup when the JavaScript runs:
+Wrapping this set of `<section>`s in a `class="gef-accordion"` element produces the following enhanced markup when the JavaScript runs:
 
 ```html
 <h1>Main heading of page</h1>
-<div class="codegel-accordion">
+<div class="gef-accordion">
 	<section>
-		<h2 class="codegel-accordion-handle">
+		<h2 class="gef-accordion-handle">
 			<button aria-expanded="false" type="button">
 				<span>Section 1</span>
 				<svg viewBox="0 0 32 32" class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
 				<path d="M16 29L32 3h-7.2L16 18.3 7.2 3H0"></path></svg>
 			</button>
 		</h2>
-		<div class="codegel-accordion-drawer" hidden>
+		<div class="gef-accordion-drawer" hidden>
 			<p>Some text...</p><img src="http://www.example.com/path/to/image" alt="description">
 			<p>Some more text...</p>
 		</div>
 	</section>
 	<section>
-		<h2 class="codegel-accordion-handle">
+		<h2 class="gef-accordion-handle">
 			<button aria-expanded="false" type="button">
 				<span>Section 2</span>
 				<svg viewBox="0 0 32 32" class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
 				<path d="M16 29L32 3h-7.2L16 18.3 7.2 3H0"></path></svg>
 			</button>
 		</h2>
-		<div class="codegel-accordion-drawer" hidden>
+		<div class="gef-accordion-drawer" hidden>
 			<p>Some text here...</p>
 			<p>Additional text...</p>
 		</div>
 	</section>
 	<section>
-		<h2 class="codegel-accordion-handle">
+		<h2 class="gef-accordion-handle">
 			<button aria-expanded="false" type="button">
 				<span>Section 3</span>
 				<svg viewBox="0 0 32 32" class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
 				<path d="M16 29L32 3h-7.2L16 18.3 7.2 3H0"></path></svg>
 			</button>
 		</h2>
-		<div class="codegel-accordion-drawer" hidden>
+		<div class="gef-accordion-drawer" hidden>
 			<img src="http://www.example.com/path/to/image" alt="another description">
 			<blockquote>A quotation from somewhere</blockquote>
 		</div>
@@ -88,7 +88,7 @@ Wrapping this set of `<section>`s in a `class="codegel-accordion"` element produ
 </div>
 ```
 
-* `class="codegel-accordion-drawer"` and `hidden`: All the content except the 'handle' is grouped inside this element so its visibility can be toggled easily. The drawer is hidden by default.
+* `class="gef-accordion-drawer"` and `hidden`: All the content except the 'handle' is grouped inside this element so its visibility can be toggled easily. The drawer is hidden by default.
 * `<button>` and `aria-expanded`: The visibility of the drawer (see above) is affected by the toggle button. The `aria-expanded` state is set to either `false` (drawer closed; default on page load) or `true` (drawer open)
 * `SVG`: An SVG based on the [GEL Iconography `gel-icon-down`](http://bbc.github.io/gel-iconography/). This has `focusable="false"` to remove it from focus order, and `aria-hidden="true"` to hide it from browsers/assistive technologies that erroneously expose it.
 
@@ -100,10 +100,10 @@ By nesting the button inside the heading the user benefits from the semantics an
 
 ### Short form content
 
-More concise content, such as questions with one or two sentence answers, would be better marked up as a list. The `<ul>` would take the `codegel-accordion` class. 
+More concise content, such as questions with one or two sentence answers, would be better marked up as a list. The `<ul>` would take the `gef-accordion` class. 
 
 ```html
-<ul class="codegel-accordion">
+<ul class="gef-accordion">
 	<li>
 		<p><strong>Question 1<strong></p>
 		<p>Answer 1</p>
@@ -121,7 +121,7 @@ More concise content, such as questions with one or two sentence answers, would 
 
 Whether section and heading or list semantics are suitable, there are certain structural rules for the progressive enhancement to take place successfully using the [Reference implementation](#reference-implementation) script:
 
-* Accordion items must be wrapped in a common `codegel-accordion` element
+* Accordion items must be wrapped in a common `gef-accordion` element
 * Each item must have at least two elements
 * The first element must not be a `<button>` (since its own contents will become wrapped in a `<button>`)
 
@@ -139,7 +139,7 @@ The visual design of a generic accordion is specified in the [GEL Accordion docu
 The `gel-icon-down` arrow must point downwards in the closed (`aria-expanded="false"`) state, and upwards in the open (`aria-expanded="true"`) state. For the sake of code brevity, this is achieved in the [Reference implementation](#reference-implementation) using a simple CSS transform.
 
 ```css
-.codegel-accordion-handle [aria-expanded="true"] svg {
+.gef-accordion-handle [aria-expanded="true"] svg {
   transform: rotate(180deg);
 }
 ```
@@ -148,7 +148,7 @@ Some margin is added to the left of the SVG to separate it from the button's tex
 
 ```css
 @supports (display: flex) {
-  .codegel-accordion-handle button {
+  .gef-accordion-handle button {
     display: flex;
     justify-content: space-between;
     align-items: center;

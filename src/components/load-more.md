@@ -19,21 +19,21 @@ linkback: https://www.bbc.co.uk/gel/guidelines/numbered-pagination
 
 ## Recommended markup
 
-The [Reference implementation](#reference-implementation)'s script acts upon the `class="codegel-loader"` element. In the code sample to follow, this is shown in the expected context of a `<main>` element, and preceded by the page's principle heading. This sample just shows the basic structure, with descriptions of subcomponents of the pattern to follow.
+The [Reference implementation](#reference-implementation)'s script acts upon the `class="gef-loader"` element. In the code sample to follow, this is shown in the expected context of a `<main>` element, and preceded by the page's principle heading. This sample just shows the basic structure, with descriptions of subcomponents of the pattern to follow.
 
 ```html
 <main id="main" tabindex="-1">
   <h1>You searched for "camera"</h1>
-  <div class="codegel-loader">
-    <ul class="codegel-loader-items">
+  <div class="gef-loader">
+    <ul class="gef-loader-items">
       <!-- loaded items -->
     </ul>
-    <div class="codegel-loader-foot">
-      <div class="codegel-loader-loading" role="status" hidden>
+    <div class="gef-loader-foot">
+      <div class="gef-loader-loading" role="status" hidden>
         <!-- the loading indicator (spinner) -->
       </div>
-      <button class="codegel-loader-button codegel-button" hidden>Load more</button>
-      <nav class="codegel-pages" aria-labelledby="codegel-pagination-label">
+      <button class="gef-loader-button gef-button" hidden>Load more</button>
+      <nav class="gef-pages" aria-labelledby="gef-pagination-label">
         <!-- the pagination functionality -->
       </nav>
     </div>
@@ -45,7 +45,7 @@ The [Reference implementation](#reference-implementation)'s script acts upon the
 The main element[^3] has attributes `id="main"` and `tabindex="-1"`. This is because it is expected to be the focus target of a same-page 'skip link'. In circumstances where the JavaScript does not run and the user must rely on the pagination component, the skip link lets them bypass the page's header/masthead to reach each successive page's content.
 :::
 
-### `codegel-loader-items`
+### `gef-loader-items`
 
 The loaded content items are presented as a list. List items are enumerated in screen reader software, letting the user know how many items are present in total, and which one they are interacting with (_"4 of 37"_).
 
@@ -57,23 +57,23 @@ As elaborated in [Expected behaviour](#expected-behaviour), each time a new set 
 </li>
 ```
 
-### `codegel-loader-loading`
+### `gef-loader-loading`
 
 This construct comprises the visual loading indicator—an SVG icon—and a live region (`role="status"`)[^5]. In the [Reference implementation](#reference-implementation), _"Loading, please wait"_ is inserted invisibly into the live region as items begin to be requested. This appending of text triggers immediate announcement in screen reader output.
 
 ```html
-<div class="codegel-loader-loading" role="status" hidden>
+<div class="gef-loader-loading" role="status" hidden>
   <svg class="gel-icon gel-icon--text gel-icon-loading" focusable="false" aria-hidden="true">
     <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-loading"></use>
   </svg>
-  <div class="codegel-loader-loading-text codegel-sr"></div>
+  <div class="gef-loader-loading-text gef-sr"></div>
 </div>
 ```
 
 ### The 'load more' button
 
 ```html
-<button class="codegel-loader-button codegel-button" type="button" hidden>Load more</button>
+<button class="gef-loader-button gef-button" type="button" hidden>Load more</button>
 ```
 
 The button is hidden by default. Only where JavaScript runs is it revealed (and the fallback pagination component removed). It must be a standard `<button>` element, with `type="button"`. It is always at the foot of the list of loaded content and can easily be stepped/tabbed past by keyboard.
@@ -97,15 +97,15 @@ The pagination component is [documented on GEL](https://www.bbc.co.uk/gel/guidel
 Note the use of `role="separator"` to remove the ellipsis element from enumeration. Where the previous or next link is not applicable it is 'disabled' by having its `href` removed. This removes it from focus order. The current page is identified accessibly with `aria-current="page"`[^6].
 
 ```html
-<nav class="codegel-pages" aria-labelledby="codegel-pagination-label">
-  <div id="codegel-pages-label" hidden>Page</div>
-  <a class="codegel-pages-prev">
-    <span class="codegel-sr">Previous page</span>
+<nav class="gef-pages" aria-labelledby="gef-pagination-label">
+  <div id="gef-pages-label" hidden>Page</div>
+  <a class="gef-pages-prev">
+    <span class="gef-sr">Previous page</span>
     <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
       <use xlink:href="path/to/gel-icons-all.svg#gel-icon-previous"></use>
     </svg>
   </a>
-  <ol class="codegel-pages-numbered">
+  <ol class="gef-pages-numbered">
     <li><a href="?page=1" aria-current="page">1</a></li>
     <li><a href="?page=2">2</a></li>
     <li><a href="?page=3">3</a></li>
@@ -116,9 +116,9 @@ Note the use of `role="separator"` to remove the ellipsis element from enumerati
     <li role="separator">&hellip;</li>
     <li><a href="?page=999">999</a></li>
   </ol>
-  <div class="codegel-pages-text">Page 1 of 999</div>
-  <a class="codegel-pages-next" href="?page=2">
-    <span class="codegel-sr">Next page</span>
+  <div class="gef-pages-text">Page 1 of 999</div>
+  <a class="gef-pages-next" href="?page=2">
+    <span class="gef-sr">Next page</span>
     <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
       <use xlink:href="path/to/static/images/gel-icons-all.svg#gel-icon-next"></use>
     </svg>
@@ -134,7 +134,7 @@ The aesthetic of your search results is not prescribed by this pattern, but ther
 
 * Each result/item should be distinct from its neighbouring results/items
 * The separator elements that introduce batches of results (see [Recommended behaviour](#recommended-behaviour)) should be distinct from the results themselves
-* The 'load more' button should adopt the standard button style (applied via `class="codegel-button"`) here
+* The 'load more' button should adopt the standard button style (applied via `class="gef-button"`) here
 
 ## The loading indicator
 
@@ -172,7 +172,7 @@ The separator element introducing any batch of new results takes focus to place 
   }
 }
 
-.codegel-loader-items [role="separator"]:focus {
+.gef-loader-items [role="separator"]:focus {
   outline-width: 0;
   outline-offset: 2px;
   animation: focus 1s linear 1;
@@ -185,11 +185,11 @@ For maximum backwards compatibility with minimum code, `inline-block` places the
 
 ```css
 @media (min-width: 650px) {
-  .codegel-pages-text {
+  .gef-pages-text {
     display: none;  
   }
   
-  .codegel-pages-numbered {
+  .gef-pages-numbered {
     display: inline-block;
   }
 }
@@ -223,8 +223,8 @@ Note that the specific behaviour and messaging in the [Reference implementation]
 // Result 14 would be https://jsonplaceholder.typicode.com/posts/14
 var baseURL = 'https://jsonplaceholder.typicode.com/posts/';
 
-var loaderElem = document.querySelector('.codegel-loader');
-var loader = new codegel.LoadMore.constructor(
+var loaderElem = document.querySelector('.gef-loader');
+var loader = new gef.LoadMore.constructor(
   loaderElem, 
   6, // The number of results fetched each time
   7, // The starting result (6 items server rendered + 1)

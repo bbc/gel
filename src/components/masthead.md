@@ -39,7 +39,7 @@ All of these components, including the banner, belong to a common `<nav>` elemen
 The `<nav>` itself represents a landmark, and includes a nested landmark in the use of `role="form"` to wrap the search functionality. Each of these is available in aggregated landmark navigation provided by popular screen reader software[^4].
 
 ```html
-<nav class="codegel-masthead">
+<nav class="gef-masthead">
   <!-- All masthead functionality -->
 </nav>
 ```
@@ -49,25 +49,25 @@ The `<nav>` itself represents a landmark, and includes a nested landmark in the 
 #### The logo
 
 ```html
-<div class="codegel-masthead-logo">
+<div class="gef-masthead-logo">
   <a href="https://bbc.co.uk">
     <img src="https://nav.files.bbci.co.uk/orbit/2.0.0-436.0893166/img/blq-orbit-blocks_grey.svg" alt="BBC homepage">
   </a>
 </div>
 ```
 
-The logo is provided as an image. This is preferable to a background image, which will be eliminated by some high contrast modes[^1] in some browsers. The `alt` text reads _"BBC homepage"_ and becomes the parent link's accessible label. The local home page link of the banner should be differentiated by mentioning the local site's name, for example _"BBC CodeGel homepage"_.
+The logo is provided as an image. This is preferable to a background image, which will be eliminated by some high contrast modes[^1] in some browsers. The `alt` text reads _"BBC homepage"_ and becomes the parent link's accessible label. The local home page link of the banner should be differentiated by mentioning the local site's name, for example _"BBC Gel homepage"_.
 
 #### The account link
 
 ```html
-<div class="codegel-masthead-account-option">
+<div class="gef-masthead-account-option">
   <a href="https://account.bbc.com/account">
-    <span class="codegel-sr">Your account,</span>
+    <span class="gef-sr">Your account,</span>
     <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
       <use xlink:href="path/to/gel-icons-all.svg#gel-icon-sign-in"></use>
     </svg>
-    <span class="codegel-masthead-account-text">Heydon</span>
+    <span class="gef-masthead-account-text">Heydon</span>
   </a>
 </div>
 ```
@@ -79,9 +79,9 @@ All SVG icons must take `aria-hidden="true"` to hide them from assistive technol
 #### The notifications/alerts link
 
 ```html
-<div class="codegel-masthead-alerts-option">
-  <a href="#codegel-masthead-alerts">
-    <span class="codegel-sr">Notifications</span>
+<div class="gef-masthead-alerts-option">
+  <a href="#gef-masthead-alerts">
+    <span class="gef-sr">Notifications</span>
     <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
       <use xlink:href="path/to/gel-icons-all.svg#gel-icon-alerts"></use>
     </svg>
@@ -94,7 +94,7 @@ The alerts link, like the more link below, is an enhanced same-page link that bo
 #### Promoted/priority links
 
 ```html
-<div class="codegel-masthead-links">
+<div class="gef-masthead-links">
   <span id="sites-label" hidden>BBC sites</span>
   <ul aria-labelledby="sites-label">
     <li><a href="https://www.bbc.co.uk/news">News</a></li>
@@ -112,13 +112,13 @@ These are the main navigation options, grouped within a list so that screen read
 #### The more link
 
 ```html
-<div class="codegel-masthead-more-option">
-  <a href="#codegel-masthead-more">
-    <span class="codegel-sr">More</span>
-    <span class="codegel-masthead-more-option-text" aria-hidden="true">
+<div class="gef-masthead-more-option">
+  <a href="#gef-masthead-more">
+    <span class="gef-sr">More</span>
+    <span class="gef-masthead-more-option-text" aria-hidden="true">
       More ▾
     </span>
-    <svg class="codegel-masthead-more-option-icon gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+    <svg class="gef-masthead-more-option-icon gel-icon gel-icon--text" aria-hidden="true" focusable="false">
       <use xlink:href="path/to/gel-icons-all.svg#gel-icon-list"></use>
     </svg>
   </a>
@@ -130,7 +130,7 @@ The same-page link that reveals and moves focus to the More menu. Note the two i
 #### The search link
 
 ```html
-<div class="codegel-masthead-search-option" role="search">
+<div class="gef-masthead-search-option" role="search">
   <a href="https://www.bbc.co.uk/search?q=">
     <span>Search</span>
     <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
@@ -145,9 +145,9 @@ The search link takes you to the main BBC search page. Note that, despite only c
 #### The more menu
 
 ```html
-<div id="codegel-masthead-more" class="codegel-masthead-more-menu codegel-masthead-popup">
-  <div class="codegel-masthead-more-menu-inner">
-    <h2 id="more-label" aria-hidden="true" class="codegel-masthead-more-menu-label">MORE</h2>
+<div id="gef-masthead-more" class="gef-masthead-more-menu gef-masthead-popup">
+  <div class="gef-masthead-more-menu-inner">
+    <h2 id="more-label" aria-hidden="true" class="gef-masthead-more-menu-label">MORE</h2>
     <ul aria-labelledby="more-label">
       <li><a href="https://www.bbc.co.uk/news">News</a></li>
       <li><a href="https://www.bbc.co.uk/sport">Sport</a></li>
@@ -175,8 +175,8 @@ Note the `<h2>` heading. This is hidden from assistive technologies but used as 
 #### The notifications element
 
 ```html
-<div class="codegel-masthead-alerts codegel-masthead-popup">
-  <h2 tabindex="-1" id="codegel-masthead-alerts">Notifications</h2>
+<div class="gef-masthead-alerts gef-masthead-popup">
+  <h2 tabindex="-1" id="gef-masthead-alerts">Notifications</h2>
   <p>No notifications right now. We'll let you know when something from your favourite programmes, artists and
     playlists is available for you.</p>
   <p>If your notifications are turned off, you can always turn them back on. Just go to settings.</p>
@@ -188,7 +188,7 @@ The navigation bar's alerts link reveals this element and sends focus to the `<h
 Both this element and the More menu are appended with close buttons so that the user can dismiss them from the interface.
 
 ```html
-<button class="codegel-masthead-close-button"><span class="codegel-sr">Close</span>
+<button class="gef-masthead-close-button"><span class="gef-sr">Close</span>
   <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false" viewBox="0 0 32 32"> 
     <use xlink:href="path/to/gel-icons-all.svg#gel-icon-no"></use>
   </svg>
@@ -198,10 +198,10 @@ Both this element and the More menu are appended with close buttons so that the 
 #### The banner
 
 ```html
-<div class="codegel-masthead-banner">
-  <a href="/" class="codegel-masthead-banner-logo">
-    <span class="codegel-sr">
-      BBC CodeGel homepage
+<div class="gef-masthead-banner">
+  <a href="/" class="gef-masthead-banner-logo">
+    <span class="gef-sr">
+      BBC gef homepage
     </span>
     <svg aria-hidden="true" focusable="false" viewBox="0 0 1101.9 202.4">
       <use xlink:href="path/to/logo.svg#logo"></use>
@@ -225,8 +225,8 @@ Where Flexbox is available, the global navigation bar is responsive by own of th
 The icons are taken from the standard [GEL Iconography library](http://bbc.github.io/gel-iconography/). To ensure they adopt the appropriate color via `currentColor`, the parent sometimes needs to explicitly inherit the context's `color`
 
 ```css
-.codegel-masthead a,
-.codegel-masthead button {
+.gef-masthead a,
+.gef-masthead button {
   font-size: inherit;
   color: inherit;
 }
@@ -239,23 +239,23 @@ In the event of `IntersectionObserver` not being supported and the priority link
 Firstly, in webkit browsers, the scrollbar is styled. This is an opportunity to make it more in keeping with the brand, but styling it also makes it visible by default on systems where it would otherwise be invisible.
 
 ```css
-.codegel-masthead-links::-webkit-scrollbar {
+.gef-masthead-links::-webkit-scrollbar {
   height: 0.125rem;
 }
 
-.codegel-masthead-links::-webkit-scrollbar-track {
+.gef-masthead-links::-webkit-scrollbar-track {
   background-color: $gel-color--alto;
 }
 
-.codegel-masthead-links::-webkit-scrollbar-thumb {
+.gef-masthead-links::-webkit-scrollbar-thumb {
   background-color: $gel-color--cod-gray;
 }
 ```
 
-In addition, a 'shadow' is cast from the more link over the priority links element, better communicating that the links disappear behind it. This style is included only where the priority links have not taken the `codegel-masthead-links-observed` class, hence the use of the negation pseudo-class and adjacent combinator.
+In addition, a 'shadow' is cast from the more link over the priority links element, better communicating that the links disappear behind it. This style is included only where the priority links have not taken the `gef-masthead-links-observed` class, hence the use of the negation pseudo-class and adjacent combinator.
 
 ```css
-.codegel-masthead-links:not(.codegel-masthead-links-observed) + .codegel-masthead-more-option::before {
+.gef-masthead-links:not(.gef-masthead-links-observed) + .gef-masthead-more-option::before {
   content: '';
   position: absolute;
   top: 0;
@@ -274,13 +274,13 @@ There are some special considerations for keyboard and screen reader usage that 
 
 ### The priority links
 
-The `IntersectionObserver` script gives priority links that are not intersecting the `codegel-masthead-link-hidden` class.
+The `IntersectionObserver` script gives priority links that are not intersecting the `gef-masthead-link-hidden` class.
 
 ```js
 if (item.intersectionRatio > 0.98) {
-  item.target.classList.remove('codegel-masthead-link-hidden');
+  item.target.classList.remove('gef-masthead-link-hidden');
 } else {
-  item.target.classList.add('codegel-masthead-link-hidden');
+  item.target.classList.add('gef-masthead-link-hidden');
 }
 ```
 

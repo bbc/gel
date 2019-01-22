@@ -5,27 +5,27 @@ title: Form fields and validation
 <h3>Form fields and validation</h3>
 
 <form id="myform-demo">
-  <div class="codegel-form-divider">
+  <div class="gef-form-divider">
     <label for="username">Username</label>
     <input type="text" id="username" name="username" />
-    <div class="codegel-form-field-error" id="username-error"></div>
+    <div class="gef-form-field-error" id="username-error"></div>
   </div>
-  <div class="codegel-form-divider">
+  <div class="gef-form-divider">
     <label for="code">
       Verification code
       <small>This was sent to you by email</small>
     </label>
     <input type="text" id="code" name="code" />
-    <div class="codegel-form-field-error" id="code-error"></div>
+    <div class="gef-form-field-error" id="code-error"></div>
   </div>
-  <div class="codegel-form-divider">
-    <button class="gel-button" type="submit">Submit</button>
+  <div class="gef-form-divider">
+    <button class="gef-button" type="submit">Submit</button>
   </div>
 </form>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function () {
-    window.codegel && codegel.Validation.init();
+    window.gef && gef.Validation.init();
 
     var rules = [
       {
@@ -49,6 +49,6 @@ title: Form fields and validation
     ];
 
     var form = document.getElementById('myform-demo');
-    var formValidation = new codegel.Validation.constructor(form, rules);
+    var formValidation = new gef.Validation.constructor(form, rules);
   });
 </script>

@@ -1,0 +1,60 @@
+.gef-pages {
+  text-align: center;
+}
+
+.gef-pages > *,
+.gef-pages-numbered li {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.gef-pages-numbered {
+  display: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.gef-pages a,
+.gef-pages-numbered [role="separator"] {
+  width: 4.5ch;
+  height: 4.5ch;
+  line-height: 4.5ch;
+}
+
+.gef-pages a {
+  color: inherit;
+  text-decoration: none;
+  background-color: #ccc;
+  display: inline-block;
+}
+
+.gef-pages a:hover, 
+.gef-pages a:focus,
+.gef-pages-numbered [aria-current] {
+  outline: none;
+  color: #fff;
+  background-color: #404040;
+}
+
+.gef-pages a:not([href]) {
+  opacity: 0.5;
+}
+
+.gef-pages [hidden] {
+  display: none;
+}
+
+.gef-pages-text {
+  padding: 0 0.25rem
+}
+
+@media (min-width: 650px) {
+  .gef-pages-text {
+    display: none;  
+  }
+  
+  .gef-pages-numbered {
+    display: inline-block;
+  }
+}

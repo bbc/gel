@@ -138,13 +138,9 @@ Where headings adopt `id`s and are used as document fragments to be navigated be
 <h2 tabindex="-1">Navigable subsection</h2>
 ```
 
-## Test specifications
-
-[TODO]
-
 ## Related research
 
-[TODO]
+This topic does not yet have any related research available.
 
 ### Further reading, elsewhere on the Web
 

@@ -1,0 +1,147 @@
+
+.gef-promos {
+  margin: 0;
+  padding: 0;
+}
+
+.gef-promos>*+* {
+  margin-top: 1rem;
+}
+
+@supports (display: grid) {
+  .gef-promos>*+* {
+    margin-top: 0;
+  }
+
+  .gef-promo {
+    margin: 0;
+  }
+
+  .gef-promos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
+    grid-gap: 1rem;
+  }
+}
+
+.gef-promo {
+  display: flex;
+  flex-direction: column;
+  background-color: #F1F1F1;
+}
+
+.gef-promo,
+.gef-promo p {
+  @include reith(false);
+}
+
+.gef-promo-content {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.gef-promo-image {
+  order: -1;
+  height: 10rem;
+  overflow: hidden;
+}
+
+.gef-promo-image img {
+  height: 100%;
+  width: auto;
+}
+
+@supports (object-fit: cover) {
+  .gef-promo-image img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.gef-promo-headline {
+  font-weight: bold;
+}
+
+.gef-promo-headline * {
+  font-weight: inherit;
+}
+
+.gef-metadata-strip {
+  margin: 0;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.gef-metadata-strip>div {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.gef-metadata-strip>div+div::before {
+  content: '';
+  border-left: 1px solid;
+  margin: 0 0.25rem;
+  color: $gel-color--dusty-gray;
+}
+
+.gef-metadata-strip dt,
+.gef-metadata-strip dd {
+  margin: 0;
+  display: inline;
+}
+
+@supports (display: grid) {
+  .gef-promos.gef-promos-horizontal {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+}
+
+.gef-promo.gef-promo-horizontal {
+  flex-direction: row;
+}
+
+.gef-promo.gef-promo-horizontal .gef-promo-image {
+  width: 15rem;
+  max-width: 50%;
+  height: auto;
+}
+
+.vh {
+  clip-path: inset(100%) !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
+}
+
+.gef-promo-headline a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.gef-promo-headline a:focus,
+.gef-promo-headline a:hover {
+  outline: none;
+  //text-decoration: underline;
+}
+
+.gef-promo:focus-within {
+  outline: 0.25rem solid;
+}
+
+.gef-metadata-strip a {
+  text-decoration: underline;
+}
+
+.gef-metadata-strip a {
+  text-decoration: none;
+}
+
+.gef-metadata-strip a:focus,
+.gef-metadata-strip a:hover {
+  outline: none;
+}

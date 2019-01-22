@@ -264,7 +264,7 @@ Example implementations are intended to demonstrate **what needs to be achieved*
 
 <include src="components/demos/form-fields.html">
 
-<p><a class="codegel-cta gel-long-primer-bold" href="../demos/form-fields/" target="_new"><span class="codegel-button__label">Open in new window</span><svg class="codegel-button__icon codegel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+<p><a class="gef-cta gel-long-primer-bold" href="../demos/form-fields/" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
 
 ## Related research
 

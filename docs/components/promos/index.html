@@ -11,8 +11,8 @@
     <script src="/code-gel/static/js/site.js"></script>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/codegel.css">
-    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/geldocs.css">
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/gef.css">
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/site.css">
 
     <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
@@ -42,14 +42,14 @@
     
 </head>
 
-<body class="geldocs-body">
-    <p class="codegel-sr codegel-sr__focusable codegel-sr__overlay" tabindex="0">
-        <a href="#main" onfocus="this.parentNode.classList.add('codegel-sr__focused')" onblur="this.parentNode.classList.remove('codegel-sr__focused')">Skip
+<body class="gefdocs-body">
+    <p class="gef-sr gef-sr__focusable gef-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('gef-sr__focused')" onblur="this.parentNode.classList.remove('gef-sr__focused')">Skip
             to content</a>
     </p>
 
     <header>
-        <div class="geldocs-header gs-u-clearfix">
+        <div class="gefdocs-header gs-u-clearfix">
             <div class="gel-wrap">
                 <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
                         <title>BBC</title>
@@ -58,14 +58,14 @@
                     </svg></a>
             </div>
         </div>
-        <div class="geldocs-header__banner gs-u-clearfix">
+        <div class="gefdocs-header__banner gs-u-clearfix">
             <div class="gel-wrap">
                 <div class="gel-layout">
                     <div class="gel-layout__item gel-2/5@l" style="text-align:left; padding-left:14px; margin-bottom:32px;">
-                        <a href="/code-gel/" class="geldocs-logo">Code{GEL}</a>
+                        <a href="/code-gel/" class="gefdocs-logo">Code{GEL}</a>
                     </div>
                     <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
-                        <a class="geldocs-button geldocs-button--dark gel-long-primer-bold" href="http://www.bbc.co.uk/gel/guidelines/promos">
+                        <a class="gefdocs-button gefdocs-button--dark gel-long-primer-bold" href="http://www.bbc.co.uk/gel/guidelines/promos">
                             Go to BBC GEL
                         </a>
                     </div>
@@ -81,12 +81,12 @@
             </div>
 
             <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
-                <h1 class="geldocs-header__title">Promos</h1>
-                <p class="geldocs-header__summary gel-great-primer">A promo is a snippet of content which links to a full piece of content elsewhere on the BBC site or app.</p>
+                <h1 class="gefdocs-header__title">Promos</h1>
+                <p class="gefdocs-header__summary gel-great-primer">A promo is a snippet of content which links to a full piece of content elsewhere on the BBC site or app.</p>
             </div>
 
             <div class="gel-layout__item gel-1/5@l">
-                <dl class="geldocs-standout-box">
+                <dl class="gefdocs-standout-box">
                     
                     <dt>Version:</dt>
                     <dd>0.1.0</dd>
@@ -103,11 +103,11 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#overview">Overview</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#example-implementation">Example implementation</a></li><li><a href="#related-accessibility-guidelines">Related accessibility guidelines</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#overview">Overview</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#example-implementation">Example implementation</a></li><li><a href="#related-accessibility-guidelines">Related accessibility guidelines</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
-            <div class="geldocs-sections geldocs-body-copy gel-layout__item gel-3/5@l">
+            <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="overview">Overview</h2>
 <p>The Promo component is composed of several sub-components:</p>
 <ul>
@@ -122,18 +122,18 @@
 <h2 id="recommended-markup">Recommended markup</h2>
 <p>Promos are typically presented as a set, and together must be marked up as an unordered list, with each Promo marked as a list item (<code>&lt;li&gt;</code>). This enables structural and navigational cues in screen reader software<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. Each Promo's primary link must be contained within a heading, with each promo's heading of the same level, and the set of promos introduced as its own section within the document by a heading one level higher. The wording of the Promo's primary link should resemble that of the target page's <code>&lt;title&gt;</code> and <code>&lt;h1&gt;</code>. This consistency aids cognitive accessibility and improves <abbr title="search engine optimization">SEO</abbr><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Latest news<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-promos"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-promo"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-promo-content"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-promo-headline"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promos"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-content"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-headline"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#example/permalink/1"</span>&gt;</span>Heading text goes here<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-promo-desc"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-desc"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Some description text goes here.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">dl</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-metadata-strip"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">dl</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-metadata-strip"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">dt</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>Published:<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>
@@ -149,21 +149,21 @@
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">dl</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-promo-image"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-image"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/code-gel/static/images/placeholder.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-promo"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-promo-content"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-promo-headline"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-content"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-headline"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#example/permalink/2"</span>&gt;</span>Another heading text goes here<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-promo-desc"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-desc"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>More description text here.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">dl</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-metadata-strip"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">dl</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-metadata-strip"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">dt</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>Published:<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>
@@ -179,89 +179,89 @@
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">dl</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-promo-image"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-image"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/code-gel/static/images/placeholder.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 </code></pre>
-<p>Images can be considered decorative (<code>alt=&quot;&quot;</code>; the first Promo in our example) or non-decorative (<code>alt=&quot;[description of image]&quot;</code>; the second Promo in our example). They must appear <em>after</em> the textual content (<code>codegel-promo-content</code>) in the markup since the heading introduces the promo content, including the image content. <strong>Non-decorative images must have alternative text that does not simply repeat information in the headline or description</strong>.</p>
+<p>Images can be considered decorative (<code>alt=&quot;&quot;</code>; the first Promo in our example) or non-decorative (<code>alt=&quot;[description of image]&quot;</code>; the second Promo in our example). They must appear <em>after</em> the textual content (<code>gef-promo-content</code>) in the markup since the heading introduces the promo content, including the image content. <strong>Non-decorative images must have alternative text that does not simply repeat information in the headline or description</strong>.</p>
 <h2 id="recommended-layout">Recommended layout</h2>
 <p>A group of Promos in a set should share the same height. This is possible by making the <code>&lt;ul&gt;</code> a CSS Flexbox or CSS Grid context. The appearance of each promo is improved by distributing the metadata (if present) to the bottom of the container. This is possible by making the promo a Flexbox context and giving the metadata element <code>margin-top: auto</code>. Padding can be combined with margin to ensure a minimum space between the metadata and the element above it.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.codegel-promo</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-promo</span> {
   <span class="hljs-attribute">display</span>: flex;
   <span class="hljs-attribute">flex-diection</span>: column;
 }
 
-<span class="hljs-selector-class">.codegel-promo</span> &gt; * + * {
+<span class="hljs-selector-class">.gef-promo</span> &gt; * + * {
   <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">1rem</span>; <span class="hljs-comment">/* generic spacing between components of the promo */</span>
 } 
 
-<span class="hljs-selector-class">.codegel-metadata-strip</span> {
+<span class="hljs-selector-class">.gef-metadata-strip</span> {
   <span class="hljs-attribute">margin-top</span>: auto;
   <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">1rem</span>;
 }
 </code></pre>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-note">
-              <h4 id="aside-info-note" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>While <a href="../metadata-strips/">Metadata Strips</a> are documented as their own component, the <code>margin-top</code> and <code>padding-top</code> styles specified here are needed in the Promo context.</p>
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-note">
+              <h4 id="aside-info-note" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>While <a href="../metadata-strips/">Metadata Strips</a> are documented as their own component, the <code>margin-top</code> and <code>padding-top</code> styles specified here are needed in the Promo context.</p>
 </aside><h3 id="the-image">The image</h3>
 <p>As stated in <a href="#recommended-markup">Recommended markup</a>, the image must come <em>after</em> the text content in the source order. However, it is designed to appear before it visually. Using Flexbox, it is possible to augment the visual order without affecting the source order:</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.codegel-promo-image</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-promo-image</span> {
   <span class="hljs-attribute">order</span>: -<span class="hljs-number">1</span>;
 }
 </code></pre>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-note-1">
-              <h4 id="aside-info-note-1" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>Augmenting the source order can produce a <a href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html">WCAG 2.4.3 Focus Order failure</a>, but the image is not focusable so there is no such issue.</p>
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-note-1">
+              <h4 id="aside-info-note-1" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>Augmenting the source order can produce a <a href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html">WCAG 2.4.3 Focus Order failure</a>, but the image is not focusable so there is no such issue.</p>
 </aside><p>The image will need to fit the available space, regardless of the Promo's dimensions (which are likely to change across breakpoints) without distorting. This is possible by setting the desired height of the image box and using the <code>object-fit</code> property:</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.codegel-promo-image</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-promo-image</span> {
   <span class="hljs-attribute">order</span>: -<span class="hljs-number">1</span>;
   <span class="hljs-attribute">height</span>: <span class="hljs-number">10rem</span>;
   <span class="hljs-attribute">overflow</span>: hidden;
 }
 
-<span class="hljs-selector-class">.codegel-promo-image</span> <span class="hljs-selector-tag">img</span> {
+<span class="hljs-selector-class">.gef-promo-image</span> <span class="hljs-selector-tag">img</span> {
   <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
   <span class="hljs-attribute">width</span>: auto;
 }
 
 @<span class="hljs-keyword">supports</span> (object-fit: cover) {
-  <span class="hljs-selector-class">.codegel-promo-image</span> <span class="hljs-selector-tag">img</span> {
+  <span class="hljs-selector-class">.gef-promo-image</span> <span class="hljs-selector-tag">img</span> {
     <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
     <span class="hljs-attribute">object-fit</span>: cover;
   }
 }
 </code></pre>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-note-2">
-              <h4 id="aside-info-note-2" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>At the time of writing, the <code>object-fit</code> property is supported everywhere but Internet Explorer<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. The code uses <code>@supports</code> and falls back to showing the image at its natural width, cropping the right edge or leaving a right margin.</p>
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-note-2">
+              <h4 id="aside-info-note-2" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>At the time of writing, the <code>object-fit</code> property is supported everywhere but Internet Explorer<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. The code uses <code>@supports</code> and falls back to showing the image at its natural width, cropping the right edge or leaving a right margin.</p>
 </aside><h3 id="horizontal-promos">Horizontal Promos</h3>
-<p>It is permissible to create a horizontal configuration, with the image to the left of the content. In the <a href="../demos/promos/">Example implementation</a> this is achieved without changing the markup, except to place the class <code>codegel-promos-horizontal</code> on the <code>&lt;ul&gt;</code> element and <code>codegel-promo-horizontal</code> on each subject Promo.</p>
+<p>It is permissible to create a horizontal configuration, with the image to the left of the content. In the <a href="../demos/promos/">Example implementation</a> this is achieved without changing the markup, except to place the class <code>gef-promos-horizontal</code> on the <code>&lt;ul&gt;</code> element and <code>gef-promo-horizontal</code> on each subject Promo.</p>
 <p>A small amount of additional CSS is then applied. Note the switch in <code>flex-direction</code> from <code>column</code> to <code>row</code>.</p>
 <pre class="hljs"><code>@<span class="hljs-keyword">supports</span> (display: grid) {
-  <span class="hljs-selector-class">.codegel-promos</span><span class="hljs-selector-class">.codegel-promos-horizontal</span> {
+  <span class="hljs-selector-class">.gef-promos</span><span class="hljs-selector-class">.gef-promos-horizontal</span> {
     <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(auto-fill, minmax(400px, 1fr));
   }
 }
 
-<span class="hljs-selector-class">.codegel-promo</span><span class="hljs-selector-class">.codegel-promo-horizontal</span> {
+<span class="hljs-selector-class">.gef-promo</span><span class="hljs-selector-class">.gef-promo-horizontal</span> {
   <span class="hljs-attribute">flex-direction</span>: row;
 }
 
-<span class="hljs-selector-class">.codegel-promo</span><span class="hljs-selector-class">.codegel-promo-horizontal</span> <span class="hljs-selector-class">.codegel-promo-image</span> {
+<span class="hljs-selector-class">.gef-promo</span><span class="hljs-selector-class">.gef-promo-horizontal</span> <span class="hljs-selector-class">.gef-promo-image</span> {
   <span class="hljs-attribute">width</span>: <span class="hljs-number">15rem</span>;
   <span class="hljs-attribute">height</span>: auto;
 }
 </code></pre>
 <h3 id="focus-styles">Focus styles</h3>
 <p>A <code>text-decoration</code> focus style is recommended for the headline link and any linked meta information (which should be the only focusable elements inside the promo). In addition, the promo itself can take an outline via <code>focus-within</code>, to better draw attention to the promo 'in hand':</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.codegel-promo-headline</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-promo-headline</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span> {
   <span class="hljs-attribute">outline</span>: none;
   <span class="hljs-attribute">text-decoration</span>: underline;
 }
 
-<span class="hljs-selector-class">.codegel-promo</span><span class="hljs-selector-pseudo">:focus-within</span> {
+<span class="hljs-selector-class">.gef-promo</span><span class="hljs-selector-pseudo">:focus-within</span> {
   <span class="hljs-attribute">outline</span>: <span class="hljs-number">0.25rem</span> solid;
 }
 </code></pre>
@@ -280,10 +280,10 @@ img.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs
 <p>If the metadata contains links, these will fall into focus order after the headline, as expected.</p>
 <h2 id="example-implementation">Example implementation</h2>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
-              <h4 id="aside-alert-important" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Example implementations are intended to demonstrate <strong>what needs to be achieved</strong> but not how to achieve it. To meet our recommendations your HTML semantics, layout and behaviour must conform to the example implementation. Your server-side and front-end frameworks will likely differ.</p>
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
+              <h4 id="aside-alert-important" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Example implementations are intended to demonstrate <strong>what needs to be achieved</strong> but not how to achieve it. To meet our recommendations your HTML semantics, layout and behaviour must conform to the example implementation. Your server-side and front-end frameworks will likely differ.</p>
 </aside>
-          <div class="geldocs-demo"><!-- 
+          <div class="gefdocs-demo"><!-- 
 title: Promos
  -->
 
@@ -291,18 +291,18 @@ title: Promos
 
   <h3>Vertical Promos</h3>
 
-  <ul class="codegel-promos">
-    <li class="codegel-promo">
-      <div class="codegel-promo-content">
-        <div class="codegel-promo-headline">
+  <ul class="gef-promos">
+    <li class="gef-promo">
+      <div class="gef-promo-content">
+        <div class="gef-promo-headline">
           <h4>
             <a href="#to/permalink/1">Report: Rainstorm Disquiets Rivers Regularly</a>
           </h4>
         </div>
-        <div class="codegel-promo-desc">
+        <div class="gef-promo-desc">
           <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth.</p>
         </div>
-        <dl class="codegel-metadata-strip">
+        <dl class="gef-metadata-strip">
           <div>
             <dt class="vh">Published:</dt>
             <dd>
@@ -318,18 +318,18 @@ title: Promos
           </div>
         </dl>
       </div>
-      <div class="codegel-promo-image">
+      <div class="gef-promo-image">
         <img src="/code-gel/static/images/placeholder.png" alt="">
       </div>
     </li>
-    <li class="codegel-promo">
-      <div class="codegel-promo-content">
-        <div class="codegel-promo-headline">
+    <li class="gef-promo">
+      <div class="gef-promo-content">
+        <div class="gef-promo-headline">
           <h4>
             <a href="#to/permalink/2">Animus Averted By Timely Answers</a>
           </h4>
         </div>
-        <dl class="codegel-metadata-strip">
+        <dl class="gef-metadata-strip">
           <div>
             <dt class="vh">Published:</dt>
             <dd>
@@ -345,7 +345,7 @@ title: Promos
           </div>
         </dl>
       </div>
-      <div class="codegel-promo-image">
+      <div class="gef-promo-image">
         <img src="/code-gel/static/images/placeholder.png" alt="">
       </div>
     </li>
@@ -353,15 +353,15 @@ title: Promos
 
   <h3>Horizontal promos</h3>
 
-  <ul class="codegel-promos codegel-promos-horizontal">
-    <li class="codegel-promo codegel-promo-horizontal">
-      <div class="codegel-promo-content">
-        <div class="codegel-promo-headline">
+  <ul class="gef-promos gef-promos-horizontal">
+    <li class="gef-promo gef-promo-horizontal">
+      <div class="gef-promo-content">
+        <div class="gef-promo-headline">
           <h4>
             <a href="#to/permalink/1">Report: Rainstorm Disquiets Rivers Regularly</a>
           </h4>
         </div>
-        <dl class="codegel-metadata-strip">
+        <dl class="gef-metadata-strip">
           <div>
             <dt class="vh">Published:</dt>
             <dd>
@@ -377,19 +377,19 @@ title: Promos
           </div>
         </dl>
       </div>
-      <div class="codegel-promo-image">
+      <div class="gef-promo-image">
         <img src="/code-gel/static/images/placeholder.png" alt="">
       </div>
     </li>
-    <li class="codegel-promo codegel-promo-horizontal">
-      <div class="codegel-promo-content">
-        <div class="codegel-promo-headline">
+    <li class="gef-promo gef-promo-horizontal">
+      <div class="gef-promo-content">
+        <div class="gef-promo-headline">
           <h4>
             <a href="#to/permalink/2">Animus Averted By Timely Answers</a>
           </h4>
         </div>
       </div>
-      <div class="codegel-promo-image">
+      <div class="gef-promo-image">
         <img src="/code-gel/static/images/placeholder.png" alt="">
       </div>
     </li>
@@ -397,28 +397,28 @@ title: Promos
 
   <h3>Promos with just images and headlines</h3>
 
-  <ul class="codegel-promos">
-    <li class="codegel-promo">
-      <div class="codegel-promo-content">
-        <div class="codegel-promo-headline">
+  <ul class="gef-promos">
+    <li class="gef-promo">
+      <div class="gef-promo-content">
+        <div class="gef-promo-headline">
           <h4>
             <a href="#to/permalink/1">Report: Rainstorm Disquiets Rivers Regularly</a>
           </h4>
         </div>
       </div>
-      <div class="codegel-promo-image">
+      <div class="gef-promo-image">
         <img src="/code-gel/static/images/placeholder.png" alt="">
       </div>
     </li>
-    <li class="codegel-promo">
-      <div class="codegel-promo-content">
-        <div class="codegel-promo-headline">
+    <li class="gef-promo">
+      <div class="gef-promo-content">
+        <div class="gef-promo-headline">
           <h4>
             <a href="#to/permalink/2">Animus Averted By Timely Answers</a>
           </h4>
         </div>
       </div>
-      <div class="codegel-promo-image">
+      <div class="gef-promo-image">
         <img src="/code-gel/static/images/placeholder.png" alt="">
       </div>
     </li>
@@ -427,11 +427,11 @@ title: Promos
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function(event) {
-    window.codegel && codegel.Promo.init();
+    window.gef && gef.Promo.init();
   });
 </script></div>
         
-          <p><a class="codegel-cta gel-long-primer-bold" href="../demos/promos/" target="_new"><span class="codegel-button__label">Open in new window</span><svg class="codegel-button__icon codegel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+          <p><a class="gef-cta gel-long-primer-bold" href="../demos/promos/" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
         <h2 id="related-accessibility-guidelines">Related accessibility guidelines</h2>
 <dl class="geldocs-2col-list">
   <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/design/actionable-elements">Actionable elements</a></dt>
@@ -477,9 +477,9 @@ title: Promos
 </section>
 
 
-                <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
+                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
                     <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
-                        <svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Could you improve this documentation?
+                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Could you improve this documentation?
                     </h4>
                     <div>
                         <p>
@@ -492,16 +492,16 @@ title: Promos
         </div>
     </main>
 
-    <div class="geldocs-feedback-banner">
+    <div class="gefdocs-feedback-banner">
         <div class="gel-wrap">
             <div class="gel-layout">
                 <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
-                    <h2 class="geldocs-feedback-banner__title">Got a minute?</h2>
+                    <h2 class="gefdocs-feedback-banner__title">Got a minute?</h2>
                     <p>We'd love to know what you think of the Code GEL website.</p>
-                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" class="geldocs-button geldocs-button__link-button geldocs-feedback-banner__cta geldocs-button--primary">
-                        <span class="geldocs-button__content">Go to survey</span>
-                        <span class="geldocs-button__icon_wrapper">
-                            <svg class="geldocs-button__icon geldocs-icon geldocs-icon--text">
+                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" class="gefdocs-button gefdocs-button__link-button gefdocs-feedback-banner__cta gefdocs-button--primary">
+                        <span class="gefdocs-button__content">Go to survey</span>
+                        <span class="gefdocs-button__icon_wrapper">
+                            <svg class="gefdocs-button__icon gefdocs-icon gefdocs-icon--text">
                                 <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"
                                     style="fill:undefined;"></use>
                             </svg>
@@ -512,15 +512,15 @@ title: Promos
         </div>
     </div>
 
-    <script type="text/javascript" src="/code-gel/static/js/codegel.js"></script>
+    <script type="text/javascript" src="/code-gel/static/js/gef.js"></script>
 
     
 
     <script type="text/javascript">
         new Sticky('.sticky');
-        new MenuSpy(document.querySelector('#geldocs-toc__links'), {enableLocationHash: false});
+        new MenuSpy(document.querySelector('#gefdocs-toc__links'), {enableLocationHash: false});
         new SweetScroll({
-            trigger: '#geldocs-toc__links a',
+            trigger: '#gefdocs-toc__links a',
             quickMode: true,
             easing: 'easeOutExpo',
             cancellable: true,

@@ -11,8 +11,8 @@
     <script src="/code-gel/static/js/site.js"></script>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/codegel.css">
-    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/geldocs.css">
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/gef.css">
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/site.css">
 
     <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
@@ -42,14 +42,14 @@
     
 </head>
 
-<body class="geldocs-body">
-    <p class="codegel-sr codegel-sr__focusable codegel-sr__overlay" tabindex="0">
-        <a href="#main" onfocus="this.parentNode.classList.add('codegel-sr__focused')" onblur="this.parentNode.classList.remove('codegel-sr__focused')">Skip
+<body class="gefdocs-body">
+    <p class="gef-sr gef-sr__focusable gef-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('gef-sr__focused')" onblur="this.parentNode.classList.remove('gef-sr__focused')">Skip
             to content</a>
     </p>
 
     <header>
-        <div class="geldocs-header gs-u-clearfix">
+        <div class="gefdocs-header gs-u-clearfix">
             <div class="gel-wrap">
                 <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
                         <title>BBC</title>
@@ -58,14 +58,14 @@
                     </svg></a>
             </div>
         </div>
-        <div class="geldocs-header__banner gs-u-clearfix">
+        <div class="gefdocs-header__banner gs-u-clearfix">
             <div class="gel-wrap">
                 <div class="gel-layout">
                     <div class="gel-layout__item gel-2/5@l" style="text-align:left; padding-left:14px; margin-bottom:32px;">
-                        <a href="/code-gel/" class="geldocs-logo">Code{GEL}</a>
+                        <a href="/code-gel/" class="gefdocs-logo">Code{GEL}</a>
                     </div>
                     <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
-                        <a class="geldocs-button geldocs-button--dark gel-long-primer-bold" href="">
+                        <a class="gefdocs-button gefdocs-button--dark gel-long-primer-bold" href="">
                             Go to BBC GEL
                         </a>
                     </div>
@@ -81,12 +81,12 @@
             </div>
 
             <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
-                <h1 class="geldocs-header__title">Headings</h1>
-                <p class="geldocs-header__summary gel-great-primer">Headings provide a semantic and visual hierarchical structure to a document</p>
+                <h1 class="gefdocs-header__title">Headings</h1>
+                <p class="gefdocs-header__summary gel-great-primer">Headings provide a semantic and visual hierarchical structure to a document</p>
             </div>
 
             <div class="gel-layout__item gel-1/5@l">
-                <dl class="geldocs-standout-box">
+                <dl class="gefdocs-standout-box">
                     
                     <dt>Version:</dt>
                     <dd>0.1.0</dd>
@@ -103,11 +103,11 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#expected-behaviour">Expected behaviour</a></li><li><a href="#test-specifications">Test specifications</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#expected-behaviour">Expected behaviour</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
-            <div class="geldocs-sections geldocs-body-copy gel-layout__item gel-3/5@l">
+            <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="introduction">Introduction</h2>
 <p>Buttons, links, and form elements all have labels. Labels tell users what these elements are for. Headings are also labels, and describe sections of the document. A correct use of heading elements is especially important when supporting screen reader users<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> because headings together create a table of contents, navigable by a variety of shortcuts and other means.</p>
 <h2 id="expected-markup">Expected markup</h2>
@@ -168,8 +168,8 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
 </code></pre>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
-              <h4 id="aside-alert-important" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Part of the intention of sectioning elements (like <code>&lt;section&gt;</code> and <code>&lt;article&gt;</code>) was to automate heading levels as perceived by assistive technologies. That is, an <code>&lt;h1&gt;</code> for a  <code>&lt;section&gt;</code> inside <code>&lt;body&gt;</code> would be perceived as an <code>&lt;h2&gt;</code>. However, the algorithm was never implemented by any browser vendors<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. You still need to use explicit (h1—h6) according to your sections' nesting depth.</p>
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
+              <h4 id="aside-alert-important" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Part of the intention of sectioning elements (like <code>&lt;section&gt;</code> and <code>&lt;article&gt;</code>) was to automate heading levels as perceived by assistive technologies. That is, an <code>&lt;h1&gt;</code> for a  <code>&lt;section&gt;</code> inside <code>&lt;body&gt;</code> would be perceived as an <code>&lt;h2&gt;</code>. However, the algorithm was never implemented by any browser vendors<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. You still need to use explicit (h1—h6) according to your sections' nesting depth.</p>
 </aside><h3 id="wording">Wording</h3>
 <p>As labels, headings must describe the sections they introduce<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>.</p>
 <p>Many screen readers aggregate headings into a table of contents. For example, JAWS produces a headings dialogue when the user presses <kbd>Insert</kbd> + <kbd>F6</kbd>. For this reason, it's important headings are sufficiently descriptive independent of their surrounding content.</p>
@@ -205,10 +205,8 @@
 <p>Where headings adopt <code>id</code>s and are used as document fragments to be navigated between using same-page links, they should take <code>tabindex=&quot;-1&quot;</code>. This forces browsers that would not otherwise update their sequential focus starting point<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> to move keyboard focus to the destination heading and section.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>Navigable subsection<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
 </code></pre>
-<h2 id="test-specifications">Test specifications</h2>
-<p>[TODO]</p>
 <h2 id="related-research">Related research</h2>
-<p>[TODO]</p>
+<p>This topic does not yet have any related research available.</p>
 <h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
 <hr class="footnotes-sep">
 <section class="footnotes">
@@ -229,9 +227,9 @@
 </section>
 
 
-                <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
+                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
                     <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
-                        <svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Could you improve this documentation?
+                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Could you improve this documentation?
                     </h4>
                     <div>
                         <p>
@@ -244,16 +242,16 @@
         </div>
     </main>
 
-    <div class="geldocs-feedback-banner">
+    <div class="gefdocs-feedback-banner">
         <div class="gel-wrap">
             <div class="gel-layout">
                 <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
-                    <h2 class="geldocs-feedback-banner__title">Got a minute?</h2>
+                    <h2 class="gefdocs-feedback-banner__title">Got a minute?</h2>
                     <p>We'd love to know what you think of the Code GEL website.</p>
-                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" class="geldocs-button geldocs-button__link-button geldocs-feedback-banner__cta geldocs-button--primary">
-                        <span class="geldocs-button__content">Go to survey</span>
-                        <span class="geldocs-button__icon_wrapper">
-                            <svg class="geldocs-button__icon geldocs-icon geldocs-icon--text">
+                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" class="gefdocs-button gefdocs-button__link-button gefdocs-feedback-banner__cta gefdocs-button--primary">
+                        <span class="gefdocs-button__content">Go to survey</span>
+                        <span class="gefdocs-button__icon_wrapper">
+                            <svg class="gefdocs-button__icon gefdocs-icon gefdocs-icon--text">
                                 <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"
                                     style="fill:undefined;"></use>
                             </svg>
@@ -264,15 +262,15 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="/code-gel/static/js/codegel.js"></script>
+    <script type="text/javascript" src="/code-gel/static/js/gef.js"></script>
 
     
 
     <script type="text/javascript">
         new Sticky('.sticky');
-        new MenuSpy(document.querySelector('#geldocs-toc__links'), {enableLocationHash: false});
+        new MenuSpy(document.querySelector('#gefdocs-toc__links'), {enableLocationHash: false});
         new SweetScroll({
-            trigger: '#geldocs-toc__links a',
+            trigger: '#gefdocs-toc__links a',
             quickMode: true,
             easing: 'easeOutExpo',
             cancellable: true,

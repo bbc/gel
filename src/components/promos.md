@@ -26,18 +26,18 @@ Promos are typically presented as a set, and together must be marked up as an un
 
 ```html
 <h2>Latest news</h2>
-<ul class="codegel-promos">
-  <li class="codegel-promo">
-    <div class="codegel-promo-content">
-      <div class="codegel-promo-headline">
+<ul class="gef-promos">
+  <li class="gef-promo">
+    <div class="gef-promo-content">
+      <div class="gef-promo-headline">
         <h3>
           <a href="#example/permalink/1">Heading text goes here</a>
         </h3>
       </div>
-      <div class="codegel-promo-desc">
+      <div class="gef-promo-desc">
         <p>Some description text goes here.</p>
       </div>
-      <dl class="codegel-metadata-strip">
+      <dl class="gef-metadata-strip">
         <div>
           <dt class="vh">Published:</dt>
           <dd>
@@ -53,21 +53,21 @@ Promos are typically presented as a set, and together must be marked up as an un
         </div>
       </dl>
     </div>
-    <div class="codegel-promo-image">
+    <div class="gef-promo-image">
       <img src="{{site.basedir}}static/images/placeholder.png" alt="">
     </div>
   </li>
-  <li class="codegel-promo">
-    <div class="codegel-promo-content">
-      <div class="codegel-promo-headline">
+  <li class="gef-promo">
+    <div class="gef-promo-content">
+      <div class="gef-promo-headline">
         <h3>
           <a href="#example/permalink/2">Another heading text goes here</a>
         </h3>
       </div>
-      <div class="codegel-promo-desc">
+      <div class="gef-promo-desc">
         <p>More description text here.</p>
       </div>
-      <dl class="codegel-metadata-strip">
+      <dl class="gef-metadata-strip">
         <div>
           <dt class="vh">Published:</dt>
           <dd>
@@ -83,30 +83,30 @@ Promos are typically presented as a set, and together must be marked up as an un
         </div>
       </dl>
     </div>
-    <div class="codegel-promo-image">
+    <div class="gef-promo-image">
       <img src="{{site.basedir}}static/images/placeholder.png" alt="">
     </div>
   </li>
 </ul>
 ```
 
-Images can be considered decorative (`alt=""`; the first Promo in our example) or non-decorative (`alt="[description of image]"`; the second Promo in our example). They must appear _after_ the textual content (`codegel-promo-content`) in the markup since the heading introduces the promo content, including the image content. **Non-decorative images must have alternative text that does not simply repeat information in the headline or description**.
+Images can be considered decorative (`alt=""`; the first Promo in our example) or non-decorative (`alt="[description of image]"`; the second Promo in our example). They must appear _after_ the textual content (`gef-promo-content`) in the markup since the heading introduces the promo content, including the image content. **Non-decorative images must have alternative text that does not simply repeat information in the headline or description**.
 
 ## Recommended layout
 
 A group of Promos in a set should share the same height. This is possible by making the `<ul>` a CSS Flexbox or CSS Grid context. The appearance of each promo is improved by distributing the metadata (if present) to the bottom of the container. This is possible by making the promo a Flexbox context and giving the metadata element `margin-top: auto`. Padding can be combined with margin to ensure a minimum space between the metadata and the element above it.
 
 ```css
-.codegel-promo {
+.gef-promo {
   display: flex;
   flex-diection: column;
 }
 
-.codegel-promo > * + * {
+.gef-promo > * + * {
   margin-top: 1rem; /* generic spacing between components of the promo */
 } 
 
-.codegel-metadata-strip {
+.gef-metadata-strip {
   margin-top: auto;
   padding-top: 1rem;
 }
@@ -121,7 +121,7 @@ While [Metadata Strips](../metadata-strips/) are documented as their own compone
 As stated in [Recommended markup](#recommended-markup), the image must come _after_ the text content in the source order. However, it is designed to appear before it visually. Using Flexbox, it is possible to augment the visual order without affecting the source order:
 
 ```css
-.codegel-promo-image {
+.gef-promo-image {
   order: -1;
 }
 ```
@@ -133,19 +133,19 @@ Augmenting the source order can produce a [WCAG 2.4.3 Focus Order failure](https
 The image will need to fit the available space, regardless of the Promo's dimensions (which are likely to change across breakpoints) without distorting. This is possible by setting the desired height of the image box and using the `object-fit` property:
 
 ```css
-.codegel-promo-image {
+.gef-promo-image {
   order: -1;
   height: 10rem;
   overflow: hidden;
 }
 
-.codegel-promo-image img {
+.gef-promo-image img {
   height: 100%;
   width: auto;
 }
 
 @supports (object-fit: cover) {
-  .codegel-promo-image img {
+  .gef-promo-image img {
     width: 100%;
     object-fit: cover;
   }
@@ -158,22 +158,22 @@ At the time of writing, the `object-fit` property is supported everywhere but In
 
 ### Horizontal Promos
 
-It is permissible to create a horizontal configuration, with the image to the left of the content. In the [Example implementation](../demos/promos/) this is achieved without changing the markup, except to place the class `codegel-promos-horizontal` on the `<ul>` element and `codegel-promo-horizontal` on each subject Promo.
+It is permissible to create a horizontal configuration, with the image to the left of the content. In the [Example implementation](../demos/promos/) this is achieved without changing the markup, except to place the class `gef-promos-horizontal` on the `<ul>` element and `gef-promo-horizontal` on each subject Promo.
 
 A small amount of additional CSS is then applied. Note the switch in `flex-direction` from `column` to `row`.
 
 ```css
 @supports (display: grid) {
-  .codegel-promos.codegel-promos-horizontal {
+  .gef-promos.gef-promos-horizontal {
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   }
 }
 
-.codegel-promo.codegel-promo-horizontal {
+.gef-promo.gef-promo-horizontal {
   flex-direction: row;
 }
 
-.codegel-promo.codegel-promo-horizontal .codegel-promo-image {
+.gef-promo.gef-promo-horizontal .gef-promo-image {
   width: 15rem;
   height: auto;
 }
@@ -184,12 +184,12 @@ A small amount of additional CSS is then applied. Note the switch in `flex-direc
 A `text-decoration` focus style is recommended for the headline link and any linked meta information (which should be the only focusable elements inside the promo). In addition, the promo itself can take an outline via `focus-within`, to better draw attention to the promo 'in hand':
 
 ```css
-.codegel-promo-headline a:focus {
+.gef-promo-headline a:focus {
   outline: none;
   text-decoration: underline;
 }
 
-.codegel-promo:focus-within {
+.gef-promo:focus-within {
   outline: 0.25rem solid;
 }
 ```

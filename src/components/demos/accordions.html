@@ -2,11 +2,11 @@
 title: Accordions
 ---
 
-<div class="codegel-accordion-controls">
-  <button class="codegel-button" id="openAll">Open all</button>
-  <button class="codegel-button" id="closeAll">Close all</button>
+<div class="gef-accordion-controls">
+  <button class="gef-button" id="openAll">Open all</button>
+  <button class="gef-button" id="closeAll">Close all</button>
 </div>
-<div class="codegel-accordion">
+<div class="gef-accordion">
   <section id="how-can-I-purchase-bbc-dvds-merchandise">
     <h3>How can I purchase BBC DVDs/Merchandise?</h3>
     <p>It is no longer possible to buy DVDs, Blu-ray discs, games, toys or other BBC related products direct from the
@@ -47,11 +47,11 @@ title: Accordions
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    window.codegel && codegel.Accordion.init();
+    window.gef && gef.Accordion.init();
 
-    // Initialize on the `class="codegel-accordion"` parent element
-    var accordionElem = document.querySelector('.codegel-accordion');
-    var accordion = new codegel.Accordion.constructor(accordionElem);
+    // Initialize on the `class="gef-accordion"` parent element
+    var accordionElem = document.querySelector('.gef-accordion');
+    var accordion = new gef.Accordion.constructor(accordionElem);
 
     // Support for opening all the drawers at once
     var openAllButton = document.getElementById('openAll');

@@ -9,7 +9,7 @@ linkback: http://www.bbc.co.uk/gel/guidelines/cards
 
 ## Introduction
 
-The **Card** component is superficially similar to the [**Promo**](#link-todo). However, while the promo acts as a teaser and links to a page with full information, the **Card** is self-sufficient and offers functionality _in situ_. 
+The **Card** component is superficially similar to the [Promo](../promos). However, while the promo acts as a teaser and links to a page with full information, the **Card** is self-sufficient and offers functionality _in situ_. 
 
 This functionality can include video playback, and options to share the card content via social media. Read the [original GEL Card documentation](https://www.bbc.co.uk/gel/guidelines/promos) for more.
 
@@ -22,20 +22,20 @@ The following designates the basic card structure, consisting of the headline, d
 ```html
 <h2>Heading introducing the set of cards</h2>
 <ul>
-  <li class="gel-card">
-    <div class="gel-card-headline">
+  <li class="gef-card">
+    <div class="gef-card-headline">
       <h3>Card 1 Headline</h3>
     </div>
-    <div class="gel-card-content">
+    <div class="gef-card-content">
       <!-- an image, video, quotation, etc -->
     </div>
-    <div class="gel-card-desc">
+    <div class="gef-card-desc">
       <!-- can include an attribution, timestamp, etc. -->
     </div>
-    <div class="gel-card-toolbar">
+    <div class="gef-card-toolbar">
       <button type="button" aria-haspopup="true">More info</button>
-      <div class="gel-card-info" role="group" aria-labelledby="more-info-title-1">
-        <h4 class="gel-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h4>
+      <div class="gef-card-info" role="group" aria-labelledby="more-info-title-1">
+        <h4 class="gef-card-info-heading" id="more-info-title-1" tabindex="-1">More info</h4>
         <!-- More info here -->
       </div>
       <button type="button" aria-pressed="false">Love</button>
@@ -43,7 +43,7 @@ The following designates the basic card structure, consisting of the headline, d
       <button type="button">Share</button>
     </div>
   </li>
-  <li class="gel-card">
+  <li class="gef-card">
     <!-- another card's contents -->
   </li>
 </ul>
@@ -53,11 +53,11 @@ The following designates the basic card structure, consisting of the headline, d
 
 * **`<ul>` and `<li>`:** Cards are typically presented as a set, and together must be marked up as an unordered list, with each card marked as a list item (`<li>`). This enables structural and navigational cues in screen reader software[^1].
 * **Headings:** Each card's primary (headline) link must be contained within a heading, each of the card's headline headings must be of the same level, and the set of cards must be introduced as a section within the document by a heading one level higher.
-* **`gel-card-headline`:** This must appear first in the source order, although the card content will _appear_ first visually. This is because the card's heading introduces the document section that constitutes the rest of the card. Avoid putting interactive content inside `gel-card-headline` because this will create a reversed focus order.
-* **`gel-card-desc`:** This will contain prosaic content, such as a description, attribution, and/or timestamp. Some of these elements may be linked to other resources.
-* **`aria-popup="true"`:** You may need to provide additional, clarifying information for the card. A `gel-card-info` element is hidden by default, but can be toggled into view using the `aria-haspopup` button. Note that the `gel-card-info` element appears directly after the `aria-haspopup` button so that it is logically placed within focus order. The further action buttons will be the next '<kbd>Tab</kbd> stops'. The `aria-haspopup` ARIA property identifies the button as a 'popup button' in screen readers[^3]
-* **`role="group"` and `aria-labelledby`:** In order to reliably associate a label with the `gel-card-info` element, a generic ARIA role is provided. The label itself is provided as a heading of the correct nesting level (`<h4>` following `<h3>` in the example) and connected to `gel-card-info` using `aria-labelledby`.
-* **Love, add, and share:** The remaining actions facilitated by `gel-card-toolbar`. The `aria-pressed` state attribute should be provided on the "Love" action, since this is a an "on/off" toggle.
+* **`gef-card-headline`:** This must appear first in the source order, although the card content will _appear_ first visually. This is because the card's heading introduces the document section that constitutes the rest of the card. Avoid putting interactive content inside `gef-card-headline` because this will create a reversed focus order.
+* **`gef-card-desc`:** This will contain prosaic content, such as a description, attribution, and/or timestamp. Some of these elements may be linked to other resources.
+* **`aria-popup="true"`:** You may need to provide additional, clarifying information for the card. A `gef-card-info` element is hidden by default, but can be toggled into view using the `aria-haspopup` button. Note that the `gef-card-info` element appears directly after the `aria-haspopup` button so that it is logically placed within focus order. The further action buttons will be the next '<kbd>Tab</kbd> stops'. The `aria-haspopup` ARIA property identifies the button as a 'popup button' in screen readers[^3]
+* **`role="group"` and `aria-labelledby`:** In order to reliably associate a label with the `gef-card-info` element, a generic ARIA role is provided. The label itself is provided as a heading of the correct nesting level (`<h4>` following `<h3>` in the example) and connected to `gef-card-info` using `aria-labelledby`.
+* **Love, add, and share:** The remaining actions facilitated by `gef-card-toolbar`. The `aria-pressed` state attribute should be provided on the "Love" action, since this is a an "on/off" toggle.
 
 ### Card contents
 
@@ -75,19 +75,19 @@ Instead, describe what is in the photograph and what makes it appealing.
 To ensure the image has the best chance of fitting within the given space without distorting, it is recommended you use the `object-fit` property as a progressive enhancement. In the following example, the height of the content area has been set to `10rem` and the width is assumed to be indeterminate/responsive.
 
 ```css
-.gel-promo-image {
+.gef-promo-image {
   order: -1;
   height: 10rem;
   overflow: hidden;
 }
 
-.gel-promo-image img {
+.gef-promo-image img {
   height: 100%;
   width: auto;
 }
 
 @supports (object-fit: cover) {
-  .gel-promo-image img {
+  .gef-promo-image img {
     width: 100%;
     object-fit: cover;
   }
@@ -227,10 +227,10 @@ This must _not_ be achieved using absolute positioning, because this is likely t
 }
 ```
 
-The `gel-card-headline`, containing the heading element, must come first in focus order hence it is first in source order. To move the `gel-card-content` above it _visually_ you can use `order: -1`.
+The `gef-card-headline`, containing the heading element, must come first in focus order hence it is first in source order. To move the `gef-card-content` above it _visually_ you can use `order: -1`.
 
 ```css
-.gel-card-headline {
+.gef-card-headline {
   order: -1;
 }
 ```
@@ -238,14 +238,14 @@ The `gel-card-headline`, containing the heading element, must come first in focu
 
 #### The 'More info' element
 
-This element must be absolutely positioned over the card, which means the card itself must take `position: relative`. The `bottom` positioning of the element must match the height of the `gel-card-toolbar` element so that element is not obscured while the element is visible.
+This element must be absolutely positioned over the card, which means the card itself must take `position: relative`. The `bottom` positioning of the element must match the height of the `gef-card-toolbar` element so that element is not obscured while the element is visible.
 
 ```css
-.gel-card {
+.gef-card {
   position: relative;
 }
 
-.gel-card-info {
+.gef-card-info {
   position: absolute;
   top: 0;
   right: 0;
@@ -288,16 +288,16 @@ moreBtn.addEventListener('click', function() {
 GEL SVG icons have been removed from the above example for brevity. 
 :::
 
-For the `focus()` method to succeed, the `class="gel-card-info-heading"` element needs `tabindex="-1"`.
+For the `focus()` method to succeed, the `class="gef-card-info-heading"` element needs `tabindex="-1"`.
 
 ```html
-<div class="gel-card-info" role="group" aria-labelledby="more-info-title-1">
-  <h4 class="gel-card-info-heading" id="info-title-1" tabindex="-1">More info</h4>
+<div class="gef-card-info" role="group" aria-labelledby="more-info-title-1">
+  <h4 class="gef-card-info-heading" id="info-title-1" tabindex="-1">More info</h4>
   <!-- More info here -->
 </div>
 ```
 
-In addition, it should be possible to close the `class="gel-card-info"` element using the <kbd>ESC</kbd> key. In this scenario, focus needs to be returned programmatically to the button.
+In addition, it should be possible to close the `class="gef-card-info"` element using the <kbd>ESC</kbd> key. In this scenario, focus needs to be returned programmatically to the button.
 
 ```js
 moreBtn.addEventListener('keydown', function(e) {
@@ -327,7 +327,7 @@ A list of gherkin-style feature specifications (including requirements for the [
 
 ## Related research
 
-[TODO]
+This topic does not yet have any related research available.
 
 ### Further reading, elsewhere on the Web
 

@@ -11,8 +11,8 @@
     <script src="/code-gel/static/js/site.js"></script>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/codegel.css">
-    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/geldocs.css">
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/gef.css">
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/site.css">
 
     <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
@@ -42,14 +42,14 @@
     
 </head>
 
-<body class="geldocs-body">
-    <p class="codegel-sr codegel-sr__focusable codegel-sr__overlay" tabindex="0">
-        <a href="#main" onfocus="this.parentNode.classList.add('codegel-sr__focused')" onblur="this.parentNode.classList.remove('codegel-sr__focused')">Skip
+<body class="gefdocs-body">
+    <p class="gef-sr gef-sr__focusable gef-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('gef-sr__focused')" onblur="this.parentNode.classList.remove('gef-sr__focused')">Skip
             to content</a>
     </p>
 
     <header>
-        <div class="geldocs-header gs-u-clearfix">
+        <div class="gefdocs-header gs-u-clearfix">
             <div class="gel-wrap">
                 <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
                         <title>BBC</title>
@@ -58,14 +58,14 @@
                     </svg></a>
             </div>
         </div>
-        <div class="geldocs-header__banner gs-u-clearfix">
+        <div class="gefdocs-header__banner gs-u-clearfix">
             <div class="gel-wrap">
                 <div class="gel-layout">
                     <div class="gel-layout__item gel-2/5@l" style="text-align:left; padding-left:14px; margin-bottom:32px;">
-                        <a href="/code-gel/" class="geldocs-logo">Code{GEL}</a>
+                        <a href="/code-gel/" class="gefdocs-logo">Code{GEL}</a>
                     </div>
                     <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
-                        <a class="geldocs-button geldocs-button--dark gel-long-primer-bold" href="https://www.bbc.co.uk/gel/guidelines/how-to-design-forms">
+                        <a class="gefdocs-button gefdocs-button--dark gel-long-primer-bold" href="https://www.bbc.co.uk/gel/guidelines/how-to-design-forms">
                             Go to BBC GEL
                         </a>
                     </div>
@@ -81,12 +81,12 @@
             </div>
 
             <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
-                <h1 class="geldocs-header__title">Form fields and validation</h1>
-                <p class="geldocs-header__summary gel-great-primer">Form fields must be accessible and usable, helping the user to provide valid input</p>
+                <h1 class="gefdocs-header__title">Form fields and validation</h1>
+                <p class="gefdocs-header__summary gel-great-primer">Form fields must be accessible and usable, helping the user to provide valid input</p>
             </div>
 
             <div class="gel-layout__item gel-1/5@l">
-                <dl class="geldocs-standout-box">
+                <dl class="gefdocs-standout-box">
                     
                     <dt>Version:</dt>
                     <dd>0.1.0</dd>
@@ -103,11 +103,11 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
-            <div class="geldocs-sections geldocs-body-copy gel-layout__item gel-3/5@l">
+            <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="introduction">Introduction</h2>
 <p>Gracefully handling user input is critical to the usability of BBC services, but also an area of Interaction Design fraught with potential problems. The purpose of this document is to set out robust approaches to presenting and validating form fields.</p>
 <p>The focus here is on web-based forms. For further guidance specific to mobile/native applications, please consult the <a href="http://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/forms/labelling-form-controls">BBC Mobile Accessibility Guidelines</a>.</p>
@@ -118,8 +118,8 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"username"</span> /&gt;</span>
 </code></pre>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-name-and-id">
-              <h4 id="aside-info-name-and-id" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg><code>name</code> and <code>id</code></h4><div><p>It is a common misconception that the <code>name</code> attribute is used in label calculation. Although it often takes the same value as the <code>id</code>, it is only the <code>id</code> that associates the label to the input.</p>
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-name-and-id">
+              <h4 id="aside-info-name-and-id" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg><code>name</code> and <code>id</code></h4><div><p>It is a common misconception that the <code>name</code> attribute is used in label calculation. Although it often takes the same value as the <code>id</code>, it is only the <code>id</code> that associates the label to the input.</p>
 </aside><h4 id="group-labels">Group labels</h4>
 <p>Sometimes multiple form elements should be grouped together under a common label. The standard method for creating such a group is with the <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> elements. The <code>&lt;legend&gt;</code> must be the first child inside the <code>&lt;fieldset&gt;</code>.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
@@ -145,8 +145,8 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
 </code></pre>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-label-wrappers">
-              <h4 id="aside-info-label-wrappers" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Label wrappers</h4><div><p>Note the use of labels <em>wrapping</em> inputs in the above example. Only when wrapping inputs in <code>&lt;label&gt;</code>s can you omit the <code>for</code> and <code>id</code> association. It is a common pattern for radios and checkboxes.</p>
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-label-wrappers">
+              <h4 id="aside-info-label-wrappers" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Label wrappers</h4><div><p>Note the use of labels <em>wrapping</em> inputs in the above example. Only when wrapping inputs in <code>&lt;label&gt;</code>s can you omit the <code>for</code> and <code>id</code> association. It is a common pattern for radios and checkboxes.</p>
 </aside><p>It's quite legitimate to place headings inside <code>&lt;legend&gt;</code>s. In fact, this helps to give your form a semantic structure (improving navigation by screen reader users) without having to create separate and redundant labels.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Group label<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
@@ -167,8 +167,8 @@
 <h3 id="input-types">Input types</h3>
 <p>Where specialist HTML5 input types are well supported, it is advised they are used in place of the generic (and default) <code>type=&quot;text&quot;</code>. The <code>number</code> <code>type</code>, for example, helpfully restricts input to numerals, allows incrementation—typically by providing up and down buttons—and elicits the display of a numerical virtual keyboard.</p>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-avoid-custom-form-elements">
-              <h4 id="aside-alert-avoid-custom-form-elements" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Avoid custom form elements</h4><div><p>The most efficient and robust way to implement accessible form fields is to use the native <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements. These elements have predefined and expected behaviours, and automatically communicate their roles, values, and states to assistive technologies.</p>
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-avoid-custom-form-elements">
+              <h4 id="aside-alert-avoid-custom-form-elements" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Avoid custom form elements</h4><div><p>The most efficient and robust way to implement accessible form fields is to use the native <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements. These elements have predefined and expected behaviours, and automatically communicate their roles, values, and states to assistive technologies.</p>
 <p>It is <em>possible</em> to emulate native form element behaviour with WAI-ARIA attribution and JavaScript, but it<br>
 is rarely a good idea. Implementations tend towards complexity, and are necessarily more likely<br>
 to break because they depend on JavaScript in order to function.</p>
@@ -288,37 +288,37 @@ to break because they depend on JavaScript in order to function.</p>
 </ul>
 <h2 id="reference-implementation">Reference implementation</h2>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
-              <h4 id="aside-alert-important" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Example implementations are intended to demonstrate <strong>what needs to be achieved</strong> but not how to achieve it. To meet our recommendations your HTML semantics, layout and behaviour must conform to the example implementation. Your server-side and front-end frameworks will likely differ.</p>
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
+              <h4 id="aside-alert-important" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Example implementations are intended to demonstrate <strong>what needs to be achieved</strong> but not how to achieve it. To meet our recommendations your HTML semantics, layout and behaviour must conform to the example implementation. Your server-side and front-end frameworks will likely differ.</p>
 </aside>
-          <div class="geldocs-demo"><!-- 
+          <div class="gefdocs-demo"><!-- 
 title: Form fields and validation
  -->
 
 <h3>Form fields and validation</h3>
 
 <form id="myform-demo">
-  <div class="codegel-form-divider">
+  <div class="gef-form-divider">
     <label for="username">Username</label>
     <input type="text" id="username" name="username" />
-    <div class="codegel-form-field-error" id="username-error"></div>
+    <div class="gef-form-field-error" id="username-error"></div>
   </div>
-  <div class="codegel-form-divider">
+  <div class="gef-form-divider">
     <label for="code">
       Verification code
       <small>This was sent to you by email</small>
     </label>
     <input type="text" id="code" name="code" />
-    <div class="codegel-form-field-error" id="code-error"></div>
+    <div class="gef-form-field-error" id="code-error"></div>
   </div>
-  <div class="codegel-form-divider">
-    <button class="gel-button" type="submit">Submit</button>
+  <div class="gef-form-divider">
+    <button class="gef-button" type="submit">Submit</button>
   </div>
 </form>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function () {
-    window.codegel && codegel.Validation.init();
+    window.gef && gef.Validation.init();
 
     var rules = [
       {
@@ -342,10 +342,10 @@ title: Form fields and validation
     ];
 
     var form = document.getElementById('myform-demo');
-    var formValidation = new codegel.Validation.constructor(form, rules);
+    var formValidation = new gef.Validation.constructor(form, rules);
   });
 </script></div>
-        <p><a class="codegel-cta gel-long-primer-bold" href="../demos/form-fields/" target="_new"><span class="codegel-button__label">Open in new window</span><svg class="codegel-button__icon codegel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+        <p><a class="gef-cta gel-long-primer-bold" href="../demos/form-fields/" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
 <h2 id="related-research">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
 <h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
@@ -368,9 +368,9 @@ title: Form fields and validation
 </section>
 
 
-                <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
+                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
                     <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
-                        <svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Could you improve this documentation?
+                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Could you improve this documentation?
                     </h4>
                     <div>
                         <p>
@@ -383,16 +383,16 @@ title: Form fields and validation
         </div>
     </main>
 
-    <div class="geldocs-feedback-banner">
+    <div class="gefdocs-feedback-banner">
         <div class="gel-wrap">
             <div class="gel-layout">
                 <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
-                    <h2 class="geldocs-feedback-banner__title">Got a minute?</h2>
+                    <h2 class="gefdocs-feedback-banner__title">Got a minute?</h2>
                     <p>We'd love to know what you think of the Code GEL website.</p>
-                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" class="geldocs-button geldocs-button__link-button geldocs-feedback-banner__cta geldocs-button--primary">
-                        <span class="geldocs-button__content">Go to survey</span>
-                        <span class="geldocs-button__icon_wrapper">
-                            <svg class="geldocs-button__icon geldocs-icon geldocs-icon--text">
+                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" class="gefdocs-button gefdocs-button__link-button gefdocs-feedback-banner__cta gefdocs-button--primary">
+                        <span class="gefdocs-button__content">Go to survey</span>
+                        <span class="gefdocs-button__icon_wrapper">
+                            <svg class="gefdocs-button__icon gefdocs-icon gefdocs-icon--text">
                                 <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"
                                     style="fill:undefined;"></use>
                             </svg>
@@ -403,15 +403,15 @@ title: Form fields and validation
         </div>
     </div>
 
-    <script type="text/javascript" src="/code-gel/static/js/codegel.js"></script>
+    <script type="text/javascript" src="/code-gel/static/js/gef.js"></script>
 
     
 
     <script type="text/javascript">
         new Sticky('.sticky');
-        new MenuSpy(document.querySelector('#geldocs-toc__links'), {enableLocationHash: false});
+        new MenuSpy(document.querySelector('#gefdocs-toc__links'), {enableLocationHash: false});
         new SweetScroll({
-            trigger: '#geldocs-toc__links a',
+            trigger: '#gefdocs-toc__links a',
             quickMode: true,
             easing: 'easeOutExpo',
             cancellable: true,
