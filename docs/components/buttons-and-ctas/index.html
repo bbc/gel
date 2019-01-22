@@ -4,15 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/code-gel/static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/gef-docs/static/images/favicon.ico" type="image/x-icon">
 
-    <title>Code GEL | Buttons and CTAs</title>
+    <title>GEF | Buttons and CTAs</title>
 
-    <script src="/code-gel/static/js/site.js"></script>
+    <script src="/gef-docs/static/js/site.js"></script>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/gef.css">
-    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/site.css">
+    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/gef.css">
+    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/site.css">
 
     <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
@@ -53,7 +53,7 @@
             <div class="gel-wrap">
                 <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
                         <title>BBC</title>
-                        <image xlink:href="/code-gel/static/images/bbc-blocks_grey.svg" src="/code-gel/static/images/bbc-blocks_grey.png"
+                        <image xlink:href="/gef-docs/static/images/bbc-blocks_grey.svg" src="/gef-docs/static/images/bbc-blocks_grey.png"
                             width="100%" height="100%"></image>
                     </svg></a>
             </div>
@@ -62,7 +62,7 @@
             <div class="gel-wrap">
                 <div class="gel-layout">
                     <div class="gel-layout__item gel-2/5@l" style="text-align:left; padding-left:14px; margin-bottom:32px;">
-                        <a href="/code-gel/" class="gefdocs-logo">Code{GEL}</a>
+                        <a href="/gef-docs/" class="gefdocs-logo">GEF</a>
                     </div>
                     <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
                         <a class="gefdocs-button gefdocs-button--dark gel-long-primer-bold" href="http://www.bbc.co.uk/gel/guidelines/sign-in-or-register-cta">
@@ -149,7 +149,7 @@
 </code></pre>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-avoid-disabled-submit-buttons">
-              <h4 id="aside-info-avoid-disabled-submit-buttons" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Avoid disabled submit buttons</h4><div><p>There are a number of usability and accessibility issues with disabling form submit buttons until the user has entered valid/expected data<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>. It's often better to let the user <em>attempt</em> submission and provide explicit feedback in response.</p>
+              <h4 id="aside-info-avoid-disabled-submit-buttons" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Avoid disabled submit buttons</h4><div><p>There are a number of usability and accessibility issues with disabling form submit buttons until the user has entered valid/expected data<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>. It's often better to let the user <em>attempt</em> submission and provide explicit feedback in response.</p>
 </aside><p>Links do not take <code>disabled</code>. You can, however, elicit announcement that a link is 'disabled' by applying the <code>aria-disabled=&quot;true&quot;</code> attribution.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-cta"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/forbidden-place"</span> <span class="hljs-attr">aria-disabled</span>=<span class="hljs-string">"true"</span>&gt;</span>The forbidden place<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 </code></pre>
@@ -165,7 +165,7 @@
 </code></pre>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-use-native-checked-states">
-              <h4 id="aside-alert-use-native-checked-states" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Use native checked states</h4><div><p>It is not recommended you use <code>&lt;button&gt;</code> elements with <code>aria-checked</code>. Instead, employ native checkbox and radio button elements. The basic behaviours of these elements do not rely on JavaScript and make for more robust and accessible components.</p>
+              <h4 id="aside-alert-use-native-checked-states" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Use native checked states</h4><div><p>It is not recommended you use <code>&lt;button&gt;</code> elements with <code>aria-checked</code>. Instead, employ native checkbox and radio button elements. The basic behaviours of these elements do not rely on JavaScript and make for more robust and accessible components.</p>
 </aside><p>Buttons may move focus upon being pressed. Examples include buttons that open dialogs, or invoke menus. In these circumstances, include the <code>aria-haspopup=&quot;true&quot;</code> property<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>. This warns the screen reader user their context will change by announcing the button as a <em>&quot;popup button&quot;</em> or similar.</p>
 <p>If the button simply moves focus to a new section within the page, or to a new page entirely, it should not be a button but a link. Us a generic link or CTA instead.</p>
 <h2 id="recommended-layout">Recommended layout</h2>
@@ -177,7 +177,7 @@
 </ol>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-contrast">
-              <h4 id="aside-alert-contrast" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Contrast</h4><div><p>No matter the brand colours employed, the contrast between the foreground (text) and background colours must meet minimum contrast requirements (WCAG Level AA<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup>)</p>
+              <h4 id="aside-alert-contrast" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Contrast</h4><div><p>No matter the brand colours employed, the contrast between the foreground (text) and background colours must meet minimum contrast requirements (WCAG Level AA<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup>)</p>
 </aside><h3 id="hover-and-focus-styles">Hover and focus styles</h3>
 <p>Hover and focus styles should be strong to differentiate them from the default state.</p>
 <p>Since buttons and CTAs tend to have a rectangular border/perimeter, the thin and faint focus outline offered by some user agent stylesheets can be very unclear. If an outline style is used, make it a solid one, optionally with an offset to separate it from the control's edges.</p>
@@ -222,7 +222,7 @@
 <h2 id="reference-implementation">Reference implementation</h2>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
-              <h4 id="aside-alert-important" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+              <h4 id="aside-alert-important" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
 </aside>
           <div class="gefdocs-demo"><!-- 
 title: Buttons and CTAs
@@ -236,7 +236,7 @@ title: Buttons and CTAs
 
 <button class="gef-button" type="button" onClick="alert('Button with icon clicked')">
   <span class="gef-button__label">Download</span><svg aria-hidden="true" focusable="false" class="gel-button__icon gel-icon gel-icon--text">
-    <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-download"></use>
+    <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-download"></use>
   </svg>
 </button>
 
@@ -255,7 +255,7 @@ title: Buttons and CTAs
 
 <a class="gef-cta" href="#cta-with-icon">
   <svg aria-hidden="true" focusable="false" class="gel-button__icon gel-icon gel-icon--text">
-    <use xlink:href=" /code-gel/static/images/gel-icons-all.svg#gel-icon-help"></use>
+    <use xlink:href=" /gef-docs/static/images/gel-icons-all.svg#gel-icon-help"></use>
   </svg><span class="gef-button__label">Help</span>
 </a>
 
@@ -270,7 +270,7 @@ title: Buttons and CTAs
   });
 </script></div>
         
-          <p><a class="gef-cta gel-long-primer-bold" href="../demos/buttons-and-ctas/" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+          <p><a class="gef-cta gel-long-primer-bold" href="../demos/buttons-and-ctas/" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
         <h2 id="related-research">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
 <h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
@@ -303,7 +303,7 @@ title: Buttons and CTAs
                     </h4>
                     <div>
                         <p>
-                        If you think you could make anything you see here a bit better then become one of <a href="/code-gel/contributors/">our lovely contributors</a>!
+                        If you think you could make anything you see here a bit better then become one of <a href="/gef-docs/contributors/">our lovely contributors</a>!
                         </p>
                     </div>
                 </aside>
@@ -322,7 +322,7 @@ title: Buttons and CTAs
                         <span class="gefdocs-button__content">Go to survey</span>
                         <span class="gefdocs-button__icon_wrapper">
                             <svg class="gefdocs-button__icon gefdocs-icon gefdocs-icon--text">
-                                <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                                <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"
                                     style="fill:undefined;"></use>
                             </svg>
                         </span>
@@ -332,7 +332,7 @@ title: Buttons and CTAs
         </div>
     </div>
 
-    <script type="text/javascript" src="/code-gel/static/js/gef.js"></script>
+    <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
 
     
 

@@ -4,15 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/code-gel/static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/gef-docs/static/images/favicon.ico" type="image/x-icon">
 
-    <title>Code GEL | Action dialogs</title>
+    <title>GEF | Action dialogs</title>
 
-    <script src="/code-gel/static/js/site.js"></script>
+    <script src="/gef-docs/static/js/site.js"></script>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/gef.css">
-    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/site.css">
+    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/gef.css">
+    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/site.css">
 
     <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
@@ -53,7 +53,7 @@
             <div class="gel-wrap">
                 <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
                         <title>BBC</title>
-                        <image xlink:href="/code-gel/static/images/bbc-blocks_grey.svg" src="/code-gel/static/images/bbc-blocks_grey.png"
+                        <image xlink:href="/gef-docs/static/images/bbc-blocks_grey.svg" src="/gef-docs/static/images/bbc-blocks_grey.png"
                             width="100%" height="100%"></image>
                     </svg></a>
             </div>
@@ -62,7 +62,7 @@
             <div class="gel-wrap">
                 <div class="gel-layout">
                     <div class="gel-layout__item gel-2/5@l" style="text-align:left; padding-left:14px; margin-bottom:32px;">
-                        <a href="/code-gel/" class="gefdocs-logo">Code{GEL}</a>
+                        <a href="/gef-docs/" class="gefdocs-logo">GEF</a>
                     </div>
                     <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
                         <a class="gefdocs-button gefdocs-button--dark gel-long-primer-bold" href="http://www.bbc.co.uk/gel/guidelines/confirmation-and-error-messages">
@@ -178,7 +178,7 @@
 <h2 id="expected-behaviour">Expected behaviour</h2>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-results-of-actions">
-              <h4 id="aside-info-results-of-actions" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Results of actions</h4><div><p>The result of an action taken via an action dialog will depend on the purpose of your dialog and is not specified here. Attach listeners to the action dialog's controls as appropriate.</p>
+              <h4 id="aside-info-results-of-actions" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Results of actions</h4><div><p>The result of an action taken via an action dialog will depend on the purpose of your dialog and is not specified here. Attach listeners to the action dialog's controls as appropriate.</p>
 </aside><h3 id="when-the-dialog-opens">When the dialog opens</h3>
 <ol>
 <li>The dialog element appears in its designated position</li>
@@ -193,7 +193,7 @@
 </ol>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-interruptions">
-              <h4 id="aside-alert-interruptions" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Interruptions</h4><div><p>Interruptions are dialogs that appear spontaneously, without direct invocation (conscious or otherwise) on the part of the user. These are very disruptive, and should be avoided in almost all circumstances. One legitimate use case would be to inform the user of their timed session coming to an end and offering them the opportunity to extend it.</p>
+              <h4 id="aside-alert-interruptions" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Interruptions</h4><div><p>Interruptions are dialogs that appear spontaneously, without direct invocation (conscious or otherwise) on the part of the user. These are very disruptive, and should be avoided in almost all circumstances. One legitimate use case would be to inform the user of their timed session coming to an end and offering them the opportunity to extend it.</p>
 <p>Notifications and status messages that do not require user action should not steal focus. Consider using an ARIA live region instead<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
 </aside><h3 id="keyboard-and-screen-reader-experience">Keyboard and screen reader experience</h3>
 <p>Focus is placed inside the dialog upon opening it, meaning keyboard users have access to the functionality and screen reader users are informed of the dialog's presence. When the dialog first opens, a screen reader user will hear the announcement of the dialog role (<em>&quot;dialog&quot;</em>), its associated label (title) and description, and the role and label of the initially focused control.</p>
@@ -201,7 +201,7 @@
 <h2 id="reference-implementation">Reference implementation</h2>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
-              <h4 id="aside-alert-important" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+              <h4 id="aside-alert-important" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
 </aside>
           <div class="gefdocs-demo"><!-- 
 title: Action dialogs
@@ -221,7 +221,7 @@ title: Action dialogs
   <button class="gef-action-dialog-close">
     <span class="vh">close</span>
     <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-      <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-no"></use>
+      <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-no"></use>
     </svg>
   </button>
 </div>
@@ -240,7 +240,7 @@ title: Action dialogs
   <button class="gef-action-dialog-close">
     <span class="vh">close</span>
     <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-      <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-no"></use>
+      <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-no"></use>
     </svg>
   </button>
 </div>
@@ -264,7 +264,7 @@ title: Action dialogs
   });
 </script></div>
         
-          <p><a class="gef-cta gel-long-primer-bold" href="../demos/action-dialogs/" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+          <p><a class="gef-cta gel-long-primer-bold" href="../demos/action-dialogs/" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
         <h2 id="related-research">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
 <h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
@@ -287,7 +287,7 @@ title: Action dialogs
                     </h4>
                     <div>
                         <p>
-                        If you think you could make anything you see here a bit better then become one of <a href="/code-gel/contributors/">our lovely contributors</a>!
+                        If you think you could make anything you see here a bit better then become one of <a href="/gef-docs/contributors/">our lovely contributors</a>!
                         </p>
                     </div>
                 </aside>
@@ -306,7 +306,7 @@ title: Action dialogs
                         <span class="gefdocs-button__content">Go to survey</span>
                         <span class="gefdocs-button__icon_wrapper">
                             <svg class="gefdocs-button__icon gefdocs-icon gefdocs-icon--text">
-                                <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                                <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"
                                     style="fill:undefined;"></use>
                             </svg>
                         </span>
@@ -316,7 +316,7 @@ title: Action dialogs
         </div>
     </div>
 
-    <script type="text/javascript" src="/code-gel/static/js/gef.js"></script>
+    <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
 
     
 

@@ -59,5 +59,5 @@ Our backlog has a list of patterns we intend to document:
 
 ## Questions?
 
-This project is currently being overseen by the BBC Accessibility Team, managed by Gareth Ford Williams. If you have access to our corporate Slack channel pop in and say hi. We welcome questions and suggestions posted to the Code GEL GitHub issue tracker.
+This project is currently being overseen by the BBC Accessibility Team, managed by Gareth Ford Williams. If you have access to our corporate Slack channel pop in and say hi. We welcome questions and suggestions posted to the GEF Docs GitHub issue tracker.
 
