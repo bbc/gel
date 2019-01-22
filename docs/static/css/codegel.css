@@ -1120,3 +1120,75 @@ span.codegel-nowrap {
     display: none; }
   .codegel-pages-numbered {
     display: inline-block; } }
+
+.codegel-accordion, .codegel-accordion button {
+  color: #404040; }
+
+.codegel-accordion .codegel-accordion-handle {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+.codegel-accordion-handle button {
+  border: 0;
+  background-color: #dcdcdc;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+  cursor: pointer; }
+
+.codegel-accordion-handle button:hover,
+.codegel-accordion-handle button:focus {
+  outline: none;
+  background-color: #007bb8;
+  color: #fff; }
+
+.codegel-accordion-handle svg {
+  margin-left: 0.5rem;
+  flex-shrink: 0; }
+
+.codegel-accordion-handle [aria-expanded="true"] svg {
+  transform: rotate(180deg); }
+
+.codegel-accordion-handle, .codegel-accordion-drawer {
+  margin: 0;
+  padding: 0; }
+
+.codegel-accordion > * {
+  border-top: 1px solid #5a5a5a;
+  border-bottom: 1px solid #5a5a5a; }
+
+.codegel-accordion > * + * {
+  border-top: 0; }
+
+.codegel-accordion-handle button, .codegel-accordion-drawer {
+  padding: 0.75rem; }
+
+.codegel-accordion-drawer {
+  background-color: #eeeeee; }
+
+@supports (display: flex) {
+  .codegel-accordion-handle button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; } }
+
+/* 
+Optional, example implementation
+of 'open all' and 'close all' tools
+*/
+.codegel-accordion-controls {
+  text-align: right;
+  margin: 0.5rem 0; }
+
+.codegel-accordion-controls button {
+  font-size: 0.8rem;
+  padding: 0.5rem 0.75rem; }
+
+.codegel-accordion-controls button + button {
+  margin-left: 0.5rem; }

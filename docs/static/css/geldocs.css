@@ -1289,7 +1289,7 @@ a {
 .geldocs-body-copy h2 {
   border-top: 1px solid #ccc;
   padding-top: 30px;
-  margin-top: 64px !important; }
+  margin-top: 64px; }
 
 .geldocs-link--last-word {
   white-space: nowrap; }
