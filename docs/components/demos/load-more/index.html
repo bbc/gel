@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/code-gel/static/images/favicon.ico" type="image/x-icon">
+
+    <title>Code GEL | Load more Demo</title>
+
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/codegel.css">
+
+    <script type="text/javascript"> // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    
+</head>
+
+<body class="gel-guideline-body">
+    <main id="main" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-5/5@l" style="padding-right: 12px;">
+                <h1 class="gel-guideline-header__title">Load more</h1>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-5/5@l">
+                <h2>Reference implementation</h2>
+                
+                
+<div class="codegel-loader">
+  <ul class="codegel-loader-items">
+    <li class="codegel-loader-item">
+      <p>delectus ullam et corporis nulla voluptas sequi</p>
+      <a class="codegel-cta" href="http://www.example.com/path/to/1">Read more about result 1</a>
+    </li>
+    <li class="codegel-loader-item">
+      <p>iusto eius quod necessitatibus culpa ea</p>
+      <a class="codegel-cta" href="http://www.example.com/path/to/2">Read more about result 2</a>
+    </li>
+    <li class="codegel-loader-item">
+      <p>a quo magni similique perferendis</p>
+      <a class="codegel-cta" href="http://www.example.com/path/to/3">Read more about result 3</a>
+    </li>
+    <li class="codegel-loader-item">
+      <p>ullam ut quidem id aut vel consequuntur</p>
+      <a class="codegel-cta" href="http://www.example.com/path/to/4">Read more about result 4</a>
+    </li>
+    <li class="codegel-loader-item">
+      <p>doloremque illum aliquid sunt</p>
+      <a class="codegel-cta" href="http://www.example.com/path/to/5">Read more about result 5</a>
+    </li>
+    <li class="codegel-loader-item">
+      <p>qui explicabo molestiae dolorem</p>
+      <a class="codegel-cta" href="http://www.example.com/path/to/6">Read more about result 6</a>
+    </li>
+  </ul>
+  <div class="codegel-loader-foot">
+    <div class="codegel-loader-loading" role="status" hidden>
+      <svg class="gel-icon gel-icon--text gel-icon-loading" focusable="false" aria-hidden="true">
+        <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-loading"></use>
+      </svg>
+      <div class="codegel-loader-loading-text codegel-sr"></div>
+    </div>
+    <button class="codegel-loader-button codegel-button" type="button" hidden>Load more</button>
+    <nav class="codegel-pages" aria-labelledby="codegel-pagination-label">
+      <div id="codegel-pages-label" hidden>Page</div>
+      <a class="codegel-pages-prev">
+        <span class="codegel-sr">Previous page</span>
+        <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+          <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-previous"></use>
+        </svg>
+      </a>
+      <ol class="codegel-pages-numbered">
+        <li><a href="?page=1" aria-current="page">1</a></li>
+        <li><a href="?page=2">2</a></li>
+        <li><a href="?page=3">3</a></li>
+        <li><a href="?page=4">4</a></li>
+        <li><a href="?page=5">5</a></li>
+        <li><a href="?page=6">6</a></li>
+        <li><a href="?page=7">7</a></li>
+        <li role="separator">&hellip;</li>
+        <li><a href="?page=999">999</a></li>
+      </ol>
+      <div class="codegel-pages-text">Page 1 of 999</div>
+      <a class="codegel-pages-next" href="?page=2">
+        <span class="codegel-sr">Next page</span>
+        <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+          <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-next"></use>
+        </svg>
+      </a>
+    </nav>
+  </div>
+</div>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codegel && codegel.LoadMore.init();
+
+    // You can pull numbered results from an API
+    // var dataURL = 'https://jsonplaceholder.typicode.com/posts/';
+    // var dataProvider = function(i) {
+    //   return fetch(dataURL + i); // => Promise
+    // };
+
+    // But any function that returns a promise can be used
+    var dataProvider = function(i) {
+      return new Promise(function (resolve, reject) {
+        setTimeout(function() { resolve({
+          json: function() {
+            return {
+              userId: i, id: i, title: randomTitle(8)
+            };
+          }
+        })}, 800);
+      });
+    };
+
+    // Initialize
+    var loaderElem = document.querySelector('.codegel-loader');
+    var loader = new codegel.LoadMore.constructor(loaderElem, 6, 7, dataProvider);
+  });
+  
+  // Fake content generator for demonstration purposes only
+  function randomTitle(len) {
+    var words = ['ipsum', 'dolor', 'sit', 'amet', 'et', 'per', 'qui', 'iillum', 'fatto', 'riempire', 'fuori', 'amore', 'che', 'dopo', 'andato', 'adat', 'tarsi', 'fets', 'potuto', 'fico', 'figda', 'uso', 'feltro', 'in', 'ludere', 'depulci', 'char', 'giro', 'noi'];
+    var result = [];
+    while (len--) {
+      result.push(words[Math.floor(Math.random() * words.length)]);
+    }
+    return result.join(' ')
+  }
+</script>
+            </div>
+        </div>
+    </main>
+
+
+    <script type="text/javascript" src="/code-gel/static/js/codegel.js"></script>
+    
+    
+</body>
+
+</html>

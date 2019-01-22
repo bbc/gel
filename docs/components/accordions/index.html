@@ -103,23 +103,23 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#Introduction-15">Introduction</a></li><li><a href="#Recommended-markup-4">Recommended markup</a></li><li><a href="#Recommended-layout-4">Recommended layout</a></li><li><a href="#Recommended-behaviour-4">Recommended behaviour</a></li><li><a href="#Reference-implementation-13">Reference implementation</a></li><li><a href="#Related-research-16">Related research</a></li></ol>
+                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
             <div class="geldocs-sections geldocs-body-copy gel-layout__item gel-3/5@l">
-                <h2 id="Introduction-15">Introduction</h2>
+                <h2 id="introduction">Introduction</h2>
 <p><strong>Accordions</strong> serves a similar purpose to <strong>Tabs</strong>: they collapse content into an interactive overview of itself.</p>
 <p>Arguably, the interaction paradigm of the accordion is simpler than a standard tab interface<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> since it does not rely on either programmatic focus management or arrow key navigation. Instead, each button precedes each closed 'drawer' in the source. Keyboard and screen reader browsing is a case of simply pressing the button (or 'handle') and moving directly into the revealed content (the open 'drawer').</p>
 <p>Accordions are also a better solution in terms of responsive design: their visual structure is not dependent on elements ('tabs') appearing in a horizontal line. Some tab interfaces are designed to collapse into an accordion-like visual structure, with one tab per line. This is problematic since it makes the tab interface appear, but not behave, like an accordion.</p>
-<h2 id="Recommended-markup-4">Recommended markup</h2>
+<h2 id="recommended-markup">Recommended markup</h2>
 <p>The <a href="#reference-implementation">Reference implementation</a> is designed to accept different types of content and enhance it into an accordion. Depending on the context and quantity of your content, the semantics of the markup should differ.</p>
 <p>For example, content that represents the major sections of a page's content might be marked up with <code>&lt;section&gt;</code>s and headings:</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Main heading of page<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
 	<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Section 1<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
 	<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Some text...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-	<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path/to/image"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"description"</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://www.example.com/path/to/image"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"description"</span>&gt;</span>
 	<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Some more text...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
@@ -129,7 +129,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
 	<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Section 3<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
-	<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path/to/image"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"another description"</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://www.example.com/path/to/image"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"another description"</span>&gt;</span>
 	<span class="hljs-tag">&lt;<span class="hljs-name">blockquote</span>&gt;</span>A quotation from somewhere<span class="hljs-tag">&lt;/<span class="hljs-name">blockquote</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
 </code></pre>
@@ -145,7 +145,7 @@
 			<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 		<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
 		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-accordion-drawer"</span> <span class="hljs-attr">hidden</span>&gt;</span>
-			<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Some text...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path/to/image"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"description"</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Some text...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://www.example.com/path/to/image"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"description"</span>&gt;</span>
 			<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Some more text...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 		<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 	<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
@@ -171,7 +171,7 @@
 			<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 		<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
 		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-accordion-drawer"</span> <span class="hljs-attr">hidden</span>&gt;</span>
-			<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path/to/image"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"another description"</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://www.example.com/path/to/image"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"another description"</span>&gt;</span>
 			<span class="hljs-tag">&lt;<span class="hljs-name">blockquote</span>&gt;</span>A quotation from somewhere<span class="hljs-tag">&lt;/<span class="hljs-name">blockquote</span>&gt;</span>
 		<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 	<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
@@ -183,11 +183,11 @@
 <li><code>SVG</code>: An SVG based on the <a href="http://bbc.github.io/gel-iconography/">GEL Iconography <code>gel-icon-down</code></a>. This has <code>focusable=&quot;false&quot;</code> to remove it from focus order, and <code>aria-hidden=&quot;true&quot;</code> to hide it from browsers/assistive technologies that erroneously expose it.</li>
 </ul>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Avoid-overriding-ARIA-roles-1">
-              <h4 id="aside-info-Avoid-overriding-ARIA-roles-1" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Avoid overriding ARIA roles</h4><div><p>The <code>&lt;button&gt;</code> is inserted inside the 'handle' rather than <em>becoming</em> the handle. Some implementations turn the handle element into a button using <code>role=&quot;button&quot;</code>. However, this would override the heading's implicit heading role (only elements with the heading role are exposed as headings to screen readers). See the Second Rule Of ARIA Use: <em>Do not change native semantics, unless you really have to</em><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</p>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-avoid-overriding-aria-roles">
+              <h4 id="aside-info-avoid-overriding-aria-roles" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Avoid overriding ARIA roles</h4><div><p>The <code>&lt;button&gt;</code> is inserted inside the 'handle' rather than <em>becoming</em> the handle. Some implementations turn the handle element into a button using <code>role=&quot;button&quot;</code>. However, this would override the heading's implicit heading role (only elements with the heading role are exposed as headings to screen readers). See the Second Rule Of ARIA Use: <em>Do not change native semantics, unless you really have to</em><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</p>
 <p>By nesting the button inside the heading the user benefits from the semantics and behaviours of both elements.</p>
-</aside><h3 id="Short-form-content-1">Short form content</h3>
-<p>More concise content, such as questions secreting one or two sentence answers, would be better marked up as a list. The <code>&lt;ul&gt;</code> would take the <code>codegel-accordion</code> class.</p>
+</aside><h3 id="short-form-content">Short form content</h3>
+<p>More concise content, such as questions with one or two sentence answers, would be better marked up as a list. The <code>&lt;ul&gt;</code> would take the <code>codegel-accordion</code> class.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-accordion"</span>&gt;</span>
 	<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
 		<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Question 1<span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
@@ -203,7 +203,7 @@
 	<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 </code></pre>
-<p>Whether section/heading or list semantics are suitable, there are certain structural rules for the progressive enhancement to take place successfully using the <a href="#reference-implementation">Reference implementation</a> script:</p>
+<p>Whether section and heading or list semantics are suitable, there are certain structural rules for the progressive enhancement to take place successfully using the <a href="#reference-implementation">Reference implementation</a> script:</p>
 <ul>
 <li>Accordion items must be wrapped in a common <code>codegel-accordion</code> element</li>
 <li>Each item must have at least two elements</li>
@@ -214,7 +214,7 @@
 	<span class="hljs-keyword">return</span>;
 }
 </code></pre>
-<h2 id="Recommended-layout-4">Recommended layout</h2>
+<h2 id="recommended-layout">Recommended layout</h2>
 <p>The visual design of a generic accordion is specified in the <a href="https://www.bbc.co.uk/gel/guidelines/accordion">GEL Accordion documentation</a>.</p>
 <p>The <code>gel-icon-down</code> arrow must point downwards in the closed (<code>aria-expanded=&quot;false&quot;</code>) state, and upwards in the open (<code>aria-expanded=&quot;true&quot;</code>) state. For the sake of code brevity, this is achieved in the <a href="#reference-implementation">Reference implementation</a> using a simple CSS transform.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.codegel-accordion-handle</span> <span class="hljs-selector-attr">[aria-expanded="true"]</span> <span class="hljs-selector-tag">svg</span> {
@@ -230,7 +230,7 @@
   }
 }
 </code></pre>
-<h2 id="Recommended-behaviour-4">Recommended behaviour</h2>
+<h2 id="recommended-behaviour">Recommended behaviour</h2>
 <p>An accordion designed with progressive enhancement offers pre-rendered structured content, expanded and available by default where JavaScript is not available. The <a href="#reference-implementation">Reference implementation</a> wraps and hides each accordion item's content, and provides a button to each item for toggling the expanded/collapsed state.</p>
 <p>The virtue of accordion interaction is in its simplicity. As someone browses the page, instead of encountering lots of content through which they have to scroll, they encounter buttons to reveal content. If a button's label piques their interest, they can press the handle/button to reveal the content (secreted in a 'drawer' below that button).</p>
 <p>Each button simply toggles the display (and availability to assistive technologies) of its associated content (the 'drawer'). The toggle button's state is communicated to screen readers with <code>aria-expanded</code><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. This is how it is implemented in the <a href="#reference-implementation">Reference implementation</a>:</p>
@@ -261,7 +261,10 @@ closeAllButton.addEventListener(<span class="hljs-string">'click'</span>, <span 
 });
 </code></pre>
 <p>The <code>closeAll</code> functionality can be particularly useful for people who have opened a number of items one after the other, and are subsequently finding it easy to get lost among the expanded content.</p>
-<h3 id="Page-fragments-1">Page fragments</h3>
+
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-automatic-collapsing-of-items">
+              <h4 id="aside-alert-automatic-collapsing-of-items" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Automatic collapsing of items</h4><div><p>It is not recommended that expanding one accordion item results in collapsing another. If a user has opened an item, it is assumed they want it to remain open. It is possible they wish to refer between two or more open items. Always place the user in control and do not make assumptions about their needs<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>.</p>
+</aside><h3 id="page-fragments">Page fragments</h3>
 <p>Sometimes it's beneficial to identify page sections with <code>id</code>s, so that links to those specific page fragments can be shared. The following implementation ensures that JavaScript enhancement does not break this basic browser behaviour.</p>
 <p>On both the <code>DOMContentLoaded</code> and <code>hashchange</code> events, if an accordion item—or any element inside an accordion item—has the <code>id</code> that matches the page's hash, that item is entered into its open state and it (or the matching element it contains) is focused.</p>
 <pre class="hljs"><code><span class="hljs-keyword">this</span>.hashHandle = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
@@ -276,10 +279,10 @@ closeAllButton.addEventListener(<span class="hljs-string">'click'</span>, <span 
 	}.bind(<span class="hljs-keyword">this</span>));
 }
 </code></pre>
-<h2 id="Reference-implementation-13">Reference implementation</h2>
+<h2 id="reference-implementation">Reference implementation</h2>
 
-            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-Important-17">
-              <h4 id="aside-alert-Important-17" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
+              <h4 id="aside-alert-important" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
 </aside>
           <div class="geldocs-demo"><!-- 
 title: Accordions
@@ -296,15 +299,12 @@ title: Accordions
       BBC in the UK.</p>
     <p>We will continue to publish a range of DVDs, Blu-ray discs and other merchandising which can be bought from a
       wide range of retailers both online, on the high street as well as in supermarkets.</p>
-    <p>Please note that not all BBC programmes are commercially available. To check if a DVD, Blu-ray disc is
-      commercially available email: <a href="mailto:DVDenquiry@bbc.com">DVDenquiry@bbc.com</a> For faulty DVDs and
-      Blu-ray discs email: <a href="mailto:DVDSupport@bbc.com">DVDSupport@bbc.com</a></p>
     <p>If you are a student/journalist/member of the public and wish to view an archive TV programme, please contact
       the BFI’s National Archive.</p>
   </section>
   <section id="bbc-studios-youtube-enquiries-feedback">
     <h3>BBC Studios YouTube enquiries/feedback</h3>
-    <p>Enquiries and feedback about our YouTube channels can be emailed to the team at: <a href="mailto:BBCStudios.YouTube.Channels@bbc.com">BBCStudios.YouTube.Channels@bbc.com</a></p>
+    <p>Enquiries and feedback about our YouTube channels can be emailed to the team at: BBCStudios.YouTube.Channels@bbc.com</p>
   </section>
   <section id="where-can-i-buy-mugs-games-toys-and-other-merchandise">
     <h3>Where can I buy mugs, games, toys, and other merchandise?</h3>
@@ -315,7 +315,7 @@ title: Accordions
   <section id="dvds-for-educational-or-training-purposes">
     <h3>DVDs for educational or training purposes?</h3>
     <p>It is sometimes possible to arrange for legitimate educational establishments to obtain a copy of a programme.
-      For more information, please contact <a href="mailto:%20BBCStudiosLearning@bbc.com">BBC Studios Learning </a></p>
+      For more information, please contact BBC Studios Learning</p>
   </section>
   <section id="can-i-get-a-copy-of-a-bbc-programme">
     <h3>Can I get a copy of a BBC programme?</h3>
@@ -325,10 +325,9 @@ title: Accordions
     <p>For a number of reasons related to rights and resources, the BBC is unable to loan out programme material to
       members of the public and it does not hold a stock of review copies to give away.</p>
     <p>If you are a student/journalist/member of the public and wish to view an archive TV programme, please contact
-      the <a href="http://www.bfi.org.uk/bfi-national-archive-enquiry">BFI’s National Archive</a>.</p>
+      the BFI’s National Archive.</p>
     <p>If you, or your company, organisation or property has been featured in a BBC programme, you may be able to
-      purchase a copy. If you would like to request a copy please fill out the form on the <a href="http://www.bbc.co.uk/faqs/tv/contributor_access_process">BBC
-        website</a>.</p>
+      purchase a copy. If you would like to request a copy please fill out the form on the BBC website.</p>
   </section>
 </div>
 
@@ -355,9 +354,9 @@ title: Accordions
 </script></div>
         
           <p><a class="codegel-cta gel-long-primer-bold" href="../demos/accordions/" target="_new"><span class="codegel-button__label">Open in new window</span><svg class="codegel-button__icon codegel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
-        <h2 id="Related-research-16">Related research</h2>
+        <h2 id="related-research">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
-<h3 id="Further-reading-elsewhere-on-the-Web-16">Further reading, elsewhere on the Web</h3>
+<h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -370,6 +369,8 @@ title: Accordions
 <li id="fn4" class="footnote-item"><p><code>aria-expanded</code> (state) — W3C, <a href="https://www.w3.org/TR/wai-aria-1.0/states_and_properties#aria-expanded">https://www.w3.org/TR/wai-aria-1.0/states_and_properties#aria-expanded</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
 </li>
 <li id="fn5" class="footnote-item"><p><code>aria-controls</code> Is Poop — <a href="http://heydonworks.com">heydonworks.com</a>, <a href="http://www.heydonworks.com/article/aria-controls-is-poop">http://www.heydonworks.com/article/aria-controls-is-poop</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>Give Control — Inclusive Design Principles,  <a href="https://inclusivedesignprinciples.org/#give-control">https://inclusivedesignprinciples.org/#give-control</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>

@@ -129,3 +129,23 @@ a {
   width: 1em;
   vertical-align: text-top
 }
+
+@keyframes gel-spin {
+  0% {
+    transform:rotate(0deg);
+  }
+  100% {
+    transform:rotate(360deg);
+  }
+}
+
+.gel-icon-loading {
+  animation-name: gel-spin;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.gel-icon svg {
+  fill: currentColor;
+}

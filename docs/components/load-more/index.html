@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/code-gel/static/images/favicon.ico" type="image/x-icon">
+
+    <title>Code GEL | Load more</title>
+
+    <script src="/code-gel/static/js/site.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/codegel.css">
+    <link rel="stylesheet" type="text/css" href="/code-gel/static/css/geldocs.css">
+
+    <script type="text/javascript"> // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    <script type="text/javascript">
+        try {
+            (new FontFaceObserver('ReithSans', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-sans-loaded';
+            });
+            (new FontFaceObserver('ReithSerif', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-loaded';
+            });
+        } catch( e ) {
+            console.log('Reith fonts did not load within 5 seconds.');
+        }
+    </script>
+
+    <script type="text/javascript">
+        // syntax highlight
+        hljs.initHighlightingOnLoad();
+    </script>
+
+    
+</head>
+
+<body class="geldocs-body">
+    <p class="codegel-sr codegel-sr__focusable codegel-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('codegel-sr__focused')" onblur="this.parentNode.classList.remove('codegel-sr__focused')">Skip
+            to content</a>
+    </p>
+
+    <header>
+        <div class="geldocs-header gs-u-clearfix">
+            <div class="gel-wrap">
+                <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
+                        <title>BBC</title>
+                        <image xlink:href="/code-gel/static/images/bbc-blocks_grey.svg" src="/code-gel/static/images/bbc-blocks_grey.png"
+                            width="100%" height="100%"></image>
+                    </svg></a>
+            </div>
+        </div>
+        <div class="geldocs-header__banner gs-u-clearfix">
+            <div class="gel-wrap">
+                <div class="gel-layout">
+                    <div class="gel-layout__item gel-2/5@l" style="text-align:left; padding-left:14px; margin-bottom:32px;">
+                        <a href="/code-gel/" class="geldocs-logo">Code{GEL}</a>
+                    </div>
+                    <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
+                        <a class="geldocs-button geldocs-button--dark gel-long-primer-bold" href="https://www.bbc.co.uk/gel/guidelines/numbered-pagination">
+                            Go to BBC GEL
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" tabindex="-1" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <!-- column placeholder-->
+            </div>
+
+            <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
+                <h1 class="geldocs-header__title">Load more</h1>
+                <p class="geldocs-header__summary gel-great-primer">Loading content must be a smooth experience and under the user&#39;s direct control</p>
+            </div>
+
+            <div class="gel-layout__item gel-1/5@l">
+                <dl class="geldocs-standout-box">
+                    
+                    <dt>Version:</dt>
+                    <dd>0.1.0</dd>
+                    
+                    <dt>Status:</dt>
+                    <dd>Draft</dd>
+                    <dt>Accessibility:</dt>
+                    <dd>Pending</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
+                    <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
+                    <ol id="geldocs-toc__links" class="geldocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#the-loading-indicator">The loading indicator</a></li><li><a href="#the-pagination-component-1">The pagination component</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
+                </nav>
+            </div>
+
+            <div class="geldocs-sections geldocs-body-copy gel-layout__item gel-3/5@l">
+                <h2 id="introduction">Introduction</h2>
+<p><a href="https://www.bbc.co.uk/gel/guidelines/numbered-pagination">GEL defines numbered pagination</a> for navigation between whole pages of content. The <strong>Load more</strong> pattern builds upon this behaviour to allow the incremental loading of content items on a single page. It would most commonly be used in conjunction with a content filtering mechanism for a search or content category.</p>
+<p><strong>Load more</strong> is preferred to pagination for the exploration of content because it does not ask screen reader and keyboard users to traverse the header/preamble of a new page load for each content request. In addition, the pattern eschews issues found in automatic infinite scrolling<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> implementations. These issues include:</p>
+<ul>
+<li>Unsolicited scrolling resulting in misplacement</li>
+<li>The inability to move past the content area to the foot of the page</li>
+<li>Lack of clear feedback and focus management</li>
+</ul>
+<h2 id="recommended-markup">Recommended markup</h2>
+<p>The <a href="#reference-implementation">Reference implementation</a>'s script acts upon the <code>class=&quot;codegel-loader&quot;</code> element. In the code sample to follow, this is shown in the expected context of a <code>&lt;main&gt;</code> element, and preceded by the page's principle heading. This sample just shows the basic structure, with descriptions of subcomponents of the pattern to follow.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">main</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"main"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>You searched for "camera"<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-loader"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-loader-items"</span>&gt;</span>
+      <span class="hljs-comment">&lt;!-- loaded items --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-loader-foot"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-loader-loading"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"status"</span> <span class="hljs-attr">hidden</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- the loading indicator (spinner) --&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-loader-button codegel-button"</span> <span class="hljs-attr">hidden</span>&gt;</span>Load more<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-pages"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"codegel-pagination-label"</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- the pagination functionality --&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+</code></pre>
+
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-the-main-element">
+              <h4 id="aside-info-the-main-element" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>The main element</h4><div><p>The main element<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> has attributes <code>id=&quot;main&quot;</code> and <code>tabindex=&quot;-1&quot;</code>. This is because it is expected to be the focus target of a same-page 'skip link'. In circumstances where the JavaScript does not run and the user must rely on the pagination component, the skip link lets them bypass the page's header/masthead to reach each successive page's content.</p>
+</aside><h3 id="codegel-loader-items"><code>codegel-loader-items</code></h3>
+<p>The loaded content items are presented as a list. List items are enumerated in screen reader software, letting the user know how many items are present in total, and which one they are interacting with (<em>&quot;4 of 37&quot;</em>).</p>
+<p>As elaborated in <a href="#expected-behaviour">Expected behaviour</a>, each time a new set of items is loaded, that set's arrival is confirmed with an introductory 'separator' element. Taking the <code>role=&quot;separator&quot;</code> ARIA attribution<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>, the element is not counted in the list's total, meaning the number of results continues to be reported accurately to assistive technologies.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"separator"</span>&gt;</span>
+  Results 6 to 12
+<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+</code></pre>
+<h3 id="codegel-loader-loading"><code>codegel-loader-loading</code></h3>
+<p>This construct comprises the visual loading indicator—an SVG icon—and a live region (<code>role=&quot;status&quot;</code>)<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>. In the <a href="#reference-implementation">Reference implementation</a>, <em>&quot;Loading, please wait&quot;</em> is inserted invisibly into the live region as items begin to be requested. This appending of text triggers immediate announcement in screen reader output.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-loader-loading"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"status"</span> <span class="hljs-attr">hidden</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text gel-icon-loading"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"/code-gel/static/images/gel-icons-all.svg#gel-icon-loading"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-loader-loading-text codegel-sr"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h3 id="the-load-more-button">The 'load more' button</h3>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-loader-button codegel-button"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">hidden</span>&gt;</span>Load more<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<p>The button is hidden by default. Only where JavaScript runs is it revealed (and the fallback pagination component removed). It must be a standard <code>&lt;button&gt;</code> element, with <code>type=&quot;button&quot;</code>. It is always at the foot of the list of loaded content and can easily be stepped/tabbed past by keyboard.</p>
+<h3 id="individual-results">Individual results</h3>
+<p>This pattern does not prescribe how individual results should be formed, except that they should be list items and, in most cases, should contain a link to the permalink for the result.</p>
+<p>You may introduce each result with a heading, but each result's heading must be of the same level: one level higher than the page's principle heading. Since the principle heading should always be an <code>&lt;h1&gt;</code>, results should be <code>&lt;h2&gt;</code> in order to describe the correct nesting structure:</p>
+<ul>
+<li>You searched for &quot;camera&quot; (h1)
+<ul>
+<li>Nikon Z 6 (h2)</li>
+<li>Nikon D850 (h2)</li>
+<li>Fujifilm X100 F (h2)</li>
+<li>etc</li>
+</ul>
+</li>
+</ul>
+<h3 id="the-pagination-component">The pagination component</h3>
+<p>The pagination component is <a href="https://www.bbc.co.uk/gel/guidelines/numbered-pagination">documented on GEL</a>. This implementation incorporates a labelled navigation landmark. Screen readers tend to provide aggregated lists of landmark elements for quick navigation.</p>
+<p>Note the use of <code>role=&quot;separator&quot;</code> to remove the ellipsis element from enumeration. Where the previous or next link is not applicable it is 'disabled' by having its <code>href</code> removed. This removes it from focus order. The current page is identified accessibly with <code>aria-current=&quot;page&quot;</code><sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-pages"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"codegel-pagination-label"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"codegel-pages-label"</span> <span class="hljs-attr">hidden</span>&gt;</span>Page<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-pages-prev"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-sr"</span>&gt;</span>Previous page<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"path/to/gel-icons-all.svg#gel-icon-previous"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ol</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-pages-numbered"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"?page=1"</span> <span class="hljs-attr">aria-current</span>=<span class="hljs-string">"page"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"?page=2"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"?page=3"</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"?page=4"</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"?page=5"</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"?page=6"</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"?page=7"</span>&gt;</span>7<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"separator"</span>&gt;</span>&amp;hellip;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"?page=999"</span>&gt;</span>999<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-pages-text"</span>&gt;</span>Page 1 of 999<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-pages-next"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"?page=2"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"codegel-sr"</span>&gt;</span>Next page<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"path/to/static/images/gel-icons-all.svg#gel-icon-next"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+</code></pre>
+<p>This fallback mechanism is presented to users whose browsers do not support JavaScript's <code>Promise</code> interface, or for which JavaScript is not running. The <a href="#reference-implementation">Reference implementation</a> reveals the pagination in these circumstances, but does not implement the endpoints represented by the <code>page=n</code> query parameters. These are merely placeholders and should be implemented as your API allows.</p>
+<h2 id="recommended-layout">Recommended layout</h2>
+<p>The aesthetic of your search results is not prescribed by this pattern, but there are a few general rules to follow:</p>
+<ul>
+<li>Each result/item should be distinct from its neighbouring results/items</li>
+<li>The separator elements that introduce batches of results (see <a href="#recommended-behaviour">Recommended behaviour</a>) should be distinct from the results themselves</li>
+<li>The 'load more' button should adopt the standard button style (applied via <code>class=&quot;codegel-button&quot;</code>) here</li>
+</ul>
+<h2 id="the-loading-indicator">The loading indicator</h2>
+<p>The loading indicator should be the standard <a href="http://bbc.github.io/gel-iconography/">Gel Iconography</a> SVG icon,  <code>gel-icon-loading</code>. It should appear above the button while the results are being fetched. It should not appear wider than the button itself. The standard animation, as defined in <a href="http://bbc.github.io/gel-iconography/">Gel Iconography</a>, is applied in the <a href="#reference-implementation">Reference implementation</a> as follows:</p>
+<pre class="hljs"><code>@<span class="hljs-keyword">keyframes</span> gel-spin {
+  0% {
+    <span class="hljs-attribute">transform</span>:<span class="hljs-built_in">rotate</span>(0deg);
+  }
+  100% {
+    <span class="hljs-attribute">transform</span>:<span class="hljs-built_in">rotate</span>(360deg);
+  }
+}
+
+<span class="hljs-selector-class">.gel-icon-loading</span> {
+  <span class="hljs-attribute">animation-name</span>: gel-spin;
+  <span class="hljs-attribute">animation-duration</span>: <span class="hljs-number">1s</span>;
+  <span class="hljs-attribute">animation-iteration-count</span>: infinite;
+  <span class="hljs-attribute">animation-timing-function</span>: linear;
+}
+</code></pre>
+<h3 id="the-separator">The separator</h3>
+<p>The separator element introducing any batch of new results takes focus to place those results next in focus order. Therefore, it should have some form of focus style. In the <a href="#reference-implementation">Reference implementation</a> a diminishing animated focus style is used to first draw attention then disappear. Since the element itself is not interactive, a persistent focus style may be misleading.</p>
+<pre class="hljs"><code>@<span class="hljs-keyword">keyframes</span> focus {
+  0%{
+    <span class="hljs-attribute">outline</span>: <span class="hljs-number">2px</span> dotted $gel-color--tundora;
+  }
+  100% {
+    <span class="hljs-attribute">outline</span>: <span class="hljs-number">2px</span> dotted transparent;
+  }
+}
+
+<span class="hljs-selector-class">.codegel-loader-items</span> <span class="hljs-selector-attr">[role="separator"]</span><span class="hljs-selector-pseudo">:focus</span> {
+  <span class="hljs-attribute">outline-width</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">outline-offset</span>: <span class="hljs-number">2px</span>;
+  <span class="hljs-attribute">animation</span>: focus <span class="hljs-number">1s</span> linear <span class="hljs-number">1</span>;
+}
+</code></pre>
+<h2 id="the-pagination-component-1">The pagination component</h2>
+<p>For maximum backwards compatibility with minimum code, <code>inline-block</code> places the items side-by-side. In the <a href="#reference-implementation">Reference implementation</a>, the expanded layout (with 9 numbered items, including the ellipsis and end item) switches down to the compact version (with the text element; specified in <a href="https://www.bbc.co.uk/gel/guidelines/numbered-pagination">GEL Numbered Pagination</a>) at <code>650px</code>. This will differ for your setup due to the inevitable discrepancy between the pagination container's and the viewport's width. It will need adjusting.</p>
+<pre class="hljs"><code>@<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">650px</span>) {
+  <span class="hljs-selector-class">.codegel-pages-text</span> {
+    <span class="hljs-attribute">display</span>: none;  
+  }
+  
+  <span class="hljs-selector-class">.codegel-pages-numbered</span> {
+    <span class="hljs-attribute">display</span>: inline-block;
+  }
+}
+</code></pre>
+<h2 id="recommended-behaviour">Recommended behaviour</h2>
+<p>The behaviour differs depending on whether JavaScript has run and the <code>Promise</code> and <code>fetch</code> interfaces are supported:</p>
+<h3 id="no-javascript-enhancement">No JavaScript enhancement</h3>
+<ol>
+<li>The user is presented with an initial page of results / content items.</li>
+<li>At the foot of the results, the pagination component lets them navigate between pages of results.</li>
+<li>Pressing a page link loads that page (screen reader users will hear the page <code>&lt;title&gt;</code> announced; keyboard users will have their focus point initialized on the document's <code>&lt;body&gt;</code> element).</li>
+<li>The current page is indicated with a style that matches <code>:focus</code>, and is communicated to assistive technologies via <code>aria-current=&quot;page&quot;</code>.</li>
+<li>The previous and next links become 'disabled' and unfocusable where they are not applicable by removing their <code>href</code>.</li>
+</ol>
+<h3 id="javascript-enhancement">JavaScript enhancement</h3>
+<ol>
+<li>The user is presented with an initial page of results / content items. These should be server rendered in order for the pagination fallback to work.</li>
+<li>At the foot of the results, a 'load more' button lets the user load a batch more results.</li>
+<li>When the button is pressed, the loading indicator ('spinner') appears above the button, and <em>&quot;loading, please wait&quot;</em> is announced in screen readers via the supplemental live region.</li>
+<li>When the results have been fetched, two things happen:
+<ol>
+<li>The loading indicator is hidden, and the live region emptied of content. In some setups this will silence the region immediately; in others the <em>&quot;loading, please wait&quot;</em> message will be read out in its entirety (if it has not been already).</li>
+<li>The results appear, introduced by a separator element. This element confirms how many items have been loaded (<em>&quot;items 12 to 18:&quot;</em>, for example) and is focused.</li>
+</ol>
+</li>
+<li>The focused separator element announces its confirmation text in screen reader software and places the keyboard user in an appropriate position to browse to the newly appended items.</li>
+</ol>
+<p>Note that the specific behaviour and messaging in the <a href="#reference-implementation">Reference implementation</a> (and the JavaScript used to achieve it) is partly dependent on the nature of the dummy data being used. In this case, items can be fetched using a base URL and enumeration.</p>
+<pre class="hljs"><code><span class="hljs-comment">// Result 14 would be https://jsonplaceholder.typicode.com/posts/14</span>
+<span class="hljs-keyword">var</span> baseURL = <span class="hljs-string">'https://jsonplaceholder.typicode.com/posts/'</span>;
+
+<span class="hljs-keyword">var</span> loaderElem = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.codegel-loader'</span>);
+<span class="hljs-keyword">var</span> loader = <span class="hljs-keyword">new</span> codegel.LoadMore.constructor(
+  loaderElem, 
+  <span class="hljs-number">6</span>, <span class="hljs-comment">// The number of results fetched each time</span>
+  <span class="hljs-number">7</span>, <span class="hljs-comment">// The starting result (6 items server rendered + 1)</span>
+  baseURL
+);
+</code></pre>
+<h2 id="reference-implementation">Reference implementation</h2>
+
+            <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
+              <h4 id="aside-alert-important" aria-hidden="true"><svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+</aside>
+          <div class="geldocs-demo"><!-- 
+title: Load more
+ -->
+
+<div class="codegel-loader">
+  <ul class="codegel-loader-items">
+    <li class="codegel-loader-item">
+      <p>delectus ullam et corporis nulla voluptas sequi</p>
+      <a class="codegel-cta" href="http://www.example.com/path/to/1">Read more about result 1</a>
+    </li>
+    <li class="codegel-loader-item">
+      <p>iusto eius quod necessitatibus culpa ea</p>
+      <a class="codegel-cta" href="http://www.example.com/path/to/2">Read more about result 2</a>
+    </li>
+    <li class="codegel-loader-item">
+      <p>a quo magni similique perferendis</p>
+      <a class="codegel-cta" href="http://www.example.com/path/to/3">Read more about result 3</a>
+    </li>
+    <li class="codegel-loader-item">
+      <p>ullam ut quidem id aut vel consequuntur</p>
+      <a class="codegel-cta" href="http://www.example.com/path/to/4">Read more about result 4</a>
+    </li>
+    <li class="codegel-loader-item">
+      <p>doloremque illum aliquid sunt</p>
+      <a class="codegel-cta" href="http://www.example.com/path/to/5">Read more about result 5</a>
+    </li>
+    <li class="codegel-loader-item">
+      <p>qui explicabo molestiae dolorem</p>
+      <a class="codegel-cta" href="http://www.example.com/path/to/6">Read more about result 6</a>
+    </li>
+  </ul>
+  <div class="codegel-loader-foot">
+    <div class="codegel-loader-loading" role="status" hidden>
+      <svg class="gel-icon gel-icon--text gel-icon-loading" focusable="false" aria-hidden="true">
+        <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-loading"></use>
+      </svg>
+      <div class="codegel-loader-loading-text codegel-sr"></div>
+    </div>
+    <button class="codegel-loader-button codegel-button" type="button" hidden>Load more</button>
+    <nav class="codegel-pages" aria-labelledby="codegel-pagination-label">
+      <div id="codegel-pages-label" hidden>Page</div>
+      <a class="codegel-pages-prev">
+        <span class="codegel-sr">Previous page</span>
+        <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+          <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-previous"></use>
+        </svg>
+      </a>
+      <ol class="codegel-pages-numbered">
+        <li><a href="?page=1" aria-current="page">1</a></li>
+        <li><a href="?page=2">2</a></li>
+        <li><a href="?page=3">3</a></li>
+        <li><a href="?page=4">4</a></li>
+        <li><a href="?page=5">5</a></li>
+        <li><a href="?page=6">6</a></li>
+        <li><a href="?page=7">7</a></li>
+        <li role="separator">&hellip;</li>
+        <li><a href="?page=999">999</a></li>
+      </ol>
+      <div class="codegel-pages-text">Page 1 of 999</div>
+      <a class="codegel-pages-next" href="?page=2">
+        <span class="codegel-sr">Next page</span>
+        <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+          <use xlink:href="/code-gel/static/images/gel-icons-all.svg#gel-icon-next"></use>
+        </svg>
+      </a>
+    </nav>
+  </div>
+</div>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codegel && codegel.LoadMore.init();
+
+    // You can pull numbered results from an API
+    // var dataURL = 'https://jsonplaceholder.typicode.com/posts/';
+    // var dataProvider = function(i) {
+    //   return fetch(dataURL + i); // => Promise
+    // };
+
+    // But any function that returns a promise can be used
+    var dataProvider = function(i) {
+      return new Promise(function (resolve, reject) {
+        setTimeout(function() { resolve({
+          json: function() {
+            return {
+              userId: i, id: i, title: randomTitle(8)
+            };
+          }
+        })}, 800);
+      });
+    };
+
+    // Initialize
+    var loaderElem = document.querySelector('.codegel-loader');
+    var loader = new codegel.LoadMore.constructor(loaderElem, 6, 7, dataProvider);
+  });
+  
+  // Fake content generator for demonstration purposes only
+  function randomTitle(len) {
+    var words = ['ipsum', 'dolor', 'sit', 'amet', 'et', 'per', 'qui', 'iillum', 'fatto', 'riempire', 'fuori', 'amore', 'che', 'dopo', 'andato', 'adat', 'tarsi', 'fets', 'potuto', 'fico', 'figda', 'uso', 'feltro', 'in', 'ludere', 'depulci', 'char', 'giro', 'noi'];
+    var result = [];
+    while (len--) {
+      result.push(words[Math.floor(Math.random() * words.length)]);
+    }
+    return result.join(' ')
+  }
+</script></div>
+        
+          <p><a class="codegel-cta gel-long-primer-bold" href="../demos/load-more/" target="_new"><span class="codegel-button__label">Open in new window</span><svg class="codegel-button__icon codegel-icon gel-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+        <h2 id="related-research">Related research</h2>
+<p>This topic does not yet have any related research available.</p>
+<h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Automatic Infinite Scrolling And Accessibility — Simply Accessible, <a href="https://simplyaccessible.com/article/infinite-scrolling/">https://simplyaccessible.com/article/infinite-scrolling/</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>So You Think You Built A Good Infinite Scroll — Adrian Roselli, <a href="http://blog.adrianroselli.com/2014/05/so-you-think-you-built-good-infinite.html">http://blog.adrianroselli.com/2014/05/so-you-think-you-built-good-infinite.html</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>The Main Element — HTML5 Doctor, <a href="http://html5doctor.com/the-main-element/">http://html5doctor.com/the-main-element/</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>Separator (role) — W3C, <a href="https://www.w3.org/WAI/PF/aria/roles#separator">https://www.w3.org/WAI/PF/aria/roles#separator</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>ARIA Live Regions — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions">https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>Using The ARIA Current Attribute — <a href="http://tink.uk">tink.uk</a>, <a href="https://tink.uk/using-the-aria-current-attribute/">https://tink.uk/using-the-aria-current-attribute/</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+
+                <aside class="geldocs-breakout-box geldocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
+                    <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
+                        <svg class="geldocs-breakout-box__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Could you improve this documentation?
+                    </h4>
+                    <div>
+                        <p>
+                        If you think you could make anything you see here a bit better then become one of <a href="/code-gel/contributors/">our lovely contributors</a>!
+                        </p>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="geldocs-feedback-banner">
+        <div class="gel-wrap">
+            <div class="gel-layout">
+                <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
+                    <h2 class="geldocs-feedback-banner__title">Got a minute?</h2>
+                    <p>We'd love to know what you think of the Code GEL website.</p>
+                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" class="geldocs-button geldocs-button__link-button geldocs-feedback-banner__cta geldocs-button--primary">
+                        <span class="geldocs-button__content">Go to survey</span>
+                        <span class="geldocs-button__icon_wrapper">
+                            <svg class="geldocs-button__icon geldocs-icon geldocs-icon--text">
+                                <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                                    style="fill:undefined;"></use>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/code-gel/static/js/codegel.js"></script>
+
+    
+
+    <script type="text/javascript">
+        new Sticky('.sticky');
+        new MenuSpy(document.querySelector('#geldocs-toc__links'), {enableLocationHash: false});
+        new SweetScroll({
+            trigger: '#geldocs-toc__links a',
+            quickMode: true,
+            easing: 'easeOutExpo',
+            cancellable: true,
+            updateURL: false, 
+        });
+    </script>
+</body>
+
+</html>

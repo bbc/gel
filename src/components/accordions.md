@@ -26,7 +26,7 @@ For example, content that represents the major sections of a page's content migh
 <section>
 	<h2>Section 1</h2>
 	<p>Some text...</p>
-	<img src="path/to/image" alt="description">
+	<img src="http://www.example.com/path/to/image" alt="description">
 	<p>Some more text...</p>
 </section>
 <section>
@@ -36,7 +36,7 @@ For example, content that represents the major sections of a page's content migh
 </section>
 <section>
 	<h2>Section 3</h2>
-	<img src="path/to/image" alt="another description">
+	<img src="http://www.example.com/path/to/image" alt="another description">
 	<blockquote>A quotation from somewhere</blockquote>
 </section>
 ```
@@ -55,7 +55,7 @@ Wrapping this set of `<section>`s in a `class="codegel-accordion"` element produ
 			</button>
 		</h2>
 		<div class="codegel-accordion-drawer" hidden>
-			<p>Some text...</p><img src="path/to/image" alt="description">
+			<p>Some text...</p><img src="http://www.example.com/path/to/image" alt="description">
 			<p>Some more text...</p>
 		</div>
 	</section>
@@ -81,7 +81,7 @@ Wrapping this set of `<section>`s in a `class="codegel-accordion"` element produ
 			</button>
 		</h2>
 		<div class="codegel-accordion-drawer" hidden>
-			<img src="path/to/image" alt="another description">
+			<img src="http://www.example.com/path/to/image" alt="another description">
 			<blockquote>A quotation from somewhere</blockquote>
 		</div>
 	</section>
@@ -100,7 +100,7 @@ By nesting the button inside the heading the user benefits from the semantics an
 
 ### Short form content
 
-More concise content, such as questions secreting one or two sentence answers, would be better marked up as a list. The `<ul>` would take the `codegel-accordion` class. 
+More concise content, such as questions with one or two sentence answers, would be better marked up as a list. The `<ul>` would take the `codegel-accordion` class. 
 
 ```html
 <ul class="codegel-accordion">
@@ -119,7 +119,7 @@ More concise content, such as questions secreting one or two sentence answers, w
 </ul>
 ```
 
-Whether section/heading or list semantics are suitable, there are certain structural rules for the progressive enhancement to take place successfully using the [Reference implementation](#reference-implementation) script:
+Whether section and heading or list semantics are suitable, there are certain structural rules for the progressive enhancement to take place successfully using the [Reference implementation](#reference-implementation) script:
 
 * Accordion items must be wrapped in a common `codegel-accordion` element
 * Each item must have at least two elements
@@ -199,7 +199,7 @@ closeAllButton.addEventListener('click', function () {
 The `closeAll` functionality can be particularly useful for people who have opened a number of items one after the other, and are subsequently finding it easy to get lost among the expanded content.
 
 ::: alert Automatic collapsing of items
-It is not recommended expanding one accordion item collapses another. If a user has opened an item, it is assumed they want it to remain open. It is possible they wish to refer between two or more open items. Always place the user in control and do not make assumptions about their needs[^6].
+It is not recommended that expanding one accordion item results in collapsing another. If a user has opened an item, it is assumed they want it to remain open. It is possible they wish to refer between two or more open items. Always place the user in control and do not make assumptions about their needs[^6].
 :::
 
 ### Page fragments

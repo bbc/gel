@@ -1,0 +1,163 @@
+@font-face {
+  font-family: "ReithSans";
+  src: url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSans_W_Rg.woff2) format("woff2"), url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSans_W_Rg.woff) format("woff");
+  font-display: swap; }
+
+@font-face {
+  font-family: "ReithSans";
+  src: url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSans_W_It.woff2) format("woff2"), url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSans_W_It.woff) format("woff");
+  font-style: italic;
+  font-display: swap; }
+
+@font-face {
+  font-family: "ReithSans";
+  src: url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSans_W_Bd.woff2) format("woff2"), url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSans_W_Bd.woff) format("woff");
+  font-weight: bold;
+  font-display: swap; }
+
+@font-face {
+  font-family: "ReithSans";
+  src: url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSans_W_BdIt.woff2) format("woff2"), url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSans_W_BdIt.woff) format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap; }
+
+@font-face {
+  font-family: "ReithSans";
+  src: url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSans_W_Lt.woff2) format("woff2"), url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSans_W_Lt.woff) format("woff");
+  font-weight: 300;
+  font-display: swap; }
+
+@font-face {
+  font-family: "ReithSans";
+  src: url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSans_W_LtIt.woff2) format("woff2"), url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSans_W_LtIt.woff) format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap; }
+
+@font-face {
+  font-family: "ReithSans";
+  src: url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSans_W_ExBd.woff2) format("woff2"), url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSans_W_ExBd.woff) format("woff");
+  font-weight: 800;
+  font-display: swap; }
+
+@font-face {
+  font-family: "ReithSans";
+  src: url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSans_W_ExBdIt.woff2) format("woff2"), url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSans_W_ExBdIt.woff) format("woff");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap; }
+
+@font-face {
+  font-family: "ReithSerif";
+  src: url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSerif_W_Rg.woff2) format("woff2"), url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSerif_W_Rg.woff) format("woff");
+  font-display: swap; }
+
+@font-face {
+  font-family: "ReithSerif";
+  src: url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSerif_W_It.woff2) format("woff2"), url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSerif_W_It.woff) format("woff");
+  font-style: italic;
+  font-display: swap; }
+
+@font-face {
+  font-family: "ReithSerif";
+  src: url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSerif_W_Bd.woff2) format("woff2"), url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSerif_W_Bd.woff) format("woff");
+  font-weight: bold;
+  font-display: swap; }
+
+@font-face {
+  font-family: "ReithSerif";
+  src: url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSerif_W_BdIt.woff2) format("woff2"), url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSerif_W_BdIt.woff) format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap; }
+
+@font-face {
+  font-family: "ReithSerif";
+  src: url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSerif_W_Lt.woff2) format("woff2"), url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSerif_W_Lt.woff) format("woff");
+  font-weight: 300;
+  font-display: swap; }
+
+@font-face {
+  font-family: "ReithSerif";
+  src: url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSerif_W_LtIt.woff2) format("woff2"), url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSerif_W_LtIt.woff) format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap; }
+
+@font-face {
+  font-family: "ReithSerif";
+  src: url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSerif_W_ExBd.woff2) format("woff2"), url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSerif_W_ExBd.woff) format("woff");
+  font-weight: 800;
+  font-display: swap; }
+
+@font-face {
+  font-family: "ReithSerif";
+  src: url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSerif_W_ExBdIt.woff2) format("woff2"), url(https://nav.files.bbci.co.uk/orbit/1.0.0-594.1f70774/font/BBCReithSerif_W_ExBdIt.woff) format("woff");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap; }
+
+  
+.b-reith-sans-loaded body {
+    font-family: ReithSans,Arial,Helvetica,freesans,sans-serif
+}
+
+.b-reith-sans-loaded body .gel-canon-bold,.b-reith-sans-loaded body .gel-double-pica-bold,.b-reith-sans-loaded body .gel-great-primer-bold,.b-reith-sans-loaded body .gel-trafalgar-bold {
+    letter-spacing: normal!important
+}
+
+.b-font-family-serif {
+    font-family: "Times New Roman",serif
+}
+
+.b-reith-serif-loaded .b-font-family-serif {
+    font-family: ReithSerif,"Times New Roman",serif
+}
+
+.b-font-weight-300 {
+    font-weight: 300
+}
+
+.b-font-weight-500 {
+    font-weight: 500
+}
+
+.b-font-weight-800 {
+    font-weight: 800
+}
+
+.b-g-p,.b-r .b-g-p {
+    padding: 0 8px
+}
+
+.b-g-m,.b-r .b-g-m {
+    margin: 0 8px
+}
+
+@media screen and (min-width: 400px) {
+    .b-g-p,.b-r .b-g-p {
+        padding:0 16px
+    }
+
+    .b-g-m,.b-r .b-g-m {
+        margin: 0 16px
+    }
+}
+
+@media screen and (min-width: 1008px) {
+    .b-g-p,.b-r .b-g-p {
+        padding:0 16px
+    }
+
+    .b-g-m,.b-g-p,.b-r .b-g-m,.b-r .b-g-p {
+        max-width: 976px;
+        margin: 0 auto
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .b-pw-1280 .b-g-m,.b-pw-1280 .b-g-p,.b-pw-1280 .b-r .b-g-m,.b-pw-1280 .b-r .b-g-p {
+        max-width:1248px
+    }
+}
