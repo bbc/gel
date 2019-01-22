@@ -49,4 +49,4 @@ From the project base directory simply run...
 
 `serve`
 
-Then navigate to the resulting server address like so: `http://localhost:8888/code-gel/components/hello-world` using whatever hostname and port is appropriate.
+Then navigate to the resulting server address like so: `http://localhost:8888/gef-docs/components/hello-world` using whatever hostname and port is appropriate.
