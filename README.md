@@ -21,7 +21,7 @@ npm link
 
 To generate the HTML output into the project `docs` folder, using the markdown from the project `src` folder, run this command...
 
-`npm run build`
+`npm run html`
 
 To make updates to the generated CSS files from the `scss` source...
 
@@ -33,7 +33,7 @@ If you have added new JS files to the project, you may include them in the `main
 
 Or, if you're feeling like you want it all, try this...
 
-`npm run js && npm run sass && npm run build`
+`npm run build`
 
 ## Example
 
