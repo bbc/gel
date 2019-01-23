@@ -9,7 +9,7 @@ linkback: https://www.bbc.co.uk/gel/guidelines/information-panel
 
 ## Introduction
 
-The information panel borrows from both the Menu Button[^1] and Dialog[^2] ARIA authoring patterns. Most of the behaviour and semantics are in line with the Menu Button, but a close button is included like that of a dialog. Many of the accessibility features, including the management of focus between the button and paneland support for closing the panel using the <kbd>Esc</kbd> key are present in both Menu Button and Dialog implementations.
+The information panel borrows from both the Menu Button[^1] and Dialog[^2] ARIA authoring patterns. Most of the behaviour and semantics are in line with the Menu Button, but a close button is included like that of a dialog. Many of the accessibility features, including the management of focus between the button and panel support for closing the panel using the <kbd>Esc</kbd> key are present in both Menu Button and Dialog implementations.
 
 As the [GEL definition attests](https://www.bbc.co.uk/gel/guidelines/information-panel), the content of the panel is not strictly prescribed and can contain a combination of text, images, links, and other information and functionality. This document sets out the **Information panel** as a functional interaction mechanism, and the [Reference implementation](#reference-implementation) only contains basic example content.
 
@@ -71,7 +71,7 @@ Central alignment is achieved with a CSS transform, meaning any width of panel w
 }
 ```
 
-The width is trumped by a `max-width` where overflow (and the panel being obscured) would otherwise be an issue. This is hard-coded at `80vw`, with `20vw` subtracted to help address padding that might apply to the document's left and right sides.
+The width is overridden by a `max-width` where overflow (and the panel being obscured) would otherwise be an issue. This is hard-coded at `80vw`, with `20vw` subtracted to help address padding that might apply to the document's left and right sides.
 
 ```css
 
@@ -165,6 +165,19 @@ In addition, there are a number of considerations for keyboard and screen reader
 * When the keyboard user tabs forward past the last interactive element in the menu (a link, button, or form control) the panel closes
 * The invoking button tracks state with `aria-expanded`. In the expanded state (`true` value) the button is announced as _"toggle button, expanded"_ (or similar). In the collapsed state (`false` value) it is announced as _"toggle button, collapsed"_.
 
+::: alert Avoid keyboard traps
+In order to achieve modality, dialog implementations often 'trap' focus within them. Even in a dialog, this approach to focusing the user's attention is not recommended, since it makes it difficult to leave the page. In fact, it is a failure under WCAG2.1 2.1.2 Keyboard Trap[^6] and use of the `inert` is preferred (see the [**Action dialog**](/components/action-dialogs)).
+
+The **Info panel**, like the standard Menu Button[^1] pattern, does not need to resort to a keyboard trap or `inert`, especially since its designated content is _"not essential information"_. Instead, the keyboard user is afforded a number of methods for dismissing the panel:
+
+1. Re-clicking the invoking button
+2. Pressing <kbd>Esc</kbd>
+3. Tabbing out of the menu
+4. Pressing the close button
+
+Offering choice[^7] makes it more likely that users will find a way to achieve the task — and a way that best suits their mode of interaction.
+:::
+
 ## Reference implementation
 
 ::: alert Important
@@ -186,5 +199,7 @@ This topic does not yet have any related research available.
 [^3]: ARIA-label Is A Xenophobe — heydonworks.com, <http://www.heydonworks.com/article/aria-label-is-a-xenophobe>
 [^4]: `@supports` — MDN, <https://developer.mozilla.org/en-US/docs/Web/CSS/@supports>
 [^5]: CSS Triangle — CSS-Tricks, <https://css-tricks.com/snippets/css/css-triangle/>
+[^6]: WCAG2.1 2.1.2: Keyboard Trap, <https://www.w3.org/TR/WCAG21/#no-keyboard-trap>
+[^7]: Offer choice — Inclusive Design Principles, <https://inclusivedesignprinciples.org/#offer-choice>
 
 
