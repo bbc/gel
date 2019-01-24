@@ -166,7 +166,7 @@ In addition, there are a number of considerations for keyboard and screen reader
 * The invoking button tracks state with `aria-expanded`. In the expanded state (`true` value) the button is announced as _"toggle button, expanded"_ (or similar). In the collapsed state (`false` value) it is announced as _"toggle button, collapsed"_.
 
 ::: alert Avoid keyboard traps
-In order to achieve modality, dialog implementations often 'trap' focus within them. Even in a dialog, this approach to focusing the user's attention is not recommended, since it makes it difficult to leave the page. In fact, it is a failure under WCAG2.1 2.1.2 Keyboard Trap[^6] and use of the `inert` is preferred (see the [**Action dialog**](/components/action-dialogs)).
+In order to achieve modality, dialog implementations often 'trap' focus within them. Even in a dialog, this approach to focusing the user's attention is not recommended, since it makes it difficult to leave the page. In fact, it is a failure under WCAG2.1 2.1.2 Keyboard Trap[^6] and use of `inert` is preferred (see the [**Action dialog**](/components/action-dialogs)).
 
 The **Info panel**, like the standard Menu Button[^1] pattern, does not need to resort to a keyboard trap or `inert`, especially since its designated content is _"not essential information"_. Instead, the keyboard user is afforded a number of methods for dismissing the panel:
 
