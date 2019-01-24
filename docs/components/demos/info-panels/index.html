@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/gef-docs/static/images/favicon.ico" type="image/x-icon">
+
+    <title>GEF | Info panels Demo</title>
+
+    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/gef.css">
+
+    <script type="text/javascript"> // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    
+</head>
+
+<body class="gel-guideline-body">
+    <main id="main" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-5/5@l" style="padding-right: 12px;">
+                <h1 class="gel-guideline-header__title">Info panels</h1>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-5/5@l">
+                <h2>Reference implementation</h2>
+                
+                
+<style>
+  body {
+    height: 500vh; /* test */
+  }
+  .example-slice {
+    padding: 1rem 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+  }
+</style>
+
+<h3>Left/below alignment</h3>
+<div class="example-slice">
+  <div class="gef-infopanel infopanel-left-below">
+    <button class="gef-infopanel-button gef-button" type="button" aria-haspopup="true" aria-expanded="false">More
+      info</button>
+    <div class="gef-infopanel-panel" role="group" aria-labelledby="unique-ref1" style="width: 15rem;" hidden>
+      <div class="gef-infopanel-title-area">
+        <span id="unique-ref1" aria-hidden="true">More info</span>
+        <button class="gef-infopanel-close-button">
+          <span class="gef-sr">close</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+            <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-no"></use>
+          </svg>
+        </button>
+      </div>
+      <ul>
+        <li><a href="#">Option one</a></li>
+        <li><a href="#">Option two</a></li>
+        <li><a href="#">Option three</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h3>Right/below alignment</h3>
+<div class="example-slice" style="text-align: right">
+  <div class="gef-infopanel infopanel-right-below">
+    <button class="gef-infopanel-button gef-button" type="button" aria-haspopup="true" aria-expanded="false">More
+      info</button>
+    <div class="gef-infopanel-panel" role="group" aria-labelledby="unique-ref2" style="width: 15rem;" hidden>
+      <div class="gef-infopanel-title-area">
+        <span id="unique-ref2" aria-hidden="true">More info</span>
+        <button class="gef-infopanel-close-button">
+          <span class="gef-sr">close</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+            <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-no"></use>
+          </svg>
+        </button>
+      </div>
+      <ul>
+        <li><a href="#">Option one</a></li>
+        <li><a href="#">Option two</a></li>
+        <li><a href="#">Option three</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h3>Center/below alignment</h3>
+<div class="example-slice" style="text-align: center">
+  <div class="gef-infopanel infopanel-center-below">
+    <button class="gef-infopanel-button gef-button" type="button" aria-haspopup="true" aria-expanded="false">More
+      info</button>
+    <div class="gef-infopanel-panel" role="group" aria-labelledby="unique-ref3" style="width: 15rem;" hidden>
+      <div class="gef-infopanel-title-area">
+        <span id="unique-ref3" aria-hidden="true">More info</span>
+        <button class="gef-infopanel-close-button">
+          <span class="gef-sr">close</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+            <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-no"></use>
+          </svg>
+        </button>
+      </div>
+      <ul>
+        <li><a href="#">Option one</a></li>
+        <li><a href="#">Option two</a></li>
+        <li><a href="#">Option three</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+    window.gef && gef.InfoPanel.init();
+
+    // Initialize example 1
+    var infoPanelElem = document.querySelector('.infopanel-left-below');
+    var infopanel = new gef.InfoPanel.constructor(infoPanelElem);
+
+    // Initialize example 2
+    var infoPanelElem = document.querySelector('.infopanel-right-below');
+    var infopanel = new gef.InfoPanel.constructor(infoPanelElem, { hAlign: 'right' });
+
+    // Initialize example 3
+    var infoPanelElem = document.querySelector('.infopanel-center-below');
+    var infopanel = new gef.InfoPanel.constructor(infoPanelElem, { hAlign: 'center' });
+  });
+</script>
+            </div>
+        </div>
+    </main>
+
+
+    <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
+    
+    
+</body>
+
+</html>
