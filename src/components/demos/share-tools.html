@@ -1,0 +1,121 @@
+---
+title: Share tools
+---
+
+<aside class="gef-sharetools" aria-labelledby="gef-sharetools-label">
+  <h3 role="presentation" id="gef-sharetools-label" aria-hidden="true">Share this</h3>
+  <a href="#gef-sharetools-end" class="gef-sr gef-sr__focusable">Skip sharing</a>
+  <ul class="gef-sharetools-options">
+    <li>
+      <a class="gef-button" href="#" target="_blank">
+        <span class="gef-sr">Email, share this, external</span>
+        <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+          <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-email"></use>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a class="gef-button" href="#" target="_blank">
+        <span class="gef-sr">Facebook, share this, external</span>
+        <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+          <use xlink:href="{{site.basedir}}static/images/gef-icons-social.svg#gef-icon-facebook"></use>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a class="gef-button" href="#" target="_blank">
+        <span class="gef-sr">Twitter, share this, external</span>
+        <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+          <use xlink:href="{{site.basedir}}static/images/gef-icons-social.svg#gef-icon-twitter"></use>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a class="gef-button" href="#" target="_blank">
+        <span class="gef-sr">LinkedIn, share this, external</span>
+        <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+          <use xlink:href="{{site.basedir}}static/images/gef-icons-social.svg#gef-icon-linkedin"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="gef-infopanel">
+      <button class="gef-infopanel-button gef-button" type="button" aria-haspopup="true" aria-expanded="false">
+        <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+          <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-share"></use>
+        </svg>
+        <span>Share</span>
+      </button>
+      <div class="gef-infopanel-panel" role="group" aria-labelledby="unique-ref1" style="width: 15rem;" hidden>
+        <div class="gef-infopanel-title-area">
+          <span id="unique-ref1" aria-hidden="true">Share</span>
+          <button class="gef-infopanel-close-button">
+            <span class="gef-sr">close</span>
+            <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+              <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-no"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="gef-sharetools-complete">
+          <ul class="gef-sharetools-options">
+            <li>
+              <a class="gef-button" href="#">
+                <span class="gef-sr">Email, share this, external</span>
+                <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+                  <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-email"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="gef-button" href="#">
+                <span class="gef-sr">Facebook, share this, external</span>
+                <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+                  <use xlink:href="{{site.basedir}}static/images/gef-icons-social.svg#gef-icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="gef-button" href="#">
+                <span class="gef-sr">Twitter, share this, external</span>
+                <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+                  <use xlink:href="{{site.basedir}}static/images/gef-icons-social.svg#gef-icon-twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="gef-button" href="#">
+                <span class="gef-sr">LinkedIn, share this, external</span>
+                <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+                  <use xlink:href="{{site.basedir}}static/images/gef-icons-social.svg#gef-icon-linkedin"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+          <div class="gef-sharetools-link">
+            <label for="gef-sharetools-link-input">Copy this link</label>
+            <input class="gef-sharetools-link-input" type="text" id="gef-sharetools-link-input" value="http://bbc.in/3x4mp1e"
+              readonly />
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <div class="gef-sr gef-sr__focusable" id="gef-sharetools-end" tabindex="-1">End of sharing tools</div>
+</aside>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.gef && gef.InfoPanel.init();
+
+    // Initialize info panel
+    var infoPanelElem = document.querySelector('.gef-infopanel');
+    var infopanel = new gef.InfoPanel.constructor(infoPanelElem, { hAlign: 'right' });
+
+    // Little script to select the contents of the 
+    // 'Copy this link' input on focus
+    var copyLink = document.querySelector('.gef-sharetools-link-input');
+    copyLink.addEventListener('focus', function () {
+      copyLink.select();
+      document.execCommand('copy');
+    });
+  });
+</script>

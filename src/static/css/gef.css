@@ -34,6 +34,7 @@
 .gef-sr__focusable:active,
 .gef-sr__focusable:focus,
 .gef-sr__focused {
+  position: static;
   clip: auto;
   height: auto;
   margin: 0;
@@ -802,6 +803,10 @@ span.gef-nowrap {
 .gef-button svg:first-child, .gef-cta svg:first-child {
   margin-right: 0.9em; }
 
+.gef-button svg:only-child,
+.gef-button .gef-sr + svg {
+  margin: 0; }
+
 .gef-button-switch [aria-hidden] {
   display: inline-block;
   margin-left: 8px;
@@ -1325,3 +1330,31 @@ of 'open all' and 'close all' tools
     display: flex;
     justify-content: space-between;
     align-items: center; } }
+
+/* share tools styles */
+.gef-infopanel .gef-sharetools-complete > * {
+  padding: 0 0.75rem 0.75rem; }
+
+.gef-infopanel .gef-sharetools-complete a {
+  padding: 0.5rem; }
+
+.gef-sharetools-options {
+  padding: 0;
+  margin-top: 0; }
+
+.gef-sharetools-options > li {
+  display: inline-block; }
+
+.gef-sharetools-link-input {
+  border: 0;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.25rem; }
+
+@supports (display: flex) {
+  .gef-sharetools-options {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -0.125rem; }
+  .gef-sharetools-options > li {
+    margin: 0.125rem; } }
