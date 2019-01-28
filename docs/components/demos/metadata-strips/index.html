@@ -32,46 +32,23 @@
             <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-5/5@l">
                 <h2>Reference implementation</h2>
                 
-                <style>
-  .gefmetadata-strip>div {
-    display: inline-block;
-    white-space: nowrap;
-  }
-
-  .gefmetadata-strip>div+div::before {
-    content: '';
-    border-left: 1px solid;
-    margin: 0 0.25rem;
-  }
-
-  .gefmetadata-strip dt,
-  .gefmetadata-strip dd {
-    margin: 0;
-    display: inline;
-  }
-
-  .vh {
-    clip-path: inset(100%) !important;
-    clip: rect(1px, 1px, 1px, 1px) !important;
-    height: 1px !important;
-    overflow: hidden !important;
-    position: absolute !important;
-    white-space: nowrap !important;
-    width: 1px !important;
-  }
-</style>
-
+                
 <div style="margin-bottom: 1rem;">
   <dl class="gef-metadata-strip">
     <div>
-      <dt class="vh">Published:</dt>
+      <dt class="gef-sr">Published:</dt>
       <dd>
-        <span aria-hidden="true">1m</span>
-        <span class="vh">1 minute ago</span>
+        <span aria-hidden="true">
+          <svg class="gel-icon gel-icon--text" focusable="false">
+            <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-duration"></use>
+          </svg>
+          1m
+        </span>
+        <span class="gef-sr">1 minute ago</span>
       </dd>
     </div>
     <div>
-      <dt class="vh">From:</dt>
+      <dt class="gef-sr">From:</dt>
       <dd>
         <a href="link/to/category">UK</a>
       </dd>

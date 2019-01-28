@@ -7,143 +7,223 @@ accessibility: false
 linkback: http://www.bbc.co.uk/gel/guidelines/promos
 ---
 
-## Overview
+## Introduction
 
-The Promo component is composed of several sub-components:
+The **Promo** component is used to advertise BBC content. Principally it is a link to that content, but it can include a combination of supporting content to draw the reader's attention, such as media, data, and information about the content's author.
 
-* a required link
-* an optional image
-* optional badge
-* required heading text
-* optional body text
-* an optional metadata strip
-
-These are shown in more detail in the [BBC GEL Promo documentation](https://www.bbc.co.uk/gel/guidelines/promos).
+The full range of supporting **Promo** content is outlined on the [GEL Promo page](https://www.bbc.co.uk/gel/guidelines/promos).
 
 ## Recommended markup
 
-Promos are typically presented as a set, and together must be marked up as an unordered list, with each Promo marked as a list item (`<li>`). This enables structural and navigational cues in screen reader software[^1]. Each Promo's primary link must be contained within a heading, with each promo's heading of the same level, and the set of promos introduced as its own section within the document by a heading one level higher. The wording of the Promo's primary link should resemble that of the target page's `<title>` and `<h1>`. This consistency aids cognitive accessibility and improves <abbr title="search engine optimization">SEO</abbr>[^3].
+**Promos** can appear individually or in groups. In either case, they should be marked up inside an `<aside>` (complementary landmark[^1]). This marks the **Promo(s)** out as being tangential; they break away from the host page's main content to suggest complementary reading or resources.
 
 ```html
-<h2>Latest news</h2>
-<ul class="gef-promos">
-  <li class="gef-promo">
-    <div class="gef-promo-content">
-      <div class="gef-promo-headline">
-        <h3>
-          <a href="#example/permalink/1">Heading text goes here</a>
-        </h3>
-      </div>
-      <div class="gef-promo-desc">
-        <p>Some description text goes here.</p>
-      </div>
-      <dl class="gef-metadata-strip">
-        <div>
-          <dt class="vh">Published:</dt>
-          <dd>
-            <span aria-hidden="true">1h</span>
-            <span class="vh">1 hour ago</span>
-          </dd>
-        </div>
-        <div>
-          <dt class="vh">From:</dt>
-          <dd>
-            <a href="#example/link/to/category">US & Canada</a>
-          </dd>
-        </div>
-      </dl>
-    </div>
-    <div class="gef-promo-image">
-      <img src="{{site.basedir}}static/images/placeholder.png" alt="">
-    </div>
-  </li>
-  <li class="gef-promo">
-    <div class="gef-promo-content">
-      <div class="gef-promo-headline">
-        <h3>
-          <a href="#example/permalink/2">Another heading text goes here</a>
-        </h3>
-      </div>
-      <div class="gef-promo-desc">
-        <p>More description text here.</p>
-      </div>
-      <dl class="gef-metadata-strip">
-        <div>
-          <dt class="vh">Published:</dt>
-          <dd>
-            <span aria-hidden="true">1m</span>
-            <span class="vh">1 minute ago</span>
-          </dd>
-        </div>
-        <div>
-          <dt class="vh">From:</dt>
-          <dd>
-            <a href="#example/link/to/category">UK</a>
-          </dd>
-        </div>
-      </dl>
-    </div>
-    <div class="gef-promo-image">
-      <img src="{{site.basedir}}static/images/placeholder.png" alt="">
-    </div>
-  </li>
-</ul>
+<aside aria-labelledby="unique-promo-label">
+  <span id="unique-promo-label" hidden>Related programmes</span>
+  <!-- promo(s) here -->
+</aside>
 ```
 
-Images can be considered decorative (`alt=""`; the first Promo in our example) or non-decorative (`alt="[description of image]"`; the second Promo in our example). They must appear _after_ the textual content (`gef-promo-content`) in the markup since the heading introduces the promo content, including the image content. **Non-decorative images must have alternative text that does not simply repeat information in the headline or description**.
+Note the labeling mechanism. Complementary landmarks are discoverable by screen reader users through browsing, or perusing aggregated landmark lists. The label identifies the specific purpose of the landmark. Suitable labels include _"Related"_, _"Read more"_, or _"More like this"_.
+
+In this case, the label is removed from the DOM with `hidden` because a visual label has been deemed unnecessary. This does not suppress the labeling mechanism; screen readers still announce _"complementary, related programmes"_ or similar. Where appropriate, you can instead provide a visible label (by removing `hidden`). You can also use a heading, if you think it is beneficial for the promos to be considered part of the page's main structure and table of contents.
+
+```html
+<aside aria-labelledby="unique-promo-label">
+  <h2 id="unique-promo-label">Related programmes</h2>
+  <!-- promo(s) here -->
+</aside>
+```
+
+You must choose a heading level that is appropriate for the context[^2]. For example, if the promos can be considered a child subsection of the page, use an `<h2>`. 
+
+* Main heading (`<h1>`)
+    * Subsection heading (`<h2>`)
+    * Another subsection heading (`<h2>`)
+    * Read more (`<h2>`) ← The Promo landmark
+
+### Groups of promos
+
+A group of promos should be marked up as a list. This enables structural and navigational cues in screen reader software[^3].
+
+```html
+<aside aria-labelledby="unique-promo-label">
+  <span class="gef-sr" id="unique-promo-label">More like this</span>
+  <ul class="gef-promos">
+    <li class="gef-promo">...</li>
+    <li class="gef-promo">...</li>
+    <li class="gef-promo">...</li>
+    <li class="gef-promo">...</li>
+  </ul>
+</aside>
+```
+
+### The promo itself
+
+The most important thing to remember about **Promo** components is they have a single purpose: to promote another part of the BBC's services; a site, news story, television programme etc. **Promos** are differentiated from [**Cards**](../cards) in that they only have one piece of functionality: a link to the promoted content. If you intend to include functionality _in situ_, such as a video player, use a **Card** instead.
+
+#### The headline link
+
+The **Promo** must contain a link as its main label (or 'headline'). The wording of this link should resemble that of the target page's `<title>` and `<h1>`. This consistency aids cognitive accessibility and improves <abbr title="search engine optimization">SEO</abbr>[^4].
+
+```html
+<div class="gef-promo">
+  <div class="gef-promo-content">
+    <a class="gef-promo-headline" href="path/to/content">University Challenge</a>
+  </div>
+</div>
+```
+
+::: info Headings in headlines
+Unlike **Cards**, **Promos** do not need to have a heading as their title/headline. The complementary landmark and/or list markup is deemed sufficient for providing a semantic structure. **Cards** take headings because they represent self-sufficient content and functionality belonging to the document outline, whereas **Promos** are merely navigation cues.
+:::
+
+#### Images
+
+Frequently, an image is used to help promote the **Promo's** target content. This is the only content permitted _before_ the link in the source.
+
+```html
+<div class="gef-promo">
+  <div class="gef-promo-image">
+    <img src="path/to/image" alt="">
+  </div>
+  <div class="gef-promo-content">
+    <a class="gef-promo-headline" href="path/to/content">University Challenge</a>
+  </div>
+</div>
+```
+
+The image may or may not contain `alt` text. If the headline and/or supporting text (where present) sufficiently describes the promoted content, and the image adds nothing salient, use `alt=""`. If the image conveys important information missing from the **Promo** text, provide an appropriate value. 
+
+The image must _not_ be inside its own link, whether it contains `alt` text or otherwise. This would represent an unnecessary and redundant keyboard tab stop.
+
+#### Media indication
+
+You can indicate information about the media being promoted, if relevant. This is the job of the `class="gef-promo-indicator"` element, found inside `class="gef-promo-image"`.
+
+```html
+<div class="gef-promo">
+  <div class="gef-promo-image">
+    <img src="path/to/image" alt="">
+    <div class="gef-promo-indicator" aria-hidden="true">
+      <svg class="gel-icon gel-icon--text" focusable="false">
+        <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-play"></use>
+      </svg>
+      <span class="gef-promo-indicator-text">04:35</span>
+    </div>
+  </div>
+  <div class="gef-promo-content">
+    <a class="gef-promo-headline" href="path/to/content">
+      University Challenge
+      <span class="gef-sr">Video, 4 minutes and 35 seconds</span>
+    </a>
+  </div>
+</div>
+```
+
+Importantly, the `class="gef-promo-indicator"` is hidden from assistive technologies with `aria-hidden="true"`. This is because it would not make sense encountered before the headline. Append a readable version of the information in a visually hidden span after the main headline text (_"Video, 4 minutes and 35 seconds"_ in the example). 
+
+#### Description
+
+If present, the description (a couple of sentences; no more) should appear after the headline and before the metadata (see the following example). Media indication is omitted from the following example for brevity. 
+
+```html
+<div class="gef-promo">
+  <div class="gef-promo-image">
+    <img src="path/to/image" alt="">
+  </div>
+  <div class="gef-promo-content">
+    <a class="gef-promo-headline" href="path/to/content">University Challenge</a>
+    <p>It is the first of the semi-finals in the Christmas quiz for graduates.</p>
+  </div>
+</div>
+```
+
+#### Metadata
+
+The [**Metadata strip**](../metadata-strips) is described as its own component. It provides metadata in key value pairs, using a description list (`<dl>`).
+
+```html
+<div class="gef-promo">
+  <div class="gef-promo-image">
+    <img src="path/to/image" alt="">
+  </div>
+  <div class="gef-promo-content">
+    <a class="gef-promo-headline" href="path/to/content">University Challenge</a>
+    <p>It is the first of the semi-finals in the Christmas quiz for graduates.</p>
+    <dl class="gef-metadata-strip">
+      <div>
+        <dt class="vh">Published:</dt>
+        <dd>
+          <span aria-hidden="true">
+            <svg class="gel-icon gel-icon--text" focusable="false">
+              <use xlink:href="path/to/gel-icons-all.svg#gel-icon-duration"></use>
+            </svg>
+            1m
+          </span>
+          <span class="vh">1 minute ago</span>
+        </dd>
+      </div>
+      <div>
+        <dt class="vh">From:</dt>
+        <dd>
+          <a href="link/to/category">UK</a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+```
 
 ## Recommended layout
 
-A group of Promos in a set should share the same height. This is possible by making the `<ul>` a CSS Flexbox or CSS Grid context. The appearance of each promo is improved by distributing the metadata (if present) to the bottom of the container. This is possible by making the promo a Flexbox context and giving the metadata element `margin-top: auto`. Padding can be combined with margin to ensure a minimum space between the metadata and the element above it.
+A group of Promos in a set should share the same height. This is possible by making the parent (`class="gel-promos"`; `<ul>` if there are multiple **Promos** or a simple `<div>` if there is just one) a CSS Grid context. It's important there is a fallback, hence `display: inline-block` and `max-width` above the `@supports` block.
 
 ```css
-.gef-promo {
-  display: flex;
-  flex-diection: column;
+.gef-promos > * {
+  display: inline-block;
+  max-width: 266px;
 }
 
-.gef-promo > * + * {
-  margin-top: 1rem; /* generic spacing between components of the promo */
-} 
-
-.gef-metadata-strip {
-  margin-top: auto;
-  padding-top: 1rem;
+@supports (display: grid) {
+  .gef-promos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
+    grid-gap: 1rem;
+  }
+  
+  .gef-promos > * {
+    max-width: none;
+  }
 }
 ```
 
-::: info Note
-While [Metadata Strips](../metadata-strips/) are documented as their own component, the `margin-top` and `padding-top` styles specified here are needed in the Promo context.
-:::
+The appearance of each promo is improved by distributing the metadata (if present) to the bottom of the container. This is possible by making the **Promo** and its nested `class="gef-promo-content"` element Flexbox contexts and giving the metadata element `margin-top: auto`.
+
+```css
+@supports (display: flex) {
+  .gef-promo {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .gef-promo-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .gef-promo-content .gef-metadata-strip {
+    margin-top: auto;
+  }
+}
+```
 
 ### The image
-
-As stated in [Recommended markup](#recommended-markup), the image must come _after_ the text content in the source order. However, it is designed to appear before it visually. Using Flexbox, it is possible to augment the visual order without affecting the source order:
-
-```css
-.gef-promo-image {
-  order: -1;
-}
-```
-
-::: info Note
-Augmenting the source order can produce a [WCAG 2.4.3 Focus Order failure](https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html), but the image is not focusable so there is no such issue.
-:::
 
 The image will need to fit the available space, regardless of the Promo's dimensions (which are likely to change across breakpoints) without distorting. This is possible by setting the desired height of the image box and using the `object-fit` property:
 
 ```css
-.gef-promo-image {
-  order: -1;
-  height: 10rem;
-  overflow: hidden;
-}
-
-.gef-promo-image img {
-  height: 100%;
-  width: auto;
-}
-
 @supports (object-fit: cover) {
   .gef-promo-image img {
     width: 100%;
@@ -152,39 +232,50 @@ The image will need to fit the available space, regardless of the Promo's dimens
 }
 ```
 
-::: info Note
+::: info Support for object-fit
 At the time of writing, the `object-fit` property is supported everywhere but Internet Explorer[^5]. The code uses `@supports` and falls back to showing the image at its natural width, cropping the right edge or leaving a right margin.
 :::
 
-### Horizontal Promos
+### Horizontal promos
 
-It is permissible to create a horizontal configuration, with the image to the left of the content. In the [Example implementation](../demos/promos/) this is achieved without changing the markup, except to place the class `gef-promos-horizontal` on the `<ul>` element and `gef-promo-horizontal` on each subject Promo.
-
-A small amount of additional CSS is then applied. Note the switch in `flex-direction` from `column` to `row`.
+In the [Reference implementation](#reference-implementation), a horizontal configuration (with the image to the left of the text content) can be achieved by placing the `gel-promo-horizontal` class on the `gel-promo` element. This change's the element's flex-direction.
 
 ```css
-@supports (display: grid) {
-  .gef-promos.gef-promos-horizontal {
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  }
-}
-
 .gef-promo.gef-promo-horizontal {
+  flex-wrap: wrap;
   flex-direction: row;
 }
+```
 
+The `flex-wrap: wrap` declaration ensures the image is _only_ placed to the side where there is room. The `gef-promo-image` and `gef-promo-content` elements are not permitted to become smaller than the `266px` threshold of the vertical **Promo** counterparts. At this point, wrapping occurs and the horizontal **Promo** displays as a vertical one.
+
+```css
 .gef-promo.gef-promo-horizontal .gef-promo-image {
-  width: 15rem;
-  height: auto;
+  flex: 1;
+  min-width: 266px;
+}
+
+.gef-promo.gef-promo-horizontal .gef-promo-content {
+  flex: 999; /* Take up all but 266px where adjacent */
+  min-width: 266px;
+}
+```
+
+In a grid context, **Promos** with the class `gel-promo-horizontal` are directed to take up two columns of the grid wherever they are placed.
+
+```css
+.gef-promo.gef-promo-horizontal {
+  grid-column: span 2;
 }
 ```
 
 ### Focus styles
 
-A `text-decoration` focus style is recommended for the headline link and any linked meta information (which should be the only focusable elements inside the promo). In addition, the promo itself can take an outline via `focus-within`, to better draw attention to the promo 'in hand':
+A `text-decoration` focus style is recommended for the headline link, paired with its hover style. To make focusing the card and its headline clearer, an additional `:focus-within` style can be added to the card itself.
 
 ```css
-.gef-promo-headline a:focus {
+.gef-promo-headline:hover,
+.gef-promo-headline:focus {
   outline: none;
   text-decoration: underline;
 }
@@ -194,80 +285,47 @@ A `text-decoration` focus style is recommended for the headline link and any lin
 }
 ```
 
-### Metadata icons
-
-Some items of metadata come with icons, such as a clock prefixing the 'Published' time. These should be provided from [GEL's iconography system](https://www.bbc.co.uk/gel/guidelines/iconography). Ensure their fill is applied using `currentColor` so that the icon is compatible with high contrast themes.
-
 ## Recommended behaviour
 
-Mouse and touch users should be able to activate the primary (headline) link by pressing either the headline text _or_ the image. However, the image should not represent an additional, redundant tab stop to keyboard users or be perceivable as a link to screen reader users. Too many and redundant 'tab stops' can be cumbersome for keyboard-only users[^4].
+**Promo** interaction should be ergonomic for mouse, touch, keyboard, and screen reader users. For mouse and touch users, the whole **Promo** should be clickable as one link. This should be achieved without relying on either of the following:
 
-In which case, you need to add a JavaScript `click` listener to the image and use it to trigger the link's `click` event by proxy. In plain JavaScript this would look something like the following:
+1. **Multiple, duplicated links:** Linking each of the constituent elements produces multiple and redundant tab stops, impeding keyboard navigation[^6].
+2. **A wrapper link:** Placing all of the **Promo's** content inside a link produces a verbose, confusing and/or truncated link label[^7] (which is liable to affect both SEO and, more importantly, screen reader experience).
 
-```js
-// Assuming that `link` represents the headline link node
-// and `img` represents the image node...
-img.addEventListener('click', function(){link.click()});
+Instead, the headline link's pseudo-content is positioned _over_ the entire **Promo**. 
+
+```css
+.gef-promo-headline::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 ```
 
-This is the only JavaScript enhancement. In an environment where the card is not client rendered, the card will be functional where JavaScript is not available. Accordingly, only add the `cursor` style if JavaScript has run:
+This leaves one piece of unfinished business: any links appearing after the headline are now not clickable. This is remedied by raising these links over the pseudo-content with `position: relative`.
 
-```js
-img.style.cursor = 'pointer';
+```css
+.gef-promo a:not(.gef-promo-headline) {
+  position: relative;
+}
 ```
 
-If the metadata contains links, these will fall into focus order after the headline, as expected.
+::: alert Supplementary links
+The headline link (`.gef-promo-headline`) is the primary purpose of the **Promo**. Although the **Metadata strip** may contain links (to category pages in the example implementation to follow) supplementary links should generally be omitted.
+:::
 
 ## Example implementation
 
 ::: alert Important
-Example implementations are intended to demonstrate **what needs to be achieved** but not how to achieve it. To meet our recommendations your HTML semantics, layout and behaviour must conform to the example implementation. Your server-side and front-end frameworks will likely differ.
+Reference implementations are intended to demonstrate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
 :::
 
 <include src="components/demos/promos.html">
 
 <cta label="Open in new window" href="../demos/promos/">
-
-
-## Related accessibility guidelines
-
-<dl class="geldocs-2col-list">
-  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/design/actionable-elements">Actionable elements</a></dt>
-  <dd>"All users must be able to determine if an element is actionable or if it is static content." View the <a href="https://github.com/bbc/bbc-a11y/blob/master/features/standards/mag/design/07_actionable_elements.feature">test spec for actionable elements</a>.</dd>
-
-  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/design/visible-focus">Visible focus</a></dt>
-  <dd>"When focused, all actionable and focusable elements must have a visible state change." View the <a href="https://github.com/bbc/bbc-a11y/blob/master/features/standards/mag/design/08_visible_focus.feature">test spec for visible focus</a>.</dd>
-
-  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/focus/content-order">Content order</a></dt>
-  <dd>"All users benefit when content is logically ordered, in particular users of assistive technology that follows the flow of the page or screen." View the <a href="https://github.com/bbc/bbc-a11y/blob/master/features/standards/mag/focus/03_content_order.feature">test spec for content order</a>.</dd>
-
-  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/focus/user-interactions">User interaction</a></dt>
-  <dd>"Actions must be triggered when appropriate for the type of user interaction." View the <a href="https://github.com/bbc/bbc-a11y/blob/master/features/standards/mag/focus/05_user_interactions.feature">test spec for user interaction</a>.</dd>
-
-  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/links/combining-repeated-links">Combining repeated links</a></dt>
-  <dd>"Repeated links to the same resource must be combined within a single link." View the <a href="https://github.com/bbc/bbc-a11y/blob/master/features/standards/mag/links/03_combining_repeated_links.feature">test spec for combining repeated links</a>.</dd>
-
-  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/structure/headings">Headings</a></dt>
-  <dd>"Content must provide a logical and hierarchical heading structure, as supported by the platform." View the <a href="https://github.com/bbc/bbc-a11y/blob/master/features/standards/mag/structure/02_headings.feature">test spec for headings</a>.</dd>
-
-  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/design/touch-target-size">Touch target size</a></dt>
-  <dd>"Touch targets must be large enough to touch accurately." View the <a href="https://github.com/bbc/bbc-a11y/blob/master/features/standards/mag/design/04_touch_target_size.feature">test spec for touch target size</a>.</dd>
-
-  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/structure/containers-and-landmarks">Containers and landmarks</a></dt>
-  <dd>"Containers should be used to describe page/screen structure, as supported by the platform." View the <a href="https://github.com/bbc/bbc-a11y/blob/master/features/standards/mag/structure/03_containers_and_landmarks.feature">test spec for containers and landmarks</a>.</dd>
-
-  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/structure/grouped-elements">Grouped elements</a></dt>
-  <dd>"Controls, objects and grouped interface elements must be represented as a single accessible component." View the <a href="https://github.com/bbc/bbc-a11y/blob/master/features/standards/mag/structure/04_grouped_elements.feature">test spec for grouped elements</a>.</dd>
-
-  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/text-equivalents/alternatives-for-non-text-content">Alternatives for non-text content</a></dt>
-  <dd>"Alternatives must briefly describe the editorial intent or purpose of the image, object, or element." View the <a href="https://github.com/bbc/bbc-a11y/blob/master/features/standards/mag/text_equivalents/01_alternatives_for_non_text_content.feature">test spec for alternatives for non-text content</a>.</dd>
-
-  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/text-equivalents/decorative-content">Decorative content</a></dt>
-  <dd>"Decorative images must be hidden from assistive technology." View the <a href="https://github.com/bbc/bbc-a11y/blob/master/features/standards/mag/text_equivalents/02_decorative_content.feature">test spec for decorative content</a>.</dd>
-
-  <dt><a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/text-equivalents/visual-formatting">Visual formatting</a></dt>
-  <dd>"Visual formatting alone must not be used to convey meaning." View the <a href="https://github.com/bbc/bbc-a11y/blob/master/features/standards/mag/text_equivalents/05_visual_formatting.feature">test spec for visual formatting</a>.</dd>
-</dl>
 
 ## Related research
 
@@ -275,8 +333,10 @@ This component was originally developed and tested at the BBC in a prototype of 
 
 ### Further reading, elsewhere on the Web
 
-[^1]: "Basic screen reader commands for accessibility testing" by Léonie Watson, <https://developer.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/>
-[^2]: Gist of the `vh` (visually hidden) class <https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472> 
-[^3]: "How To Write Page Titles For Google & Other Search Engines in 2018", <https://www.hobo-web.co.uk/title-tags/#page-titles-example-use>
-[^4]: "Keyboard Accessibility" — WebAIM, <https://webaim.org/techniques/keyboard/>
+[^1]: Complementary Landmark — W3C, <https://www.w3.org/TR/wai-aria-practices/examples/landmarks/complementary.html>
+[^2]: How to structure headings for web accessibility — Nomensa, <https://www.nomensa.com/blog/2017/how-structure-headings-web-accessibility>
+[^3]: "Basic screen reader commands for accessibility testing" by Léonie Watson, <https://developer.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/>
+[^4]: How To Write Page Titles For Google & Other Search Engines in 2018, <https://www.hobo-web.co.uk/title-tags/#page-titles-example-use>
 [^5]: `object-fit` (caniuse data), <https://caniuse.com/#feat=object-fit>
+[^6]: Keyboard Accessibility — WebAIM, <https://webaim.org/techniques/keyboard/>
+[^7]: Accessibility and HTML5 Block Links — <https://simplyaccessible.com/article/html5-block-links/>
