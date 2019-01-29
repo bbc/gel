@@ -9,9 +9,9 @@ linkback: https://www.bbc.co.uk/gel/guidelines/information-panel
 
 ## Introduction
 
-The information panel borrows from both the Menu Button[^1] and Dialog[^2] ARIA authoring patterns. Most of the behaviour and semantics are in line with the Menu Button, but a close button is included like that of a dialog. Many of the accessibility features, including the management of focus between the button and panel support for closing the panel using the <kbd>Esc</kbd> key are present in both Menu Button and Dialog implementations.
+The information panel borrows from both the Menu Button[^1] and Dialog[^2] ARIA authoring patterns. Most of the behaviour and semantics are in line with the Menu Button, but a close button is included like that of a dialog. Many of the accessibility features, including the management of focus between the button and panel, and support for closing the panel using the <kbd>Esc</kbd> key, are present in both Menu Button and Dialog implementations.
 
-As the [GEL definition attests](https://www.bbc.co.uk/gel/guidelines/information-panel), the content of the panel is not strictly prescribed and can contain a combination of text, images, links, and other information and functionality. This document sets out the **Information panel** as a functional interaction mechanism, and the [Reference implementation](#reference-implementation) only contains basic example content.
+As the [GEL guideline for Information Panels explains](https://www.bbc.co.uk/gel/guidelines/information-panel), the content of the panel is not strictly prescribed and can contain any combination of text, images, links, and other information and functionality. This document sets out the **Information panel** as a functional interaction mechanism, and the [Reference implementation](#reference-implementation) only contains basic example content.
 
 ## Recommended markup
 
@@ -34,7 +34,7 @@ The following structure is expected, with notes to follow.
 </div>
 ```
 
-* **`class="gef-button"`:** A standard `<button>` element takes the `aria-haspopup="true"` property and `aria-expanded="false"` state. The former indicates that the button secretes a popup (panel) and the later (set to `false` initially) indicates whether that popup is in an expanded or collapsed state.
+* **`class="gef-button"`:** A standard `<button>` element takes the `aria-haspopup="true"` property and `aria-expanded="false"` state. The former indicates that the button secretes a popup (panel) and the latter (set to `false` initially) indicates whether that popup is in an expanded or collapsed state.
 * **`class="gef-infopanel-panel"`:** The panel itself takes `role="group"` to indicate it's contents are related. A standard Menu Button[^1] would expect `role="menu"` here, but that would prescribe the presence of menu items (`role="menuitem"` etc.). Because Information panel contents can be diverse, a more generic parent role is used.
 * **`aria-labelledby`:** This associates the panel with its title's `id` (`id="unique-ref"` in this example). This ensures the title is read out as the screen reader enters the panel.
 * **`gef-infopanel-close-button`:** The close button has a visually hidden (but available to assistive technologies) text label of _"close"_ to supplement the visible 'X' icon. The visually hidden span (achieved with `class="gef-sr"`) is preferred to using `aria-label` since `aria-label` is not translated by Google's or Microsoft's translation services[^3]. 
@@ -49,9 +49,9 @@ The [Reference implementation's](#reference-implementation) constructor accepts 
 ```js
 // The default settings for the tab interface
 var settings = {
-  hAlign: 'left', // or 'center' or 'right'
+  hAlign: 'left',  // or 'center' or 'right'
   vAlign: 'below', // or 'above'
-  width: '15rem' // width of the panel
+  width: '15rem'   // width of the panel
 };
 
 // Overwrite defaults where they are provided in options
@@ -74,6 +74,12 @@ Central alignment is achieved with a CSS transform, meaning any width of panel w
 The width is overridden by a `max-width` where overflow (and the panel being obscured) would otherwise be an issue. This is hard-coded at `80vw`, with `20vw` subtracted to help address padding that might apply to the document's left and right sides.
 
 ```css
+.gef-infopanel-panel {
+  text-align: left;
+  background-color: $gel-color--alto;
+  position: absolute;
+  max-width: 80vw;
+}
 
 ```
 
@@ -151,7 +157,7 @@ However, it is recommended a copy of the contents of the **Information panel** a
 
 ### With JavaScript
 
-When correctly initialized, the **Information panel** allows the mouse or touch user to interact with it in the following way:
+When correctly initialised, the **Information panel** allows the mouse or touch user to interact with it in the following way:
 
 * Clicking the button opens the panel
 * Clicking the button again closes the panel
@@ -166,7 +172,7 @@ In addition, there are a number of considerations for keyboard and screen reader
 * The invoking button tracks state with `aria-expanded`. In the expanded state (`true` value) the button is announced as _"toggle button, expanded"_ (or similar). In the collapsed state (`false` value) it is announced as _"toggle button, collapsed"_.
 
 ::: alert Avoid keyboard traps
-In order to achieve modality, dialog implementations often 'trap' focus within them. Even in a dialog, this approach to focusing the user's attention is not recommended, since it makes it difficult to leave the page. In fact, it is a failure under WCAG2.1 2.1.2 Keyboard Trap[^6] and use of `inert` is preferred (see the [**Action dialog**](/components/action-dialogs)).
+In order to achieve modality, dialog implementations often 'trap' focus within them. Even in a dialog, this approach to focusing the user's attention is not recommended, since it makes it difficult to leave the page. In fact, it is a failure under WCAG2.1 2.1.2 Keyboard Trap[^6] and use of `inert` is preferred (see the [**Action dialog**](../action-dialogs)).
 
 The **Info panel**, like the standard Menu Button[^1] pattern, does not need to resort to a keyboard trap or `inert`, especially since its designated content is _"not essential information"_. Instead, the keyboard user is afforded a number of methods for dismissing the panel:
 

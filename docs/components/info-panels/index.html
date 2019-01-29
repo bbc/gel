@@ -109,8 +109,8 @@
 
             <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="introduction">Introduction</h2>
-<p>The information panel borrows from both the Menu Button<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> and Dialog<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> ARIA authoring patterns. Most of the behaviour and semantics are in line with the Menu Button, but a close button is included like that of a dialog. Many of the accessibility features, including the management of focus between the button and panel support for closing the panel using the <kbd>Esc</kbd> key are present in both Menu Button and Dialog implementations.</p>
-<p>As the <a href="https://www.bbc.co.uk/gel/guidelines/information-panel">GEL definition attests</a>, the content of the panel is not strictly prescribed and can contain a combination of text, images, links, and other information and functionality. This document sets out the <strong>Information panel</strong> as a functional interaction mechanism, and the <a href="#reference-implementation">Reference implementation</a> only contains basic example content.</p>
+<p>The information panel borrows from both the Menu Button<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> and Dialog<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> ARIA authoring patterns. Most of the behaviour and semantics are in line with the Menu Button, but a close button is included like that of a dialog. Many of the accessibility features, including the management of focus between the button and panel, and support for closing the panel using the <kbd>Esc</kbd> key, are present in both Menu Button and Dialog implementations.</p>
+<p>As the <a href="https://www.bbc.co.uk/gel/guidelines/information-panel">GEL guideline for Information Panels explains</a>, the content of the panel is not strictly prescribed and can contain any combination of text, images, links, and other information and functionality. This document sets out the <strong>Information panel</strong> as a functional interaction mechanism, and the <a href="#reference-implementation">Reference implementation</a> only contains basic example content.</p>
 <h2 id="recommended-markup">Recommended markup</h2>
 <p>The following structure is expected, with notes to follow.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"info-panel-example gef-infopanel"</span>&gt;</span>
@@ -129,7 +129,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 <ul>
-<li><strong><code>class=&quot;gef-button&quot;</code>:</strong> A standard <code>&lt;button&gt;</code> element takes the <code>aria-haspopup=&quot;true&quot;</code> property and <code>aria-expanded=&quot;false&quot;</code> state. The former indicates that the button secretes a popup (panel) and the later (set to <code>false</code> initially) indicates whether that popup is in an expanded or collapsed state.</li>
+<li><strong><code>class=&quot;gef-button&quot;</code>:</strong> A standard <code>&lt;button&gt;</code> element takes the <code>aria-haspopup=&quot;true&quot;</code> property and <code>aria-expanded=&quot;false&quot;</code> state. The former indicates that the button secretes a popup (panel) and the latter (set to <code>false</code> initially) indicates whether that popup is in an expanded or collapsed state.</li>
 <li><strong><code>class=&quot;gef-infopanel-panel&quot;</code>:</strong> The panel itself takes <code>role=&quot;group&quot;</code> to indicate it's contents are related. A standard Menu Button<sup class="footnote-ref"><a href="#fn1" id="fnref1:1">[1:1]</a></sup> would expect <code>role=&quot;menu&quot;</code> here, but that would prescribe the presence of menu items (<code>role=&quot;menuitem&quot;</code> etc.). Because Information panel contents can be diverse, a more generic parent role is used.</li>
 <li><strong><code>aria-labelledby</code>:</strong> This associates the panel with its title's <code>id</code> (<code>id=&quot;unique-ref&quot;</code> in this example). This ensures the title is read out as the screen reader enters the panel.</li>
 <li><strong><code>gef-infopanel-close-button</code>:</strong> The close button has a visually hidden (but available to assistive technologies) text label of <em>&quot;close&quot;</em> to supplement the visible 'X' icon. The visually hidden span (achieved with <code>class=&quot;gef-sr&quot;</code>) is preferred to using <code>aria-label</code> since <code>aria-label</code> is not translated by Google's or Microsoft's translation services<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</li>
@@ -140,9 +140,9 @@
 <p>The <a href="#reference-implementation">Reference implementation's</a> constructor accepts an options object that lets you set the horizontal (<code>hAlign</code>) and vertical (<code>vAlign</code>) alignment of the panel, as well as the panel's width:</p>
 <pre class="hljs"><code><span class="hljs-comment">// The default settings for the tab interface</span>
 <span class="hljs-keyword">var</span> settings = {
-  <span class="hljs-attr">hAlign</span>: <span class="hljs-string">'left'</span>, <span class="hljs-comment">// or 'center' or 'right'</span>
+  <span class="hljs-attr">hAlign</span>: <span class="hljs-string">'left'</span>,  <span class="hljs-comment">// or 'center' or 'right'</span>
   vAlign: <span class="hljs-string">'below'</span>, <span class="hljs-comment">// or 'above'</span>
-  width: <span class="hljs-string">'15rem'</span> <span class="hljs-comment">// width of the panel</span>
+  width: <span class="hljs-string">'15rem'</span>   <span class="hljs-comment">// width of the panel</span>
 };
 
 <span class="hljs-comment">// Overwrite defaults where they are provided in options</span>
@@ -159,7 +159,13 @@
 }
 </code></pre>
 <p>The width is overridden by a <code>max-width</code> where overflow (and the panel being obscured) would otherwise be an issue. This is hard-coded at <code>80vw</code>, with <code>20vw</code> subtracted to help address padding that might apply to the document's left and right sides.</p>
-<pre class="hljs"><code>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-infopanel-panel</span> {
+  <span class="hljs-attribute">text-align</span>: left;
+  <span class="hljs-attribute">background-color</span>: $gel-color--alto;
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">max-width</span>: <span class="hljs-number">80vw</span>;
+}
+
 </code></pre>
 <h3 id="arrows">Arrows</h3>
 <p>The directional arrow, pointing from the panel to the button, is considered a progressive enhancement. It is achieved—where supported—with <code>clip-path</code> and <code>@supports</code><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. This technique is preferred to the CSS Triangle trick<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> which uses transparent borders and is liable to fail in Windows High Contrast Mode.</p>
@@ -220,7 +226,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">noscript</span>&gt;</span>
 </code></pre>
 <h3 id="with-javascript">With JavaScript</h3>
-<p>When correctly initialized, the <strong>Information panel</strong> allows the mouse or touch user to interact with it in the following way:</p>
+<p>When correctly initialised, the <strong>Information panel</strong> allows the mouse or touch user to interact with it in the following way:</p>
 <ul>
 <li>Clicking the button opens the panel</li>
 <li>Clicking the button again closes the panel</li>
@@ -236,7 +242,7 @@
 </ul>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-avoid-keyboard-traps">
-              <h4 id="aside-alert-avoid-keyboard-traps" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Avoid keyboard traps</h4><div><p>In order to achieve modality, dialog implementations often 'trap' focus within them. Even in a dialog, this approach to focusing the user's attention is not recommended, since it makes it difficult to leave the page. In fact, it is a failure under WCAG2.1 2.1.2 Keyboard Trap<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> and use of <code>inert</code> is preferred (see the <a href="/components/action-dialogs"><strong>Action dialog</strong></a>).</p>
+              <h4 id="aside-alert-avoid-keyboard-traps" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Avoid keyboard traps</h4><div><p>In order to achieve modality, dialog implementations often 'trap' focus within them. Even in a dialog, this approach to focusing the user's attention is not recommended, since it makes it difficult to leave the page. In fact, it is a failure under WCAG2.1 2.1.2 Keyboard Trap<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> and use of <code>inert</code> is preferred (see the <a href="../action-dialogs"><strong>Action dialog</strong></a>).</p>
 <p>The <strong>Info panel</strong>, like the standard Menu Button<sup class="footnote-ref"><a href="#fn1" id="fnref1:2">[1:2]</a></sup> pattern, does not need to resort to a keyboard trap or <code>inert</code>, especially since its designated content is <em>&quot;not essential information&quot;</em>. Instead, the keyboard user is afforded a number of methods for dismissing the panel:</p>
 <ol>
 <li>Re-clicking the invoking button</li>
@@ -255,9 +261,6 @@ title: Info panels
  -->
 
 <style>
-  body {
-    height: 500vh; /* test */
-  }
   .example-slice {
     padding: 1rem 0;
     border-top: 1px solid #ccc;
@@ -342,16 +345,21 @@ title: Info panels
     window.gef && gef.InfoPanel.init();
 
     // Initialize example 1
-    var infoPanelElem = document.querySelector('.infopanel-left-below');
-    var infopanel = new gef.InfoPanel.constructor(infoPanelElem);
+    new gef.InfoPanel.constructor(
+      document.querySelector('.infopanel-left-below')
+    );
 
     // Initialize example 2
-    var infoPanelElem = document.querySelector('.infopanel-right-below');
-    var infopanel = new gef.InfoPanel.constructor(infoPanelElem, { hAlign: 'right' });
+    new gef.InfoPanel.constructor(
+      document.querySelector('.infopanel-right-below'),
+      { hAlign: 'right' }
+    );
 
     // Initialize example 3
-    var infoPanelElem = document.querySelector('.infopanel-center-below');
-    var infopanel = new gef.InfoPanel.constructor(infoPanelElem, { hAlign: 'center' });
+    new gef.InfoPanel.constructor(
+      document.querySelector('.infopanel-center-below'),
+      { hAlign: 'center' }
+    );
   });
 </script></div>
         

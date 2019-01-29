@@ -34,9 +34,6 @@
                 
                 
 <style>
-  body {
-    height: 500vh; /* test */
-  }
   .example-slice {
     padding: 1rem 0;
     border-top: 1px solid #ccc;
@@ -121,16 +118,21 @@
     window.gef && gef.InfoPanel.init();
 
     // Initialize example 1
-    var infoPanelElem = document.querySelector('.infopanel-left-below');
-    var infopanel = new gef.InfoPanel.constructor(infoPanelElem);
+    new gef.InfoPanel.constructor(
+      document.querySelector('.infopanel-left-below')
+    );
 
     // Initialize example 2
-    var infoPanelElem = document.querySelector('.infopanel-right-below');
-    var infopanel = new gef.InfoPanel.constructor(infoPanelElem, { hAlign: 'right' });
+    new gef.InfoPanel.constructor(
+      document.querySelector('.infopanel-right-below'),
+      { hAlign: 'right' }
+    );
 
     // Initialize example 3
-    var infoPanelElem = document.querySelector('.infopanel-center-below');
-    var infopanel = new gef.InfoPanel.constructor(infoPanelElem, { hAlign: 'center' });
+    new gef.InfoPanel.constructor(
+      document.querySelector('.infopanel-center-below'),
+      { hAlign: 'center' }
+    );
   });
 </script>
             </div>
