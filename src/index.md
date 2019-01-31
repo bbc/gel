@@ -48,13 +48,12 @@ We are working our way through a list based closely on what's already published 
 | [Pocket]({{site.basedir}}components/pockets/) | Draft / Pending|
 | [Pagination]({{site.basedir}}components/load-more/) | Draft / Pending|
 | [Information Panel]({{site.basedir}}components/info-panels/) | Draft / Pending|
+| [Share Tools]({{site.basedir}}components/share-tools/) | Draft / Pending|
 
 ## What's next?
 
 Our backlog has a list of patterns we intend to document:
 
-- Share Tools
-- Promo Collection
 - Menu drawer
 - GEL Foundations
 

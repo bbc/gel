@@ -60,6 +60,11 @@
   margin-right: 0.9em;
 }
 
+.gef-button svg:only-child,
+.gef-button .gef-sr + svg {
+  margin: 0;
+}
+
 .gef-button-switch [aria-hidden] {
   display: inline-block;
   margin-left: $gel-spacing-unit;

@@ -28,6 +28,7 @@
 .gef-sr__focusable:active,
 .gef-sr__focusable:focus,
 .gef-sr__focused {
+  position: static;
   clip: auto;
   height: auto;
   margin: 0;
@@ -1082,6 +1083,7 @@ h4 {
 .gef-sr__focusable:active,
 .gef-sr__focusable:focus,
 .gef-sr__focused {
+  position: static;
   clip: auto;
   height: auto;
   margin: 0;

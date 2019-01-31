@@ -31,7 +31,7 @@
     "gel-grid": "^4.0.0",
     "gel-sass-tools": "^1.2.1",
     "gel-typography": "^2.0.5",
-    "highlight.js": "^9.13.1",
+    "highlight.js": "^9.14.1",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.0.2",
     "markdown-it-container": "^2.0.0",
