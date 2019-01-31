@@ -47,14 +47,14 @@ We are working our way through a list based closely on what's already published 
 | [Video controls]({{site.basedir}}components/video-controls/) | Draft / Pending|
 | [Pocket]({{site.basedir}}components/pockets/) | Draft / Pending|
 | [Pagination]({{site.basedir}}components/load-more/) | Draft / Pending|
+| [Information Panel]({{site.basedir}}components/info-panels/) | Draft / Pending|
+| [Share Tools]({{site.basedir}}components/share-tools/) | Draft / Pending|
 
 ## What's next?
 
 Our backlog has a list of patterns we intend to document:
 
-- Information Panel
-- Share Tools
-- Promo Collection
+- Menu drawer
 - GEL Foundations
 
 ## Questions?

@@ -34,6 +34,7 @@
 .gef-sr__focusable:active,
 .gef-sr__focusable:focus,
 .gef-sr__focused {
+  position: static;
   clip: auto;
   height: auto;
   margin: 0;
@@ -804,6 +805,10 @@ span.gef-nowrap {
 .gef-button svg:first-child, .gef-cta svg:first-child {
   margin-right: 0.9em; }
 
+.gef-button svg:only-child,
+.gef-button .gef-sr + svg {
+  margin: 0; }
+
 .gef-button-switch [aria-hidden] {
   display: inline-block;
   margin-left: 8px;
@@ -1261,3 +1266,97 @@ of 'open all' and 'close all' tools
 
 .gef-accordion-controls button + button {
   margin-left: 0.5rem; }
+
+.gef-infopanel {
+  display: none; }
+
+.gef-infopanel-with-js {
+  display: inline-block; }
+
+.gef-infopanel-showing {
+  position: relative; }
+
+.gef-infopanel-panel {
+  text-align: left;
+  background-color: #dcdcdc;
+  position: absolute;
+  max-width: 80vw; }
+
+.gef-infopanel-title-area {
+  line-height: 1;
+  padding: 0.75rem;
+  font-size: 1.125rem; }
+
+.gef-infopanel-close-button {
+  color: #404040;
+  padding: 0;
+  border: 0;
+  background-color: transparent; }
+
+.gef-infopanel-below {
+  top: calc(100% + 1rem); }
+
+.gef-infopanel-above {
+  bottom: calc(100% + 1rem); }
+
+.gef-infopanel-right {
+  right: 0; }
+
+.gef-infopanel-center {
+  transform: translateX(-50%);
+  left: 50%; }
+
+@supports (clip-path: inset(100%)) {
+  .gef-infopanel-panel::after {
+    content: '';
+    display: inline-block;
+    background-color: inherit;
+    width: 0.75rem;
+    height: 0.75rem;
+    position: absolute; }
+  .gef-infopanel-below::after {
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+    top: calc(-0.75rem + 1px); }
+  .gef-infopanel-above::after {
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    bottom: calc(-0.75rem + 1px); }
+  .gef-infopanel-left::after {
+    left: 1.5rem; }
+  .gef-infopanel-right::after {
+    right: 1.5rem; }
+  .gef-infopanel-center::after {
+    left: calc(50% - 0.375rem); } }
+
+@supports (display: flex) {
+  .gef-infopanel-title-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; } }
+
+/* share tools styles */
+.gef-infopanel .gef-sharetools-complete > * {
+  padding: 0 0.75rem 0.75rem; }
+
+.gef-infopanel .gef-sharetools-complete a {
+  padding: 0.5rem; }
+
+.gef-sharetools-options {
+  padding: 0;
+  margin-top: 0; }
+
+.gef-sharetools-options > li {
+  display: inline-block; }
+
+.gef-sharetools-link-input {
+  border: 0;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.25rem; }
+
+@supports (display: flex) {
+  .gef-sharetools-options {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -0.125rem; }
+  .gef-sharetools-options > li {
+    margin: 0.125rem; } }
