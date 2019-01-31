@@ -1,0 +1,16 @@
+.gef-metadata-strip > div {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.gef-metadata-strip > div + div::before {
+  content: '';
+  border-left: 1px solid $gel-color--cod-gray;
+  margin: 0 0.25rem;
+}
+
+.gef-metadata-strip dt,
+.gef-metadata-strip dd {
+  margin: 0;
+  display: inline;
+}

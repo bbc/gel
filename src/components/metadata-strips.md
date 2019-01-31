@@ -11,7 +11,7 @@ linkback: http://www.bbc.co.uk/gel/guidelines/cards
 
 The **Metadata Strip** is a simple component to be provided as part of content such as a [Promo](../promos). It defines key information attributed to the content like its publish date, and derivation.
 
-## Expected markup
+## Recommended markup
 
 ::: info Note
 The following example assumes the content is a [Promo](../promos) and includes just publishing and derivation information. Other definitions may be applicable elsewhere.
@@ -20,21 +20,19 @@ The following example assumes the content is a [Promo](../promos) and includes j
 ```html
 <dl class="gef-metadata-strip">
   <div>
-    <dt class="vh">Published:</dt>
+    <dt class="gef-sr">Published:</dt>
     <dd>
       <span aria-hidden="true">
-        <span class="gel-icon">
-          <svg>
-            <use xlink:href="assets/svg/gel-icons-core-set.svg#gel-icon-duration"></use>
-          </svg>
-        </span>
+        <svg class="gel-icon gel-icon--text" focusable="false">
+          <use xlink:href="path/to/gel-icons-all.svg#gel-icon-duration"></use>
+        </svg>
         1m
       </span>
-      <span class="vh">1 minute ago</span>
+      <span class="gef-sr">1 minute ago</span>
     </dd>
   </div>
   <div>
-    <dt class="vh">From:</dt>
+    <dt class="gef-sr">From:</dt>
     <dd>
       <a href="link/to/category">UK</a>
     </dd>
@@ -42,13 +40,12 @@ The following example assumes the content is a [Promo](../promos) and includes j
 </dl>
 ```
 
-### Notes
-
 * **`<dl>` and `<div>`:** The most appropriate markup for key/value based information is the definition (or 'description') list. It is permitted[^1] to use `<div>` elements to wrap pairs of `<dt>` and `<dd>` elements for layout purposes. 
-* **`class="vh"` for `<dt>`:** The definition titles (`<dt>`s) are only needed for non-visual clarification in screen reader output. They are hidden visually using the `vh` class[^2].
-* **`aria-hidden="true"`** In some cases, the visually displayed text may not be sufficient for synthetic voice announcement. In these cases, the displayed text (and associated iconography) is hidden from assistive technologies with `aria-hidden="true"`[^3] and an alternative wording is provided non-visually (using the `vh` class to hide this text).
+* **`class="gef-sr"` for `<dt>`:** The definition titles (`<dt>`s) are only needed for non-visual clarification in screen reader output. They are hidden visually using the `gef-sr` class.
+* **gel-icon:** The SVG icon (if present) is hidden along with the display text. It takes `focusable="false"` to remove it from focus order in some versions of IE and Edge[^2]
+* **`aria-hidden="true"`** In some cases, the visually displayed text may not be sufficient for synthetic voice announcement. In these cases, the displayed text (and associated iconography) is hidden from assistive technologies with `aria-hidden="true"`[^3] and an alternative wording is provided non-visually (using the `gef-sr` class to hide this text visually).
 
-## Expected layout
+## Recommended layout
 
 The `<dl>`, `<dt>`, and `<dd>` must have their user agent styles removed. The child `<div>`s are set to `inline-block`, with `white-space: nowrap`.
 
@@ -85,14 +82,14 @@ Accompany any colour differentiation with `text-decoration: underline`, if this 
 }
 ```
 
-## Expected behaviour
+## Recommended behaviour
 
-Aside from linked metadata, metadata strips are largely static. If a link uses `target="_blank"`, warn the user by incorporating the external link icon[^5] and some visually hidden text for screen reader users.
+Aside from linked metadata, metadata strips are largely static. If a link uses `target="_blank"`, warn the user by incorporating the external link icon and some visually hidden text for screen reader users.
 
 ```html
 <a href="/link/to/category">
   UK
-  <span class="vh">(opens new tab)</span>
+  <span class="gef-sr">(opens new tab)</span>
   <span class="gel-icon">
     <svg>
       <use xlink:href="assets/svg/gel-icons-core-set.svg#gel-icon-external-link"></use>
@@ -101,7 +98,7 @@ Aside from linked metadata, metadata strips are largely static. If a link uses `
 </a>
 ```
 
-## Reference implementation
+## Example implementation
 
 ::: alert Important
 Reference implementations are intended to demonstrate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
@@ -119,6 +116,6 @@ This topic does not yet have any related research available.
 ### Further reading, elsewhere on the Web
 
 [^1]: "Allow &lt;div> around each &lt;dt>&lt;dd> group in &lt;dl>" (WHATWG merged pull request), <https://github.com/whatwg/html/pull/1945>
-[^2]: Gist of the `vh` (visually hidden) class, <https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472> 
+[^2]: Don't make every `<svg>` focusable by default (issue) — Microsoft, <https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8090208/>
 [^3]: "Accessibility chops: `hidden` and `aria-hidden`" — The Paciello Group, <https://developer.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/>
 [^4]: Use Of Color: Understanding WCAG 1.4.1, <https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html>
