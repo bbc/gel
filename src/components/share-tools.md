@@ -110,7 +110,7 @@ Keyboard users (including screen reader users) traversing the page will first en
 ### The link input
 
 ::: info **Information** panel behaviour
-The interaction behaviour of the **Information panel** is covered in the [**Information panel** documentation](../info-panel)).
+The interaction behaviour of the **Information panel** is covered in the [Information panel documentation](../info-panel).
 :::
 
 The experience of copying the link from the `class="gef-sharetools-link-input"` element is aided slightly by selecting the input's value and copying it to the clipboard on focus. The script for this behaviour is embedded in the demonstration page:

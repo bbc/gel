@@ -92,11 +92,11 @@
   self.constructor.prototype.open = function () {
     this.panel.hidden = false;
     this.button.setAttribute('aria-expanded', 'true');
-    this.closeButton.focus();
     document.addEventListener('click', this.closeOnBlur);
     // For adding `position: relative` dynamically
     // to avoid z-index issues
     this.elem.classList.add('gef-infopanel-showing');
+    this.closeButton.focus();
   }
 
   // The close method
