@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/gef-docs/static/images/favicon.ico" type="image/x-icon">
+
+    <title>GEF | Table of contents Demo</title>
+
+    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/gef.css">
+
+    <script type="text/javascript"> // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    
+</head>
+
+<body style="margin: 0">
+    <div style="padding: 1rem;">
+        <h1 class="gel-guideline-header__title">Table of contents</h1>
+        <h2>Reference implementation</h2>
+    </div>
+    
+<nav class="gef-toc" aria-labelledby="gef-toc-label">
+  <span id="gel-toc-label" hidden>In this site</span>
+  <div class="gef-toc-menu-button">
+    <button type="button" aria-expanded="false">Menu</button>
+  </div>
+  <ul class="gef-toc-list">
+    <li><a href="#">Home</a></li>
+    <li>
+      <button class="gef-toc-more-button" type="button" aria-expanded="false">
+        Guidelines
+        <svg class="gel-icon gel-icon--text" focusable="false">
+          <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-down"></use>
+        </svg>
+      </button>
+      <div class="gef-toc-more" hidden>
+        <div class="gef-toc-more-inner">
+          <ul>
+            <li><a href="#">Foundations</a></li>
+            <li><a href="#">Design patterns</a></li>
+            <li><a href="#">How-tos</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li><a href="#">Articles</a></li>
+    <li><a href="#">About UX&D</a></li>
+  </ul>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.gef && gef.TableOfContents.init();
+
+    var TOCElem = document.querySelector('.gef-toc');
+    var TOC = new gef.TableOfContents.constructor(TOCElem);
+  });
+</script>
+
+    <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
+
+    
+</body>
+
+</html>

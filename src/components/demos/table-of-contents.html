@@ -1,0 +1,42 @@
+---
+title: Table of contents
+layout: layout-demos-full-width.njk
+---
+
+<nav class="gef-toc" aria-labelledby="gef-toc-label">
+  <span id="gel-toc-label" hidden>In this site</span>
+  <div class="gef-toc-menu-button">
+    <button type="button" aria-expanded="false">Menu</button>
+  </div>
+  <ul class="gef-toc-list">
+    <li><a href="#">Home</a></li>
+    <li>
+      <button class="gef-toc-more-button" type="button" aria-expanded="false">
+        Guidelines
+        <svg class="gel-icon gel-icon--text" focusable="false">
+          <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-down"></use>
+        </svg>
+      </button>
+      <div class="gef-toc-more" hidden>
+        <div class="gef-toc-more-inner">
+          <ul>
+            <li><a href="#">Foundations</a></li>
+            <li><a href="#">Design patterns</a></li>
+            <li><a href="#">How-tos</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li><a href="#">Articles</a></li>
+    <li><a href="#">About UX&D</a></li>
+  </ul>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.gef && gef.TableOfContents.init();
+
+    var TOCElem = document.querySelector('.gef-toc');
+    var TOC = new gef.TableOfContents.constructor(TOCElem);
+  });
+</script>

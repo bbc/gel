@@ -1,0 +1,138 @@
+.gef-toc {
+  margin: 0;
+  border-top: 1px solid $gel-color--dusty-gray;
+  border-bottom: 1px solid $gel-color--dusty-gray;
+}
+
+.gef-toc a,
+.gef-toc button {
+  padding: 0.75rem;
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  text-align: left;
+  font-weight: bold;
+}
+
+.gef-toc button {
+  border: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+.gef-toc ul {
+  padding: 0;
+}
+
+.gef-toc-list {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1008px;
+  font-size: 0;
+}
+
+.gef-toc li {
+  display: inline;
+}
+
+.gef-toc-list > li * {
+  font-size: 1.125rem;
+}
+
+.gef-toc-list a:hover,
+.gef-toc-list button:hover,
+.gef-toc-list a:focus,
+.gef-toc-list button:focus,
+.gef-toc-list [aria-current] {
+  outline: 2px solid transparent;
+  outline-offset: -3px;
+  box-shadow: inset 0 -4px 0 0 currentColor;
+}
+
+.gef-toc-list > li > * {
+  border-left: 1px solid $gel-color--dusty-gray;
+}
+
+.gef-toc-list > li:last-child > * {
+  border-right: 1px solid $gel-color--dusty-gray;
+}
+
+.gef-toc-more {
+  float: left;
+  width: calc(100vw + 1px);
+  padding: 0;
+  position: relative;
+  left: calc((100vw - 100%) / 2 * -1 - 1px);
+  background-color: #404040;
+  color: $gel-color--white;
+}
+
+.gef-toc-more-inner {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: calc(1008px);
+}
+
+.gef-toc-menu-button {
+  text-align: center;
+  display: none;
+}
+
+.gef-toc-more-button svg {
+  width: 0.75rem;
+  vertical-align: -0.25rem;
+  margin-left: 0.5rem;
+}
+
+.gef-toc-more-button[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.gef-toc-menu-button button {
+  width: 100%;
+  text-align: center;
+  padding: 0.75rem;
+}
+
+@media (max-width: 600px) {
+  .gef-toc li {
+    display: block;
+  }
+  
+  .gef-toc-list a,
+  .gef-toc-list button {
+    width: 100%;
+    border: 0;
+  }
+  
+  .gef-toc-list > li > * {
+    border: 0;
+  }
+
+  .gef-toc-list > li:last-child > * {
+    border-right: 0;
+  }
+
+  .gef-toc-list > li + li > * {
+    border-top: 1px solid $gel-color--dusty-gray;
+  }
+  
+  .gef-toc-more {
+    width: 100%;
+    position: static;
+  }
+  
+  .gef-toc-with-js .gef-toc-menu-button {
+    display: block;
+  }
+  
+  .gef-toc-with-js .gef-toc-list {
+    display: none;
+  }
+  
+  .gef-toc-with-js .gef-toc-list.gef-toc-open {
+    display: block;
+  }
+}
