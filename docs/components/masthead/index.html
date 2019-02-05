@@ -134,8 +134,10 @@
 <li>The search functionality - <em>locate and navigate to content within the site</em></li>
 <li>The banner - <em>local site home link</em></li>
 </ol>
-<p>The <code>&lt;nav&gt;</code> itself represents a landmark, and includes a nested landmark in the use of <code>role=&quot;form&quot;</code> to wrap the search functionality. Each of these is available in aggregated landmark navigation provided by popular screen reader software<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-masthead"</span>&gt;</span>
+<p>The <code>&lt;nav&gt;</code> itself represents a landmark, and includes a nested landmark in the use of <code>role=&quot;search&quot;</code> to wrap the search functionality. Each of these is available in aggregated landmark navigation provided by popular screen reader software<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p>
+<p>A proxy label is provided using <code>aria-labelledby</code> and a hidden proxy element to differentiate this navigation region from the <a href="../site-menu"><strong>Site menu</strong></a> region, which is labeled <em>&quot;This site&quot;</em>.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-masthead"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"gef-masthead-label"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"gef-masthead-label"</span> <span class="hljs-attr">hidden</span>&gt;</span>BBC sites<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
   <span class="hljs-comment">&lt;!-- All masthead functionality --&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
 </code></pre>
@@ -214,7 +216,7 @@
 <h4 id="the-more-menu">The more menu</h4>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"gef-masthead-more"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-masthead-more-menu gef-masthead-popup"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-masthead-more-menu-inner"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"more-label"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-masthead-more-menu-label"</span>&gt;</span>MORE<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"more-label"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-masthead-more-menu-label"</span>&gt;</span>More<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"more-label"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.bbc.co.uk/news"</span>&gt;</span>News<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.bbc.co.uk/sport"</span>&gt;</span>Sport<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
@@ -355,7 +357,8 @@
 title: Masthead
  -->
 
-<nav class="gef-masthead">
+<nav class="gef-masthead" aria-labelledby="gef-masthead-label">
+  <span id="gef-masthead-label" hidden>BBC sites</span>
   <div class="gef-masthead-bar">
     <div class="gef-masthead-logo">
       <a href="https://bbc.co.uk">

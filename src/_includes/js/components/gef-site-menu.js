@@ -1,23 +1,28 @@
 /**
- * Masthead
+ * Site menu
  * @namespace gef
- * @method gef.TableOfContents.init
+ * @method gef.SiteMenu.init
  */
 
 (function () {
   if (!window.gef) { window.gef = {}; }
-  var self = gef.TableOfContents = {};
+  var self = gef.SiteMenu = {};
 
-  self.init = function () {
-  }
+  self.init = function () { }
 
   self.constructor = function (elem) {
-    elem.classList.add('gef-toc-with-js');
-    this.moreButtons = elem.querySelectorAll('.gef-toc-more-button');
-    this.menuButton = elem.querySelector('.gef-toc-menu-button button');
-    this.menu = elem.querySelector('.gef-toc-list');
+    elem.classList.add('gef-sitemenu-with-js');
+    this.moreButtons = elem.querySelectorAll('.gef-sitemenu-more-button');
+    this.menuButton = elem.querySelector('.gef-sitemenu-menu-button');
+    this.menu = elem.querySelector('.gef-sitemenu-list');
 
     Array.prototype.forEach.call(this.moreButtons, function (btn) {
+      var submenu = btn.nextElementSibling;
+      submenu.hidden = true;
+      if (submenu.querySelector('[aria-current]')) {
+        this.submenuToggle(btn);
+      }
+
       btn.addEventListener('click', function () {
         this.submenuToggle(btn);
       }.bind(this));
@@ -45,6 +50,6 @@
   self.constructor.prototype.menuToggle = function () {
     var currentState = this.menuButton.getAttribute('aria-expanded') === 'true' || false;
     this.menuButton.setAttribute('aria-expanded', !currentState);
-    this.menu.classList.toggle('gef-toc-open', !currentState);
+    this.menu.classList.toggle('gef-sitemenu-open', !currentState);
   }
 })();

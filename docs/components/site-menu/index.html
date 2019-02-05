@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/gef-docs/static/images/favicon.ico" type="image/x-icon">
+
+    <title>GEF | Site menu</title>
+
+    <script src="/gef-docs/static/js/site.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/gef.css">
+    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/site.css">
+
+    <script type="text/javascript"> // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    <script type="text/javascript">
+        try {
+            (new FontFaceObserver('ReithSans', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-sans-loaded';
+            });
+            (new FontFaceObserver('ReithSerif', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-loaded';
+            });
+        } catch( e ) {
+            console.log('Reith fonts did not load within 5 seconds.');
+        }
+    </script>
+
+    <script type="text/javascript">
+        // syntax highlight
+        hljs.initHighlightingOnLoad();
+    </script>
+
+    
+</head>
+
+<body class="gefdocs-body">
+    <p class="gef-sr gef-sr__focusable gef-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('gef-sr__focused')" onblur="this.parentNode.classList.remove('gef-sr__focused')">Skip
+            to content</a>
+    </p>
+
+    <header>
+        <div class="gefdocs-header gs-u-clearfix">
+            <div class="gel-wrap">
+                <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
+                        <title>BBC</title>
+                        <image xlink:href="/gef-docs/static/images/bbc-blocks_grey.svg" src="/gef-docs/static/images/bbc-blocks_grey.png"
+                            width="100%" height="100%"></image>
+                    </svg></a>
+            </div>
+        </div>
+        <div class="gefdocs-header__banner gs-u-clearfix">
+            <div class="gel-wrap">
+                <div class="gel-layout">
+                    <div class="gel-layout__item gel-2/5@l" style="text-align:left; padding-left:14px; margin-bottom:32px;">
+                        <a href="/gef-docs/" class="gefdocs-logo">GEF</a>
+                    </div>
+                    <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
+                        <a class="gefdocs-button gefdocs-button--dark gel-long-primer-bold" href="">
+                            Go to BBC GEL
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" tabindex="-1" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <!-- column placeholder-->
+            </div>
+
+            <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
+                <h1 class="gefdocs-header__title">Site menu</h1>
+                <p class="gefdocs-header__summary gel-great-primer">The Site menu is the navigation region for the local site, and can contain two tiers of navigation options</p>
+            </div>
+
+            <div class="gel-layout__item gel-1/5@l">
+                <dl class="gefdocs-standout-box">
+                    
+                    <dt>Version:</dt>
+                    <dd>0.1.0</dd>
+                    
+                    <dt>Status:</dt>
+                    <dd>Published</dd>
+                    <dt>Accessibility:</dt>
+                    <dd>Pass</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
+                    <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
+                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
+                </nav>
+            </div>
+
+            <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
+                <h2 id="introduction">Introduction</h2>
+<p>The <a href="../masthead"><strong>Masthead</strong></a> and <strong>Site menu</strong> are both navigation regions, and are typically seen together on BBC web pages. The <strong>Masthead</strong> lets you navigate <em>between</em> BBC sites, and the <strong>Site menu</strong> allows you to navigate around the current, local site (Sport, Weather, News, etc).</p>
+<h2 id="recommended-markup">Recommended markup</h2>
+<p>The semantic structure of the <strong>Site menu</strong> is that of a table of contents: a master list, containing nested lists where subtopics of available content are available. Each list is identified in popular screen reader software, communicating the nested structure non-visually. For BBC Gel, the site outline includes nested subtopics for the Guidelines topic:</p>
+<ul>
+<li>Home</li>
+<li>Guidelines
+<ul>
+<li>Foundations</li>
+<li>Patterns</li>
+<li>How-tos</li>
+</ul>
+</li>
+<li>Articles</li>
+<li>About UX&amp;D</li>
+</ul>
+<p>In practice, this structure is presented within a navigation (<code>&lt;nav&gt;</code>) landmark<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> labeled <em>&quot;This site&quot;</em>. This makes the <strong>Site menu</strong> easily discoverable and identifiable in screen reader software.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sitemenu"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"gef-sitemenu-label"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"gel-sitemenu-label"</span> <span class="hljs-attr">hidden</span>&gt;</span>This site<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"path/to/gel-icons-all.svg#gel-icon-list"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+    Menu
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sitemenu-list"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">aria-current</span>=<span class="hljs-string">"page"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sitemenu-more-button"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>
+        Guidelines
+        <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"path/to/gel-icons-all.svg#gel-icon-down"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sitemenu-more"</span> <span class="hljs-attr">hidden</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sitemenu-more-inner"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Foundations<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Design patterns<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>How-tos<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Articles<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>About UX&amp;D<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+</code></pre>
+<h3 id="notes">Notes</h3>
+<ul>
+<li><strong><code>id=&quot;gel-sitemenu-label&quot;</code>:</strong> A proxy <code>&lt;span&gt;</code> element is used to label the landmark. This method is preferred to using an <code>aria-label</code> which is ignored by Google and Microsoft translation services at the time of writing. Note that the element is <code>hidden</code>. This stops it from being encountered directly while browsing, without silencing it as a proximity label<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</li>
+<li><strong><code>class=&quot;gef-sitemenu-menu-button&quot;</code>:</strong> For narrower viewports, the menu is hidden behind this toggle button and disclosed when it is pressed. This saves vertical space. The element must be a button, and not a link, because it does not take the user to a new location.</li>
+<li><strong><code>class=&quot;gef-sitemenu-more-button&quot;</code></strong> Nested subtopic menus are hidden behind <code>&lt;button&gt;</code>s also. Their accessible <code>aria-expanded</code> state is set to either <code>false</code> (collapsed) or <code>true</code> (expanded).</li>
+<li><strong><code>class=&quot;gel-icon&quot;</code></strong> Each SVG icon is hidden from assistive technologies with <code>aria-hidden</code> and is removed from the tab order (in some versions of Internet Explorer and Edge) with <code>focusable=&quot;false&quot;</code><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</li>
+<li><strong><code>aria-current=&quot;page&quot;</code>:</strong> This indicates which menu item corresponds to the current page, and is announced as <em>&quot;current&quot;</em> in screen reader software<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>.</li>
+</ul>
+<h2 id="recommended-layout">Recommended layout</h2>
+<p>The <strong>Site menu's</strong> submenus must appear under the top-level menu items <em>without</em> breaking the semantic structure. This is achieved with a combination of <code>display: inline</code> (menu items) and <code>float: left</code> (submenu):</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-sitemenu</span> <span class="hljs-selector-tag">li</span> {
+  <span class="hljs-attribute">display</span>: inline;
+}
+
+<span class="hljs-selector-class">.gef-sitemenu-more</span> {
+  <span class="hljs-attribute">float</span>: left;
+}
+</code></pre>
+<p>Now the submenu appears below each of the top-level menu items, but the table of contents-like nesting structure remains and focus order is not disrupted. After opening a submenu by clicking its attendant button, the next focusable element is the first of the submenu's options.</p>
+<p>The submenu container must take up the whole of the viewport. This is achieved using <code>calc()</code>:</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-sitemenu-more</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">calc</span>(100vw + 1px);
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">left</span>: <span class="hljs-built_in">calc</span>((100vw - 100%) / <span class="hljs-number">2</span> * -<span class="hljs-number">1</span> - <span class="hljs-number">1px</span>);
+}
+</code></pre>
+<p>The element's width is first set to <code>100vw</code>, then it is repositioned to be flush with the left edge of the screen. The <code>1px</code> addition and subtraction compensates for the horizontal borders. Multiplying by <code>-1</code> negates the value to pull the position to the left.</p>
+<p>To ensure the submenu's content (<code>.gef-submenu-inner</code>) aligns with the top-level menu, each element is given a <code>max-width</code> of <code>1008px</code> and <code>auto</code> margins.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-sitemenu-more-inner</span>,
+<span class="hljs-selector-class">.gef-sitemenu-list</span> {
+  <span class="hljs-attribute">margin-left</span>: auto;
+  <span class="hljs-attribute">margin-right</span>: auto;
+  <span class="hljs-attribute">max-width</span>: <span class="hljs-number">1008px</span>;
+}
+</code></pre>
+<p>Note that the <code>1008px</code> figure depends on the width of the page's main content and will differ between sites. 1008 is taken from the <a href="https://www.bbc.co.uk/gel/">GEL site's</a> implementation.</p>
+<h3 id="focus-styles">Focus styles</h3>
+<p>The focus style is paired with the hover style. The main style—a <code>4px</code> line at the base of the item—is supplemented by a fallback for Windows High Contrast Mode (because Windows HCM themes tend to remove box shadows<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>). The transparent outline is invisible in a default theme, but becomes visible when High Contrast Mode is activated.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span>,
+<span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:hover</span>,
+<span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span>,
+<span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:focus</span>,
+<span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-attr">[aria-current]</span> {
+  <span class="hljs-attribute">box-shadow</span>: inset <span class="hljs-number">0</span> -<span class="hljs-number">4px</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> currentColor;
+  <span class="hljs-attribute">outline</span>: <span class="hljs-number">2px</span> solid transparent;
+  <span class="hljs-attribute">outline-offset</span>: -<span class="hljs-number">3px</span>;
+}
+</code></pre>
+<p>As stated in <a href="#recommended-layout">Recommended layout</a>, <code>aria-current=&quot;page&quot;</code> can be used to denote the current page where it matches a menu option.</p>
+<h2 id="recommended-behaviour">Recommended behaviour</h2>
+<p>Aside from the master toggle button and submenu toggle buttons, the menu simply adopts native linking behaviour. The menu, and each of its submenus, are visible by default and only <code>hidden</code> where JavaScript runs. All the menu options are available to users whose browsers have not run the script.</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> submenu = btn.nextElementSibling;
+submenu.hidden = <span class="hljs-literal">true</span>;
+</code></pre>
+<p>When a submenu toggle button is pressed, its state switches between collapsed (<code>aria-expanded=&quot;false&quot;</code>) and expanded (<code>aria-expanded=&quot;true&quot;</code>). Closed submenus are hidden using the <code>hidden</code> property, which makes them (temporarily) unavailable to screen reader users, and their links not focusable by keyboard.</p>
+<p>As set out in <a href="#recommended-layout">Recommended layout</a>, the layout is achieved such that focus order is not disrupted. Upon encountering a submenu button, activating it will reveal the submenu. The submenu's first item is next in focus order. The user can either close the submenu and move to the next top-level menu item, or <kbd>Tab</kbd> through each of the submenu items and move onto the next top-level menu item.</p>
+<h3 id="aria-current"><code>aria-current</code></h3>
+<p>The <code>aria-current=&quot;page&quot;</code> attribution must be placed on the menu item that corresponds with the current page. If this menu item belongs to a submenu, the script will expand that submenu on page load.</p>
+<pre class="hljs"><code><span class="hljs-keyword">if</span> (submenu.querySelector(<span class="hljs-string">'[aria-current]'</span>)) {
+  <span class="hljs-keyword">this</span>.submenuToggle(btn);
+}
+</code></pre>
+<h2 id="reference-implementation">Reference implementation</h2>
+
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
+              <h4 id="aside-alert-important" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+</aside><p>The <strong>Site menu</strong> uses up the full page width, meaning the implementation can only be demonstrated on a separate page:</p>
+
+          <p><a class="gef-cta gel-long-primer-bold" href="../demos/site-menu/" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+        <h2 id="related-research">Related research</h2>
+<p>This topic does not yet have any related research available.</p>
+<h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Using Navigation Landmarks — <a href="http://GOV.UK">GOV.UK</a>, <a href="https://accessibility.blog.gov.uk/2016/05/27/using-navigation-landmarks/">https://accessibility.blog.gov.uk/2016/05/27/using-navigation-landmarks/</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Hiding Content Has No Effect on Accessible Name or Description Calculation — W3C, <a href="https://w3c.github.io/using-aria/#hiding-content-has-no-effect-on-accessible-name-or-description-calculation">https://w3c.github.io/using-aria/#hiding-content-has-no-effect-on-accessible-name-or-description-calculation</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>Don't make every <code>&lt;svg&gt;</code> focusable by default (issue) — Microsoft, <a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8090208/">https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8090208/</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>Using the <code>aria-current</code> attribute — Léonie Watson, <a href="https://tink.uk/using-the-aria-current-attribute/">https://tink.uk/using-the-aria-current-attribute/</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>High Contrast-friendly dropshadow — Devon Persing, <a href="https://codepen.io/dpersing/details/vJERyv">https://codepen.io/dpersing/details/vJERyv</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+
+                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
+                    <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
+                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Could you improve this documentation?
+                    </h4>
+                    <div>
+                        <p>
+                        If you think you could make anything you see here a bit better then become one of <a href="/gef-docs/contributors/">our lovely contributors</a>!
+                        </p>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="gefdocs-feedback-banner">
+        <div class="gel-wrap">
+            <div class="gel-layout">
+                <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
+                    <h2 class="gefdocs-feedback-banner__title">Got a minute?</h2>
+                    <p>We'd love to know what you think of the Code GEL website.</p>
+                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" class="gefdocs-button gefdocs-button__link-button gefdocs-feedback-banner__cta gefdocs-button--primary">
+                        <span class="gefdocs-button__content">Go to survey</span>
+                        <span class="gefdocs-button__icon_wrapper">
+                            <svg class="gefdocs-button__icon gefdocs-icon gefdocs-icon--text">
+                                <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                                    style="fill:undefined;"></use>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
+
+    
+
+    <script type="text/javascript">
+        new Sticky('.sticky');
+        new MenuSpy(document.querySelector('#gefdocs-toc__links'), {enableLocationHash: false});
+        new SweetScroll({
+            trigger: '#gefdocs-toc__links a',
+            quickMode: true,
+            easing: 'easeOutExpo',
+            cancellable: true,
+            updateURL: false, 
+        });
+    </script>
+</body>
+
+</html>
