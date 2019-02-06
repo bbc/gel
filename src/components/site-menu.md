@@ -2,8 +2,9 @@
 title: Site menu
 summary: The Site menu is the navigation region for the local site, and can contain two tiers of navigation options
 version: 0.1.0
-published: true
-accessibility: true
+published: false
+accessibility: false
+linkback: http://www.bbc.co.uk/gel
 ---
 
 ## Introduction
@@ -22,7 +23,7 @@ The semantic structure of the **Site menu** is that of a table of contents: a ma
 * Articles
 * About UX&D
 
-In practice, this structure is presented within a navigation (`<nav>`) landmark[^1] labeled _"This site"_. This makes the **Site menu** easily discoverable and identifiable in screen reader software.
+In practice, this structure is presented within a navigation (`<nav>`) landmark[^1] labelled _"This site"_. This makes the **Site menu** easily discoverable and identifiable in screen reader software.
 
 ```html
 <nav class="gef-sitemenu" aria-labelledby="gef-sitemenu-label">
