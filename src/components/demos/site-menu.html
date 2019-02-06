@@ -1,0 +1,45 @@
+---
+title: Table of contents
+layout: layout-demos-full-width.njk
+---
+
+<nav class="gef-sitemenu" aria-labelledby="gef-sitemenu-label">
+  <span id="gel-sitemenu-label" hidden>This site</span>
+  <button class="gef-sitemenu-menu-button" type="button" aria-expanded="false">
+    <svg class="gel-icon gel-icon--text" focusable="false">
+      <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-list"></use>
+    </svg>
+    Menu
+  </button>
+  <ul class="gef-sitemenu-list">
+    <li><a href="#" aria-current="page">Home</a></li>
+    <li>
+      <button class="gef-sitemenu-more-button" type="button" aria-expanded="false">
+        Guidelines
+        <svg class="gel-icon gel-icon--text" focusable="false">
+          <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-down"></use>
+        </svg>
+      </button>
+      <div class="gef-sitemenu-more">
+        <div class="gef-sitemenu-more-inner">
+          <ul>
+            <li><a href="#">Foundations</a></li>
+            <li><a href="#">Design patterns</a></li>
+            <li><a href="#">How-tos</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li><a href="#">Articles</a></li>
+    <li><a href="#">About UX&D</a></li>
+  </ul>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.gef && gef.SiteMenu.init();
+
+    var menuElem = document.querySelector('.gef-sitemenu');
+    var menu = new gef.SiteMenu.constructor(menuElem);
+  });
+</script>

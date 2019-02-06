@@ -36,10 +36,13 @@ All of these components, including the banner, belong to a common `<nav>` elemen
 5. The search functionality - _locate and navigate to content within the site_
 6. The banner - _local site home link_
 
-The `<nav>` itself represents a landmark, and includes a nested landmark in the use of `role="form"` to wrap the search functionality. Each of these is available in aggregated landmark navigation provided by popular screen reader software[^4].
+The `<nav>` itself represents a landmark, and includes a nested landmark in the use of `role="search"` to wrap the search functionality. Each of these is available in aggregated landmark navigation provided by popular screen reader software[^4].
+
+A proxy label is provided using `aria-labelledby` and a hidden proxy element to differentiate this navigation region from the [**Site menu**](../site-menu) region, which is labeled _"This site"_.
 
 ```html
-<nav class="gef-masthead">
+<nav class="gef-masthead" aria-labelledby="gef-masthead-label">
+  <span id="gef-masthead-label" hidden>BBC sites</span>
   <!-- All masthead functionality -->
 </nav>
 ```
@@ -147,7 +150,7 @@ The search link takes you to the main BBC search page. Note that, despite only c
 ```html
 <div id="gef-masthead-more" class="gef-masthead-more-menu gef-masthead-popup">
   <div class="gef-masthead-more-menu-inner">
-    <h2 id="more-label" aria-hidden="true" class="gef-masthead-more-menu-label">MORE</h2>
+    <h2 id="more-label" aria-hidden="true" class="gef-masthead-more-menu-label">More</h2>
     <ul aria-labelledby="more-label">
       <li><a href="https://www.bbc.co.uk/news">News</a></li>
       <li><a href="https://www.bbc.co.uk/sport">Sport</a></li>
