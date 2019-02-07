@@ -25,7 +25,7 @@ The following example is a "Note" type breakout. The same structure should be us
     </svg>
     The unique title for the breakout
   </h4>
-  <!-- the content of the breakout; usually just a paragraph or two -->
+  <!-- The content of the breakout; usually just a paragraph or two -->
 </aside>
 ```
 
