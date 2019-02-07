@@ -295,17 +295,25 @@
     }));
 
     self.constructor = function (elem) {
+      // Save refs to elements
       var scrollable = elem.querySelector('.gef-carousel-scrollable');
       var buttons = elem.querySelector('.gef-carousel-buttons');
       var list = elem.querySelector('.gef-carousel-list');
       var items = list.children;
-      var scrollAmount = list.offsetWidth / 2;
       var prev = elem.querySelector('.gef-carousel-prev');
       var next = elem.querySelector('.gef-carousel-next');
 
+      // Reveal button functionality now JS has run
       buttons.hidden = false;
+
+      // Make the prev button disabled because
+      // you can't 'go left' to begin with
       prev.disabled = true;
 
+      // Scroll by half the container's width
+      var scrollAmount = list.offsetWidth / 2;
+
+      // Scroll incrementally by button
       prev.addEventListener('click', function (e) {
         scrollable.scrollLeft += -scrollAmount;
       });
@@ -337,6 +345,7 @@
             if (item.isIntersecting) {
               item.target.removeAttribute('inert');
             } else {
+              // Makes items unfocusable and unavailable to assistive technologies
               item.target.setAttribute('inert', 'inert');
             }
           });
