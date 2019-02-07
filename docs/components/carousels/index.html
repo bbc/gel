@@ -118,7 +118,7 @@
 </aside><pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-carousel"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-carousel-buttons"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-carousel-prev"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">disabled</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>previous<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sr"</span>&gt;</span>previous<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">svg</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#gel-icon-previous"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
@@ -126,7 +126,7 @@
       <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-carousel-next"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>next<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sr"</span>&gt;</span>next<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">svg</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#gel-icon-next"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
@@ -151,7 +151,7 @@
 <h3 id="notes">Notes</h3>
 <ul>
 <li><strong><code>role=&quot;group&quot;</code></strong> This is a generic ARIA role, used here to indicate that the buttons and the scrollable area they control are related</li>
-<li><strong>previous and next buttons:</strong> One can scroll the through the content in incremental steps using the previous and next buttons. It's important these are <code>&lt;button&gt;</code> elements with <code>type=&quot;button&quot;</code>. Their labels are provided using visually hidden text (the <code>vh</code> class<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>) because, unlike <code>aria-label</code> it will be translated by browser translation extensions. Buttons that are not applicable (e.g. the previous button on page load) receive the <code>disabled</code> property. The button is removed from focus order and identified as disabled (or 'dimmed') in screen reader output.</li>
+<li><strong>previous and next buttons:</strong> One can scroll the through the content in incremental steps using the previous and next buttons. It's important these are <code>&lt;button&gt;</code> elements with <code>type=&quot;button&quot;</code>. Their labels are provided using visually hidden text (the <code>gef-sr</code> class) because, unlike <code>aria-label</code>, it will be translated by browser translation extensions. Buttons that are not applicable (e.g. the previous button on page load) receive the <code>disabled</code> property. The button is removed from focus order and identified as disabled (or 'dimmed') in screen reader output.</li>
 <li><strong><code>gel-icon</code> SVGs:</strong> These must be the official <code>#gel-icon-previous</code> and <code>#gel-icon-next</code> icons from the <a href="http://bbc.github.io/gel-iconography/">GEL Iconography</a> set.</li>
 <li><strong><code>gef-carousel-scrollable</code>:</strong> This is the scrollable 'window' for the list of carousel content items (see <a href="#expected-layout"><strong>Expected layout</strong></a>)</li>
 <li><strong><code>gef-carousel-list</code>:</strong> The singular child element of <code>gef-carousel-scrollable</code> must be a <code>&lt;ul&gt;</code>, with each item as an <code>&lt;li&gt;</code>. List markup is identified as such in assistive technologies, and the items are enumerated. This lets screen reader users know they are met with a set of related content, and how much of it there is.</li>
@@ -171,7 +171,7 @@
   <span class="hljs-attribute">display</span>: flex;
 }
 </code></pre>
-<p>On some operating systems, the horizontal scrollbar is not visible by default, meaning the scrollable container lacks perceived affordance<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. It's possible to reveal the scrollbar in webkit browsers by giving them a custom styling:</p>
+<p>On some operating systems, the horizontal scrollbar is not visible by default, meaning the scrollable container lacks perceived affordance<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>. It's possible to reveal the scrollbar in webkit browsers by giving them a custom styling:</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gef-carousel-scrollable</span><span class="hljs-selector-pseudo">::-webkit-scrollbar</span> {
   <span class="hljs-attribute">height</span>: <span class="hljs-number">0.5rem</span>;
 }
@@ -211,16 +211,16 @@
   }
 });
 </code></pre>
-<p>This not only invokes the 'fading' effect described in <a href="#expected-layout"><strong>Expected layout</strong></a>, but also removed inert items from focus order and the accessibility tree<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. The upshot is that, like sighted mouse users, keyboard and screen reader users can only perceive and interact with items that are not inert.</p>
+<p>This not only invokes the 'fading' effect described in <a href="#expected-layout"><strong>Expected layout</strong></a>, but also removed inert items from focus order and the accessibility tree<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. The upshot is that, like sighted mouse users, keyboard and screen reader users can only perceive and interact with items that are not inert.</p>
 <p>Were the inert attribute not employed, a keyboard user could scroll to the end of a long set of items, only to find that the first item was still first in focus order. Pressing tab would scroll the container back to the beginning and progress would be lost.</p>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-inert-polyfill">
-              <h4 id="aside-info-inert-polyfill" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Inert polyfill</h4><div><p>The <a href="#reference-implementation"><strong>Reference implementation</strong></a> includes a small polyfill<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> for the <code>inert</code> attribute, increasing the reach of the behaviour it enables.</p>
+              <h4 id="aside-info-inert-polyfill" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Inert polyfill</h4><div><p>The <a href="#reference-implementation"><strong>Reference implementation</strong></a> includes a small polyfill<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> for the <code>inert</code> attribute, increasing the reach of the behaviour it enables.</p>
 </aside><h4 id="button-controls">Button controls</h4>
 <p>Keyboard users must scroll the content using the buttons. Each time a button is pressed, the scrollable container scrolls half of its own width (as measured on page load).</p>
 <pre class="hljs"><code><span class="hljs-keyword">var</span> scrollAmount = list.offsetWidth / <span class="hljs-number">2</span>;
 </code></pre>
-<p>Buttons that are not applicable (the previous button if the user is scrolled all the way left, or the next button if the user is scrolled all the way to the right) are <code>disabled</code>. This is made possible by listening to the <code>scroll</code> event, which necessitates debouncing<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> to address performance concerns.</p>
+<p>Buttons that are not applicable (the previous button if the user is scrolled all the way left, or the next button if the user is scrolled all the way to the right) are <code>disabled</code>. This is made possible by listening to the <code>scroll</code> event, which necessitates debouncing<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> to address performance concerns.</p>
 <pre class="hljs"><code><span class="hljs-keyword">var</span> debounced;
 scrollable.addEventListener(<span class="hljs-string">'scroll'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
   <span class="hljs-built_in">window</span>.clearTimeout(debounced);
@@ -229,7 +229,7 @@ scrollable.addEventListener(<span class="hljs-string">'scroll'</span>, <span cla
 </code></pre>
 <p>Buttons taking the <code>disabled</code> attribute are removed from focus order and identified as &quot;disabled&quot; or &quot;dimmed&quot; in screen reader output.</p>
 <h4 id="lazy-loading">Lazy loading</h4>
-<p>Although it is not provided as an intrinsic part of the <a href="#reference-implementation"><strong>Reference implementation</strong></a> to follow, it is recommended you use a lazy loading<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup> solution for images inside the carousel. Since the image containers for <a href="#link-todo"><strong>Card</strong></a> and <a href="#link-todo"><strong>Promo</strong></a> components have a fixed height, you do not need to address the scroll jumping issues associated with lazy loading.</p>
+<p>Although it is not provided as an intrinsic part of the <a href="#reference-implementation"><strong>Reference implementation</strong></a> to follow, it is recommended you use a lazy loading<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> solution for images inside the carousel. Since the image containers for <a href="#link-todo"><strong>Card</strong></a> and <a href="#link-todo"><strong>Promo</strong></a> components have a fixed height, you do not need to address the scroll jumping issues associated with lazy loading.</p>
 <h2 id="reference-implementation">Reference implementation</h2>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
@@ -241,232 +241,208 @@ title: Carousels
 
 <div style="margin-bottom: 1rem;">
   <div class="gef-carousel" role="group">
-    <div class="gef-carousel-buttons">
+    <div class="gef-carousel-buttons" hidden>
       <button class="gef-carousel-prev">
-        <span class="vh">previous</span>
-        <svg viewBox="0 0 20 20" width="20" height="20" focusable="false">
-          <polyline points="14 6, 6 10, 14 14"></polyline>
+        <span class="gef-sr">previous</span>
+        <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+          <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-previous"></use>
         </svg>
       </button>
       <button class="gef-carousel-next">
-        <span class="vh">next</span>
-        <svg viewBox="0 0 20 20" width="20" height="20" focusable="false">
-          <polyline points="6 6, 14 10, 6 14"></polyline>
+        <span class="gef-sr">next</span>
+        <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+          <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-next"></use>
         </svg>
       </button>
     </div>
     <div class="gef-carousel-scrollable">
       <ul class="gef-carousel-list">
         <li class="gef-promo">
+          <div class="gef-promo-image">
+            <img src="/gef-docs/static/images/placeholder.png" alt="">
+          </div>
           <div class="gef-promo-content">
-            <div class="gef-promo-headline">
-              <h3>
-                <a href="#link-0">Definitive supreme statements still stand</a>
-              </h3>
-            </div>
-            <div class="gef-promo-desc">
-              <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.</p>
-            </div>
+            <a class="gef-promo-headline" href="#link/to/content">
+              Definitive supreme statements still stand
+            </a>
+            <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica,
+              sport etc, litot Europa usa li sam vocabular.</p>
             <dl class="gef-metadata-strip">
               <div>
-                <dt class="vh">Published:</dt>
+                <dt class="gef-sr">Published:</dt>
                 <dd>
                   <span aria-hidden="true">1h</span>
-                  <span class="vh">1 hour ago</span>
+                  <span class="gef-sr">1 hour ago</span>
                 </dd>
               </div>
               <div>
-                <dt class="vh">From:</dt>
+                <dt class="gef-sr">From:</dt>
                 <dd>
                   <a href="https://www.bbc.co.uk/news/england/sussex">Sussex</a>
                 </dd>
               </div>
             </dl>
           </div>
-          <div class="gef-promo-image">
-            <img src="/gef-docs/static/images/placeholder/002_600x400.jpg"
-              alt="">
-          </div>
         </li>
         <li class="gef-promo">
+          <div class="gef-promo-image">
+            <img src="/gef-docs/static/images/placeholder.png" alt="">
+          </div>
           <div class="gef-promo-content">
-            <div class="gef-promo-headline">
-              <h3>
-                <a href="#link-1">Psychologists revise retroactive reports</a>
-              </h3>
-            </div>
-            <div class="gef-promo-desc">
-              <p>Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.</p>
-            </div>
+            <a class="gef-promo-headline" href="#link/to/content">
+              Psychologists revise retroactive reports
+            </a>
+            <p>Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.</p>
             <dl class="gef-metadata-strip">
               <div>
-                <dt class="vh">Published:</dt>
+                <dt class="gef-sr">Published:</dt>
                 <dd>
                   <span aria-hidden="true">1m</span>
-                  <span class="vh">1 minute ago</span>
+                  <span class="gef-sr">1 minute ago</span>
                 </dd>
               </div>
               <div>
-                <dt class="vh">Category:</dt>
+                <dt class="gef-sr">Category:</dt>
                 <dd>
                   <a href="https://www.bbc.co.uk/news/business">Business</a>
                 </dd>
               </div>
             </dl>
           </div>
-          <div class="gef-promo-image">
-            <img src="/gef-docs/static/images/placeholder/001_600x400.jpg" alt="">
-          </div>
         </li>
         <li class="gef-promo">
+          <div class="gef-promo-image">
+            <img src="/gef-docs/static/images/placeholder.png" alt="">
+          </div>
           <div class="gef-promo-content">
-            <div class="gef-promo-headline">
-              <h3>
-                <a href="#link-2">Mercury gains in galaxy</a>
-              </h3>
-            </div>
-            <div class="gef-promo-desc">
-              <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu commun paroles.</p>
-            </div>
+            <a class="gef-promo-headline" href="#link/to/content">
+              Mercury gains in galaxy
+            </a>
+            <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.
+              At solmen va esser necessi far uniform grammatica, pronunciation e plu commun paroles.</p>
             <dl class="gef-metadata-strip">
               <div>
-                <dt class="vh">Published:</dt>
+                <dt class="gef-sr">Published:</dt>
                 <dd>
                   <span aria-hidden="true">1m</span>
-                  <span class="vh">1 minute ago</span>
+                  <span class="gef-sr">1 minute ago</span>
                 </dd>
               </div>
               <div>
-                <dt class="vh">From:</dt>
+                <dt class="gef-sr">From:</dt>
                 <dd>
                   <a href="https://www.bbc.co.uk/news/world/africa">Africa</a>
                 </dd>
               </div>
             </dl>
           </div>
-          <div class="gef-promo-image">
-            <img src="/gef-docs/static/images/placeholder/003_600x400.jpg" alt="">
-          </div>
         </li>
         <li class="gef-promo">
+          <div class="gef-promo-image">
+            <img src="/gef-docs/static/images/placeholder.png" alt="">
+          </div>
           <div class="gef-promo-content">
-            <div class="gef-promo-headline">
-              <h3>
-                <a href="#link-3">Staff said to summarily 'suspend assaults'</a>
-              </h3>
-            </div>
-            <div class="gef-promo-desc">
-              <p>Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues.</p>
-            </div>
+            <a class="gef-promo-headline" href="#link/to/content">
+              Staff said to summarily 'suspend assaults'
+            </a>
+            <p>Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del
+              coalescent lingues.</p>
             <dl class="gef-metadata-strip">
               <div>
-                <dt class="vh">Published:</dt>
+                <dt class="gef-sr">Published:</dt>
                 <dd>
                   <span aria-hidden="true">12h</span>
-                  <span class="vh">12 hours ago</span>
+                  <span class="gef-sr">12 hours ago</span>
                 </dd>
               </div>
               <div>
-                <dt class="vh">From:</dt>
+                <dt class="gef-sr">From:</dt>
                 <dd>
                   <a href="https://www.bbc.co.uk/news/world/europe">Europe</a>
                 </dd>
               </div>
             </dl>
           </div>
-          <div class="gef-promo-image">
-            <img src="/gef-docs/static/images/placeholder/004_600x400.jpg" alt="">
-          </div>
         </li>
         <li class="gef-promo">
+          <div class="gef-promo-image">
+            <img src="/gef-docs/static/images/placeholder.png" alt="">
+          </div>
           <div class="gef-promo-content">
-            <div class="gef-promo-headline">
-              <h3>
-                <a href="#link-4">Engineers eye exploits</a>
-              </h3>
-            </div>
-            <div class="gef-promo-desc">
-              <p>Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental.</p>
-            </div>
+            <a class="gef-promo-headline" href="#link/to/content">
+              Engineers eye exploits
+            </a>
+            <p>Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam
+              simplic quam Occidental in fact, it va esser Occidental.</p>
             <dl class="gef-metadata-strip">
               <div>
-                <dt class="vh">Published:</dt>
+                <dt class="gef-sr">Published:</dt>
                 <dd>
                   <span aria-hidden="true">2h</span>
-                  <span class="vh">2 hours ago</span>
+                  <span class="gef-sr">2 hours ago</span>
                 </dd>
               </div>
               <div>
-                <dt class="vh">By:</dt>
+                <dt class="gef-sr">By:</dt>
                 <dd>
                   <a href="https://www.bbc.co.uk/news/newsbeat">Newsbeat</a>
                 </dd>
               </div>
             </dl>
           </div>
-          <div class="gef-promo-image">
-            <img src="/gef-docs/static/images/placeholder/005_600x400.jpg" alt="">
-          </div>
         </li>
         <li class="gef-promo">
+          <div class="gef-promo-image">
+            <img src="/gef-docs/static/images/placeholder.png" alt="">
+          </div>
           <div class="gef-promo-content">
-            <div class="gef-promo-headline">
-              <h3>
-                <a href="#link-5">Transmitter reaches realistic perspectives</a>
-              </h3>
-            </div>
-            <div class="gef-promo-desc">
-              <p>A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es.</p>
-            </div>
+            <a class="gef-promo-headline" href="#link/to/content">
+              Transmitter reaches realistic perspectives
+            </a>
+            <p>A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental
+              es.</p>
             <dl class="gef-metadata-strip">
               <div>
-                <dt class="vh">Published:</dt>
+                <dt class="gef-sr">Published:</dt>
                 <dd>
                   <span aria-hidden="true">6th Nov 2018</span>
-                  <span class="vh">6th November 2018</span>
+                  <span class="gef-sr">6th November 2018</span>
                 </dd>
               </div>
               <div>
-                <dt class="vh">From:</dt>
+                <dt class="gef-sr">From:</dt>
                 <dd>
                   <a href="https://www.bbc.co.uk/news/world/europe">Europe</a>
                 </dd>
               </div>
             </dl>
           </div>
-          <div class="gef-promo-image">
-            <img src="/gef-docs/static/images/placeholder/006_600x400.jpg"
-              alt="">
-          </div>
         </li>
         <li class="gef-promo">
+          <div class="gef-promo-image">
+            <img src="/gef-docs/static/images/placeholder.png" alt="">
+          </div>
           <div class="gef-promo-content">
-            <div class="gef-promo-headline">
-              <h3>
-                <a href="#link-6">Passengers point to potential differential</a>
-              </h3>
-            </div>
-            <div class="gef-promo-desc">
-              <p>At solmen va esser necessi far uniform grammatica, pronunciation e plu commun paroles. Ma quande lingues coalesce.</p>
-            </div>
+            <a class="gef-promo-headline" href="#link/to/content">
+              Passengers point to potential differential
+            </a>
+            <p>At solmen va esser necessi far uniform grammatica, pronunciation e plu commun paroles. Ma quande lingues
+              coalesce.</p>
             <dl class="gef-metadata-strip">
               <div>
-                <dt class="vh">Published:</dt>
+                <dt class="gef-sr">Published:</dt>
                 <dd>
                   <span aria-hidden="true">6th Nov 2018</span>
-                  <span class="vh">6th November 2018</span>
+                  <span class="gef-sr">6th November 2018</span>
                 </dd>
               </div>
               <div>
-                <dt class="vh">From:</dt>
+                <dt class="gef-sr">From:</dt>
                 <dd>
                   <a href="https://www.bbc.co.uk/news/world/europe">Europe</a>
                 </dd>
               </div>
             </dl>
-          </div>
-          <div class="gef-promo-image">
-            <img src="/gef-docs/static/images/placeholder/007_600x400.jpg" alt="">
           </div>
         </li>
       </ul>
@@ -475,9 +451,10 @@ title: Carousels
 </div>
 
 <script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function(event) {
-    gef.Carousel.init();
-    gef.Promo.init();
+  document.addEventListener('DOMContentLoaded', function (event) {
+    window.gef && gef.Carousel.init();
+    var carouselElem = document.querySelector('.gef-carousel');
+    var carousel = new gef.Carousel.constructor(carouselElem);
   });
 </script></div>
         
@@ -490,17 +467,15 @@ title: Carousels
 <ol class="footnotes-list">
 <li id="fn1" class="footnote-item"><p>&quot;Image Carousels: Getting Control of the Merry-Go-Round&quot; — <a href="http://usability.gov">usability.gov</a>, <a href="https://www.usability.gov/get-involved/blog/2013/04/image-carousels.html">https://www.usability.gov/get-involved/blog/2013/04/image-carousels.html</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn2" class="footnote-item"><p>Gist of the <code>vh</code> (visually hidden) class <a href="https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472">https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+<li id="fn2" class="footnote-item"><p>&quot;Perceived Affordances and Designing for Task Flow&quot; — Johnny Holland, <a href="http://johnnyholland.org/2010/04/perceived-affordances-and-designing-for-task-flow/">http://johnnyholland.org/2010/04/perceived-affordances-and-designing-for-task-flow/</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn3" class="footnote-item"><p>&quot;Perceived Affordances and Designing for Task Flow&quot; — Johnny Holland, <a href="http://johnnyholland.org/2010/04/perceived-affordances-and-designing-for-task-flow/">http://johnnyholland.org/2010/04/perceived-affordances-and-designing-for-task-flow/</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+<li id="fn3" class="footnote-item"><p>&quot;The Accessibility Tree&quot; — <a href="http://developers.google.com">developers.google.com</a>, <a href="https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree">https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn4" class="footnote-item"><p>&quot;The Accessibility Tree&quot; — <a href="http://developers.google.com">developers.google.com</a>, <a href="https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree">https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+<li id="fn4" class="footnote-item"><p>Inert polyfill on Github, <a href="https://github.com/GoogleChrome/inert-polyfill">https://github.com/GoogleChrome/inert-polyfill</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn5" class="footnote-item"><p>Inert polyfill on Github, <a href="https://github.com/GoogleChrome/inert-polyfill">https://github.com/GoogleChrome/inert-polyfill</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+<li id="fn5" class="footnote-item"><p>Throttling and Debouncing in JavaScript — <a href="http://Codeburst.io">Codeburst.io</a>, <a href="https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf">https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn6" class="footnote-item"><p>Throttling and Debouncing in JavaScript — <a href="http://Codeburst.io">Codeburst.io</a>, <a href="https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf">https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn7" class="footnote-item"><p>Lazy loading images using Intersection Observer — Dean Hume,  <a href="https://deanhume.com/lazy-loading-images-using-intersection-observer/">https://deanhume.com/lazy-loading-images-using-intersection-observer/</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+<li id="fn6" class="footnote-item"><p>Lazy loading images using Intersection Observer — Dean Hume,  <a href="https://deanhume.com/lazy-loading-images-using-intersection-observer/">https://deanhume.com/lazy-loading-images-using-intersection-observer/</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
