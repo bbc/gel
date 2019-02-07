@@ -118,7 +118,7 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
-    Note
+    The unique title for the Breakout
   <span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
   <span class="hljs-comment">&lt;!-- the content of the breakout; usually just a paragraph or two --&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
@@ -126,12 +126,12 @@
 <h3 id="notes">Notes</h3>
 <ul>
 <li><strong><code>&lt;aside&gt;</code>:</strong> The <code>&lt;aside&gt;</code> element is a sectioning element, and is identified as such (sometimes using the term 'complementary') in screen reader software. It is counted as a landmark<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> and included in screen readers' aggregated landmark menus, making it highly discoverable (JAWS opens a landmarks/regions menu with <kbd>Insert</kbd> + <kbd>Ctrl</kbd> + <kbd>R</kbd>)<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</li>
-<li><strong><code>aria-labelledby</code>:</strong> This property labels the <code>&lt;aside&gt;</code> by association to the heading's <code>id</code>. In aggregated landmark menus, this makes it possible to identify the type of <code>&lt;aside&gt;</code>. The label is announced along with the ('complementary') role when the user traverses into the <code>&lt;aside&gt;</code> element.</li>
+<li><strong><code>aria-labelledby</code>:</strong> This property labels the <code>&lt;aside&gt;</code> by association to the heading's <code>id</code>. In aggregated landmark menus, this makes it possible to identify the <strong>Breakout Box</strong> by its label. The label is announced along with the ('complementary') role when the user traverses into the <code>&lt;aside&gt;</code> element. It also labels the <code>&lt;aside&gt;</code> in landmark lists (see the previous point), so it should be unique — that is, not just <em>&quot;Note&quot;</em> or <em>&quot;Warning&quot;</em> in each case.</li>
 <li><strong><code>aria-hidden=&quot;true&quot;</code>:</strong> Breakouts should not be considered part of the parent document's main structure; their headings are for labeling and presentational purposes only. The <code>aria-hidden</code> attribute removes the heading from the document outline (and screen reader navigation) but does <em>not</em> silence the text node as an associated label.</li>
 </ul>
 
-            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-tip">
-              <h4 id="aside-info-tip" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Tip</h4><div><p>To associate <code>aria-labelledby</code> with the respective <code>id</code>, they must share a value and that value must be unique. In your templating system, you can create a unique string at the time of compilation using <code>Date()</code>:</p>
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-labeling-by-relationship">
+              <h4 id="aside-info-labeling-by-relationship" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Labeling by relationship</h4><div><p>To associate <code>aria-labelledby</code> with the respective <code>id</code>, they must share a value and that value must be unique. In your templating system, you can create a unique string at the time of compilation using <code>Date()</code>:</p>
 <pre class="hljs"><code><span class="hljs-keyword">const</span> unique = + <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(); <span class="hljs-comment">// e.g. 1540915290281</span>
 </code></pre>
 <p>An <code>id</code> that is not unique is considered a parsing error and, since it affects accessible naming associations here, would mean a failure under <strong>WCAG 4.1.1 Parsing</strong><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
@@ -144,7 +144,7 @@
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
               <h4 id="aside-alert-important" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
-</aside><p>The following implementation is a copy of the 'tip' provided in this document.</p>
+</aside><p>The following implementation is a copy of the <code>aria-labelledby</code> tip provided in this document.</p>
 
           <div class="gefdocs-demo"><!-- 
 title: Breakout Boxes
@@ -152,9 +152,12 @@ title: Breakout Boxes
 
 <div style="margin-bottom: 1rem;">
   <aside class="gef-breakout-box gef-breakout-box extra-padding" aria-labelledby="aside-1541071173689">
-    <h4 id="aside-1541071173689" aria-hidden="true"><svg class="gef-breakout-box__icon gel-icon gel-icon--text">
+    <h4 id="aside-1541071173689" aria-hidden="true">
+      <svg class="gef-breakout-box__icon gel-icon gel-icon--text">
         <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use>
-      </svg>Tip</h4>
+      </svg>
+      Labeling by relationship
+    </h4>
     <div>
       <p>To associate <code>aria-labelledby</code> with the respective <code>id</code>, they must share a value and
         that value must be unique. In your templating system, you can create a unique string at the time of compilation
