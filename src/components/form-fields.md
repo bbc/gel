@@ -15,7 +15,7 @@ The focus here is on web-based forms. For further guidance specific to mobile/na
 
 ## Recommended markup
 
-### Labelling
+### Labeling
 
 Any field's element needs to be associated programmatically with a label. This is achieved by making the label's <code>for</code> attribute and the input's <code>id</code> attribute share the same value.
 

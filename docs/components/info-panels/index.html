@@ -109,26 +109,8 @@
 
             <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="introduction">Introduction</h2>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<br>
-The <strong>Information panel</strong> borrows from both the Menu Button<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> and Dialog<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> ARIA authoring patterns. Most of the behaviour and semantics are in line with the Menu Button, but a close button is included like that of a dialog. Many of the accessibility features, including the management of focus between the button and panel support for closing the panel using the <kbd>Esc</kbd> key are present in both Menu Button and Dialog implementations.</p>
-<h1 id="as-the-gel-definition-attests-the-content-of-the-panel-is-not-strictly-prescribed-and-can-contain-a-combination-of-text-images-links-and-other-information-and-functionality-this-document-sets-out-the-information-panel-as-a-functional-interaction-mechanism-and-the-reference-implementation-only-contains-basic-example-content-the-share-tools-component-incorporates-sharing-functionality-in-an-information-panel">As the <a href="https://www.bbc.co.uk/gel/guidelines/information-panel">GEL definition attests</a>, the content of the panel is not strictly prescribed and can contain a combination of text, images, links, and other information and functionality. This document sets out the <strong>Information panel</strong> as a functional interaction mechanism, and the <a href="#reference-implementation">Reference implementation</a> only contains basic example content. The <a href="../share-tools"><strong>Share tools</strong> component</a> incorporates sharing functionality in an <strong>Information panel</strong></h1>
-<p>The information panel borrows from both the Menu Button<sup class="footnote-ref"><a href="#fn1" id="fnref1:1">[1:1]</a></sup> and Dialog<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2:1]</a></sup> ARIA authoring patterns. Most of the behaviour and semantics are in line with the Menu Button, but a close button is included like that of a dialog. Many of the accessibility features, including the management of focus between the button and panel, and support for closing the panel using the <kbd>Esc</kbd> key, are present in both Menu Button and Dialog implementations.</p>
-<p>As the <a href="https://www.bbc.co.uk/gel/guidelines/information-panel">GEL guideline for Information Panels explains</a>, the content of the panel is not strictly prescribed and can contain any combination of text, images, links, and other information and functionality. This document sets out the <strong>Information panel</strong> as a functional interaction mechanism, and the <a href="#reference-implementation">Reference implementation</a> only contains basic example content.</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>master</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
+<p>The <strong>Information panel</strong> borrows from both the Menu Button<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> and Dialog<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> ARIA authoring patterns. Most of the behaviour and semantics are in line with the Menu Button, but a close button is included like that of a dialog. Many of the accessibility features, including the management of focus between the button and panel support for closing the panel using the <kbd>Esc</kbd> key are present in both Menu Button and Dialog implementations.</p>
+<p>As the <a href="https://www.bbc.co.uk/gel/guidelines/information-panel">GEL definition attests</a>, the content of the panel is not strictly prescribed and can contain a combination of text, images, links, and other information and functionality. This document sets out the <strong>Information panel</strong> as a functional interaction mechanism, and the <a href="#reference-implementation">Reference implementation</a> only contains basic example content. The <a href="../share-tools"><strong>Share tools</strong> component</a> incorporates sharing functionality in an <strong>Information panel</strong></p>
 <h2 id="recommended-markup">Recommended markup</h2>
 <p>The following structure is expected, with notes to follow.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"info-panel-example gef-infopanel"</span>&gt;</span>
@@ -146,30 +128,9 @@ The <strong>Information panel</strong> borrows from both the Menu Button<sup cla
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
 <ul>
 <li><strong><code>class=&quot;gef-button&quot;</code>:</strong> A standard <code>&lt;button&gt;</code> element takes the <code>aria-haspopup=&quot;true&quot;</code> property and <code>aria-expanded=&quot;false&quot;</code> state. The former indicates that the button secretes a popup (panel) and the later (set to <code>false</code> initially) indicates whether that popup is in an expanded or collapsed state.</li>
-<li><strong><code>class=&quot;gef-infopanel-panel&quot;</code>:</strong> The panel itself takes <code>role=&quot;group&quot;</code> to indicate it's contents are related. A standard Menu Button<sup class="footnote-ref"><a href="#fn1" id="fnref1:2">[1:2]</a></sup> would expect <code>role=&quot;menu&quot;</code> here, but that would prescribe the presence of menu items (<code>role=&quot;menuitem&quot;</code> etc.). Because <strong>Information panel</strong> contents diverge between instances, a more generic parent role is used.<br>
-=======</li>
-<li><strong><code>class=&quot;gef-button&quot;</code>:</strong> A standard <code>&lt;button&gt;</code> element takes the <code>aria-haspopup=&quot;true&quot;</code> property and <code>aria-expanded=&quot;false&quot;</code> state. The former indicates that the button secretes a popup (panel) and the latter (set to <code>false</code> initially) indicates whether that popup is in an expanded or collapsed state.</li>
-<li><strong><code>class=&quot;gef-infopanel-panel&quot;</code>:</strong> The panel itself takes <code>role=&quot;group&quot;</code> to indicate it's contents are related. A standard Menu Button<sup class="footnote-ref"><a href="#fn1" id="fnref1:3">[1:3]</a></sup> would expect <code>role=&quot;menu&quot;</code> here, but that would prescribe the presence of menu items (<code>role=&quot;menuitem&quot;</code> etc.). Because Information panel contents can be diverse, a more generic parent role is used.</li>
-</ul>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>master</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<ul>
+<li><strong><code>class=&quot;gef-infopanel-panel&quot;</code>:</strong> The panel itself takes <code>role=&quot;group&quot;</code> to indicate it's contents are related. A standard Menu Button<sup class="footnote-ref"><a href="#fn1" id="fnref1:1">[1:1]</a></sup> would expect <code>role=&quot;menu&quot;</code> here, but that would prescribe the presence of menu items (<code>role=&quot;menuitem&quot;</code> etc.). Because <strong>Information panel</strong> contents diverge between instances, a more generic parent role is used.</li>
 <li><strong><code>aria-labelledby</code>:</strong> This associates the panel with its title's <code>id</code> (<code>id=&quot;unique-ref&quot;</code> in this example). This ensures the title is read out as the screen reader enters the panel.</li>
 <li><strong><code>gef-infopanel-close-button</code>:</strong> The close button has a visually hidden (but available to assistive technologies) text label of <em>&quot;close&quot;</em> to supplement the visible 'X' icon. The visually hidden span (achieved with <code>class=&quot;gef-sr&quot;</code>) is preferred to using <code>aria-label</code> since <code>aria-label</code> is not translated by Google's or Microsoft's translation services<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</li>
 <li><strong><code>focusable=&quot;false&quot;</code> and <code>aria-hidden=&quot;true&quot;</code>:</strong> Each icon, taken from the <a href="http://bbc.github.io/gel-iconography/">Gel Iconography suite</a> must take these attributes to ensure the icon is not in focus order and is not erroneously identified by assistive technologies.</li>
@@ -282,7 +243,7 @@ The <strong>Information panel</strong> borrows from both the Menu Button<sup cla
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-avoid-keyboard-traps">
               <h4 id="aside-alert-avoid-keyboard-traps" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Avoid keyboard traps</h4><div><p>In order to achieve modality, dialog implementations often 'trap' focus within them. Even in a dialog, this approach to focusing the user's attention is not recommended, since it makes it difficult to leave the page. In fact, it is a failure under WCAG2.1 2.1.2 Keyboard Trap<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> and use of <code>inert</code> is preferred (see the <a href="../action-dialogs"><strong>Action dialog</strong></a>).</p>
-<p>The <strong>Info panel</strong>, like the standard Menu Button<sup class="footnote-ref"><a href="#fn1" id="fnref1:4">[1:4]</a></sup> pattern, does not need to resort to a keyboard trap or <code>inert</code>, especially since its designated content is <em>&quot;not essential information&quot;</em>. Instead, the keyboard user is afforded a number of methods for dismissing the panel:</p>
+<p>The <strong>Info panel</strong>, like the standard Menu Button<sup class="footnote-ref"><a href="#fn1" id="fnref1:2">[1:2]</a></sup> pattern, does not need to resort to a keyboard trap or <code>inert</code>, especially since its designated content is <em>&quot;not essential information&quot;</em>. Instead, the keyboard user is afforded a number of methods for dismissing the panel:</p>
 <ol>
 <li>Re-clicking the invoking button</li>
 <li>Pressing <kbd>Esc</kbd></li>
@@ -409,9 +370,9 @@ title: Info panels
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>ARIA Authoring Practices: Menu button — W3C, <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#menubutton">https://www.w3.org/TR/wai-aria-practices-1.1/#menubutton</a> <a href="#fnref1" class="footnote-backref">↩︎</a> <a href="#fnref1:1" class="footnote-backref">↩︎</a> <a href="#fnref1:2" class="footnote-backref">↩︎</a> <a href="#fnref1:3" class="footnote-backref">↩︎</a> <a href="#fnref1:4" class="footnote-backref">↩︎</a></p>
+<li id="fn1" class="footnote-item"><p>ARIA Authoring Practices: Menu button — W3C, <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#menubutton">https://www.w3.org/TR/wai-aria-practices-1.1/#menubutton</a> <a href="#fnref1" class="footnote-backref">↩︎</a> <a href="#fnref1:1" class="footnote-backref">↩︎</a> <a href="#fnref1:2" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn2" class="footnote-item"><p>ARIA Authoring Practices: Dialog — W3C, <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal">https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal</a> <a href="#fnref2" class="footnote-backref">↩︎</a> <a href="#fnref2:1" class="footnote-backref">↩︎</a></p>
+<li id="fn2" class="footnote-item"><p>ARIA Authoring Practices: Dialog — W3C, <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal">https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
 <li id="fn3" class="footnote-item"><p>ARIA-label Is A Xenophobe — <a href="http://heydonworks.com">heydonworks.com</a>, <a href="http://www.heydonworks.com/article/aria-label-is-a-xenophobe">http://www.heydonworks.com/article/aria-label-is-a-xenophobe</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
 </li>

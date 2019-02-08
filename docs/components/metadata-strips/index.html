@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/gef-docs/static/images/favicon.ico" type="image/x-icon">
 
-    <title>GEF | Metadata Strips</title>
+    <title>GEF | Metadata strips</title>
 
     <script src="/gef-docs/static/js/site.js"></script>
 
@@ -81,7 +81,7 @@
             </div>
 
             <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
-                <h1 class="gefdocs-header__title">Metadata Strips</h1>
+                <h1 class="gefdocs-header__title">Metadata strips</h1>
                 <p class="gefdocs-header__summary gel-great-primer">The metadata strip defines key metadata for an item of content, in a compact form</p>
             </div>
 
@@ -94,7 +94,7 @@
                     <dt>Status:</dt>
                     <dd>Draft</dd>
                     <dt>Accessibility:</dt>
-                    <dd>Pending</dd>
+                    <dd>Pass</dd>
                 </dl>
             </div>
         </div>
@@ -109,11 +109,11 @@
 
             <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="introduction">Introduction</h2>
-<p>The <strong>Metadata Strip</strong> is a simple component to be provided as part of content such as a <a href="../promos">Promo</a>. It defines key information attributed to the content like its publish date, and derivation.</p>
+<p>The <strong>Metadata strip</strong> is a simple component to be provided as part of content such as a <a href="../promos">Promo</a>. It defines key information attributed to the content like its publish date, and derivation.</p>
 <h2 id="recommended-markup">Recommended markup</h2>
 
-            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-note">
-              <h4 id="aside-info-note" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Note</h4><div><p>The following example assumes the content is a <a href="../promos">Promo</a> and includes just publishing and derivation information. Other definitions may be applicable elsewhere.</p>
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-promo-implementation">
+              <h4 id="aside-info-promo-implementation" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Promo implementation</h4><div><p>The following example assumes the content is a <a href="../promos">Promo</a> and includes just publishing and derivation information. Other definitions may be applicable elsewhere.</p>
 </aside><pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">dl</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-metadata-strip"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">dt</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sr"</span>&gt;</span>Published:<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
@@ -169,11 +169,9 @@
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/link/to/category"</span>&gt;</span>
   UK
   <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sr"</span>&gt;</span>(opens new tab)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"assets/svg/gel-icons-core-set.svg#gel-icon-external-link"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>  
+  <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"assets/svg/gel-icons-core-set.svg#gel-icon-external-link"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 </code></pre>
 <h2 id="reference-implementation">Reference implementation</h2>
