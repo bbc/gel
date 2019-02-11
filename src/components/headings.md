@@ -3,14 +3,14 @@ title: Headings
 summary: Headings provide a semantic and visual hierarchical structure to a document
 version: 0.1.0
 published: false
-accessibility: false
+accessibility: true
 ---
 
 ## Introduction
 
 Buttons, links, and form elements all have labels. Labels tell users what these elements are for. Headings are also labels, and describe sections of the document. A correct use of heading elements is especially important when supporting screen reader users[^1] because headings together create a table of contents, navigable by a variety of shortcuts and other means.
 
-## Expected markup
+## Recommended markup
 
 ### The `<h1>`
 
@@ -49,7 +49,7 @@ As in the above example, sibling/equivalent sections should have the same headin
 
 Whether or not subheadings are used explicitly with sectioning elements[^5], they should be the first element that contains content within the section.
 
-#### Bad example
+#### <mark is="bad"> Bad example
 
 In this version, a screen reader user navigating by heading (for example, by using the <kbd>H</kbd> key with NVDA) would be skipped past the "Breaking" identifier and miss it.
 
@@ -63,7 +63,7 @@ In this version, a screen reader user navigating by heading (for example, by usi
 </section>
 ```
 
-#### Good example
+#### <mark is="good"> Good example
 
 In the adjusted version, "Breaking" is made part of the heading and will be read out along with it.
 
@@ -79,7 +79,7 @@ In the adjusted version, "Breaking" is made part of the heading and will be read
 </section>
 ```
 
-::: alert Important
+::: alert The document outline algorithm is not implemented
 Part of the intention of sectioning elements (like `<section>` and `<article>`) was to automate heading levels as perceived by assistive technologies. That is, an `<h1>` for a  `<section>` inside `<body>` would be perceived as an `<h2>`. However, the algorithm was never implemented by any browser vendors[^6]. You still need to use explicit (h1—h6) according to your sections' nesting depth.
 :::
 
@@ -101,7 +101,7 @@ Many screen readers aggregate headings into a table of contents. For example, JA
 <h2>A delicious cookie recipe</h2>
 ```
 
-## Expected layout
+## Recommended layout
 
 To establish a logical visual hierarchy, heading font sizes should decrease along with depth. An `<h1>` should have the greatest `font-size`, and an `<h6>` the smallest. There are other means to differentiate heading levels but font size is the most conventional, and therefore the most widely understood.
 
@@ -130,7 +130,14 @@ In the above example, classes are named after heading levels to match their size
 </blockquote>
 ```
 
-## Expected behaviour
+::: alert Do not visually hide headings
+Some authors have a habit of including headings in the page structure _solely_ for screen reader users, hiding those headings visually. This is to be avoided for two reasons:
+
+1. Not all screen reader users are blind. Navigating to an invisible heading is likely to cause confusion for sighted screen reader users
+2. All users, sighted or otherwise, benefit from explicit labels for the sections of the document or application.
+:::
+
+## Recommended behaviour
 
 Where headings adopt `id`s and are used as document fragments to be navigated between using same-page links, they should take `tabindex="-1"`. This forces browsers that would not otherwise update their sequential focus starting point[^4] to move keyboard focus to the destination heading and section.
 

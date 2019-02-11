@@ -103,7 +103,7 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#expected-behaviour">Expected behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
@@ -111,7 +111,7 @@
                 <h2 id="introduction">Introduction</h2>
 <p>Research indicates that as little as 0.25% of visitors use social media buttons <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>. However, there is evidence that mobile users especially find them a source of convenience when it comes to sharing content.</p>
 <p>The construction of GEL's <strong>Share tools</strong> must, therefore, be both unobtrusive and ergonomic. The implementation to follow is easy to avoid and dismiss, but not difficult to locate or operate.</p>
-<h2 id="expected-markup">Expected markup</h2>
+<h2 id="recommended-markup">Recommended markup</h2>
 <p>Omitting the individual social media buttons for the time being, let's explore the outer structure:</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sharetools"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"gef-sharetools-label"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"gef-sharetools-label"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>Share this<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
@@ -144,7 +144,7 @@
 <li><strong><code>focusable=&quot;false&quot;</code> and <code>aria-hidden=&quot;true&quot;</code>:</strong> The SVG icon is a visual cue only, and should not be identified in assistive technologies (<code>aria-hidden=&quot;true&quot;</code>) or focusable by keyboard (<code>focusable=&quot;false&quot;</code>; an issue in some versions of Microsoft browsers<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>).</li>
 </ul>
 <h3 id="information-panel">Information panel</h3>
-<p>As set out in <a href="https://www.bbc.co.uk/gel/guidelines/share-tools">GEL's <strong>Share tools</strong> documentation</a>, the final item in the list of tools secrete an <a href="../info-panels"><strong>Information panel</strong></a>. This contains a <code>class=&quot;gef-sharetools-complete&quot;</code> element comprising a complete set of social media buttons (including those not featured outside the infopanel) and the option to copy the host page's link from an input element.</p>
+<p>As set out in <a href="https://www.bbc.co.uk/gel/guidelines/share-tools">GEL's <strong>Share tools</strong> documentation</a>, the final item in the list of tools secrete an <a href="../info-panels"><strong>Information panel</strong></a>. This contains a <code>class=&quot;gef-sharetools-complete&quot;</code> element comprising a complete set of social media buttons (including those not featured outside the <strong>Information panel</strong>) and the option to copy the host page's link from an input element.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sharetools-complete"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sharetools-options"</span>&gt;</span>
     <span class="hljs-comment">&lt;!-- all sharing buttons --&gt;</span>
@@ -159,7 +159,7 @@
 <li><strong><code>for</code> and <code>id</code>:</strong> The <em>&quot;Copy this link&quot;</em> label's <code>for</code> must match that of the input's <code>id</code> to associate it with the input. All <code>id</code>s must be unique; if there is more than one <strong>Share tools</strong> component on the page, make sure each instance's <code>id</code>s differ.</li>
 <li><strong><code>readonly</code>:</strong> The <code>readonly</code> attribute prevents the input's value being (accidentally) altered. It does not prevent the user from selecting and copying the value.</li>
 </ul>
-<h2 id="expected-layout">Expected layout</h2>
+<h2 id="recommended-layout">Recommended layout</h2>
 <h3 id="the-horizontal-list">The horizontal list</h3>
 <p>The <code>&lt;ul&gt;</code> of tools appears directly after the heading (<code>role=&quot;presentation&quot;</code>) element. Where Flexbox is supported, the items receive a margin on all sides, meaning there is a visible gap between items however they wrap. The excess margin is removed using a negative margin on the parent <code>&lt;ul&gt;</code>. This ensures the subcomponent does not show an indentation on either side.</p>
 <pre class="hljs"><code>@<span class="hljs-keyword">supports</span> (display: flex) {
@@ -179,13 +179,13 @@
 <p>The skip link (<em>&quot;Skip sharing&quot;</em>) takes the classes <code>gef-sr</code> and <code>gef-sr__focusable</code>. The first hides the link visually, but does not remove it from focus order. The second ensures the link appears <em>when</em> it is focused. Only keyboard users (including screen reader users) will be aware of the link.</p>
 <h3 id="the-information-panel">The Information panel</h3>
 <p>The expected layout of the <strong>Information panel</strong> is documented with the <a href="../info-panel"><strong>Information panel</strong> component</a>.</p>
-<h2 id="expected-behaviour">Expected behaviour</h2>
+<h2 id="recommended-behaviour">Recommended behaviour</h2>
 <p><strong>Share tools</strong> consists of a list of external links, which open social media platforms' respective pages in new tabs. As described in <a href="#expected-markup">Expected markup</a>, screen reader users are forewarned about this change in context by each link's visually hidden label being appended with <em>&quot;external&quot;</em>.</p>
 <p>Keyboard users (including screen reader users) traversing the page will first encounter the skip link (reading <em>&quot;Skip sharing&quot;</em> in the reference implementation). This link will be revealed visually upon being focused. Users wishing to bypass the <strong>Share tools</strong> can activate the link. Screen reader users will hear <em>&quot;End of sharing tools&quot;</em> as the target element is focused. Sighted keyboard users will see the focused element appear, including the focus style. From there, the user can continue down the page, focusing the remainder of interactive elements sequentially.</p>
 <h3 id="the-link-input">The link input</h3>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-information-panel-behaviour">
-              <h4 id="aside-info-information-panel-behaviour" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg><strong>Information</strong> panel behaviour</h4><div><p>The interaction behaviour of the <strong>Information panel</strong> is covered in the <a href="../info-panel">Information panel documentation</a>.</p>
+              <h4 id="aside-info-information-panel-behaviour" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Information panel behaviour</h4><div><p>The interaction behaviour of the <strong>Information panel</strong> is covered in the <a href="../info-panel">Information panel documentation</a>.</p>
 </aside><p>The experience of copying the link from the <code>class=&quot;gef-sharetools-link-input&quot;</code> element is aided slightly by selecting the input's value and copying it to the clipboard on focus. The script for this behaviour is embedded in the demonstration page:</p>
 <pre class="hljs"><code><span class="hljs-keyword">var</span> copyLink = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.gef-sharetools-link-input'</span>);
 copyLink.addEventListener(<span class="hljs-string">'focus'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{

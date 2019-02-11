@@ -82,7 +82,7 @@
 
             <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
                 <h1 class="gefdocs-header__title">Pockets</h1>
-                <p class="gefdocs-header__summary gel-great-primer">The pocket pattern allows the user to reveal content at their discretion</p>
+                <p class="gefdocs-header__summary gel-great-primer">The Pocket pattern allows the user to reveal longform content at their discretion</p>
             </div>
 
             <div class="gel-layout__item gel-1/5@l">
@@ -94,7 +94,7 @@
                     <dt>Status:</dt>
                     <dd>Draft</dd>
                     <dt>Accessibility:</dt>
-                    <dd>Pending</dd>
+                    <dd>Pass</dd>
                 </dl>
             </div>
         </div>
@@ -111,6 +111,7 @@
                 <h2 id="introduction">Introduction</h2>
 <p>The <strong>Pocket</strong> component contains the page's main content in a truncated form. The purpose of this is to not overwhelm the user with content upon first arriving at the page. With the content shortened it is easier to see (and reach by keyboard or screen reader-based navigation) the functionality at the foot of the page.</p>
 <p>A 'Show more' button at the foot of the <strong>Pocket</strong> allows the reader to unveil the obscured content. Importantly, when the unveiling takes place, a cue to continue reading is inserted between the last item of initial/preview content and the first of the unveiled content. This ensures the user does not lose their place.</p>
+<p>Note that, although the patterns are similar, the <strong>Pocket</strong> differs from the <a href="../load-more"><strong>Load more</strong></a> pattern in that it simply obscures content, rather than deferring the loading of content. The <strong>Pocket</strong> should be implemented without reliance on XHR.</p>
 <h2 id="recommended-markup">Recommended markup</h2>
 <p>The markup is quite simple, since the <a href="#reference-implementation">Reference implementation</a> uses progressive enhancement, and only adds the button functionality where JavaScript runs. Just two nested wrapping elements are needed.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-pocket"</span>&gt;</span>
@@ -179,7 +180,7 @@
 </code></pre>
 <p>Since <code>inert</code> hides items from assistive technologies like screen readers and makes them unfocusable by keyboard, <code>IntersectionObserver</code> creates a parity between the experience of sighted mouse users and other kinds of user. The content is hidden accessibly, until unveiled, and the 'Show more' button is the first tab stop after the last of the items above it.</p>
 <h3 id="switching-state">Switching state</h3>
-<p>When the 'Show more' button is pressed, the content is expanded. An <em>&quot;Continue reading...&quot;</em> element is injected between the last of the preview/initial content and the first of the unveiled content. This element is focused, meaning keyboard dependent users are relocated to the correct position in the content to continue reading. The <a href="#reference-implementation">Reference implementation</a> lets you choose your own text to override <em>&quot;Continued below...&quot;</em> if so desired.</p>
+<p>When the 'Show more' button is pressed, the content is expanded. A <em>&quot;Continue reading...&quot;</em> element is injected between the last of the preview/initial content and the first of the unveiled content. This element is focused, meaning keyboard dependent users are relocated to the correct position in the content to continue reading. The <a href="#reference-implementation">Reference implementation</a> lets you choose your own text to override <em>&quot;Continued below...&quot;</em> if so desired.</p>
 <pre class="hljs"><code>self.constructor.prototype.showMore = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">this</span>.shown = <span class="hljs-literal">true</span>;
   <span class="hljs-keyword">this</span>.next = <span class="hljs-keyword">this</span>.truncated.querySelector(<span class="hljs-string">'[inert]'</span>).previousElementSibling;
@@ -190,8 +191,8 @@
 }
 </code></pre>
 
-            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-previouselementsibling">
-              <h4 id="aside-info-previouselementsibling" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg><code>previousElementSibling</code></h4><div><p>Instead of placing the <em>&quot;Continue reading&quot;</em> element directly before the first of the originally hidden elements, it goes one element before that. This addresses a quirk with <code>isIntersecting</code> and makes browser behaviour more consistent.</p>
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-the-previous-element">
+              <h4 id="aside-info-the-previous-element" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>The previous element</h4><div><p>Instead of placing the <em>&quot;Continue reading&quot;</em> element directly before the first of the originally hidden elements, it goes one element before that. This addresses a quirk with <code>isIntersecting</code> and makes browser behaviour more consistent.</p>
 </aside><p>In this state, the 'Show more' button now reads 'Show less', and pressing it switches the <strong>Pocket</strong> back into its initial truncated state. In this case, focus is not moved anywhere. It remains on the button. The screen reader user can browse back into just the preview content from this point, or continue down into the footer.</p>
 <h2 id="reference-implementation">Reference implementation</h2>
 
