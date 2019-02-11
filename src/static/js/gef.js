@@ -553,8 +553,10 @@
   }
 
   self.constructor = function (elem) {
+    // Add JS class for upgrading styles
     elem.classList.add('gef-masthead-with-js');
 
+    // Save an object of all submenus
     var links = elem.querySelector('.gef-masthead-links');
     var menus = [
       {
@@ -568,7 +570,6 @@
     ];
 
     menus.forEach(function (menu) {
-      menu.target.tabIndex = -1;
       menu.first = menu.target.querySelector('a[href], button:not([disabled]), input');
       if (!menu.first) {
         menu.first = menu.target.querySelector('h2, h3, h4');

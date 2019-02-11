@@ -3,7 +3,7 @@ title: Tabs
 summary: Tabs make it easy to view and navigate stacked panels of related content. 
 version: 0.1.0
 published: false
-accessibility: false
+accessibility: true
 linkback: https://www.bbc.co.uk/gel/guidelines/tabs
 ---
 
@@ -46,10 +46,6 @@ The GEL tabs implementation diverges from the ARIA Authoring Practices specifica
   </section>
 </div>
 ```
-
-::: info Progressive enhancement
-The [**Reference implementation**](#reference-implementation) to follow is based progressive enhancement, and the tab ARIA semantics and relationships are created using JavaScript. In the absence of JavaScript, the interface acts as a basic table of contents for a set of document fragments.
-:::
 
 ### Notes
 

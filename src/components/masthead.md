@@ -1,21 +1,21 @@
 ---
 title: Masthead
-summary: The masthead comprises the global navigation and a banner for the local site
+summary: The Masthead comprises the global navigation and a banner for the local site
 version: 0.1.0
 published: false
-accessibility: false
+accessibility: true
 linkback: https://www.bbc.co.uk/gel/guidelines/masthead
 ---
 
 ## Introduction
 
-The masthead is an essential component for each of the pages of any BBC site. In order to be considered robust, it needs to work under a number of different circumstances:
+The **Masthead** is an essential component for each of the pages of any BBC site. In order to be considered robust, it needs to work under a number of different circumstances:
 
 1. **No JavaScript or Flexbox:** The functionality must be available to users whose browsers are not running JavaScript and do not support CSS Flexbox.
 2. **JavaScript but no Flexbox:** The functionality must be available to users whose browsers _are_ running JavaScript but for whom Flexbox is not supported.
 3. **JavaScript but no `IntersectionObserver`:** The `IntersectionObserver` API is the most efficient way to allot a suitable number of promoted navigation links within the available space. These links must still be available where the browser does not support `IntersectionObserver`.
 
-A number of responsive design and progressive enhancement techniques are employed to make the masthead as inclusive as possible.
+A number of responsive design and progressive enhancement techniques are employed to make the **Masthead** as inclusive as possible.
 
 ## Recommended markup
 

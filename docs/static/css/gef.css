@@ -952,14 +952,19 @@ span.gef-nowrap {
   border-bottom: 1px solid #ccc;
   position: relative; }
 
-.gef-masthead-close-button {
-  font-size: 1.5rem;
+.gef-masthead .gef-masthead-close-button {
+  font-size: 1.25rem;
   border: 0;
   padding: 0;
   background-color: transparent;
   position: absolute;
   top: 0.75rem;
-  right: 0.75rem; }
+  right: 0.75rem;
+  height: auto; }
+
+.gef-masthead .gef-masthead-close-button:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px; }
 
 .gef-masthead-more-menu {
   border-bottom: 1px solid #ccc;
@@ -988,6 +993,9 @@ span.gef-nowrap {
 .gef-masthead-bar a:focus {
   outline: none;
   border-color: #404040; }
+
+.gef-masthead [tabindex="-1"]:focus {
+  outline: none; }
 
 .gef-masthead-banner {
   padding: 1.25rem 0.75rem;
