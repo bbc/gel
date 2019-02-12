@@ -56,7 +56,7 @@ The markup is elided for brevity. The `<li>` elements represent the containers f
 * **previous and next buttons:** One can scroll the through the content in incremental steps using the previous and next buttons. It's important these are `<button>` elements with `type="button"`. Their labels are provided using visually hidden text (the `gef-sr` class) because, unlike `aria-label`, it will be translated by browser translation extensions. Buttons that are not applicable (e.g. the previous button on page load) receive the `disabled` property. The button is removed from focus order and identified as disabled (or 'dimmed') in screen reader output.
 * **`hidden`:** The buttons are hidden by default because they do not work in the absence of JavaScript. They are revealed when the JavaScript runs.
 * **`gel-icon` SVGs:** These must be the official `#gel-icon-previous` and `#gel-icon-next` icons from the [GEL Iconography](http://bbc.github.io/gel-iconography/) set. They have `aria-hidden="true"` and `scrollable="flase"` to hide them from assistive technologies and remove them from focus order.
-* **`gef-carousel-scrollable`:** This is the scrollable 'window' for the list of carousel content items (see [Recommended layout](#expected-layout))
+* **`gef-carousel-scrollable`:** This is the scrollable 'window' for the list of carousel content items (see [Recommended layout](#recommended-layout))
 * **`gef-carousel-list`:** The singular child element of `gef-carousel-scrollable` must be a `<ul>`, with each item as an `<li>`. List markup is identified as such in assistive technologies, and the items are enumerated. This lets screen reader users know they are met with a set of related content, and how much of it there is.
 
 ## Recommended layout
@@ -162,7 +162,7 @@ Array.prototype.forEach.call(items, function (item) {
 });
 ```
 
-This not only invokes the 'fading' effect described in [**Recommended layout**](#expected-layout), but also removes inert items from focus order and the accessibility tree[^3]. The upshot is that, like sighted mouse users, keyboard and screen reader users can only perceive and interact with items that are not inert. 
+This not only invokes the 'fading' effect described in [**Recommended layout**](#recommended-layout), but also removes inert items from focus order and the accessibility tree[^3]. The upshot is that, like sighted mouse users, keyboard and screen reader users can only perceive and interact with items that are not inert. 
 
 Were the inert attribute not employed, a keyboard user could scroll to the end of a long set of items, only to find that the first (currently obscured) item was still first in focus order. Pressing tab would scroll the container back to the beginning and progress would be lost. 
 
