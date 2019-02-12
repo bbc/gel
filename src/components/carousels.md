@@ -192,7 +192,7 @@ Buttons taking the `disabled` attribute are removed from focus order and identif
 
 ### Lazy loading
 
-Although it is not provided as an intrinsic part of the [**Reference implementation**](#reference-implementation) to follow, it is recommended you use a lazy loading[^6] solution for images inside the carousel. Since the image containers for [**Card**](../Cards) and [**Promo**](../Promos) components have a fixed height, you do not need to address the vertical scroll jumping issues associated with lazy loading.
+Although it is not provided as an intrinsic part of the [**Reference implementation**](#reference-implementation) to follow, it is recommended you use a lazy loading[^6] solution for images inside the carousel. Since the image containers for [**Card**](../cards) and [**Promo**](../promos) components have a fixed height, you do not need to address the vertical scroll jumping issues associated with lazy loading.
 
 ## Reference implementation
 
