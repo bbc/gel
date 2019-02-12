@@ -1,6 +1,6 @@
 ---
 title: Carousels
-summary: A carousel is a great way to view lots of content in a limited amount of vertical space. It presents a window to view some of a row of content, while indicating there is more out of view that can be scrolled to.
+summary: A Carousel is a way to browse lots of content in a limited amount of vertical space, by scrolling a window onto that content
 version: 0.1.0
 published: false
 accessibility: false
@@ -9,34 +9,30 @@ linkback: https://www.bbc.co.uk/gel/guidelines/carousel
 
 ## Introduction
 
-The carousel component is a component for browsing sets of thematically similar content. It must be implemented so that it can be operated by mouse, keyboard, and touch. 
+The **Carousel** component is a component for browsing sets of thematically similar content. It must be implemented so that it can be operated by mouse, keyboard, and touch. 
 
-Importantly, unlike some carousel implementations, the content does not scroll automatically[^1]: the user is entirely in control of which carousel items they can see and interact with at any one time.
+Importantly, unlike some **Carousel** implementations, the content does not scroll automatically[^1]: the user is entirely in control of which **Carousel** items they can see and interact with at any one time.
 
-### Expected markup
+### Recommended markup
 
 ::: info Code is elided
-The markup is elided for brevity. The `<li>` elements represent the containers for the content items, such as [**Cards**](#link-todo) or [**Promos**](#link-todo).
+The markup is elided for brevity. The `<li>` elements represent the containers for the content items, such as [**Cards**](../cards) or [**Promos**](../promos).
 :::
 
 ```html
 <div class="gef-carousel" role="group">
-  <div class="gef-carousel-buttons">
-    <button class="gef-carousel-prev" type="button" disabled>
-      <span class="vh">previous</span>
-      <span class="gel-icon">
-        <svg>
-          <use xlink:href="#gel-icon-previous"></use>
-        </svg>
-      </span>
+  <div class="gef-carousel-buttons" hidden>
+    <button class="gef-carousel-prev" type="button">
+      <span class="gef-sr">previous</span>
+      <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+        <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-previous"></use>
+      </svg>
     </button>
     <button class="gef-carousel-next" type="button">
-      <span class="vh">next</span>
-      <span class="gel-icon">
-        <svg>
-          <use xlink:href="#gel-icon-next"></use>
-        </svg>
-      </span>
+      <span class="gef-sr">next</span>
+      <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+        <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-next"></use>
+      </svg>
     </button>
   </div>
   <div class="gef-carousel-scrollable">
@@ -57,31 +53,54 @@ The markup is elided for brevity. The `<li>` elements represent the containers f
 ### Notes
 
 * **`role="group"`** This is a generic ARIA role, used here to indicate that the buttons and the scrollable area they control are related
-* **previous and next buttons:** One can scroll the through the content in incremental steps using the previous and next buttons. It's important these are `<button>` elements with `type="button"`. Their labels are provided using visually hidden text (the `vh` class[^2]) because, unlike `aria-label` it will be translated by browser translation extensions. Buttons that are not applicable (e.g. the previous button on page load) receive the `disabled` property. The button is removed from focus order and identified as disabled (or 'dimmed') in screen reader output.
-* **`gel-icon` SVGs:** These must be the official `#gel-icon-previous` and `#gel-icon-next` icons from the [GEL Iconography](http://bbc.github.io/gel-iconography/) set.
-* **`gef-carousel-scrollable`:** This is the scrollable 'window' for the list of carousel content items (see [**Expected layout**](#expected-layout))
+* **previous and next buttons:** One can scroll the through the content in incremental steps using the previous and next buttons. It's important these are `<button>` elements with `type="button"`. Their labels are provided using visually hidden text (the `gef-sr` class) because, unlike `aria-label`, it will be translated by browser translation extensions. Buttons that are not applicable (e.g. the previous button on page load) receive the `disabled` property. The button is removed from focus order and identified as disabled (or 'dimmed') in screen reader output.
+* **`hidden`:** The buttons are hidden by default because they do not work in the absence of JavaScript. They are revealed when the JavaScript runs.
+* **`gel-icon` SVGs:** These must be the official `#gel-icon-previous` and `#gel-icon-next` icons from the [GEL Iconography](http://bbc.github.io/gel-iconography/) set. They have `aria-hidden="true"` and `scrollable="flase"` to hide them from assistive technologies and remove them from focus order.
+* **`gef-carousel-scrollable`:** This is the scrollable 'window' for the list of carousel content items (see [Recommended layout](#recommended-layout))
 * **`gef-carousel-list`:** The singular child element of `gef-carousel-scrollable` must be a `<ul>`, with each item as an `<li>`. List markup is identified as such in assistive technologies, and the items are enumerated. This lets screen reader users know they are met with a set of related content, and how much of it there is.
 
-## Expected layout
+## Recommended layout
 
 The basic scrolling functionality is achieved without JavaScript by making sure:
 
 1. The items do not wrap
 2. The parent has `overflow-x: auto`
 
-Since flex children do not wrap by default, simply adding `display: flex` to the `gef-carousel-list` (`<ul>`) element is sufficient. It also ensures that each item adopts the height of the tallest item.
+This basic layout uses `inline-block` and enhances to a Flexbox context using `@supports`. The advantage of Flexbox is that its stretching algorithm makes each of the items (**Promos** in the [Reference implementation](#reference-implementation)) the same height.
 
 ```css
-.gef-carousel-scrollable {
-  overflow-x: auto;
+.gef-carousel-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
 }
 
-.gef-carousel-list {
-  display: flex;
+.gef-carousel-list > li {
+  display: inline-block;
+  white-space: normal;
+  width: 266px; /* standard Promo width */
+  transition: opacity 0.5s linear;
+}
+
+.gef-carousel-list > li + li {
+  margin-left: 1rem;
+}
+
+@supports (display: flex) {
+  .gef-carousel-list {
+    display: flex;
+    white-space: normal;
+  }
+
+  .gef-carousel-list > li {
+    display: flex;
+    flex-shrink: 0;
+  }
 }
 ```
 
-On some operating systems, the horizontal scrollbar is not visible by default, meaning the scrollable container lacks perceived affordance[^3]. It's possible to reveal the scrollbar in webkit browsers by giving them a custom styling:
+On some operating systems, the horizontal scrollbar is not visible by default, meaning the scrollable container lacks perceived affordance[^2]. It's possible to reveal the scrollbar in webkit browsers by giving them a custom styling:
 
 ```css
 .gef-carousel-scrollable::-webkit-scrollbar {
@@ -99,7 +118,7 @@ On some operating systems, the horizontal scrollbar is not visible by default, m
 
 ### Obscured items
 
-Items that are less than 50% in view are made to look faint with a reduced opacity. This indicates that the item must be brought further into view before it is interactive (see [**Expected behaviour**](#expected-behaviour)). The opacity style is applied using a CSS transition, to avoid a distracting 'blinking' effect as the user scrolls back and forth.
+Items that are less than 50% in view are made to look faint with a reduced opacity. This indicates that the item must be brought further into view before it is interactive (see [**Recommended behaviour**](#recommended-behaviour)). The opacity style is applied using a CSS transition, to avoid a distracting 'blinking' effect as the user scrolls back and forth.
 
 ```css
 .gef-carousel-list > li {
@@ -113,7 +132,7 @@ Items that are less than 50% in view are made to look faint with a reduced opaci
 
 ### Buttons
 
-The previous and next buttons, `gef-carousel-buttons`, is absolutely positioned over the carousel at the top right, necessitating `position: relative` on the parent `gef-carousel` element. Disabled buttons take a reduced opacity.
+The previous and next buttons, `class="gef-carousel-buttons"`, is absolutely positioned over the **Carousel** at the top right, necessitating `position: relative` on the parent `gef-carousel` element. Disabled buttons take a reduced opacity.
 
 ```css
 .gef-carousel-buttons button[disabled] {
@@ -121,9 +140,15 @@ The previous and next buttons, `gef-carousel-buttons`, is absolutely positioned 
 }
 ```
 
-### Expected behaviour
+#### Smooth scrolling
 
-#### Scrolling
+Where supported, `scroll-behavior: smooth` animates scrolling, whether scrolling is instigated by pressing a previous or next button, or by other means. Where the property is not supported, the browser steps over it and the interface remains usable.
+
+## Recommended behaviour
+
+Where JavaScript is absent, the interface is already usable. One can scroll the **Carousel** using touch or touch pad gestures, the scrollbar, or by focusing items that are (currently) obscured. JavaScript adds the previous and next buttons, and the `inert` behaviour (see below).
+
+### Inert items
 
 As the user scrolls by mouse, touch, gesture, or by using the auxiliary buttons, browsers that support `IntersectionObserver` add the `inert` attribute to items that go out of view and remove it from items that come into view.
 
@@ -137,15 +162,15 @@ Array.prototype.forEach.call(items, function (item) {
 });
 ```
 
-This not only invokes the 'fading' effect described in [**Expected layout**](#expected-layout), but also removed inert items from focus order and the accessibility tree[^4]. The upshot is that, like sighted mouse users, keyboard and screen reader users can only perceive and interact with items that are not inert. 
+This not only invokes the 'fading' effect described in [**Recommended layout**](#recommended-layout), but also removes inert items from focus order and the accessibility tree[^3]. The upshot is that, like sighted mouse users, keyboard and screen reader users can only perceive and interact with items that are not inert. 
 
-Were the inert attribute not employed, a keyboard user could scroll to the end of a long set of items, only to find that the first item was still first in focus order. Pressing tab would scroll the container back to the beginning and progress would be lost. 
+Were the inert attribute not employed, a keyboard user could scroll to the end of a long set of items, only to find that the first (currently obscured) item was still first in focus order. Pressing tab would scroll the container back to the beginning and progress would be lost. 
 
 ::: info Inert polyfill
-The [**Reference implementation**](#reference-implementation) includes a small polyfill[^5] for the `inert` attribute, increasing the reach of the behaviour it enables.
+The [**Reference implementation**](#reference-implementation) includes a small polyfill[^4] for the `inert` attribute, increasing the reach of the behaviour it enables.
 :::
 
-#### Button controls
+### Button controls
 
 Keyboard users must scroll the content using the buttons. Each time a button is pressed, the scrollable container scrolls half of its own width (as measured on page load).
 
@@ -153,7 +178,7 @@ Keyboard users must scroll the content using the buttons. Each time a button is 
 var scrollAmount = list.offsetWidth / 2;
 ```
 
-Buttons that are not applicable (the previous button if the user is scrolled all the way left, or the next button if the user is scrolled all the way to the right) are `disabled`. This is made possible by listening to the `scroll` event, which necessitates debouncing[^6] to address performance concerns.
+Buttons that are not applicable (the previous button if the user is scrolled all the way left, or the next button if the user is scrolled all the way to the right) are `disabled`. This is made possible by listening to the `scroll` event, which necessitates debouncing[^5] to address performance concerns.
 
 ```js
 var debounced;
@@ -163,11 +188,11 @@ scrollable.addEventListener('scroll', function () {
 });
 ```
 
-Buttons taking the `disabled` attribute are removed from focus order and identified as "disabled" or "dimmed" in screen reader output.
+Buttons taking the `disabled` attribute are removed from focus order and identified as _"disabled"_ or _"dimmed"_ in screen reader output.
 
-#### Lazy loading
+### Lazy loading
 
-Although it is not provided as an intrinsic part of the [**Reference implementation**](#reference-implementation) to follow, it is recommended you use a lazy loading[^7] solution for images inside the carousel. Since the image containers for [**Card**](#link-todo) and [**Promo**](#link-todo) components have a fixed height, you do not need to address the scroll jumping issues associated with lazy loading.
+Although it is not provided as an intrinsic part of the [**Reference implementation**](#reference-implementation) to follow, it is recommended you use a lazy loading[^6] solution for images inside the carousel. Since the image containers for [**Card**](../cards) and [**Promo**](../promos) components have a fixed height, you do not need to address the vertical scroll jumping issues associated with lazy loading.
 
 ## Reference implementation
 
@@ -179,7 +204,6 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 
 <cta label="Open in new window" href="../demos/carousels/">
 
-
 ## Related research
 
 This topic does not yet have any related research available.
@@ -187,9 +211,8 @@ This topic does not yet have any related research available.
 ### Further reading, elsewhere on the Web
 
 [^1]: "Image Carousels: Getting Control of the Merry-Go-Round" — usability.gov, <https://www.usability.gov/get-involved/blog/2013/04/image-carousels.html>
-[^2]: Gist of the `vh` (visually hidden) class <https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472> 
-[^3]: "Perceived Affordances and Designing for Task Flow" — Johnny Holland, <http://johnnyholland.org/2010/04/perceived-affordances-and-designing-for-task-flow/>
-[^4]: "The Accessibility Tree" — developers.google.com, <https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree>
-[^5]: Inert polyfill on Github, <https://github.com/GoogleChrome/inert-polyfill>
-[^6]: Throttling and Debouncing in JavaScript — Codeburst.io, <https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf>
-[^7]: Lazy loading images using Intersection Observer — Dean Hume,  <https://deanhume.com/lazy-loading-images-using-intersection-observer/>
+[^2]: "Perceived Affordances and Designing for Task Flow" — Johnny Holland, <http://johnnyholland.org/2010/04/perceived-affordances-and-designing-for-task-flow/>
+[^3]: "The Accessibility Tree" — developers.google.com, <https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree>
+[^4]: Inert polyfill on Github, <https://github.com/GoogleChrome/inert-polyfill>
+[^5]: Throttling and Debouncing in JavaScript — Codeburst.io, <https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf>
+[^6]: Lazy loading images using Intersection Observer — Dean Hume,  <https://deanhume.com/lazy-loading-images-using-intersection-observer/>

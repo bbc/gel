@@ -261,11 +261,11 @@
  * @method gef.Carousel.init
  */
 
-(function() {
+(function () {
   if (!window.gef) { window.gef = {}; }
   var self = gef.Carousel = {};
-  
-  self.init = function() {
+
+  self.init = function () {
     /* inert attribute polyfill, from https://github.com/GoogleChrome/inert-polyfill */
     "inert" in HTMLElement.prototype || (Object.defineProperty(HTMLElement.prototype, "inert", { enumerable: !0, get: function () { return this.hasAttribute("inert") }, set: function (h) { h ? this.setAttribute("inert", "") : this.removeAttribute("inert") } }), window.addEventListener("load", function () {
       function h(a) {
@@ -289,62 +289,70 @@
         function (a) { f = 0 }); var c = null; document.body.addEventListener("focus", function (a) { var b = e(a); a = b == a.target ? null : n(b); if (a != c) { if (c) { if (!(c instanceof window.ShadowRoot)) throw Error("not shadow root: " + c); c.removeEventListener("focusin", l, !0) } a && a.addEventListener("focusin", l, !0); c = a } m(b) }, !0); document.addEventListener("click", function (a) { var b = e(a); k(b) && (a.preventDefault(), a.stopPropagation()) }, !0)
     }));
 
-    (function () {
-      var cards = document.querySelectorAll('.gef-carousel');
-      Array.prototype.forEach.call(cards, function (carousel) {
-        var scrollable = carousel.querySelector('.gef-carousel-scrollable');
-        var list = carousel.querySelector('.gef-carousel-list');
-        var items = list.children;
-        var scrollAmount = list.offsetWidth / 2;
-        var prev = carousel.querySelector('.gef-carousel-prev');
-        var next = carousel.querySelector('.gef-carousel-next');
+    self.constructor = function (elem) {
+      // Save refs to elements
+      var scrollable = elem.querySelector('.gef-carousel-scrollable');
+      var buttons = elem.querySelector('.gef-carousel-buttons');
+      var list = elem.querySelector('.gef-carousel-list');
+      var items = list.children;
+      var prev = elem.querySelector('.gef-carousel-prev');
+      var next = elem.querySelector('.gef-carousel-next');
 
-        prev.disabled = true;
+      // Reveal button functionality now JS has run
+      buttons.hidden = false;
 
-        prev.addEventListener('click', function (e) {
-          scrollable.scrollLeft += -scrollAmount;
-        });
-        next.addEventListener('click', function (e) {
-          scrollable.scrollLeft += scrollAmount;
-        });
+      // Make the prev button disabled because
+      // you can't 'go left' to begin with
+      prev.disabled = true;
 
-        function disableEnable() {
-          prev.disabled = scrollable.scrollLeft < 1;
-          next.disabled = scrollable.scrollLeft === list.scrollWidth - list.offsetWidth;
+      // Scroll by half the container's width
+      var scrollAmount = list.offsetWidth / 2;
+
+      // Scroll incrementally by button
+      prev.addEventListener('click', function (e) {
+        scrollable.scrollLeft += -scrollAmount;
+      });
+      next.addEventListener('click', function (e) {
+        scrollable.scrollLeft += scrollAmount;
+      });
+
+      function disableEnable() {
+        prev.disabled = scrollable.scrollLeft < 1;
+        next.disabled = scrollable.scrollLeft === list.scrollWidth - list.offsetWidth;
+      }
+
+      // Debounce the button disabling function on scroll
+      var debounced;
+      scrollable.addEventListener('scroll', function () {
+        window.clearTimeout(debounced);
+        debounced = setTimeout(disableEnable, 200);
+      });
+
+      // Only use if supported
+      if ('IntersectionObserver' in window) {
+        var observerSettings = {
+          root: scrollable,
+          threshold: 0.5
         }
 
-        // Debounce the button disabling function on scroll
-        var debounced;
-        scrollable.addEventListener('scroll', function () {
-          window.clearTimeout(debounced);
-          debounced = setTimeout(disableEnable, 200);
-        });
-
-        if ('IntersectionObserver' in window) {
-          var observerSettings = {
-            root: scrollable,
-            threshold: 0.5
-          }
-
-          var callback = function (items, observer) {
-            Array.prototype.forEach.call(items, function (item) {
-              if (item.isIntersecting) {
-                item.target.removeAttribute('inert');
-              } else {
-                item.target.setAttribute('inert', 'inert');
-              }
-            });
-          }
-
-          var observer = new IntersectionObserver(callback, observerSettings);
+        var callback = function (items, observer) {
           Array.prototype.forEach.call(items, function (item) {
-            observer.observe(item);
+            if (item.isIntersecting) {
+              item.target.removeAttribute('inert');
+            } else {
+              // Makes items unfocusable and unavailable to assistive technologies
+              item.target.setAttribute('inert', 'inert');
+            }
           });
         }
-      });
-    })();
-  }
 
+        var observer = new IntersectionObserver(callback, observerSettings);
+        Array.prototype.forEach.call(items, function (item) {
+          observer.observe(item);
+        });
+      }
+    }
+  }
 })();/**
  * Info Panel
  * @namespace gef
