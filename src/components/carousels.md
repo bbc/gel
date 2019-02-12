@@ -16,7 +16,7 @@ Importantly, unlike some **Carousel** implementations, the content does not scro
 ### Recommended markup
 
 ::: info Code is elided
-The markup is elided for brevity. The `<li>` elements represent the containers for the content items, such as [**Cards**](../Cards) or [**Promos**](../Promos).
+The markup is elided for brevity. The `<li>` elements represent the containers for the content items, such as [**Cards**](../cards) or [**Promos**](../promos).
 :::
 
 ```html
