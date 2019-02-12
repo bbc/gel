@@ -3,14 +3,14 @@ title: Headings
 summary: Headings provide a semantic and visual hierarchical structure to a document
 version: 0.1.0
 published: false
-accessibility: false
+accessibility: true
 ---
 
 ## Introduction
 
 Buttons, links, and form elements all have labels. Labels tell users what these elements are for. Headings are also labels, and describe sections of the document. A correct use of heading elements is especially important when supporting screen reader users[^1] because headings together create a table of contents, navigable by a variety of shortcuts and other means.
 
-## Expected markup
+## Recommended markup
 
 ### The `<h1>`
 
@@ -101,7 +101,7 @@ Many screen readers aggregate headings into a table of contents. For example, JA
 <h2>A delicious cookie recipe</h2>
 ```
 
-## Expected layout
+## Recommended layout
 
 To establish a logical visual hierarchy, heading font sizes should decrease along with depth. An `<h1>` should have the greatest `font-size`, and an `<h6>` the smallest. There are other means to differentiate heading levels but font size is the most conventional, and therefore the most widely understood.
 
@@ -130,7 +130,7 @@ In the above example, classes are named after heading levels to match their size
 </blockquote>
 ```
 
-## Expected behaviour
+## Recommended behaviour
 
 Where headings adopt `id`s and are used as document fragments to be navigated between using same-page links, they should take `tabindex="-1"`. This forces browsers that would not otherwise update their sequential focus starting point[^4] to move keyboard focus to the destination heading and section.
 
