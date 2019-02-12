@@ -1,19 +1,26 @@
 .gef-cards {
-  margin: 0;
   padding: 0;
 }
 
-.gef-cards>*+* {
+.gef-cards > * + * {
+  list-style: none;
   margin-top: 1rem;
 }
 
-@supports (display: grid) {
-  .gef-cards>*+* {
-    margin-top: 0;
-  }
+.gef-card {
+  background-color: #F1F1F1;
+  position: relative;
+}
 
-  .gef-card {
-    margin: 0;
+.gef-card-content {
+  position: relative;
+  overflow: hidden;
+  height: 10rem;
+}
+
+@supports (display: grid) {
+  .gef-cards > * + * {
+    margin-top: 0;
   }
 
   .gef-cards {
@@ -21,20 +28,6 @@
     grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
     grid-gap: 1rem;
   }
-}
-
-.gef-card {
-  display: flex;
-  flex-direction: column;
-  background-color: #F1F1F1;
-  position: relative;
-}
-
-.gef-card-content {
-  position: relative;
-  order: -1;
-  overflow: hidden;
-  height: 10rem;
 }
 
 .gef-card-content img,
@@ -51,22 +44,32 @@
   }
 }
 
+@supports (display: flex) {
+  .gef-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gef-card-content {
+    order: -1;
+  }
+}
+
 .gef-card-headline, .gef-card-desc {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
 .gef-card-toolbar {
+  font-size: 0.85rem;
   height: 2.5rem;
   list-style: none;
   display: flex;
-  padding: 0.5rem 1rem;
   background-color: #e5e5e5;
   margin-top: auto;
 }
 
 .gef-card-toolbar button {
-  padding: 0;
   background: none;
   border: none;
   font-size: inherit;
@@ -74,13 +77,32 @@
   color: $gel-color--tundora;
 }
 
-.gef-card-toolbar > *:first-child {
-  margin-right: auto;
+.gef-card-toolbar > * {
+  padding: 0.5rem 1rem;
 }
 
-.gef-card-toolbar > * + * {
-  margin: 0;
-  margin-left: 0.5rem;
+.gef-card-toolbar [aria-expanded] {
+  text-align: left;
+  flex-grow: 999;
+}
+
+.gef-card-close-label {
+  display: none;
+}
+
+[aria-expanded="true"] .gef-card-close-label {
+  display: block;
+}
+
+[aria-expanded="true"] .gef-card-more-label {
+  display: none;
+}
+
+.gef-card-toolbar button:hover,
+.gef-card-toolbar button:focus {
+  outline: none;
+  background-color: $gel-color--star-command-blue;
+  color: $gel-color--white;
 }
 
 .gef-card-info {

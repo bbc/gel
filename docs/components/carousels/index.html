@@ -94,7 +94,7 @@
                     <dt>Status:</dt>
                     <dd>Draft</dd>
                     <dt>Accessibility:</dt>
-                    <dd>Pass</dd>
+                    <dd>Pending</dd>
                 </dl>
             </div>
         </div>
@@ -114,7 +114,7 @@
 <h3 id="recommended-markup">Recommended markup</h3>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-code-is-elided">
-              <h4 id="aside-info-code-is-elided" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Code is elided</h4><div><p>The markup is elided for brevity. The <code>&lt;li&gt;</code> elements represent the containers for the content items, such as <a href="../Cards"><strong>Cards</strong></a> or <a href="../Promos"><strong>Promos</strong></a>.</p>
+              <h4 id="aside-info-code-is-elided" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Code is elided</h4><div><p>The markup is elided for brevity. The <code>&lt;li&gt;</code> elements represent the containers for the content items, such as <a href="../cards"><strong>Cards</strong></a> or <a href="../promos"><strong>Promos</strong></a>.</p>
 </aside><pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-carousel"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-carousel-buttons"</span> <span class="hljs-attr">hidden</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-carousel-prev"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>
@@ -150,7 +150,7 @@
 <li><strong>previous and next buttons:</strong> One can scroll the through the content in incremental steps using the previous and next buttons. It's important these are <code>&lt;button&gt;</code> elements with <code>type=&quot;button&quot;</code>. Their labels are provided using visually hidden text (the <code>gef-sr</code> class) because, unlike <code>aria-label</code>, it will be translated by browser translation extensions. Buttons that are not applicable (e.g. the previous button on page load) receive the <code>disabled</code> property. The button is removed from focus order and identified as disabled (or 'dimmed') in screen reader output.</li>
 <li><strong><code>hidden</code>:</strong> The buttons are hidden by default because they do not work in the absence of JavaScript. They are revealed when the JavaScript runs.</li>
 <li><strong><code>gel-icon</code> SVGs:</strong> These must be the official <code>#gel-icon-previous</code> and <code>#gel-icon-next</code> icons from the <a href="http://bbc.github.io/gel-iconography/">GEL Iconography</a> set. They have <code>aria-hidden=&quot;true&quot;</code> and <code>scrollable=&quot;flase&quot;</code> to hide them from assistive technologies and remove them from focus order.</li>
-<li><strong><code>gef-carousel-scrollable</code>:</strong> This is the scrollable 'window' for the list of carousel content items (see <a href="#expected-layout">Recommended layout</a>)</li>
+<li><strong><code>gef-carousel-scrollable</code>:</strong> This is the scrollable 'window' for the list of carousel content items (see <a href="#recommended-layout">Recommended layout</a>)</li>
 <li><strong><code>gef-carousel-list</code>:</strong> The singular child element of <code>gef-carousel-scrollable</code> must be a <code>&lt;ul&gt;</code>, with each item as an <code>&lt;li&gt;</code>. List markup is identified as such in assistive technologies, and the items are enumerated. This lets screen reader users know they are met with a set of related content, and how much of it there is.</li>
 </ul>
 <h2 id="recommended-layout">Recommended layout</h2>
@@ -204,7 +204,7 @@
 }
 </code></pre>
 <h3 id="obscured-items">Obscured items</h3>
-<p>Items that are less than 50% in view are made to look faint with a reduced opacity. This indicates that the item must be brought further into view before it is interactive (see <a href="#expected-behaviour"><strong>Recommended behaviour</strong></a>). The opacity style is applied using a CSS transition, to avoid a distracting 'blinking' effect as the user scrolls back and forth.</p>
+<p>Items that are less than 50% in view are made to look faint with a reduced opacity. This indicates that the item must be brought further into view before it is interactive (see <a href="#recommended-behaviour"><strong>Recommended behaviour</strong></a>). The opacity style is applied using a CSS transition, to avoid a distracting 'blinking' effect as the user scrolls back and forth.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gef-carousel-list</span> &gt; <span class="hljs-selector-tag">li</span> {
   <span class="hljs-attribute">transition</span>: opacity <span class="hljs-number">0.5s</span> linear;
 }
@@ -233,7 +233,7 @@
   }
 });
 </code></pre>
-<p>This not only invokes the 'fading' effect described in <a href="#expected-layout"><strong>Recommended layout</strong></a>, but also removes inert items from focus order and the accessibility tree<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. The upshot is that, like sighted mouse users, keyboard and screen reader users can only perceive and interact with items that are not inert.</p>
+<p>This not only invokes the 'fading' effect described in <a href="#recommended-layout"><strong>Recommended layout</strong></a>, but also removes inert items from focus order and the accessibility tree<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. The upshot is that, like sighted mouse users, keyboard and screen reader users can only perceive and interact with items that are not inert.</p>
 <p>Were the inert attribute not employed, a keyboard user could scroll to the end of a long set of items, only to find that the first (currently obscured) item was still first in focus order. Pressing tab would scroll the container back to the beginning and progress would be lost.</p>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-inert-polyfill">
@@ -251,7 +251,7 @@ scrollable.addEventListener(<span class="hljs-string">'scroll'</span>, <span cla
 </code></pre>
 <p>Buttons taking the <code>disabled</code> attribute are removed from focus order and identified as <em>&quot;disabled&quot;</em> or <em>&quot;dimmed&quot;</em> in screen reader output.</p>
 <h3 id="lazy-loading">Lazy loading</h3>
-<p>Although it is not provided as an intrinsic part of the <a href="#reference-implementation"><strong>Reference implementation</strong></a> to follow, it is recommended you use a lazy loading<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> solution for images inside the carousel. Since the image containers for <a href="../Cards"><strong>Card</strong></a> and <a href="../Promos"><strong>Promo</strong></a> components have a fixed height, you do not need to address the vertical scroll jumping issues associated with lazy loading.</p>
+<p>Although it is not provided as an intrinsic part of the <a href="#reference-implementation"><strong>Reference implementation</strong></a> to follow, it is recommended you use a lazy loading<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> solution for images inside the carousel. Since the image containers for <a href="../cards"><strong>Card</strong></a> and <a href="../promos"><strong>Promo</strong></a> components have a fixed height, you do not need to address the vertical scroll jumping issues associated with lazy loading.</p>
 <h2 id="reference-implementation">Reference implementation</h2>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
