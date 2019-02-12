@@ -118,7 +118,7 @@ On some operating systems, the horizontal scrollbar is not visible by default, m
 
 ### Obscured items
 
-Items that are less than 50% in view are made to look faint with a reduced opacity. This indicates that the item must be brought further into view before it is interactive (see [**Recommended behaviour**](#rocommended-behaviour)). The opacity style is applied using a CSS transition, to avoid a distracting 'blinking' effect as the user scrolls back and forth.
+Items that are less than 50% in view are made to look faint with a reduced opacity. This indicates that the item must be brought further into view before it is interactive (see [**Recommended behaviour**](#recommended-behaviour)). The opacity style is applied using a CSS transition, to avoid a distracting 'blinking' effect as the user scrolls back and forth.
 
 ```css
 .gef-carousel-list > li {
