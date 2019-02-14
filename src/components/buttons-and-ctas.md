@@ -158,13 +158,15 @@ Toggle buttons using `aria-pressed` or `aria-expanded` (see [#toggle-states]) sh
 
 ### High contrast mode
 
-Windows High Contrast Mode tends to remove the background from buttons, making them appear as simple text. To reinstate their 'boxy' shape, we can apply a transparent border[^10]. This border will become visible when Windows HCM is running.
+Windows High Contrast Mode tends to remove the background from buttons, making them appear as simple text. To reinstate their 'boxy' shape, we can apply a transparent border[^8]. This border will become visible when Windows HCM is running.
 
 ```css
 .gef-button, .gef-cta  {
   border: 2px solid transparent; /* for high contrast mode */
 }
 ```
+
+![Borders on all sides show the button's shape]({{site.basedir}}static/images/hcm_buttons_and_ctas.png)
 
 ## Recommended behaviour
 
@@ -205,11 +207,9 @@ This topic does not yet have any related research available.
 
 [^1]: Anchors, buttons, and accessibility — Formidable Labs, <https://formidable.com/blog/2014/05/08/anchors-buttons-and-accessibility/>
 [^2]: The `button` element — W3C, <https://www.w3.org/TR/2011/WD-html5-20110525/the-button-element.html#the-button-element>
-[^3]: Gist of the `vh` (visually hidden) class,  <https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472> 
-[^4]: ARIA Label Is A Xenophobe — heydonworks.com, <http://www.heydonworks.com/article/aria-label-is-a-xenophobe>
-[^5]: GEL Iconography (demo), <http://bbc.github.io/gel-iconography/>
-[^6]: Disabled Buttons Suck — Access Lab, <https://axesslab.com/disabled-buttons-suck/>
-[^7]: `aria-haspopup` property — W3C, <https://www.w3.org/TR/wai-aria-1.1/#aria-haspopup>
-[^8]: WCAG2.1 1.4.3, Contrast (Minimum), <https://www.w3.org/TR/WCAG21/#contrast-minimum>
-[^9]: WCAG2.1 1.4.1, Use Of Color, <https://www.w3.org/TR/WCAG21/#use-of-color>
-[^10]: Transparent border for high contrast mode (test case) — Joe Watkins, <https://codepen.io/joe-watkins/pen/mApBvo>
+[^3]: ARIA Label Is A Xenophobe — heydonworks.com, <http://www.heydonworks.com/article/aria-label-is-a-xenophobe>
+[^4]: GEL Iconography (demo), <http://bbc.github.io/gel-iconography/>
+[^5]: Disabled Buttons Suck — Access Lab, <https://axesslab.com/disabled-buttons-suck/>
+[^6]: `aria-haspopup` property — W3C, <https://www.w3.org/TR/wai-aria-1.1/#aria-haspopup>
+[^7]: WCAG2.1 1.4.3, Contrast (Minimum), <https://www.w3.org/TR/WCAG21/#contrast-minimum>
+[^8]: Transparent border for high contrast mode (test case) — Joe Watkins, <https://codepen.io/joe-watkins/pen/mApBvo>
