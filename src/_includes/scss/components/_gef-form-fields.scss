@@ -33,7 +33,7 @@
 .gef-form-warning {
   padding: 0.25rem;
   background-color: $gel-color--pink;
-  border: 1px solid transparent /* for high contrast mode */
+  border: 1px solid transparent; /* for high contrast mode */
   color: $gel-color--white;
   max-width: 60ch;
 }

@@ -86,7 +86,7 @@ The width is overridden by a `max-width` where overflow (and the panel being obs
 
 ### Arrows
 
-The directional arrow, pointing from the panel to the button, is considered a progressive enhancement. It is achieved—where supported—with `clip-path` and `@supports`[^4]. This technique is preferred to the CSS Triangle trick[^5] which uses transparent borders and is liable to fail in Windows High Contrast Mode.
+The directional arrow, pointing from the panel to the button, is considered a progressive enhancement. It is achieved—where supported—with `clip-path` and `@supports`[^4]. This technique is preferred to the CSS triangle trick[^5] which uses transparent borders and is liable to fail in Windows High Contrast Mode (each border/side will become non-transparent and the arrow will appear as a square).
 
 ```css
 @supports (clip-path: inset(100%)) {

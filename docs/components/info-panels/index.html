@@ -178,7 +178,7 @@
 
 </code></pre>
 <h3 id="arrows">Arrows</h3>
-<p>The directional arrow, pointing from the panel to the button, is considered a progressive enhancement. It is achieved—where supported—with <code>clip-path</code> and <code>@supports</code><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. This technique is preferred to the CSS Triangle trick<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> which uses transparent borders and is liable to fail in Windows High Contrast Mode.</p>
+<p>The directional arrow, pointing from the panel to the button, is considered a progressive enhancement. It is achieved—where supported—with <code>clip-path</code> and <code>@supports</code><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. This technique is preferred to the CSS triangle trick<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> which uses transparent borders and is liable to fail in Windows High Contrast Mode (each border/side will become non-transparent and the arrow will appear as a square).</p>
 <pre class="hljs"><code>@<span class="hljs-keyword">supports</span> (clip-path: inset(<span class="hljs-number">100%</span>)) {
   <span class="hljs-selector-class">.gef-infopanel-panel</span><span class="hljs-selector-pseudo">::after</span> {
     <span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>;
@@ -271,11 +271,11 @@ title: Info panels
  -->
 
 <style>
-  .example-slice {
+  /*.example-slice {
     padding: 1rem 0;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-  }
+  }*/
 </style>
 
 <h3>Left/below alignment</h3>

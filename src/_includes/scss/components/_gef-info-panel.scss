@@ -13,6 +13,7 @@
 .gef-infopanel-panel {
   text-align: left;
   background-color: $gel-color--alto;
+  border: 2px solid transparent; /* for high contrast mode */
   position: absolute;
   max-width: 80vw;
 }
@@ -28,6 +29,11 @@
   padding: 0;
   border: 0;
   background-color: transparent;
+}
+
+.gef-infopanel-close-button {
+  outline: 1px solid;
+  outline-offset: 2px;
 }
 
 .gef-infopanel-below {

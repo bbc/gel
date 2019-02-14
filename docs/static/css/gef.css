@@ -901,6 +901,8 @@ span.gef-nowrap {
 .gef-form-warning {
   padding: 0.25rem;
   background-color: #e4134f;
+  border: 1px solid transparent;
+  /* for high contrast mode */
   color: #fff;
   max-width: 60ch; }
 
@@ -1334,6 +1336,8 @@ of 'open all' and 'close all' tools
 .gef-infopanel-panel {
   text-align: left;
   background-color: #dcdcdc;
+  border: 2px solid transparent;
+  /* for high contrast mode */
   position: absolute;
   max-width: 80vw; }
 
@@ -1347,6 +1351,10 @@ of 'open all' and 'close all' tools
   padding: 0;
   border: 0;
   background-color: transparent; }
+
+.gef-infopanel-close-button {
+  outline: 1px solid;
+  outline-offset: 2px; }
 
 .gef-infopanel-below {
   top: calc(100% + 1rem); }
