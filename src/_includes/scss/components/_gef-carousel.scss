@@ -1,4 +1,3 @@
-
 .gef-carousel {
   position: relative;
   overflow: hidden;
@@ -26,21 +25,34 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
+  white-space: nowrap;
 }
 
 .gef-carousel-list > li {
-  flex-shrink: 0;
+  display: inline-block;
+  white-space: normal;
   width: 266px;
   transition: opacity 0.5s linear;
 }
 
-.gef-carousel-list > li[inert] {
-  opacity: 0.3;
-}
-
 .gef-carousel-list > li + li {
   margin-left: 1rem;
+}
+
+@supports (display: flex) {
+  .gef-carousel-list {
+    display: flex;
+    white-space: normal;
+  }
+
+  .gef-carousel-list > li {
+    display: flex;
+    flex-shrink: 0;
+  }
+}
+
+.gef-carousel-list > li[inert] {
+  opacity: 0.3;
 }
  
 .gef-carousel-buttons {
@@ -52,22 +64,15 @@
 
 .gef-carousel-buttons button {
   border: none;
-  padding: 0.25rem;
+  padding: 0.5rem;
   background-color: #fff;
   color: $gel-color--tundora;
+  font-size: 1.75rem;
 }
 
 .gef-carousel-buttons button:focus {
   outline: none;
   box-shadow: inset 0 0 0 0.125rem $gel-color--tundora;
-}
-
-.gef-carousel-buttons button svg {
-  width: 2rem;
-  height: auto;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
 }
 
 .gef-carousel-buttons button[disabled] {

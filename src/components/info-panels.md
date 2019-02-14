@@ -36,6 +36,7 @@ The following structure is expected, with notes to follow.
 
 * **`class="gef-button"`:** A standard `<button>` element takes the `aria-haspopup="true"` property and `aria-expanded="false"` state. The former indicates that the button secretes a popup (panel) and the later (set to `false` initially) indicates whether that popup is in an expanded or collapsed state.
 * **`class="gef-infopanel-panel"`:** The panel itself takes `role="group"` to indicate it's contents are related. A standard Menu Button[^1] would expect `role="menu"` here, but that would prescribe the presence of menu items (`role="menuitem"` etc.). Because **Information panel** contents diverge between instances, a more generic parent role is used.
+
 * **`aria-labelledby`:** This associates the panel with its title's `id` (`id="unique-ref"` in this example). This ensures the title is read out as the screen reader enters the panel.
 * **`gef-infopanel-close-button`:** The close button has a visually hidden (but available to assistive technologies) text label of _"close"_ to supplement the visible 'X' icon. The visually hidden span (achieved with `class="gef-sr"`) is preferred to using `aria-label` since `aria-label` is not translated by Google's or Microsoft's translation services[^3]. 
 * **`focusable="false"` and `aria-hidden="true"`:** Each icon, taken from the [Gel Iconography suite](http://bbc.github.io/gel-iconography/) must take these attributes to ensure the icon is not in focus order and is not erroneously identified by assistive technologies.

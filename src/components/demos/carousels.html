@@ -4,232 +4,243 @@ title: Carousels
 
 <div style="margin-bottom: 1rem;">
   <div class="gef-carousel" role="group">
-    <div class="gef-carousel-buttons">
-      <button class="gef-carousel-prev">
-        <span class="vh">previous</span>
-        <svg viewBox="0 0 20 20" width="20" height="20" focusable="false">
-          <polyline points="14 6, 6 10, 14 14"></polyline>
+    <div class="gef-carousel-buttons" hidden>
+      <button class="gef-carousel-prev" type="button">
+        <span class="gef-sr">previous</span>
+        <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+          <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-previous"></use>
         </svg>
       </button>
-      <button class="gef-carousel-next">
-        <span class="vh">next</span>
-        <svg viewBox="0 0 20 20" width="20" height="20" focusable="false">
-          <polyline points="6 6, 14 10, 6 14"></polyline>
+      <button class="gef-carousel-next" type="button">
+        <span class="gef-sr">next</span>
+        <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+          <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-next"></use>
         </svg>
       </button>
     </div>
     <div class="gef-carousel-scrollable">
       <ul class="gef-carousel-list">
         <li class="gef-promo">
+          <div class="gef-promo-image">
+            <img src="{{site.basedir}}static/images/placeholder.png" alt="">
+          </div>
           <div class="gef-promo-content">
-            <div class="gef-promo-headline">
-              <h3>
-                <a href="#link-0">Definitive supreme statements still stand</a>
-              </h3>
-            </div>
-            <div class="gef-promo-desc">
-              <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.</p>
-            </div>
+            <a class="gef-promo-headline" href="#link/to/content">
+              Definitive supreme statements still stand
+            </a>
+            <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica,
+              sport etc, litot Europa usa li sam vocabular.</p>
             <dl class="gef-metadata-strip">
               <div>
-                <dt class="vh">Published:</dt>
+                <dt class="gef-sr">Published:</dt>
                 <dd>
-                  <span aria-hidden="true">1h</span>
-                  <span class="vh">1 hour ago</span>
+                  <span aria-hidden="true">
+                    <svg class="gel-icon gel-icon--text" focusable="false">
+                      <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-duration"></use>
+                    </svg>
+                    1h
+                  </span>
+                  <span class="gef-sr">1 hour ago</span>
                 </dd>
               </div>
               <div>
-                <dt class="vh">From:</dt>
+                <dt class="gef-sr">From:</dt>
                 <dd>
                   <a href="https://www.bbc.co.uk/news/england/sussex">Sussex</a>
                 </dd>
               </div>
             </dl>
           </div>
-          <div class="gef-promo-image">
-            <img src="{{ site.basedir }}static/images/placeholder/002_600x400.jpg"
-              alt="">
-          </div>
         </li>
         <li class="gef-promo">
+          <div class="gef-promo-image">
+            <img src="{{site.basedir}}static/images/placeholder.png" alt="">
+          </div>
           <div class="gef-promo-content">
-            <div class="gef-promo-headline">
-              <h3>
-                <a href="#link-1">Psychologists revise retroactive reports</a>
-              </h3>
-            </div>
-            <div class="gef-promo-desc">
-              <p>Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.</p>
-            </div>
+            <a class="gef-promo-headline" href="#link/to/content">
+              Psychologists revise retroactive reports
+            </a>
+            <p>Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.</p>
             <dl class="gef-metadata-strip">
               <div>
-                <dt class="vh">Published:</dt>
+                <dt class="gef-sr">Published:</dt>
                 <dd>
-                  <span aria-hidden="true">1m</span>
-                  <span class="vh">1 minute ago</span>
+                  <span aria-hidden="true">
+                    <svg class="gel-icon gel-icon--text" focusable="false">
+                      <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-duration"></use>
+                    </svg>
+                    1m
+                  </span>
+                  <span class="gef-sr">1 minute ago</span>
                 </dd>
               </div>
               <div>
-                <dt class="vh">Category:</dt>
+                <dt class="gef-sr">Category:</dt>
                 <dd>
                   <a href="https://www.bbc.co.uk/news/business">Business</a>
                 </dd>
               </div>
             </dl>
           </div>
-          <div class="gef-promo-image">
-            <img src="{{ site.basedir }}static/images/placeholder/001_600x400.jpg" alt="">
-          </div>
         </li>
         <li class="gef-promo">
+          <div class="gef-promo-image">
+            <img src="{{site.basedir}}static/images/placeholder.png" alt="">
+          </div>
           <div class="gef-promo-content">
-            <div class="gef-promo-headline">
-              <h3>
-                <a href="#link-2">Mercury gains in galaxy</a>
-              </h3>
-            </div>
-            <div class="gef-promo-desc">
-              <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu commun paroles.</p>
-            </div>
+            <a class="gef-promo-headline" href="#link/to/content">
+              Mercury gains in galaxy
+            </a>
+            <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.
+              At solmen va esser necessi far uniform grammatica, pronunciation e plu commun paroles.</p>
             <dl class="gef-metadata-strip">
               <div>
-                <dt class="vh">Published:</dt>
+                <dt class="gef-sr">Published:</dt>
                 <dd>
-                  <span aria-hidden="true">1m</span>
-                  <span class="vh">1 minute ago</span>
+                  <span aria-hidden="true">
+                    <svg class="gel-icon gel-icon--text" focusable="false">
+                      <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-duration"></use>
+                    </svg>
+                    1m
+                  </span>
+                  <span class="gef-sr">1 minute ago</span>
                 </dd>
               </div>
               <div>
-                <dt class="vh">From:</dt>
+                <dt class="gef-sr">From:</dt>
                 <dd>
                   <a href="https://www.bbc.co.uk/news/world/africa">Africa</a>
                 </dd>
               </div>
             </dl>
           </div>
-          <div class="gef-promo-image">
-            <img src="{{ site.basedir }}static/images/placeholder/003_600x400.jpg" alt="">
-          </div>
         </li>
         <li class="gef-promo">
+          <div class="gef-promo-image">
+            <img src="{{site.basedir}}static/images/placeholder.png" alt="">
+          </div>
           <div class="gef-promo-content">
-            <div class="gef-promo-headline">
-              <h3>
-                <a href="#link-3">Staff said to summarily 'suspend assaults'</a>
-              </h3>
-            </div>
-            <div class="gef-promo-desc">
-              <p>Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues.</p>
-            </div>
+            <a class="gef-promo-headline" href="#link/to/content">
+              Staff said to summarily 'suspend assaults'
+            </a>
+            <p>Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del
+              coalescent lingues.</p>
             <dl class="gef-metadata-strip">
               <div>
-                <dt class="vh">Published:</dt>
+                <dt class="gef-sr">Published:</dt>
                 <dd>
-                  <span aria-hidden="true">12h</span>
-                  <span class="vh">12 hours ago</span>
+                  <span aria-hidden="true">
+                    <svg class="gel-icon gel-icon--text" focusable="false">
+                      <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-duration"></use>
+                    </svg>
+                    12h
+                  </span>
+                  <span class="gef-sr">12 hours ago</span>
                 </dd>
               </div>
               <div>
-                <dt class="vh">From:</dt>
+                <dt class="gef-sr">From:</dt>
                 <dd>
                   <a href="https://www.bbc.co.uk/news/world/europe">Europe</a>
                 </dd>
               </div>
             </dl>
           </div>
-          <div class="gef-promo-image">
-            <img src="{{ site.basedir }}static/images/placeholder/004_600x400.jpg" alt="">
-          </div>
         </li>
         <li class="gef-promo">
+          <div class="gef-promo-image">
+            <img src="{{site.basedir}}static/images/placeholder.png" alt="">
+          </div>
           <div class="gef-promo-content">
-            <div class="gef-promo-headline">
-              <h3>
-                <a href="#link-4">Engineers eye exploits</a>
-              </h3>
-            </div>
-            <div class="gef-promo-desc">
-              <p>Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental.</p>
-            </div>
+            <a class="gef-promo-headline" href="#link/to/content">
+              Engineers eye exploits
+            </a>
+            <p>Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam
+              simplic quam Occidental in fact, it va esser Occidental.</p>
             <dl class="gef-metadata-strip">
               <div>
-                <dt class="vh">Published:</dt>
+                <dt class="gef-sr">Published:</dt>
                 <dd>
-                  <span aria-hidden="true">2h</span>
-                  <span class="vh">2 hours ago</span>
+                  <span aria-hidden="true">
+                    <svg class="gel-icon gel-icon--text" focusable="false">
+                      <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-duration"></use>
+                    </svg>
+                    2h
+                  </span>
+                  <span class="gef-sr">2 hours ago</span>
                 </dd>
               </div>
               <div>
-                <dt class="vh">By:</dt>
+                <dt class="gef-sr">By:</dt>
                 <dd>
                   <a href="https://www.bbc.co.uk/news/newsbeat">Newsbeat</a>
                 </dd>
               </div>
             </dl>
           </div>
-          <div class="gef-promo-image">
-            <img src="{{ site.basedir }}static/images/placeholder/005_600x400.jpg" alt="">
-          </div>
         </li>
         <li class="gef-promo">
+          <div class="gef-promo-image">
+            <img src="{{site.basedir}}static/images/placeholder.png" alt="">
+          </div>
           <div class="gef-promo-content">
-            <div class="gef-promo-headline">
-              <h3>
-                <a href="#link-5">Transmitter reaches realistic perspectives</a>
-              </h3>
-            </div>
-            <div class="gef-promo-desc">
-              <p>A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es.</p>
-            </div>
+            <a class="gef-promo-headline" href="#link/to/content">
+              Transmitter reaches realistic perspectives
+            </a>
+            <p>A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental
+              es.</p>
             <dl class="gef-metadata-strip">
               <div>
-                <dt class="vh">Published:</dt>
+                <dt class="gef-sr">Published:</dt>
                 <dd>
-                  <span aria-hidden="true">6th Nov 2018</span>
-                  <span class="vh">6th November 2018</span>
+                  <span aria-hidden="true">
+                    <svg class="gel-icon gel-icon--text" focusable="false">
+                      <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-duration"></use>
+                    </svg>
+                    6th Nov 2018
+                  </span>
+                  <span class="gef-sr">6th November 2018</span>
                 </dd>
               </div>
               <div>
-                <dt class="vh">From:</dt>
+                <dt class="gef-sr">From:</dt>
                 <dd>
                   <a href="https://www.bbc.co.uk/news/world/europe">Europe</a>
                 </dd>
               </div>
             </dl>
           </div>
-          <div class="gef-promo-image">
-            <img src="{{ site.basedir }}static/images/placeholder/006_600x400.jpg"
-              alt="">
-          </div>
         </li>
         <li class="gef-promo">
+          <div class="gef-promo-image">
+            <img src="{{site.basedir}}static/images/placeholder.png" alt="">
+          </div>
           <div class="gef-promo-content">
-            <div class="gef-promo-headline">
-              <h3>
-                <a href="#link-6">Passengers point to potential differential</a>
-              </h3>
-            </div>
-            <div class="gef-promo-desc">
-              <p>At solmen va esser necessi far uniform grammatica, pronunciation e plu commun paroles. Ma quande lingues coalesce.</p>
-            </div>
+            <a class="gef-promo-headline" href="#link/to/content">
+              Passengers point to potential differential
+            </a>
+            <p>At solmen va esser necessi far uniform grammatica, pronunciation e plu commun paroles. Ma quande lingues
+              coalesce.</p>
             <dl class="gef-metadata-strip">
               <div>
-                <dt class="vh">Published:</dt>
+                <dt class="gef-sr">Published:</dt>
                 <dd>
-                  <span aria-hidden="true">6th Nov 2018</span>
-                  <span class="vh">6th November 2018</span>
+                  <span aria-hidden="true">
+                    <svg class="gel-icon gel-icon--text" focusable="false">
+                      <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-duration"></use>
+                    </svg>
+                    6th Nov 2018
+                  </span>
+                  <span class="gef-sr">6th November 2018</span>
                 </dd>
               </div>
               <div>
-                <dt class="vh">From:</dt>
+                <dt class="gef-sr">From:</dt>
                 <dd>
                   <a href="https://www.bbc.co.uk/news/world/europe">Europe</a>
                 </dd>
               </div>
             </dl>
-          </div>
-          <div class="gef-promo-image">
-            <img src="{{ site.basedir }}static/images/placeholder/007_600x400.jpg" alt="">
           </div>
         </li>
       </ul>
@@ -238,8 +249,9 @@ title: Carousels
 </div>
 
 <script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function(event) {
-    gef.Carousel.init();
-    gef.Promo.init();
+  document.addEventListener('DOMContentLoaded', function (event) {
+    window.gef && gef.Carousel.init();
+    var carouselElem = document.querySelector('.gef-carousel');
+    var carousel = new gef.Carousel.constructor(carouselElem);
   });
 </script>
