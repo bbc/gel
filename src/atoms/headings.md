@@ -130,13 +130,6 @@ In the above example, classes are named after heading levels to match their size
 </blockquote>
 ```
 
-::: alert Do not visually hide headings
-Some authors have a habit of including headings in the page structure _solely_ for screen reader users, hiding those headings visually. This is to be avoided for two reasons:
-
-1. Not all screen reader users are blind. Navigating to an invisible heading is likely to cause confusion for sighted screen reader users
-2. All users, sighted or otherwise, benefit from explicit labels for the sections of the document or application.
-:::
-
 ## Recommended behaviour
 
 Where headings adopt `id`s and are used as document fragments to be navigated between using same-page links, they should take `tabindex="-1"`. This forces browsers that would not otherwise update their sequential focus starting point[^4] to move keyboard focus to the destination heading and section.

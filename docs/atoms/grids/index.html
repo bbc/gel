@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/gef-docs/static/images/favicon.ico" type="image/x-icon">
+
+    <title>GEF | Grids</title>
+
+    <script src="/gef-docs/static/js/site.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/gef.css">
+    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/site.css">
+
+    <script type="text/javascript"> // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    <script type="text/javascript">
+        try {
+            (new FontFaceObserver('ReithSans', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-sans-loaded';
+            });
+            (new FontFaceObserver('ReithSerif', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-loaded';
+            });
+        } catch( e ) {
+            console.log('Reith fonts did not load within 5 seconds.');
+        }
+    </script>
+
+    <script type="text/javascript">
+        // syntax highlight
+        hljs.initHighlightingOnLoad();
+    </script>
+
+    
+</head>
+
+<body class="gefdocs-body">
+    <p class="gef-sr gef-sr__focusable gef-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('gef-sr__focused')" onblur="this.parentNode.classList.remove('gef-sr__focused')">Skip
+            to content</a>
+    </p>
+
+    <header>
+        <div class="gefdocs-header gs-u-clearfix">
+            <div class="gel-wrap">
+                <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
+                        <title>BBC</title>
+                        <image xlink:href="/gef-docs/static/images/bbc-blocks_grey.svg" src="/gef-docs/static/images/bbc-blocks_grey.png"
+                            width="100%" height="100%"></image>
+                    </svg></a>
+            </div>
+        </div>
+        <div class="gefdocs-header__banner gs-u-clearfix">
+            <div class="gel-wrap">
+                <div class="gel-layout">
+                    <div class="gel-layout__item gel-2/5@l" style="text-align:left; padding-left:14px; margin-bottom:32px;">
+                        <a href="/gef-docs/" class="gefdocs-logo">GEF</a>
+                    </div>
+                    <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
+                        <a class="gefdocs-button gefdocs-button--dark gel-long-primer-bold" href="https://www.bbc.co.uk/gel/guidelines/grid">
+                            Go to BBC GEL
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" tabindex="-1" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <!-- column placeholder-->
+            </div>
+
+            <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
+                <h1 class="gefdocs-header__title">Grids</h1>
+                <p class="gefdocs-header__summary gel-great-primer">Visual layout should be efficient and consistent, without impeding document structure and accessibility</p>
+            </div>
+
+            <div class="gel-layout__item gel-1/5@l">
+                <dl class="gefdocs-standout-box">
+                    
+                    <dt>Version:</dt>
+                    <dd>0.1.0</dd>
+                    
+                    <dt>Status:</dt>
+                    <dd>Draft</dd>
+                    <dt>Accessibility:</dt>
+                    <dd>Pass</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
+                    <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
+                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#related-research">Related research</a></li></ol>
+                </nav>
+            </div>
+
+            <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
+                <h2 id="introduction">Introduction</h2>
+<p>The following guidance builds upon <a href="https://www.bbc.co.uk/gel/guidelines/grid">GEL's Grid specification</a> with progressive enhancements to capitalize on recent CSS layout developments.</p>
+<h2 id="recommended-markup">Recommended markup</h2>
+<p>Necessarily, a grid is composed of individual grid <em>items</em> that together form a set, or group. Sometimes the items should be perceived as related, and in other cases they are only grouped together in order to achieve a visual layout.</p>
+<p>A sighted user is typically afforded visual cues that two or more adjacent grid items belong to a set, such as a disparity in style and layout. A blind user instead has to rely on the semantics, or lack thereof, communicated by their screen reader software.</p>
+<p>Should grid items represent arbitrary containers, solely used to place items in a grid formation, the <code>&lt;div&gt;</code> element can be used.</p>
+<h3 id="bad-example">
+          <div class="circular circular__bad" aria-hidden="true">✕</div>
+         Bad example</h3>
+<p>(Table semantics are inappropriate since the content is not tabular.)</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/2"</span>&gt;</span>One item<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/2"</span>&gt;</span>Another unrelated item to the right<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+</code></pre>
+<h3 id="good-example">
+          <div class="circular circular__good" aria-hidden="true">✓</div>
+         Good example</h3>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/2"</span>&gt;</span>One item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/2"</span>&gt;</span>Another unrelated item to the right<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>The <code>&lt;div&gt;</code> element is not represented in the browser accessibility tree<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> and therefore presents the user with no undue or unexpected semantic information. Only the contents of the items, where semantic HTML is provided, will be interpreted.</p>
+<p>In some cases, the items will have independent semantics to express. In which case, use the appropriate semantic elements for the grid items. In the following example, a tangentially related <code>&lt;main&gt;</code> and <code>&lt;aside&gt;</code> form a wider content column and a narrower sidebar.</p>
+<h3 id="bad-example-2">
+          <div class="circular circular__bad" aria-hidden="true">✕</div>
+         bad example</h3>
+<p>(CSS classes, which do not communicate semantic information to accessibility APIs, are used to differentiate the elements.)</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"main gel-layout__item gel-2/3"</span>&gt;</span>Content<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"sidebar gel-layout__item gel-1/3"</span>&gt;</span>Sidebar<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h3 id="good-example-1">
+          <div class="circular circular__good" aria-hidden="true">✓</div>
+         Good example</h3>
+<p>(The correct landmark elements are employed.)</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">main</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-2/3"</span>&gt;</span>Content<span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/3"</span>&gt;</span>Sidebar<span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h3 id="grids-as-lists">Grids as lists</h3>
+<p>If items belong thematically to a set, the standard is to mark them up as a list. Doing so fulfills <strong>WCAG2.1 1.3.1 Info and Relationships</strong><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</p>
+<p>Lists are identified by assistive technologies, and their items are enumerated. Many screen readers also provide shortcuts to traverse list items, such as <a href="https://webaim.org/resources/shortcuts/nvda">the <kbd>i</kbd> key in NVDA</a>.</p>
+<p>A grid of scheduled programmes can be considered a thematic set, because each item is of the class &quot;programme&quot;.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/4"</span>&gt;</span>Doctor Who<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/4"</span>&gt;</span>Miranda<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/4"</span>&gt;</span>Holby City<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/4"</span>&gt;</span>Springwatch<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+<p>Lists that contain children that are not list items are invalid, and liable to cause inconsistent output in browsers. Such parsing issues are considered a failure under <strong>WCAG2.1 4.1.1 Parsing</strong><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
+<p>The correct way to incorporate row wrappers into a list is, therefore, to use WAI-ARIA:</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"list"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"presentation"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"listitem"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/4"</span>&gt;</span>Doctor Who<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"listitem"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/4"</span>&gt;</span>Miranda<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"listitem"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/4"</span>&gt;</span>Holby City<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"listitem"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/4"</span>&gt;</span>Springwatch<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"presentation"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"listitem"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/4"</span>&gt;</span>Dragon's Den<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"listitem"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/4"</span>&gt;</span>Blue Peter<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"listitem"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/4"</span>&gt;</span>Daily Politics<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"listitem"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/4"</span>&gt;</span>Robot Wars<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>In the example, the grid is defined using <code>role=&quot;list&quot;</code>. Children are explicitly removed from the accessibility tree using <code>role=&quot;presentation&quot;</code>, and items are marked with <code>role=&quot;listitem&quot;</code>. The outcome is that assistive technologies correctly report one list encapsulating eight list items.</p>
+
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-compatibility-and-the-presentation-role">
+              <h4 id="aside-info-compatibility-and-the-presentation-role" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Compatibility and the presentation role</h4><div><p>The application of <code>role=&quot;presentation&quot;</code><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> on a <code>&lt;div&gt;</code> should be redundant, since <code>&lt;div&gt;</code> already has no implicit <code>role</code>. However, some browsers, together with screen readers, treat any children of <code>role=&quot;list&quot;</code> as a list item, hence the explicit <code>role</code> augmentation.</p>
+</aside><h3 id="headings">Headings</h3>
+<p>Headings, together with lists, create a perceivable structure non-visually, and provide navigational cues<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2:1]</a></sup>. A page should make liberal but appropriate use of headings, whether the layout is divided into a grid or exists as a single column of text.</p>
+<p>It's quite legitimate to place headings within list items, and beneficial where they represent grid items that contain a lot of structured content. But be aware that a list represents a <em>flat</em> hierarchical structure, so each heading should be of the same level, to reflect this. This level is determined by the level of the heading that introduces the list itself.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Upcoming programmes<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/4"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Doctor Who<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>[description]<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/4"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Miranda<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>[description]<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/4"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Holby City<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>[description]<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+<p>The nesting structure for the above example creates the following outline, with &quot;Upcoming programmes&quot; labelling a list of programme subsections.</p>
+<ul>
+<li>Upcoming programmes
+<ul>
+<li>Doctor Who</li>
+<li>Miranda</li>
+<li>Holby City</li>
+</ul>
+</li>
+</ul>
+<p>For more information, see <a href="../headings"><strong>Headings</strong></a>.</p>
+<h3 id="tables">Tables</h3>
+<p>Data tables are read from top to bottom and left to right, with headers along the top and (sometimes) down the left-hand side. It is imperative the visual structure matches the semantic structure in all viewports: table elements must not be allowed to wrap and find themselves falling under different headers.</p>
+<p>The <a href="https://github.com/bbc/gel-grid">GEL grid system</a> is not applicable to data tables, which should be marked up using <code>&lt;table&gt;</code>, <code>&lt;th&gt;</code> (table header) and <code>&lt;td&gt;</code> elements, eliciting the basic, desired layout via user agent styling.</p>
+<p>Since wrapping is not permissible, creating a responsive table is a matter of letting the user scroll the table horizontally. To enable this accessibly, you need to:</p>
+<ol>
+<li>Wrap the table in an element with <code>overflow-x: auto</code></li>
+<li>Make this element focusable with <code>tabindex=&quot;0&quot;</code>, so it can be scrolled using the keyboard</li>
+<li>Label this focusable element for screen reader users, preferably using a table caption</li>
+</ol>
+<p><a href="https://inclusive-components.design/data-tables/">Inclusive components: Data tables</a> has an example. Note the <code>group</code> role, which elicits the the announcement of the role along with the element's associated label.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"table-container"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"caption"</span>&gt;</span>  
+  <span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">caption</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"caption"</span>&gt;</span>Grindcore bands<span class="hljs-tag">&lt;/<span class="hljs-name">caption</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- table content --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h2 id="recommended-layout">Recommended layout</h2>
+<h3 id="order">Order</h3>
+<p>Since the <a href="https://github.com/bbc/gel-grid">GEL grid system</a> uses Flexbox, it is possible to affect the layout order of the grid items using the <code>order</code> property.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+<span class="hljs-selector-class">.promote</span> {
+    <span class="hljs-attribute">order</span>: <span class="hljs-number">1</span>;
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/3"</span>&gt;</span>First item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/3"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"promote"</span>&gt;</span>Second<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-layout__item gel-1/3"</span>&gt;</span>Third<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>In this example, the <code>class=&quot;promote&quot;</code> item is &quot;promoted&quot; from the second position to the first. This creates problems for blind, partially sighted, and keyboard users.</p>
+<ul>
+<li><strong>Blind users:</strong> The markup consumed by the user's screen reader remains in the original order, meaning there is a disparity between their and a sighted user's experience</li>
+<li><strong>Partially sighted users:</strong> If the user is running a screen reader, there is a disparity between the visual order they can partially perceive, and the order that content is announced by the screen reader. This can cause a failure under <strong>WCAG2.1 1.3.2 Meaningful Sequence</strong><sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>.</li>
+<li><strong>Keyboard users:</strong> Any interactive/focusable elements will receive focus in an order that contradicts the order in which they appear. This is a failure according to <strong>WCAG2.1 2.4.3 Focus Order</strong><sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>.</li>
+</ul>
+<p>For these reasons, in most cases a different visual order should be achieved by editing the source order — not by employing the <code>order</code> property.</p>
+<h3 id="rtl-languages">RTL languages</h3>
+<p>Flexbox intrinsically supports <code>direction</code> by reversing the order of grid items where <code>dir=&quot;ltr&quot;</code> is switched to <code>dir=&quot;rtl&quot;</code>, or the CSS property <code>direction</code> is switched between <code>ltr</code> and <code>rtl</code>.</p>
+<p>Since switching to a RTL <code>lang</code> does not automatically change the direction, you will have to explicitly reverse your grid's order in your CSS<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>. In the following example, <code>my-grid</code> switches the direction of its items in a page set to Arabic.</p>
+<pre class="hljs"><code><span class="hljs-selector-pseudo">:lang(ar)</span> <span class="hljs-selector-class">.my-grid</span> {
+    <span class="hljs-attribute">direction</span>: rtl;
+}
+</code></pre>
+<p>Depending on the content of the grid items, and their relationship to one another, it may not be necessary or suitable to switch the direction of the grid, even in a RTL language context.</p>
+<h3 id="css-grid-enhancement">CSS Grid enhancement</h3>
+<p>The CSS Grid module<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup> is preferable to Flexbox in some circumstances. With CSS Grid it is possible to create a responsive grid of an indeterminate number of items, where each item automatically conforms to the same width, regardless of wrapping behaviour. This behaviour removes the necessity for <code>@media</code> breakpoints, and is particularly useful when arranging sets of  <a href="../cards"><strong>Cards</strong></a> or <a href="../promos"><strong>Promos</strong></a>.</p>
+<p>In the <a href="../cards"><strong>Cards</strong></a> pattern, progressive enhancement is achieved using <code>@supports</code>:</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-cards</span> &gt; * + * {
+  <span class="hljs-attribute">list-style</span>: none;
+  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">1rem</span>;
+}
+
+@<span class="hljs-keyword">supports</span> (display: grid) {
+  <span class="hljs-selector-class">.gef-cards</span> &gt; * + * {
+    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">0</span>;
+  }
+
+  <span class="hljs-selector-class">.gef-cards</span> {
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(auto-fill, minmax(266px, 1fr));
+    <span class="hljs-attribute">grid-gap</span>: <span class="hljs-number">1rem</span>;
+  }
+}
+</code></pre>
+<p>Note how the margin set above the <code>@supports</code> block is removed inside the <code>@supports</code> block, since it is superceded by <code>grid-gap</code>. As mandated in <a href="https://www.bbc.co.uk/gel/guidelines/grid">GEL's Grid specification</a>, the minimum gap between grid cells is <code>8px</code> (or <code>0.5rem</code>).</p>
+<h2 id="recommended-behaviour">Recommended behaviour</h2>
+<h3 id="magnification">Magnification</h3>
+<p>Some users will magnify<sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup> their web pages using add-on software, like <a href="https://www.zoomtext.com/products/zoomtext-magnifierreader/">ZoomText</a>. Others will use 'full-page zoom', as initiated by pressing <kbd>Cmd</kbd> (or <kbd>Ctrl</kbd>) and <kbd>+</kbd>.</p>
+<p>Full-page zoom triggers breakpoints in the same way that physically narrowing or widening the viewport does, meaning responsive interfaces support magnification, and the visually impaired. You just need to ensure that content <em>within</em> grid items is responsive too. That means:</p>
+<ul>
+<li>Avoiding fixed widths, set with <code>width</code>, so that grid content does not overflow</li>
+<li>Avoiding fixed heights, set with <code>height</code>, that would cause wrapped content to overlap</li>
+<li>Avoiding <code>white-space: nowrap</code>, which prevents text from wrapping</li>
+</ul>
+<h2 id="related-research">Related research</h2>
+<p>This topic does not yet have any related research available.</p>
+<h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>The Accessibility Tree — Google Developers, <a href="https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree">https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>WCAG2.1 1.3.1 Info &amp; Relationships, <a href="https://www.w3.org/TR/WCAG21/#info-and-relationships">https://www.w3.org/TR/WCAG21/#info-and-relationships</a> <a href="#fnref2" class="footnote-backref">↩︎</a> <a href="#fnref2:1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>WCAG2.1 4.1.1 Parsing, <a href="https://www.w3.org/TR/WCAG21/#parsing">https://www.w3.org/TR/WCAG21/#parsing</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>Using the presentation role — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_presentation_role">https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_presentation_role</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>WCAG2.1 1.3.2 Meaningful Sequence, <a href="https://www.w3.org/TR/WCAG21/#meaningful-sequence">https://www.w3.org/TR/WCAG21/#meaningful-sequence</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>WCAG2.1 2.4.3 Focus Order, <a href="https://www.w3.org/TR/WCAG21/#focus-order">https://www.w3.org/TR/WCAG21/#focus-order</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p><code>:lang()</code> — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:lang">https://developer.mozilla.org/en-US/docs/Web/CSS/:lang</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p>CSS Grid Layout Module Level 1 — W3, <a href="https://www.w3.org/TR/css-grid-1/#overview-grid">https://www.w3.org/TR/css-grid-1/#overview-grid</a> <a href="#fnref8" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn9" class="footnote-item"><p>How to make your site accessible for screen magnifiers — Axess Lab, <a href="https://axesslab.com/make-site-accessible-screen-magnifiers/">https://axesslab.com/make-site-accessible-screen-magnifiers/</a> <a href="#fnref9" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+
+                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
+                    <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
+                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Could you improve this documentation?
+                    </h4>
+                    <div>
+                        <p>
+                        If you think you could make anything you see here a bit better then become one of <a href="/gef-docs/contributors/">our lovely contributors</a>!
+                        </p>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="gefdocs-feedback-banner">
+        <div class="gel-wrap">
+            <div class="gel-layout">
+                <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
+                    <h2 class="gefdocs-feedback-banner__title">Got a minute?</h2>
+                    <p>We'd love to know what you think of the Code GEL website.</p>
+                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" class="gefdocs-button gefdocs-button__link-button gefdocs-feedback-banner__cta gefdocs-button--primary">
+                        <span class="gefdocs-button__content">Go to survey</span>
+                        <span class="gefdocs-button__icon_wrapper">
+                            <svg class="gefdocs-button__icon gefdocs-icon gefdocs-icon--text">
+                                <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                                    style="fill:undefined;"></use>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
+
+    
+
+    <script type="text/javascript">
+        new Sticky('.sticky');
+        new MenuSpy(document.querySelector('#gefdocs-toc__links'), {enableLocationHash: false});
+        new SweetScroll({
+            trigger: '#gefdocs-toc__links a',
+            quickMode: true,
+            easing: 'easeOutExpo',
+            cancellable: true,
+            updateURL: false, 
+        });
+    </script>
+</body>
+
+</html>
