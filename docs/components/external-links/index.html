@@ -29,7 +29,7 @@
             (new FontFaceObserver('ReithSerif', 5000)).load().then(function () {
                 document.documentElement.className += ' b-reith-loaded';
             });
-        } catch( e ) {
+        } catch (e) {
             console.log('Reith fonts did not load within 5 seconds.');
         }
     </script>
@@ -39,7 +39,7 @@
         hljs.initHighlightingOnLoad();
     </script>
 
-    
+
 </head>
 
 <body class="gefdocs-body">
@@ -82,15 +82,16 @@
 
             <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
                 <h1 class="gefdocs-header__title">External Links</h1>
-                <p class="gefdocs-header__summary gel-great-primer">External links direct people outside of the BBC domain; a behaviour that must be indicated to all users</p>
+                <p class="gefdocs-header__summary gel-great-primer">External links direct people outside of the BBC
+                    domain; a behaviour that must be indicated to all users</p>
             </div>
 
             <div class="gel-layout__item gel-1/5@l">
                 <dl class="gefdocs-standout-box">
-                    
+
                     <dt>Version:</dt>
                     <dd>0.1.0</dd>
-                    
+
                     <dt>Status:</dt>
                     <dd>Draft</dd>
                     <dt>Accessibility:</dt>
@@ -103,21 +104,37 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="gefdocs-toc__links" class="gefdocs-toc">
+                        <li><a href="#introduction">Introduction</a></li>
+                        <li><a href="#recommended-markup">Recommended markup</a></li>
+                        <li><a href="#recommended-layout">Recommended layout</a></li>
+                        <li><a href="#reference-implementation">Reference implementation</a></li>
+                        <li><a href="#related-research">Related research</a></li>
+                    </ol>
                 </nav>
             </div>
 
             <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="introduction">Introduction</h2>
-<p>External links point to non-BBC domains.</p>
-<p>Whether the external link is inline (e.g. inside a paragraph) or as an item belonging to a list of 'further reading', it must be accompanied by the <a href="https://www.bbc.co.uk/gel/guidelines/iconography">GEL Iconography</a> external link icon.</p>
-<p>External links navigate the user to new and potentially unfamiliar user interfaces. Blind users should be warned of this context change by including some visually hidden text reading <em>&quot;leave BBC site&quot;</em> or similar.</p>
-<h2 id="recommended-markup">Recommended markup</h2>
-<h3 id="inline-external-link">Inline external link</h3>
+                <p>External links point to non-BBC domains.</p>
+                <p>Whether the external link is inline (e.g. inside a paragraph) or as an item belonging to a list of
+                    'further reading', it must be accompanied by the <a href="https://www.bbc.co.uk/gel/guidelines/iconography">GEL
+                        Iconography</a> external link icon.</p>
+                <p>External links navigate the user to new and potentially unfamiliar user interfaces. Blind users
+                    should be warned of this context change by including some visually hidden text reading <em>&quot;leave
+                        BBC site&quot;</em> or similar.</p>
+                <h2 id="recommended-markup">Recommended markup</h2>
+                <h3 id="inline-external-link">Inline external link</h3>
 
-            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-code-is-elided">
-              <h4 id="aside-info-code-is-elided" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Code is elided</h4><div><p>The example places the external link within a paragraph. The paragraph text surrounding the link has been replaced with '...'</p>
-</aside><pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>...
+                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-code-is-elided">
+                    <h4 id="aside-info-code-is-elided" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
+                            <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use>
+                        </svg>Code is elided</h4>
+                    <div>
+                        <p>The example places the external link within a paragraph. The paragraph text surrounding the
+                            link has been replaced with '...'</p>
+                </aside>
+                <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>...
   <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://example.com/link/to/external/resource"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sr"</span>&gt;</span>leave BBC site:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     Football Association of 
@@ -130,14 +147,27 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 ...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </code></pre>
-<h4 id="notes">Notes</h4>
-<ul>
-<li><strong><code>&lt;span class=&quot;gef-sr&quot;&gt;leave BBC site:&lt;/span&gt;</code>:</strong> This text comes before the link's unique text content in both inline and list-based external links. It is visually hidden using the <code>gef-sr</code> class and warns screen reader users of the change in context <code>target=&quot;_blank&quot;</code> will invoke. In most screen reader software it will be read after the link role, resulting in <em>&quot;link, leave BBC site: [unique link text]&quot;</em>. The appended colon ensures there is a pause between <em>&quot;leave BBC site&quot;</em> and the link text.</li>
-<li><strong><code>gel-icon</code>:</strong> The icon must use the <a href="https://www.bbc.co.uk/gel/guidelines/iconography">GEL Iconography</a> external link icon and take <code>aria-hidden=&quot;true&quot;</code> to hide it from assistive technologies. In addition, apply <code>focusable=&quot;false&quot;</code> to ensure Internet Explorer and some versions of Edge do not place the SVG in focus order<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</li>
-<li><strong><code>gel-nowrap</code>:</strong> Use this <code>&lt;span&gt;</code> to wrap the icon and the last word of the link's unique text. By applying <code>white-space: nowrap</code> it ensures the icon never becomes a widow (wraps onto a new link by itself)</li>
-</ul>
-<h3 id="external-link-list">External link list</h3>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Further reading<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+                <h4 id="notes">Notes</h4>
+                <ul>
+                    <li><strong><code>&lt;span class=&quot;gef-sr&quot;&gt;leave BBC site:&lt;/span&gt;</code>:</strong>
+                        This text comes before the link's unique text content in both inline and list-based external
+                        links. It is visually hidden using the <code>gef-sr</code> class<sup class="footnote-ref"><a
+                                href="#fn1" id="fnref1">[1]</a></sup> and warns screen reader users of the change in
+                        context <code>target=&quot;_blank&quot;</code> will invoke. In most screen reader software it
+                        will be read after the link role, resulting in <em>&quot;link, leave BBC site: [unique link
+                            text]&quot;</em>. The appended colon ensures there is a pause between <em>&quot;leave BBC
+                            site&quot;</em> and the link text.</li>
+                    <li><strong><code>gel-icon</code>:</strong> The icon must use the <a href="https://www.bbc.co.uk/gel/guidelines/iconography">GEL
+                            Iconography</a> external link icon. In addition, apply <code>focusable=&quot;false&quot;</code>
+                        to ensure Internet Explorer and some versions of Edge do not place the SVG in focus order<sup
+                            class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> if JavaScript is not taking
+                        care of this already.</li>
+                    <li><strong><code>gel-nowrap</code>:</strong> Use this <code>&lt;span&gt;</code> to wrap the icon
+                        and the last word of the link's unique text. By applying <code>white-space: nowrap</code> it
+                        ensures the icon never becomes a widow (wraps onto a new link by itself)</li>
+                </ul>
+                <h3 id="external-link-list">External link list</h3>
+                <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Further reading<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-external-links"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://example.com/external/link"</span>&gt;</span>
@@ -168,20 +198,32 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 </code></pre>
-<h4 id="notes-1">Notes</h4>
-<ul>
-<li>The main difference between external links within lists is that the icon comes <em>before</em> the content.</li>
-<li><strong><code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code>:</strong> It is important list markup is used since it identifies itself to assistive technologies, enumerates the items, and provides navigation options in screen readers.</li>
-<li><strong><code>&lt;h2&gt;</code></strong> In most cases, lists of external links should be introduced by a heading. This makes them more discoverable within the document structure, both visually and by screen reader shortcuts. Make sure the heading is of the correct level (see <a href="../Headings"><strong>Headings</strong></a>) and contains suitable text, such as <em>&quot;Further reading&quot;</em> or <em>&quot;Read more&quot;</em>.</li>
-</ul>
-<h2 id="recommended-layout">Recommended layout</h2>
-<p>The link itself does not need any special styling, and should inherit link styling for the context. But be sure to wrap the last word and icon in a <code>gel-nowrap</code> <code>&lt;span&gt;</code> to stop the icon becoming a widow (inline external links only).</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gel-nowrap</span> {
+                <h4 id="notes-1">Notes</h4>
+                <ul>
+                    <li>The main difference between external links within lists is that the icon comes <em>before</em>
+                        the content.</li>
+                    <li><strong><code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code>:</strong> It is important list
+                        markup is used since it identifies itself to assistive technologies, enumerates the items, and
+                        provides navigation options in screen readers.</li>
+                    <li><strong><code>&lt;h2&gt;</code></strong> In most cases, lists of external links should be
+                        introduced by a heading. This makes them more discoverable within the document structure, both
+                        visually and by screen reader shortcuts. Make sure the heading is of the correct level (see <a
+                            href="../Headings"><strong>Headings</strong></a>) and contains suitable text, such as <em>&quot;Further
+                            reading&quot;</em> or <em>&quot;Read more&quot;</em>.</li>
+                </ul>
+                <h2 id="recommended-layout">Recommended layout</h2>
+                <p>The link itself does not need any special styling, and should inherit link styling for the context.
+                    But be sure to wrap the last word and icon in a <code>gef-nowrap</code> <code>&lt;span&gt;</code>
+                    to stop the icon becoming a widow (inline external links only).</p>
+                <pre class="hljs"><code><span class="hljs-selector-class">.gef-nowrap</span> {
   <span class="hljs-attribute">white-space</span>: nowrap;
 }
 </code></pre>
-<p>Unfortunately, upon removing the bullets from the list using <code>list-style: none</code>, some Voiceover versions cease to identify the list. This can be remedied by placing some arbitrary pseudo-content before each item. In the following solution<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>, a zero-width space is added:</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-external-links</span> {
+                <p>Unfortunately, upon removing the bullets from the list using <code>list-style: none</code>, some
+                    Voiceover versions cease to identify the list. This can be remedied by placing some arbitrary
+                    pseudo-content before each item. In the following solution<sup class="footnote-ref"><a href="#fn2"
+                            id="fnref2">[2]</a></sup>, a zero-width space is added:</p>
+                <pre class="hljs"><code><span class="hljs-selector-class">.gef-external-links</span> {
   <span class="hljs-attribute">list-style-type</span>: none;
 }
 
@@ -189,82 +231,112 @@
   <span class="hljs-attribute">content</span>: <span class="hljs-string">'\200B'</span>;
 }
 </code></pre>
-<p>Some white space is placed between external links in the list formation to improve demarcation and legibility:</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-external-links</span> <span class="hljs-selector-tag">li</span> + <span class="hljs-selector-tag">li</span> {
+                <p>Some white space is placed between external links in the list formation to improve demarcation and
+                    legibility:</p>
+                <pre class="hljs"><code><span class="hljs-selector-class">.gef-external-links</span> <span class="hljs-selector-tag">li</span> + <span class="hljs-selector-tag">li</span> {
   <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">0.5rem</span>;
 }
 </code></pre>
-<h2 id="reference-implementation">Reference implementation</h2>
+                <h2 id="reference-implementation">Reference implementation</h2>
 
-            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
-              <h4 id="aside-alert-important" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
-</aside>
-          <div class="gefdocs-demo"><!-- 
+                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
+                    <h4 id="aside-alert-important" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
+                            <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use>
+                        </svg>Important</h4>
+                    <div>
+                        <p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>,
+                            but not necessarily how to achieve it. That would depend on the technology stack you are
+                            working with. The HTML semantics, layout, and behaviour of your implementation must conform
+                            to the reference implementation. Your JS framework, CSS methodology, and—most
+                            likely—content will differ.</p>
+                </aside>
+                <div class="gefdocs-demo">
+                    <!-- 
 title: External links
  -->
 
-<div style="margin-bottom: 1rem;">
-  <h3>Inline external link</h3>
-  <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth.<a href="#"><span class="gef-sr">leave
-        BBC site:</span> Ministry Of <span class="gel-nowrap">Sound <svg class="gel-icon gel-icon--text" focusable="false">
-          <use xlink:href="/gef-docs//static/images/gel-icons-all.svg#gel-icon-external-link" style="undefined"></use>
-        </svg></span></a> Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.
-    Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.</p>
-  <h3>List of external links</h3>
-  <h4>Read more</h4>
-  <ul class="gef-external-links">
-    <li>
-      <a href="#">
-        <span class="gef-sr">leave BBC site:</span>
-        <svg class="gel-icon gel-icon--text" focusable="false">
-          <use xlink:href="/gef-docs//static/images/gel-icons-all.svg#gel-icon-external-link" style="undefined"></use>
-        </svg>
-        Football Association of Wales
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <span class="gef-sr">leave BBC site:</span>
-        <svg class="gel-icon gel-icon--text" focusable="false">
-          <use xlink:href="/gef-docs//static/images/gel-icons-all.svg#gel-icon-external-link" style="undefined"></use>
-        </svg>
-        Europa League final
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <span class="gef-sr">leave BBC site:</span>
-        <svg class="gel-icon gel-icon--text" focusable="false">
-          <use xlink:href="/gef-docs//static/images/gel-icons-all.svg#gel-icon-external-link" style="undefined"></use>
-        </svg>
-        West Bromwich Albion official site
-      </a>
-    </li>
-  </ul>
-</div></div>
-        
-          <p><a class="gef-cta gel-long-primer-bold" href="../demos/external-links/" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
-        <h2 id="related-research">Related research</h2>
-<p>This topic does not yet have any related research available.</p>
-<h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>&quot;Removing SVG Keyboard Focus in IE&quot; — <a href="http://websemantics.uk">websemantics.uk</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>&quot;VoiceOver and list-style-type: none&quot; — <a href="http://unfetteredthoughts.net">unfetteredthoughts.net</a>, <a href="https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/">https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
+                    <div style="margin-bottom: 1rem;">
+                        <h3>Inline external link</h3>
+                        <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth.<a href="#"><span
+                                    class="gef-sr">leave
+                                    BBC site:</span> Ministry Of <span class="gef-nowrap">Sound <svg class="gel-icon gel-icon--text"
+                                        focusable="false">
+                                        <use xlink:href="/gef-docs//static/images/gel-icons-all.svg#gel-icon-external-link"
+                                            style="undefined"></use>
+                                    </svg></span></a> Li lingues differe solmen in li grammatica, li pronunciation e li
+                            plu commun vocabules.
+                            Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi
+                            traductores.</p>
+                        <h3>List of external links</h3>
+                        <h4>Read more</h4>
+                        <ul class="gef-external-links">
+                            <li>
+                                <a href="#">
+                                    <span class="gef-sr">leave BBC site:</span>
+                                    <svg class="gel-icon gel-icon--text" focusable="false">
+                                        <use xlink:href="/gef-docs//static/images/gel-icons-all.svg#gel-icon-external-link"
+                                            style="undefined"></use>
+                                    </svg>
+                                    Football Association of Wales
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="gef-sr">leave BBC site:</span>
+                                    <svg class="gel-icon gel-icon--text" focusable="false">
+                                        <use xlink:href="/gef-docs//static/images/gel-icons-all.svg#gel-icon-external-link"
+                                            style="undefined"></use>
+                                    </svg>
+                                    Europa League final
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="gef-sr">leave BBC site:</span>
+                                    <svg class="gel-icon gel-icon--text" focusable="false">
+                                        <use xlink:href="/gef-docs//static/images/gel-icons-all.svg#gel-icon-external-link"
+                                            style="undefined"></use>
+                                    </svg>
+                                    West Bromwich Albion official site
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p><a class="gef-cta gel-long-primer-bold" href="../demos/external-links/" target="_new"><span class="gef-button__label">Open
+                            in new window</span><svg class="gef-button__icon gef-icon gel-icon--text">
+                            <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use>
+                        </svg></a></p>
+                <h2 id="related-research">Related research</h2>
+                <p>This topic does not yet have any related research available.</p>
+                <h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
+                <hr class="footnotes-sep">
+                <section class="footnotes">
+                    <ol class="footnotes-list">
+                        <li id="fn1" class="footnote-item">
+                            <p>Gist of the <code>gef-sr</code> (visually hidden) class <a href="https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472">https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472</a>
+                                <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+                        </li>
+                        <li id="fn2" class="footnote-item">
+                            <p>&quot;VoiceOver and list-style-type: none&quot; — <a href="http://unfetteredthoughts.net">unfetteredthoughts.net</a>,
+                                <a href="https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/">https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/</a>
+                                <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+                        </li>
+                    </ol>
+                </section>
 
 
                 <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
                     <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
-                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Could you improve this documentation?
+                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
+                            <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use>
+                        </svg>Could you improve this documentation?
                     </h4>
                     <div>
                         <p>
-                        If you think you could make anything you see here a bit better then become one of <a href="/gef-docs/contributors/">our lovely contributors</a>!
+                            If you think you could make anything you see here a bit better then become one of <a href="/gef-docs/contributors/">our
+                                lovely contributors</a>!
                         </p>
                     </div>
                 </aside>
@@ -295,17 +367,17 @@ title: External links
 
     <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
 
-    
+
 
     <script type="text/javascript">
         new Sticky('.sticky');
-        new MenuSpy(document.querySelector('#gefdocs-toc__links'), {enableLocationHash: false});
+        new MenuSpy(document.querySelector('#gefdocs-toc__links'), { enableLocationHash: false });
         new SweetScroll({
             trigger: '#gefdocs-toc__links a',
             quickMode: true,
             easing: 'easeOutExpo',
             cancellable: true,
-            updateURL: false, 
+            updateURL: false,
         });
     </script>
 </body>
