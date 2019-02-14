@@ -429,6 +429,8 @@ svg + .gef-promo-indicator-text {
 
 .gef-card {
   background-color: #F1F1F1;
+  border: 2px solid transparent;
+  /* for high contrast mode */
   position: relative; }
 
 .gef-card-content {
@@ -472,7 +474,9 @@ svg + .gef-promo-indicator-text {
   list-style: none;
   display: flex;
   background-color: #e5e5e5;
-  margin-top: auto; }
+  margin-top: auto;
+  border-top: 1px solid transparent;
+  /* for high contrast mode */ }
 
 .gef-card-toolbar button {
   background: none;
@@ -499,7 +503,10 @@ svg + .gef-promo-indicator-text {
 
 .gef-card-toolbar button:hover,
 .gef-card-toolbar button:focus {
-  outline: none;
+  outline: 2px solid transparent;
+  /* for high contrast mode */
+  outline-offset: -2px;
+  /* for high contrast mode */
   background-color: #007bb8;
   color: #fff; }
 
@@ -837,6 +844,8 @@ span.gef-nowrap {
 
 .gef-button-switch [aria-hidden] {
   display: inline-block;
+  border: 2px solid transparent;
+  /* for high contrast mode */
   margin-left: 8px;
   font-weight: bold;
   background-color: #fff;

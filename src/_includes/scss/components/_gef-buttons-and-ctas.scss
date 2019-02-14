@@ -67,6 +67,7 @@
 
 .gef-button-switch [aria-hidden] {
   display: inline-block;
+  border: 2px solid transparent; /* for high contrast mode */
   margin-left: $gel-spacing-unit;
   font-weight: bold;
   background-color: $gel-color--white;

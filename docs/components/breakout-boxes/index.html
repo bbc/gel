@@ -65,7 +65,7 @@
                         <a href="/gef-docs/" class="gefdocs-logo">GEF</a>
                     </div>
                     <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
-                        <a class="gefdocs-button gefdocs-button--dark gel-long-primer-bold" href="http://www.bbc.co.uk/gel">
+                        <a class="gefdocs-button gefdocs-button--dark gel-long-primer-bold" href="">
                             Go to BBC GEL
                         </a>
                     </div>
@@ -118,9 +118,9 @@
             <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="introduction">Introduction</h2>
                 <p>Sometimes its worth noting or alerting users to certain information, but that information cannot be
-                    considered part of the main narrative for the document. This is what the <strong>Breakout box</strong>
+                    considered part of the main narrative for the document. This is what the <strong>Breakout Box</strong>
                     component is for.</p>
-                <p><strong>Breakout boxes</strong> can contain tips, warnings, research notes, interesting facts, and
+                <p><strong>Breakout Boxes</strong> can contain tips, warnings, research notes, interesting facts, and
                     all sorts of tangential information.</p>
                 <h2 id="recommended-markup">Recommended markup</h2>
                 <p>The following example is a &quot;Note&quot; type breakout. The same structure should be used for
@@ -173,13 +173,24 @@
                 </aside>
                 <h2 id="recommended-layout">Recommended layout</h2>
                 <p>The <code>&lt;h4&gt;</code> element is used to invoke a heading/label of a suitable size, despite
-                    its semantics being removed from the document outline (see <a href="#expected-markup"><strong>Recommended
+                    its semantics being removed from the document outline (see <a href="#recommended-markup"><strong>Recommended
                             markup</strong></a>).</p>
                 <p>The icon supplied to the heading must be from the <a href="http://bbc.github.io/gel-iconography/">GEL
                         Iconography Set</a>. It must have a fill of <code>currentColor</code> so that it matches the
                     surround text colour and respects high contrast settings.</p>
+                <h3 id="windows-high-contrast-mode">Windows High Contrast Mode</h3>
+                <p>The <code>background-color</code> that demarcates the <strong>Breakout box</strong> from the
+                    surrounding page will be eliminated by Windows High Contrast Mode. A transparent top and bottom
+                    border is applied. This becomes visible as a solid colour when Windows HCM is turned on, achieving
+                    the same purpose of demarcation.</p>
+                <pre class="hljs"><code><span class="hljs-selector-class">.gef-breakout-box</span> {
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#eee</span>;
+  <span class="hljs-attribute">border-top</span>: <span class="hljs-number">1px</span> solid transparent; <span class="hljs-comment">/* for high contrast mode */</span>
+  <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">1px</span> solid transparent; <span class="hljs-comment">/* for high contrast mode */</span>
+}
+</code></pre>
                 <h2 id="recommended-behaviour">Recommended behaviour</h2>
-                <p>The <strong>Breakout box</strong> has no special behaviours; it is a static component.</p>
+                <p>The <strong>Breakout Box</strong> has no special behaviours; it is a static component.</p>
                 <h2 id="reference-implementation">Reference implementation</h2>
 
                 <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
@@ -193,8 +204,7 @@
                             to the reference implementation. Your JS framework, CSS methodology, and—most
                             likely—content will differ.</p>
                 </aside>
-                <p>The following implementation is a copy of the <code>aria-labelledby</code> tip provided in this
-                    document.</p>
+                <p>The following implementation is a copy of the 'tip' provided in this document.</p>
 
                 <div class="gefdocs-demo">
                     <!-- 
