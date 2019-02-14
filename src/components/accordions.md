@@ -3,7 +3,7 @@ title: Accordions
 summary: The accordion consists of a number of collapsed sections, each with a button to expand that section's content
 version: 0.1.0
 published: false
-accessibility: false
+accessibility: true
 linkback: https://www.bbc.co.uk/gel/guidelines/accordion
 ---
 
@@ -121,7 +121,7 @@ More concise content, such as questions with one or two sentence answers, would 
 
 Whether section and heading or list semantics are suitable, there are certain structural rules for the progressive enhancement to take place successfully using the [Reference implementation](#reference-implementation) script:
 
-* Accordion items must be wrapped in a common `gef-accordion` element
+* **Accordion** items must be wrapped in a common `gef-accordion` element
 * Each item must have at least two elements
 * The first element must not be a `<button>` (since its own contents will become wrapped in a `<button>`)
 

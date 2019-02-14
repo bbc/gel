@@ -13,7 +13,7 @@ Research indicates that as little as 0.25% of visitors use social media buttons 
 
 The construction of GEL's **Share tools** must, therefore, be both unobtrusive and ergonomic. The implementation to follow is easy to avoid and dismiss, but not difficult to locate or operate.
 
-## Expected markup
+## Recommended markup
 
 Omitting the individual social media buttons for the time being, let's explore the outer structure:
 
@@ -54,7 +54,7 @@ Here is the Twitter Share tool, for example:
 
 ### Information panel
 
-As set out in [GEL's **Share tools** documentation](https://www.bbc.co.uk/gel/guidelines/share-tools), the final item in the list of tools secrete an [**Information panel**](../info-panels). This contains a `class="gef-sharetools-complete"` element comprising a complete set of social media buttons (including those not featured outside the infopanel) and the option to copy the host page's link from an input element.
+As set out in [GEL's **Share tools** documentation](https://www.bbc.co.uk/gel/guidelines/share-tools), the final item in the list of tools secrete an [**Information panel**](../info-panels). This contains a `class="gef-sharetools-complete"` element comprising a complete set of social media buttons (including those not featured outside the **Information panel**) and the option to copy the host page's link from an input element.
 
 ```html
 <div class="gef-sharetools-complete">
@@ -71,7 +71,7 @@ As set out in [GEL's **Share tools** documentation](https://www.bbc.co.uk/gel/gu
 * **`for` and `id`:** The _"Copy this link"_ label's `for` must match that of the input's `id` to associate it with the input. All `id`s must be unique; if there is more than one **Share tools** component on the page, make sure each instance's `id`s differ.
 * **`readonly`:** The `readonly` attribute prevents the input's value being (accidentally) altered. It does not prevent the user from selecting and copying the value.
 
-## Expected layout
+## Recommended layout
 
 ### The horizontal list
 
@@ -101,7 +101,7 @@ The skip link (_"Skip sharing"_) takes the classes `gef-sr` and `gef-sr__focusab
 
 The expected layout of the **Information panel** is documented with the [**Information panel** component](../info-panel).
 
-## Expected behaviour
+## Recommended behaviour
 
 **Share tools** consists of a list of external links, which open social media platforms' respective pages in new tabs. As described in [Expected markup](#expected-markup), screen reader users are forewarned about this change in context by each link's visually hidden label being appended with _"external"_.
 
@@ -109,7 +109,7 @@ Keyboard users (including screen reader users) traversing the page will first en
 
 ### The link input
 
-::: info **Information** panel behaviour
+::: info Information panel behaviour
 The interaction behaviour of the **Information panel** is covered in the [Information panel documentation](../info-panel).
 :::
 

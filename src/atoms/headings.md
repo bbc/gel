@@ -49,7 +49,7 @@ As in the above example, sibling/equivalent sections should have the same headin
 
 Whether or not subheadings are used explicitly with sectioning elements[^5], they should be the first element that contains content within the section.
 
-#### Bad example
+#### <mark is="bad"> Bad example
 
 In this version, a screen reader user navigating by heading (for example, by using the <kbd>H</kbd> key with NVDA) would be skipped past the "Breaking" identifier and miss it.
 
@@ -63,7 +63,7 @@ In this version, a screen reader user navigating by heading (for example, by usi
 </section>
 ```
 
-#### Good example
+#### <mark is="good"> Good example
 
 In the adjusted version, "Breaking" is made part of the heading and will be read out along with it.
 
@@ -79,7 +79,7 @@ In the adjusted version, "Breaking" is made part of the heading and will be read
 </section>
 ```
 
-::: alert Important
+::: alert The document outline algorithm is not implemented
 Part of the intention of sectioning elements (like `<section>` and `<article>`) was to automate heading levels as perceived by assistive technologies. That is, an `<h1>` for a  `<section>` inside `<body>` would be perceived as an `<h2>`. However, the algorithm was never implemented by any browser vendors[^6]. You still need to use explicit (h1—h6) according to your sections' nesting depth.
 :::
 

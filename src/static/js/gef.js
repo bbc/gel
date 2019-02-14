@@ -14,8 +14,10 @@
     this.sections = [];
     for (i = 0; i < elem.children.length; i++) {
       var section = {};
+      // Save the section element
       section.elem = elem.children[i];
 
+      // Make the first element in the section the 'handle'
       section.handle = section.elem.firstElementChild;
       section.handle.classList.add('gef-accordion-handle');
 
@@ -24,28 +26,38 @@
         return;
       }
 
+      // Create the handle's button
       var button = document.createElement('button');
       button.setAttribute('aria-expanded', 'false');
       button.setAttribute('type', 'button');
       button.innerHTML = '<span>' + section.handle.innerHTML + '</span>';
       button.innerHTML += '<svg viewBox="0 0 32 32" class="gel-icon gel-icon--text"><path d="M16 29L32 3h-7.2L16 18.3 7.2 3H0"></path></svg>';
 
+      // Place the button inside the handle
       section.handle.innerHTML = null;
       section.handle.appendChild(button);
       section.button = button;
 
+      // Make the contents everything in the section
+      // except the handle
       var contents = Array.prototype.slice.call(section.elem.children, 1);
+      // Create the drawer into which to place the contents
       section.drawer = document.createElement('div');
       section.drawer.classList.add('gef-accordion-drawer');
       section.drawer.hidden = true;
+      // Place the contents in the draw
       contents.forEach(function (node) {
         section.drawer.appendChild(node);
       });
       section.elem.appendChild(section.drawer);
 
+      // Save a reference to the section
       this.sections.push(section);
     }
 
+    // If the URL contains a hash corresponding to a section
+    // or child of a section, open the section
+    // and focus the fragment
     this.hashHandle = function () {
       var id = window.location.hash.substring(1);
       var target = document.getElementById(id);
@@ -58,11 +70,14 @@
       }.bind(this));
     }
 
+    // Handle the hash behaviour
     document.addEventListener('DOMContentLoaded', this.hashHandle());
     window.addEventListener('hashchange', function () {
       this.hashHandle();
     }.bind(this));
 
+    // Listen to clicks on the handle buttons to 
+    // toggle the section state between collapsed and expanded
     this.sections.forEach(function (section) {
       section.button.addEventListener('click', function () {
         var expanded = !section.drawer.hidden;
@@ -212,20 +227,6 @@
   }
 
 })();/**
- * BreakoutBox
- * @namespace gef
- * @method gef.BreakoutBox.init
- */
-
-(function() {
-  if (!window.gef) { window.gef = {}; }
-  var self = gef.BreakoutBox = {};
-
-  self.init = function() {
-    // nothing to initialise
-  }
-
-})();/**
  * Card
  * @namespace gef
  */
@@ -261,11 +262,11 @@
  * @method gef.Carousel.init
  */
 
-(function() {
+(function () {
   if (!window.gef) { window.gef = {}; }
   var self = gef.Carousel = {};
-  
-  self.init = function() {
+
+  self.init = function () {
     /* inert attribute polyfill, from https://github.com/GoogleChrome/inert-polyfill */
     "inert" in HTMLElement.prototype || (Object.defineProperty(HTMLElement.prototype, "inert", { enumerable: !0, get: function () { return this.hasAttribute("inert") }, set: function (h) { h ? this.setAttribute("inert", "") : this.removeAttribute("inert") } }), window.addEventListener("load", function () {
       function h(a) {
@@ -289,62 +290,70 @@
         function (a) { f = 0 }); var c = null; document.body.addEventListener("focus", function (a) { var b = e(a); a = b == a.target ? null : n(b); if (a != c) { if (c) { if (!(c instanceof window.ShadowRoot)) throw Error("not shadow root: " + c); c.removeEventListener("focusin", l, !0) } a && a.addEventListener("focusin", l, !0); c = a } m(b) }, !0); document.addEventListener("click", function (a) { var b = e(a); k(b) && (a.preventDefault(), a.stopPropagation()) }, !0)
     }));
 
-    (function () {
-      var cards = document.querySelectorAll('.gef-carousel');
-      Array.prototype.forEach.call(cards, function (carousel) {
-        var scrollable = carousel.querySelector('.gef-carousel-scrollable');
-        var list = carousel.querySelector('.gef-carousel-list');
-        var items = list.children;
-        var scrollAmount = list.offsetWidth / 2;
-        var prev = carousel.querySelector('.gef-carousel-prev');
-        var next = carousel.querySelector('.gef-carousel-next');
+    self.constructor = function (elem) {
+      // Save refs to elements
+      var scrollable = elem.querySelector('.gef-carousel-scrollable');
+      var buttons = elem.querySelector('.gef-carousel-buttons');
+      var list = elem.querySelector('.gef-carousel-list');
+      var items = list.children;
+      var prev = elem.querySelector('.gef-carousel-prev');
+      var next = elem.querySelector('.gef-carousel-next');
 
-        prev.disabled = true;
+      // Reveal button functionality now JS has run
+      buttons.hidden = false;
 
-        prev.addEventListener('click', function (e) {
-          scrollable.scrollLeft += -scrollAmount;
-        });
-        next.addEventListener('click', function (e) {
-          scrollable.scrollLeft += scrollAmount;
-        });
+      // Make the prev button disabled because
+      // you can't 'go left' to begin with
+      prev.disabled = true;
 
-        function disableEnable() {
-          prev.disabled = scrollable.scrollLeft < 1;
-          next.disabled = scrollable.scrollLeft === list.scrollWidth - list.offsetWidth;
+      // Scroll by half the container's width
+      var scrollAmount = list.offsetWidth / 2;
+
+      // Scroll incrementally by button
+      prev.addEventListener('click', function (e) {
+        scrollable.scrollLeft += -scrollAmount;
+      });
+      next.addEventListener('click', function (e) {
+        scrollable.scrollLeft += scrollAmount;
+      });
+
+      function disableEnable() {
+        prev.disabled = scrollable.scrollLeft < 1;
+        next.disabled = scrollable.scrollLeft === list.scrollWidth - list.offsetWidth;
+      }
+
+      // Debounce the button disabling function on scroll
+      var debounced;
+      scrollable.addEventListener('scroll', function () {
+        window.clearTimeout(debounced);
+        debounced = setTimeout(disableEnable, 200);
+      });
+
+      // Only use if supported
+      if ('IntersectionObserver' in window) {
+        var observerSettings = {
+          root: scrollable,
+          threshold: 0.5
         }
 
-        // Debounce the button disabling function on scroll
-        var debounced;
-        scrollable.addEventListener('scroll', function () {
-          window.clearTimeout(debounced);
-          debounced = setTimeout(disableEnable, 200);
-        });
-
-        if ('IntersectionObserver' in window) {
-          var observerSettings = {
-            root: scrollable,
-            threshold: 0.5
-          }
-
-          var callback = function (items, observer) {
-            Array.prototype.forEach.call(items, function (item) {
-              if (item.isIntersecting) {
-                item.target.removeAttribute('inert');
-              } else {
-                item.target.setAttribute('inert', 'inert');
-              }
-            });
-          }
-
-          var observer = new IntersectionObserver(callback, observerSettings);
+        var callback = function (items, observer) {
           Array.prototype.forEach.call(items, function (item) {
-            observer.observe(item);
+            if (item.isIntersecting) {
+              item.target.removeAttribute('inert');
+            } else {
+              // Makes items unfocusable and unavailable to assistive technologies
+              item.target.setAttribute('inert', 'inert');
+            }
           });
         }
-      });
-    })();
-  }
 
+        var observer = new IntersectionObserver(callback, observerSettings);
+        Array.prototype.forEach.call(items, function (item) {
+          observer.observe(item);
+        });
+      }
+    }
+  }
 })();/**
  * Info Panel
  * @namespace gef
@@ -567,8 +576,10 @@
   }
 
   self.constructor = function (elem) {
+    // Add JS class for upgrading styles
     elem.classList.add('gef-masthead-with-js');
 
+    // Save an object of all submenus
     var links = elem.querySelector('.gef-masthead-links');
     var menus = [
       {
@@ -582,7 +593,6 @@
     ];
 
     menus.forEach(function (menu) {
-      menu.target.tabIndex = -1;
       menu.first = menu.target.querySelector('a[href], button:not([disabled]), input');
       if (!menu.first) {
         menu.first = menu.target.querySelector('h2, h3, h4');
@@ -824,16 +834,21 @@
   if (!window.gef) { window.gef = {}; }
   var self = gef.Switch = {};
 
-  self.init = function () {
-  }
+  self.init = function () { }
 
   self.constructor = function (button) {
     this.button = button;
+    // The 'on/off' text is provided in an aria-hidden <span>
     this.onOffSpan = this.button.querySelector('[aria-hidden]');
-    this.button.addEventListener('click', this.toggle.bind(this));
+
+    // Set aria-pressed to false if the attribute is absent
     let currentState = this.button.getAttribute('aria-pressed') === 'true';
     this.button.setAttribute('aria-pressed', currentState);
+    // Set the span's text to match the state
     this.onOffSpan.textContent = currentState ? 'on' : 'off';
+
+    // Bind to the toggle method
+    this.button.addEventListener('click', this.toggle.bind(this));
   }
 
   // The toggle method
@@ -842,7 +857,6 @@
     this.button.setAttribute('aria-pressed', !currentState);
     this.onOffSpan.textContent = currentState ? 'off' : 'on';
   }
-
 })();/**
  * Tabs
  * @namespace gef

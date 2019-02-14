@@ -27,14 +27,20 @@
   position: relative;
 }
 
-.gef-masthead-close-button {
-  font-size: 1.5rem;
+.gef-masthead .gef-masthead-close-button {
+  font-size: 1.25rem;
   border: 0;
   padding: 0;
   background-color: transparent;
   position: absolute;
   top: 0.75rem;
   right: 0.75rem;
+  height: auto;
+}
+
+.gef-masthead .gef-masthead-close-button:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 .gef-masthead-more-menu {
@@ -69,6 +75,10 @@
 .gef-masthead-bar a:focus {
   outline: none;
   border-color: $gel-color--tundora;
+}
+
+.gef-masthead [tabindex="-1"]:focus {
+  outline: none;
 }
 
 .gef-masthead-banner {

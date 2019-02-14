@@ -1,23 +1,17 @@
 ---
-title: Information panel
+title: Information panels
 summary: The information panel is a specialized popup panel for supplementary content and functionality
 version: 0.1.0
 published: false
-accessibility: false
+accessibility: true
 linkback: https://www.bbc.co.uk/gel/guidelines/information-panel
 ---
 
 ## Introduction
 
-<<<<<<< HEAD
 The **Information panel** borrows from both the Menu Button[^1] and Dialog[^2] ARIA authoring patterns. Most of the behaviour and semantics are in line with the Menu Button, but a close button is included like that of a dialog. Many of the accessibility features, including the management of focus between the button and panel support for closing the panel using the <kbd>Esc</kbd> key are present in both Menu Button and Dialog implementations.
 
 As the [GEL definition attests](https://www.bbc.co.uk/gel/guidelines/information-panel), the content of the panel is not strictly prescribed and can contain a combination of text, images, links, and other information and functionality. This document sets out the **Information panel** as a functional interaction mechanism, and the [Reference implementation](#reference-implementation) only contains basic example content. The [**Share tools** component](../share-tools) incorporates sharing functionality in an **Information panel**
-=======
-The information panel borrows from both the Menu Button[^1] and Dialog[^2] ARIA authoring patterns. Most of the behaviour and semantics are in line with the Menu Button, but a close button is included like that of a dialog. Many of the accessibility features, including the management of focus between the button and panel, and support for closing the panel using the <kbd>Esc</kbd> key, are present in both Menu Button and Dialog implementations.
-
-As the [GEL guideline for Information Panels explains](https://www.bbc.co.uk/gel/guidelines/information-panel), the content of the panel is not strictly prescribed and can contain any combination of text, images, links, and other information and functionality. This document sets out the **Information panel** as a functional interaction mechanism, and the [Reference implementation](#reference-implementation) only contains basic example content.
->>>>>>> master
 
 ## Recommended markup
 
@@ -40,13 +34,9 @@ The following structure is expected, with notes to follow.
 </div>
 ```
 
-<<<<<<< HEAD
 * **`class="gef-button"`:** A standard `<button>` element takes the `aria-haspopup="true"` property and `aria-expanded="false"` state. The former indicates that the button secretes a popup (panel) and the later (set to `false` initially) indicates whether that popup is in an expanded or collapsed state.
 * **`class="gef-infopanel-panel"`:** The panel itself takes `role="group"` to indicate it's contents are related. A standard Menu Button[^1] would expect `role="menu"` here, but that would prescribe the presence of menu items (`role="menuitem"` etc.). Because **Information panel** contents diverge between instances, a more generic parent role is used.
-=======
-* **`class="gef-button"`:** A standard `<button>` element takes the `aria-haspopup="true"` property and `aria-expanded="false"` state. The former indicates that the button secretes a popup (panel) and the latter (set to `false` initially) indicates whether that popup is in an expanded or collapsed state.
-* **`class="gef-infopanel-panel"`:** The panel itself takes `role="group"` to indicate it's contents are related. A standard Menu Button[^1] would expect `role="menu"` here, but that would prescribe the presence of menu items (`role="menuitem"` etc.). Because Information panel contents can be diverse, a more generic parent role is used.
->>>>>>> master
+
 * **`aria-labelledby`:** This associates the panel with its title's `id` (`id="unique-ref"` in this example). This ensures the title is read out as the screen reader enters the panel.
 * **`gef-infopanel-close-button`:** The close button has a visually hidden (but available to assistive technologies) text label of _"close"_ to supplement the visible 'X' icon. The visually hidden span (achieved with `class="gef-sr"`) is preferred to using `aria-label` since `aria-label` is not translated by Google's or Microsoft's translation services[^3]. 
 * **`focusable="false"` and `aria-hidden="true"`:** Each icon, taken from the [Gel Iconography suite](http://bbc.github.io/gel-iconography/) must take these attributes to ensure the icon is not in focus order and is not erroneously identified by assistive technologies.

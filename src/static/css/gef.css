@@ -561,18 +561,27 @@ svg + .gef-promo-indicator-text {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex; }
+  white-space: nowrap; }
 
 .gef-carousel-list > li {
-  flex-shrink: 0;
+  display: inline-block;
+  white-space: normal;
   width: 266px;
   transition: opacity 0.5s linear; }
 
-.gef-carousel-list > li[inert] {
-  opacity: 0.3; }
-
 .gef-carousel-list > li + li {
   margin-left: 1rem; }
+
+@supports (display: flex) {
+  .gef-carousel-list {
+    display: flex;
+    white-space: normal; }
+  .gef-carousel-list > li {
+    display: flex;
+    flex-shrink: 0; } }
+
+.gef-carousel-list > li[inert] {
+  opacity: 0.3; }
 
 .gef-carousel-buttons {
   position: absolute;
@@ -582,20 +591,14 @@ svg + .gef-promo-indicator-text {
 
 .gef-carousel-buttons button {
   border: none;
-  padding: 0.25rem;
+  padding: 0.5rem;
   background-color: #fff;
-  color: #404040; }
+  color: #404040;
+  font-size: 1.75rem; }
 
 .gef-carousel-buttons button:focus {
   outline: none;
   box-shadow: inset 0 0 0 0.125rem #404040; }
-
-.gef-carousel-buttons button svg {
-  width: 2rem;
-  height: auto;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2; }
 
 .gef-carousel-buttons button[disabled] {
   opacity: 0.5; }
@@ -952,14 +955,19 @@ span.gef-nowrap {
   border-bottom: 1px solid #ccc;
   position: relative; }
 
-.gef-masthead-close-button {
-  font-size: 1.5rem;
+.gef-masthead .gef-masthead-close-button {
+  font-size: 1.25rem;
   border: 0;
   padding: 0;
   background-color: transparent;
   position: absolute;
   top: 0.75rem;
-  right: 0.75rem; }
+  right: 0.75rem;
+  height: auto; }
+
+.gef-masthead .gef-masthead-close-button:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px; }
 
 .gef-masthead-more-menu {
   border-bottom: 1px solid #ccc;
@@ -988,6 +996,9 @@ span.gef-nowrap {
 .gef-masthead-bar a:focus {
   outline: none;
   border-color: #404040; }
+
+.gef-masthead [tabindex="-1"]:focus {
+  outline: none; }
 
 .gef-masthead-banner {
   padding: 1.25rem 0.75rem;

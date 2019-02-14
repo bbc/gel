@@ -35,7 +35,9 @@
 <li>Include the text 'featured' (or similar; 'breaking' for a breaking news story) as part of the heading or in close proximity to it</li>
 </ul>
 <p>Whether or not subheadings are used explicitly with sectioning elements<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>, they should be the first element that contains content within the section.</p>
-<h4 id="bad-example">Bad example</h4>
+<h4 id="bad-example">
+          <div class="circular circular__bad" aria-hidden="true">✕</div>
+         Bad example</h4>
 <p>In this version, a screen reader user navigating by heading (for example, by using the <kbd>H</kbd> key with NVDA) would be skipped past the &quot;Breaking&quot; identifier and miss it.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Top stories<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
@@ -45,7 +47,9 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
 </code></pre>
-<h4 id="good-example">Good example</h4>
+<h4 id="good-example">
+          <div class="circular circular__good" aria-hidden="true">✓</div>
+         Good example</h4>
 <p>In the adjusted version, &quot;Breaking&quot; is made part of the heading and will be read out along with it.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Top stories<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
@@ -58,8 +62,8 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
 </code></pre>
 
-            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
-              <h4 id="aside-alert-important" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Part of the intention of sectioning elements (like <code>&lt;section&gt;</code> and <code>&lt;article&gt;</code>) was to automate heading levels as perceived by assistive technologies. That is, an <code>&lt;h1&gt;</code> for a  <code>&lt;section&gt;</code> inside <code>&lt;body&gt;</code> would be perceived as an <code>&lt;h2&gt;</code>. However, the algorithm was never implemented by any browser vendors<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. You still need to use explicit (h1—h6) according to your sections' nesting depth.</p>
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-the-document-outline-algorithm-is-not-implemented">
+              <h4 id="aside-alert-the-document-outline-algorithm-is-not-implemented" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>The document outline algorithm is not implemented</h4><div><p>Part of the intention of sectioning elements (like <code>&lt;section&gt;</code> and <code>&lt;article&gt;</code>) was to automate heading levels as perceived by assistive technologies. That is, an <code>&lt;h1&gt;</code> for a  <code>&lt;section&gt;</code> inside <code>&lt;body&gt;</code> would be perceived as an <code>&lt;h2&gt;</code>. However, the algorithm was never implemented by any browser vendors<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. You still need to use explicit (h1—h6) according to your sections' nesting depth.</p>
 </aside><h3 id="wording">Wording</h3>
 <p>As labels, headings must describe the sections they introduce<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>.</p>
 <p>Many screen readers aggregate headings into a table of contents. For example, JAWS produces a headings dialogue when the user presses <kbd>Insert</kbd> + <kbd>F6</kbd>. For this reason, it's important headings are sufficiently descriptive independent of their surrounding content.</p>
