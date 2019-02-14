@@ -89,6 +89,27 @@ However, this can easily result in illegible labels for very narrow viewports. I
 }
 ```
 
+### High contrast mode
+
+Where Windows High Contrast Mode is active, the backgrounds that mark out the tabs and panels are eliminated. Accordingly, supplementary borders are added. These are set to `transparent` and will be invisible unless Windows HCM is running. 
+
+```css
+.gef-tabs > section {
+  border: 2px solid transparent; /* for high contrast mode */
+}
+```
+
+In addition, an `@media` query detecting high contrast mode is used to create an alternative `aria-current` style for the selected tab. It is positioned `2px` down from its natural position. This obscures the line between the tab and panel, making them appear as one.
+
+```css
+@media (-ms-high-contrast: active) {
+  .gef-tabs [aria-current] {
+    position: relative;
+    top: 2px;
+  }
+}
+```
+
 ### Focus styles
 
 The tab elements themselves are rectangular and take a `background-color` making some user agents' default focus styling unclear. It is recommended a solid `outline` style is applied.

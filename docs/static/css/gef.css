@@ -309,6 +309,8 @@ svg + .gef-promo-indicator-text {
 
 .gef-tabs > section {
   background-color: #ccc;
+  border: 2px solid transparent;
+  /* for high contrast mode */
   padding: 1rem; }
 
 .gef-tabs > ul {
@@ -330,6 +332,9 @@ svg + .gef-promo-indicator-text {
   text-align: center;
   color: inherit;
   background-color: #dcdcdc;
+  border: 2px solid transparent;
+  /* for high contrast mode */
+  border-bottom: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
@@ -337,10 +342,15 @@ svg + .gef-promo-indicator-text {
 .gef-tabs > ul a:focus,
 .gef-tabs > section:focus {
   outline: 2px solid;
-  outline-offset: -2px; }
+  outline-offset: -4px; }
 
 .gef-tabs [aria-current] {
   background-color: #ccc; }
+
+@media (-ms-high-contrast: active) {
+  .gef-tabs [aria-current] {
+    position: relative;
+    top: 2px; } }
 
 .gef-breakout-box {
   background: #eee;
@@ -1457,6 +1467,7 @@ of 'open all' and 'close all' tools
 .gef-sitemenu-list a:focus,
 .gef-sitemenu-list button:focus,
 .gef-sitemenu-list [aria-current] {
+  outline: none;
   box-shadow: inset 0 -4px 0 0 currentColor; }
 
 @media (-ms-high-contrast: active) {

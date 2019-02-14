@@ -1,9 +1,10 @@
-.gef-tabs>section {
+.gef-tabs > section {
   background-color: $gel-color--dusty-gray;
+  border: 2px solid transparent; /* for high contrast mode */
   padding: 1rem;
 }
 
-.gef-tabs>ul {
+.gef-tabs > ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -11,30 +12,39 @@
   margin: -0.5rem;
 }
 
-.gef-tabs ul>li {
+.gef-tabs ul > li {
   flex: 1 1 auto;
   margin: 0.5rem;
   min-width: 0;
 }
 
-.gef-tabs>ul a {
+.gef-tabs > ul a {
   display: block;
   padding: 0.5rem 1rem;
   text-decoration: none;
   text-align: center;
   color: inherit;
   background-color: $gel-color--alto;
+  border: 2px solid transparent; /* for high contrast mode */
+  border-bottom: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.gef-tabs>ul a:focus,
-.gef-tabs>section:focus {
+.gef-tabs > ul a:focus,
+.gef-tabs > section:focus {
   outline: 2px solid;
-  outline-offset: -2px;
+  outline-offset: -4px;
 }
 
 .gef-tabs [aria-current] {
   background-color: $gel-color--dusty-gray;
+}
+
+@media (-ms-high-contrast: active) {
+  .gef-tabs [aria-current] {
+    position: relative;
+    top: 2px;
+  }
 }
