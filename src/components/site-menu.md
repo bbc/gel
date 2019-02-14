@@ -110,7 +110,7 @@ Note that the `1008px` figure depends on the width of the page's main content an
 
 ### Focus styles
 
-The focus style is paired with the hover style. The main style—a `4px` line at the base of the item—is supplemented by a fallback for Windows High Contrast Mode (because Windows HCM themes tend to remove box shadows[^5]). The transparent outline is invisible in a default theme, but becomes visible when High Contrast Mode is activated.
+The focus style is paired with the hover style. 
 
 ```css
 .gef-sitemenu-list a:hover,
@@ -118,9 +118,22 @@ The focus style is paired with the hover style. The main style—a `4px` line at
 .gef-sitemenu-list a:focus,
 .gef-sitemenu-list button:focus,
 .gef-sitemenu-list [aria-current] {
+  outline: none;
   box-shadow: inset 0 -4px 0 0 currentColor;
-  outline: 2px solid transparent;
-  outline-offset: -3px;
+}
+```
+
+The main style—a `4px` line at the base of the item—is supplemented by a fallback for Windows High Contrast Mode (because Windows HCM themes tend to remove box shadows[^5]). This takes the form of a `text-decoration` style.
+
+```css
+@media (-ms-high-contrast: active) {
+  .gef-sitemenu-list a:hover,
+  .gef-sitemenu-list button:hover,
+  .gef-sitemenu-list a:focus,
+  .gef-sitemenu-list button:focus,
+  .gef-sitemenu-list [aria-current] {
+    text-decoration: underline;
+  }
 }
 ```
 

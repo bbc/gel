@@ -1457,9 +1457,15 @@ of 'open all' and 'close all' tools
 .gef-sitemenu-list a:focus,
 .gef-sitemenu-list button:focus,
 .gef-sitemenu-list [aria-current] {
-  outline: 2px solid transparent;
-  outline-offset: -3px;
   box-shadow: inset 0 -4px 0 0 currentColor; }
+
+@media (-ms-high-contrast: active) {
+  .gef-sitemenu-list a:hover,
+  .gef-sitemenu-list button:hover,
+  .gef-sitemenu-list a:focus,
+  .gef-sitemenu-list button:focus,
+  .gef-sitemenu-list [aria-current] {
+    text-decoration: underline; } }
 
 .gef-sitemenu-list > li > * {
   border-left: 1px solid #ccc; }
@@ -1472,6 +1478,10 @@ of 'open all' and 'close all' tools
   width: calc(100vw + 1px);
   padding: 0;
   position: relative;
+  border-top: 1px solid transparent;
+  /* for high contrast mode */
+  border-bottom: 1px solid transparent;
+  /* for high contrast mode */
   left: calc((100vw - 100%) / 2 * -1 - 1px);
   background-color: #404040;
   color: #fff; }
