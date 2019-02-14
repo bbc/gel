@@ -628,6 +628,8 @@ span.gef-nowrap {
 .gef-action-dialog {
   padding: 2rem;
   background-color: #ccc;
+  border: 2px solid transparent;
+  /* for high contrast mode */
   position: fixed;
   text-align: center;
   top: auto;
@@ -776,10 +778,11 @@ span.gef-nowrap {
 .gef-button, .gef-cta {
   padding: 16px;
   color: #121212;
+  border: 2px solid transparent;
+  /* for high contrast mode */
   display: inline-block;
   vertical-align: middle;
   margin: 0;
-  border: 0;
   font-family: inherit; }
 
 .gef-cta, .gef-cta a {
