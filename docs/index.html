@@ -92,23 +92,84 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#whats-all-this">What's all this?</a></li><li><a href="#but-our-product-is-special">But our product is special...</a></li><li><a href="#whats-here">What's here?</a></li><li><a href="#questions">Questions?</a></li></ol>
+                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#what-gef-is">What GEF is</a></li><li><a href="#what-gef-isnt">What GEF isn't</a></li><li><a href="#coding-conventions">Coding conventions</a></li><li><a href="#whats-here">What's here?</a></li><li><a href="#questions">Questions?</a></li></ol>
                 </nav>
             </div>
 
             <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
-                <h2 id="whats-all-this">What's all this?</h2>
-<p>These documents are a working-draft of a project whose aim is to answer the BBC developer's question, &quot;What is the recommended way to code the patterns documented in BBC GEL?&quot; If you've ever sat down to build a component documented in GEL, and wondered what are the best HTML tags, attributes and behaviours to use then Welcome! you're in the right place.</p>
-<p>How do we decide what &quot;best&quot; is? We invite <em>everyone</em> to join in that conversation. This is an evolving guideline and the more voices we include, the better the advice we can offer. But there are three major areas of concern that we use to decide what constitutes recommended practice...</p>
+                <h2 id="what-gef-is">What GEF is</h2>
+<p>In short: GEF sets out how to code GEL. Or, to put it another way, GEF is development to GEL's design. As a developer seeking out how to best implement a pattern defined in GEL, GEF should have you covered.</p>
+<p>But what is <em>best</em>? It's something that constantly evolves according to changes in web technologies and accumulated user research. While nothing you see in GEF today is, therefore, set in stone, you can be confident is has been written with the following three concerns in mind:</p>
 <ul>
-<li><strong>Accessibility</strong>: We <em>strongly</em> believe that when we endeavour to create anything at the BBC, we must hold ourselves the highest possible standard of accessibility. The BBC is for <em>everyone</em>, and as creators it is our duty to ensure that everyone can access our content. But we acknowledge that it can be tricky to get it right, even with the best of intentions, and with the wide range of assistive technologies in use we can all benefit from sharing our collective experience and knowledge. The guidance here incorporates relevant and specific thinking about exactly this, collected from some of the best minds across the digital accessibility community.</li>
-<li><strong>Standards</strong>: We closely follow the work of recognised standards such as the <em>HTML 5.x Recommendation</em>, the <em>HTML Living Standard</em>, and the W3C <em>Web Accessibility Initiative – Accessible Rich Internet Applications</em> specifications; as well as the BBC's own <em>Mobile Accessibility Guidelines</em> and all applicable <em>BBC Standards and Guidelines</em>. Like accessibility, this is an area rich with nuance and detail; getting it right is easier when we work together collectively towards known-good examples that we share with everyone.</li>
-<li><strong>Research Driven</strong>: Not every question about implementation can be answered in an external standards document and the BBC holds itself to be a <em>contributor</em> of knowledge to the wider industry, so we expect that in some cases we will be breaking fresh ground and innovating in ways that require hands-on research to confirm if we're heading in the right direction. In cases where a question cannot be clearly answered by referring to standards and guidelines we expect valid research and testing data to be documented and made available as evidence that a recommendation is a known-best technique.</li>
+<li><strong>Accessibility:</strong> The BBC and its content is for everyone. Everything in GEF is written with inclusion in mind, drawing from the accessibility community's wealth of knowledge and experience. Accessibility is not a feature of GEF, but a trait.</li>
+<li><strong>Standards:</strong> GEF is deferential to web standards, and the groundwork laid by the W3C's specifications and guidelines — as well as the BBC's own <em>Mobile Accessibility Guidelines</em> and all applicable <em>BBC Standards and Guidelines</em>. GEF embraces convention, and does not fix anything unbroken.</li>
+<li><strong>Research:</strong> Some aspects of standards, conventions, and other kinds of prior art may be called into question in light of research and testing data. Where research points to the need for innovation, GEF will break that new ground.</li>
 </ul>
-<p>Finally, in cases where none of the above are available, we seek to use what is considered <em>standard practice</em>. Without any evidence to show a benefit, merely being different for the sake of being different can result in an experience that is pointlessly confusing for users, particularly those with impairments and who use assistive technologies. In questions of usability patterns, until we have evidence to show that being different is actually a benefit, we try to stick to what is traditional, either across the BBC or the wider industry.</p>
-<h2 id="but-our-product-is-special">But our product is special...</h2>
-<p>Let me stop you there.</p>
-<p>Yes, we completely understand that the BBC, along with the web-at-large, is a landscape of variation when it comes to the myriad ways a web page can be generated. But this is not the case with how web pages are <em>interpreted</em>. Standards-compliant web browsers <strong>all</strong> expect a very limited set of well-defined technologies be used: HTML, CSS and JS. No matter how unique your back-end service is, at the time your product is actually rendered in front of a user it cannot be so technologically different that it can't be recognised by the typical web browser application. That is the point where you can compare the functional experience of your product with the guidance provided here.</p>
+<p>GEF invites everyone to join the conversation, and help improve the guidance it offers.</p>
+<h2 id="what-gef-isnt">What GEF isn't</h2>
+<p>GEF is not a pattern library; it is not intended to be 'plugged in' to your interface directly. For this to be possible, it would have to dictate your environment, stack, and workflow.</p>
+<p>GEF appreciates that different teams across the BBC work in different ways, with different coding styles and frameworks. Accordingly, GEF offers recommendations for what needs to be achieved, but not <em>how</em> to achieve it, or with which tools.</p>
+<p>For example, one GEF doc' might expound the need for a state change, using <code>aria-pressed</code> to make it accessible. The documentation will explain why that state change is needed, how it is communicated in assistive technologies, and even offer a 'reference implementation' demonstrating it in action. But it will not assume you will be implementing that state change using Vue.js, React, a native web component, or any other 'flavour' of frontend technology. That is up to you, and your team.</p>
+<h2 id="coding-conventions">Coding conventions</h2>
+<p>GEF makes recommendations about the markup (HTML), layout (CSS), and behaviour (JS) of your GEL implementations. It is otherwise technology agnostic (see <a href="#what-gef-isnt">What GEF isn't</a>).</p>
+<p>However, the reference implementations inside GEF adhere to certain principles and conventions. If you are intending to contribute working code to GEF, please be mindful of these.</p>
+<h3 id="es5">ES5</h3>
+<p>All reference implementations are written in ES5. The intention is for the code to be as widely understood, and as easily adopted for creating test cases as possible. In a few cases, small polyfills are included. These are added to the implementation's demo page inside the <code>init</code> function.</p>
+<h3 id="progressive-enhancement">Progressive enhancement</h3>
+<p>GEF eschews larger polyfills and compatibility libraries, opting to use feature detection. In JavaScript this might mean wrapping functionality in an <code>if</code> block.</p>
+<pre class="hljs"><code><span class="hljs-keyword">if</span> (<span class="hljs-string">'IntersectionObserver'</span> <span class="hljs-keyword">in</span> <span class="hljs-built_in">window</span>) {
+  <span class="hljs-comment">// Do something with the IntersectionObserver API</span>
+}
+</code></pre>
+<p>In CSS, a basic layout is put in place then enhanced with modern layout modules like CSS Grid inside <code>@supports</code> blocks:</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.grid</span> &gt; * + * {
+  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">1rem</span>;
+}
+
+@<span class="hljs-keyword">supports</span> (display: grid) {
+  <span class="hljs-selector-class">.grid</span> {
+    <span class="hljs-attribute">display</span>: grid;
+    <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(auto-fill, minmax(266px, 1fr));
+    <span class="hljs-attribute">grid-gap</span>: <span class="hljs-number">1rem</span>;
+  }
+  
+  <span class="hljs-selector-class">.grid</span> &gt; * + * {
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>; <span class="hljs-comment">/* undo, since `grid-gap` supercedes it */</span>
+  }
+}
+</code></pre>
+<h3 id="name-spacing">Name spacing</h3>
+<p>Components are identified in their markup using classes and the <code>gef-component</code> structure. For example, the <strong>Site menu</strong> pattern uses <code>class=&quot;gef-sitemenu&quot;</code> on the parent element, and <code>gef-sitemenu-more</code> to identify each (hidden by default) submenu.</p>
+<p>Component scripts are attached to the <code>gef</code> namespace, like <code>gef.ComponentName</code>.</p>
+<h3 id="constructor-pattern">Constructor pattern</h3>
+<p>Each reference implementation that depends on JavaScript uses a basic constructor pattern to instantiate the working component. For example, the simple toggle switch constructor looks like this:</p>
+<pre class="hljs"><code>  self.constructor = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">button</span>) </span>{
+    <span class="hljs-keyword">this</span>.button = button;
+    <span class="hljs-comment">// The 'on/off' text is provided in an aria-hidden &lt;span&gt;</span>
+    <span class="hljs-keyword">this</span>.onOffSpan = <span class="hljs-keyword">this</span>.button.querySelector(<span class="hljs-string">'[aria-hidden]'</span>);
+
+    <span class="hljs-comment">// Set aria-pressed to false if the attribute is absent</span>
+    <span class="hljs-keyword">let</span> currentState = <span class="hljs-keyword">this</span>.button.getAttribute(<span class="hljs-string">'aria-pressed'</span>) === <span class="hljs-string">'true'</span>;
+    <span class="hljs-keyword">this</span>.button.setAttribute(<span class="hljs-string">'aria-pressed'</span>, currentState);
+    <span class="hljs-comment">// Set the span's text to match the state</span>
+    <span class="hljs-keyword">this</span>.onOffSpan.textContent = currentState ? <span class="hljs-string">'on'</span> : <span class="hljs-string">'off'</span>;
+
+    <span class="hljs-comment">// Bind to the toggle method</span>
+    <span class="hljs-keyword">this</span>.button.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-keyword">this</span>.toggle.bind(<span class="hljs-keyword">this</span>));
+  }
+
+  <span class="hljs-comment">// The toggle method</span>
+  self.constructor.prototype.toggle = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">let</span> currentState = <span class="hljs-keyword">this</span>.button.getAttribute(<span class="hljs-string">'aria-pressed'</span>) === <span class="hljs-string">'true'</span>;
+    <span class="hljs-keyword">this</span>.button.setAttribute(<span class="hljs-string">'aria-pressed'</span>, !currentState);
+    <span class="hljs-keyword">this</span>.onOffSpan.textContent = currentState ? <span class="hljs-string">'off'</span> : <span class="hljs-string">'on'</span>;
+  }
+</code></pre>
+<p>Note that the <code>toggle</code> function is exposed as a public method, in case the switch needs to be toggled programmatically.</p>
+<p>Initialization inside the component's GEF demo page looks like this:</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> switchElem = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.gef-button-switch'</span>);
+<span class="hljs-keyword">var</span> switchButton = <span class="hljs-keyword">new</span> gef.Switch.constructor(switchElem);
+</code></pre>
 <h2 id="whats-here">What's here?</h2>
 <p>We are working our way through a list based closely on what's already published in <a href="http://www.bbc.co.uk/gel/">the BBC GEL Guidelines</a>. You should generally start there when seeking to understand any documented pattern but at the point where you're wondering about which HTML tags to use we're here for you!</p>
 <table>
