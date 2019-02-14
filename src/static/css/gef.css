@@ -214,7 +214,9 @@ a {
 .gef-promo {
   overflow: hidden;
   position: relative;
-  background-color: #dcdcdc; }
+  background-color: #dcdcdc;
+  border: 2px solid transparent;
+  /* for high contrast mode */ }
 
 .gef-promo-content {
   padding: 1rem; }
@@ -601,14 +603,17 @@ svg + .gef-promo-indicator-text {
   z-index: 1; }
 
 .gef-carousel-buttons button {
-  border: none;
+  border: 0;
   padding: 0.5rem;
   background-color: #fff;
   color: #404040;
   font-size: 1.75rem; }
 
 .gef-carousel-buttons button:focus {
-  outline: none;
+  outline: 2px solid transparent;
+  /* for high contrast mode */
+  outline-offset: -2px;
+  /* for high contrast mode */
   box-shadow: inset 0 0 0 0.125rem #404040; }
 
 .gef-carousel-buttons button[disabled] {

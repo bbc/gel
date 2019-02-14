@@ -12,6 +12,7 @@
   overflow: hidden;
   position: relative;
   background-color: $gel-color--alto;
+  border: 2px solid transparent; /* for high contrast mode */
 }
 
 .gef-promo-content {

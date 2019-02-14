@@ -63,7 +63,7 @@
 }
 
 .gef-carousel-buttons button {
-  border: none;
+  border: 0;
   padding: 0.5rem;
   background-color: #fff;
   color: $gel-color--tundora;
@@ -71,7 +71,8 @@
 }
 
 .gef-carousel-buttons button:focus {
-  outline: none;
+  outline: 2px solid transparent; /* for high contrast mode */
+  outline-offset: -2px; /* for high contrast mode */
   box-shadow: inset 0 0 0 0.125rem $gel-color--tundora;
 }
 

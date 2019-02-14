@@ -337,7 +337,7 @@
 
         var callback = function (items, observer) {
           Array.prototype.forEach.call(items, function (item) {
-            if (item.isIntersecting) {
+            if (item.intersectionRatio > 0.5) {
               item.target.removeAttribute('inert');
             } else {
               // Makes items unfocusable and unavailable to assistive technologies
