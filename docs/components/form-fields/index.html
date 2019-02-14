@@ -245,6 +245,20 @@ to break because they depend on JavaScript in order to function.</p>
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"search"</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>Search<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre>
+<h3 id="high-contrast-mode">High Contrast Mode</h3>
+<p>A couple of provisions are made to better support Windows High Contrast Mode. A transparent border is added to the error messages so they appear as boxes and, for supporting browsers, the message takes an inversion filter to give it the appearance of a background:</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-form-field-error</span>,
+<span class="hljs-selector-class">.gef-form-warning</span> {
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid transparent;
+}
+
+@<span class="hljs-keyword">media</span> (-ms-high-contrast: active) {
+  <span class="hljs-selector-class">.gef-form-field-error</span>,
+  <span class="hljs-selector-class">.gef-form-warning</span> {
+    <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">invert</span>(100%);
+  }
+}
+</code></pre>
 <h3 id="error-indication">Error indication</h3>
 <p>It is imperative that errors are clearly identified as such. Do not rely on colour to denote an error state<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> since it will fail on monochrome displays, and for those who cannot accurately perceive colour.</p>
 <p>Where there are errors, there should always be error messages. Prefixing the error message with 'Error:',  or a warning symbol, ensures the nature of the message is conveyed explicitly.</p>

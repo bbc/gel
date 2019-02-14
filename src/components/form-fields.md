@@ -208,6 +208,24 @@ However, in some specific circumstances an invisible but accessible label is acc
 <button type="submit">Search</button>
 ```
 
+### High Contrast Mode
+
+A couple of provisions are made to better support Windows High Contrast Mode. A transparent border is added to the error messages so they appear as boxes and, for supporting browsers, the message takes an inversion filter to give it the appearance of a background:
+
+```css
+.gef-form-field-error,
+.gef-form-warning {
+  border: 1px solid transparent;
+}
+
+@media (-ms-high-contrast: active) {
+  .gef-form-field-error,
+  .gef-form-warning {
+    filter: invert(100%);
+  }
+}
+```
+
 ### Error indication
 
 It is imperative that errors are clearly identified as such. Do not rely on colour to denote an error state[^5] since it will fail on monochrome displays, and for those who cannot accurately perceive colour.

@@ -33,8 +33,16 @@
 .gef-form-warning {
   padding: 0.25rem;
   background-color: $gel-color--pink;
+  border: 1px solid transparent /* for high contrast mode */
   color: $gel-color--white;
   max-width: 60ch;
+}
+
+@media (-ms-high-contrast: active) {
+  .gef-form-field-error,
+  .gef-form-warning {
+    filter: invert(100%);
+  }
 }
 
 .gef-form-field-error:empty,

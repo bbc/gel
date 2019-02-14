@@ -904,6 +904,11 @@ span.gef-nowrap {
   color: #fff;
   max-width: 60ch; }
 
+@media (-ms-high-contrast: active) {
+  .gef-form-field-error,
+  .gef-form-warning {
+    filter: invert(100%); } }
+
 .gef-form-field-error:empty,
 .gef-form-warning:empty {
   display: none; }
