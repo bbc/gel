@@ -3,28 +3,111 @@ layout: layout-index.njk
 title: Home
 summary: Guidance for developers building accessible websites based on BBC GEL.
 version: 0.1.0
-published: false
-accessibility: false
 linkback: http://www.bbc.co.uk/gel
 ---
 
-## What's all this?
+## What GEF is
 
-These documents are a working-draft of a project whose aim is to answer the BBC developer's question, "What is the recommended way to code the patterns documented in BBC GEL?" If you've ever sat down to build a component documented in GEL, and wondered what are the best HTML tags, attributes and behaviours to use then Welcome! you're in the right place.
+In short: GEF sets out how to code GEL. Or, to put it another way, GEF is development to GEL's design. As a developer seeking out how to best implement a pattern defined in GEL, GEF should have you covered.
 
-How do we decide what "best" is? We invite _everyone_ to join in that conversation. This is an evolving guideline and the more voices we include, the better the advice we can offer. But there are three major areas of concern that we use to decide what constitutes recommended practice...
+But what is _best_? It's something that constantly evolves according to changes in web technologies and accumulated user research. While nothing you see in GEF today is, therefore, set in stone, you can be confident is has been written with the following three concerns in mind:
 
-- **Accessibility**: We _strongly_ believe that when we endeavour to create anything at the BBC, we must hold ourselves the highest possible standard of accessibility. The BBC is for _everyone_, and as creators it is our duty to ensure that everyone can access our content. But we acknowledge that it can be tricky to get it right, even with the best of intentions, and with the wide range of assistive technologies in use we can all benefit from sharing our collective experience and knowledge. The guidance here incorporates relevant and specific thinking about exactly this, collected from some of the best minds across the digital accessibility community.
-- **Standards**: We closely follow the work of recognised standards such as the _HTML 5.x Recommendation_, the _HTML Living Standard_, and the W3C _Web Accessibility Initiative – Accessible Rich Internet Applications_ specifications; as well as the BBC's own _Mobile Accessibility Guidelines_ and all applicable _BBC Standards and Guidelines_. Like accessibility, this is an area rich with nuance and detail; getting it right is easier when we work together collectively towards known-good examples that we share with everyone.
-- **Research Driven**: Not every question about implementation can be answered in an external standards document and the BBC holds itself to be a _contributor_ of knowledge to the wider industry, so we expect that in some cases we will be breaking fresh ground and innovating in ways that require hands-on research to confirm if we're heading in the right direction. In cases where a question cannot be clearly answered by referring to standards and guidelines we expect valid research and testing data to be documented and made available as evidence that a recommendation is a known-best technique.
+* **Accessibility:** The BBC and its content is for everyone. Everything in GEF is written with inclusion in mind, drawing from the accessibility community's wealth of knowledge and experience. Accessibility is not a feature of GEF, but a trait.
+* **Standards:** GEF is deferential to web standards, and the groundwork laid by the W3C's specifications and guidelines — as well as the BBC's own _Mobile Accessibility Guidelines_ and all applicable _BBC Standards and Guidelines_. GEF embraces convention, and does not fix anything unbroken.
+* **Research:** Some aspects of standards, conventions, and other kinds of prior art may be called into question in light of research and testing data. Where research points to the need for innovation, GEF will break that new ground.
+ 
+GEF invites everyone to join the conversation, and help improve the guidance it offers.
+ 
+## What GEF isn't
 
-Finally, in cases where none of the above are available, we seek to use what is considered _standard practice_. Without any evidence to show a benefit, merely being different for the sake of being different can result in an experience that is pointlessly confusing for users, particularly those with impairments and who use assistive technologies. In questions of usability patterns, until we have evidence to show that being different is actually a benefit, we try to stick to what is traditional, either across the BBC or the wider industry.
+GEF is not a pattern library; it is not intended to be 'plugged in' to your interface directly. For this to be possible, it would have to dictate your environment, stack, and workflow. 
 
-## But our product is special...
+GEF appreciates that different teams across the BBC work in different ways, with different coding styles and frameworks. Accordingly, GEF offers recommendations for what needs to be achieved, but not _how_ to achieve it, or with which tools.
 
-Let me stop you there.
+For example, one GEF doc' might expound the need for a state change, using `aria-pressed` to make it accessible. The documentation will explain why that state change is needed, how it is communicated in assistive technologies, and even offer a 'reference implementation' demonstrating it in action. But it will not assume you will be implementing that state change using Vue.js, React, a native web component, or any other 'flavour' of frontend technology. That is up to you, and your team.
 
-Yes, we completely understand that the BBC, along with the web-at-large, is a landscape of variation when it comes to the myriad ways a web page can be generated. But this is not the case with how web pages are _interpreted_. Standards-compliant web browsers **all** expect a very limited set of well-defined technologies be used: HTML, CSS and JS. No matter how unique your back-end service is, at the time your product is actually rendered in front of a user it cannot be so technologically different that it can't be recognised by the typical web browser application. That is the point where you can compare the functional experience of your product with the guidance provided here.
+## Coding conventions
+
+GEF makes recommendations about the markup (HTML), layout (CSS), and behaviour (JS) of your GEL implementations. It is otherwise technology agnostic (see [What GEF isn't](#what-gef-isnt)).
+
+However, the reference implementations inside GEF adhere to certain principles and conventions. If you are intending to contribute working code to GEF, please be mindful of these.
+
+### ES5
+
+All reference implementations are written in ES5. The intention is for the code to be as widely understood, and as easily adopted for creating test cases as possible. In a few cases, small polyfills are included. These are added to the implementation's demo page inside the `init` function.
+
+### Progressive enhancement
+
+GEF eschews larger polyfills and compatibility libraries, opting to use feature detection. In JavaScript this might mean wrapping functionality in an `if` block.
+
+```js
+if ('IntersectionObserver' in window) {
+  // Do something with the IntersectionObserver API
+}
+```
+
+In CSS, a basic layout is put in place then enhanced with modern layout modules like CSS Grid inside `@supports` blocks:
+
+```css
+.grid > * + * {
+  margin-top: 1rem;
+}
+
+@supports (display: grid) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
+    grid-gap: 1rem;
+  }
+  
+  .grid > * + * {
+    margin: 0; /* undo, since `grid-gap` supercedes it */
+  }
+}
+```
+
+### Name spacing
+
+Components are identified in their markup using classes and the `gef-component` structure. For example, the **Site menu** pattern uses `class="gef-sitemenu"` on the parent element, and `gef-sitemenu-more` to identify each (hidden by default) submenu.
+
+Component scripts are attached to the `gef` namespace, like `gef.ComponentName`.
+
+### Constructor pattern
+
+Each reference implementation that depends on JavaScript uses a basic constructor pattern to instantiate the working component. For example, the simple toggle switch constructor looks like this:
+
+```js
+  self.constructor = function (button) {
+    this.button = button;
+    // The 'on/off' text is provided in an aria-hidden <span>
+    this.onOffSpan = this.button.querySelector('[aria-hidden]');
+
+    // Set aria-pressed to false if the attribute is absent
+    let currentState = this.button.getAttribute('aria-pressed') === 'true';
+    this.button.setAttribute('aria-pressed', currentState);
+    // Set the span's text to match the state
+    this.onOffSpan.textContent = currentState ? 'on' : 'off';
+
+    // Bind to the toggle method
+    this.button.addEventListener('click', this.toggle.bind(this));
+  }
+
+  // The toggle method
+  self.constructor.prototype.toggle = function () {
+    let currentState = this.button.getAttribute('aria-pressed') === 'true';
+    this.button.setAttribute('aria-pressed', !currentState);
+    this.onOffSpan.textContent = currentState ? 'off' : 'on';
+  }
+```
+
+Note that the `toggle` function is exposed as a public method, in case the switch needs to be toggled programmatically. 
+
+Initialization inside the component's GEF demo page looks like this:
+
+```js
+var switchElem = document.querySelector('.gef-button-switch');
+var switchButton = new gef.Switch.constructor(switchElem);
+```
 
 ## What's here?
 
@@ -54,7 +137,6 @@ We are working our way through a list based closely on what's already published 
 | [Headings]({{site.basedir}}atoms/headings/) | Draft / Pending|
 | [Icons]({{site.basedir}}atoms/iconography/) | Draft / Pending|
 | [Type]({{site.basedir}}atoms/typography/) | Draft / Pending|
-
 
 ## Questions?
 
