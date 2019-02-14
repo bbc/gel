@@ -3,7 +3,7 @@ title: Buttons and CTAs
 summary: The design of clickable controls must be consistent with their behaviour
 version: 0.1.0
 published: false
-accessibility: false
+accessibility: true
 linkback: http://www.bbc.co.uk/gel/guidelines/sign-in-or-register-cta
 ---
 
@@ -43,12 +43,12 @@ Most buttons and calls-to-action should simply be labeled via their text node. T
 
 In most cases, controls that rely on icons alone are not recommended, even where invisible labels are provided to assistive technologies. Icon-only buttons are especially hard to activate via voice since the (hidden) textual label has to be guessed by the user.
 
-Where an icon-only button _is_ employed (the ubiquitous play/pause button is a good example), provide the text via a visually hidden `<span>`[^3], _not_ `aria-label`. Unfortunately, `aria-label` is not picked up by popular translation services[^4].
+Where an icon-only button _is_ employed (the ubiquitous play/pause button is a good example), provide the text via a visually hidden `<span>`, _not_ `aria-label`. Unfortunately, `aria-label` is not picked up by popular translation services[^3].
 
 ```html
 <button class="gef-button" type="button">
   <!-- icon here -->
-  <span class="vh">Play</span>
+  <span class="gef-sr">Play</span>
 </button>
 ```
 
@@ -56,7 +56,7 @@ Avoid using `title` attributes. These are only revealed on hover, not focus, in 
 
 ### Icons
 
-Where icons are provided to buttons and calls-to-action, make sure they are taken from the GEL SVG Iconography library[^5]. Icons should contain text or be otherwise accessible to assistive technologies, nor should they be focusable. Hence, they should take `aria-hidden="true"` and `focusable="false"`. Note the classes, used for sizing and alignment.
+Where icons are provided to buttons and calls-to-action, make sure they are taken from the GEL SVG Iconography library[^4]. Icons should contain text or be otherwise accessible to assistive technologies, nor should they be focusable. Hence, they should take `aria-hidden="true"` and `focusable="false"`. Note the classes, used for sizing and alignment.
 
 ```html
 <a class="gef-cta" href="path/to/help-page">
@@ -78,7 +78,7 @@ Standard `<button>` elements can be disabled using the `disabled` property/attri
 ```
 
 ::: info Avoid disabled submit buttons
-There are a number of usability and accessibility issues with disabling form submit buttons until the user has entered valid/expected data[^6]. It's often better to let the user _attempt_ submission and provide explicit feedback in response.
+There are a number of usability and accessibility issues with disabling form submit buttons until the user has entered valid/expected data[^5]. It's often better to let the user _attempt_ submission and provide explicit feedback in response.
 :::
 
 Links do not take `disabled`. You can, however, elicit announcement that a link is 'disabled' by applying the `aria-disabled="true"` attribution.
@@ -107,7 +107,7 @@ The presence of these state attributes augments the announced role of the `<butt
 It is not recommended you use `<button>` elements with `aria-checked`. Instead, employ native checkbox and radio button elements. The basic behaviours of these elements do not rely on JavaScript and make for more robust and accessible components.
 :::
 
-Buttons may move focus upon being pressed. Examples include buttons that open dialogs, or invoke menus. In these circumstances, include the `aria-haspopup="true"` property[^7]. This warns the screen reader user their context will change by announcing the button as a _"popup button"_ or similar.
+Buttons may move focus upon being pressed. Examples include buttons that open dialogs, or invoke menus. In these circumstances, include the `aria-haspopup="true"` property[^6]. This warns the screen reader user their context will change by announcing the button as a _"popup button"_ or similar.
 
 If the button simply moves focus to a new section within the page, or to a new page entirely, it should not be a button but a link. Us a generic link or CTA instead.
 
@@ -120,7 +120,7 @@ Button and CTA design differs somewhat between BBC sites and products. However, 
 3. **Give affordance:** Make sure your buttons and CTAs invite the user to click them. Use the site's established link color, if not just inherited; include clear hover and focus styles (see below); use imperative language.
 
 ::: alert Contrast
-No matter the brand colours employed, the contrast between the foreground (text) and background colours must meet minimum contrast requirements (WCAG Level AA[^8])
+No matter the brand colours employed, the contrast between the foreground (text) and background colours must meet minimum contrast requirements (WCAG Level AA[^7])
 :::
 
 ### Hover and focus styles
@@ -195,11 +195,9 @@ This topic does not yet have any related research available.
 
 [^1]: Anchors, buttons, and accessibility — Formidable Labs, <https://formidable.com/blog/2014/05/08/anchors-buttons-and-accessibility/>
 [^2]: The `button` element — W3C, <https://www.w3.org/TR/2011/WD-html5-20110525/the-button-element.html#the-button-element>
-[^3]: Gist of the `vh` (visually hidden) class,  <https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472> 
-[^4]: ARIA Label Is A Xenophobe — heydonworks.com, <http://www.heydonworks.com/article/aria-label-is-a-xenophobe>
-[^5]: GEL Iconography (demo), <http://bbc.github.io/gel-iconography/>
-[^6]: Disabled Buttons Suck — Access Lab, <https://axesslab.com/disabled-buttons-suck/>
-[^7]: `aria-haspopup` property — W3C, <https://www.w3.org/TR/wai-aria-1.1/#aria-haspopup>
-[^8]: WCAG2.1 1.4.3, Contrast (Minimum), <https://www.w3.org/TR/WCAG21/#contrast-minimum>
-[^9]: WCAG2.1 1.4.1, Use Of Color, <https://www.w3.org/TR/WCAG21/#use-of-color>
+[^3]: ARIA Label Is A Xenophobe — heydonworks.com, <http://www.heydonworks.com/article/aria-label-is-a-xenophobe>
+[^4]: GEL Iconography (demo), <http://bbc.github.io/gel-iconography/>
+[^5]: Disabled Buttons Suck — Access Lab, <https://axesslab.com/disabled-buttons-suck/>
+[^6]: `aria-haspopup` property — W3C, <https://www.w3.org/TR/wai-aria-1.1/#aria-haspopup>
+[^7]: WCAG2.1 1.4.3, Contrast (Minimum), <https://www.w3.org/TR/WCAG21/#contrast-minimum>
 

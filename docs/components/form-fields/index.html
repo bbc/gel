@@ -112,7 +112,7 @@
 <p>Gracefully handling user input is critical to the usability of BBC services, but also an area of Interaction Design fraught with potential problems. The purpose of this document is to set out robust approaches to presenting and validating form fields.</p>
 <p>The focus here is on web-based forms. For further guidance specific to mobile/native applications, please consult the <a href="http://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/forms/labelling-form-controls">BBC Mobile Accessibility Guidelines</a>.</p>
 <h2 id="recommended-markup">Recommended markup</h2>
-<h3 id="labelling">Labelling</h3>
+<h3 id="labeling">Labeling</h3>
 <p>Any field's element needs to be associated programmatically with a label. This is achieved by making the label's <code>for</code> attribute and the input's <code>id</code> attribute share the same value.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"username"</span>&gt;</span>Username<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"username"</span> /&gt;</span>

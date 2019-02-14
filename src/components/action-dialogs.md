@@ -3,7 +3,7 @@ title: Action dialogs
 summary: Action dialogs are presented where the user must choose a course of action
 version: 0.1.0
 published: false
-accessibility: false
+accessibility: true
 linkback: http://www.bbc.co.uk/gel/guidelines/confirmation-and-error-messages
 ---
 
@@ -18,7 +18,7 @@ The **Action dialog** defines the second of these. It is a type of modal window[
 
 For more context, consult the [Confirmation & Error Messages GEL page](http://www.bbc.co.uk/gel/guidelines/confirmation-and-error-messages).
 
-## Expected markup
+## Recommended markup
 
 In the following example, we imagine the user has tried to add a programme to 'My Programmes'. Since this functionality is only available to authenticated users, an action dialog asks the user to either sign in or register in order to continue.
 
@@ -49,11 +49,11 @@ In the following example, we imagine the user has tried to add a programme to 'M
 * **`aria-labelledby` and `aria-describedby`:** These relationship attributes associate the text of the dialog's heading/label and content with the dialog element itself. Along with the dialog role, this information is announced upon the dialog being opened. You will need to write or generate unique identifiers for the `id`s required here.
 * **`class="gef-action-dialog-buttons"`:** A simple, non-semantic wrapper for the action elements. Action elements must be marked up as `<button>`s if they instigate something on the same page (such as a change of setting or state) or links if they take the user to a new page.
 * **`class="gef-action-dialog-close"`:** Provide a close button if doing _nothing_ (not authenticating to add a programme after all, in this example) is a viable option. The visually hidden `vh`[^2] class is provided here to include accessible, translatable text alongside the screen reader inaccessible icon. The close button is deprioritized in favour of the named actions, appearing last in source and focus order.
-* **`</body>`:** For the overlay/inert characteristic to function correctly, the dialog must be a child of the `<body>` element. See [Expected behaviour](#expected-behaviour)
+* **`</body>`:** For the overlay/inert characteristic to function correctly, the dialog must be a child of the `<body>` element. See [Recommended behaviour](#expected-behaviour)
 
-## Expected layout
+## Recommended layout
 
-Action dialogs can appear in the center, or at the bottom, of the page. In the [**reference implementation**](#reference-implementation) they appear at the bottom by default. The `fixed` position value ensures they cannot be scrolled out of view.
+**Action dialogs** can appear in the center, or at the bottom, of the page. In the [**reference implementation**](#reference-implementation) they appear at the bottom by default. The `fixed` position value ensures they cannot be scrolled out of view.
 
 ```css
 .gef-action-dialog {
@@ -95,7 +95,7 @@ When the dialog is open, sibling elements are given the `inert` attribute (see [
 
 Note that the style is applied via a class placed on the `<body>` using the 'gef-action-dialog' namespace. This ensures the specific inert style is only applied in the presence of an open dialog (the style does not 'leak' to other `inert` instances).
 
-## Expected behaviour
+## Recommended behaviour
 
 ::: info Results of actions
 The result of an action taken via an action dialog will depend on the purpose of your dialog and is not specified here. Attach listeners to the action dialog's controls as appropriate.

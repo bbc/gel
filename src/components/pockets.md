@@ -1,9 +1,9 @@
 ---
 title: Pockets
-summary: The pocket pattern allows the user to reveal content at their discretion
+summary: The Pocket pattern allows the user to reveal longform content at their discretion
 version: 0.1.0
 published: false
-accessibility: false
+accessibility: true
 linkback: https://www.bbc.co.uk/gel/guidelines/pocket
 ---
 
@@ -12,6 +12,8 @@ linkback: https://www.bbc.co.uk/gel/guidelines/pocket
 The **Pocket** component contains the page's main content in a truncated form. The purpose of this is to not overwhelm the user with content upon first arriving at the page. With the content shortened it is easier to see (and reach by keyboard or screen reader-based navigation) the functionality at the foot of the page.
 
 A 'Show more' button at the foot of the **Pocket** allows the reader to unveil the obscured content. Importantly, when the unveiling takes place, a cue to continue reading is inserted between the last item of initial/preview content and the first of the unveiled content. This ensures the user does not lose their place.
+
+Note that, although the patterns are similar, the **Pocket** differs from the [**Load more**](../load-more) pattern in that it simply obscures content, rather than deferring the loading of content. The **Pocket** should be implemented without reliance on XHR.
 
 ## Recommended markup
 
@@ -109,7 +111,7 @@ Since `inert` hides items from assistive technologies like screen readers and ma
 
 ### Switching state
 
-When the 'Show more' button is pressed, the content is expanded. An _"Continue reading..."_ element is injected between the last of the preview/initial content and the first of the unveiled content. This element is focused, meaning keyboard dependent users are relocated to the correct position in the content to continue reading. The [Reference implementation](#reference-implementation) lets you choose your own text to override _"Continued below..."_ if so desired.
+When the 'Show more' button is pressed, the content is expanded. A _"Continue reading..."_ element is injected between the last of the preview/initial content and the first of the unveiled content. This element is focused, meaning keyboard dependent users are relocated to the correct position in the content to continue reading. The [Reference implementation](#reference-implementation) lets you choose your own text to override _"Continued below..."_ if so desired.
 
 ```js
 self.constructor.prototype.showMore = function () {
@@ -122,7 +124,7 @@ self.constructor.prototype.showMore = function () {
 }
 ```
 
-::: info `previousElementSibling`
+::: info The previous element
 Instead of placing the _"Continue reading"_ element directly before the first of the originally hidden elements, it goes one element before that. This addresses a quirk with `isIntersecting` and makes browser behaviour more consistent. 
 :::
 

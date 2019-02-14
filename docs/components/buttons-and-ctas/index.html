@@ -94,7 +94,7 @@
                     <dt>Status:</dt>
                     <dd>Draft</dd>
                     <dt>Accessibility:</dt>
-                    <dd>Pending</dd>
+                    <dd>Pass</dd>
                 </dl>
             </div>
         </div>
@@ -126,15 +126,15 @@
 <h3 id="labels">Labels</h3>
 <p>Most buttons and calls-to-action should simply be labeled via their text node. Text nodes are interoperable, since they can be seen, heard via screen reader synthetic voices, and used as activation cues with voice activation software.</p>
 <p>In most cases, controls that rely on icons alone are not recommended, even where invisible labels are provided to assistive technologies. Icon-only buttons are especially hard to activate via voice since the (hidden) textual label has to be guessed by the user.</p>
-<p>Where an icon-only button <em>is</em> employed (the ubiquitous play/pause button is a good example), provide the text via a visually hidden <code>&lt;span&gt;</code><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>, <em>not</em> <code>aria-label</code>. Unfortunately, <code>aria-label</code> is not picked up by popular translation services<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>.</p>
+<p>Where an icon-only button <em>is</em> employed (the ubiquitous play/pause button is a good example), provide the text via a visually hidden <code>&lt;span&gt;</code>, <em>not</em> <code>aria-label</code>. Unfortunately, <code>aria-label</code> is not picked up by popular translation services<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-button"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>
   <span class="hljs-comment">&lt;!-- icon here --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>Play<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sr"</span>&gt;</span>Play<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre>
 <p>Avoid using <code>title</code> attributes. These are only revealed on hover, not focus, in most browsers. Additionally, they are often suppressed by default in screen reader verbosity settings.</p>
 <h3 id="icons">Icons</h3>
-<p>Where icons are provided to buttons and calls-to-action, make sure they are taken from the GEL SVG Iconography library<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>. Icons should contain text or be otherwise accessible to assistive technologies, nor should they be focusable. Hence, they should take <code>aria-hidden=&quot;true&quot;</code> and <code>focusable=&quot;false&quot;</code>. Note the classes, used for sizing and alignment.</p>
+<p>Where icons are provided to buttons and calls-to-action, make sure they are taken from the GEL SVG Iconography library<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. Icons should contain text or be otherwise accessible to assistive technologies, nor should they be focusable. Hence, they should take <code>aria-hidden=&quot;true&quot;</code> and <code>focusable=&quot;false&quot;</code>. Note the classes, used for sizing and alignment.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-cta"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/help-page"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-button__label"</span>&gt;</span>Help<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span>&gt;</span>
@@ -149,7 +149,7 @@
 </code></pre>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-avoid-disabled-submit-buttons">
-              <h4 id="aside-info-avoid-disabled-submit-buttons" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Avoid disabled submit buttons</h4><div><p>There are a number of usability and accessibility issues with disabling form submit buttons until the user has entered valid/expected data<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>. It's often better to let the user <em>attempt</em> submission and provide explicit feedback in response.</p>
+              <h4 id="aside-info-avoid-disabled-submit-buttons" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Avoid disabled submit buttons</h4><div><p>There are a number of usability and accessibility issues with disabling form submit buttons until the user has entered valid/expected data<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>. It's often better to let the user <em>attempt</em> submission and provide explicit feedback in response.</p>
 </aside><p>Links do not take <code>disabled</code>. You can, however, elicit announcement that a link is 'disabled' by applying the <code>aria-disabled=&quot;true&quot;</code> attribution.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-cta"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/forbidden-place"</span> <span class="hljs-attr">aria-disabled</span>=<span class="hljs-string">"true"</span>&gt;</span>The forbidden place<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 </code></pre>
@@ -166,7 +166,7 @@
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-use-native-checked-states">
               <h4 id="aside-alert-use-native-checked-states" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Use native checked states</h4><div><p>It is not recommended you use <code>&lt;button&gt;</code> elements with <code>aria-checked</code>. Instead, employ native checkbox and radio button elements. The basic behaviours of these elements do not rely on JavaScript and make for more robust and accessible components.</p>
-</aside><p>Buttons may move focus upon being pressed. Examples include buttons that open dialogs, or invoke menus. In these circumstances, include the <code>aria-haspopup=&quot;true&quot;</code> property<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>. This warns the screen reader user their context will change by announcing the button as a <em>&quot;popup button&quot;</em> or similar.</p>
+</aside><p>Buttons may move focus upon being pressed. Examples include buttons that open dialogs, or invoke menus. In these circumstances, include the <code>aria-haspopup=&quot;true&quot;</code> property<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>. This warns the screen reader user their context will change by announcing the button as a <em>&quot;popup button&quot;</em> or similar.</p>
 <p>If the button simply moves focus to a new section within the page, or to a new page entirely, it should not be a button but a link. Us a generic link or CTA instead.</p>
 <h2 id="recommended-layout">Recommended layout</h2>
 <p>Button and CTA design differs somewhat between BBC sites and products. However, there are basic principles you should follow.</p>
@@ -177,7 +177,7 @@
 </ol>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-contrast">
-              <h4 id="aside-alert-contrast" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Contrast</h4><div><p>No matter the brand colours employed, the contrast between the foreground (text) and background colours must meet minimum contrast requirements (WCAG Level AA<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup>)</p>
+              <h4 id="aside-alert-contrast" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Contrast</h4><div><p>No matter the brand colours employed, the contrast between the foreground (text) and background colours must meet minimum contrast requirements (WCAG Level AA<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>)</p>
 </aside><h3 id="hover-and-focus-styles">Hover and focus styles</h3>
 <p>Hover and focus styles should be strong to differentiate them from the default state.</p>
 <p>Since buttons and CTAs tend to have a rectangular border/perimeter, the thin and faint focus outline offered by some user agent stylesheets can be very unclear. If an outline style is used, make it a solid one, optionally with an offset to separate it from the control's edges.</p>
@@ -260,7 +260,7 @@ title: Buttons and CTAs
 </a>
 
 
-<script type="text/javascript">
+<script>
   document.addEventListener('DOMContentLoaded', function () {
     window.gef && gef.Switch.init();
 
@@ -281,17 +281,15 @@ title: Buttons and CTAs
 </li>
 <li id="fn2" class="footnote-item"><p>The <code>button</code> element — W3C, <a href="https://www.w3.org/TR/2011/WD-html5-20110525/the-button-element.html#the-button-element">https://www.w3.org/TR/2011/WD-html5-20110525/the-button-element.html#the-button-element</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn3" class="footnote-item"><p>Gist of the <code>vh</code> (visually hidden) class,  <a href="https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472">https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+<li id="fn3" class="footnote-item"><p>ARIA Label Is A Xenophobe — <a href="http://heydonworks.com">heydonworks.com</a>, <a href="http://www.heydonworks.com/article/aria-label-is-a-xenophobe">http://www.heydonworks.com/article/aria-label-is-a-xenophobe</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn4" class="footnote-item"><p>ARIA Label Is A Xenophobe — <a href="http://heydonworks.com">heydonworks.com</a>, <a href="http://www.heydonworks.com/article/aria-label-is-a-xenophobe">http://www.heydonworks.com/article/aria-label-is-a-xenophobe</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+<li id="fn4" class="footnote-item"><p>GEL Iconography (demo), <a href="http://bbc.github.io/gel-iconography/">http://bbc.github.io/gel-iconography/</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn5" class="footnote-item"><p>GEL Iconography (demo), <a href="http://bbc.github.io/gel-iconography/">http://bbc.github.io/gel-iconography/</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+<li id="fn5" class="footnote-item"><p>Disabled Buttons Suck — Access Lab, <a href="https://axesslab.com/disabled-buttons-suck/">https://axesslab.com/disabled-buttons-suck/</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn6" class="footnote-item"><p>Disabled Buttons Suck — Access Lab, <a href="https://axesslab.com/disabled-buttons-suck/">https://axesslab.com/disabled-buttons-suck/</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+<li id="fn6" class="footnote-item"><p><code>aria-haspopup</code> property — W3C, <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-haspopup">https://www.w3.org/TR/wai-aria-1.1/#aria-haspopup</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn7" class="footnote-item"><p><code>aria-haspopup</code> property — W3C, <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-haspopup">https://www.w3.org/TR/wai-aria-1.1/#aria-haspopup</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn8" class="footnote-item"><p>WCAG2.1 1.4.3, Contrast (Minimum), <a href="https://www.w3.org/TR/WCAG21/#contrast-minimum">https://www.w3.org/TR/WCAG21/#contrast-minimum</a> <a href="#fnref8" class="footnote-backref">↩︎</a></p>
+<li id="fn7" class="footnote-item"><p>WCAG2.1 1.4.3, Contrast (Minimum), <a href="https://www.w3.org/TR/WCAG21/#contrast-minimum">https://www.w3.org/TR/WCAG21/#contrast-minimum</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>

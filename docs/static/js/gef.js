@@ -14,8 +14,10 @@
     this.sections = [];
     for (i = 0; i < elem.children.length; i++) {
       var section = {};
+      // Save the section element
       section.elem = elem.children[i];
 
+      // Make the first element in the section the 'handle'
       section.handle = section.elem.firstElementChild;
       section.handle.classList.add('gef-accordion-handle');
 
@@ -24,28 +26,38 @@
         return;
       }
 
+      // Create the handle's button
       var button = document.createElement('button');
       button.setAttribute('aria-expanded', 'false');
       button.setAttribute('type', 'button');
       button.innerHTML = '<span>' + section.handle.innerHTML + '</span>';
       button.innerHTML += '<svg viewBox="0 0 32 32" class="gel-icon gel-icon--text"><path d="M16 29L32 3h-7.2L16 18.3 7.2 3H0"></path></svg>';
 
+      // Place the button inside the handle
       section.handle.innerHTML = null;
       section.handle.appendChild(button);
       section.button = button;
 
+      // Make the contents everything in the section
+      // except the handle
       var contents = Array.prototype.slice.call(section.elem.children, 1);
+      // Create the drawer into which to place the contents
       section.drawer = document.createElement('div');
       section.drawer.classList.add('gef-accordion-drawer');
       section.drawer.hidden = true;
+      // Place the contents in the draw
       contents.forEach(function (node) {
         section.drawer.appendChild(node);
       });
       section.elem.appendChild(section.drawer);
 
+      // Save a reference to the section
       this.sections.push(section);
     }
 
+    // If the URL contains a hash corresponding to a section
+    // or child of a section, open the section
+    // and focus the fragment
     this.hashHandle = function () {
       var id = window.location.hash.substring(1);
       var target = document.getElementById(id);
@@ -58,11 +70,14 @@
       }.bind(this));
     }
 
+    // Handle the hash behaviour
     document.addEventListener('DOMContentLoaded', this.hashHandle());
     window.addEventListener('hashchange', function () {
       this.hashHandle();
     }.bind(this));
 
+    // Listen to clicks on the handle buttons to 
+    // toggle the section state between collapsed and expanded
     this.sections.forEach(function (section) {
       section.button.addEventListener('click', function () {
         var expanded = !section.drawer.hidden;
@@ -209,20 +224,6 @@
     if (this.invokerElem) {
       this.invokerElem.focus();
     }
-  }
-
-})();/**
- * BreakoutBox
- * @namespace gef
- * @method gef.BreakoutBox.init
- */
-
-(function() {
-  if (!window.gef) { window.gef = {}; }
-  var self = gef.BreakoutBox = {};
-
-  self.init = function() {
-    // nothing to initialise
   }
 
 })();/**
@@ -575,8 +576,10 @@
   }
 
   self.constructor = function (elem) {
+    // Add JS class for upgrading styles
     elem.classList.add('gef-masthead-with-js');
 
+    // Save an object of all submenus
     var links = elem.querySelector('.gef-masthead-links');
     var menus = [
       {
@@ -590,7 +593,6 @@
     ];
 
     menus.forEach(function (menu) {
-      menu.target.tabIndex = -1;
       menu.first = menu.target.querySelector('a[href], button:not([disabled]), input');
       if (!menu.first) {
         menu.first = menu.target.querySelector('h2, h3, h4');
@@ -832,16 +834,21 @@
   if (!window.gef) { window.gef = {}; }
   var self = gef.Switch = {};
 
-  self.init = function () {
-  }
+  self.init = function () { }
 
   self.constructor = function (button) {
     this.button = button;
+    // The 'on/off' text is provided in an aria-hidden <span>
     this.onOffSpan = this.button.querySelector('[aria-hidden]');
-    this.button.addEventListener('click', this.toggle.bind(this));
+
+    // Set aria-pressed to false if the attribute is absent
     let currentState = this.button.getAttribute('aria-pressed') === 'true';
     this.button.setAttribute('aria-pressed', currentState);
+    // Set the span's text to match the state
     this.onOffSpan.textContent = currentState ? 'on' : 'off';
+
+    // Bind to the toggle method
+    this.button.addEventListener('click', this.toggle.bind(this));
   }
 
   // The toggle method
@@ -850,7 +857,6 @@
     this.button.setAttribute('aria-pressed', !currentState);
     this.onOffSpan.textContent = currentState ? 'off' : 'on';
   }
-
 })();/**
  * Tabs
  * @namespace gef

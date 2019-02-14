@@ -1,19 +1,19 @@
 ---
-title: Metadata Strips
+title: Metadata strips
 summary: The metadata strip defines key metadata for an item of content, in a compact form
 version: 0.1.0
 published: false
-accessibility: false
+accessibility: true
 linkback: http://www.bbc.co.uk/gel/guidelines/cards
 ---
 
 ## Introduction
 
-The **Metadata Strip** is a simple component to be provided as part of content such as a [Promo](../promos). It defines key information attributed to the content like its publish date, and derivation.
+The **Metadata strip** is a simple component to be provided as part of content such as a [Promo](../promos). It defines key information attributed to the content like its publish date, and derivation.
 
 ## Recommended markup
 
-::: info Note
+::: info Promo implementation
 The following example assumes the content is a [Promo](../promos) and includes just publishing and derivation information. Other definitions may be applicable elsewhere.
 :::
 
@@ -90,15 +90,13 @@ Aside from linked metadata, metadata strips are largely static. If a link uses `
 <a href="/link/to/category">
   UK
   <span class="gef-sr">(opens new tab)</span>
-  <span class="gel-icon">
-    <svg>
-      <use xlink:href="assets/svg/gel-icons-core-set.svg#gel-icon-external-link"></use>
-    </svg>
-  </span>  
+  <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+    <use xlink:href="assets/svg/gel-icons-core-set.svg#gel-icon-external-link"></use>
+  </svg>
 </a>
 ```
 
-## Example implementation
+## Reference implementation
 
 ::: alert Important
 Reference implementations are intended to demonstrate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
