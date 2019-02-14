@@ -342,6 +342,10 @@ svg + .gef-promo-indicator-text {
 
 .gef-breakout-box {
   background: #eee;
+  border-top: 1px solid transparent;
+  /* for high contrast mode */
+  border-bottom: 1px solid transparent;
+  /* for high contrast mode */
   padding: 8px;
   margin: 20px 0 32px 0;
   width: 100%; }
