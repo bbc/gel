@@ -1245,7 +1245,9 @@ span.gef-nowrap {
 
 .gef-accordion-handle button:hover,
 .gef-accordion-handle button:focus {
-  outline: none;
+  outline: 2px solid transparent;
+  /* fallback for high contrast mode */
+  outline-offset: 2px;
   background-color: #007bb8;
   color: #fff; }
 
