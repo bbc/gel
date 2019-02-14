@@ -74,17 +74,20 @@ When the _"Continue below..."_ element is focused, it draws attention by showing
 ```css
 @keyframes focus {
   0%{
-    outline-color: transparent;
+    outline-width: 0px;
   }
   50% {
-    outline-color: $gel-color--tundora;
+    outline-width: 2px;
   }
   100% {
-    outline-color: transparent;
+    outline-width: 0px; 
   }
 }
 
 .gef-pocket-continue:focus {
+  outline-style: solid;
+  outline-width: 0px;
+  outline-offset: 2px;
   animation: focus 1s linear 1;
 }
 ```

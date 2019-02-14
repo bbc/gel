@@ -151,17 +151,20 @@
 <p>When the <em>&quot;Continue below...&quot;</em> element is focused, it draws attention by showing a brief <code>outline</code> animation:</p>
 <pre class="hljs"><code>@<span class="hljs-keyword">keyframes</span> focus {
   0%{
-    <span class="hljs-attribute">outline-color</span>: transparent;
+    <span class="hljs-attribute">outline-width</span>: <span class="hljs-number">0px</span>;
   }
   50% {
-    <span class="hljs-attribute">outline-color</span>: $gel-color--tundora;
+    <span class="hljs-attribute">outline-width</span>: <span class="hljs-number">2px</span>;
   }
   100% {
-    <span class="hljs-attribute">outline-color</span>: transparent;
+    <span class="hljs-attribute">outline-width</span>: <span class="hljs-number">0px</span>; 
   }
 }
 
 <span class="hljs-selector-class">.gef-pocket-continue</span><span class="hljs-selector-pseudo">:focus</span> {
+  <span class="hljs-attribute">outline-style</span>: solid;
+  <span class="hljs-attribute">outline-width</span>: <span class="hljs-number">0px</span>;
+  <span class="hljs-attribute">outline-offset</span>: <span class="hljs-number">2px</span>;
   <span class="hljs-attribute">animation</span>: focus <span class="hljs-number">1s</span> linear <span class="hljs-number">1</span>;
 }
 </code></pre>

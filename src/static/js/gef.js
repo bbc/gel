@@ -696,7 +696,7 @@
       const truncatedItems = this.truncated.children;
       var observerSettings = {
         root: this.truncated,
-        threshold: [0.95]
+        threshold: [0.9]
       }
 
       var callback = function (items, observer) {
