@@ -16,9 +16,15 @@
   border-left: 0;
 }
 
-.gef-masthead-logo img {
+.gef-masthead-logo svg {
   height: 1em;
-  display: block;
+  width: 3.25rem;
+}
+
+@media (-ms-high-contrast: active) {
+  .gef-masthead-logo img {
+    filter: invert(100%);
+  }
 }
 
 .gef-masthead-popup {
@@ -36,11 +42,6 @@
   top: 0.75rem;
   right: 0.75rem;
   height: auto;
-}
-
-.gef-masthead .gef-masthead-close-button:focus {
-  outline: 2px solid currentColor;
-  outline-offset: 2px;
 }
 
 .gef-masthead-more-menu {
@@ -73,8 +74,9 @@
 
 .gef-masthead-bar a:hover,
 .gef-masthead-bar a:focus {
-  outline: none;
-  border-color: $gel-color--tundora;
+  outline: 2px solid transparent; /* for high contrast mode */
+  outline-offset: -4px;
+  box-shadow: inset 0 -4px 0 0 currentColor;
 }
 
 .gef-masthead [tabindex="-1"]:focus {
@@ -94,6 +96,7 @@
 .gef-masthead-banner-logo svg {
   height: 100%;
   width: auto;
+  fill: currentColor;
 }
 
 .gef-masthead-links,
@@ -115,8 +118,7 @@
     white-space: nowrap;
     border: 0;
     line-height: 1;
-    padding: 1rem 0.75rem 0.75rem;
-    border-bottom: 0.25rem solid $gel-color--white;
+    padding: 0.75rem;
   }
   
   .gef-masthead-bar {

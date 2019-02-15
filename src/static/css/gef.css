@@ -728,9 +728,12 @@ span.gef-nowrap {
   align-items: center; }
 
 .gef-video-timeline-container input[type=range] {
-  -webkit-appearance: none;
   width: 100%;
   margin: 7px 0; }
+
+@media not all and (-ms-high-contrast: active) {
+  .gef-video-timeline-container input[type=range] {
+    -webkit-appearance: none; } }
 
 .gef-video-timeline-container input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
@@ -760,34 +763,6 @@ span.gef-nowrap {
   width: 10px;
   background: #fff;
   cursor: pointer; }
-
-.gef-video-timeline-container input[type=range]::-ms-track {
-  width: 100%;
-  height: 6px;
-  cursor: pointer;
-  background: transparent;
-  border-color: transparent;
-  color: transparent; }
-
-.gef-video-timeline-container input[type=range]::-ms-fill-lower {
-  background: #fff; }
-
-.gef-video-timeline-container input[type=range]::-ms-fill-upper {
-  background: #fff; }
-
-.gef-video-timeline-container input[type=range]::-ms-thumb {
-  height: 20px;
-  width: 10px;
-  border-radius: 0px;
-  background: #fff;
-  cursor: pointer;
-  height: 6px; }
-
-.gef-video-timeline-container input[type=range]:focus::-ms-fill-lower {
-  background: #fff; }
-
-.gef-video-timeline-container input[type=range]:focus::-ms-fill-upper {
-  background: #fff; }
 
 .gef-video-button-on {
   display: none; }
@@ -980,9 +955,13 @@ span.gef-nowrap {
 .gef-masthead-links {
   border-left: 0; }
 
-.gef-masthead-logo img {
+.gef-masthead-logo svg {
   height: 1em;
-  display: block; }
+  width: 3.25rem; }
+
+@media (-ms-high-contrast: active) {
+  .gef-masthead-logo img {
+    filter: invert(100%); } }
 
 .gef-masthead-popup {
   padding: 0.75rem;
@@ -998,10 +977,6 @@ span.gef-nowrap {
   top: 0.75rem;
   right: 0.75rem;
   height: auto; }
-
-.gef-masthead .gef-masthead-close-button:focus {
-  outline: 2px solid currentColor;
-  outline-offset: 2px; }
 
 .gef-masthead-more-menu {
   border-bottom: 1px solid #ccc;
@@ -1028,8 +1003,10 @@ span.gef-nowrap {
 
 .gef-masthead-bar a:hover,
 .gef-masthead-bar a:focus {
-  outline: none;
-  border-color: #404040; }
+  outline: 2px solid transparent;
+  /* for high contrast mode */
+  outline-offset: -4px;
+  box-shadow: inset 0 -4px 0 0 currentColor; }
 
 .gef-masthead [tabindex="-1"]:focus {
   outline: none; }
@@ -1044,7 +1021,8 @@ span.gef-nowrap {
 
 .gef-masthead-banner-logo svg {
   height: 100%;
-  width: auto; }
+  width: auto;
+  fill: currentColor; }
 
 .gef-masthead-links,
 .gef-masthead-more-option,
@@ -1063,8 +1041,7 @@ span.gef-nowrap {
     white-space: nowrap;
     border: 0;
     line-height: 1;
-    padding: 1rem 0.75rem 0.75rem;
-    border-bottom: 0.25rem solid #fff; }
+    padding: 0.75rem; }
   .gef-masthead-bar {
     display: flex;
     line-height: 1; }

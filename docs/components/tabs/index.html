@@ -175,6 +175,20 @@
   }
 }
 </code></pre>
+<h3 id="high-contrast-mode">High contrast mode</h3>
+<p>Where Windows High Contrast Mode is active, the backgrounds that mark out the tabs and panels are eliminated. Accordingly, supplementary borders are added. These are set to <code>transparent</code> and will be invisible unless Windows HCM is running.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-tabs</span> &gt; <span class="hljs-selector-tag">section</span> {
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid transparent; <span class="hljs-comment">/* for high contrast mode */</span>
+}
+</code></pre>
+<p>In addition, an <code>@media</code> query detecting high contrast mode is used to create an alternative <code>aria-current</code> style for the selected tab. It is positioned <code>2px</code> down from its natural position. This obscures the line between the tab and panel, making them appear as one.</p>
+<pre class="hljs"><code>@<span class="hljs-keyword">media</span> (-ms-high-contrast: active) {
+  <span class="hljs-selector-class">.gef-tabs</span> <span class="hljs-selector-attr">[aria-current]</span> {
+    <span class="hljs-attribute">position</span>: relative;
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">2px</span>;
+  }
+}
+</code></pre>
 <h3 id="focus-styles">Focus styles</h3>
 <p>The tab elements themselves are rectangular and take a <code>background-color</code> making some user agents' default focus styling unclear. It is recommended a solid <code>outline</code> style is applied.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gef-tabs</span> &gt; <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span>,
