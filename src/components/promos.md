@@ -233,7 +233,14 @@ The image will need to fit the available space, regardless of the Promo's dimens
 ```
 
 ::: info Support for object-fit
-At the time of writing, the `object-fit` property is supported everywhere but Internet Explorer[^5]. The code uses `@supports` and falls back to showing the image at its natural width, cropping the right edge or leaving a right margin.
+At the time of writing, the `object-fit` property is supported everywhere but Internet Explorer. The code uses `@supports` and falls back to a 'letterboxed' style using `text-align: center` and a `background-color`:
+
+```css
+.gef-promo-image {
+  text-align: center;
+  background-color: $gel-color--tundora; 
+}
+```
 :::
 
 ### Horizontal promos

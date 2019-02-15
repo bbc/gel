@@ -11,9 +11,8 @@ linkback: https://www.bbc.co.uk/gel/guidelines/masthead
 
 The **Masthead** is an essential component for each of the pages of any BBC site. In order to be considered robust, it needs to work under a number of different circumstances:
 
-1. **No JavaScript or Flexbox:** The functionality must be available to users whose browsers are not running JavaScript and do not support CSS Flexbox.
-2. **JavaScript but no Flexbox:** The functionality must be available to users whose browsers _are_ running JavaScript but for whom Flexbox is not supported.
-3. **JavaScript but no `IntersectionObserver`:** The `IntersectionObserver` API is the most efficient way to allot a suitable number of promoted navigation links within the available space. These links must still be available where the browser does not support `IntersectionObserver`.
+1. **No JavaScript:** The functionality must be available to users whose browsers are not running JavaScript
+2. **JavaScript but no `IntersectionObserver`:** The `IntersectionObserver` API is the most efficient way to allot a suitable number of promoted navigation links within the available space. These links must still be available where the browser does not support `IntersectionObserver`.
 
 A number of responsive design and progressive enhancement techniques are employed to make the **Masthead** as inclusive as possible.
 
@@ -113,7 +112,7 @@ The alerts link, like the more link below, is an enhanced same-page link that bo
 </div>
 ```
 
-These are the main navigation options, grouped within a list so that screen reader software identifies them as related (and mutually exclusive) and numerates them[^3]. They each pertain to a BBC site, and this is identified by an auxiliary group label provided to the list element via a hidden `<span>`. In the absence of either Flexbox or JavaScript, the More menu offers a complete list of links. It's important, therefore, that each of these links is also available in the More menu.
+These are the main navigation options, grouped within a list so that screen reader software identifies them as related (and mutually exclusive) and numerates them[^3]. They each pertain to a BBC site, and this is identified by an auxiliary group label provided to the list element via a hidden `<span>`. In the absence of JavaScript, the More menu offers a complete list of links. It's important, therefore, that each of these links is also available in the More menu.
 
 #### The more link
 
@@ -174,7 +173,7 @@ The search link takes you to the main BBC search page. Note that, despite only c
 </div>
 ```
 
-This contains the priority/promoted links and more. The account link is revealed under circumstances where JavaScript has not run or Flexbox is not supported, which would mean the links in the bar above are hidden and not available.
+This contains the priority/promoted links and more. The account link is revealed under circumstances where JavaScript has not run, which would mean the links in the bar above are hidden and not available.
 
 Note the `<h2>` heading. This is hidden from assistive technologies but used as a visual label. It becomes the group label for the list via `aria-labelledby`.
 
@@ -220,11 +219,11 @@ The banner contains the logo for the local site. This logo is also the home page
 
 ## Recommended layout
 
-Where Flexbox is available, the global navigation bar is responsive by own of three means:
+The global navigation bar is responsive by own of three means:
 
 1. The priority/promoted links container has `overflow: hidden` and `IntersectionObserver` hides any links that do not intersect sufficiently with `visibility: hidden`. 
 2. Where `IntersectionObserver` is not supported, the priority/promoted links container is set to `overflow-x: auto`. This allows the user to scroll links into view.
-3. Where there's no JavaScript or no Flexbox available, the More menu (containing the priority links and more) is revealed by default and the priority links become hidden. Links within the More menu wrap automatically.
+3. Where there's no JavaScript, the More menu (containing the priority links and more) is revealed by default and the priority links become hidden. Links within the More menu wrap automatically.
 
 ### Icons
 

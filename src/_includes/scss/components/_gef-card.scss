@@ -1,33 +1,42 @@
 .gef-cards {
-  padding: 0;
-}
-
-.gef-cards > * + * {
   list-style: none;
-  margin-top: 1rem;
+  padding: 0;
 }
 
 .gef-card {
   background-color: #F1F1F1;
-  border: 2px solid transparent; /* for high contrast mode */
+  outline: 2px solid transparent; /* for high contrast mode */
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .gef-card-content {
   position: relative;
   overflow: hidden;
   height: 10rem;
+  order: -1;
+}
+
+.gef-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gef-cards > * {
+  flex: 0 0 266px;
+  margin: 0 1rem 1rem 0;
 }
 
 @supports (display: grid) {
-  .gef-cards > * + * {
-    margin-top: 0;
-  }
-
   .gef-cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
     grid-gap: 1rem;
+  }
+
+  .gef-cards > * {
+    margin: 0;
   }
 }
 
@@ -37,22 +46,17 @@
   width: auto;
 }
 
+/* to neaten up where object-fit isn't supported */
+.gef-card-content {
+  text-align: center;
+  background-color: $gel-color--tundora; 
+}
+
 @supports (object-fit: cover) {
   .gef-card-content img, 
   .gef-card-content video {
     width: 100%;
     object-fit: cover;
-  }
-}
-
-@supports (display: flex) {
-  .gef-card {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .gef-card-content {
-    order: -1;
   }
 }
 

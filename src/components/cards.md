@@ -100,28 +100,6 @@ When an image is the focus of the card, it should be considered salient content 
 
 Instead, describe what is in the photograph and what makes it relevant. 
 
-To ensure the image has the best chance of fitting within the given space without distorting, it is recommended you use the `object-fit` property as a progressive enhancement. In the following example, the height of the content area has been set to `10rem` and the width is assumed to be indeterminate/responsive.
-
-```css
-.gef-card-content img,
-.gef-card-content video {
-  height: 100%;
-  width: auto;
-}
-
-@supports (object-fit: cover) {
-  .gef-card-content img, 
-  .gef-card-content video {
-    width: 100%;
-    object-fit: cover;
-  }
-}
-```
-
-::: info Object-fit support
-At the time of writing, the `object-fit` property is supported everywhere but Internet Explorer. The code uses `@supports` and falls back to showing the image at its natural width, cropping the right edge or leaving a right margin.
-:::
-
 #### A video
 
 If a video is provided, ensure the following:
@@ -149,36 +127,35 @@ The minimum width for a card is `266px`. A set of cards can appear within a grid
 
 ### Grid formation
 
-The most efficient way to arrange cards into a grid is to use the CSS Grid module. You must ensure that a fallback layout is in place where CSS Grid is not supported. In the following example, the fallback displays the cards at full width, with a margin of `1rem` between each card. This is superceded by `grid-gap` where Grid is available.
+The most efficient way to arrange cards into a grid is to use the CSS Grid module. You must ensure that a fallback layout is in place where CSS Grid is not supported. In the following code, Flexbox provides that fallback.
 
 ```css
-.gef-cards > * + * {
-  margin-top: 1rem;
+.gef-cards {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.gef-card {
-  background-color: #F1F1F1;
-  position: relative;
-}
-
-.gef-card-content {
-  position: relative;
-  overflow: hidden;
-  height: 10rem;
+.gef-cards > * {
+  flex: 0 0 266px;
+  margin: 0 1rem 1rem 0;
 }
 
 @supports (display: grid) {
-  .gef-cards > * + * {
-    margin-top: 0;
-  }
-
   .gef-cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
     grid-gap: 1rem;
   }
+
+  .gef-cards > * {
+    margin: 0;
+  }
 }
 ```
+
+::: info IE11 and Flexbox
+Internet Explorer 11 supports Flexbox (albeit with a few bugs) but not `@supports` in CSS. Hence, Flexbox code is not feature detected.
+:::
 
 ### Carousel formation
 
@@ -191,11 +168,9 @@ Each card in a set should share the same height, despite content across cards va
 This must _not_ be achieved using absolute positioning, because this is likely to interfere with zoom functionality. Instead, make the card a Flexbox context and give the toolbar element a top margin of `auto`:
 
 ```css
-@supports (display: flex) {
-  .gef-card {
-    display: flex;
-    flex-direction: column;
-  }
+.gef-card {
+  display: flex;
+  flex-direction: column;
 }
 
 .gef-card-toolbar {
@@ -210,6 +185,37 @@ The `gef-card-headline`, containing the heading element, must come first in focu
   order: -1;
 }
 ```
+
+#### Media layout
+
+To ensure the image or video has the best chance of fitting within the given space without distorting, it is recommended you use the `object-fit` property as a progressive enhancement. In the following example, the height of the content area has been set to `10rem` and the width is assumed to be indeterminate/responsive.
+
+```css
+.gef-card-content img,
+.gef-card-content video {
+  height: 100%;
+  width: auto;
+}
+
+@supports (object-fit: cover) {
+  .gef-card-content img, 
+  .gef-card-content video {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+```
+
+::: info Support for object-fit
+At the time of writing, the `object-fit` property is supported everywhere but Internet Explorer. The code uses `@supports` and falls back to a 'letterboxed' style using `text-align: center` and a `background-color`:
+
+```css
+.gef-card-content {
+  text-align: center;
+  background-color: $gel-color--tundora; 
+}
+```
+:::
 
 #### The 'More info' element
 
@@ -236,9 +242,9 @@ Also note `overflow-y: auto`. This is provided in case the content inside the 'M
 
 ### High contrast
 
-How the component looks with a [Windows High Contrast Mode](https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode) theme active. Transparent borders that become visible in Windows HCM are used to demarcate the **Card** some of its subcomponents. An outline style supplements the `background-color` focus style that is eliminated.
+How the component looks with a [Windows High Contrast Mode](https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode) theme active. Transparent outlines and borders that become visible in Windows HCM are used to demarcate the **Card** from some of its subcomponents. An outline style supplements the `background-color` focus style that is eliminated.
 
-![An outer border demarcates the shape of the card.]({{site.basedir}}static/images/hcm_cards.png)
+![An outer outline demarcates the shape of the card.]({{site.basedir}}static/images/hcm_cards.png)
 
 ## Recommended behaviour
 

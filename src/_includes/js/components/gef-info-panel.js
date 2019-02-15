@@ -27,10 +27,8 @@
 
     // Make sure the parent has the right classes
     this.elem = elem;
-    this.elem.classList.add(
-      'gef-infopanel',
-      'gef-infopanel-with-js'
-    );
+    this.elem.classList.add('gef-infopanel');
+    this.elem.classList.add('gef-infopanel-with-js');
 
     // Save key elements
     this.button = this.elem.querySelector('.gef-infopanel-button');

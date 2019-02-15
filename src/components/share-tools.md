@@ -101,6 +101,12 @@ The skip link (_"Skip sharing"_) takes the classes `gef-sr` and `gef-sr__focusab
 
 The expected layout of the **Information panel** is documented with the [**Information panel** component](../info-panel).
 
+### High contrast
+
+How the component looks with a [Windows High Contrast Mode](https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode) theme active. 
+
+![Borders make the buttons visible]({{site.basedir}}static/images/hcm_share_tools.png)
+
 ## Recommended behaviour
 
 **Share tools** consists of a list of external links, which open social media platforms' respective pages in new tabs. As described in [Expected markup](#expected-markup), screen reader users are forewarned about this change in context by each link's visually hidden label being appended with _"external"_.

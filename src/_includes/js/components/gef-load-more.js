@@ -11,7 +11,7 @@
   self.init = function () { }
 
   self.constructor = function (elem, /* number */amount, /* number */start, /* fn => Promise */dataProvider) {
-    this.elem = elem;
+    /*this.elem = elem;
     // Save refs to key elements
     this.loadBay = this.elem.querySelector('.gef-loader-items');
     this.pages = this.elem.querySelector('.gef-pages');
@@ -33,11 +33,9 @@
       this.loadItems = function (amount, start) {
         // Make array of URLs to request using the base URL
         var requestQueue = [];
-        for (i = this.start; i < this.start + this.amount; i++) {
+        for (var i = this.start; i < this.start + this.amount; i++) {
           requestQueue.push(i);
         }
-
-        i = this.start;
 
         // Factory to create the separator element that marks
         // the start of the new results and takes focus
@@ -91,7 +89,7 @@
       this.button.addEventListener('click', function () {
         this.load();
       }.bind(this));
-    }
+    }*/
   }
 
   // The load method

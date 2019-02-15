@@ -1,21 +1,16 @@
-.gef-promos {
-  list-style: none;
-  padding: 0;
-}
-
-.gef-promos > * {
-  display: inline-block;
-  max-width: 266px;
-}
-
 .gef-promo {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   position: relative;
   background-color: $gel-color--alto;
-  border: 2px solid transparent; /* for high contrast mode */
+  outline: 2px solid transparent; /* for high contrast mode */
 }
 
 .gef-promo-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
 }
 
@@ -23,11 +18,22 @@
   height: 10rem;
   overflow: hidden;
   position: relative;
+  /* to improve the appearance where 
+  object fit isn't supported ↓ */
+  text-align: center;
+  background-color: $gel-color--tundora;
 }
 
 .gef-promo-image img {
   height: 100%;
   width: auto;
+}
+
+@supports (object-fit: cover) {
+  .gef-promo-image img {
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 .gef-promo-headline {
@@ -77,52 +83,45 @@ svg + .gef-promo-indicator-text {
   margin-left: 0.25rem;
 }
 
-@supports (object-fit: cover) {
-  .gef-promo-image img {
-    width: 100%;
-    object-fit: cover;
-  }
+.gef-promo-content .gef-metadata-strip {
+  padding: 0;
+  margin: 0;
+  margin-top: auto;
 }
 
-@supports (display: flex) {
-  .gef-promo {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .gef-promo-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .gef-promo-content .gef-metadata-strip {
-    padding: 0;
-    margin: 0;
-    margin-top: auto;
-  }
-  
-  .gef-promo.gef-promo-horizontal {
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
+.gef-promo.gef-promo-horizontal {
+  flex-wrap: wrap;
+  flex-direction: row;
+}
 
-  .gef-promo.gef-promo-horizontal .gef-promo-image {
-    flex: 1;
-    min-width: 266px;
-    height: auto;
-  }
-  
-  .gef-promo.gef-promo-horizontal .gef-promo-content {
-    min-width: 266px;
-    flex: 999;
-  }
+.gef-promo.gef-promo-horizontal .gef-promo-image {
+  flex: 1;
+  min-width: 266px;
+  height: auto;
+}
+
+.gef-promo.gef-promo-horizontal .gef-promo-content {
+  min-width: 266px;
+  flex: 999;
+}
+
+.gef-promos {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gef-promos > * {
+  flex: 0 0 266px;
+  margin: 0 1rem 1rem 0;
 }
 
 @supports (display: grid) {
   .gef-promos {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
+    margin: 0;
     grid-gap: 1rem;
   }
 
@@ -131,6 +130,7 @@ svg + .gef-promo-indicator-text {
   }
   
   .gef-promos > * {
+    margin: 0;
     max-width: none;
   }
 }

@@ -382,10 +382,8 @@
 
     // Make sure the parent has the right classes
     this.elem = elem;
-    this.elem.classList.add(
-      'gef-infopanel',
-      'gef-infopanel-with-js'
-    );
+    this.elem.classList.add('gef-infopanel');
+    this.elem.classList.add('gef-infopanel-with-js');
 
     // Save key elements
     this.button = this.elem.querySelector('.gef-infopanel-button');
@@ -474,7 +472,7 @@
   self.init = function () { }
 
   self.constructor = function (elem, /* number */amount, /* number */start, /* fn => Promise */dataProvider) {
-    this.elem = elem;
+    /*this.elem = elem;
     // Save refs to key elements
     this.loadBay = this.elem.querySelector('.gef-loader-items');
     this.pages = this.elem.querySelector('.gef-pages');
@@ -496,11 +494,9 @@
       this.loadItems = function (amount, start) {
         // Make array of URLs to request using the base URL
         var requestQueue = [];
-        for (i = this.start; i < this.start + this.amount; i++) {
+        for (var i = this.start; i < this.start + this.amount; i++) {
           requestQueue.push(i);
         }
-
-        i = this.start;
 
         // Factory to create the separator element that marks
         // the start of the new results and takes focus
@@ -554,7 +550,7 @@
       this.button.addEventListener('click', function () {
         this.load();
       }.bind(this));
-    }
+    }*/
   }
 
   // The load method
