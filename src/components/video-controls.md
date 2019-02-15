@@ -157,7 +157,7 @@ To make these values more readable non-visually, they are rounded up into whole 
 </label>
 ```
 
-### Recommended layout
+## Recommended layout
 
 The layout will differ depending on the context and number of simultaneous controls that are implemented. It is, however, recommended the controls are sufficiently large enough to be targeted by mouse and touch, and they carry clear focus styles.
 
@@ -167,7 +167,26 @@ The layout will differ depending on the context and number of simultaneous contr
 }
 ```
 
+### The timeline
+
 The `type="range"` input (for the timeline) requires a number of proprietary styles to have a custom appearance[^4]. 
+
+Many of the custom styles are not visible where Windows High Contrast Mode is active, so we reinstate the user agent styles in an `@media` block:
+
+```css
+@media (-ms-high-contrast: active) {
+  .gef-video-timeline-container input[type=range],
+  .gef-video-timeline-container input[type=range]::-webkit-slider-runnable-track,
+  .gef-video-timeline-container input[type=range]::-webkit-slider-thumb,
+  .gef-video-timeline-container input[type=range]:focus::-webkit-slider-runnable-track,
+  .gef-video-timeline-container input[type=range]::-webkit-slider-thumb,
+  .gef-video-timeline-container input[type=range]:focus::-webkit-slider-runnable-track,
+  .gef-video-timeline-container input[type=range]::-moz-range-track,
+  .gef-video-timeline-container input[type=range]::-moz-range-thumb {
+    all: initial;
+  }
+}
+```
 
 #### The controls container
 

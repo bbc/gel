@@ -103,7 +103,7 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
@@ -226,13 +226,19 @@ Visually hide an element, but leave it available for screen readers
   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"timeline"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">aria-valuemin</span>=<span class="hljs-string">"0 seconds"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"95.2"</span> <span class="hljs-attr">aria-valuemax</span>=<span class="hljs-string">"1 minutes and 35 seconds"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"14.7"</span> <span class="hljs-attr">aria-valuenow</span>=<span class="hljs-string">"0 minutes and 14 seconds"</span> /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 </code></pre>
-<h3 id="recommended-layout">Recommended layout</h3>
+<h2 id="recommended-layout">Recommended layout</h2>
 <p>The layout will differ depending on the context and number of simultaneous controls that are implemented. It is, however, recommended the controls are sufficiently large enough to be targeted by mouse and touch, and they carry clear focus styles.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gef-video-container</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:focus</span> {
   <span class="hljs-attribute">outline</span>: <span class="hljs-number">2px</span> solid $gel-color--tundora;
 }
 </code></pre>
+<h3 id="the-timeline-1">The timeline</h3>
 <p>The <code>type=&quot;range&quot;</code> input (for the timeline) requires a number of proprietary styles to have a custom appearance<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>.</p>
+<p>The custom styles are not visible where Windows High Contrast Mode is active, so they are only applied if Windows HCM is not applied:</p>
+<pre class="hljs"><code>@<span class="hljs-keyword">media</span> not all and (-ms-high-contrast: active) {
+  <span class="hljs-comment">/* non-HCM styling here */</span>
+}
+</code></pre>
 <h4 id="the-controls-container">The controls container</h4>
 <p>In the <a href="#reference-implementation">reference implementation</a>, the controls container uses Flexbox to distribute the controls along a horizontal axis. The timeline container takes <code>flex: auto</code><sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> to take up any space not taken by surrounding buttons. This makes the control bar responsive and tolerant of different functionality complexity.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gef-video-timeline-container</span> {
@@ -264,7 +270,7 @@ Visually hide an element, but leave it available for screen readers
   });
 }
 </code></pre>
-<h3 id="the-timeline-1">The timeline</h3>
+<h3 id="the-timeline-2">The timeline</h3>
 <p>As stated in <a href="#recommended-markup">Recommended markup</a>, the timeline must represent the current state of progress <em>and</em> allow the user to 'scrub' and relocate themselves within the video's duration.</p>
 <p>The first part is achieved by linking the input's value to the video's <code>currentTime</code> property within successive <code>'timeupdate'</code> events:</p>
 <pre class="hljs"><code>video.addEventListener(<span class="hljs-string">'timeupdate'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{

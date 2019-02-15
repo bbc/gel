@@ -729,11 +729,8 @@ span.gef-nowrap {
 
 .gef-video-timeline-container input[type=range] {
   width: 100%;
-  margin: 7px 0; }
-
-@media not all and (-ms-high-contrast: active) {
-  .gef-video-timeline-container input[type=range] {
-    -webkit-appearance: none; } }
+  margin: 7px 0;
+  -webkit-appearance: none; }
 
 .gef-video-timeline-container input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
@@ -775,6 +772,20 @@ span.gef-nowrap {
 
 .gef-video-container [hidden] {
   display: none; }
+
+@media (-ms-high-contrast: active) {
+  .gef-video-timeline-container input[type=range],
+  .gef-video-timeline-container input[type=range]::-webkit-slider-runnable-track,
+  .gef-video-timeline-container input[type=range]::-webkit-slider-thumb,
+  .gef-video-timeline-container input[type=range]:focus::-webkit-slider-runnable-track,
+  .gef-video-timeline-container input[type=range]::-webkit-slider-thumb,
+  .gef-video-timeline-container input[type=range]:focus::-webkit-slider-runnable-track,
+  .gef-video-timeline-container input[type=range]::-moz-range-track,
+  .gef-video-timeline-container input[type=range]::-moz-range-thumb {
+    all: initial; }
+  .gef-video-timeline-container input[type=range] {
+    width: 100%;
+    margin: 7px 0; } }
 
 .gef-button, .gef-cta {
   padding: 16px;
