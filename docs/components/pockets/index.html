@@ -151,20 +151,26 @@
 <p>When the <em>&quot;Continue below...&quot;</em> element is focused, it draws attention by showing a brief <code>outline</code> animation:</p>
 <pre class="hljs"><code>@<span class="hljs-keyword">keyframes</span> focus {
   0%{
-    <span class="hljs-attribute">outline-color</span>: transparent;
+    <span class="hljs-attribute">outline-width</span>: <span class="hljs-number">0px</span>;
   }
   50% {
-    <span class="hljs-attribute">outline-color</span>: $gel-color--tundora;
+    <span class="hljs-attribute">outline-width</span>: <span class="hljs-number">2px</span>;
   }
   100% {
-    <span class="hljs-attribute">outline-color</span>: transparent;
+    <span class="hljs-attribute">outline-width</span>: <span class="hljs-number">0px</span>; 
   }
 }
 
 <span class="hljs-selector-class">.gef-pocket-continue</span><span class="hljs-selector-pseudo">:focus</span> {
+  <span class="hljs-attribute">outline-style</span>: solid;
+  <span class="hljs-attribute">outline-width</span>: <span class="hljs-number">0px</span>;
+  <span class="hljs-attribute">outline-offset</span>: <span class="hljs-number">2px</span>;
   <span class="hljs-attribute">animation</span>: focus <span class="hljs-number">1s</span> linear <span class="hljs-number">1</span>;
 }
 </code></pre>
+<h3 id="high-contrast">High contrast</h3>
+<p>How the component looks with a <a href="https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode">Windows High Contrast Mode</a> theme active.</p>
+<p><img src="/gef-docs/static/images/hcm_pocket.png" alt="Black on white theme with all the same shapes intact"></p>
 <h2 id="recommended-behaviour">Recommended behaviour</h2>
 <p>The <strong>Pocket</strong> is treated as a progressive enhancement. It does not initialize at all if JavaScript does not run or <code>IntersectionObserver</code> is not supported. Support for <code>IntersectionObserver</code> is covered by Chrome, Edge, Firefox, Opera, and various Android browsers at the time of writing<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. Browsers that do not enhance to a <strong>Pocket</strong> simply show the content in its expanded form.</p>
 <p>The purpose of the <code>IntersectionObserver</code> is to apply (polyfilled) <code>inert</code><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> status to all the visually obscured children within the <code>class=&quot;gef-pocket-truncated&quot;</code> element.</p>

@@ -29,7 +29,7 @@
             (new FontFaceObserver('ReithSerif', 5000)).load().then(function () {
                 document.documentElement.className += ' b-reith-loaded';
             });
-        } catch( e ) {
+        } catch (e) {
             console.log('Reith fonts did not load within 5 seconds.');
         }
     </script>
@@ -39,7 +39,7 @@
         hljs.initHighlightingOnLoad();
     </script>
 
-    
+
 </head>
 
 <body class="gefdocs-body">
@@ -82,15 +82,16 @@
 
             <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
                 <h1 class="gefdocs-header__title">Buttons and CTAs</h1>
-                <p class="gefdocs-header__summary gel-great-primer">The design of clickable controls must be consistent with their behaviour</p>
+                <p class="gefdocs-header__summary gel-great-primer">The design of clickable controls must be consistent
+                    with their behaviour</p>
             </div>
 
             <div class="gel-layout__item gel-1/5@l">
                 <dl class="gefdocs-standout-box">
-                    
+
                     <dt>Version:</dt>
                     <dd>0.1.0</dd>
-                    
+
                     <dt>Status:</dt>
                     <dd>Draft</dd>
                     <dt>Accessibility:</dt>
@@ -103,93 +104,187 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="gefdocs-toc__links" class="gefdocs-toc">
+                        <li><a href="#introduction">Introduction</a></li>
+                        <li><a href="#recommended-markup">Recommended markup</a></li>
+                        <li><a href="#recommended-layout">Recommended layout</a></li>
+                        <li><a href="#recommended-behaviour">Recommended behaviour</a></li>
+                        <li><a href="#reference-implementation">Reference implementation</a></li>
+                        <li><a href="#related-research">Related research</a></li>
+                    </ol>
                 </nav>
             </div>
 
             <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="introduction">Introduction</h2>
-<p>BBC buttons and calls-to-action differ widely in form and purpose. But they should conform to some fundamental rules. Only where these rules are observed will the user experience comfortable interaction.</p>
-<p>The most important of these rules is that the <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code> elements are assigned to appropriate respective tasks. That is: links should be used where navigation is elicited, and <code>&lt;button&gt;</code>s where a non-navigational action is being invoked. For example, a 'Sign in' control would suit a <code>&lt;button&gt;</code> because its job is to submit the sign in form. An adjacent 'Register' call-to-action—taking the user to a different form, in a different page or screen—would benefit from <code>&lt;a&gt;</code> semantics.</p>
-<p>This is especially helpful for assistive technology users, such as those running screen reader software. An element announced as a link that behaves as a button creates a confusing and off-putting experience. The visual design of buttons and calls-to-action should also be indicative of their behavior. Where button state changes, this change should be visually represented as well.</p>
-<h2 id="recommended-markup">Recommended markup</h2>
-<h3 id="basic-call-to-action-link">Basic call-to-action link</h3>
-<p>In most cases, a call-to-action should be marked up as a link, since the behaviour is typically to transport the user to a new page or section<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. Standard link markup should be used, including an <code>href</code> (links omitting <code>href</code> attributes are not focusable by keyboard).</p>
-<p>A class is provided to the element as a styling hook, enabling it to be differentiated from generic links visually.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-cta"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/location"</span>&gt;</span>Enter the competition<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                <p>BBC buttons and calls-to-action differ widely in form and purpose. But they should conform to some
+                    fundamental rules. Only where these rules are observed will the user experience comfortable
+                    interaction.</p>
+                <p>The most important of these rules is that the <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code>
+                    elements are assigned to appropriate respective tasks. That is: links should be used where
+                    navigation is elicited, and <code>&lt;button&gt;</code>s where a non-navigational action is being
+                    invoked. For example, a 'Sign in' control would suit a <code>&lt;button&gt;</code> because its job
+                    is to submit the sign in form. An adjacent 'Register' call-to-action—taking the user to a different
+                    form, in a different page or screen—would benefit from <code>&lt;a&gt;</code> semantics.</p>
+                <p>This is especially helpful for assistive technology users, such as those running screen reader
+                    software. An element announced as a link that behaves as a button creates a confusing and
+                    off-putting experience. The visual design of buttons and calls-to-action should also be indicative
+                    of their behavior. Where button state changes, this change should be visually represented as well.</p>
+                <h2 id="recommended-markup">Recommended markup</h2>
+                <h3 id="basic-call-to-action-link">Basic call-to-action link</h3>
+                <p>In most cases, a call-to-action should be marked up as a link, since the behaviour is typically to
+                    transport the user to a new page or section<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.
+                    Standard link markup should be used, including an <code>href</code> (links omitting <code>href</code>
+                    attributes are not focusable by keyboard).</p>
+                <p>A class is provided to the element as a styling hook, enabling it to be differentiated from generic
+                    links visually.</p>
+                <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-cta"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/location"</span>&gt;</span>Enter the competition<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 </code></pre>
-<h3 id="basic-button">Basic button</h3>
-<p>It is imperative clickable controls not eliciting link-like behaviour are marked up as <code>&lt;button&gt;</code> elements. Any buttons not intended for submitting forms should take <code>type=&quot;button&quot;</code><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>. This is especially important <em>inside</em> a <code>&lt;form&gt;</code>, since some user agents consider any <code>&lt;button&gt;</code> found without an explicit type to be a form's submit button.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-button"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Calculate tax<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+                <h3 id="basic-button">Basic button</h3>
+                <p>It is imperative clickable controls not eliciting link-like behaviour are marked up as <code>&lt;button&gt;</code>
+                    elements. Any buttons not intended for submitting forms should take <code>type=&quot;button&quot;</code><sup
+                        class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>. This is especially important <em>inside</em>
+                    a <code>&lt;form&gt;</code>, since some user agents consider any <code>&lt;button&gt;</code> found
+                    without an explicit type to be a form's submit button.</p>
+                <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-button"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Calculate tax<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre>
-<p>As a rule of thumb: if a clickable control is intended for running JavaScript, it should be a <code>&lt;button&gt;</code> with <code>type=&quot;button&quot;</code>.</p>
-<h3 id="labels">Labels</h3>
-<p>Most buttons and calls-to-action should simply be labeled via their text node. Text nodes are interoperable, since they can be seen, heard via screen reader synthetic voices, and used as activation cues with voice activation software.</p>
-<p>In most cases, controls that rely on icons alone are not recommended, even where invisible labels are provided to assistive technologies. Icon-only buttons are especially hard to activate via voice since the (hidden) textual label has to be guessed by the user.</p>
-<p>Where an icon-only button <em>is</em> employed (the ubiquitous play/pause button is a good example), provide the text via a visually hidden <code>&lt;span&gt;</code>, <em>not</em> <code>aria-label</code>. Unfortunately, <code>aria-label</code> is not picked up by popular translation services<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-button"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>
+                <p>As a rule of thumb: if a clickable control is intended for running JavaScript, it should be a <code>&lt;button&gt;</code>
+                    with <code>type=&quot;button&quot;</code>.</p>
+                <h3 id="labels">Labels</h3>
+                <p>Most buttons and calls-to-action should simply be labeled via their text node. Text nodes are
+                    interoperable, since they can be seen, heard via screen reader synthetic voices, and used as
+                    activation cues with voice activation software.</p>
+                <p>In most cases, controls that rely on icons alone are not recommended, even where invisible labels
+                    are provided to assistive technologies. Icon-only buttons are especially hard to activate via voice
+                    since the (hidden) textual label has to be guessed by the user.</p>
+                <p>Where an icon-only button <em>is</em> employed (the ubiquitous play/pause button is a good example),
+                    provide the text via a visually hidden <code>&lt;span&gt;</code>, <em>not</em> <code>aria-label</code>.
+                    Unfortunately, <code>aria-label</code> is not picked up by popular translation services<sup class="footnote-ref"><a
+                            href="#fn3" id="fnref3">[3]</a></sup>.</p>
+                <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-button"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>
   <span class="hljs-comment">&lt;!-- icon here --&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sr"</span>&gt;</span>Play<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre>
-<p>Avoid using <code>title</code> attributes. These are only revealed on hover, not focus, in most browsers. Additionally, they are often suppressed by default in screen reader verbosity settings.</p>
-<h3 id="icons">Icons</h3>
-<p>Where icons are provided to buttons and calls-to-action, make sure they are taken from the GEL SVG Iconography library<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. Icons should contain text or be otherwise accessible to assistive technologies, nor should they be focusable. Hence, they should take <code>aria-hidden=&quot;true&quot;</code> and <code>focusable=&quot;false&quot;</code>. Note the classes, used for sizing and alignment.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-cta"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/help-page"</span>&gt;</span>
+                <p>Avoid using <code>title</code> attributes. These are only revealed on hover, not focus, in most
+                    browsers. Additionally, they are often suppressed by default in screen reader verbosity settings.</p>
+                <h3 id="icons">Icons</h3>
+                <p>Where icons are provided to buttons and calls-to-action, make sure they are taken from the GEL SVG
+                    Iconography library<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. Icons should
+                    contain text or be otherwise accessible to assistive technologies, nor should they be focusable.
+                    Hence, they should take <code>aria-hidden=&quot;true&quot;</code> and <code>focusable=&quot;false&quot;</code>.
+                    Note the classes, used for sizing and alignment.</p>
+                <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-cta"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/help-page"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-button__label"</span>&gt;</span>Help<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#help"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 </code></pre>
-<h3 id="states">States</h3>
-<h4 id="disabled-state">Disabled state</h4>
-<p>Standard <code>&lt;button&gt;</code> elements can be disabled using the <code>disabled</code> property/attribute. Beware that adding <code>disabled</code> makes the <code>&lt;button&gt;</code> unfocusable. This may cause confusion among some screen reader users and users exploring by <kbd>Tab</kbd> at a high zoom level. You can make disabled buttons focusable again by adding <code>tabindex=&quot;0&quot;</code>.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-button"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">disabled</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>Download<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+                <h3 id="states">States</h3>
+                <h4 id="disabled-state">Disabled state</h4>
+                <p>Standard <code>&lt;button&gt;</code> elements can be disabled using the <code>disabled</code>
+                    property/attribute. Beware that adding <code>disabled</code> makes the <code>&lt;button&gt;</code>
+                    unfocusable. This may cause confusion among some screen reader users and users exploring by <kbd>Tab</kbd>
+                    at a high zoom level. You can make disabled buttons focusable again by adding <code>tabindex=&quot;0&quot;</code>.</p>
+                <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-button"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">disabled</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>Download<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre>
 
-            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-avoid-disabled-submit-buttons">
-              <h4 id="aside-info-avoid-disabled-submit-buttons" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Avoid disabled submit buttons</h4><div><p>There are a number of usability and accessibility issues with disabling form submit buttons until the user has entered valid/expected data<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>. It's often better to let the user <em>attempt</em> submission and provide explicit feedback in response.</p>
-</aside><p>Links do not take <code>disabled</code>. You can, however, elicit announcement that a link is 'disabled' by applying the <code>aria-disabled=&quot;true&quot;</code> attribution.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-cta"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/forbidden-place"</span> <span class="hljs-attr">aria-disabled</span>=<span class="hljs-string">"true"</span>&gt;</span>The forbidden place<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-avoid-disabled-submit-buttons">
+                    <h4 id="aside-info-avoid-disabled-submit-buttons" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
+                            <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use>
+                        </svg>Avoid disabled submit buttons</h4>
+                    <div>
+                        <p>There are a number of usability and accessibility issues with disabling form submit buttons
+                            until the user has entered valid/expected data<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>.
+                            It's often better to let the user <em>attempt</em> submission and provide explicit feedback
+                            in response.</p>
+                </aside>
+                <p>Links do not take <code>disabled</code>. You can, however, elicit announcement that a link is
+                    'disabled' by applying the <code>aria-disabled=&quot;true&quot;</code> attribution.</p>
+                <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-cta"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/forbidden-place"</span> <span class="hljs-attr">aria-disabled</span>=<span class="hljs-string">"true"</span>&gt;</span>The forbidden place<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 </code></pre>
-<p>Either apply <code>event.preventDefault()</code> or remove the <code>href</code> to functionally disable the link. As previously mentioned, removing the <code>href</code> makes the link unfocusable. As with <code>&lt;button&gt;</code>s, you can reinstate focus using <code>tabindex=&quot;0&quot;</code>.</p>
-<h4 id="toggle-states">Toggle states</h4>
-<p>WAI-ARIA provides a suite of state attributes, many applicable to buttons. Two of the most common are <code>aria-pressed</code> and <code>aria-expanded</code>, which define two kinds of toggle state. The first denotes a kind of on/off switch, and the second indicates whether an associated/controlled element is expanded (visible) or collapsed (hidden).</p>
-<p>The presence of these state attributes augments the announced role of the <code>&lt;button&gt;</code> from <em>&quot;button&quot;</em> to <em>&quot;push button&quot;</em> or <em>&quot;toggle button&quot;</em> (depending on the state and assistive technologies involved). It is therefore important that the attribute is always present, and carries an explicit <code>true</code> or <code>false</code> value.</p>
-<pre class="hljs"><code><span class="hljs-comment">&lt;!-- collapsed --&gt;</span>
+                <p>Either apply <code>event.preventDefault()</code> or remove the <code>href</code> to functionally
+                    disable the link. As previously mentioned, removing the <code>href</code> makes the link
+                    unfocusable. As with <code>&lt;button&gt;</code>s, you can reinstate focus using <code>tabindex=&quot;0&quot;</code>.</p>
+                <h4 id="toggle-states">Toggle states</h4>
+                <p>WAI-ARIA provides a suite of state attributes, many applicable to buttons. Two of the most common
+                    are <code>aria-pressed</code> and <code>aria-expanded</code>, which define two kinds of toggle
+                    state. The first denotes a kind of on/off switch, and the second indicates whether an
+                    associated/controlled element is expanded (visible) or collapsed (hidden).</p>
+                <p>The presence of these state attributes augments the announced role of the <code>&lt;button&gt;</code>
+                    from <em>&quot;button&quot;</em> to <em>&quot;push button&quot;</em> or <em>&quot;toggle
+                        button&quot;</em> (depending on the state and assistive technologies involved). It is therefore
+                    important that the attribute is always present, and carries an explicit <code>true</code> or <code>false</code>
+                    value.</p>
+                <pre class="hljs"><code><span class="hljs-comment">&lt;!-- collapsed --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-button gef-button-switch"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>More info<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- expanded --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-button gef-button-switch"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"true"</span>&gt;</span>More info<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre>
 
-            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-use-native-checked-states">
-              <h4 id="aside-alert-use-native-checked-states" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Use native checked states</h4><div><p>It is not recommended you use <code>&lt;button&gt;</code> elements with <code>aria-checked</code>. Instead, employ native checkbox and radio button elements. The basic behaviours of these elements do not rely on JavaScript and make for more robust and accessible components.</p>
-</aside><p>Buttons may move focus upon being pressed. Examples include buttons that open dialogs, or invoke menus. In these circumstances, include the <code>aria-haspopup=&quot;true&quot;</code> property<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>. This warns the screen reader user their context will change by announcing the button as a <em>&quot;popup button&quot;</em> or similar.</p>
-<p>If the button simply moves focus to a new section within the page, or to a new page entirely, it should not be a button but a link. Us a generic link or CTA instead.</p>
-<h2 id="recommended-layout">Recommended layout</h2>
-<p>Button and CTA design differs somewhat between BBC sites and products. However, there are basic principles you should follow.</p>
-<ol>
-<li><strong>Be consistent:</strong> All of your buttons should share the same basic design, and so should all of your CTAs. Be consistent with colour, font size and weight, and padding.</li>
-<li><strong>Differentiate buttons and links:</strong> It is recommended your CTAs are visually distinct from your <code>&lt;button&gt;</code>s: form should follow function. A common approach is to give all <code>&lt;button&gt;</code>s a background colour, but make CTAs 'ghosts' (with a transparent background but a surrounding border).</li>
-<li><strong>Give affordance:</strong> Make sure your buttons and CTAs invite the user to click them. Use the site's established link color, if not just inherited; include clear hover and focus styles (see below); use imperative language.</li>
-</ol>
+                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-use-native-checked-states">
+                    <h4 id="aside-alert-use-native-checked-states" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
+                            <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use>
+                        </svg>Use native checked states</h4>
+                    <div>
+                        <p>It is not recommended you use <code>&lt;button&gt;</code> elements with <code>aria-checked</code>.
+                            Instead, employ native checkbox and radio button elements. The basic behaviours of these
+                            elements do not rely on JavaScript and make for more robust and accessible components.</p>
+                </aside>
+                <p>Buttons may move focus upon being pressed. Examples include buttons that open dialogs, or invoke
+                    menus. In these circumstances, include the <code>aria-haspopup=&quot;true&quot;</code> property<sup
+                        class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>. This warns the screen reader
+                    user their context will change by announcing the button as a <em>&quot;popup button&quot;</em> or
+                    similar.</p>
+                <p>If the button simply moves focus to a new section within the page, or to a new page entirely, it
+                    should not be a button but a link. Us a generic link or CTA instead.</p>
+                <h2 id="recommended-layout">Recommended layout</h2>
+                <p>Button and CTA design differs somewhat between BBC sites and products. However, there are basic
+                    principles you should follow.</p>
+                <ol>
+                    <li><strong>Be consistent:</strong> All of your buttons should share the same basic design, and so
+                        should all of your CTAs. Be consistent with colour, font size and weight, and padding.</li>
+                    <li><strong>Differentiate buttons and links:</strong> It is recommended your CTAs are visually
+                        distinct from your <code>&lt;button&gt;</code>s: form should follow function. A common approach
+                        is to give all <code>&lt;button&gt;</code>s a background colour, but make CTAs 'ghosts' (with a
+                        transparent background but a surrounding border).</li>
+                    <li><strong>Give affordance:</strong> Make sure your buttons and CTAs invite the user to click
+                        them. Use the site's established link color, if not just inherited; include clear hover and
+                        focus styles (see below); use imperative language.</li>
+                </ol>
 
-            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-contrast">
-              <h4 id="aside-alert-contrast" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Contrast</h4><div><p>No matter the brand colours employed, the contrast between the foreground (text) and background colours must meet minimum contrast requirements (WCAG Level AA<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>)</p>
-</aside><h3 id="hover-and-focus-styles">Hover and focus styles</h3>
-<p>Hover and focus styles should be strong to differentiate them from the default state.</p>
-<p>Since buttons and CTAs tend to have a rectangular border/perimeter, the thin and faint focus outline offered by some user agent stylesheets can be very unclear. If an outline style is used, make it a solid one, optionally with an offset to separate it from the control's edges.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-button</span><span class="hljs-selector-pseudo">:focus</span>, <span class="hljs-selector-class">.gef-cta</span><span class="hljs-selector-pseudo">:focus</span> {
+                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-contrast">
+                    <h4 id="aside-alert-contrast" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
+                            <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use>
+                        </svg>Contrast</h4>
+                    <div>
+                        <p>No matter the brand colours employed, the contrast between the foreground (text) and
+                            background colours must meet minimum contrast requirements (WCAG Level AA<sup class="footnote-ref"><a
+                                    href="#fn7" id="fnref7">[7]</a></sup>)</p>
+                </aside>
+                <h3 id="hover-and-focus-styles">Hover and focus styles</h3>
+                <p>Hover and focus styles should be strong to differentiate them from the default state.</p>
+                <p>Since buttons and CTAs tend to have a rectangular border/perimeter, the thin and faint focus outline
+                    offered by some user agent stylesheets can be very unclear. If an outline style is used, make it a
+                    solid one, optionally with an offset to separate it from the control's edges.</p>
+                <pre class="hljs"><code><span class="hljs-selector-class">.gef-button</span><span class="hljs-selector-pseudo">:focus</span>, <span class="hljs-selector-class">.gef-cta</span><span class="hljs-selector-pseudo">:focus</span> {
   <span class="hljs-attribute">outline</span>: <span class="hljs-number">2px</span> solid; <span class="hljs-comment">/* adopts the font color */</span>
   <span class="hljs-attribute">outline-offset</span>: <span class="hljs-number">2px</span>;
 }
 </code></pre>
-<p>It is recommended call-to-action links take <code>text-decoration: underline</code> on <code>:hover</code>/<code>:focus</code>. This way, if it is not already clear the element is a link, this becomes clearer under scrutiny. The <a href="#reference-implementation">reference implementation</a> employs <code>text-decoration-skip: objects</code> to remove the underline from any icon that might be present.</p>
-<h3 id="indicating-state">Indicating state</h3>
-<p>Toggle buttons using <code>aria-pressed</code> or <code>aria-expanded</code> (see [#toggle-states]) should clearly indicate which state is current. On/off (<code>aria-pressed</code>) can achieve this by explicitly including the the text 'on' or 'off'. This text should be removed from screen reader output with <code>aria-hidden=&quot;true&quot;</code> since the state is already announced via <code>aria-pressed</code> itself.</p>
-<pre class="hljs"><code><span class="hljs-comment">&lt;!-- night theme inactive --&gt;</span>
+                <p>It is recommended call-to-action links take <code>text-decoration: underline</code> on <code>:hover</code>/<code>:focus</code>.
+                    This way, if it is not already clear the element is a link, this becomes clearer under scrutiny.
+                    The <a href="#reference-implementation">Reference implementation</a> employs <code>text-decoration-skip: objects</code>
+                    to remove the underline from any icon that might be present.</p>
+                <h3 id="indicating-state">Indicating state</h3>
+                <p>Toggle buttons using <code>aria-pressed</code> or <code>aria-expanded</code> (see [#toggle-states])
+                    should clearly indicate which state is current. On/off (<code>aria-pressed</code>) can achieve this
+                    by explicitly including the the text 'on' or 'off'. This text should be removed from screen reader
+                    output with <code>aria-hidden=&quot;true&quot;</code> since the state is already announced via
+                    <code>aria-pressed</code> itself.</p>
+                <pre class="hljs"><code><span class="hljs-comment">&lt;!-- night theme inactive --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-button gef-button-switch"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">aria-pressed</span>=<span class="hljs-string">"false"</span>&gt;</span>
   Night theme
   <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>off<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
@@ -201,107 +296,159 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>on<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre>
-<h2 id="recommended-behaviour">Recommended behaviour</h2>
-<p>Where <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code> links are employed correctly for CTAs and buttons respectively, browsers will invoke the standard and expected behaviours. These are as follows.</p>
-<h3 id="links">Links</h3>
-<ul>
-<li>The element is identified as a link via assistive technologies</li>
-<li>The element is focusable by keyboard</li>
-<li>The element can be activated by mouse click, touch, and with the <kbd>Enter</kbd> key</li>
-<li>The link-specific context menu can be invoked using the right mouse button, or <kbd>Shift</kbd> + <kbd>F10</kbd> (Windows)</li>
-<li>The element can be dragged by mouse to the browser bookmarks bar</li>
-</ul>
-<h3 id="buttons">Buttons</h3>
-<ul>
-<li>The element is identified as a button via assistive technologies</li>
-<li>The element is focusable by keyboard</li>
-<li>The element can be activated by mouse click, touch, and with the <kbd>Enter</kbd> and <kbd>Space</kbd> keys</li>
-<li>The <code>type=&quot;submit&quot;</code> attribution enables the button to submit a parent <code>&lt;form&gt;</code></li>
-<li>The <code>disabled</code> attribution (Boolean) makes the button unfocusable (by default; see <a href="#disabled-state">disabled state</a>) and identifies the button as disabled via assistive technologies</li>
-</ul>
-<h2 id="reference-implementation">Reference implementation</h2>
+                <h3 id="high-contrast-mode">High contrast mode</h3>
+                <p>Windows High Contrast Mode tends to remove the background from buttons, making them appear as simple
+                    text. To reinstate their 'boxy' shape, we can apply a transparent border<sup class="footnote-ref"><a
+                            href="#fn8" id="fnref8">[8]</a></sup>. This border will become visible when Windows HCM is
+                    running.</p>
+                <pre class="hljs"><code><span class="hljs-selector-class">.gef-button</span>, <span class="hljs-selector-class">.gef-cta</span>  {
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid transparent; <span class="hljs-comment">/* for high contrast mode */</span>
+}
+</code></pre>
+                <p><img src="/gef-docs/static/images/hcm_buttons_and_ctas.png" alt="The boxy shape is retained by applying a border on all sides"></p>
+                <h2 id="recommended-behaviour">Recommended behaviour</h2>
+                <p>Where <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code> links are employed correctly for CTAs
+                    and buttons respectively, browsers will invoke the standard and expected behaviours. These are as
+                    follows.</p>
+                <h3 id="links">Links</h3>
+                <ul>
+                    <li>The element is identified as a link via assistive technologies</li>
+                    <li>The element is focusable by keyboard</li>
+                    <li>The element can be activated by mouse click, touch, and with the <kbd>Enter</kbd> key</li>
+                    <li>The link-specific context menu can be invoked using the right mouse button, or <kbd>Shift</kbd>
+                        + <kbd>F10</kbd> (Windows)</li>
+                    <li>The element can be dragged by mouse to the browser bookmarks bar</li>
+                </ul>
+                <h3 id="buttons">Buttons</h3>
+                <ul>
+                    <li>The element is identified as a button via assistive technologies</li>
+                    <li>The element is focusable by keyboard</li>
+                    <li>The element can be activated by mouse click, touch, and with the <kbd>Enter</kbd> and <kbd>Space</kbd>
+                        keys</li>
+                    <li>The <code>type=&quot;submit&quot;</code> attribution enables the button to submit a parent
+                        <code>&lt;form&gt;</code></li>
+                    <li>The <code>disabled</code> attribution (Boolean) makes the button unfocusable (by default; see
+                        <a href="#disabled-state">disabled state</a>) and identifies the button as disabled via
+                        assistive technologies</li>
+                </ul>
+                <h2 id="reference-implementation">Reference implementation</h2>
 
-            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
-              <h4 id="aside-alert-important" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
-</aside>
-          <div class="gefdocs-demo"><!-- 
+                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
+                    <h4 id="aside-alert-important" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
+                            <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use>
+                        </svg>Important</h4>
+                    <div>
+                        <p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>,
+                            but not necessarily how to achieve it. That would depend on the technology stack you are
+                            working with. The HTML semantics, layout, and behaviour of your implementation must conform
+                            to the reference implementation. Your JS framework, CSS methodology, and—most
+                            likely—content will differ.</p>
+                </aside>
+                <div class="gefdocs-demo">
+                    <!-- 
 title: Buttons and CTAs
  -->
 
-<h3>Basic button</h3>
+                    <h3>Basic button</h3>
 
-<button class="gef-button" type="button" onClick="alert('Basic button clicked')">Download</button>
+                    <button class="gef-button" type="button" onClick="alert('Basic button clicked')">Download</button>
 
-<h3>Button with icon</h3>
+                    <h3>Button with icon</h3>
 
-<button class="gef-button" type="button" onClick="alert('Button with icon clicked')">
-  <span class="gef-button__label">Download</span><svg aria-hidden="true" focusable="false" class="gel-button__icon gel-icon gel-icon--text">
-    <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-download"></use>
-  </svg>
-</button>
+                    <button class="gef-button" type="button" onClick="alert('Button with icon clicked')">
+                        <span class="gef-button__label">Download</span><svg aria-hidden="true" focusable="false" class="gel-button__icon gel-icon gel-icon--text">
+                            <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-download"></use>
+                        </svg>
+                    </button>
 
-<h3>Switch button with <code>aria-pressed</code></h3>
+                    <h3>Switch button with <code>aria-pressed</code></h3>
 
-<button class="gef-button gef-button-switch">
-  <span class="gef-button__label">Night theme</span>
-  <span aria-hidden="true">on</span>
-</button>
+                    <button class="gef-button gef-button-switch">
+                        <span class="gef-button__label">Night theme</span>
+                        <span aria-hidden="true">on</span>
+                    </button>
 
-<h3 id="basic-cta">Basic CTA</h3>
+                    <h3 id="basic-cta">Basic CTA</h3>
 
-<a class="gef-cta" href="#basic-cta">Help</a>
+                    <a class="gef-cta" href="#basic-cta">Help</a>
 
-<h3 id="cta-with-icon">CTA with icon</h3>
+                    <h3 id="cta-with-icon">CTA with icon</h3>
 
-<a class="gef-cta" href="#cta-with-icon">
-  <svg aria-hidden="true" focusable="false" class="gel-button__icon gel-icon gel-icon--text">
-    <use xlink:href=" /gef-docs/static/images/gel-icons-all.svg#gel-icon-help"></use>
-  </svg><span class="gef-button__label">Help</span>
-</a>
+                    <a class="gef-cta" href="#cta-with-icon">
+                        <svg aria-hidden="true" focusable="false" class="gel-button__icon gel-icon gel-icon--text">
+                            <use xlink:href=" /gef-docs/static/images/gel-icons-all.svg#gel-icon-help"></use>
+                        </svg><span class="gef-button__label">Help</span>
+                    </a>
 
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    window.gef && gef.Switch.init();
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            window.gef && gef.Switch.init();
 
-    // Initialize switch button
-    var switchElem = document.querySelector('.gef-button-switch');
-    var switchButton = new gef.Switch.constructor(switchElem);
-  });
-</script></div>
-        
-          <p><a class="gef-cta gel-long-primer-bold" href="../demos/buttons-and-ctas/" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
-        <h2 id="related-research">Related research</h2>
-<p>This topic does not yet have any related research available.</p>
-<h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>Anchors, buttons, and accessibility — Formidable Labs, <a href="https://formidable.com/blog/2014/05/08/anchors-buttons-and-accessibility/">https://formidable.com/blog/2014/05/08/anchors-buttons-and-accessibility/</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>The <code>button</code> element — W3C, <a href="https://www.w3.org/TR/2011/WD-html5-20110525/the-button-element.html#the-button-element">https://www.w3.org/TR/2011/WD-html5-20110525/the-button-element.html#the-button-element</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p>ARIA Label Is A Xenophobe — <a href="http://heydonworks.com">heydonworks.com</a>, <a href="http://www.heydonworks.com/article/aria-label-is-a-xenophobe">http://www.heydonworks.com/article/aria-label-is-a-xenophobe</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn4" class="footnote-item"><p>GEL Iconography (demo), <a href="http://bbc.github.io/gel-iconography/">http://bbc.github.io/gel-iconography/</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn5" class="footnote-item"><p>Disabled Buttons Suck — Access Lab, <a href="https://axesslab.com/disabled-buttons-suck/">https://axesslab.com/disabled-buttons-suck/</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn6" class="footnote-item"><p><code>aria-haspopup</code> property — W3C, <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-haspopup">https://www.w3.org/TR/wai-aria-1.1/#aria-haspopup</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn7" class="footnote-item"><p>WCAG2.1 1.4.3, Contrast (Minimum), <a href="https://www.w3.org/TR/WCAG21/#contrast-minimum">https://www.w3.org/TR/WCAG21/#contrast-minimum</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
+                            // Initialize switch button
+                            var switchElem = document.querySelector('.gef-button-switch');
+                            var switchButton = new gef.Switch.constructor(switchElem);
+                        });
+                    </script>
+                </div>
+
+                <p><a class="gef-cta gel-long-primer-bold" href="../demos/buttons-and-ctas/" target="_new"><span class="gef-button__label">Open
+                            in new window</span><svg class="gef-button__icon gef-icon gel-icon--text">
+                            <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use>
+                        </svg></a></p>
+                <h2 id="related-research">Related research</h2>
+                <p>This topic does not yet have any related research available.</p>
+                <h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
+                <hr class="footnotes-sep">
+                <section class="footnotes">
+                    <ol class="footnotes-list">
+                        <li id="fn1" class="footnote-item">
+                            <p>Anchors, buttons, and accessibility — Formidable Labs, <a href="https://formidable.com/blog/2014/05/08/anchors-buttons-and-accessibility/">https://formidable.com/blog/2014/05/08/anchors-buttons-and-accessibility/</a>
+                                <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+                        </li>
+                        <li id="fn2" class="footnote-item">
+                            <p>The <code>button</code> element — W3C, <a href="https://www.w3.org/TR/2011/WD-html5-20110525/the-button-element.html#the-button-element">https://www.w3.org/TR/2011/WD-html5-20110525/the-button-element.html#the-button-element</a>
+                                <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+                        </li>
+                        <li id="fn3" class="footnote-item">
+                            <p>ARIA Label Is A Xenophobe — <a href="http://heydonworks.com">heydonworks.com</a>, <a
+                                    href="http://www.heydonworks.com/article/aria-label-is-a-xenophobe">http://www.heydonworks.com/article/aria-label-is-a-xenophobe</a>
+                                <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+                        </li>
+                        <li id="fn4" class="footnote-item">
+                            <p>GEL Iconography (demo), <a href="http://bbc.github.io/gel-iconography/">http://bbc.github.io/gel-iconography/</a>
+                                <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+                        </li>
+                        <li id="fn5" class="footnote-item">
+                            <p>Disabled Buttons Suck — Access Lab, <a href="https://axesslab.com/disabled-buttons-suck/">https://axesslab.com/disabled-buttons-suck/</a>
+                                <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+                        </li>
+                        <li id="fn6" class="footnote-item">
+                            <p><code>aria-haspopup</code> property — W3C, <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-haspopup">https://www.w3.org/TR/wai-aria-1.1/#aria-haspopup</a>
+                                <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+                        </li>
+                        <li id="fn7" class="footnote-item">
+                            <p>WCAG2.1 1.4.3, Contrast (Minimum), <a href="https://www.w3.org/TR/WCAG21/#contrast-minimum">https://www.w3.org/TR/WCAG21/#contrast-minimum</a>
+                                <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+                        </li>
+                        <li id="fn8" class="footnote-item">
+                            <p>Transparent border for high contrast mode (test case) — Joe Watkins, <a href="https://codepen.io/joe-watkins/pen/mApBvo">https://codepen.io/joe-watkins/pen/mApBvo</a>
+                                <a href="#fnref8" class="footnote-backref">↩︎</a></p>
+                        </li>
+                    </ol>
+                </section>
 
 
                 <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
                     <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
-                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Could you improve this documentation?
+                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
+                            <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use>
+                        </svg>Could you improve this documentation?
                     </h4>
                     <div>
                         <p>
-                        If you think you could make anything you see here a bit better then become one of <a href="/gef-docs/contributors/">our lovely contributors</a>!
+                            If you think you could make anything you see here a bit better then become one of <a href="/gef-docs/contributors/">our
+                                lovely contributors</a>!
                         </p>
                     </div>
                 </aside>
@@ -332,17 +479,17 @@ title: Buttons and CTAs
 
     <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
 
-    
+
 
     <script type="text/javascript">
         new Sticky('.sticky');
-        new MenuSpy(document.querySelector('#gefdocs-toc__links'), {enableLocationHash: false});
+        new MenuSpy(document.querySelector('#gefdocs-toc__links'), { enableLocationHash: false });
         new SweetScroll({
             trigger: '#gefdocs-toc__links a',
             quickMode: true,
             easing: 'easeOutExpo',
             cancellable: true,
-            updateURL: false, 
+            updateURL: false,
         });
     </script>
 </body>

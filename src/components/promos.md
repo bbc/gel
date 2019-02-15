@@ -285,6 +285,21 @@ A `text-decoration` focus style is recommended for the headline link, paired wit
 }
 ```
 
+### High contrast
+
+How the component looks with a [Windows High Contrast Mode](https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode) theme active. 
+
+![Borders on all sides mark out the shape of the Promo]({{site.basedir}}static/images/hcm_masthead.png)
+
+Transparent borders are applied on all sides. These become visible when Windows HCM is active, and define the shape of the Promo in the absence of the `background-color`:
+
+```css
+.gef-promo {
+  background-color: $gel-color--alto;
+  border: 2px solid transparent; /* for high contrast mode */
+}
+```
+
 ## Recommended behaviour
 
 **Promo** interaction should be ergonomic for mouse, touch, keyboard, and screen reader users. For mouse and touch users, the whole **Promo** should be clickable as one link. This should be achieved without relying on either of the following:

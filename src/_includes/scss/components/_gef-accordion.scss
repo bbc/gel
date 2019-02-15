@@ -24,7 +24,8 @@
 
 .gef-accordion-handle button:hover,
 .gef-accordion-handle button:focus {
-  outline: none;
+  outline: 2px solid transparent; /* fallback for high contrast mode */
+  outline-offset: 2px;
   background-color: $gel-color--star-command-blue;
   color: $gel-color--white;
 }

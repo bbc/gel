@@ -194,17 +194,28 @@
 </code></pre>
 <p>Note that the <code>1008px</code> figure depends on the width of the page's main content and will differ between sites. 1008 is taken from the <a href="https://www.bbc.co.uk/gel/">GEL site's</a> implementation.</p>
 <h3 id="focus-styles">Focus styles</h3>
-<p>The focus style is paired with the hover style. The main style—a <code>4px</code> line at the base of the item—is supplemented by a fallback for Windows High Contrast Mode (because Windows HCM themes tend to remove box shadows<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>). The transparent outline is invisible in a default theme, but becomes visible when High Contrast Mode is activated.</p>
+<p>The focus style is paired with the hover style.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span>,
 <span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:hover</span>,
 <span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span>,
 <span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:focus</span>,
 <span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-attr">[aria-current]</span> {
+  <span class="hljs-attribute">outline</span>: none;
   <span class="hljs-attribute">box-shadow</span>: inset <span class="hljs-number">0</span> -<span class="hljs-number">4px</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> currentColor;
-  <span class="hljs-attribute">outline</span>: <span class="hljs-number">2px</span> solid transparent;
-  <span class="hljs-attribute">outline-offset</span>: -<span class="hljs-number">3px</span>;
 }
 </code></pre>
+<p>The main style—a <code>4px</code> line at the base of the item—is supplemented by a fallback for Windows High Contrast Mode (because Windows HCM themes tend to remove box shadows<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>). This takes the form of a <code>text-decoration</code> style.</p>
+<pre class="hljs"><code>@<span class="hljs-keyword">media</span> (-ms-high-contrast: active) {
+  <span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span>,
+  <span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:hover</span>,
+  <span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span>,
+  <span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:focus</span>,
+  <span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-attr">[aria-current]</span> {
+    <span class="hljs-attribute">text-decoration</span>: underline;
+  }
+}
+</code></pre>
+<p><img src="/gef-docs/static/images/hcm_sitemenu.png" alt="The current link has a line under the text"></p>
 <p>As stated in <a href="#recommended-layout">Recommended layout</a>, <code>aria-current=&quot;page&quot;</code> can be used to denote the current page where it matches a menu option.</p>
 <h2 id="recommended-behaviour">Recommended behaviour</h2>
 <p>Aside from the master toggle button and submenu toggle buttons, the menu simply adopts native linking behaviour. The menu, and each of its submenus, are visible by default and only <code>hidden</code> where JavaScript runs. All the menu options are available to users whose browsers have not run the script.</p>

@@ -208,6 +208,24 @@ However, in some specific circumstances an invisible but accessible label is acc
 <button type="submit">Search</button>
 ```
 
+### High Contrast Mode
+
+A couple of provisions are made to better support Windows High Contrast Mode. A transparent border is added to the error messages so they appear as boxes and, for supporting browsers, the message takes an inversion filter to give it the appearance of a background:
+
+```css
+.gef-form-field-error,
+.gef-form-warning {
+  border: 1px solid transparent;
+}
+
+@media (-ms-high-contrast: active) {
+  .gef-form-field-error,
+  .gef-form-warning {
+    filter: invert(100%);
+  }
+}
+```
+
 ### Error indication
 
 It is imperative that errors are clearly identified as such. Do not rely on colour to denote an error state[^5] since it will fail on monochrome displays, and for those who cannot accurately perceive colour.
@@ -216,6 +234,23 @@ Where there are errors, there should always be error messages. Prefixing the err
 
 ```html
 <div id="username-error"><strong>Error:</strong> Your username cannot contain spaces</div>
+```
+
+### High contrast
+
+How the component looks with a [Windows High Contrast Mode](https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode) theme active.
+
+![The error message is white with black text]({{site.basedir}}static/images/hcm_form_fields.png)
+
+A CSS filter is used to reverse the colors of the error message:
+
+```css
+@media (-ms-high-contrast: active) {
+  .gef-form-field-error,
+  .gef-form-warning {
+    filter: invert(100%);
+  }
+}
 ```
 
 ## Recommended behaviour

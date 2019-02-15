@@ -140,9 +140,29 @@ The previous and next buttons, `class="gef-carousel-buttons"`, is absolutely pos
 }
 ```
 
-#### Smooth scrolling
+### Smooth scrolling
 
 Where supported, `scroll-behavior: smooth` animates scrolling, whether scrolling is instigated by pressing a previous or next button, or by other means. Where the property is not supported, the browser steps over it and the interface remains usable.
+
+This feature is only applied if the user has not chosen to reduce animations in their system settings:
+
+```css
+.gef-carousel-scrollable {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gef-carousel-scrollable {
+    scroll-behavior: auto;
+  }
+}
+```
+
+### High contrast
+
+How the component looks with a [Windows High Contrast Mode](https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode) theme active.
+
+![Promo components are already distinct with borders, and the scroll bar adopts a bolder style in Windows Edge]({{site.basedir}}static/images/hcm_carousel.png)
 
 ## Recommended behaviour
 

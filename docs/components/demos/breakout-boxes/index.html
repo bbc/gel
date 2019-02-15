@@ -17,7 +17,7 @@
         document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
     </script>
 
-    
+
 </head>
 
 <body class="gel-guideline-body">
@@ -31,36 +31,36 @@
         <div class="gel-layout">
             <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-5/5@l">
                 <h2>Reference implementation</h2>
-                
-                
-<div style="margin-bottom: 1rem;">
-  <aside class="gef-breakout-box gef-breakout-box extra-padding" aria-labelledby="aside-1541071173689">
-    <h4 id="aside-1541071173689" aria-hidden="true">
-      <svg class="gef-breakout-box__icon gel-icon gel-icon--text">
-        <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use>
-      </svg>
-      Labeling by relationship
-    </h4>
-    <div>
-      <p>To associate <code>aria-labelledby</code> with the respective <code>id</code>, they must share a value and
-        that value must be unique. In your templating system, you can create a unique string at the time of compilation
-        using <code>Date()</code>:</p>
-      <pre class="hljs"><code class="hljs"><span class="hljs-keyword">const</span> unique = + <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(); <span class="hljs-comment">// e.g. 1540915290281</span>
+
+
+                <div style="margin-bottom: 1rem;">
+                    <aside class="gef-breakout-box gef-breakout-box extra-padding" aria-labelledby="aside-1541071173689">
+                        <h4 id="aside-1541071173689" aria-hidden="true"><svg class="gef-breakout-box__icon gel-icon gel-icon--text">
+                                <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info"></use>
+                            </svg>Tip</h4>
+                        <div>
+                            <p>To associate <code>aria-labelledby</code> with the respective <code>id</code>, they must
+                                share a value and
+                                that value must be unique. In your templating system, you can create a unique string at
+                                the time of compilation
+                                using <code>Date()</code>:</p>
+                            <pre class="hljs"><code class="hljs"><span class="hljs-keyword">const</span> unique = + <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(); <span class="hljs-comment">// e.g. 1540915290281</span>
 </code></pre>
-      <p>An <code>id</code> that is not unique is considered a parsing error and, since it affects accessible naming
-        associations here, would mean a failure under <strong>WCAG 4.1.1 Parsing</strong><sup class="footnote-ref"><a
-            href="#fn3" id="fnref3">[3]</a></sup>.</p>
-    </div>
-  </aside>
-</div>
+                            <p>An <code>id</code> that is not unique is considered a parsing error and, since it
+                                affects accessible naming
+                                associations here, would mean a failure under <strong>WCAG 4.1.1 Parsing</strong><sup
+                                    class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
+                        </div>
+                    </aside>
+                </div>
             </div>
         </div>
     </main>
 
 
     <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
-    
-    
+
+
 </body>
 
 </html>

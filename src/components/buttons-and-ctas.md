@@ -136,7 +136,7 @@ Since buttons and CTAs tend to have a rectangular border/perimeter, the thin and
 }
 ```
 
-It is recommended call-to-action links take `text-decoration: underline` on `:hover`/`:focus`. This way, if it is not already clear the element is a link, this becomes clearer under scrutiny. The [reference implementation](#reference-implementation) employs `text-decoration-skip: objects` to remove the underline from any icon that might be present.
+It is recommended call-to-action links take `text-decoration: underline` on `:hover`/`:focus`. This way, if it is not already clear the element is a link, this becomes clearer under scrutiny. The [Reference implementation](#reference-implementation) employs `text-decoration-skip: objects` to remove the underline from any icon that might be present.
 
 ### Indicating state
 
@@ -155,6 +155,18 @@ Toggle buttons using `aria-pressed` or `aria-expanded` (see [#toggle-states]) sh
   <span aria-hidden="true">on</span>
 </button>
 ```
+
+### High contrast mode
+
+Windows High Contrast Mode tends to remove the background from buttons, making them appear as simple text. To reinstate their 'boxy' shape, we can apply a transparent border[^8]. This border will become visible when Windows HCM is running.
+
+```css
+.gef-button, .gef-cta  {
+  border: 2px solid transparent; /* for high contrast mode */
+}
+```
+
+![The boxy shape is retained by applying a border on all sides]({{site.basedir}}static/images/hcm_buttons_and_ctas.png)
 
 ## Recommended behaviour
 
@@ -200,4 +212,4 @@ This topic does not yet have any related research available.
 [^5]: Disabled Buttons Suck — Access Lab, <https://axesslab.com/disabled-buttons-suck/>
 [^6]: `aria-haspopup` property — W3C, <https://www.w3.org/TR/wai-aria-1.1/#aria-haspopup>
 [^7]: WCAG2.1 1.4.3, Contrast (Minimum), <https://www.w3.org/TR/WCAG21/#contrast-minimum>
-
+[^8]: Transparent border for high contrast mode (test case) — Joe Watkins, <https://codepen.io/joe-watkins/pen/mApBvo>

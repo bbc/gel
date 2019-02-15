@@ -86,7 +86,7 @@ The width is overridden by a `max-width` where overflow (and the panel being obs
 
 ### Arrows
 
-The directional arrow, pointing from the panel to the button, is considered a progressive enhancement. It is achieved—where supported—with `clip-path` and `@supports`[^4]. This technique is preferred to the CSS Triangle trick[^5] which uses transparent borders and is liable to fail in Windows High Contrast Mode.
+The directional arrow, pointing from the panel to the button, is considered a progressive enhancement. It is achieved—where supported—with `clip-path` and `@supports`[^4]. This technique is preferred to the CSS triangle trick[^5] which uses transparent borders and is liable to fail in Windows High Contrast Mode (each border/side will become non-transparent and the arrow will appear as a square).
 
 ```css
 @supports (clip-path: inset(100%)) {
@@ -126,6 +126,12 @@ The directional arrow, pointing from the panel to the button, is considered a pr
 ### `z-index`
 
 For the panel to be positioned in alignment with its invoking button, the parent `class="gef-infopanel"` element must take `display: inline-block` and `position: relative`. However, `position: relative` is _only_ applied (via a toggled `gef-infopanel-showing` class) when the panel is shown. This avoids `z-index` stacking issues caused by too many positioned elements being on the page.
+
+### High contrast
+
+How the component looks with a [Windows High Contrast Mode](https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode) theme active. Transparent border styles appear when Windows HCM is activated, defining the shape of the menu in the absence of the removed `background-color`.
+
+![A border around the button and menu defines their respective shapes]({{site.basedir}}static/images/hcm_infopanel.png)
 
 ## Recommended behaviour
 

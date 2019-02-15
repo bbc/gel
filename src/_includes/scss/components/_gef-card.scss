@@ -9,6 +9,7 @@
 
 .gef-card {
   background-color: #F1F1F1;
+  border: 2px solid transparent; /* for high contrast mode */
   position: relative;
 }
 
@@ -67,6 +68,7 @@
   display: flex;
   background-color: #e5e5e5;
   margin-top: auto;
+  border-top: 1px solid transparent; /* for high contrast mode */
 }
 
 .gef-card-toolbar button {
@@ -100,7 +102,8 @@
 
 .gef-card-toolbar button:hover,
 .gef-card-toolbar button:focus {
-  outline: none;
+  outline: 2px solid transparent; /* for high contrast mode */
+  outline-offset: -2px; /* for high contrast mode */
   background-color: $gel-color--star-command-blue;
   color: $gel-color--white;
 }

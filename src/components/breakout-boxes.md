@@ -3,8 +3,7 @@ title: Breakout boxes
 summary: Breakout Boxes interject supplementary content within the flow of a document
 version: 0.1.0
 published: false
-accessibility: true
-linkback: http://www.bbc.co.uk/gel
+accessibility: false
 ---
 
 ## Introduction
@@ -47,9 +46,23 @@ An `id` that is not unique is considered a parsing error and, since it affects a
 
 ## Recommended layout
 
-The `<h4>` element is used to invoke a heading/label of a suitable size, despite its semantics being removed from the document outline (see [**Recommended markup**](#expected-markup)).
+The `<h4>` element is used to invoke a heading/label of a suitable size, despite its semantics being removed from the document outline (see [**Recommended markup**](#recommended-markup)).
 
 The icon supplied to the heading must be from the [GEL Iconography Set](http://bbc.github.io/gel-iconography/). It must have a fill of `currentColor` so that it matches the surround text colour and respects high contrast settings.
+
+### Windows High Contrast Mode
+
+The `background-color` that demarcates the **Breakout box** from the surrounding page will be eliminated by Windows High Contrast Mode. A transparent top and bottom border is applied. This becomes visible as a solid colour when Windows HCM is turned on, achieving the same purpose of demarcation.
+
+```css
+.gef-breakout-box {
+  background: #eee;
+  border-top: 1px solid transparent; /* for high contrast mode */
+  border-bottom: 1px solid transparent; /* for high contrast mode */
+}
+```
+
+![A white border appears above and below the breakout]({{site.basedir}}static/images/hcm_breakout_boxes.png)
 
 ## Recommended behaviour
 

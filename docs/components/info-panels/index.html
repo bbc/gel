@@ -178,7 +178,7 @@
 
 </code></pre>
 <h3 id="arrows">Arrows</h3>
-<p>The directional arrow, pointing from the panel to the button, is considered a progressive enhancement. It is achieved—where supported—with <code>clip-path</code> and <code>@supports</code><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. This technique is preferred to the CSS Triangle trick<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> which uses transparent borders and is liable to fail in Windows High Contrast Mode.</p>
+<p>The directional arrow, pointing from the panel to the button, is considered a progressive enhancement. It is achieved—where supported—with <code>clip-path</code> and <code>@supports</code><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. This technique is preferred to the CSS triangle trick<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> which uses transparent borders and is liable to fail in Windows High Contrast Mode (each border/side will become non-transparent and the arrow will appear as a square).</p>
 <pre class="hljs"><code>@<span class="hljs-keyword">supports</span> (clip-path: inset(<span class="hljs-number">100%</span>)) {
   <span class="hljs-selector-class">.gef-infopanel-panel</span><span class="hljs-selector-pseudo">::after</span> {
     <span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>;
@@ -214,6 +214,9 @@
 </code></pre>
 <h3 id="z-index"><code>z-index</code></h3>
 <p>For the panel to be positioned in alignment with its invoking button, the parent <code>class=&quot;gef-infopanel&quot;</code> element must take <code>display: inline-block</code> and <code>position: relative</code>. However, <code>position: relative</code> is <em>only</em> applied (via a toggled <code>gef-infopanel-showing</code> class) when the panel is shown. This avoids <code>z-index</code> stacking issues caused by too many positioned elements being on the page.</p>
+<h3 id="high-contrast">High contrast</h3>
+<p>How the component looks with a <a href="https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode">Windows High Contrast Mode</a> theme active. Transparent border styles appear when Windows HCM is activated, defining the shape of the menu in the absence of the removed <code>background-color</code>.</p>
+<p><img src="/gef-docs/static/images/hcm_infopanel.png" alt="A border around the button and menu defines their respective shapes"></p>
 <h2 id="recommended-behaviour">Recommended behaviour</h2>
 <h3 id="without-javascript">Without JavaScript</h3>
 <p>Without JavaScript the component cannot function. Since it is only intended for <em>&quot;not essential information&quot;</em>, the <a href="#reference-implementation">Reference implementation's</a> hides the component where JavaScript is absent:</p>
@@ -271,11 +274,11 @@ title: Info panels
  -->
 
 <style>
-  .example-slice {
+  /*.example-slice {
     padding: 1rem 0;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-  }
+  }*/
 </style>
 
 <h3>Left/below alignment</h3>

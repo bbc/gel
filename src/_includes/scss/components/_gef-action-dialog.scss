@@ -1,6 +1,7 @@
 .gef-action-dialog {
   padding: 2rem;
   background-color: $gel-color--dusty-gray;
+  border: 2px solid transparent; /* for high contrast mode */
   position: fixed;
   text-align: center;
   top: auto;

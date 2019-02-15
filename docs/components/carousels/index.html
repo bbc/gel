@@ -219,8 +219,22 @@
   <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.5</span>;
 }
 </code></pre>
-<h4 id="smooth-scrolling">Smooth scrolling</h4>
+<h3 id="smooth-scrolling">Smooth scrolling</h3>
 <p>Where supported, <code>scroll-behavior: smooth</code> animates scrolling, whether scrolling is instigated by pressing a previous or next button, or by other means. Where the property is not supported, the browser steps over it and the interface remains usable.</p>
+<p>This feature is only applied if the user has not chosen to reduce animations in their system settings:</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-carousel-scrollable</span> {
+  <span class="hljs-attribute">scroll-behavior</span>: smooth;
+}
+
+@<span class="hljs-keyword">media</span> (prefers-reduced-motion: reduce) {
+  <span class="hljs-selector-class">.gef-carousel-scrollable</span> {
+    <span class="hljs-attribute">scroll-behavior</span>: auto;
+  }
+}
+</code></pre>
+<h3 id="high-contrast">High contrast</h3>
+<p>How the component looks with a <a href="https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode">Windows High Contrast Mode</a> theme active.</p>
+<p><img src="/gef-docs/static/images/hcm_carousel.png" alt="Promo components are already distinct with borders, and the scroll bar adopts a bolder style in Windows Edge"></p>
 <h2 id="recommended-behaviour">Recommended behaviour</h2>
 <p>Where JavaScript is absent, the interface is already usable. One can scroll the <strong>Carousel</strong> using touch or touch pad gestures, the scrollbar, or by focusing items that are (currently) obscured. JavaScript adds the previous and next buttons, and the <code>inert</code> behaviour (see below).</p>
 <h3 id="inert-items">Inert items</h3>

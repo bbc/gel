@@ -214,7 +214,9 @@ a {
 .gef-promo {
   overflow: hidden;
   position: relative;
-  background-color: #dcdcdc; }
+  background-color: #dcdcdc;
+  border: 2px solid transparent;
+  /* for high contrast mode */ }
 
 .gef-promo-content {
   padding: 1rem; }
@@ -307,6 +309,8 @@ svg + .gef-promo-indicator-text {
 
 .gef-tabs > section {
   background-color: #ccc;
+  border: 2px solid transparent;
+  /* for high contrast mode */
   padding: 1rem; }
 
 .gef-tabs > ul {
@@ -328,6 +332,9 @@ svg + .gef-promo-indicator-text {
   text-align: center;
   color: inherit;
   background-color: #dcdcdc;
+  border: 2px solid transparent;
+  /* for high contrast mode */
+  border-bottom: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
@@ -335,13 +342,22 @@ svg + .gef-promo-indicator-text {
 .gef-tabs > ul a:focus,
 .gef-tabs > section:focus {
   outline: 2px solid;
-  outline-offset: -2px; }
+  outline-offset: -4px; }
 
 .gef-tabs [aria-current] {
   background-color: #ccc; }
 
+@media (-ms-high-contrast: active) {
+  .gef-tabs [aria-current] {
+    position: relative;
+    top: 2px; } }
+
 .gef-breakout-box {
   background: #eee;
+  border-top: 1px solid transparent;
+  /* for high contrast mode */
+  border-bottom: 1px solid transparent;
+  /* for high contrast mode */
   padding: 8px;
   margin: 20px 0 32px 0;
   width: 100%; }
@@ -425,6 +441,8 @@ svg + .gef-promo-indicator-text {
 
 .gef-card {
   background-color: #F1F1F1;
+  border: 2px solid transparent;
+  /* for high contrast mode */
   position: relative; }
 
 .gef-card-content {
@@ -468,7 +486,9 @@ svg + .gef-promo-indicator-text {
   list-style: none;
   display: flex;
   background-color: #e5e5e5;
-  margin-top: auto; }
+  margin-top: auto;
+  border-top: 1px solid transparent;
+  /* for high contrast mode */ }
 
 .gef-card-toolbar button {
   background: none;
@@ -495,7 +515,10 @@ svg + .gef-promo-indicator-text {
 
 .gef-card-toolbar button:hover,
 .gef-card-toolbar button:focus {
-  outline: none;
+  outline: 2px solid transparent;
+  /* for high contrast mode */
+  outline-offset: -2px;
+  /* for high contrast mode */
   background-color: #007bb8;
   color: #fff; }
 
@@ -548,6 +571,10 @@ svg + .gef-promo-indicator-text {
   padding-bottom: 0.5rem;
   scroll-behavior: smooth; }
 
+@media (prefers-reduced-motion: reduce) {
+  .gef-carousel-scrollable {
+    scroll-behavior: auto; } }
+
 .gef-carousel-scrollable::-webkit-scrollbar {
   height: 0.5rem; }
 
@@ -590,14 +617,17 @@ svg + .gef-promo-indicator-text {
   z-index: 1; }
 
 .gef-carousel-buttons button {
-  border: none;
+  border: 0;
   padding: 0.5rem;
   background-color: #fff;
   color: #404040;
   font-size: 1.75rem; }
 
 .gef-carousel-buttons button:focus {
-  outline: none;
+  outline: 2px solid transparent;
+  /* for high contrast mode */
+  outline-offset: -2px;
+  /* for high contrast mode */
   box-shadow: inset 0 0 0 0.125rem #404040; }
 
 .gef-carousel-buttons button[disabled] {
@@ -628,6 +658,8 @@ span.gef-nowrap {
 .gef-action-dialog {
   padding: 2rem;
   background-color: #ccc;
+  border: 2px solid transparent;
+  /* for high contrast mode */
   position: fixed;
   text-align: center;
   top: auto;
@@ -700,9 +732,9 @@ span.gef-nowrap {
   align-items: center; }
 
 .gef-video-timeline-container input[type=range] {
-  -webkit-appearance: none;
   width: 100%;
-  margin: 7px 0; }
+  margin: 7px 0;
+  -webkit-appearance: none; }
 
 .gef-video-timeline-container input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
@@ -733,34 +765,6 @@ span.gef-nowrap {
   background: #fff;
   cursor: pointer; }
 
-.gef-video-timeline-container input[type=range]::-ms-track {
-  width: 100%;
-  height: 6px;
-  cursor: pointer;
-  background: transparent;
-  border-color: transparent;
-  color: transparent; }
-
-.gef-video-timeline-container input[type=range]::-ms-fill-lower {
-  background: #fff; }
-
-.gef-video-timeline-container input[type=range]::-ms-fill-upper {
-  background: #fff; }
-
-.gef-video-timeline-container input[type=range]::-ms-thumb {
-  height: 20px;
-  width: 10px;
-  border-radius: 0px;
-  background: #fff;
-  cursor: pointer;
-  height: 6px; }
-
-.gef-video-timeline-container input[type=range]:focus::-ms-fill-lower {
-  background: #fff; }
-
-.gef-video-timeline-container input[type=range]:focus::-ms-fill-upper {
-  background: #fff; }
-
 .gef-video-button-on {
   display: none; }
 
@@ -773,13 +777,28 @@ span.gef-nowrap {
 .gef-video-container [hidden] {
   display: none; }
 
+@media (-ms-high-contrast: active) {
+  .gef-video-timeline-container input[type=range],
+  .gef-video-timeline-container input[type=range]::-webkit-slider-runnable-track,
+  .gef-video-timeline-container input[type=range]::-webkit-slider-thumb,
+  .gef-video-timeline-container input[type=range]:focus::-webkit-slider-runnable-track,
+  .gef-video-timeline-container input[type=range]::-webkit-slider-thumb,
+  .gef-video-timeline-container input[type=range]:focus::-webkit-slider-runnable-track,
+  .gef-video-timeline-container input[type=range]::-moz-range-track,
+  .gef-video-timeline-container input[type=range]::-moz-range-thumb {
+    all: initial; }
+  .gef-video-timeline-container input[type=range] {
+    width: 100%;
+    margin: 7px 0; } }
+
 .gef-button, .gef-cta {
   padding: 16px;
   color: #121212;
+  border: 2px solid transparent;
+  /* for high contrast mode */
   display: inline-block;
   vertical-align: middle;
   margin: 0;
-  border: 0;
   font-family: inherit; }
 
 .gef-cta, .gef-cta a {
@@ -830,6 +849,8 @@ span.gef-nowrap {
 
 .gef-button-switch [aria-hidden] {
   display: inline-block;
+  border: 2px solid transparent;
+  /* for high contrast mode */
   margin-left: 8px;
   font-weight: bold;
   background-color: #fff;
@@ -880,8 +901,15 @@ span.gef-nowrap {
 .gef-form-warning {
   padding: 0.25rem;
   background-color: #e4134f;
+  border: 1px solid transparent;
+  /* for high contrast mode */
   color: #fff;
   max-width: 60ch; }
+
+@media (-ms-high-contrast: active) {
+  .gef-form-field-error,
+  .gef-form-warning {
+    filter: invert(100%); } }
 
 .gef-form-field-error:empty,
 .gef-form-warning:empty {
@@ -911,24 +939,20 @@ span.gef-nowrap {
 .gef-pocket [inert] {
   opacity: 0.5; }
 
-.gef-pocket-foot button:focus {
-  outline: none; }
-
 .gef-pocket-continue {
-  font-weight: bold;
-  outline-color: transparent; }
+  font-weight: bold; }
 
 @keyframes focus {
   0% {
-    outline-color: transparent; }
+    outline-width: 0px; }
   50% {
-    outline-color: #404040; }
+    outline-width: 2px; }
   100% {
-    outline-color: transparent; } }
+    outline-width: 0px; } }
 
 .gef-pocket-continue:focus {
   outline-style: solid;
-  outline-width: 2px;
+  outline-width: 0px;
   outline-offset: 2px;
   animation: focus 1s linear 1; }
 
@@ -946,9 +970,13 @@ span.gef-nowrap {
 .gef-masthead-links {
   border-left: 0; }
 
-.gef-masthead-logo img {
+.gef-masthead-logo svg {
   height: 1em;
-  display: block; }
+  width: 3.25rem; }
+
+@media (-ms-high-contrast: active) {
+  .gef-masthead-logo img {
+    filter: invert(100%); } }
 
 .gef-masthead-popup {
   padding: 0.75rem;
@@ -964,10 +992,6 @@ span.gef-nowrap {
   top: 0.75rem;
   right: 0.75rem;
   height: auto; }
-
-.gef-masthead .gef-masthead-close-button:focus {
-  outline: 2px solid currentColor;
-  outline-offset: 2px; }
 
 .gef-masthead-more-menu {
   border-bottom: 1px solid #ccc;
@@ -994,8 +1018,10 @@ span.gef-nowrap {
 
 .gef-masthead-bar a:hover,
 .gef-masthead-bar a:focus {
-  outline: none;
-  border-color: #404040; }
+  outline: 2px solid transparent;
+  /* for high contrast mode */
+  outline-offset: -4px;
+  box-shadow: inset 0 -4px 0 0 currentColor; }
 
 .gef-masthead [tabindex="-1"]:focus {
   outline: none; }
@@ -1010,7 +1036,8 @@ span.gef-nowrap {
 
 .gef-masthead-banner-logo svg {
   height: 100%;
-  width: auto; }
+  width: auto;
+  fill: currentColor; }
 
 .gef-masthead-links,
 .gef-masthead-more-option,
@@ -1029,8 +1056,7 @@ span.gef-nowrap {
     white-space: nowrap;
     border: 0;
     line-height: 1;
-    padding: 1rem 0.75rem 0.75rem;
-    border-bottom: 0.25rem solid #fff; }
+    padding: 0.75rem; }
   .gef-masthead-bar {
     display: flex;
     line-height: 1; }
@@ -1245,7 +1271,9 @@ span.gef-nowrap {
 
 .gef-accordion-handle button:hover,
 .gef-accordion-handle button:focus {
-  outline: none;
+  outline: 2px solid transparent;
+  /* fallback for high contrast mode */
+  outline-offset: 2px;
   background-color: #007bb8;
   color: #fff; }
 
@@ -1306,6 +1334,8 @@ of 'open all' and 'close all' tools
 .gef-infopanel-panel {
   text-align: left;
   background-color: #dcdcdc;
+  border: 2px solid transparent;
+  /* for high contrast mode */
   position: absolute;
   max-width: 80vw; }
 
@@ -1319,6 +1349,10 @@ of 'open all' and 'close all' tools
   padding: 0;
   border: 0;
   background-color: transparent; }
+
+.gef-infopanel-close-button {
+  outline: 1px solid;
+  outline-offset: 2px; }
 
 .gef-infopanel-below {
   top: calc(100% + 1rem); }
@@ -1425,9 +1459,16 @@ of 'open all' and 'close all' tools
 .gef-sitemenu-list a:focus,
 .gef-sitemenu-list button:focus,
 .gef-sitemenu-list [aria-current] {
-  outline: 2px solid transparent;
-  outline-offset: -3px;
+  outline: none;
   box-shadow: inset 0 -4px 0 0 currentColor; }
+
+@media (-ms-high-contrast: active) {
+  .gef-sitemenu-list a:hover,
+  .gef-sitemenu-list button:hover,
+  .gef-sitemenu-list a:focus,
+  .gef-sitemenu-list button:focus,
+  .gef-sitemenu-list [aria-current] {
+    text-decoration: underline; } }
 
 .gef-sitemenu-list > li > * {
   border-left: 1px solid #ccc; }
@@ -1440,6 +1481,10 @@ of 'open all' and 'close all' tools
   width: calc(100vw + 1px);
   padding: 0;
   position: relative;
+  border-top: 1px solid transparent;
+  /* for high contrast mode */
+  border-bottom: 1px solid transparent;
+  /* for high contrast mode */
   left: calc((100vw - 100%) / 2 * -1 - 1px);
   background-color: #404040;
   color: #fff; }

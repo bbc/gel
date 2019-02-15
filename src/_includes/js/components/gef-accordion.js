@@ -33,8 +33,7 @@
       button.innerHTML = '<span>' + section.handle.innerHTML + '</span>';
       button.innerHTML += '<svg viewBox="0 0 32 32" class="gel-icon gel-icon--text"><path d="M16 29L32 3h-7.2L16 18.3 7.2 3H0"></path></svg>';
 
-      // Place the button inside the handle
-      section.handle.innerHTML = null;
+      section.handle.innerHTML = '';
       section.handle.appendChild(button);
       section.button = button;
 

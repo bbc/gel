@@ -1,10 +1,10 @@
 .gef-button, .gef-cta  {
   padding: double($gel-spacing-unit);
   color: $gel-color--black;
+  border: 2px solid transparent; /* for high contrast mode */
   display: inline-block;
   vertical-align: middle;
   margin: 0;
-  border: 0;
   font-family: inherit;
 }
 
@@ -67,6 +67,7 @@
 
 .gef-button-switch [aria-hidden] {
   display: inline-block;
+  border: 2px solid transparent; /* for high contrast mode */
   margin-left: $gel-spacing-unit;
   font-weight: bold;
   background-color: $gel-color--white;

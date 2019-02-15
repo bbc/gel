@@ -33,8 +33,7 @@
       button.innerHTML = '<span>' + section.handle.innerHTML + '</span>';
       button.innerHTML += '<svg viewBox="0 0 32 32" class="gel-icon gel-icon--text"><path d="M16 29L32 3h-7.2L16 18.3 7.2 3H0"></path></svg>';
 
-      // Place the button inside the handle
-      section.handle.innerHTML = null;
+      section.handle.innerHTML = '';
       section.handle.appendChild(button);
       section.button = button;
 
@@ -338,7 +337,7 @@
 
         var callback = function (items, observer) {
           Array.prototype.forEach.call(items, function (item) {
-            if (item.isIntersecting) {
+            if (item.intersectionRatio > 0.5) {
               item.target.removeAttribute('inert');
             } else {
               // Makes items unfocusable and unavailable to assistive technologies
@@ -697,7 +696,7 @@
       const truncatedItems = this.truncated.children;
       var observerSettings = {
         root: this.truncated,
-        threshold: [0.95]
+        threshold: [0.9]
       }
 
       var callback = function (items, observer) {
@@ -863,11 +862,11 @@
  * @method gef.Tabs.init
  */
 
-(function() {
+(function () {
   if (!window.gef) { window.gef = {}; }
   var self = gef.Tabs = {};
-  
-  self.init = function() {
+
+  self.init = function () {
     var tabInterfaces = document.querySelectorAll('.gef-tabs');
     Array.prototype.forEach.call(tabInterfaces, function (tabInterface) {
       var tablist = tabInterface.querySelector('ul');

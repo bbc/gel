@@ -47,19 +47,22 @@ A proxy label is provided using `aria-labelledby` and a hidden proxy element to 
 </nav>
 ```
 
-### The components in order
+### The subcomponents in order
 
 #### The logo
 
 ```html
 <div class="gef-masthead-logo">
   <a href="https://bbc.co.uk">
-    <img src="https://nav.files.bbci.co.uk/orbit/2.0.0-436.0893166/img/blq-orbit-blocks_grey.svg" alt="BBC homepage">
+    <span class="gef-sr">BBC homepage</span>
+    <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+      <use xlink:href="{{site.basedir}}static/images/bbc-logo.svg#bbc-logo"></use>
+    </svg>
   </a>
 </div>
 ```
 
-The logo is provided as an image. This is preferable to a background image, which will be eliminated by some high contrast modes[^1] in some browsers. The `alt` text reads _"BBC homepage"_ and becomes the parent link's accessible label. The local home page link of the banner should be differentiated by mentioning the local site's name, for example _"BBC Gel homepage"_.
+The logo is provided as an inline SVG. This is preferable to a background image, which will be eliminated by some high contrast modes[^1] in some browsers. Its `fill` is set to `currentColor` so that it honors Windows High Contrast Mode text colors. The visually hidden `<span>` reads _"BBC homepage"_ and becomes the parent link's accessible label. The local home page link of the banner (see below) should be differentiated by mentioning the local site's name, for example _"BBC Gel homepage"_.
 
 #### The account link
 
@@ -270,6 +273,23 @@ In addition, a 'shadow' is cast from the more link over the priority links eleme
 ```
 
 Where a user has not ascertained they can scroll the element to reveal more links, the more menu remains available and should contain all of the same options and more.
+
+### High contrast
+
+How the component looks with a [Windows High Contrast Mode](https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode) theme active. 
+
+![The borders become white and the background color black]({{site.basedir}}static/images/hcm_masthead.png)
+
+Not shown in the image: supplementary outline styles for focus (since the `box-shadow` style is eliminated by Windows HCM):
+
+```css
+.gef-masthead-bar a:hover,
+.gef-masthead-bar a:focus {
+  outline: 2px solid transparent; /* for high contrast mode */
+  outline-offset: -4px;
+  box-shadow: inset 0 -4px 0 0 currentColor;
+}
+```
 
 ## Recommended behaviour
 
