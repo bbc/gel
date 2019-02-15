@@ -274,6 +274,23 @@ In addition, a 'shadow' is cast from the more link over the priority links eleme
 
 Where a user has not ascertained they can scroll the element to reveal more links, the more menu remains available and should contain all of the same options and more.
 
+### High contrast
+
+How the component looks with a [Windows High Contrast Mode](https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode) theme active. 
+
+![The borders become white and the background color black]({{site.basedir}}static/images/hcm_masthead.png)
+
+Not shown in the image: supplementary outline styles for focus (since the `box-shadow` style is eliminated by Windows HCM):
+
+```css
+.gef-masthead-bar a:hover,
+.gef-masthead-bar a:focus {
+  outline: 2px solid transparent; /* for high contrast mode */
+  outline-offset: -4px;
+  box-shadow: inset 0 -4px 0 0 currentColor;
+}
+```
+
 ## Recommended behaviour
 
 There are some special considerations for keyboard and screen reader usage that are not covered elsewhere in this document:

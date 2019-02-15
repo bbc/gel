@@ -95,7 +95,13 @@ When the dialog is open, sibling elements are given the `inert` attribute (see [
 
 Note that the style is applied via a class placed on the `<body>` using the 'gef-action-dialog' namespace. This ensures the specific inert style is only applied in the presence of an open dialog (the style does not 'leak' to other `inert` instances).
 
-## Recommended behaviour
+### High contrast
+
+How the component looks with a [Windows High Contrast Mode](https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode) theme active:
+
+![Borders help demarcate the dialog where high contrast mode is running]({{site.basedir}}static/images/hcm_action-dialogs.png)
+
+## Expected behaviour
 
 ::: info Results of actions
 The result of an action taken via an action dialog will depend on the purpose of your dialog and is not specified here. Attach listeners to the action dialog's controls as appropriate.

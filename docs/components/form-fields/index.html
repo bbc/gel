@@ -264,6 +264,17 @@ to break because they depend on JavaScript in order to function.</p>
 <p>Where there are errors, there should always be error messages. Prefixing the error message with 'Error:',  or a warning symbol, ensures the nature of the message is conveyed explicitly.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username-error"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Error:<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span> Your username cannot contain spaces<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
+<h3 id="high-contrast">High contrast</h3>
+<p>How the component looks with a <a href="https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode">Windows High Contrast Mode</a> theme active.</p>
+<p><img src="/gef-docs/static/images/hcm_form_fields.png" alt="The error message is white with black text"></p>
+<p>A CSS filter is used to reverse the colors of the error message:</p>
+<pre class="hljs"><code>@<span class="hljs-keyword">media</span> (-ms-high-contrast: active) {
+  <span class="hljs-selector-class">.gef-form-field-error</span>,
+  <span class="hljs-selector-class">.gef-form-warning</span> {
+    <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">invert</span>(100%);
+  }
+}
+</code></pre>
 <h2 id="recommended-behaviour">Recommended behaviour</h2>
 <p>Form validation should comprise of two phases:</p>
 <ol>

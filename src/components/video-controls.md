@@ -188,6 +188,8 @@ Many of the custom styles are not visible where Windows High Contrast Mode is ac
 }
 ```
 
+![Standard range input styles are visible, and in high contrast (white on black)]({{site.basedir}}static/images/hcm_video.png)
+
 #### The controls container
 
 In the [reference implementation](#reference-implementation), the controls container uses Flexbox to distribute the controls along a horizontal axis. The timeline container takes `flex: auto`[^5] to take up any space not taken by surrounding buttons. This makes the control bar responsive and tolerant of different functionality complexity.

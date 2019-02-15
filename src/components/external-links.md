@@ -115,6 +115,12 @@ Some white space is placed between external links in the list formation to impro
 }
 ```
 
+### High contrast
+
+How the component looks with a [Windows High Contrast Mode](https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode) theme active.
+
+![The icons are still visible: yellow on a black background]({{site.basedir}}static/images/hcm_external_links.png)
+
 ## Reference implementation
 
 ::: alert Important

@@ -156,6 +156,12 @@ Some margin is added to the left of the SVG to separate it from the button's tex
 }
 ```
 
+### High contrast
+
+How the component looks with a [Windows High Contrast Mode](https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode) theme active:
+
+![Borders help demarcate the accordion where high contrast mode is running]({{site.basedir}}static/images/hcm_accordions.png)
+
 ## Recommended behaviour
 
 An accordion designed with progressive enhancement offers pre-rendered structured content, expanded and available by default where JavaScript is not available. The [Reference implementation](#reference-implementation) wraps and hides each accordion item's content, and provides a button to each item for toggling the expanded/collapsed state.

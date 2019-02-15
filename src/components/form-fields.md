@@ -236,6 +236,23 @@ Where there are errors, there should always be error messages. Prefixing the err
 <div id="username-error"><strong>Error:</strong> Your username cannot contain spaces</div>
 ```
 
+### High contrast
+
+How the component looks with a [Windows High Contrast Mode](https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode) theme active.
+
+![The error message is white with black text]({{site.basedir}}static/images/hcm_form_fields.png)
+
+A CSS filter is used to reverse the colors of the error message:
+
+```css
+@media (-ms-high-contrast: active) {
+  .gef-form-field-error,
+  .gef-form-warning {
+    filter: invert(100%);
+  }
+}
+```
+
 ## Recommended behaviour
 
 Form validation should comprise of two phases:

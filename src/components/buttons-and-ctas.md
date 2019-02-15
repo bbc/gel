@@ -136,7 +136,7 @@ Since buttons and CTAs tend to have a rectangular border/perimeter, the thin and
 }
 ```
 
-It is recommended call-to-action links take `text-decoration: underline` on `:hover`/`:focus`. This way, if it is not already clear the element is a link, this becomes clearer under scrutiny. The [reference implementation](#reference-implementation) employs `text-decoration-skip: objects` to remove the underline from any icon that might be present.
+It is recommended call-to-action links take `text-decoration: underline` on `:hover`/`:focus`. This way, if it is not already clear the element is a link, this becomes clearer under scrutiny. The [Reference implementation](#reference-implementation) employs `text-decoration-skip: objects` to remove the underline from any icon that might be present.
 
 ### Indicating state
 
@@ -166,7 +166,7 @@ Windows High Contrast Mode tends to remove the background from buttons, making t
 }
 ```
 
-![Borders on all sides show the button's shape]({{site.basedir}}static/images/hcm_buttons_and_ctas.png)
+![The boxy shape is retained by applying a border on all sides]({{site.basedir}}static/images/hcm_buttons_and_ctas.png)
 
 ## Recommended behaviour
 

@@ -62,6 +62,8 @@ The `background-color` that demarcates the **Breakout box** from the surrounding
 }
 ```
 
+![A white border appears above and below the breakout]({{site.basedir}}static/images/hcm_breakout_boxes.png)
+
 ## Recommended behaviour
 
 The **Breakout box** has no special behaviours; it is a static component. 

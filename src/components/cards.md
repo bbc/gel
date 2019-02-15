@@ -234,6 +234,12 @@ This element must be absolutely positioned over the card, which means the card i
 
 Also note `overflow-y: auto`. This is provided in case the content inside the 'More info' element is taller than its height. Since the element is not allowed to grow, it must be scrollable instead.
 
+### High contrast
+
+How the component looks with a [Windows High Contrast Mode](https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode) theme active. Transparent borders that become visible in Windows HCM are used to demarcate the **Card** some of its subcomponents. An outline style supplements the `background-color` focus style that is eliminated.
+
+![An outer border demarcates the shape of the card.]({{site.basedir}}static/images/hcm_cards.png)
+
 ## Recommended behaviour
 
 Aside from the toolbar behaviour, the card's behaviour will depend on the content it houses. See [Card contents](#card-contents) for pointers.

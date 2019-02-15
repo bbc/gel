@@ -9,6 +9,12 @@
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .gef-carousel-scrollable {
+    scroll-behavior: auto;
+  }
+}
+
 .gef-carousel-scrollable::-webkit-scrollbar {
   height: 0.5rem;
 }

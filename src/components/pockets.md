@@ -92,6 +92,12 @@ When the _"Continue below..."_ element is focused, it draws attention by showing
 }
 ```
 
+### High contrast
+
+How the component looks with a [Windows High Contrast Mode](https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode) theme active. 
+
+![Black on white theme with all the same shapes intact]({{site.basedir}}static/images/hcm_pocket.png)
+
 ## Recommended behaviour
 
 The **Pocket** is treated as a progressive enhancement. It does not initialize at all if JavaScript does not run or `IntersectionObserver` is not supported. Support for `IntersectionObserver` is covered by Chrome, Edge, Firefox, Opera, and various Android browsers at the time of writing[^3]. Browsers that do not enhance to a **Pocket** simply show the content in its expanded form.

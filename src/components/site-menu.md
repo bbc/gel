@@ -137,6 +137,8 @@ The main style—a `4px` line at the base of the item—is supplemented by a fal
 }
 ```
 
+![The current link has a line under the text]({{site.basedir}}static/images/hcm_sitemenu.png)
+
 As stated in [Recommended layout](#recommended-layout), `aria-current="page"` can be used to denote the current page where it matches a menu option.
 
 ## Recommended behaviour

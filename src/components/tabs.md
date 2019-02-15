@@ -110,6 +110,8 @@ In addition, an `@media` query detecting high contrast mode is used to create an
 }
 ```
 
+![Borders define the tabs and panels]({{site.basedir}}static/images/hcm_tabs.png)
+
 ### Focus styles
 
 The tab elements themselves are rectangular and take a `background-color` making some user agents' default focus styling unclear. It is recommended a solid `outline` style is applied.

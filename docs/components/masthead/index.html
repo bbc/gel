@@ -312,6 +312,17 @@
 }
 </code></pre>
 <p>Where a user has not ascertained they can scroll the element to reveal more links, the more menu remains available and should contain all of the same options and more.</p>
+<h3 id="high-contrast">High contrast</h3>
+<p>How the component looks with a <a href="https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode">Windows High Contrast Mode</a> theme active.</p>
+<p><img src="/gef-docs/static/images/hcm_masthead.png" alt="The borders become white and the background color black"></p>
+<p>Not shown in the image: supplementary outline styles for focus (since the <code>box-shadow</code> style is eliminated by Windows HCM):</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-masthead-bar</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span>,
+<span class="hljs-selector-class">.gef-masthead-bar</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span> {
+  <span class="hljs-attribute">outline</span>: <span class="hljs-number">2px</span> solid transparent; <span class="hljs-comment">/* for high contrast mode */</span>
+  <span class="hljs-attribute">outline-offset</span>: -<span class="hljs-number">4px</span>;
+  <span class="hljs-attribute">box-shadow</span>: inset <span class="hljs-number">0</span> -<span class="hljs-number">4px</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> currentColor;
+}
+</code></pre>
 <h2 id="recommended-behaviour">Recommended behaviour</h2>
 <p>There are some special considerations for keyboard and screen reader usage that are not covered elsewhere in this document:</p>
 <h3 id="the-priority-links">The priority links</h3>
