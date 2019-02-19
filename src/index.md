@@ -133,6 +133,9 @@ We are working our way through a list based closely on what's already published 
 | [Information Panel]({{site.basedir}}components/info-panels/) | Draft / Pending|
 | [Share Tools]({{site.basedir}}components/share-tools/) | Draft / Pending|
 | [Site Menu]({{site.basedir}}components/site-menu/) | Draft / Pending|
+
+| Atom | Status |
+|-----------|--------|
 | [Grids]({{site.basedir}}atoms/grids/) | Draft / Pending|
 | [Headings]({{site.basedir}}atoms/headings/) | Draft / Pending|
 | [Icons]({{site.basedir}}atoms/iconography/) | Draft / Pending|
