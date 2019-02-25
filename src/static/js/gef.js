@@ -471,8 +471,8 @@
 
   self.init = function () { }
 
-  self.constructor = function (elem, /* number */amount, /* number */start, /* fn => Promise */dataProvider) {
-    /*this.elem = elem;
+  self.constructor = function (elem, amount, start, dataProvider) {
+    this.elem = elem;
     // Save refs to key elements
     this.loadBay = this.elem.querySelector('.gef-loader-items');
     this.pages = this.elem.querySelector('.gef-pages');
@@ -550,7 +550,7 @@
       this.button.addEventListener('click', function () {
         this.load();
       }.bind(this));
-    }*/
+    }
   }
 
   // The load method
