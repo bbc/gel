@@ -29,7 +29,7 @@
             (new FontFaceObserver('ReithSerif', 5000)).load().then(function () {
                 document.documentElement.className += ' b-reith-loaded';
             });
-        } catch (e) {
+        } catch( e ) {
             console.log('Reith fonts did not load within 5 seconds.');
         }
     </script>
@@ -39,7 +39,7 @@
         hljs.initHighlightingOnLoad();
     </script>
 
-
+    
 </head>
 
 <body class="gefdocs-body">
@@ -82,16 +82,15 @@
 
             <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
                 <h1 class="gefdocs-header__title">Action dialogs</h1>
-                <p class="gefdocs-header__summary gel-great-primer">Action dialogs are presented where the user must
-                    choose a course of action</p>
+                <p class="gefdocs-header__summary gel-great-primer">Action dialogs are presented where the user must choose a course of action</p>
             </div>
 
             <div class="gel-layout__item gel-1/5@l">
                 <dl class="gefdocs-standout-box">
-
+                    
                     <dt>Version:</dt>
                     <dd>0.1.0</dd>
-
+                    
                     <dt>Status:</dt>
                     <dd>Draft</dd>
                     <dt>Accessibility:</dt>
@@ -104,38 +103,22 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gefdocs-toc__links" class="gefdocs-toc">
-                        <li><a href="#introduction">Introduction</a></li>
-                        <li><a href="#recommended-markup">Recommended markup</a></li>
-                        <li><a href="#recommended-layout">Recommended layout</a></li>
-                        <li><a href="#recommended-behaviour">Recommended behaviour</a></li>
-                        <li><a href="#reference-implementation">Reference implementation</a></li>
-                        <li><a href="#related-research">Related research</a></li>
-                    </ol>
+                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#expected-behaviour">Expected behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
             <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="introduction">Introduction</h2>
-                <p>GEL defines two generic kinds of alert message:</p>
-                <ol>
-                    <li><strong>Purely informative:</strong> indicating something has happened already (and requiring
-                        no input on the part of the user).</li>
-                    <li><strong>Requiring action:</strong> asking the user to choose a course of action when a critical
-                        impasse has been reached.</li>
-                </ol>
-                <p>The <strong>Action dialog</strong> defines the second of these. It is a type of modal window<sup
-                        class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>, restricting interaction to
-                    itself until one of the options it presents the user has been chosen. <strong>Action dialogs</strong>
-                    should be used sparingly, and only where the user's immediate input is critical to the continuation
-                    of their session.</p>
-                <p>For more context, consult the <a href="http://www.bbc.co.uk/gel/guidelines/confirmation-and-error-messages">Confirmation
-                        &amp; Error Messages GEL page</a>.</p>
-                <h2 id="recommended-markup">Recommended markup</h2>
-                <p>In the following example, we imagine the user has tried to add a programme to 'My Programmes'. Since
-                    this functionality is only available to authenticated users, an action dialog asks the user to
-                    either sign in or register in order to continue.</p>
-                <pre class="hljs"><code>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-action-dialog"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"dialog"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"gef-action-dialog-label-1"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"gef-action-dialog-desc-1"</span>&gt;</span>
+<p>GEL defines two generic kinds of alert message:</p>
+<ol>
+<li><strong>Purely informative:</strong> indicating something has happened already (and requiring no input on the part of the user).</li>
+<li><strong>Requiring action:</strong> asking the user to choose a course of action when a critical impasse has been reached.</li>
+</ol>
+<p>The <strong>Action dialog</strong> defines the second of these. It is a type of modal window<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>, restricting interaction to itself until one of the options it presents the user has been chosen. <strong>Action dialogs</strong> should be used sparingly, and only where the user's immediate input is critical to the continuation of their session.</p>
+<p>For more context, consult the <a href="http://www.bbc.co.uk/gel/guidelines/confirmation-and-error-messages">Confirmation &amp; Error Messages GEL page</a>.</p>
+<h2 id="recommended-markup">Recommended markup</h2>
+<p>In the following example, we imagine the user has tried to add a programme to 'My Programmes'. Since this functionality is only available to authenticated users, an action dialog asks the user to either sign in or register in order to continue.</p>
+<pre class="hljs"><code>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-action-dialog"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"dialog"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"gef-action-dialog-label-1"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"gef-action-dialog-desc-1"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"gef-action-dialog-label-1"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-action-dialog-title"</span>&gt;</span>Add to enjoy later<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"gef-action-dialog-desc-1"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-action-dialog-content"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Sign in to add to My Programmes and enjoy it later on other devices<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
@@ -154,37 +137,17 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 </code></pre>
-                <h3 id="notes">Notes</h3>
-                <ul>
-                    <li><strong><code>role=&quot;dialog&quot;</code>:</strong> This <code>role</code> is critical for
-                        making the dialog behave in an expected way in assistive technologies such as screen reader
-                        software. It also identifies the dialog <em>as</em> a dialog when it is opened and focus is
-                        placed inside it.</li>
-                    <li><strong><code>aria-labelledby</code> and <code>aria-describedby</code>:</strong> These
-                        relationship attributes associate the text of the dialog's heading/label and content with the
-                        dialog element itself. Along with the dialog role, this information is announced upon the
-                        dialog being opened. You will need to write or generate unique identifiers for the <code>id</code>s
-                        required here.</li>
-                    <li><strong><code>class=&quot;gef-action-dialog-buttons&quot;</code>:</strong> A simple,
-                        non-semantic wrapper for the action elements. Action elements must be marked up as <code>&lt;button&gt;</code>s
-                        if they instigate something on the same page (such as a change of setting or state) or links if
-                        they take the user to a new page.</li>
-                    <li><strong><code>class=&quot;gef-action-dialog-close&quot;</code>:</strong> Provide a close button
-                        if doing <em>nothing</em> (not authenticating to add a programme after all, in this example) is
-                        a viable option. The visually hidden <code>vh</code><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>
-                        class is provided here to include accessible, translatable text alongside the screen reader
-                        inaccessible icon. The close button is deprioritized in favour of the named actions, appearing
-                        last in source and focus order.</li>
-                    <li><strong><code>&lt;/body&gt;</code>:</strong> For the overlay/inert characteristic to function
-                        correctly, the dialog must be a child of the <code>&lt;body&gt;</code> element. See <a href="#expected-behaviour">Recommended
-                            behaviour</a></li>
-                </ul>
-                <h2 id="recommended-layout">Recommended layout</h2>
-                <p><strong>Action dialogs</strong> can appear in the center, or at the bottom, of the page. In the <a
-                        href="#reference-implementation"><strong>reference implementation</strong></a> they appear at
-                    the bottom by default. The <code>fixed</code> position value ensures they cannot be scrolled out of
-                    view.</p>
-                <pre class="hljs"><code><span class="hljs-selector-class">.gef-action-dialog</span> {
+<h3 id="notes">Notes</h3>
+<ul>
+<li><strong><code>role=&quot;dialog&quot;</code>:</strong> This <code>role</code> is critical for making the dialog behave in an expected way in assistive technologies such as screen reader software. It also identifies the dialog <em>as</em> a dialog when it is opened and focus is placed inside it.</li>
+<li><strong><code>aria-labelledby</code> and <code>aria-describedby</code>:</strong> These relationship attributes associate the text of the dialog's heading/label and content with the dialog element itself. Along with the dialog role, this information is announced upon the dialog being opened. You will need to write or generate unique identifiers for the <code>id</code>s required here.</li>
+<li><strong><code>class=&quot;gef-action-dialog-buttons&quot;</code>:</strong> A simple, non-semantic wrapper for the action elements. Action elements must be marked up as <code>&lt;button&gt;</code>s if they instigate something on the same page (such as a change of setting or state) or links if they take the user to a new page.</li>
+<li><strong><code>class=&quot;gef-action-dialog-close&quot;</code>:</strong> Provide a close button if doing <em>nothing</em> (not authenticating to add a programme after all, in this example) is a viable option. The visually hidden <code>vh</code><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> class is provided here to include accessible, translatable text alongside the screen reader inaccessible icon. The close button is deprioritized in favour of the named actions, appearing last in source and focus order.</li>
+<li><strong><code>&lt;/body&gt;</code>:</strong> For the overlay/inert characteristic to function correctly, the dialog must be a child of the <code>&lt;body&gt;</code> element. See <a href="#expected-behaviour">Recommended behaviour</a></li>
+</ul>
+<h2 id="recommended-layout">Recommended layout</h2>
+<p><strong>Action dialogs</strong> can appear in the center, or at the bottom, of the page. In the <a href="#reference-implementation"><strong>reference implementation</strong></a> they appear at the bottom by default. The <code>fixed</code> position value ensures they cannot be scrolled out of view.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-action-dialog</span> {
   <span class="hljs-attribute">position</span>: fixed;
   <span class="hljs-attribute">top</span>: auto;
   <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
@@ -192,199 +155,142 @@
   <span class="hljs-attribute">bottom</span>: <span class="hljs-number">0</span>;
 }
 </code></pre>
-                <p>The center configuration requires a <code>transform</code> to place the element in the vertical
-                    center irrespective of its natural height:</p>
-                <pre class="hljs"><code><span class="hljs-selector-class">.gef-action-dialog-center</span> {
+<p>The center configuration requires a <code>transform</code> to place the element in the vertical center irrespective of its natural height:</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-action-dialog-center</span> {
   <span class="hljs-attribute">top</span>: <span class="hljs-number">50%</span>;
   <span class="hljs-attribute">bottom</span>: auto;
   <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;
   <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(-50%, -50%);
 }
 </code></pre>
-                <p>With this translation in place, dialogs with considerable content will become obscured at the top
-                    and bottom of the viewport. To avoid this, the dialog description element (<code>class=&quot;gef-action-dialog-desc&quot;</code>)
-                    is given a <code>max-height</code> and allowed to scroll vertically:</p>
-                <pre class="hljs"><code><span class="hljs-selector-class">.gef-action-dialog-desc</span> {
+<p>With this translation in place, dialogs with considerable content will become obscured at the top and bottom of the viewport. To avoid this, the dialog description element (<code>class=&quot;gef-action-dialog-desc&quot;</code>) is given a <code>max-height</code> and allowed to scroll vertically:</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-action-dialog-desc</span> {
   <span class="hljs-attribute">max-height</span>: <span class="hljs-number">30vh</span>;
   <span class="hljs-attribute">overflow-y</span>: auto;
 }
 </code></pre>
-                <p>When the dialog is open, sibling elements are given the <code>inert</code> attribute (see <a href="#expected-behaviour"><strong>expected
-                            behaviour</strong></a>, below). The inert content should <em>appear</em> inert by
-                    diminishing its visibility. Opacity and/or filtering can achieve this effect.</p>
-                <pre class="hljs"><code><span class="hljs-selector-class">.gef-action-dialog-open</span> <span class="hljs-selector-attr">[inert]</span> {
+<p>When the dialog is open, sibling elements are given the <code>inert</code> attribute (see <a href="#expected-behaviour"><strong>expected behaviour</strong></a>, below). The inert content should <em>appear</em> inert by diminishing its visibility. Opacity and/or filtering can achieve this effect.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-action-dialog-open</span> <span class="hljs-selector-attr">[inert]</span> {
   <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.3</span>;
 }
 </code></pre>
-                <p>Note that the style is applied via a class placed on the <code>&lt;body&gt;</code> using the
-                    'gef-action-dialog' namespace. This ensures the specific inert style is only applied in the
-                    presence of an open dialog (the style does not 'leak' to other <code>inert</code> instances).</p>
-                <h3 id="high-contrast">High contrast</h3>
-                <p>How the component looks with a <a href="https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode">Windows
-                        High Contrast Mode</a> theme active:</p>
-                <p><img src="/gef-docs/static/images/hcm_action-dialogs.png" alt="Borders help demarcate the dialog where high contrast mode is running"></p>
-                <h2 id="expected-behaviour">Expected behaviour</h2>
+<p>Note that the style is applied via a class placed on the <code>&lt;body&gt;</code> using the 'gef-action-dialog' namespace. This ensures the specific inert style is only applied in the presence of an open dialog (the style does not 'leak' to other <code>inert</code> instances).</p>
+<h3 id="high-contrast">High contrast</h3>
+<p>How the component looks with a <a href="https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode">Windows High Contrast Mode</a> theme active:</p>
+<p><img src="/gef-docs/static/images/hcm_action-dialogs.png" alt="Borders help demarcate the dialog where high contrast mode is running"></p>
+<h2 id="expected-behaviour">Expected behaviour</h2>
 
-                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-results-of-actions">
-                    <h4 id="aside-info-results-of-actions" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
-                            <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use>
-                        </svg>Results of actions</h4>
-                    <div>
-                        <p>The result of an action taken via an action dialog will depend on the purpose of your dialog
-                            and is not specified here. Attach listeners to the action dialog's controls as appropriate.</p>
-                </aside>
-                <h3 id="when-the-dialog-opens">When the dialog opens</h3>
-                <ol>
-                    <li>The dialog element appears in its designated position</li>
-                    <li>The surrounding page becomes inert (non-interactive, unavailable to assistive technologies, and
-                        not focusable by keyboard)</li>
-                    <li>Focus is moved to the first control (a link or button that is not disabled) inside the <code>class=&quot;gef-action-dialog-buttons&quot;</code>
-                        element</li>
-                </ol>
-                <h3 id="when-the-dialog-closes">When the dialog closes</h3>
-                <ol>
-                    <li>The dialog is hidden</li>
-                    <li>The surrounding page ceases to be inert</li>
-                    <li>If the dialog was originally invoked as a response to a user action, the element that invoked
-                        the action (such as a button) is refocused</li>
-                </ol>
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-results-of-actions">
+              <h4 id="aside-info-results-of-actions" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Results of actions</h4><div><p>The result of an action taken via an action dialog will depend on the purpose of your dialog and is not specified here. Attach listeners to the action dialog's controls as appropriate.</p>
+</aside><h3 id="when-the-dialog-opens">When the dialog opens</h3>
+<ol>
+<li>The dialog element appears in its designated position</li>
+<li>The surrounding page becomes inert (non-interactive, unavailable to assistive technologies, and not focusable by keyboard)</li>
+<li>Focus is moved to the first control (a link or button that is not disabled) inside the <code>class=&quot;gef-action-dialog-buttons&quot;</code> element</li>
+</ol>
+<h3 id="when-the-dialog-closes">When the dialog closes</h3>
+<ol>
+<li>The dialog is hidden</li>
+<li>The surrounding page ceases to be inert</li>
+<li>If the dialog was originally invoked as a response to a user action, the element that invoked the action (such as a button) is refocused</li>
+</ol>
 
-                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-interruptions">
-                    <h4 id="aside-alert-interruptions" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
-                            <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use>
-                        </svg>Interruptions</h4>
-                    <div>
-                        <p>Interruptions are dialogs that appear spontaneously, without direct invocation (conscious or
-                            otherwise) on the part of the user. These are very disruptive, and should be avoided in
-                            almost all circumstances. One legitimate use case would be to inform the user of their
-                            timed session coming to an end and offering them the opportunity to extend it.</p>
-                        <p>Notifications and status messages that do not require user action should not steal focus.
-                            Consider using an ARIA live region instead<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
-                </aside>
-                <h3 id="keyboard-and-screen-reader-experience">Keyboard and screen reader experience</h3>
-                <p>Focus is placed inside the dialog upon opening it, meaning keyboard users have access to the
-                    functionality and screen reader users are informed of the dialog's presence. When the dialog first
-                    opens, a screen reader user will hear the announcement of the dialog role (<em>&quot;dialog&quot;</em>),
-                    its associated label (title) and description, and the role and label of the initially focused
-                    control.</p>
-                <p>Users can move focus between the supplied controls and the close button, as well as 'escape' the
-                    dialog to focus browser chrome such as the address bar. Only the dialog is available and
-                    interactive while it is open, making it modal (it presents a 'mode' that suppresses and overrides
-                    normal page functionality).</p>
-                <h2 id="reference-implementation">Reference implementation</h2>
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-interruptions">
+              <h4 id="aside-alert-interruptions" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Interruptions</h4><div><p>Interruptions are dialogs that appear spontaneously, without direct invocation (conscious or otherwise) on the part of the user. These are very disruptive, and should be avoided in almost all circumstances. One legitimate use case would be to inform the user of their timed session coming to an end and offering them the opportunity to extend it.</p>
+<p>Notifications and status messages that do not require user action should not steal focus. Consider using an ARIA live region instead<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
+</aside><h3 id="keyboard-and-screen-reader-experience">Keyboard and screen reader experience</h3>
+<p>Focus is placed inside the dialog upon opening it, meaning keyboard users have access to the functionality and screen reader users are informed of the dialog's presence. When the dialog first opens, a screen reader user will hear the announcement of the dialog role (<em>&quot;dialog&quot;</em>), its associated label (title) and description, and the role and label of the initially focused control.</p>
+<p>Users can move focus between the supplied controls and the close button, as well as 'escape' the dialog to focus browser chrome such as the address bar. Only the dialog is available and interactive while it is open, making it modal (it presents a 'mode' that suppresses and overrides normal page functionality).</p>
+<h2 id="reference-implementation">Reference implementation</h2>
 
-                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
-                    <h4 id="aside-alert-important" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
-                            <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use>
-                        </svg>Important</h4>
-                    <div>
-                        <p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>,
-                            but not necessarily how to achieve it. That would depend on the technology stack you are
-                            working with. The HTML semantics, layout, and behaviour of your implementation must conform
-                            to the reference implementation. Your JS framework, CSS methodology, and—most
-                            likely—content will differ.</p>
-                </aside>
-                <div class="gefdocs-demo">
-                    <!-- 
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
+              <h4 id="aside-alert-important" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+</aside>
+          <div class="gefdocs-demo"><!-- 
 title: Action dialogs
  -->
 
-                    <div id="my-action-dialog-1" class="gef-action-dialog" role="dialog" aria-labelledby="my-action-dialog-label-1"
-                        aria-describedby="my-action-dialog-desc-1">
-                        <h3 id="my-action-dialog-label-1" class="gef-action-dialog-title">Add to enjoy later</h3>
-                        <div id="my-action-dialog-desc-1" class="gef-action-dialog-content">
-                            <p>Sign in to add to My Programmes and enjoy it later on other devices</p>
-                        </div>
-                        <div class="gef-action-dialog-buttons">
-                            <a href="#/path/to/sign-in">Sign in</a>
-                            or
-                            <a href="#/path/to/register">Register</a>
-                        </div>
-                        <button class="gef-action-dialog-close">
-                            <span class="gef-sr">close</span>
-                            <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-                                <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-no"></use>
-                            </svg>
-                        </button>
-                    </div>
+<div id="my-action-dialog-1" class="gef-action-dialog" role="dialog" aria-labelledby="my-action-dialog-label-1"
+  aria-describedby="my-action-dialog-desc-1">
+  <h3 id="my-action-dialog-label-1" class="gef-action-dialog-title">Add to enjoy later</h3>
+  <div id="my-action-dialog-desc-1" class="gef-action-dialog-content">
+    <p>Sign in to add to My Programmes and enjoy it later on other devices</p>
+  </div>
+  <div class="gef-action-dialog-buttons">
+    <a href="#/path/to/sign-in">Sign in</a>
+    or
+    <a href="#/path/to/register">Register</a>
+  </div>
+  <button class="gef-action-dialog-close">
+    <span class="gef-sr">close</span>
+    <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+      <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-no"></use>
+    </svg>
+  </button>
+</div>
 
-                    <div id="my-action-dialog-2" class="gef-action-dialog" role="dialog" aria-labelledby="my-action-dialog-label-2"
-                        aria-describedby="my-action-dialog-desc-2">
-                        <h3 id="my-action-dialog-label-2" class="gef-action-dialog-title">Add to enjoy later</h3>
-                        <div id="my-action-dialog-desc-2" class="gef-action-dialog-content">
-                            <p>Sign in to add to My Programmes and enjoy it later on other devices</p>
-                        </div>
-                        <div class="gef-action-dialog-buttons">
-                            <a href="#/path/to/sign-in">Sign in</a>
-                            or
-                            <a href="#/path/to/register">Register</a>
-                        </div>
-                        <button class="gef-action-dialog-close">
-                            <span class="gef-sr">close</span>
-                            <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-                                <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-no"></use>
-                            </svg>
-                        </button>
-                    </div>
+<div id="my-action-dialog-2" class="gef-action-dialog" role="dialog" aria-labelledby="my-action-dialog-label-2"
+  aria-describedby="my-action-dialog-desc-2">
+  <h3 id="my-action-dialog-label-2" class="gef-action-dialog-title">Add to enjoy later</h3>
+  <div id="my-action-dialog-desc-2" class="gef-action-dialog-content">
+    <p>Sign in to add to My Programmes and enjoy it later on other devices</p>
+  </div>
+  <div class="gef-action-dialog-buttons">
+    <a href="#/path/to/sign-in">Sign in</a>
+    or
+    <a href="#/path/to/register">Register</a>
+  </div>
+  <button class="gef-action-dialog-close">
+    <span class="gef-sr">close</span>
+    <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+      <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-no"></use>
+    </svg>
+  </button>
+</div>
 
-                    <p><button class="gef-button gef-button--primary" id="gef-action-dialog-invoker-1">Open action
-                            dialog (bottom)</button></p>
-                    <p><button class="gef-button gef-button--primary" id="gef-action-dialog-invoker-2">Open action
-                            dialog (center)</button></p>
+<p><button class="gef-button gef-button--primary" id="gef-action-dialog-invoker-1">Open action dialog (bottom)</button></p>
+<p><button class="gef-button gef-button--primary" id="gef-action-dialog-invoker-2">Open action dialog (center)</button></p>
 
-                    <script type="text/javascript">
-                        document.addEventListener('DOMContentLoaded', function () {
-                            window.gef && gef.ActionDialog.init();
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+    window.gef && gef.ActionDialog.init();
 
-                            // Example 1: Dialog aligned to bottom of screen
-                            var dialogBottomElem = document.getElementById('my-action-dialog-1');
-                            var dialogBottomInvoker = document.getElementById('gef-action-dialog-invoker-1');
-                            var d1 = new gef.ActionDialog.constructor(dialogBottomElem, dialogBottomInvoker);
+    // Example 1: Dialog aligned to bottom of screen
+    var dialogBottomElem = document.getElementById('my-action-dialog-1');
+    var dialogBottomInvoker = document.getElementById('gef-action-dialog-invoker-1');
+    var d1 = new gef.ActionDialog.constructor(dialogBottomElem, dialogBottomInvoker);
 
-                            // Example 2: Dialog centered in viewport
-                            var dialogCenterElem = document.getElementById('my-action-dialog-2');
-                            var dialogCenterInvoker = document.getElementById('gef-action-dialog-invoker-2');
-                            var d2 = new gef.ActionDialog.constructor(dialogCenterElem, dialogCenterInvoker, true);
-                        });
-                    </script>
-                </div>
-
-                <p><a class="gef-cta gel-long-primer-bold" href="../demos/action-dialogs/" target="_new"><span class="gef-button__label">Open
-                            in new window</span><svg class="gef-button__icon gef-icon gel-icon--text">
-                            <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use>
-                        </svg></a></p>
-                <h2 id="related-research">Related research</h2>
-                <p>This topic does not yet have any related research available.</p>
-                <h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
-                <hr class="footnotes-sep">
-                <section class="footnotes">
-                    <ol class="footnotes-list">
-                        <li id="fn1" class="footnote-item">
-                            <p>&quot;Modal window&quot; (Wikipedia), <a href="https://en.wikipedia.org/wiki/Modal_window">https://en.wikipedia.org/wiki/Modal_window</a>
-                                <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-                        </li>
-                        <li id="fn2" class="footnote-item">
-                            <p>Gist of the <code>vh</code> (visually hidden) class, <a href="https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472">https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472</a>
-                                <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-                        </li>
-                        <li id="fn3" class="footnote-item">
-                            <p>&quot;Notifications&quot; (Inclusive Components blog), <a href="https://inclusive-components.design/notifications/">https://inclusive-components.design/notifications/</a>
-                                <a href="#fnref3" class="footnote-backref">↩︎</a></p>
-                        </li>
-                    </ol>
-                </section>
+    // Example 2: Dialog centered in viewport
+    var dialogCenterElem = document.getElementById('my-action-dialog-2');
+    var dialogCenterInvoker = document.getElementById('gef-action-dialog-invoker-2');
+    var d2 = new gef.ActionDialog.constructor(dialogCenterElem, dialogCenterInvoker, true);
+  });
+</script></div>
+        
+          <p><a class="gef-cta gel-long-primer-bold" href="../demos/action-dialogs/" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+        <h2 id="related-research">Related research</h2>
+<p>This topic does not yet have any related research available.</p>
+<h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>&quot;Modal window&quot; (Wikipedia), <a href="https://en.wikipedia.org/wiki/Modal_window">https://en.wikipedia.org/wiki/Modal_window</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Gist of the <code>vh</code> (visually hidden) class,  <a href="https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472">https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>&quot;Notifications&quot; (Inclusive Components blog), <a href="https://inclusive-components.design/notifications/">https://inclusive-components.design/notifications/</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
 
                 <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
                     <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
-                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
-                            <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use>
-                        </svg>Could you improve this documentation?
+                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Could you improve this documentation?
                     </h4>
                     <div>
                         <p>
-                            If you think you could make anything you see here a bit better then become one of <a href="/gef-docs/contributors/">our
-                                lovely contributors</a>!
+                        If you think you could make anything you see here a bit better then become one of <a href="/gef-docs/contributors/">our lovely contributors</a>!
                         </p>
                     </div>
                 </aside>
@@ -415,17 +321,17 @@ title: Action dialogs
 
     <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
 
-
+    
 
     <script type="text/javascript">
         new Sticky('.sticky');
-        new MenuSpy(document.querySelector('#gefdocs-toc__links'), { enableLocationHash: false });
+        new MenuSpy(document.querySelector('#gefdocs-toc__links'), {enableLocationHash: false});
         new SweetScroll({
             trigger: '#gefdocs-toc__links a',
             quickMode: true,
             easing: 'easeOutExpo',
             cancellable: true,
-            updateURL: false,
+            updateURL: false, 
         });
     </script>
 </body>

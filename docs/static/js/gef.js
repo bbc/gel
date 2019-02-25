@@ -862,11 +862,11 @@
  * @method gef.Tabs.init
  */
 
-(function () {
+(function() {
   if (!window.gef) { window.gef = {}; }
   var self = gef.Tabs = {};
-
-  self.init = function () {
+  
+  self.init = function() {
     var tabInterfaces = document.querySelectorAll('.gef-tabs');
     Array.prototype.forEach.call(tabInterfaces, function (tabInterface) {
       var tablist = tabInterface.querySelector('ul');
