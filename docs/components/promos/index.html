@@ -258,21 +258,19 @@
 }
 </code></pre>
 <p>The appearance of each promo is improved by distributing the metadata (if present) to the bottom of the container. This is possible by making the <strong>Promo</strong> and its nested <code>class=&quot;gef-promo-content&quot;</code> element Flexbox contexts and giving the metadata element <code>margin-top: auto</code>.</p>
-<pre class="hljs"><code>@<span class="hljs-keyword">supports</span> (display: flex) {
-  <span class="hljs-selector-class">.gef-promo</span> {
-    <span class="hljs-attribute">display</span>: flex;
-    <span class="hljs-attribute">flex-direction</span>: column;
-  }
-  
-  <span class="hljs-selector-class">.gef-promo-content</span> {
-    <span class="hljs-attribute">flex-grow</span>: <span class="hljs-number">1</span>;
-    <span class="hljs-attribute">display</span>: flex;
-    <span class="hljs-attribute">flex-direction</span>: column;
-  }
-  
-  <span class="hljs-selector-class">.gef-promo-content</span> <span class="hljs-selector-class">.gef-metadata-strip</span> {
-    <span class="hljs-attribute">margin-top</span>: auto;
-  }
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-promo</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: column;
+}
+
+<span class="hljs-selector-class">.gef-promo-content</span> {
+  <span class="hljs-attribute">flex-grow</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: column;
+}
+
+<span class="hljs-selector-class">.gef-promo-content</span> <span class="hljs-selector-class">.gef-metadata-strip</span> {
+  <span class="hljs-attribute">margin-top</span>: auto;
 }
 </code></pre>
 <h3 id="the-image">The image</h3>

@@ -70,6 +70,7 @@ This basic layout uses `inline-block` and enhances to a Flexbox context using `@
 
 ```css
 .gef-carousel-list {
+  display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -77,7 +78,8 @@ This basic layout uses `inline-block` and enhances to a Flexbox context using `@
 }
 
 .gef-carousel-list > li {
-  display: inline-block;
+  display: flex;
+  flex-shrink: 0;
   white-space: normal;
   width: 266px; /* standard Promo width */
   transition: opacity 0.5s linear;
@@ -85,18 +87,6 @@ This basic layout uses `inline-block` and enhances to a Flexbox context using `@
 
 .gef-carousel-list > li + li {
   margin-left: 1rem;
-}
-
-@supports (display: flex) {
-  .gef-carousel-list {
-    display: flex;
-    white-space: normal;
-  }
-
-  .gef-carousel-list > li {
-    display: flex;
-    flex-shrink: 0;
-  }
 }
 ```
 

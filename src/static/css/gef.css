@@ -601,19 +601,17 @@ svg + .gef-promo-indicator-text {
 
 .gef-carousel-list {
   display: flex;
-  white-space: normal;
   list-style: none;
   padding: 0;
   margin: 0;
   white-space: nowrap; }
 
 .gef-carousel-list > li {
-  display: inline-block;
+  display: flex;
+  flex-shrink: 0;
   white-space: normal;
   width: 266px;
-  transition: opacity 0.5s linear;
-  display: flex;
-  flex-shrink: 0; }
+  transition: opacity 0.5s linear; }
 
 .gef-carousel-list > li + li {
   margin-left: 1rem; }
@@ -1458,8 +1456,6 @@ of 'open all' and 'close all' tools
   margin: -0.125rem; }
 
 .gef-sharetools-options > li {
-  display: inline-block;
-  /* fallback for Flexbox being unsupported */
   margin: 0.125rem; }
 
 .gef-sharetools-link-input {

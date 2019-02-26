@@ -201,21 +201,19 @@ A group of Promos in a set should share the same height. This is possible by mak
 The appearance of each promo is improved by distributing the metadata (if present) to the bottom of the container. This is possible by making the **Promo** and its nested `class="gef-promo-content"` element Flexbox contexts and giving the metadata element `margin-top: auto`.
 
 ```css
-@supports (display: flex) {
-  .gef-promo {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .gef-promo-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .gef-promo-content .gef-metadata-strip {
-    margin-top: auto;
-  }
+.gef-promo {
+  display: flex;
+  flex-direction: column;
+}
+
+.gef-promo-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.gef-promo-content .gef-metadata-strip {
+  margin-top: auto;
 }
 ```
 

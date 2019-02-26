@@ -221,13 +221,16 @@
   <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(180deg);
 }
 </code></pre>
-<p>Some margin is added to the left of the SVG to separate it from the button's text. Where CSS Flexbox is supported, the text appears on the left of the button and the SVG on the right (thanks to <code>justify-content: space-between</code>). Where Flexbox is not available, the icon simply appears directly after the wording. The <code>@supports</code> CSS at-rule<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> is used to progressively enhance the layout.</p>
-<pre class="hljs"><code>@<span class="hljs-keyword">supports</span> (display: flex) {
-  <span class="hljs-selector-class">.gef-accordion-handle</span> <span class="hljs-selector-tag">button</span> {
-    <span class="hljs-attribute">display</span>: flex;
-    <span class="hljs-attribute">justify-content</span>: space-between;
-    <span class="hljs-attribute">align-items</span>: center;
-  }
+<p>The text appears on the left of the button and the SVG on the right (thanks to <code>justify-content: space-between</code>). Some margin is added to the left of the SVG to separate it from the button's text. The <code>flex-shrink: 0</code> declaration prevents the SVG from erroneously becoming proportionately narrower when the total space is diminished.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-accordion-handle</span> <span class="hljs-selector-tag">button</span> {
+	<span class="hljs-attribute">display</span>: flex;
+	<span class="hljs-attribute">justify-content</span>: space-between;
+	<span class="hljs-attribute">align-items</span>: center;
+}
+
+<span class="hljs-selector-class">.gef-accordion-handle</span> <span class="hljs-selector-tag">svg</span> {
+  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">0.5rem</span>;
+  <span class="hljs-attribute">flex-shrink</span>: <span class="hljs-number">0</span>;
 }
 </code></pre>
 <h3 id="high-contrast">High contrast</h3>
@@ -236,7 +239,7 @@
 <h2 id="recommended-behaviour">Recommended behaviour</h2>
 <p>An accordion designed with progressive enhancement offers pre-rendered structured content, expanded and available by default where JavaScript is not available. The <a href="#reference-implementation">Reference implementation</a> wraps and hides each accordion item's content, and provides a button to each item for toggling the expanded/collapsed state.</p>
 <p>The virtue of accordion interaction is in its simplicity. As someone browses the page, instead of encountering lots of content through which they have to scroll, they encounter buttons to reveal content. If a button's label piques their interest, they can press the handle/button to reveal the content (secreted in a 'drawer' below that button).</p>
-<p>Each button simply toggles the display (and availability to assistive technologies) of its associated content (the 'drawer'). The toggle button's state is communicated to screen readers with <code>aria-expanded</code><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. This is how it is implemented in the <a href="#reference-implementation">Reference implementation</a>:</p>
+<p>Each button simply toggles the display (and availability to assistive technologies) of its associated content (the 'drawer'). The toggle button's state is communicated to screen readers with <code>aria-expanded</code><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. This is how it is implemented in the <a href="#reference-implementation">Reference implementation</a>:</p>
 <pre class="hljs"><code><span class="hljs-comment">// The open method</span>
 self.constructor.prototype.open = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">section</span>) </span>{
 	section.button.setAttribute(<span class="hljs-string">'aria-expanded'</span>, <span class="hljs-string">'true'</span>);
@@ -249,7 +252,7 @@ self.constructor.prototype.close = <span class="hljs-function"><span class="hljs
 	section.drawer.hidden = <span class="hljs-literal">true</span>;
 }
 </code></pre>
-<p>Each accordion item's handle immediately precedes its drawer. In the open/expanded state this makes it trivial and intuitive for the user to 'reach' the drawer's content. Some implementations include <code>aria-controls</code> to reference the controlled (drawer) element. Thanks to the proximate source order this is not necessary. Be aware that <code>aria-controls</code> is only supported in JAWS at the time of writing<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>.</p>
+<p>Each accordion item's handle immediately precedes its drawer. In the open/expanded state this makes it trivial and intuitive for the user to 'reach' the drawer's content. Some implementations include <code>aria-controls</code> to reference the controlled (drawer) element. Thanks to the proximate source order this is not necessary. Be aware that <code>aria-controls</code> is only supported in JAWS at the time of writing<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>.</p>
 <p>The reference implementation includes two further methods: <code>openAll</code> and <code>closeAll</code>. These allow you to implement buttons for opening or closing every accordion item simultaneously.</p>
 <pre class="hljs"><code><span class="hljs-comment">// Support for opening all the drawers at once</span>
 <span class="hljs-keyword">var</span> openAllButton = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'openAll'</span>);
@@ -266,7 +269,7 @@ closeAllButton.addEventListener(<span class="hljs-string">'click'</span>, <span 
 <p>The <code>closeAll</code> functionality can be particularly useful for people who have opened a number of items one after the other, and are subsequently finding it easy to get lost among the expanded content.</p>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-automatic-collapsing-of-items">
-              <h4 id="aside-alert-automatic-collapsing-of-items" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Automatic collapsing of items</h4><div><p>It is not recommended that expanding one accordion item results in collapsing another. If a user has opened an item, it is assumed they want it to remain open. It is possible they wish to refer between two or more open items. Always place the user in control and do not make assumptions about their needs<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>.</p>
+              <h4 id="aside-alert-automatic-collapsing-of-items" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Automatic collapsing of items</h4><div><p>It is not recommended that expanding one accordion item results in collapsing another. If a user has opened an item, it is assumed they want it to remain open. It is possible they wish to refer between two or more open items. Always place the user in control and do not make assumptions about their needs<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>.</p>
 </aside><h3 id="page-fragments">Page fragments</h3>
 <p>Sometimes it's beneficial to identify page sections with <code>id</code>s, so that links to those specific page fragments can be shared. The following implementation ensures that JavaScript enhancement does not break this basic browser behaviour.</p>
 <p>On both the <code>DOMContentLoaded</code> and <code>hashchange</code> events, if an accordion item—or any element inside an accordion item—has the <code>id</code> that matches the page's hash, that item is entered into its open state and it (or the matching element it contains) is focused.</p>
@@ -367,13 +370,11 @@ title: Accordions
 </li>
 <li id="fn2" class="footnote-item"><p>The Second Rule Of ARIA Use — W3C, <a href="https://www.w3.org/TR/using-aria/#second">https://www.w3.org/TR/using-aria/#second</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn3" class="footnote-item"><p><code>@supports</code> — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@supports">https://developer.mozilla.org/en-US/docs/Web/CSS/@supports</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+<li id="fn3" class="footnote-item"><p><code>aria-expanded</code> (state) — W3C, <a href="https://www.w3.org/TR/wai-aria-1.0/states_and_properties#aria-expanded">https://www.w3.org/TR/wai-aria-1.0/states_and_properties#aria-expanded</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn4" class="footnote-item"><p><code>aria-expanded</code> (state) — W3C, <a href="https://www.w3.org/TR/wai-aria-1.0/states_and_properties#aria-expanded">https://www.w3.org/TR/wai-aria-1.0/states_and_properties#aria-expanded</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+<li id="fn4" class="footnote-item"><p><code>aria-controls</code> Is Poop — <a href="http://heydonworks.com">heydonworks.com</a>, <a href="http://www.heydonworks.com/article/aria-controls-is-poop">http://www.heydonworks.com/article/aria-controls-is-poop</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn5" class="footnote-item"><p><code>aria-controls</code> Is Poop — <a href="http://heydonworks.com">heydonworks.com</a>, <a href="http://www.heydonworks.com/article/aria-controls-is-poop">http://www.heydonworks.com/article/aria-controls-is-poop</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn6" class="footnote-item"><p>Give Control — Inclusive Design Principles,  <a href="https://inclusivedesignprinciples.org/#give-control">https://inclusivedesignprinciples.org/#give-control</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+<li id="fn5" class="footnote-item"><p>Give Control — Inclusive Design Principles,  <a href="https://inclusivedesignprinciples.org/#give-control">https://inclusivedesignprinciples.org/#give-control</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>

@@ -161,6 +161,7 @@
 </ol>
 <p>This basic layout uses <code>inline-block</code> and enhances to a Flexbox context using <code>@supports</code>. The advantage of Flexbox is that its stretching algorithm makes each of the items (<strong>Promos</strong> in the <a href="#reference-implementation">Reference implementation</a>) the same height.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gef-carousel-list</span> {
+  <span class="hljs-attribute">display</span>: flex;
   <span class="hljs-attribute">list-style</span>: none;
   <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
   <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
@@ -168,7 +169,8 @@
 }
 
 <span class="hljs-selector-class">.gef-carousel-list</span> &gt; <span class="hljs-selector-tag">li</span> {
-  <span class="hljs-attribute">display</span>: inline-block;
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-shrink</span>: <span class="hljs-number">0</span>;
   <span class="hljs-attribute">white-space</span>: normal;
   <span class="hljs-attribute">width</span>: <span class="hljs-number">266px</span>; <span class="hljs-comment">/* standard Promo width */</span>
   <span class="hljs-attribute">transition</span>: opacity <span class="hljs-number">0.5s</span> linear;
@@ -176,18 +178,6 @@
 
 <span class="hljs-selector-class">.gef-carousel-list</span> &gt; <span class="hljs-selector-tag">li</span> + <span class="hljs-selector-tag">li</span> {
   <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">1rem</span>;
-}
-
-@<span class="hljs-keyword">supports</span> (display: flex) {
-  <span class="hljs-selector-class">.gef-carousel-list</span> {
-    <span class="hljs-attribute">display</span>: flex;
-    <span class="hljs-attribute">white-space</span>: normal;
-  }
-
-  <span class="hljs-selector-class">.gef-carousel-list</span> &gt; <span class="hljs-selector-tag">li</span> {
-    <span class="hljs-attribute">display</span>: flex;
-    <span class="hljs-attribute">flex-shrink</span>: <span class="hljs-number">0</span>;
-  }
 }
 </code></pre>
 <p>On some operating systems, the horizontal scrollbar is not visible by default, meaning the scrollable container lacks perceived affordance<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>. It's possible to reveal the scrollbar in webkit browsers by giving them a custom styling:</p>

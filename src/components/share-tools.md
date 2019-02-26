@@ -75,23 +75,19 @@ As set out in [GEL's **Share tools** documentation](https://www.bbc.co.uk/gel/gu
 
 ### The horizontal list
 
-The `<ul>` of tools appears directly after the heading (`role="presentation"`) element. Where Flexbox is supported, the items receive a margin on all sides, meaning there is a visible gap between items however they wrap. The excess margin is removed using a negative margin on the parent `<ul>`. This ensures the subcomponent does not show an indentation on either side.
+The `<ul>` of tools appears directly after the heading (`role="presentation"`) element. The items receive a margin on all sides, meaning there is a visible gap between items however they wrap. The excess margin is removed using a negative margin on the parent `<ul>`. This ensures the subcomponent does not show an indentation on either side.
 
 ```css
-@supports (display: flex) {
-  .gef-sharetools-options {
-    display: flex;
-    flex-wrap: wrap;
-    margin: -0.125rem; /* excess margin removed */
-  }
+.gef-sharetools-options {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.125rem; /* excess margin removed */
+}
 
-  .gef-sharetools-options > li {
-    margin: 0.125rem; /* margin added */
-  }
+.gef-sharetools-options > li {
+  margin: 0.125rem; /* margin added */
 }
 ```
-
-Where Flexbox is not supported, the items are placed in a horizontal configuration using `display: inline-block`. In this scenario, the inherited word spacing between items separates them horizontally.
 
 ### The skip link
 

@@ -161,20 +161,17 @@
 </ul>
 <h2 id="recommended-layout">Recommended layout</h2>
 <h3 id="the-horizontal-list">The horizontal list</h3>
-<p>The <code>&lt;ul&gt;</code> of tools appears directly after the heading (<code>role=&quot;presentation&quot;</code>) element. Where Flexbox is supported, the items receive a margin on all sides, meaning there is a visible gap between items however they wrap. The excess margin is removed using a negative margin on the parent <code>&lt;ul&gt;</code>. This ensures the subcomponent does not show an indentation on either side.</p>
-<pre class="hljs"><code>@<span class="hljs-keyword">supports</span> (display: flex) {
-  <span class="hljs-selector-class">.gef-sharetools-options</span> {
-    <span class="hljs-attribute">display</span>: flex;
-    <span class="hljs-attribute">flex-wrap</span>: wrap;
-    <span class="hljs-attribute">margin</span>: -<span class="hljs-number">0.125rem</span>; <span class="hljs-comment">/* excess margin removed */</span>
-  }
+<p>The <code>&lt;ul&gt;</code> of tools appears directly after the heading (<code>role=&quot;presentation&quot;</code>) element. The items receive a margin on all sides, meaning there is a visible gap between items however they wrap. The excess margin is removed using a negative margin on the parent <code>&lt;ul&gt;</code>. This ensures the subcomponent does not show an indentation on either side.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-sharetools-options</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-wrap</span>: wrap;
+  <span class="hljs-attribute">margin</span>: -<span class="hljs-number">0.125rem</span>; <span class="hljs-comment">/* excess margin removed */</span>
+}
 
-  <span class="hljs-selector-class">.gef-sharetools-options</span> &gt; <span class="hljs-selector-tag">li</span> {
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0.125rem</span>; <span class="hljs-comment">/* margin added */</span>
-  }
+<span class="hljs-selector-class">.gef-sharetools-options</span> &gt; <span class="hljs-selector-tag">li</span> {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0.125rem</span>; <span class="hljs-comment">/* margin added */</span>
 }
 </code></pre>
-<p>Where Flexbox is not supported, the items are placed in a horizontal configuration using <code>display: inline-block</code>. In this scenario, the inherited word spacing between items separates them horizontally.</p>
 <h3 id="the-skip-link">The skip link</h3>
 <p>The skip link (<em>&quot;Skip sharing&quot;</em>) takes the classes <code>gef-sr</code> and <code>gef-sr__focusable</code>. The first hides the link visually, but does not remove it from focus order. The second ensures the link appears <em>when</em> it is focused. Only keyboard users (including screen reader users) will be aware of the link.</p>
 <h3 id="the-information-panel">The Information panel</h3>

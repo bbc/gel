@@ -144,15 +144,18 @@ The `gel-icon-down` arrow must point downwards in the closed (`aria-expanded="fa
 }
 ```
 
-Some margin is added to the left of the SVG to separate it from the button's text. Where CSS Flexbox is supported, the text appears on the left of the button and the SVG on the right (thanks to `justify-content: space-between`). Where Flexbox is not available, the icon simply appears directly after the wording. The `@supports` CSS at-rule[^3] is used to progressively enhance the layout.
+The text appears on the left of the button and the SVG on the right (thanks to `justify-content: space-between`). Some margin is added to the left of the SVG to separate it from the button's text. The `flex-shrink: 0` declaration prevents the SVG from erroneously becoming proportionately narrower when the total space is diminished.
 
 ```css
-@supports (display: flex) {
-  .gef-accordion-handle button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.gef-accordion-handle button {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.gef-accordion-handle svg {
+  margin-left: 0.5rem;
+  flex-shrink: 0;
 }
 ```
 

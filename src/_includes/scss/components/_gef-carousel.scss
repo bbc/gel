@@ -29,7 +29,6 @@
 
 .gef-carousel-list {
   display: flex;
-  white-space: normal;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -37,12 +36,11 @@
 }
 
 .gef-carousel-list > li {
-  display: inline-block;
+  display: flex;
+  flex-shrink: 0;
   white-space: normal;
   width: 266px;
   transition: opacity 0.5s linear;
-  display: flex;
-  flex-shrink: 0;
 }
 
 .gef-carousel-list > li + li {
