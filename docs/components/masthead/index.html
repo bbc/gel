@@ -29,7 +29,7 @@
             (new FontFaceObserver('ReithSerif', 5000)).load().then(function () {
                 document.documentElement.className += ' b-reith-loaded';
             });
-        } catch( e ) {
+        } catch (e) {
             console.log('Reith fonts did not load within 5 seconds.');
         }
     </script>
@@ -111,8 +111,7 @@
                 <h2 id="introduction">Introduction</h2>
 <p>The <strong>Masthead</strong> is an essential component for each of the pages of any BBC site. In order to be considered robust, it needs to work under a number of different circumstances:</p>
 <ol>
-<li><strong>No JavaScript or Flexbox:</strong> The functionality must be available to users whose browsers are not running JavaScript and do not support CSS Flexbox.</li>
-<li><strong>JavaScript but no Flexbox:</strong> The functionality must be available to users whose browsers <em>are</em> running JavaScript but for whom Flexbox is not supported.</li>
+<li><strong>No JavaScript:</strong> The functionality must be available to users whose browsers are not running JavaScript</li>
 <li><strong>JavaScript but no <code>IntersectionObserver</code>:</strong> The <code>IntersectionObserver</code> API is the most efficient way to allot a suitable number of promoted navigation links within the available space. These links must still be available where the browser does not support <code>IntersectionObserver</code>.</li>
 </ol>
 <p>A number of responsive design and progressive enhancement techniques are employed to make the <strong>Masthead</strong> as inclusive as possible.</p>
@@ -190,7 +189,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<p>These are the main navigation options, grouped within a list so that screen reader software identifies them as related (and mutually exclusive) and numerates them<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. They each pertain to a BBC site, and this is identified by an auxiliary group label provided to the list element via a hidden <code>&lt;span&gt;</code>. In the absence of either Flexbox or JavaScript, the More menu offers a complete list of links. It's important, therefore, that each of these links is also available in the More menu.</p>
+<p>These are the main navigation options, grouped within a list so that screen reader software identifies them as related (and mutually exclusive) and numerates them<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. They each pertain to a BBC site, and this is identified by an auxiliary group label provided to the list element via a hidden <code>&lt;span&gt;</code>. In the absence of JavaScript, the More menu offers a complete list of links. It's important, therefore, that each of these links is also available in the More menu.</p>
 <h4 id="the-more-link">The more link</h4>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-masthead-more-option"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#gef-masthead-more"</span>&gt;</span>
@@ -239,7 +238,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<p>This contains the priority/promoted links and more. The account link is revealed under circumstances where JavaScript has not run or Flexbox is not supported, which would mean the links in the bar above are hidden and not available.</p>
+<p>This contains the priority/promoted links and more. The account link is revealed under circumstances where JavaScript has not run, which would mean the links in the bar above are hidden and not available.</p>
 <p>Note the <code>&lt;h2&gt;</code> heading. This is hidden from assistive technologies but used as a visual label. It becomes the group label for the list via <code>aria-labelledby</code>.</p>
 <h4 id="the-notifications-element">The notifications element</h4>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-masthead-alerts gef-masthead-popup"</span>&gt;</span>
@@ -271,11 +270,11 @@
 </code></pre>
 <p>The banner contains the logo for the local site. This logo is also the home page link and contains the accessible label <em>&quot;BBC [local site name] homepage&quot;</em>.</p>
 <h2 id="recommended-layout">Recommended layout</h2>
-<p>Where Flexbox is available, the global navigation bar is responsive by own of three means:</p>
+<p>The global navigation bar is responsive by own of three means:</p>
 <ol>
 <li>The priority/promoted links container has <code>overflow: hidden</code> and <code>IntersectionObserver</code> hides any links that do not intersect sufficiently with <code>visibility: hidden</code>.</li>
 <li>Where <code>IntersectionObserver</code> is not supported, the priority/promoted links container is set to <code>overflow-x: auto</code>. This allows the user to scroll links into view.</li>
-<li>Where there's no JavaScript or no Flexbox available, the More menu (containing the priority links and more) is revealed by default and the priority links become hidden. Links within the More menu wrap automatically.</li>
+<li>Where there's no JavaScript, the More menu (containing the priority links and more) is revealed by default and the priority links become hidden. Links within the More menu wrap automatically.</li>
 </ol>
 <h3 id="icons">Icons</h3>
 <p>The icons are taken from the standard <a href="http://bbc.github.io/gel-iconography/">GEL Iconography library</a>. To ensure they adopt the appropriate color via <code>currentColor</code>, the parent sometimes needs to explicitly inherit the context's <code>color</code></p>
@@ -463,7 +462,7 @@ title: Masthead
       <span class="gef-sr">
         BBC gef homepage
       </span>
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 1101.9 202.4">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 478.2 165.8">
         <use xlink:href="/gef-docs/static/images/gef-logo.svg#gef-logo"></use>
       </svg>
     </a>
@@ -502,11 +501,14 @@ title: Masthead
 
                 <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
                     <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
-                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Could you improve this documentation?
+                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
+                            <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use>
+                        </svg>Could you improve this documentation?
                     </h4>
                     <div>
                         <p>
-                        If you think you could make anything you see here a bit better then become one of <a href="/gef-docs/contributors/">our lovely contributors</a>!
+                            If you think you could make anything you see here a bit better then become one of <a href="/gef-docs/contributors/">our
+                                lovely contributors</a>!
                         </p>
                     </div>
                 </aside>
@@ -535,19 +537,20 @@ title: Masthead
         </div>
     </div>
 
+    <script nomodule defer type="text/javascript" src="/gef-docs/static/js/external-svg-polyfill.js"></script>
     <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
 
     
 
     <script type="text/javascript">
         new Sticky('.sticky');
-        new MenuSpy(document.querySelector('#gefdocs-toc__links'), {enableLocationHash: false});
+        new MenuSpy(document.querySelector('#gefdocs-toc__links'), { enableLocationHash: false });
         new SweetScroll({
             trigger: '#gefdocs-toc__links a',
             quickMode: true,
             easing: 'easeOutExpo',
             cancellable: true,
-            updateURL: false, 
+            updateURL: false,
         });
     </script>
 </body>

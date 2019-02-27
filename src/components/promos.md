@@ -201,21 +201,19 @@ A group of Promos in a set should share the same height. This is possible by mak
 The appearance of each promo is improved by distributing the metadata (if present) to the bottom of the container. This is possible by making the **Promo** and its nested `class="gef-promo-content"` element Flexbox contexts and giving the metadata element `margin-top: auto`.
 
 ```css
-@supports (display: flex) {
-  .gef-promo {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .gef-promo-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .gef-promo-content .gef-metadata-strip {
-    margin-top: auto;
-  }
+.gef-promo {
+  display: flex;
+  flex-direction: column;
+}
+
+.gef-promo-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.gef-promo-content .gef-metadata-strip {
+  margin-top: auto;
 }
 ```
 
@@ -233,7 +231,14 @@ The image will need to fit the available space, regardless of the Promo's dimens
 ```
 
 ::: info Support for object-fit
-At the time of writing, the `object-fit` property is supported everywhere but Internet Explorer[^5]. The code uses `@supports` and falls back to showing the image at its natural width, cropping the right edge or leaving a right margin.
+At the time of writing, the `object-fit` property is supported everywhere but Internet Explorer. The code uses `@supports` and falls back to a 'letterboxed' style using `text-align: center` and a `background-color`:
+
+```css
+.gef-promo-image {
+  text-align: center;
+  background-color: $gel-color--tundora; 
+}
+```
 :::
 
 ### Horizontal promos

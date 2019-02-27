@@ -29,7 +29,7 @@
             (new FontFaceObserver('ReithSerif', 5000)).load().then(function () {
                 document.documentElement.className += ' b-reith-loaded';
             });
-        } catch( e ) {
+        } catch (e) {
             console.log('Reith fonts did not load within 5 seconds.');
         }
     </script>
@@ -161,24 +161,24 @@
 </ul>
 <h2 id="recommended-layout">Recommended layout</h2>
 <h3 id="the-horizontal-list">The horizontal list</h3>
-<p>The <code>&lt;ul&gt;</code> of tools appears directly after the heading (<code>role=&quot;presentation&quot;</code>) element. Where Flexbox is supported, the items receive a margin on all sides, meaning there is a visible gap between items however they wrap. The excess margin is removed using a negative margin on the parent <code>&lt;ul&gt;</code>. This ensures the subcomponent does not show an indentation on either side.</p>
-<pre class="hljs"><code>@<span class="hljs-keyword">supports</span> (display: flex) {
-  <span class="hljs-selector-class">.gef-sharetools-options</span> {
-    <span class="hljs-attribute">display</span>: flex;
-    <span class="hljs-attribute">flex-wrap</span>: wrap;
-    <span class="hljs-attribute">margin</span>: -<span class="hljs-number">0.125rem</span>; <span class="hljs-comment">/* excess margin removed */</span>
-  }
+<p>The <code>&lt;ul&gt;</code> of tools appears directly after the heading (<code>role=&quot;presentation&quot;</code>) element. The items receive a margin on all sides, meaning there is a visible gap between items however they wrap. The excess margin is removed using a negative margin on the parent <code>&lt;ul&gt;</code>. This ensures the subcomponent does not show an indentation on either side.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-sharetools-options</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-wrap</span>: wrap;
+  <span class="hljs-attribute">margin</span>: -<span class="hljs-number">0.125rem</span>; <span class="hljs-comment">/* excess margin removed */</span>
+}
 
-  <span class="hljs-selector-class">.gef-sharetools-options</span> &gt; <span class="hljs-selector-tag">li</span> {
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0.125rem</span>; <span class="hljs-comment">/* margin added */</span>
-  }
+<span class="hljs-selector-class">.gef-sharetools-options</span> &gt; <span class="hljs-selector-tag">li</span> {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0.125rem</span>; <span class="hljs-comment">/* margin added */</span>
 }
 </code></pre>
-<p>Where Flexbox is not supported, the items are placed in a horizontal configuration using <code>display: inline-block</code>. In this scenario, the inherited word spacing between items separates them horizontally.</p>
 <h3 id="the-skip-link">The skip link</h3>
 <p>The skip link (<em>&quot;Skip sharing&quot;</em>) takes the classes <code>gef-sr</code> and <code>gef-sr__focusable</code>. The first hides the link visually, but does not remove it from focus order. The second ensures the link appears <em>when</em> it is focused. Only keyboard users (including screen reader users) will be aware of the link.</p>
 <h3 id="the-information-panel">The Information panel</h3>
 <p>The expected layout of the <strong>Information panel</strong> is documented with the <a href="../info-panel"><strong>Information panel</strong> component</a>.</p>
+<h3 id="high-contrast">High contrast</h3>
+<p>How the component looks with a <a href="https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode">Windows High Contrast Mode</a> theme active.</p>
+<p><img src="/gef-docs/static/images/hcm_share_tools.png" alt="Borders make the buttons visible"></p>
 <h2 id="recommended-behaviour">Recommended behaviour</h2>
 <p><strong>Share tools</strong> consists of a list of external links, which open social media platforms' respective pages in new tabs. As described in <a href="#expected-markup">Expected markup</a>, screen reader users are forewarned about this change in context by each link's visually hidden label being appended with <em>&quot;external&quot;</em>.</p>
 <p>Keyboard users (including screen reader users) traversing the page will first encounter the skip link (reading <em>&quot;Skip sharing&quot;</em> in the reference implementation). This link will be revealed visually upon being focused. Users wishing to bypass the <strong>Share tools</strong> can activate the link. Screen reader users will hear <em>&quot;End of sharing tools&quot;</em> as the target element is focused. Sighted keyboard users will see the focused element appear, including the focus style. From there, the user can continue down the page, focusing the remainder of interactive elements sequentially.</p>
@@ -342,11 +342,14 @@ title: Share tools
 
                 <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
                     <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
-                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Could you improve this documentation?
+                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
+                            <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use>
+                        </svg>Could you improve this documentation?
                     </h4>
                     <div>
                         <p>
-                        If you think you could make anything you see here a bit better then become one of <a href="/gef-docs/contributors/">our lovely contributors</a>!
+                            If you think you could make anything you see here a bit better then become one of <a href="/gef-docs/contributors/">our
+                                lovely contributors</a>!
                         </p>
                     </div>
                 </aside>
@@ -375,19 +378,20 @@ title: Share tools
         </div>
     </div>
 
+    <script nomodule defer type="text/javascript" src="/gef-docs/static/js/external-svg-polyfill.js"></script>
     <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
 
     
 
     <script type="text/javascript">
         new Sticky('.sticky');
-        new MenuSpy(document.querySelector('#gefdocs-toc__links'), {enableLocationHash: false});
+        new MenuSpy(document.querySelector('#gefdocs-toc__links'), { enableLocationHash: false });
         new SweetScroll({
             trigger: '#gefdocs-toc__links a',
             quickMode: true,
             easing: 'easeOutExpo',
             cancellable: true,
-            updateURL: false, 
+            updateURL: false,
         });
     </script>
 </body>

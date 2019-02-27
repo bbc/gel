@@ -29,7 +29,7 @@
             (new FontFaceObserver('ReithSerif', 5000)).load().then(function () {
                 document.documentElement.className += ' b-reith-loaded';
             });
-        } catch( e ) {
+        } catch (e) {
             console.log('Reith fonts did not load within 5 seconds.');
         }
     </script>
@@ -190,25 +190,7 @@
 <li>A mere repetition of the headline</li>
 </ol>
 <p>Instead, describe what is in the photograph and what makes it relevant.</p>
-<p>To ensure the image has the best chance of fitting within the given space without distorting, it is recommended you use the <code>object-fit</code> property as a progressive enhancement. In the following example, the height of the content area has been set to <code>10rem</code> and the width is assumed to be indeterminate/responsive.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-card-content</span> <span class="hljs-selector-tag">img</span>,
-<span class="hljs-selector-class">.gef-card-content</span> <span class="hljs-selector-tag">video</span> {
-  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
-  <span class="hljs-attribute">width</span>: auto;
-}
-
-@<span class="hljs-keyword">supports</span> (object-fit: cover) {
-  <span class="hljs-selector-class">.gef-card-content</span> <span class="hljs-selector-tag">img</span>, 
-  <span class="hljs-selector-class">.gef-card-content</span> <span class="hljs-selector-tag">video</span> {
-    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
-    <span class="hljs-attribute">object-fit</span>: cover;
-  }
-}
-</code></pre>
-
-            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-object-fit-support">
-              <h4 id="aside-info-object-fit-support" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Object-fit support</h4><div><p>At the time of writing, the <code>object-fit</code> property is supported everywhere but Internet Explorer. The code uses <code>@supports</code> and falls back to showing the image at its natural width, cropping the right edge or leaving a right margin.</p>
-</aside><h4 id="a-video">A video</h4>
+<h4 id="a-video">A video</h4>
 <p>If a video is provided, ensure the following:</p>
 <ol>
 <li>The video does not auto-play<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></li>
@@ -226,44 +208,40 @@
 <h2 id="recommended-layout">Recommended layout</h2>
 <p>The minimum width for a card is <code>266px</code>. A set of cards can appear within a grid formation or as the content of a carousel component.</p>
 <h3 id="grid-formation">Grid formation</h3>
-<p>The most efficient way to arrange cards into a grid is to use the CSS Grid module. You must ensure that a fallback layout is in place where CSS Grid is not supported. In the following example, the fallback displays the cards at full width, with a margin of <code>1rem</code> between each card. This is superceded by <code>grid-gap</code> where Grid is available.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-cards</span> &gt; * + * {
-  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">1rem</span>;
+<p>The most efficient way to arrange cards into a grid is to use the CSS Grid module. You must ensure that a fallback layout is in place where CSS Grid is not supported. In the following code, Flexbox provides that fallback.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-cards</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-wrap</span>: wrap;
 }
 
-<span class="hljs-selector-class">.gef-card</span> {
-  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#F1F1F1</span>;
-  <span class="hljs-attribute">position</span>: relative;
-}
-
-<span class="hljs-selector-class">.gef-card-content</span> {
-  <span class="hljs-attribute">position</span>: relative;
-  <span class="hljs-attribute">overflow</span>: hidden;
-  <span class="hljs-attribute">height</span>: <span class="hljs-number">10rem</span>;
+<span class="hljs-selector-class">.gef-cards</span> &gt; * {
+  <span class="hljs-attribute">flex</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">266px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">1rem</span> <span class="hljs-number">1rem</span> <span class="hljs-number">0</span>;
 }
 
 @<span class="hljs-keyword">supports</span> (display: grid) {
-  <span class="hljs-selector-class">.gef-cards</span> &gt; * + * {
-    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">0</span>;
-  }
-
   <span class="hljs-selector-class">.gef-cards</span> {
     <span class="hljs-attribute">display</span>: grid;
     <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(auto-fill, minmax(266px, 1fr));
     <span class="hljs-attribute">grid-gap</span>: <span class="hljs-number">1rem</span>;
   }
+
+  <span class="hljs-selector-class">.gef-cards</span> &gt; * {
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  }
 }
 </code></pre>
-<h3 id="carousel-formation">Carousel formation</h3>
+
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-ie11-and-flexbox">
+              <h4 id="aside-info-ie11-and-flexbox" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>IE11 and Flexbox</h4><div><p>Internet Explorer 11 supports Flexbox (albeit with a few bugs) but not <code>@supports</code> in CSS. Hence, Flexbox code is not feature detected.</p>
+</aside><h3 id="carousel-formation">Carousel formation</h3>
 <p>To achieve a carousel formation, the containing carousel element needs to have <code>overflow-x: auto</code> and the cards list must not be allowed to wrap. This is best achieved using Flexbox. See <a href="../carousels"><strong>Carousels</strong></a>.</p>
 <h3 id="individual-card-layout">Individual card layout</h3>
 <p>Each card in a set should share the same height, despite content across cards varying in quantity/length. In a Grid or Flexbox context, cards already stretch to fill the container's height. All that remains is to push the card's final child element (usually the toolbar) to the bottom of the card.</p>
 <p>This must <em>not</em> be achieved using absolute positioning, because this is likely to interfere with zoom functionality. Instead, make the card a Flexbox context and give the toolbar element a top margin of <code>auto</code>:</p>
-<pre class="hljs"><code>@<span class="hljs-keyword">supports</span> (display: flex) {
-  <span class="hljs-selector-class">.gef-card</span> {
-    <span class="hljs-attribute">display</span>: flex;
-    <span class="hljs-attribute">flex-direction</span>: column;
-  }
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-card</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: column;
 }
 
 <span class="hljs-selector-class">.gef-card-toolbar</span> {
@@ -275,7 +253,31 @@
   <span class="hljs-attribute">order</span>: -<span class="hljs-number">1</span>;
 }
 </code></pre>
-<h4 id="the-more-info-element">The 'More info' element</h4>
+<h4 id="media-layout">Media layout</h4>
+<p>To ensure the image or video has the best chance of fitting within the given space without distorting, it is recommended you use the <code>object-fit</code> property as a progressive enhancement. In the following example, the height of the content area has been set to <code>10rem</code> and the width is assumed to be indeterminate/responsive.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-card-content</span> <span class="hljs-selector-tag">img</span>,
+<span class="hljs-selector-class">.gef-card-content</span> <span class="hljs-selector-tag">video</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">width</span>: auto;
+}
+
+@<span class="hljs-keyword">supports</span> (object-fit: cover) {
+  <span class="hljs-selector-class">.gef-card-content</span> <span class="hljs-selector-tag">img</span>, 
+  <span class="hljs-selector-class">.gef-card-content</span> <span class="hljs-selector-tag">video</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">object-fit</span>: cover;
+  }
+}
+</code></pre>
+
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-support-for-object-fit">
+              <h4 id="aside-info-support-for-object-fit" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Support for object-fit</h4><div><p>At the time of writing, the <code>object-fit</code> property is supported everywhere but Internet Explorer. The code uses <code>@supports</code> and falls back to a 'letterboxed' style using <code>text-align: center</code> and a <code>background-color</code>:</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-card-content</span> {
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">background-color</span>: $gel-color--tundora; 
+}
+</code></pre>
+</aside><h4 id="the-more-info-element">The 'More info' element</h4>
 <p>This element must be absolutely positioned over the card, which means the card itself must take <code>position: relative</code>. The <code>bottom</code> positioning of the element must match the height of the <code>gef-card-toolbar</code> element so that element is not obscured while the element is visible.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gef-card</span> {
   <span class="hljs-attribute">position</span>: relative;
@@ -294,8 +296,8 @@
 </code></pre>
 <p>Also note <code>overflow-y: auto</code>. This is provided in case the content inside the 'More info' element is taller than its height. Since the element is not allowed to grow, it must be scrollable instead.</p>
 <h3 id="high-contrast">High contrast</h3>
-<p>How the component looks with a <a href="https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode">Windows High Contrast Mode</a> theme active. Transparent borders that become visible in Windows HCM are used to demarcate the <strong>Card</strong> some of its subcomponents. An outline style supplements the <code>background-color</code> focus style that is eliminated.</p>
-<p><img src="/gef-docs/static/images/hcm_cards.png" alt="An outer border demarcates the shape of the card."></p>
+<p>How the component looks with a <a href="https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode">Windows High Contrast Mode</a> theme active. Transparent outlines and borders that become visible in Windows HCM are used to demarcate the <strong>Card</strong> from some of its subcomponents. An outline style supplements the <code>background-color</code> focus style that is eliminated.</p>
+<p><img src="/gef-docs/static/images/hcm_cards.png" alt="An outer outline demarcates the shape of the card."></p>
 <h2 id="recommended-behaviour">Recommended behaviour</h2>
 <p>Aside from the toolbar behaviour, the card's behaviour will depend on the content it houses. See <a href="#card-contents">Card contents</a> for pointers.</p>
 <h3 id="the-more-info-button">The 'More info' button</h3>
@@ -533,11 +535,14 @@ includecss: gelui.css
 
                 <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
                     <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
-                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Could you improve this documentation?
+                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
+                            <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use>
+                        </svg>Could you improve this documentation?
                     </h4>
                     <div>
                         <p>
-                        If you think you could make anything you see here a bit better then become one of <a href="/gef-docs/contributors/">our lovely contributors</a>!
+                            If you think you could make anything you see here a bit better then become one of <a href="/gef-docs/contributors/">our
+                                lovely contributors</a>!
                         </p>
                     </div>
                 </aside>
@@ -566,19 +571,20 @@ includecss: gelui.css
         </div>
     </div>
 
+    <script nomodule defer type="text/javascript" src="/gef-docs/static/js/external-svg-polyfill.js"></script>
     <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
 
     
 
     <script type="text/javascript">
         new Sticky('.sticky');
-        new MenuSpy(document.querySelector('#gefdocs-toc__links'), {enableLocationHash: false});
+        new MenuSpy(document.querySelector('#gefdocs-toc__links'), { enableLocationHash: false });
         new SweetScroll({
             trigger: '#gefdocs-toc__links a',
             quickMode: true,
             easing: 'easeOutExpo',
             cancellable: true,
-            updateURL: false, 
+            updateURL: false,
         });
     </script>
 </body>
