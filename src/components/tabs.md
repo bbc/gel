@@ -21,7 +21,7 @@ The GEL tabs implementation diverges from the ARIA Authoring Practices specifica
 
 ### Initial markup
 
-Where server-side rendering and progressive enhancement are possible, follow this pattern for authoring your tab interface. Where JavaScript runs, this table-of-contents linking to content sections will be enhanced with ARIA attribution.
+Where server-side rendering and progressive enhancement are possible, follow this pattern for authoring your tab interface. Where JavaScript runs, this table-of-contents (linking to the subsequent content sections) will be enhanced with ARIA attribution.
 
 ```html
 <div class="gef-tabs">
@@ -56,7 +56,7 @@ Where server-side rendering and progressive enhancement are possible, follow thi
 * **`<ul>`:** The `<ul>` groups the same-page links together and enumerates them in screen reader output.
 * **links:** Eah link's `href` corresponds to a `<section>` `id`. This capitalizes on standard browser behavior to allow the user to navigate to the `<section>`s without having to depend on JavaScript.
 * **`<section>`**: Some screen readers allow users to navigate between `<section>` ('region') directly, by providing shortcuts. However, it is recommended each `<section>` is also introduced by a heading, since heading shortcuts are a more longstanding mode of navigation.
-* **tabindex="-1":** Each `<section>` takes `tabindex="-1"`. This forces browsers to move focus to the target element / hash fragment when activating a same-page link.
+* **tabindex="-1":** Each `<section>` takes `tabindex="-1"`. This forces browsers to move focus to the target element / hash fragment when activating a same-page link [^4].
 
 ### Enhanced markup
 
@@ -91,7 +91,7 @@ Where server-side rendering and progressive enhancement are possible, follow thi
 #### Notes
 
 * **`role="tablist"`, `role="tab"`, and `role="tabpanel"`:** When JavaScript runs, the tab interface acquires the requisite semantics to be communicated as a tab interface in assistive technology software.
-* **`role="presentation"`:** With `role="tablist"` and `role="tab"` in place, tabs are announced correctly as _"tabs"_ and enumerated. The list semantics is therefore redundant, and `role="presentation"` is used to suppress it.
+* **`role="presentation"`:** With `role="tablist"` and `role="tab"` in place, tabs are announced correctly as _"tabs"_ and enumerated. The list semantics is therefore redundant, and `role="presentation"` is used to suppress it[^5].
 * **`aria-labelledby`:** The tab panels (`<section>`s with `role="tabpanel"`) are labelled by their tabs, so that when a user focuses or enters them, they are assured of their identity and relationship to the interface as a whole. Most screen readers will announce something similar to _"tab panel, section 1"_ when the panel is focused or entered.
 * **`aria-selected="true"` and `hidden`:** The state attribute identifies the tab corresponding to the open/selected panel. All other panels are removed from display (and screen reader output) using the `hidden` property.
 
@@ -149,7 +149,7 @@ Where Windows High Contrast Mode is active, the backgrounds that mark out the ta
 }
 ```
 
-In addition, an `@media` query detecting high contrast mode is used to create an alternative `aria-current` style for the selected tab. It is positioned `2px` down from its natural position. This obscures the line between the tab and panel, making them appear as one.
+In addition, an `@media` query detecting high contrast mode[^7] is used to create an alternative `aria-current` style for the selected tab. It is positioned `2px` down from its natural position. This obscures the line between the tab and panel, making them appear as one.
 
 ```css
 @media (-ms-high-contrast: active) {
@@ -177,7 +177,7 @@ By mouse or touch, clicking or pressing a tab will reveal its corresponding tab 
 
 To preserve the behaviour of the same-page links upon which the tabs are created and to address trouble screen readers have been observed experiencing moving from the tab to the tab panel, clicking a tab programmatically moves focus to the visible tab panel. The tab panel is identified in screen readers as a tab panel, and the tab panel's label (borrowed from the corresponding tab using `aria-labelledby`) is also announced. 
 
-The tab panel is now the sequential focus starting point, making the first interactive element inside (or past) the tab panel next in focus order. However, the tab panel itself is not user focusable (it employs `tabindex="-1"`, not `tabindex="0"`), meaning <kbd>Shift</kbd> + <kbd>Tab</kbd> will take the user directly back to the tab list. Screen readers' 'virtual cursor'[^4] behavior is not augmented or overridden in any way.
+The tab panel is now the sequential focus starting point, making the first interactive element inside (or past) the tab panel next in focus order. However, the tab panel itself is not user focusable (it employs `tabindex="-1"`, not `tabindex="0"`), meaning <kbd>Shift</kbd> + <kbd>Tab</kbd> will take the user directly back to the tab list. Screen readers' 'virtual cursor'[^6] behavior is not augmented or overridden in any way. Non-interactive user-focusable elements (elements with `tabindex="0"`) are usually considered a violation of **WCAG2.1 2.4.3 Focus Order**[^8].
 
 #### Back button support
 
@@ -227,7 +227,11 @@ Accordingly, the implementation described here follows that of version 3, and de
 
 ### Further reading, elsewhere on the Web
 
-[^1]: "Tabs, Used Right" — Nielsen Norman Group, <https://www.nngroup.com/articles/tabs-used-right/>
+[^1]: Tabs, Used Right — Nielsen Norman Group, <https://www.nngroup.com/articles/tabs-used-right/>
 [^2]: Tabs: ARIA Authoring Practices, <https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel>
-[^3]: "Danger! ARIA Tabs", <https://simplyaccessible.com/article/danger-aria-tabs/>
-[^4]: "Reading Commands and Cursors" — Freedom Scientific, <https://doccenter.freedomscientific.com/doccenter/doccenter/rs11f929e9c511/2012-04-24_teachersandtrainers-l7/02_jawsandmagicreadingcommandsandcursors.htm>
+[^3]: Danger! ARIA Tabs — Simply Accessible, <https://simplyaccessible.com/article/danger-aria-tabs/>
+[^4]: In-Page Links and Input Focus — Accessible Culture, <http://accessibleculture.org/articles/2010/05/in-page-links/>
+[^5]: Removing Semantics Using The Presentation Role — Accessibility Developer Guide, <https://www.accessibility-developer-guide.com/examples/sensible-aria-usage/presentation/>
+[^6]: Reading Commands and Cursors — Freedom Scientific, <https://doccenter.freedomscientific.com/doccenter/doccenter/rs11f929e9c511/2012-04-24_teachersandtrainers-l7/02_jawsandmagicreadingcommandsandcursors.htm>
+[^7]: `-ms-high-contrast` @media query — MDN, <https://developer.mozilla.org/en-US/docs/Web/CSS/@media/-ms-high-contrast>
+[^8]: WCAG2.1 2.4.3 Focus Order — W3C, <https://www.w3.org/TR/WCAG21/#focus-order>
