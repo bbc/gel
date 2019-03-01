@@ -42,24 +42,27 @@
       <li><a href="#section2">Section 2</a></li>
       <li><a href="#section3">Section 3</a></li>
     </ul>
-    <section id="section1">
+    <section id="section1" tabindex="-1">
       <h3>Section 1</h3>
       <p>Content for section 1.</p>
     </section>
-    <section id="section2">
+    <section id="section2" tabindex="-1">
       <h3>Section 2</h3>
-      <p>Content for section 1.</p>
+      <p>Content for section 2.</p>
     </section>
-    <section id="section3">
+    <section id="section3" tabindex="-1">
       <h3>Section 3</h3>
-      <p>Content for section 1.</p>
+      <p>Content for section 3.</p>
     </section>
   </div>
 </div>
 
 <script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function(event) {
+  document.addEventListener('DOMContentLoaded', function (event) {
     window.gef && gef.Tabs.init();
+
+    //var tabsElem = document.querySelector('.gef-tabs');
+    //var tabs = new gef.Tabs.constructor(tabsElem);
   });
 </script>
             </div>

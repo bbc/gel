@@ -325,11 +325,14 @@ svg + .gef-promo-indicator-text {
 .gef-tabs > ul {
   margin: 0;
   padding: 0;
-  list-style: none;
-  display: flex;
-  margin: -0.5rem; }
+  list-style: none; }
 
-.gef-tabs ul > li {
+.gef-tabs > [role="tablist"] {
+  display: flex;
+  margin: -0.5rem;
+  overflow: hidden; }
+
+.gef-tabs > ul [role="presentation"] {
   flex: 1 1 auto;
   margin: 0.5rem;
   min-width: 0; }
@@ -337,8 +340,6 @@ svg + .gef-promo-indicator-text {
 .gef-tabs > ul a {
   display: block;
   padding: 0.5rem 1rem;
-  text-decoration: none;
-  text-align: center;
   color: inherit;
   background-color: #dcdcdc;
   border: 2px solid transparent;
@@ -348,16 +349,20 @@ svg + .gef-promo-indicator-text {
   overflow: hidden;
   text-overflow: ellipsis; }
 
+.gef-tabs > ul [role="tab"] {
+  text-decoration: none;
+  text-align: center; }
+
 .gef-tabs > ul a:focus,
 .gef-tabs > section:focus {
   outline: 2px solid;
-  outline-offset: -4px; }
+  outline-offset: -2px; }
 
-.gef-tabs [aria-current] {
+.gef-tabs [aria-selected] {
   background-color: #ccc; }
 
 @media (-ms-high-contrast: active) {
-  .gef-tabs [aria-current] {
+  .gef-tabs [aria-selected] {
     position: relative;
     top: 2px; } }
 
