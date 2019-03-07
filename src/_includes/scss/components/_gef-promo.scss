@@ -7,14 +7,14 @@
   outline: 2px solid transparent; /* for high contrast mode */
 }
 
-.gef-promo-content {
+.gef-promo__content {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   padding: 1rem;
 }
 
-.gef-promo-image {
+.gef-promo__image {
   height: 10rem;
   overflow: hidden;
   position: relative;
@@ -24,26 +24,26 @@
   background-color: $gel-color--tundora;
 }
 
-.gef-promo-image img {
+.gef-promo__image img {
   height: 100%;
   width: auto;
 }
 
 @supports (object-fit: cover) {
-  .gef-promo-image img {
+  .gef-promo__image img {
     width: 100%;
     object-fit: cover;
   }
 }
 
-.gef-promo-headline {
+.gef-promo__headline {
   font-size: 1.125rem;
   text-decoration: none;
   font-weight: bold;
   color: inherit;
 }
 
-.gef-promo-headline::after {
+.gef-promo__headline::after {
   content: '';
   position: absolute;
   top: 0;
@@ -52,12 +52,12 @@
   left: 0;
 }
 
-.gef-promo a:not(.gef-promo-headline) {
+.gef-promo a:not(.gef-promo__headline) {
   position: relative;
 }
 
-.gef-promo-headline:hover,
-.gef-promo-headline:focus {
+.gef-promo__headline:hover,
+.gef-promo__headline:focus {
   outline: none;
   text-decoration: underline;
 }
@@ -70,7 +70,7 @@
   margin-top: 0;
 }
 
-.gef-promo-indicator {
+.gef-promo__indicator {
   padding: 0.5rem;
   position: absolute;
   left: 0;
@@ -79,28 +79,28 @@
   font-size: 0.85rem;
 }
 
-svg + .gef-promo-indicator-text {
+svg + .gef-promo__indicator-text {
   margin-left: 0.25rem;
 }
 
-.gef-promo-content .gef-metadata-strip {
+.gef-promo__content .gef-metadata-strip {
   padding: 0;
   margin: 0;
   margin-top: auto;
 }
 
-.gef-promo.gef-promo-horizontal {
+.gef-promo.gef-promo--horizontal {
   flex-wrap: wrap;
   flex-direction: row;
 }
 
-.gef-promo.gef-promo-horizontal .gef-promo-image {
+.gef-promo.gef-promo--horizontal .gef-promo__image {
   flex: 1;
   min-width: 266px;
   height: auto;
 }
 
-.gef-promo.gef-promo-horizontal .gef-promo-content {
+.gef-promo.gef-promo--horizontal .gef-promo__content {
   min-width: 266px;
   flex: 999;
 }
@@ -125,7 +125,7 @@ svg + .gef-promo-indicator-text {
     grid-gap: 1rem;
   }
 
-  .gef-promo.gef-promo-horizontal {
+  .gef-promo.gef-promo--horizontal {
     grid-column: span 2;
   }
   

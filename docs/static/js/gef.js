@@ -585,7 +585,7 @@
     this.elem = elem;
     this.height = height;
     this.continueText = continueText || 'Continued below...';
-    this.truncated = this.elem.querySelector('.gef-pocket-truncated');
+    this.truncated = this.elem.querySelector('.gef-pocket__truncated');
 
     // Feature detect IntersectionObserver before continuing
     if ('IntersectionObserver' in window) {
@@ -619,7 +619,7 @@
 
       // Create the footer element
       this.foot = document.createElement('div');
-      this.foot.classList.add('gef-pocket-foot');
+      this.foot.classList.add('gef-pocket__foot');
 
       // Create the 'show more' button
       this.button = document.createElement('button');
@@ -636,13 +636,13 @@
       // Create continue element
       this.continue = document.createElement('div');
       this.continue.textContent = this.continueText;
-      this.continue.classList.add('gef-pocket-continue');
+      this.continue.classList.add('gef-pocket__continue');
       this.continue.tabIndex = -1;
 
       // Toggle on click
       this.button.addEventListener('click', function () {
         this.shown ? this.showLess() : this.showMore();
-        this.foot.classList.toggle('gef-pocket-foot-shown');
+        this.foot.classList.toggle('gef-pocket--foot-shown');
       }.bind(this));
 
       // Show less initially
@@ -680,10 +680,10 @@
   self.init = function () { }
 
   self.constructor = function (elem) {
-    elem.classList.add('gef-sitemenu-with-js');
-    this.moreButtons = elem.querySelectorAll('.gef-sitemenu-more-button');
-    this.menuButton = elem.querySelector('.gef-sitemenu-menu-button');
-    this.menu = elem.querySelector('.gef-sitemenu-list');
+    elem.classList.add('gef-sitemenu--with-js');
+    this.moreButtons = elem.querySelectorAll('.gef-sitemenu__more-button');
+    this.menuButton = elem.querySelector('.gef-sitemenu__menu-button');
+    this.menu = elem.querySelector('.gef-sitemenu__list');
 
     Array.prototype.forEach.call(this.moreButtons, function (btn) {
       var submenu = btn.nextElementSibling;
@@ -719,7 +719,7 @@
   self.constructor.prototype.menuToggle = function () {
     var currentState = this.menuButton.getAttribute('aria-expanded') === 'true' || false;
     this.menuButton.setAttribute('aria-expanded', !currentState);
-    this.menu.classList.toggle('gef-sitemenu-open', !currentState);
+    this.menu.classList.toggle('gef-sitemenu__open', !currentState);
   }
 })();/**
  * Switch

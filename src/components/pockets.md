@@ -21,7 +21,7 @@ The markup is quite simple, since the [Reference implementation](#reference-impl
 
 ```html
 <div class="gef-pocket">
-  <div class="gef-pocket-truncated">
+  <div class="gef-pocket__truncated">
     <!-- content here -->
   </div>
 </div>
@@ -34,7 +34,7 @@ Note that the **Pocket** is intended for truncating the _main_ content of a page
 ```html
 <main id="main" tabindex="-1">
   <div class="gef-pocket">
-    <div class="gef-pocket-truncated">
+    <div class="gef-pocket__truncated">
       <!-- content here -->
     </div>
   </div>
@@ -43,12 +43,12 @@ Note that the **Pocket** is intended for truncating the _main_ content of a page
 
 ## Recommended layout
 
-The `class="gef-pocket-truncated"` needs to adopt a reasonable fixed height on initialization. Something set in viewport units[^2] is recommended since they pertain to a proportion of the viewport and would befit a viewport of any physical height: `50vh` is 50% of the height of any screen. This value is set as one of the parameters of the [Reference implementation](#reference-implementation)'s constructor.
+The `class="gef-pocket__truncated"` needs to adopt a reasonable fixed height on initialization. Something set in viewport units[^2] is recommended since they pertain to a proportion of the viewport and would befit a viewport of any physical height: `50vh` is 50% of the height of any screen. This value is set as one of the parameters of the [Reference implementation](#reference-implementation)'s constructor.
 
 The same element must, of course, take `overflow-y: hidden` for the truncation to work.
 
 ```css
-.gef-pocket-truncated {
+.gef-pocket__truncated {
   overflow-y: hidden;
 }
 ```
@@ -56,15 +56,15 @@ The same element must, of course, take `overflow-y: hidden` for the truncation t
 The 'foot' of the **Pocket** element contains the 'Show more' button, centrally justified. It has no height and appears as a single line, with the button placed centrally over it on the vertical axis, using a transform.
 
 ```css
-.gef-pocket-foot button {
+.gef-pocket__foot button {
   transform: translateY(-50%);
 }
 ```
 
-When the **Pocket** is in its unveiled/showing state, the button's text changes to 'Show less' (see [Recommended behaviour](#recommended-behaviour), below) and a class of `gef-pocket-foot-shown` is applied, enabling a `margin-top` style to separate the transformed button from the now unveiled content.
+When the **Pocket** is in its unveiled/showing state, the button's text changes to 'Show less' (see [Recommended behaviour](#recommended-behaviour), below) and a class of `gef-pocket--foot-shown` is applied, enabling a `margin-top` style to separate the transformed button from the now unveiled content.
 
 ```css
-.gef-pocket-foot.gef-pocket-foot-shown {
+.gef-pocket__foot.gef-pocket--foot-shown {
   margin-top: double($gel-spacing-unit);
 }
 ```
@@ -84,7 +84,7 @@ When the _"Continue below..."_ element is focused, it draws attention by showing
   }
 }
 
-.gef-pocket-continue:focus {
+.gef-pocket__continue:focus {
   outline-style: solid;
   outline-width: 0px;
   outline-offset: 2px;
@@ -102,7 +102,7 @@ How the component looks with a [Windows High Contrast Mode](https://support.micr
 
 The **Pocket** is treated as a progressive enhancement. It does not initialize at all if JavaScript does not run or `IntersectionObserver` is not supported. Support for `IntersectionObserver` is covered by Chrome, Edge, Firefox, Opera, and various Android browsers at the time of writing[^3]. Browsers that do not enhance to a **Pocket** simply show the content in its expanded form.
 
-The purpose of the `IntersectionObserver` is to apply (polyfilled) `inert`[^4] status to all the visually obscured children within the `class="gef-pocket-truncated"` element.
+The purpose of the `IntersectionObserver` is to apply (polyfilled) `inert`[^4] status to all the visually obscured children within the `class="gef-pocket__truncated"` element.
 
 ```js
 if (!item.isIntersecting) {

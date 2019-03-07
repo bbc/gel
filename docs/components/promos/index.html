@@ -152,8 +152,8 @@
 <h4 id="the-headline-link">The headline link</h4>
 <p>The <strong>Promo</strong> must contain a link as its main label (or 'headline'). The wording of this link should resemble that of the target page's <code>&lt;title&gt;</code> and <code>&lt;h1&gt;</code>. This consistency aids cognitive accessibility and improves <abbr title="search engine optimization">SEO</abbr><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-content"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-headline"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/content"</span>&gt;</span>University Challenge<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo__content"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo__headline"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/content"</span>&gt;</span>University Challenge<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
@@ -163,45 +163,45 @@
 </aside><h4 id="images">Images</h4>
 <p>Frequently, an image is used to help promote the <strong>Promo's</strong> target content. This is the only content permitted <em>before</em> the link in the source.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-image"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo__image"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path/to/image"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-content"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-headline"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/content"</span>&gt;</span>University Challenge<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo__content"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo__headline"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/content"</span>&gt;</span>University Challenge<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 <p>The image may or may not contain <code>alt</code> text. If the headline and/or supporting text (where present) sufficiently describes the promoted content, and the image adds nothing salient, use <code>alt=&quot;&quot;</code>. If the image conveys important information missing from the <strong>Promo</strong> text, provide an appropriate value.</p>
 <p>The image must <em>not</em> be inside its own link, whether it contains <code>alt</code> text or otherwise. This would represent an unnecessary and redundant keyboard tab stop.</p>
 <h4 id="media-indication">Media indication</h4>
-<p>You can indicate information about the media being promoted, if relevant. This is the job of the <code>class=&quot;gef-promo-indicator&quot;</code> element, found inside <code>class=&quot;gef-promo-image&quot;</code>.</p>
+<p>You can indicate information about the media being promoted, if relevant. This is the job of the <code>class=&quot;gef-promo__indicator&quot;</code> element, found inside <code>class=&quot;gef-promo__image&quot;</code>.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-image"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo__image"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path/to/image"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-indicator"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo__indicator"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"/gef-docs/static/images/gel-icons-all.svg#gel-icon-play"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-indicator-text"</span>&gt;</span>04:35<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo__indicator-text"</span>&gt;</span>04:35<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-content"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-headline"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/content"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo__content"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo__headline"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/content"</span>&gt;</span>
       University Challenge
       <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sr"</span>&gt;</span>Video, 4 minutes and 35 seconds<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<p>Importantly, the <code>class=&quot;gef-promo-indicator&quot;</code> is hidden from assistive technologies with <code>aria-hidden=&quot;true&quot;</code>. This is because it would not make sense encountered before the headline. Append a readable version of the information in a visually hidden span after the main headline text (<em>&quot;Video, 4 minutes and 35 seconds&quot;</em> in the example).</p>
+<p>Importantly, the <code>class=&quot;gef-promo__indicator&quot;</code> is hidden from assistive technologies with <code>aria-hidden=&quot;true&quot;</code>. This is because it would not make sense encountered before the headline. Append a readable version of the information in a visually hidden span after the main headline text (<em>&quot;Video, 4 minutes and 35 seconds&quot;</em> in the example).</p>
 <h4 id="description">Description</h4>
 <p>If present, the description (a couple of sentences; no more) should appear after the headline and before the metadata (see the following example). Media indication is omitted from the following example for brevity.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-image"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo__image"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path/to/image"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-content"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-headline"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/content"</span>&gt;</span>University Challenge<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo__content"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo__headline"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/content"</span>&gt;</span>University Challenge<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>It is the first of the semi-finals in the Christmas quiz for graduates.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -209,11 +209,11 @@
 <h4 id="metadata">Metadata</h4>
 <p>The <a href="../metadata-strips"><strong>Metadata strip</strong></a> is described as its own component. It provides metadata in key value pairs, using a description list (<code>&lt;dl&gt;</code>).</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-image"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo__image"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path/to/image"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-content"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo-headline"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/content"</span>&gt;</span>University Challenge<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo__content"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-promo__headline"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/content"</span>&gt;</span>University Challenge<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>It is the first of the semi-finals in the Christmas quiz for graduates.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">dl</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-metadata-strip"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
@@ -257,26 +257,26 @@
   }
 }
 </code></pre>
-<p>The appearance of each promo is improved by distributing the metadata (if present) to the bottom of the container. This is possible by making the <strong>Promo</strong> and its nested <code>class=&quot;gef-promo-content&quot;</code> element Flexbox contexts and giving the metadata element <code>margin-top: auto</code>.</p>
+<p>The appearance of each promo is improved by distributing the metadata (if present) to the bottom of the container. This is possible by making the <strong>Promo</strong> and its nested <code>class=&quot;gef-promo__content&quot;</code> element Flexbox contexts and giving the metadata element <code>margin-top: auto</code>.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gef-promo</span> {
   <span class="hljs-attribute">display</span>: flex;
   <span class="hljs-attribute">flex-direction</span>: column;
 }
 
-<span class="hljs-selector-class">.gef-promo-content</span> {
+<span class="hljs-selector-class">.gef-promo__content</span> {
   <span class="hljs-attribute">flex-grow</span>: <span class="hljs-number">1</span>;
   <span class="hljs-attribute">display</span>: flex;
   <span class="hljs-attribute">flex-direction</span>: column;
 }
 
-<span class="hljs-selector-class">.gef-promo-content</span> <span class="hljs-selector-class">.gef-metadata-strip</span> {
+<span class="hljs-selector-class">.gef-promo__content</span> <span class="hljs-selector-class">.gef-metadata-strip</span> {
   <span class="hljs-attribute">margin-top</span>: auto;
 }
 </code></pre>
 <h3 id="the-image">The image</h3>
 <p>The image will need to fit the available space, regardless of the Promo's dimensions (which are likely to change across breakpoints) without distorting. This is possible by setting the desired height of the image box and using the <code>object-fit</code> property:</p>
 <pre class="hljs"><code>@<span class="hljs-keyword">supports</span> (object-fit: cover) {
-  <span class="hljs-selector-class">.gef-promo-image</span> <span class="hljs-selector-tag">img</span> {
+  <span class="hljs-selector-class">.gef-promo__image</span> <span class="hljs-selector-tag">img</span> {
     <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
     <span class="hljs-attribute">object-fit</span>: cover;
   }
@@ -285,38 +285,38 @@
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-support-for-object-fit">
               <h4 id="aside-info-support-for-object-fit" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Support for object-fit</h4><div><p>At the time of writing, the <code>object-fit</code> property is supported everywhere but Internet Explorer. The code uses <code>@supports</code> and falls back to a 'letterboxed' style using <code>text-align: center</code> and a <code>background-color</code>:</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-promo-image</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-promo__image</span> {
   <span class="hljs-attribute">text-align</span>: center;
   <span class="hljs-attribute">background-color</span>: $gel-color--tundora; 
 }
 </code></pre>
 </aside><h3 id="horizontal-promos">Horizontal promos</h3>
-<p>In the <a href="#reference-implementation">Reference implementation</a>, a horizontal configuration (with the image to the left of the text content) can be achieved by placing the <code>gel-promo-horizontal</code> class on the <code>gel-promo</code> element. This change's the element's flex-direction.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-promo</span><span class="hljs-selector-class">.gef-promo-horizontal</span> {
+<p>In the <a href="#reference-implementation">Reference implementation</a>, a horizontal configuration (with the image to the left of the text content) can be achieved by placing the <code>gel-promo--horizontal</code> class on the <code>gel-promo</code> element. This change's the element's flex-direction.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-promo</span><span class="hljs-selector-class">.gef-promo--horizontal</span> {
   <span class="hljs-attribute">flex-wrap</span>: wrap;
   <span class="hljs-attribute">flex-direction</span>: row;
 }
 </code></pre>
-<p>The <code>flex-wrap: wrap</code> declaration ensures the image is <em>only</em> placed to the side where there is room. The <code>gef-promo-image</code> and <code>gef-promo-content</code> elements are not permitted to become smaller than the <code>266px</code> threshold of the vertical <strong>Promo</strong> counterparts. At this point, wrapping occurs and the horizontal <strong>Promo</strong> displays as a vertical one.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-promo</span><span class="hljs-selector-class">.gef-promo-horizontal</span> <span class="hljs-selector-class">.gef-promo-image</span> {
+<p>The <code>flex-wrap: wrap</code> declaration ensures the image is <em>only</em> placed to the side where there is room. The <code>gef-promo__image</code> and <code>gef-promo__content</code> elements are not permitted to become smaller than the <code>266px</code> threshold of the vertical <strong>Promo</strong> counterparts. At this point, wrapping occurs and the horizontal <strong>Promo</strong> displays as a vertical one.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-promo</span><span class="hljs-selector-class">.gef-promo--horizontal</span> <span class="hljs-selector-class">.gef-promo__image</span> {
   <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;
   <span class="hljs-attribute">min-width</span>: <span class="hljs-number">266px</span>;
 }
 
-<span class="hljs-selector-class">.gef-promo</span><span class="hljs-selector-class">.gef-promo-horizontal</span> <span class="hljs-selector-class">.gef-promo-content</span> {
+<span class="hljs-selector-class">.gef-promo</span><span class="hljs-selector-class">.gef-promo--horizontal</span> <span class="hljs-selector-class">.gef-promo__content</span> {
   <span class="hljs-attribute">flex</span>: <span class="hljs-number">999</span>; <span class="hljs-comment">/* Take up all but 266px where adjacent */</span>
   <span class="hljs-attribute">min-width</span>: <span class="hljs-number">266px</span>;
 }
 </code></pre>
-<p>In a grid context, <strong>Promos</strong> with the class <code>gel-promo-horizontal</code> are directed to take up two columns of the grid wherever they are placed.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-promo</span><span class="hljs-selector-class">.gef-promo-horizontal</span> {
+<p>In a grid context, <strong>Promos</strong> with the class <code>gel-promo--horizontal</code> are directed to take up two columns of the grid wherever they are placed.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-promo</span><span class="hljs-selector-class">.gef-promo--horizontal</span> {
   <span class="hljs-attribute">grid-column</span>: span <span class="hljs-number">2</span>;
 }
 </code></pre>
 <h3 id="focus-styles">Focus styles</h3>
 <p>A <code>text-decoration</code> focus style is recommended for the headline link, paired with its hover style. To make focusing the card and its headline clearer, an additional <code>:focus-within</code> style can be added to the card itself.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-promo-headline</span><span class="hljs-selector-pseudo">:hover</span>,
-<span class="hljs-selector-class">.gef-promo-headline</span><span class="hljs-selector-pseudo">:focus</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-promo__headline</span><span class="hljs-selector-pseudo">:hover</span>,
+<span class="hljs-selector-class">.gef-promo__headline</span><span class="hljs-selector-pseudo">:focus</span> {
   <span class="hljs-attribute">outline</span>: none;
   <span class="hljs-attribute">text-decoration</span>: underline;
 }
@@ -341,7 +341,7 @@
 <li><strong>A wrapper link:</strong> Placing all of the <strong>Promo's</strong> content inside a link produces a verbose, confusing and/or truncated link label<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> (which is liable to affect both SEO and, more importantly, screen reader experience).</li>
 </ol>
 <p>Instead, the headline link's pseudo-content is positioned <em>over</em> the entire <strong>Promo</strong>.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-promo-headline</span><span class="hljs-selector-pseudo">::after</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-promo__headline</span><span class="hljs-selector-pseudo">::after</span> {
   <span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>;
   <span class="hljs-attribute">position</span>: absolute;
   <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
@@ -351,13 +351,13 @@
 }
 </code></pre>
 <p>This leaves one piece of unfinished business: any links appearing after the headline are now not clickable. This is remedied by raising these links over the pseudo-content with <code>position: relative</code>.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-promo</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:not(.gef-promo-headline)</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-promo</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:not(.gef-promo__headline)</span> {
   <span class="hljs-attribute">position</span>: relative;
 }
 </code></pre>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-supplementary-links">
-              <h4 id="aside-alert-supplementary-links" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Supplementary links</h4><div><p>The headline link (<code>.gef-promo-headline</code>) is the primary purpose of the <strong>Promo</strong>. Although the <strong>Metadata strip</strong> may contain links (to category pages in the example implementation to follow) supplementary links should generally be omitted.</p>
+              <h4 id="aside-alert-supplementary-links" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Supplementary links</h4><div><p>The headline link (<code>.gef-promo__headline</code>) is the primary purpose of the <strong>Promo</strong>. Although the <strong>Metadata strip</strong> may contain links (to category pages in the example implementation to follow) supplementary links should generally be omitted.</p>
 </aside><h2 id="example-implementation">Example implementation</h2>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
@@ -373,11 +373,11 @@ title: Promos
   <span id="unique-promo-label1" hidden>Related</span>
   <ul class="gef-promos">
     <li class="gef-promo">
-      <div class="gef-promo-image">
+      <div class="gef-promo__image">
         <img src="/gef-docs/static/images/placeholder.png" alt="">
       </div>
-      <div class="gef-promo-content">
-        <a class="gef-promo-headline" href="#link/to/content">
+      <div class="gef-promo__content">
+        <a class="gef-promo__headline" href="#link/to/content">
           Report: Rainstorm Disquiets Rivers Regularly
         </a>
         <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth.</p>
@@ -404,11 +404,11 @@ title: Promos
       </div>
     </li>
     <li class="gef-promo">
-      <div class="gef-promo-image">
+      <div class="gef-promo__image">
         <img src="/gef-docs/static/images/placeholder.png" alt="">
       </div>
-      <div class="gef-promo-content">
-        <a class="gef-promo-headline" href="#link/to/content">
+      <div class="gef-promo__content">
+        <a class="gef-promo__headline" href="#link/to/content">
           Animus Averted By Timely Answers
         </a>
         <p>Lor separat existentie es un myth. Li Europan lingues es membres del sam familie.</p>
@@ -443,17 +443,17 @@ title: Promos
   <span id="unique-promo-label2" hidden>Related</span>
   <ul class="gef-promos">
     <li class="gef-promo">
-      <div class="gef-promo-image">
+      <div class="gef-promo__image">
         <img src="/gef-docs/static/images/placeholder.png" alt="">
-        <div class="gef-promo-indicator" aria-hidden="true">
+        <div class="gef-promo__indicator" aria-hidden="true">
           <svg class="gel-icon gel-icon--text" focusable="false">
             <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-play"></use>
           </svg>
-          <span class="gef-promo-indicator-text">04:35</span>
+          <span class="gef-promo__indicator-text">04:35</span>
         </div>
       </div>
-      <div class="gef-promo-content">
-        <a class="gef-promo-headline" href="#link/to/content">
+      <div class="gef-promo__content">
+        <a class="gef-promo__headline" href="#link/to/content">
           Report: Rainstorm Disquiets Rivers Regularly
           <span class="gef-sr">Video, 4 minutes and 35 seconds</span>
         </a>
@@ -481,17 +481,17 @@ title: Promos
       </div>
     </li>
     <li class="gef-promo">
-      <div class="gef-promo-image">
+      <div class="gef-promo__image">
         <img src="/gef-docs/static/images/placeholder.png" alt="">
-        <div class="gef-promo-indicator" aria-hidden="true">
+        <div class="gef-promo__indicator" aria-hidden="true">
           <svg class="gel-icon gel-icon--text" focusable="false">
             <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-play"></use>
           </svg>
-          <span class="gef-promo-indicator-text">02:19</span>
+          <span class="gef-promo__indicator-text">02:19</span>
         </div>
       </div>
-      <div class="gef-promo-content">
-        <a class="gef-promo-headline" href="#link/to/content">
+      <div class="gef-promo__content">
+        <a class="gef-promo__headline" href="#link/to/content">
           Animus Averted By Timely Answers
           <span class="gef-sr">Video, 2 minutes and 19 seconds</span>
         </a>
@@ -526,12 +526,12 @@ title: Promos
 <aside aria-labelledby="unique-promo-label3">
   <span id="unique-promo-label3" hidden>Related</span>
   <div class="gef-promos">
-    <div class="gef-promo gef-promo-horizontal">
-      <div class="gef-promo-image">
+    <div class="gef-promo gef-promo--horizontal">
+      <div class="gef-promo__image">
         <img src="/gef-docs/static/images/placeholder.png" alt="">
       </div>
-      <div class="gef-promo-content">
-        <a class="gef-promo-headline" href="#link/to/content">Animus Averted By Timely Answers</a>
+      <div class="gef-promo__content">
+        <a class="gef-promo__headline" href="#link/to/content">Animus Averted By Timely Answers</a>
         <p>Lor separat existentie es un myth. Li Europan lingues es membres del sam familie.</p>
         <dl class="gef-metadata-strip">
           <div>

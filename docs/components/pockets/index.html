@@ -115,7 +115,7 @@
 <h2 id="recommended-markup">Recommended markup</h2>
 <p>The markup is quite simple, since the <a href="#reference-implementation">Reference implementation</a> uses progressive enhancement, and only adds the button functionality where JavaScript runs. Just two nested wrapping elements are needed.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-pocket"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-pocket-truncated"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-pocket__truncated"</span>&gt;</span>
     <span class="hljs-comment">&lt;!-- content here --&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -125,26 +125,26 @@
               <h4 id="aside-info-main-content" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Main content</h4><div><p>Note that the <strong>Pocket</strong> is intended for truncating the <em>main</em> content of a page. In most circumstances, you should be nesting the <code>class=&quot;gef-pocket&quot;</code> element directly inside a <code>&lt;main&gt;</code> element or, alternatively, <em>making</em> it the <code>&lt;main&gt;</code> element. The page should contain a skip link that navigates the user to <code>&lt;main&gt;</code>, in accordance with WCAG 2.4.1 Bypass Blocks<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. The <code>tabindex=&quot;-1&quot;</code> in the example to follow ensures all browsers move focus to the link when it is navigated to via the skip link.</p>
 </aside><pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">main</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"main"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-pocket"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-pocket-truncated"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-pocket__truncated"</span>&gt;</span>
       <span class="hljs-comment">&lt;!-- content here --&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
 </code></pre>
 <h2 id="recommended-layout">Recommended layout</h2>
-<p>The <code>class=&quot;gef-pocket-truncated&quot;</code> needs to adopt a reasonable fixed height on initialization. Something set in viewport units<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> is recommended since they pertain to a proportion of the viewport and would befit a viewport of any physical height: <code>50vh</code> is 50% of the height of any screen. This value is set as one of the parameters of the <a href="#reference-implementation">Reference implementation</a>'s constructor.</p>
+<p>The <code>class=&quot;gef-pocket__truncated&quot;</code> needs to adopt a reasonable fixed height on initialization. Something set in viewport units<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> is recommended since they pertain to a proportion of the viewport and would befit a viewport of any physical height: <code>50vh</code> is 50% of the height of any screen. This value is set as one of the parameters of the <a href="#reference-implementation">Reference implementation</a>'s constructor.</p>
 <p>The same element must, of course, take <code>overflow-y: hidden</code> for the truncation to work.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-pocket-truncated</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-pocket__truncated</span> {
   <span class="hljs-attribute">overflow-y</span>: hidden;
 }
 </code></pre>
 <p>The 'foot' of the <strong>Pocket</strong> element contains the 'Show more' button, centrally justified. It has no height and appears as a single line, with the button placed centrally over it on the vertical axis, using a transform.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-pocket-foot</span> <span class="hljs-selector-tag">button</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-pocket__foot</span> <span class="hljs-selector-tag">button</span> {
   <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(-50%);
 }
 </code></pre>
-<p>When the <strong>Pocket</strong> is in its unveiled/showing state, the button's text changes to 'Show less' (see <a href="#recommended-behaviour">Recommended behaviour</a>, below) and a class of <code>gef-pocket-foot-shown</code> is applied, enabling a <code>margin-top</code> style to separate the transformed button from the now unveiled content.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-pocket-foot</span><span class="hljs-selector-class">.gef-pocket-foot-shown</span> {
+<p>When the <strong>Pocket</strong> is in its unveiled/showing state, the button's text changes to 'Show less' (see <a href="#recommended-behaviour">Recommended behaviour</a>, below) and a class of <code>gef-pocket--foot-shown</code> is applied, enabling a <code>margin-top</code> style to separate the transformed button from the now unveiled content.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-pocket__foot</span><span class="hljs-selector-class">.gef-pocket--foot-shown</span> {
   <span class="hljs-attribute">margin-top</span>: <span class="hljs-built_in">double</span>($gel-spacing-unit);
 }
 </code></pre>
@@ -161,7 +161,7 @@
   }
 }
 
-<span class="hljs-selector-class">.gef-pocket-continue</span><span class="hljs-selector-pseudo">:focus</span> {
+<span class="hljs-selector-class">.gef-pocket__continue</span><span class="hljs-selector-pseudo">:focus</span> {
   <span class="hljs-attribute">outline-style</span>: solid;
   <span class="hljs-attribute">outline-width</span>: <span class="hljs-number">0px</span>;
   <span class="hljs-attribute">outline-offset</span>: <span class="hljs-number">2px</span>;
@@ -173,7 +173,7 @@
 <p><img src="/gef-docs/static/images/hcm_pocket.png" alt="Black on white theme with all the same shapes intact"></p>
 <h2 id="recommended-behaviour">Recommended behaviour</h2>
 <p>The <strong>Pocket</strong> is treated as a progressive enhancement. It does not initialize at all if JavaScript does not run or <code>IntersectionObserver</code> is not supported. Support for <code>IntersectionObserver</code> is covered by Chrome, Edge, Firefox, Opera, and various Android browsers at the time of writing<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. Browsers that do not enhance to a <strong>Pocket</strong> simply show the content in its expanded form.</p>
-<p>The purpose of the <code>IntersectionObserver</code> is to apply (polyfilled) <code>inert</code><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> status to all the visually obscured children within the <code>class=&quot;gef-pocket-truncated&quot;</code> element.</p>
+<p>The purpose of the <code>IntersectionObserver</code> is to apply (polyfilled) <code>inert</code><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> status to all the visually obscured children within the <code>class=&quot;gef-pocket__truncated&quot;</code> element.</p>
 <pre class="hljs"><code><span class="hljs-keyword">if</span> (!item.isIntersecting) {
   <span class="hljs-comment">// Add the inert attr if the element is cut off</span>
   <span class="hljs-comment">// or invisible</span>
@@ -211,40 +211,40 @@ title: Pockets
 
 <div style="max-width: 90ch;">
   <div class="gef-pocket">
-    <div class="gef-pocket-truncated">
+    <div class="gef-pocket__truncated">
       <p>Mane apud me tuebatur armis
-      lectiones, quae maxime competit homini est facultas modern communicationis
-      inter hominum. Credo enim fieri potest, ut signa ostendere societatis,
-      ut Ecclesias faciunt nexum successu cavendum sit.</p>
+        lectiones, quae maxime competit homini est facultas modern communicationis
+        inter hominum. Credo enim fieri potest, ut signa ostendere societatis,
+        ut Ecclesias faciunt nexum successu cavendum sit.</p>
       <p>Et ludunt
-      essential parte cerebri actio constituendum praecepta Dei facere qui maxime operam.
-      Nostra confirmare animi magnitudinem communicationis in illos Adversus
-      habitat. Dat signum aliis dependentia nostrae memoria potenti repente
-      respondeo, primo clamore atque elicere nostris.</p>
+        essential parte cerebri actio constituendum praecepta Dei facere qui maxime operam.
+        Nostra confirmare animi magnitudinem communicationis in illos Adversus
+        habitat. Dat signum aliis dependentia nostrae memoria potenti repente
+        respondeo, primo clamore atque elicere nostris.</p>
       <p>Nunc volo experior ut has ideas
-      et progressus communicationis auxilio, ut altius et in historia stadio
-      et cuiusque personae momentum. Idque et consilii causa principalis
-      His prolatis quorum religione precari facti sunt, maxima ex praesentis vitae magna.
-      Multo minus in natura agunt animalia fera cooperatores. Solitum se reflecti
-      pugna aut fuga. Sed qui prima illa initia erant, munera coram communicationis
-      venit autem vir.</p>
+        et progressus communicationis auxilio, ut altius et in historia stadio
+        et cuiusque personae momentum. Idque et consilii causa principalis
+        His prolatis quorum religione precari facti sunt, maxima ex praesentis vitae magna.
+        Multo minus in natura agunt animalia fera cooperatores. Solitum se reflecti
+        pugna aut fuga. Sed qui prima illa initia erant, munera coram communicationis
+        venit autem vir.</p>
       <p>Reproductio operam inter duorum hominum
-      feminae. Utrumque iumentum igitur singula signa marium feminarumque
-      producendum oppositum est super feminas varios motus per membra feminae. Ad hunc autem finem animalibus
-      Suspendisse turpis et magna modis intendere sibi a
-      mirum in modum pennas avium ac similibus, et usque ad vesperum vestem et
-      ducendos choros ex hominibus.</p>
+        feminae. Utrumque iumentum igitur singula signa marium feminarumque
+        producendum oppositum est super feminas varios motus per membra feminae. Ad hunc autem finem animalibus
+        Suspendisse turpis et magna modis intendere sibi a
+        mirum in modum pennas avium ac similibus, et usque ad vesperum vestem et
+        ducendos choros ex hominibus.</p>
       <p>Omnes demonstrationes de rebus dici signum. sunt
-      quibus primo instrumentorum communicationis socialis. Nostrum vigorem intensionem
-      quemadmodum si ea ex antiquitate. Ad litteram centena
-      decies annis maiorum et portavit; ad talia signa, ueneris amare lasciuiam. Nee mirum,
-      quae inopinato intrat in sexus tot facies nostrae cogitationes, loquelas et actiones.
-      Est quidem est vetus Adam.</p>
+        quibus primo instrumentorum communicationis socialis. Nostrum vigorem intensionem
+        quemadmodum si ea ex antiquitate. Ad litteram centena
+        decies annis maiorum et portavit; ad talia signa, ueneris amare lasciuiam. Nee mirum,
+        quae inopinato intrat in sexus tot facies nostrae cogitationes, loquelas et actiones.
+        Est quidem est vetus Adam.</p>
       <p>Sed apud unumquemvis hominem quiqui admittit motus magis develop lente. ante
-      iam plene didicerat sunt activae singula unicuique operanti cooperantibus aliis de modi. Quod
-      communicet cum infantem mater ejus, et clamor, et risu; hoc est dicere in minimis
-      sexualem modo imaginabile. Postea successive puer sexus rationes profectae sunt alii
-      hominum, sed iuxta cerebrum non habet diversas vias didicit ex actione.</p>
+        iam plene didicerat sunt activae singula unicuique operanti cooperantibus aliis de modi. Quod
+        communicet cum infantem mater ejus, et clamor, et risu; hoc est dicere in minimis
+        sexualem modo imaginabile. Postea successive puer sexus rationes profectae sunt alii
+        hominum, sed iuxta cerebrum non habet diversas vias didicit ex actione.</p>
     </div>
   </div>
 </div>

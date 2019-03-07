@@ -37,7 +37,7 @@
     this.elem = elem;
     this.height = height;
     this.continueText = continueText || 'Continued below...';
-    this.truncated = this.elem.querySelector('.gef-pocket-truncated');
+    this.truncated = this.elem.querySelector('.gef-pocket__truncated');
 
     // Feature detect IntersectionObserver before continuing
     if ('IntersectionObserver' in window) {
@@ -71,7 +71,7 @@
 
       // Create the footer element
       this.foot = document.createElement('div');
-      this.foot.classList.add('gef-pocket-foot');
+      this.foot.classList.add('gef-pocket__foot');
 
       // Create the 'show more' button
       this.button = document.createElement('button');
@@ -88,13 +88,13 @@
       // Create continue element
       this.continue = document.createElement('div');
       this.continue.textContent = this.continueText;
-      this.continue.classList.add('gef-pocket-continue');
+      this.continue.classList.add('gef-pocket__continue');
       this.continue.tabIndex = -1;
 
       // Toggle on click
       this.button.addEventListener('click', function () {
         this.shown ? this.showLess() : this.showMore();
-        this.foot.classList.toggle('gef-pocket-foot-shown');
+        this.foot.classList.toggle('gef-pocket--foot-shown');
       }.bind(this));
 
       // Show less initially
