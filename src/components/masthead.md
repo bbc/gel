@@ -40,8 +40,8 @@ The `<nav>` itself represents a landmark, and includes a nested landmark in the 
 A proxy label is provided using `aria-labelledby` and a hidden proxy element to differentiate this navigation region from the [**Site menu**](../site-menu) region, which is labeled _"This site"_.
 
 ```html
-<nav class="gef-masthead" aria-labelledby="gef-masthead-label">
-  <span id="gef-masthead-label" hidden>BBC sites</span>
+<nav class="gef-masthead" aria-labelledby="gef-masthead__label">
+  <span id="gef-masthead__label" hidden>BBC sites</span>
   <!-- All masthead functionality -->
 </nav>
 ```
@@ -51,7 +51,7 @@ A proxy label is provided using `aria-labelledby` and a hidden proxy element to 
 #### The logo
 
 ```html
-<div class="gef-masthead-logo">
+<div class="gef-masthead__logo">
   <a href="https://bbc.co.uk">
     <span class="gef-sr">BBC homepage</span>
     <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
@@ -66,13 +66,13 @@ The logo is provided as an inline SVG. This is preferable to a background image,
 #### The account link
 
 ```html
-<div class="gef-masthead-account-option">
+<div class="gef-masthead__account-option">
   <a href="https://account.bbc.com/account">
     <span class="gef-sr">Your account,</span>
     <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
       <use xlink:href="path/to/gel-icons-all.svg#gel-icon-sign-in"></use>
     </svg>
-    <span class="gef-masthead-account-text">Heydon</span>
+    <span class="gef-masthead__account-text">Heydon</span>
   </a>
 </div>
 ```
@@ -84,8 +84,8 @@ All SVG icons must take `aria-hidden="true"` to hide them from assistive technol
 #### The notifications/alerts link
 
 ```html
-<div class="gef-masthead-alerts-option">
-  <a href="#gef-masthead-alerts">
+<div class="gef-masthead__alerts-option">
+  <a href="#gef-masthead__alerts">
     <span class="gef-sr">Notifications</span>
     <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
       <use xlink:href="path/to/gel-icons-all.svg#gel-icon-alerts"></use>
@@ -99,7 +99,7 @@ The alerts link, like the more link below, is an enhanced same-page link that bo
 #### Promoted/priority links
 
 ```html
-<div class="gef-masthead-links">
+<div class="gef-masthead__links">
   <span id="sites-label" hidden>BBC sites</span>
   <ul aria-labelledby="sites-label">
     <li><a href="https://www.bbc.co.uk/news">News</a></li>
@@ -117,13 +117,13 @@ These are the main navigation options, grouped within a list so that screen read
 #### The more link
 
 ```html
-<div class="gef-masthead-more-option">
-  <a href="#gef-masthead-more">
+<div class="gef-masthead__more-option">
+  <a href="#gef-masthead__more">
     <span class="gef-sr">More</span>
-    <span class="gef-masthead-more-option-text" aria-hidden="true">
+    <span class="gef-masthead__more-option-text" aria-hidden="true">
       More ▾
     </span>
-    <svg class="gef-masthead-more-option-icon gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+    <svg class="gef-masthead__more-option-icon gel-icon gel-icon--text" aria-hidden="true" focusable="false">
       <use xlink:href="path/to/gel-icons-all.svg#gel-icon-list"></use>
     </svg>
   </a>
@@ -135,7 +135,7 @@ The same-page link that reveals and moves focus to the More menu. Note the two i
 #### The search link
 
 ```html
-<div class="gef-masthead-search-option" role="search">
+<div class="gef-masthead__search-option" role="search">
   <a href="https://www.bbc.co.uk/search?q=">
     <span>Search</span>
     <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
@@ -150,9 +150,9 @@ The search link takes you to the main BBC search page. Note that, despite only c
 #### The more menu
 
 ```html
-<div id="gef-masthead-more" class="gef-masthead-more-menu gef-masthead-popup">
-  <div class="gef-masthead-more-menu-inner">
-    <h2 id="more-label" aria-hidden="true" class="gef-masthead-more-menu-label">More</h2>
+<div id="gef-masthead__more" class="gef-masthead__more-menu gef-masthead__popup">
+  <div class="gef-masthead__more-menu-inner">
+    <h2 id="more-label" aria-hidden="true" class="gef-masthead__more-menu-label">More</h2>
     <ul aria-labelledby="more-label">
       <li><a href="https://www.bbc.co.uk/news">News</a></li>
       <li><a href="https://www.bbc.co.uk/sport">Sport</a></li>
@@ -180,8 +180,8 @@ Note the `<h2>` heading. This is hidden from assistive technologies but used as 
 #### The notifications element
 
 ```html
-<div class="gef-masthead-alerts gef-masthead-popup">
-  <h2 tabindex="-1" id="gef-masthead-alerts">Notifications</h2>
+<div class="gef-masthead__alerts gef-masthead__popup">
+  <h2 tabindex="-1" id="gef-masthead__alerts">Notifications</h2>
   <p>No notifications right now. We'll let you know when something from your favourite programmes, artists and
     playlists is available for you.</p>
   <p>If your notifications are turned off, you can always turn them back on. Just go to settings.</p>
@@ -193,7 +193,7 @@ The navigation bar's alerts link reveals this element and sends focus to the `<h
 Both this element and the More menu are appended with close buttons so that the user can dismiss them from the interface.
 
 ```html
-<button class="gef-masthead-close-button"><span class="gef-sr">Close</span>
+<button class="gef-masthead__close-button"><span class="gef-sr">Close</span>
   <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false" viewBox="0 0 32 32"> 
     <use xlink:href="path/to/gel-icons-all.svg#gel-icon-no"></use>
   </svg>
@@ -203,8 +203,8 @@ Both this element and the More menu are appended with close buttons so that the 
 #### The banner
 
 ```html
-<div class="gef-masthead-banner">
-  <a href="/" class="gef-masthead-banner-logo">
+<div class="gef-masthead__banner">
+  <a href="/" class="gef-masthead__banner-logo">
     <span class="gef-sr">
       BBC gef homepage
     </span>
@@ -244,23 +244,23 @@ In the event of `IntersectionObserver` not being supported and the priority link
 Firstly, in webkit browsers, the scrollbar is styled. This is an opportunity to make it more in keeping with the brand, but styling it also makes it visible by default on systems where it would otherwise be invisible.
 
 ```css
-.gef-masthead-links::-webkit-scrollbar {
+.gef-masthead__links::-webkit-scrollbar {
   height: 0.125rem;
 }
 
-.gef-masthead-links::-webkit-scrollbar-track {
+.gef-masthead__links::-webkit-scrollbar-track {
   background-color: $gel-color--alto;
 }
 
-.gef-masthead-links::-webkit-scrollbar-thumb {
+.gef-masthead__links::-webkit-scrollbar-thumb {
   background-color: $gel-color--cod-gray;
 }
 ```
 
-In addition, a 'shadow' is cast from the more link over the priority links element, better communicating that the links disappear behind it. This style is included only where the priority links have not taken the `gef-masthead-links-observed` class, hence the use of the negation pseudo-class and adjacent combinator.
+In addition, a 'shadow' is cast from the more link over the priority links element, better communicating that the links disappear behind it. This style is included only where the priority links have not taken the `gef-masthead__links-observed` class, hence the use of the negation pseudo-class and adjacent combinator.
 
 ```css
-.gef-masthead-links:not(.gef-masthead-links-observed) + .gef-masthead-more-option::before {
+.gef-masthead__links:not(.gef-masthead__links-observed) + .gef-masthead__more-option::before {
   content: '';
   position: absolute;
   top: 0;
@@ -282,8 +282,8 @@ How the component looks with a [Windows High Contrast Mode](https://support.micr
 Not shown in the image: supplementary outline styles for focus (since the `box-shadow` style is eliminated by Windows HCM):
 
 ```css
-.gef-masthead-bar a:hover,
-.gef-masthead-bar a:focus {
+.gef-masthead__bar a:hover,
+.gef-masthead__bar a:focus {
   outline: 2px solid transparent; /* for high contrast mode */
   outline-offset: -4px;
   box-shadow: inset 0 -4px 0 0 currentColor;
@@ -296,13 +296,13 @@ There are some special considerations for keyboard and screen reader usage that 
 
 ### The priority links
 
-The `IntersectionObserver` script gives priority links that are not intersecting the `gef-masthead-link-hidden` class.
+The `IntersectionObserver` script gives priority links that are not intersecting the `gef-masthead__link-hidden` class.
 
 ```js
 if (item.intersectionRatio > 0.98) {
-  item.target.classList.remove('gef-masthead-link-hidden');
+  item.target.classList.remove('gef-masthead__link-hidden');
 } else {
-  item.target.classList.add('gef-masthead-link-hidden');
+  item.target.classList.add('gef-masthead__link-hidden');
 }
 ```
 

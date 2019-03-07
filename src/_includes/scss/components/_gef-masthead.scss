@@ -9,26 +9,26 @@
   padding: 0;
 }
 
-.gef-masthead-bar {
+.gef-masthead__bar {
   border-bottom: 1px solid $gel-color--dusty-gray;
 }
 
-.gef-masthead-links {
+.gef-masthead__links {
   border-left: 0;
 }
 
-.gef-masthead-logo svg {
+.gef-masthead__logo svg {
   height: 1em;
   width: 3.25rem;
 }
 
-.gef-masthead-popup {
+.gef-masthead__popup {
   padding: 0.75rem;
   border-bottom: 1px solid $gel-color--dusty-gray;
   position: relative;
 }
 
-.gef-masthead .gef-masthead-close-button {
+.gef-masthead .gef-masthead__close-button {
   font-size: 1.25rem;
   border: 0;
   padding: 0;
@@ -39,16 +39,16 @@
   height: auto;
 }
 
-.gef-masthead-more-menu {
+.gef-masthead__more-menu {
   border-bottom: 1px solid $gel-color--dusty-gray;
   padding: 0;
 }
 
-.gef-masthead-more-menu ul {
+.gef-masthead__more-menu ul {
   list-style: none;
 }
 
-.gef-masthead-more-menu li {
+.gef-masthead__more-menu li {
   padding: 0.75rem;
   display: inline-block;
 }
@@ -62,13 +62,13 @@
   height: 100%;
 }
 
-.gef-masthead-bar a {
+.gef-masthead__bar a {
   display: inline-block;
   padding: 0.75rem;
 }
 
-.gef-masthead-bar a:hover,
-.gef-masthead-bar a:focus {
+.gef-masthead__bar a:hover,
+.gef-masthead__bar a:focus {
   outline: 2px solid transparent; /* for high contrast mode */
   outline-offset: -4px;
   box-shadow: inset 0 -4px 0 0 currentColor;
@@ -78,123 +78,123 @@
   outline: none;
 }
 
-.gef-masthead-banner {
+.gef-masthead__banner {
   padding: 1.25rem 0.75rem;
   border-bottom: 1px solid $gel-color--dusty-gray;
 }
 
-.gef-masthead-banner a {
+.gef-masthead__banner a {
   display: inline-block;
   height: 2.5rem;
 }
 
-.gef-masthead-banner-logo svg {
+.gef-masthead__banner-logo svg {
   height: 100%;
   width: auto;
   fill: currentColor;
 }
 
-.gef-masthead-links,
-.gef-masthead-more-option,
-.gef-masthead-alerts-option,
-.gef-masthead-account-option,
-.gef-masthead-alerts {
+.gef-masthead__links,
+.gef-masthead__more-option,
+.gef-masthead__alerts-option,
+.gef-masthead__account-option,
+.gef-masthead__alerts {
   display: none;
 }
 
-.gef-masthead-with-js .gel-masthead-more-account-link,
-.gef-masthead-with-js .gel-masthead-more-alerts-link {
+.gef-masthead--with-js .gel-masthead-more-account-link,
+.gef-masthead--with-js .gel-masthead-more-alerts-link {
   display: none;
 }
 
-.gef-masthead-bar a,
-.gef-masthead-bar button {
+.gef-masthead__bar a,
+.gef-masthead__bar button {
   white-space: nowrap;
   border: 0;
   line-height: 1;
   padding: 0.75rem;
 }
 
-.gef-masthead-bar {
+.gef-masthead__bar {
   display: flex;
   line-height: 1;
 }
 
-.gef-masthead-bar > * + * {
+.gef-masthead__bar > * + * {
   border-left: 1px solid $gel-color--dusty-gray;
 }
 
-.gef-masthead-more-option {
+.gef-masthead__more-option {
   border-left: 0;
 }
 
-.gef-masthead-links {
+.gef-masthead__links {
   border-left: 0;
 }
 
-.gef-masthead-links ul {
+.gef-masthead__links ul {
   display: flex;
   list-style: none;
   white-space: nowrap;
   height: 100%;
 }
 
-.gef-masthead-links li {
+.gef-masthead__links li {
   border-right: 1px solid $gel-color--dusty-gray;
 }
 
-.gef-masthead-links li:first-child {
+.gef-masthead__links li:first-child {
   border-left: 1px solid $gel-color--dusty-gray;
 }
 
-.gef-masthead-bar a,
-.gef-masthead-bar button {
+.gef-masthead__bar a,
+.gef-masthead__bar button {
   display: block;
 }
 
-.gef-masthead-search-option {
+.gef-masthead__search-option {
   margin-left: auto;
 }
 
-.gef-masthead-links {
+.gef-masthead__links {
   overflow-x: auto;
   overflow-y: hidden; /* explicitly needed for IE11 */
 }
 
-.gef-masthead-links-observed {
+.gef-masthead__links-observed {
   overflow-x: hidden;
 }
 
-.gef-masthead-link-hidden {
+.gef-masthead__link-hidden {
   visibility: hidden;
 }
 
-.gef-masthead-links::-webkit-scrollbar {
+.gef-masthead__links::-webkit-scrollbar {
   height: 0.125rem;
 }
 
-.gef-masthead-links::-webkit-scrollbar-track {
+.gef-masthead__links::-webkit-scrollbar-track {
   background-color: $gel-color--alto;
 }
 
-.gef-masthead-links::-webkit-scrollbar-thumb {
+.gef-masthead__links::-webkit-scrollbar-thumb {
   background-color: $gel-color--cod-gray;
 }
 
-.gef-masthead-more-option {
+.gef-masthead__more-option {
   position: relative;
   margin-right: auto;
 }
 
-.gef-masthead-more-option-icon {
+.gef-masthead__more-option-icon {
   display: none;
 }
 
-.gef-masthead-links:not(.gef-masthead-links-observed) + .gef-masthead-more-option {
+.gef-masthead__links:not(.gef-masthead__links-observed) + .gef-masthead__more-option {
   border-left: 1px solid $gel-color--dusty-gray;
 }
 
-.gef-masthead-links:not(.gef-masthead-links-observed) + .gef-masthead-more-option::before {
+.gef-masthead__links:not(.gef-masthead__links-observed) + .gef-masthead__more-option::before {
   content: '';
   position: absolute;
   top: 0;
@@ -204,18 +204,18 @@
   background-color: rgba(0,0,0,0.05);
 }
 
-.gef-masthead-more-menu-inner {
+.gef-masthead__more-menu-inner {
   display: flex;
   flex-wrap: wrap;
 }
 
-.gef-masthead-more-menu-label {
+.gef-masthead__more-menu-label {
   flex-grow: 1;
   margin: 0;
   padding: 0.75rem;
 }
 
-.gef-masthead-more-menu ul {
+.gef-masthead__more-menu ul {
   flex-basis: 0;
   flex-grow: 999;
   min-width: 75%;
@@ -223,29 +223,29 @@
   flex-wrap: wrap;
 }
 
-.gef-masthead-more-menu li {
+.gef-masthead__more-menu li {
   flex: 0 1 10rem;
 }
 
-.gef-masthead-with-js .gef-masthead-links {
+.gef-masthead--with-js .gef-masthead__links {
   display: flex;
 }
 
-.gef-masthead-with-js .gef-masthead-popup {
+.gef-masthead--with-js .gef-masthead__popup {
   display: none;
 }
 
-.gef-masthead-banner {
+.gef-masthead__banner {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.gef-masthead-account-option {
+.gef-masthead__account-option {
   position: relative;
 }
 
-.gef-masthead-account-option::after {
+.gef-masthead__account-option::after {
   content: '';
   width: 0.5rem;
   height: 0.5rem;
@@ -259,25 +259,25 @@
   top: calc(50% - 0.25rem);
 }
 
-.gef-masthead-with-js .gef-masthead-more-option,
-.gef-masthead-with-js .gef-masthead-alerts-option,
-.gef-masthead-with-js .gef-masthead-account-option {
+.gef-masthead--with-js .gef-masthead__more-option,
+.gef-masthead--with-js .gef-masthead__alerts-option,
+.gef-masthead--with-js .gef-masthead__account-option {
   display: block;
 }
 
 @media (max-width: 500px) {
-  .gef-masthead-more-option {
+  .gef-masthead__more-option {
     border-left: 1px solid $gel-color--dusty-gray;
   }
 
-  .gef-masthead-more-option-icon {
+  .gef-masthead__more-option-icon {
     display: block;
   }
   
-  .gef-masthead-more-option-text,
-  .gef-masthead-with-js .gef-masthead-links, 
-  .gef-masthead-account-text,
-  .gef-masthead-more-option::before {
+  .gef-masthead__more-option-text,
+  .gef-masthead--with-js .gef-masthead__links, 
+  .gef-masthead__account-text,
+  .gef-masthead__more-option::before {
     display: none;
   }
 }
