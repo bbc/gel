@@ -239,8 +239,8 @@
 
   self.constructor = function (cardElem) {
     var moreBtn = cardElem.querySelector('[aria-expanded="false"]');
-    var moreElem = cardElem.querySelector('.gef-card-info');
-    var moreHeading = moreElem.querySelector('.gef-card-info-heading');
+    var moreElem = cardElem.querySelector('.gef-card__info');
+    var moreHeading = moreElem.querySelector('.gef-card-info__heading');
 
     moreBtn.addEventListener('click', function () {
       moreElem.hidden = !moreElem.hidden;

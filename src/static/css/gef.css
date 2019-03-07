@@ -453,7 +453,7 @@ svg + .gef-promo-indicator-text {
   display: flex;
   flex-direction: column; }
 
-.gef-card-content {
+.gef-card__content {
   position: relative;
   overflow: hidden;
   height: 10rem;
@@ -475,27 +475,27 @@ svg + .gef-promo-indicator-text {
   .gef-cards > * {
     margin: 0; } }
 
-.gef-card-content img,
-.gef-card-content video {
+.gef-card__content img,
+.gef-card__content video {
   height: 100%;
   width: auto; }
 
 /* to neaten up where object-fit isn't supported */
-.gef-card-content {
+.gef-card__content {
   text-align: center;
   background-color: #404040; }
 
 @supports (object-fit: cover) {
-  .gef-card-content img,
-  .gef-card-content video {
+  .gef-card__content img,
+  .gef-card__content video {
     width: 100%;
     object-fit: cover; } }
 
-.gef-card-headline, .gef-card-desc {
+.gef-card__headline, .gef-card__desc {
   padding-left: 1rem;
   padding-right: 1rem; }
 
-.gef-card-toolbar {
+.gef-card__toolbar {
   font-size: 0.85rem;
   height: 2.5rem;
   list-style: none;
@@ -505,31 +505,31 @@ svg + .gef-promo-indicator-text {
   border-top: 1px solid transparent;
   /* for high contrast mode */ }
 
-.gef-card-toolbar button {
+.gef-card__toolbar button {
   background: none;
   border: none;
   font-size: inherit;
   display: inline-block;
   color: #404040; }
 
-.gef-card-toolbar > * {
+.gef-card__toolbar > * {
   padding: 0.5rem 1rem; }
 
-.gef-card-toolbar [aria-expanded] {
+.gef-card__toolbar [aria-expanded] {
   text-align: left;
   flex-grow: 999; }
 
-.gef-card-close-label {
+.gef-card__close-label {
   display: none; }
 
-[aria-expanded="true"] .gef-card-close-label {
+[aria-expanded="true"] .gef-card__close-label {
   display: block; }
 
 [aria-expanded="true"] .gef-card-more-label {
   display: none; }
 
-.gef-card-toolbar button:hover,
-.gef-card-toolbar button:focus {
+.gef-card__toolbar button:hover,
+.gef-card__toolbar button:focus {
   outline: 2px solid transparent;
   /* for high contrast mode */
   outline-offset: -2px;
@@ -537,7 +537,7 @@ svg + .gef-promo-indicator-text {
   background-color: #007bb8;
   color: #fff; }
 
-.gef-card-info {
+.gef-card__info {
   position: absolute;
   top: 0;
   right: 0;
@@ -548,12 +548,12 @@ svg + .gef-promo-indicator-text {
   background-color: #F1F1F1;
   overflow-y: auto; }
 
-.gef-card-info-heading:focus {
+.gef-card-info__heading:focus {
   outline: none; }
 
 /* Video */
-.gef-card .gef-card-play-button,
-.gef-card .gef-card-mute-button {
+.gef-card .gef-card__play-button,
+.gef-card .gef-card__mute-button {
   width: 4rem;
   height: 4rem;
   font-size: 2rem;
@@ -565,11 +565,11 @@ svg + .gef-promo-indicator-text {
   left: 0;
   bottom: 0; }
 
-.gef-card .gef-card-play-button:focus,
-.gef-card .gef-card-mute-button:focus {
+.gef-card .gef-card__play-button:focus,
+.gef-card .gef-card__mute-button:focus {
   outline: 2px solid #121212; }
 
-.gef-card .gef-card-mute-button {
+.gef-card .gef-card__mute-button {
   width: 2.5rem;
   height: 2.5rem;
   font-size: 1.5rem;
