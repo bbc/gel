@@ -1304,12 +1304,12 @@ input[type=range]::-ms-thumb {
 .gef-accordion, .gef-accordion button {
   color: #404040; }
 
-.gef-accordion .gef-accordion-handle {
+.gef-accordion .gef-accordion__handle {
   margin: 0;
   padding: 0;
   border: 0; }
 
-.gef-accordion-handle button {
+.gef-accordion__handle button {
   border: 0;
   background-color: #dcdcdc;
   color: inherit;
@@ -1325,22 +1325,22 @@ input[type=range]::-ms-thumb {
   justify-content: space-between;
   align-items: center; }
 
-.gef-accordion-handle button:hover,
-.gef-accordion-handle button:focus {
+.gef-accordion__handle button:hover,
+.gef-accordion__handle button:focus {
   outline: 2px solid transparent;
   /* fallback for high contrast mode */
   outline-offset: 2px;
   background-color: #007bb8;
   color: #fff; }
 
-.gef-accordion-handle svg {
+.gef-accordion__handle svg {
   margin-left: 0.5rem;
   flex-shrink: 0; }
 
-.gef-accordion-handle [aria-expanded="true"] svg {
+.gef-accordion__handle [aria-expanded="true"] svg {
   transform: rotate(180deg); }
 
-.gef-accordion-handle, .gef-accordion-drawer {
+.gef-accordion__handle, .gef-accordion__drawer {
   margin: 0;
   padding: 0; }
 
@@ -1351,25 +1351,25 @@ input[type=range]::-ms-thumb {
 .gef-accordion > * + * {
   border-top: 0; }
 
-.gef-accordion-handle button, .gef-accordion-drawer {
+.gef-accordion__handle button, .gef-accordion__drawer {
   padding: 0.75rem; }
 
-.gef-accordion-drawer {
+.gef-accordion__drawer {
   background-color: #eeeeee; }
 
 /* 
 Optional, example implementation
 of 'open all' and 'close all' tools
 */
-.gef-accordion-controls {
+.gef-accordion__controls {
   text-align: right;
   margin: 0.5rem 0; }
 
-.gef-accordion-controls button {
+.gef-accordion__controls button {
   font-size: 0.8rem;
   padding: 0.5rem 0.75rem; }
 
-.gef-accordion-controls button + button {
+.gef-accordion__controls button + button {
   margin-left: 0.5rem; }
 
 .gef-infopanel {
