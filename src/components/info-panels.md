@@ -18,11 +18,11 @@ As the [GEL definition attests](https://www.bbc.co.uk/gel/guidelines/information
 The following structure is expected, with notes to follow. 
 
 ```html
-<div class="info-panel-example gef-infopanel">
-  <button class="gef-button gef-infopanel-button" type="button" aria-haspopup="true" aria-expanded="false">More info</button>
-  <div class="gef-infopanel-panel" role="group" aria-labelledby="unique-ref" style="width: 15rem;" hidden>
-    <div class="gef-infopanel-title-area"><span id="unique-ref" aria-hidden="true">More info</span>
-      <button class="gef-infopanel-close-button">
+<div class="infopanel-example gef-infopanel">
+  <button class="gef-button gef-infopanel__button" type="button" aria-haspopup="true" aria-expanded="false">More info</button>
+  <div class="gef-infopanel__panel" role="group" aria-labelledby="unique-ref" style="width: 15rem;" hidden>
+    <div class="gef-infopanel__title-area"><span id="unique-ref" aria-hidden="true">More info</span>
+      <button class="gef-infopanel__close-button">
         <span class="gef-sr">close</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
           <use xlink:href="path/to/static/images/gel-icons-all.svg#gel-icon-no"></use>
@@ -35,10 +35,10 @@ The following structure is expected, with notes to follow.
 ```
 
 * **`class="gef-button"`:** A standard `<button>` element takes the `aria-haspopup="true"` property and `aria-expanded="false"` state. The former indicates that the button secretes a popup (panel) and the later (set to `false` initially) indicates whether that popup is in an expanded or collapsed state.
-* **`class="gef-infopanel-panel"`:** The panel itself takes `role="group"` to indicate it's contents are related. A standard Menu Button[^1] would expect `role="menu"` here, but that would prescribe the presence of menu items (`role="menuitem"` etc.). Because **Information panel** contents diverge between instances, a more generic parent role is used.
+* **`class="gef-infopanel__panel"`:** The panel itself takes `role="group"` to indicate it's contents are related. A standard Menu Button[^1] would expect `role="menu"` here, but that would prescribe the presence of menu items (`role="menuitem"` etc.). Because **Information panel** contents diverge between instances, a more generic parent role is used.
 
 * **`aria-labelledby`:** This associates the panel with its title's `id` (`id="unique-ref"` in this example). This ensures the title is read out as the screen reader enters the panel.
-* **`gef-infopanel-close-button`:** The close button has a visually hidden (but available to assistive technologies) text label of _"close"_ to supplement the visible 'X' icon. The visually hidden span (achieved with `class="gef-sr"`) is preferred to using `aria-label` since `aria-label` is not translated by Google's or Microsoft's translation services[^3]. 
+* **`gef-infopanel__close-button`:** The close button has a visually hidden (but available to assistive technologies) text label of _"close"_ to supplement the visible 'X' icon. The visually hidden span (achieved with `class="gef-sr"`) is preferred to using `aria-label` since `aria-label` is not translated by Google's or Microsoft's translation services[^3]. 
 * **`focusable="false"` and `aria-hidden="true"`:** Each icon, taken from the [Gel Iconography suite](http://bbc.github.io/gel-iconography/) must take these attributes to ensure the icon is not in focus order and is not erroneously identified by assistive technologies.
 
 ## Recommended layout
@@ -66,7 +66,7 @@ for (var setting in options) {
 Central alignment is achieved with a CSS transform, meaning any width of panel will automatically align centrally:
 
 ```css
-.gef-infopanel-center {
+.gef-infopanel__center {
   transform: translateX(-50%);
   left: 50%;
 }
@@ -75,7 +75,7 @@ Central alignment is achieved with a CSS transform, meaning any width of panel w
 The width is overridden by a `max-width` where overflow (and the panel being obscured) would otherwise be an issue. This is hard-coded at `80vw`, with `20vw` subtracted to help address padding that might apply to the document's left and right sides.
 
 ```css
-.gef-infopanel-panel {
+.gef-infopanel__panel {
   text-align: left;
   background-color: $gel-color--alto;
   position: absolute;
@@ -90,7 +90,7 @@ The directional arrow, pointing from the panel to the button, is considered a pr
 
 ```css
 @supports (clip-path: inset(100%)) {
-  .gef-infopanel-panel::after {
+  .gef-infopanel__panel::after {
     content: '';
     display: inline-block;
     background-color: inherit;
@@ -99,25 +99,25 @@ The directional arrow, pointing from the panel to the button, is considered a pr
     position: absolute;
   }
 
-  .gef-infopanel-below::after {
+  .gef-infopanel__below::after {
     clip-path: polygon(0 100%, 50% 0, 100% 100%);
     top: calc(-0.75rem + 1px); /* suppress rounding errors */
   }
 
-  .gef-infopanel-above::after{
+  .gef-infopanel__above::after{
     clip-path: polygon(0 0, 50% 100%, 100% 0);
     bottom: calc(-0.75rem + 1px); /* suppress rounding errors */
   }
 
-  .gef-infopanel-left::after {
+  .gef-infopanel__left::after {
     left: 1.5rem;
   }
 
-  .gef-infopanel-right::after {
+  .gef-infopanel__right::after {
     right: 1.5rem;
   }
   
-  .gef-infopanel-center::after {
+  .gef-infopanel__center::after {
     left: calc(50% - 0.375rem);
   }
 }
@@ -125,7 +125,7 @@ The directional arrow, pointing from the panel to the button, is considered a pr
 
 ### `z-index`
 
-For the panel to be positioned in alignment with its invoking button, the parent `class="gef-infopanel"` element must take `display: inline-block` and `position: relative`. However, `position: relative` is _only_ applied (via a toggled `gef-infopanel-showing` class) when the panel is shown. This avoids `z-index` stacking issues caused by too many positioned elements being on the page.
+For the panel to be positioned in alignment with its invoking button, the parent `class="gef-infopanel"` element must take `display: inline-block` and `position: relative`. However, `position: relative` is _only_ applied (via a toggled `gef-infopanel__showing` class) when the panel is shown. This avoids `z-index` stacking issues caused by too many positioned elements being on the page.
 
 ### High contrast
 
@@ -144,7 +144,7 @@ Without JavaScript the component cannot function. Since it is only intended for 
   display: none; 
 }
 
-.gef-infopanel-with-js {
+.gef-infopanel__with-js {
   position: relative;
   display: inline-block;
 }

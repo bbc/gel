@@ -43,13 +43,13 @@
 
 <h3>Left/below alignment</h3>
 <div class="example-slice">
-  <div class="gef-infopanel infopanel-left-below">
-    <button class="gef-infopanel-button gef-button" type="button" aria-haspopup="true" aria-expanded="false">More
+  <div class="gef-infopanel infopanel--left-below">
+    <button class="gef-infopanel__button gef-button" type="button" aria-haspopup="true" aria-expanded="false">More
       info</button>
-    <div class="gef-infopanel-panel" role="group" aria-labelledby="unique-ref1" style="width: 15rem;" hidden>
-      <div class="gef-infopanel-title-area">
+    <div class="gef-infopanel__panel" role="group" aria-labelledby="unique-ref1" style="width: 15rem;" hidden>
+      <div class="gef-infopanel__title-area">
         <span id="unique-ref1" aria-hidden="true">More info</span>
-        <button class="gef-infopanel-close-button">
+        <button class="gef-infopanel__close-button">
           <span class="gef-sr">close</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
             <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-no"></use>
@@ -67,13 +67,13 @@
 
 <h3>Right/below alignment</h3>
 <div class="example-slice" style="text-align: right">
-  <div class="gef-infopanel infopanel-right-below">
-    <button class="gef-infopanel-button gef-button" type="button" aria-haspopup="true" aria-expanded="false">More
+  <div class="gef-infopanel infopanel--right-below">
+    <button class="gef-infopanel__button gef-button" type="button" aria-haspopup="true" aria-expanded="false">More
       info</button>
-    <div class="gef-infopanel-panel" role="group" aria-labelledby="unique-ref2" style="width: 15rem;" hidden>
-      <div class="gef-infopanel-title-area">
+    <div class="gef-infopanel__panel" role="group" aria-labelledby="unique-ref2" style="width: 15rem;" hidden>
+      <div class="gef-infopanel__title-area">
         <span id="unique-ref2" aria-hidden="true">More info</span>
-        <button class="gef-infopanel-close-button">
+        <button class="gef-infopanel__close-button">
           <span class="gef-sr">close</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
             <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-no"></use>
@@ -91,13 +91,13 @@
 
 <h3>Center/below alignment</h3>
 <div class="example-slice" style="text-align: center">
-  <div class="gef-infopanel infopanel-center-below">
-    <button class="gef-infopanel-button gef-button" type="button" aria-haspopup="true" aria-expanded="false">More
+  <div class="gef-infopanel infopanel--center-below">
+    <button class="gef-infopanel__button gef-button" type="button" aria-haspopup="true" aria-expanded="false">More
       info</button>
-    <div class="gef-infopanel-panel" role="group" aria-labelledby="unique-ref3" style="width: 15rem;" hidden>
-      <div class="gef-infopanel-title-area">
+    <div class="gef-infopanel__panel" role="group" aria-labelledby="unique-ref3" style="width: 15rem;" hidden>
+      <div class="gef-infopanel__title-area">
         <span id="unique-ref3" aria-hidden="true">More info</span>
-        <button class="gef-infopanel-close-button">
+        <button class="gef-infopanel__close-button">
           <span class="gef-sr">close</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
             <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-no"></use>
@@ -119,18 +119,18 @@
 
     // Initialize example 1
     new gef.InfoPanel.constructor(
-      document.querySelector('.infopanel-left-below')
+      document.querySelector('.infopanel--left-below')
     );
 
     // Initialize example 2
     new gef.InfoPanel.constructor(
-      document.querySelector('.infopanel-right-below'),
+      document.querySelector('.infopanel--right-below'),
       { hAlign: 'right' }
     );
 
     // Initialize example 3
     new gef.InfoPanel.constructor(
-      document.querySelector('.infopanel-center-below'),
+      document.querySelector('.infopanel--center-below'),
       { hAlign: 'center' }
     );
   });

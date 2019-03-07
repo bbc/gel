@@ -25,14 +25,14 @@ The [Reference implementation](#reference-implementation)'s script acts upon the
 <main id="main" tabindex="-1">
   <h1>You searched for "camera"</h1>
   <div class="gef-loader">
-    <ul class="gef-loader-items">
+    <ul class="gef-loader__items">
       <!-- loaded items -->
     </ul>
-    <div class="gef-loader-foot">
-      <div class="gef-loader-loading" role="status" hidden>
+    <div class="gef-loader__foot">
+      <div class="gef-loader__loading" role="status" hidden>
         <!-- the loading indicator (spinner) -->
       </div>
-      <button class="gef-loader-button gef-button" hidden>Load more</button>
+      <button class="gef-loader__button gef-button" hidden>Load more</button>
       <nav class="gef-pages" aria-labelledby="gef-pagination-label">
         <!-- the pagination functionality -->
       </nav>
@@ -45,7 +45,7 @@ The [Reference implementation](#reference-implementation)'s script acts upon the
 The main element[^3] has attributes `id="main"` and `tabindex="-1"`. This is because it is expected to be the focus target of a same-page 'skip link'. In circumstances where the JavaScript does not run and the user must rely on the pagination component, the skip link lets them bypass the page's header/masthead to reach each successive page's content.
 :::
 
-### `gef-loader-items`
+### `gef-loader__items`
 
 The loaded content items are presented as a list. List items are enumerated in screen reader software, letting the user know how many items are present in total, and which one they are interacting with (_"4 of 37"_).
 
@@ -57,23 +57,23 @@ As elaborated in [Expected behaviour](#expected-behaviour), each time a new set 
 </li>
 ```
 
-### `gef-loader-loading`
+### `gef-loader__loading`
 
 This construct comprises the visual loading indicator—an SVG icon—and a live region (`role="status"`)[^5]. In the [Reference implementation](#reference-implementation), _"Loading, please wait"_ is inserted invisibly into the live region as items begin to be requested. This appending of text triggers immediate announcement in screen reader output.
 
 ```html
-<div class="gef-loader-loading" role="status" hidden>
+<div class="gef-loader__loading" role="status" hidden>
   <svg class="gel-icon gel-icon--text gel-icon-loading" focusable="false" aria-hidden="true">
     <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-loading"></use>
   </svg>
-  <div class="gef-loader-loading-text gef-sr"></div>
+  <div class="gef-loader__loading-text gef-sr"></div>
 </div>
 ```
 
 ### The 'load more' button
 
 ```html
-<button class="gef-loader-button gef-button" type="button" hidden>Load more</button>
+<button class="gef-loader__button gef-button" type="button" hidden>Load more</button>
 ```
 
 The button is hidden by default. Only where JavaScript runs is it revealed (and the fallback pagination component removed). It must be a standard `<button>` element, with `type="button"`. It is always at the foot of the list of loaded content and can easily be stepped/tabbed past by keyboard.
@@ -172,7 +172,7 @@ The separator element introducing any batch of new results takes focus to place 
   }
 }
 
-.gef-loader-items [role="separator"]:focus {
+.gef-loader__items [role="separator"]:focus {
   outline-width: 0;
   outline-offset: 2px;
   animation: focus 1s linear 1;

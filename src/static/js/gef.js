@@ -291,12 +291,12 @@
 
     self.constructor = function (elem) {
       // Save refs to elements
-      var scrollable = elem.querySelector('.gef-carousel-scrollable');
-      var buttons = elem.querySelector('.gef-carousel-buttons');
-      var list = elem.querySelector('.gef-carousel-list');
+      var scrollable = elem.querySelector('.gef-carousel__scrollable');
+      var buttons = elem.querySelector('.gef-carousel__buttons');
+      var list = elem.querySelector('.gef-carousel__list');
       var items = list.children;
-      var prev = elem.querySelector('.gef-carousel-prev');
-      var next = elem.querySelector('.gef-carousel-next');
+      var prev = elem.querySelector('.gef-carousel__prev');
+      var next = elem.querySelector('.gef-carousel__next');
 
       // Reveal button functionality now JS has run
       buttons.hidden = false;
@@ -383,17 +383,17 @@
     // Make sure the parent has the right classes
     this.elem = elem;
     this.elem.classList.add('gef-infopanel');
-    this.elem.classList.add('gef-infopanel-with-js');
+    this.elem.classList.add('gef-infopanel--with-js');
 
     // Save key elements
-    this.button = this.elem.querySelector('.gef-infopanel-button');
-    this.panel = this.elem.querySelector('.gef-infopanel-panel');
-    this.closeButton = this.panel.querySelector('.gef-infopanel-close-button');
+    this.button = this.elem.querySelector('.gef-infopanel__button');
+    this.panel = this.elem.querySelector('.gef-infopanel__panel');
+    this.closeButton = this.panel.querySelector('.gef-infopanel__close-button');
 
     // Add the alignment classes
     this.panel.classList.add(
-      'gef-infopanel-' + settings.hAlign,
-      'gef-infopanel-' + settings.vAlign
+      'gef-infopanel--' + settings.hAlign,
+      'gef-infopanel--' + settings.vAlign
     );
 
     // toggle the open/closed state on button clicks
@@ -448,7 +448,7 @@
     document.addEventListener('click', this.closeOnBlur);
     // For adding `position: relative` dynamically
     // to avoid z-index issues
-    this.elem.classList.add('gef-infopanel-showing');
+    this.elem.classList.add('gef-infopanel--showing');
     this.closeButton.focus();
   }
 
@@ -457,7 +457,7 @@
     this.panel.hidden = true;
     this.button.setAttribute('aria-expanded', 'false');
     document.removeEventListener('click', this.closeOnBlur);
-    this.elem.classList.remove('gef-infopanel-showing');
+    this.elem.classList.remove('gef-infopanel--showing');
   }
 })();/**
  * Masthead
@@ -869,7 +869,7 @@
     // Create and insert general message live region
     var warn = document.createElement('div');
     warn.setAttribute('aria-live', 'assertive');
-    warn.classList.add('gel-form-warning');
+    warn.classList.add('gef-form__warning');
     submit.parentNode.insertBefore(warn, submit);
 
     // Do not initially bother users by validating for required

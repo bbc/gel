@@ -21,22 +21,22 @@ The markup is elided for brevity. The `<li>` elements represent the containers f
 
 ```html
 <div class="gef-carousel" role="group">
-  <div class="gef-carousel-buttons" hidden>
-    <button class="gef-carousel-prev" type="button">
+  <div class="gef-carousel__buttons" hidden>
+    <button class="gef-carousel__prev" type="button">
       <span class="gef-sr">previous</span>
       <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
         <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-previous"></use>
       </svg>
     </button>
-    <button class="gef-carousel-next" type="button">
+    <button class="gef-carousel__next" type="button">
       <span class="gef-sr">next</span>
       <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
         <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-next"></use>
       </svg>
     </button>
   </div>
-  <div class="gef-carousel-scrollable">
-    <ul class="gef-carousel-list">
+  <div class="gef-carousel__scrollable">
+    <ul class="gef-carousel__list">
       <li>...</li>
       <li>...</li>
       <li>...</li>
@@ -56,8 +56,8 @@ The markup is elided for brevity. The `<li>` elements represent the containers f
 * **previous and next buttons:** One can scroll the through the content in incremental steps using the previous and next buttons. It's important these are `<button>` elements with `type="button"`. Their labels are provided using visually hidden text (the `gef-sr` class) because, unlike `aria-label`, it will be translated by browser translation extensions. Buttons that are not applicable (e.g. the previous button on page load) receive the `disabled` property. The button is removed from focus order and identified as disabled (or 'dimmed') in screen reader output.
 * **`hidden`:** The buttons are hidden by default because they do not work in the absence of JavaScript. They are revealed when the JavaScript runs.
 * **`gel-icon` SVGs:** These must be the official `#gel-icon-previous` and `#gel-icon-next` icons from the [GEL Iconography](http://bbc.github.io/gel-iconography/) set. They have `aria-hidden="true"` and `scrollable="flase"` to hide them from assistive technologies and remove them from focus order.
-* **`gef-carousel-scrollable`:** This is the scrollable 'window' for the list of carousel content items (see [Recommended layout](#recommended-layout))
-* **`gef-carousel-list`:** The singular child element of `gef-carousel-scrollable` must be a `<ul>`, with each item as an `<li>`. List markup is identified as such in assistive technologies, and the items are enumerated. This lets screen reader users know they are met with a set of related content, and how much of it there is.
+* **`gef-carousel__scrollable`:** This is the scrollable 'window' for the list of carousel content items (see [Recommended layout](#recommended-layout))
+* **`gef-carousel__list`:** The singular child element of `gef-carousel__scrollable` must be a `<ul>`, with each item as an `<li>`. List markup is identified as such in assistive technologies, and the items are enumerated. This lets screen reader users know they are met with a set of related content, and how much of it there is.
 
 ## Recommended layout
 
@@ -69,7 +69,7 @@ The basic scrolling functionality is achieved without JavaScript by making sure:
 This basic layout uses `inline-block` and enhances to a Flexbox context using `@supports`. The advantage of Flexbox is that its stretching algorithm makes each of the items (**Promos** in the [Reference implementation](#reference-implementation)) the same height.
 
 ```css
-.gef-carousel-list {
+.gef-carousel__list {
   display: flex;
   list-style: none;
   padding: 0;
@@ -77,7 +77,7 @@ This basic layout uses `inline-block` and enhances to a Flexbox context using `@
   white-space: nowrap;
 }
 
-.gef-carousel-list > li {
+.gef-carousel__list > li {
   display: flex;
   flex-shrink: 0;
   white-space: normal;
@@ -85,7 +85,7 @@ This basic layout uses `inline-block` and enhances to a Flexbox context using `@
   transition: opacity 0.5s linear;
 }
 
-.gef-carousel-list > li + li {
+.gef-carousel__list > li + li {
   margin-left: 1rem;
 }
 ```
@@ -93,15 +93,15 @@ This basic layout uses `inline-block` and enhances to a Flexbox context using `@
 On some operating systems, the horizontal scrollbar is not visible by default, meaning the scrollable container lacks perceived affordance[^2]. It's possible to reveal the scrollbar in webkit browsers by giving them a custom styling:
 
 ```css
-.gef-carousel-scrollable::-webkit-scrollbar {
+.gef-carousel__scrollable::-webkit-scrollbar {
   height: 0.5rem;
 }
 
-.gef-carousel-scrollable::-webkit-scrollbar-track {
+.gef-carousel__scrollable::-webkit-scrollbar-track {
   background-color: $gel-color--dusty-gray;
 }
 
-.gef-carousel-scrollable::-webkit-scrollbar-thumb {
+.gef-carousel__scrollable::-webkit-scrollbar-thumb {
   background-color: $gel-color--tundora;
 }
 ```
@@ -111,21 +111,21 @@ On some operating systems, the horizontal scrollbar is not visible by default, m
 Items that are less than 50% in view are made to look faint with a reduced opacity. This indicates that the item must be brought further into view before it is interactive (see [**Recommended behaviour**](#recommended-behaviour)). The opacity style is applied using a CSS transition, to avoid a distracting 'blinking' effect as the user scrolls back and forth.
 
 ```css
-.gef-carousel-list > li {
+.gef-carousel__list > li {
   transition: opacity 0.5s linear;
 }
 
-.gef-carousel-list > li[inert] {
+.gef-carousel__list > li[inert] {
   opacity: 0.3;
 }
 ```
 
 ### Buttons
 
-The previous and next buttons, `class="gef-carousel-buttons"`, is absolutely positioned over the **Carousel** at the top right, necessitating `position: relative` on the parent `gef-carousel` element. Disabled buttons take a reduced opacity.
+The previous and next buttons, `class="gef-carousel__buttons"`, is absolutely positioned over the **Carousel** at the top right, necessitating `position: relative` on the parent `gef-carousel` element. Disabled buttons take a reduced opacity.
 
 ```css
-.gef-carousel-buttons button[disabled] {
+.gef-carousel__buttons button[disabled] {
   opacity: 0.5;
 }
 ```
@@ -137,12 +137,12 @@ Where supported, `scroll-behavior: smooth` animates scrolling, whether scrolling
 This feature is only applied if the user has not chosen to reduce animations in their system settings:
 
 ```css
-.gef-carousel-scrollable {
+.gef-carousel__scrollable {
   scroll-behavior: smooth;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .gef-carousel-scrollable {
+  .gef-carousel__scrollable {
     scroll-behavior: auto;
   }
 }

@@ -39,7 +39,7 @@
     // Create and insert general message live region
     var warn = document.createElement('div');
     warn.setAttribute('aria-live', 'assertive');
-    warn.classList.add('gel-form-warning');
+    warn.classList.add('gef-form__warning');
     submit.parentNode.insertBefore(warn, submit);
 
     // Do not initially bother users by validating for required

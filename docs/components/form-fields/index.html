@@ -247,14 +247,14 @@ to break because they depend on JavaScript in order to function.</p>
 </code></pre>
 <h3 id="high-contrast-mode">High Contrast Mode</h3>
 <p>A couple of provisions are made to better support Windows High Contrast Mode. A transparent border is added to the error messages so they appear as boxes and, for supporting browsers, the message takes an inversion filter to give it the appearance of a background:</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-form-field-error</span>,
-<span class="hljs-selector-class">.gef-form-warning</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-form__field-error</span>,
+<span class="hljs-selector-class">.gef-form__warning</span> {
   <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid transparent;
 }
 
 @<span class="hljs-keyword">media</span> (-ms-high-contrast: active) {
-  <span class="hljs-selector-class">.gef-form-field-error</span>,
-  <span class="hljs-selector-class">.gef-form-warning</span> {
+  <span class="hljs-selector-class">.gef-form__field-error</span>,
+  <span class="hljs-selector-class">.gef-form__warning</span> {
     <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">invert</span>(100%);
   }
 }
@@ -269,8 +269,8 @@ to break because they depend on JavaScript in order to function.</p>
 <p><img src="/gef-docs/static/images/hcm_form_fields.png" alt="The error message is white with black text"></p>
 <p>A CSS filter is used to reverse the colors of the error message:</p>
 <pre class="hljs"><code>@<span class="hljs-keyword">media</span> (-ms-high-contrast: active) {
-  <span class="hljs-selector-class">.gef-form-field-error</span>,
-  <span class="hljs-selector-class">.gef-form-warning</span> {
+  <span class="hljs-selector-class">.gef-form__field-error</span>,
+  <span class="hljs-selector-class">.gef-form__warning</span> {
     <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">invert</span>(100%);
   }
 }
@@ -323,20 +323,20 @@ title: Form fields and validation
 <h3>Form fields and validation</h3>
 
 <form id="myform-demo">
-  <div class="gef-form-divider">
+  <div class="gef-form__divider">
     <label for="username">Username</label>
     <input type="text" id="username" name="username" />
-    <div class="gef-form-field-error" id="username-error"></div>
+    <div class="gef-form__field-error" id="username-error"></div>
   </div>
-  <div class="gef-form-divider">
+  <div class="gef-form__divider">
     <label for="code">
       Verification code
       <small>This was sent to you by email</small>
     </label>
     <input type="text" id="code" name="code" />
-    <div class="gef-form-field-error" id="code-error"></div>
+    <div class="gef-form__field-error" id="code-error"></div>
   </div>
-  <div class="gef-form-divider">
+  <div class="gef-form__divider">
     <button class="gef-button" type="submit">Submit</button>
   </div>
 </form>

@@ -34,12 +34,12 @@
 
     self.constructor = function (elem) {
       // Save refs to elements
-      var scrollable = elem.querySelector('.gef-carousel-scrollable');
-      var buttons = elem.querySelector('.gef-carousel-buttons');
-      var list = elem.querySelector('.gef-carousel-list');
+      var scrollable = elem.querySelector('.gef-carousel__scrollable');
+      var buttons = elem.querySelector('.gef-carousel__buttons');
+      var list = elem.querySelector('.gef-carousel__list');
       var items = list.children;
-      var prev = elem.querySelector('.gef-carousel-prev');
-      var next = elem.querySelector('.gef-carousel-next');
+      var prev = elem.querySelector('.gef-carousel__prev');
+      var next = elem.querySelector('.gef-carousel__next');
 
       // Reveal button functionality now JS has run
       buttons.hidden = false;
