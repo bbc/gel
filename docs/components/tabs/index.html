@@ -110,7 +110,7 @@
             <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="introduction">Introduction</h2>
 <p>Tabbed interfaces, like accordions, allow users to view long-form content one section at a time. Clearly labelled tabs representing the individual sections make it easy for users to identify and reveal the content pertinent to them.</p>
-<p>Use tabs where the subject sections are not too numerous (more than four tabs in total) and the tab labels are not lengthy. Tab content should be self-sufficient: do not force users to switch back and forth between tabs to complete tasks<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p>
+<p>Use tabs where the subject sections are not too numerous (more than four tabs in total) and the tab labels are not lengthy. Tab content should be self-sufficient: do not force users to switch back and forth between tabs to complete tasks<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. Where more than four sections/labels are present, or the tab labels are lengthy, an <a href="../accordions"><strong>Accordion</strong></a> pattern is preferred.</p>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-divergence-from-authoring-practices">
               <h4 id="aside-alert-divergence-from-authoring-practices" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Divergence from authoring practices</h4><div><p>The GEL tabs implementation diverges from the ARIA Authoring Practices specification<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> in both semantics and behaviour. This is to address usability issues found in both internal and external research<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> with ARIA tab interfaces. Instead, GEL tabs are an enhanced version of a table of contents pattern, using same-page links and document fragments.</p>
@@ -235,24 +235,27 @@ title: Tabs
       <li><a href="#section2">Section 2</a></li>
       <li><a href="#section3">Section 3</a></li>
     </ul>
-    <section id="section1">
+    <section id="section1" tabindex="-1">
       <h3>Section 1</h3>
       <p>Content for section 1.</p>
     </section>
-    <section id="section2">
+    <section id="section2" tabindex="-1">
       <h3>Section 2</h3>
-      <p>Content for section 1.</p>
+      <p>Content for section 2.</p>
     </section>
-    <section id="section3">
+    <section id="section3" tabindex="-1">
       <h3>Section 3</h3>
-      <p>Content for section 1.</p>
+      <p>Content for section 3.</p>
     </section>
   </div>
 </div>
 
 <script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function(event) {
+  document.addEventListener('DOMContentLoaded', function (event) {
     window.gef && gef.Tabs.init();
+
+    //var tabsElem = document.querySelector('.gef-tabs');
+    //var tabs = new gef.Tabs.constructor(tabsElem);
   });
 </script></div>
         
