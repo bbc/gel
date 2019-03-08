@@ -103,54 +103,97 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#expected-markup">Expected markup</a></li><li><a href="#expected-layout">Expected layout</a></li><li><a href="#expected-behaviour">Expected behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
             <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="introduction">Introduction</h2>
 <p>Tabbed interfaces, like accordions, allow users to view long-form content one section at a time. Clearly labelled tabs representing the individual sections make it easy for users to identify and reveal the content pertinent to them.</p>
-<p>Use tabs where the subject sections are not too numerous (more than four tabs in total) and the tab labels are not lengthy. Tab content should be self-sufficient: do not force users to switch back and forth between tabs to complete tasks<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. Where more than four sections/labels are present, or the tab labels are lengthy, an <a href="../accordions"><strong>Accordion</strong></a> pattern is preferred.</p>
+<p>Use tabs where the subject sections are not too numerous (more than four or five tabs in total) and the tab labels are not lengthy. Tab content should be self-sufficient: do not force users to switch back and forth between tabs to complete tasks<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. Where more than five sections/labels are present, or the tab labels are lengthy, an <a href="../accordions"><strong>Accordion</strong></a> pattern is preferred.</p>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-divergence-from-authoring-practices">
-              <h4 id="aside-alert-divergence-from-authoring-practices" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Divergence from authoring practices</h4><div><p>The GEL tabs implementation diverges from the ARIA Authoring Practices specification<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> in both semantics and behaviour. This is to address usability issues found in both internal and external research<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> with ARIA tab interfaces. Instead, GEL tabs are an enhanced version of a table of contents pattern, using same-page links and document fragments.</p>
-</aside><h2 id="expected-markup">Expected markup</h2>
+              <h4 id="aside-alert-divergence-from-authoring-practices" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Divergence from authoring practices</h4><div><p>The GEL tabs implementation diverges from the ARIA Authoring Practices specification<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> in behaviour. This is to address usability issues found in both internal and external research<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> with ARIA tab interfaces. See <a href="#related-research">Related research</a>.</p>
+</aside><h2 id="recommended-markup">Recommended markup</h2>
+<h3 id="initial-markup">Initial markup</h3>
+<p>Where server-side rendering and progressive enhancement are possible, follow this pattern for authoring your tab interface. Where JavaScript runs, this table-of-contents (linking to the subsequent content sections) will be enhanced with ARIA attribution.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-tabs"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tab-section1"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#section1"</span> <span class="hljs-attr">aria-current</span>=<span class="hljs-string">"true"</span>&gt;</span>Section 1<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#section1"</span>&gt;</span>Section 1<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tab-section2"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#section2"</span>&gt;</span>Section 2<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#section2"</span>&gt;</span>Section 2<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tab-section3"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#section3"</span>&gt;</span>Section 3<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#section3"</span>&gt;</span>Section 3<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"section1"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"tab-section1"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"section1"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Section 1<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Content for section 1.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"section2"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"tab-section2"</span> <span class="hljs-attr">hidden</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"section2"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Section 2<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Content for section 2.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"section3"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"tab-section3"</span> <span class="hljs-attr">hidden</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"section3"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Section 3<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Content for section 3.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<h3 id="notes">Notes</h3>
+<h4 id="notes">Notes</h4>
 <ul>
-<li><strong><code>&lt;ul&gt;</code>:</strong> The <code>&lt;ul&gt;</code> groups the same-page links ('tabs') together and enumerates them in screen reader output</li>
-<li><strong><code>aria-current=&quot;true&quot;</code>:</strong> This indicates the 'tab' that corresponds to the active/visible panel. Screen readers append or prepend <em>&quot;current item&quot;</em> to the link's label.</li>
-<li><strong><code>aria-labelledby</code>:</strong> The 'tab panels' (<code>&lt;section&gt;</code>s) are labelled by their tabs, so that when a user focus or enters them, they are assured of their identity and relationship to the interface as a whole. Most screen readers will announce something similar to <em>&quot;region, section 1&quot;</em> when the panel is focused or entered</li>
-<li><strong><code>id</code>s:</strong> Note that all <code>id</code>s in the interface must unique for the larger document. In the <a href="#reference-implementation"><strong>Reference implementation</strong></a>, the tab <code>id</code>s are created dynamically by prefixing the (already unique) tab panel <code>id</code>s with <em>&quot;tab-&quot;</em>.</li>
+<li><strong><code>&lt;ul&gt;</code>:</strong> The <code>&lt;ul&gt;</code> groups the same-page links together and enumerates them in screen reader output.</li>
+<li><strong>links:</strong> Eah link's <code>href</code> corresponds to a <code>&lt;section&gt;</code> <code>id</code>. This capitalizes on standard browser behavior to allow the user to navigate to the <code>&lt;section&gt;</code>s without having to depend on JavaScript.</li>
+<li><strong><code>&lt;section&gt;</code></strong>: Some screen readers allow users to navigate between <code>&lt;section&gt;</code> ('region') directly, by providing shortcuts. However, it is recommended each <code>&lt;section&gt;</code> is also introduced by a heading, since heading shortcuts are a more longstanding mode of navigation.</li>
+<li><strong>tabindex=&quot;-1&quot;:</strong> Each <code>&lt;section&gt;</code> takes <code>tabindex=&quot;-1&quot;</code>. This forces browsers to move focus to the target element / hash fragment when activating a same-page link <sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>.</li>
 </ul>
-<h2 id="expected-layout">Expected layout</h2>
+<h3 id="enhanced-markup">Enhanced markup</h3>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-tabs"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"tablist"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"presentation"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"tab"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tab-section1"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#section1"</span> <span class="hljs-attr">aria-selected</span>=<span class="hljs-string">"true"</span>&gt;</span>Section 1<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"presentation"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"tab"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tab-section2"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#section2"</span>&gt;</span>Section 2<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"presentation"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"tab"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tab-section3"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#section3"</span>&gt;</span>Section 3<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"tabpanel"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"section1"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"tab-section1"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Section 1<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Content for section 1.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"tabpanel"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"section2"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"tab-section2"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span> <span class="hljs-attr">hidden</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Section 2<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Content for section 2.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"tabpanel"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"section3"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"tab-section3"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span> <span class="hljs-attr">hidden</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Section 3<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Content for section 3.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h4 id="notes-1">Notes</h4>
+<ul>
+<li><strong><code>role=&quot;tablist&quot;</code>, <code>role=&quot;tab&quot;</code>, and <code>role=&quot;tabpanel&quot;</code>:</strong> When JavaScript runs, the tab interface acquires the requisite semantics to be communicated as a tab interface in assistive technology software.</li>
+<li><strong><code>role=&quot;presentation&quot;</code>:</strong> With <code>role=&quot;tablist&quot;</code> and <code>role=&quot;tab&quot;</code> in place, tabs are announced correctly as <em>&quot;tabs&quot;</em> and enumerated. The list semantics is therefore redundant, and <code>role=&quot;presentation&quot;</code> is used to suppress it<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>.</li>
+<li><strong><code>aria-labelledby</code>:</strong> The tab panels (<code>&lt;section&gt;</code>s with <code>role=&quot;tabpanel&quot;</code>) are labelled by their tabs, so that when a user focuses or enters them, they are assured of their identity and relationship to the interface as a whole. Most screen readers will announce something similar to <em>&quot;tab panel, section 1&quot;</em> when the panel is focused or entered.</li>
+<li><strong><code>aria-selected=&quot;true&quot;</code> and <code>hidden</code>:</strong> The state attribute identifies the tab corresponding to the open/selected panel. All other panels are removed from display (and screen reader output) using the <code>hidden</code> property.</li>
+</ul>
+<h2 id="recommended-layout">Recommended layout</h2>
 <p>The <a href="https://www.bbc.co.uk/gel/guidelines/tabs">main GEL page</a> covers visual design considerations in detail.</p>
-<p>Shortened labels are preferred to wrapped text, so <code>white-space: nowrap</code> and <code>text-overflow: ellipsis</code> are applied by default. Note that this only works where <code>min-width: 0</code> is applied to the flex child (the <code>&lt;li&gt;</code>).</p>
+<p>Where JavaScript does not run, the tabs appear as links within what resembles a table of contents. Each <code>&lt;section&gt;</code> is visible at all times, and activating a link (a would-be tab) moves focus to the corresponding section, revealing its focus style. A clear, solid outline style is recommended.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-tabs</span> &gt; <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span>,
+<span class="hljs-selector-class">.gef-tabs</span> &gt; <span class="hljs-selector-tag">section</span><span class="hljs-selector-pseudo">:focus</span> {
+  <span class="hljs-attribute">outline</span>: <span class="hljs-number">2px</span> solid;
+  <span class="hljs-attribute">outline-offset</span>: -<span class="hljs-number">2px</span>;
+}
+</code></pre>
+<p>Where JavaScript runs, the links appear as tabs, and are placed side-by-side. Shortened labels are preferred to wrapped text, so <code>white-space: nowrap</code> and <code>text-overflow: ellipsis</code> are applied by default. Note that this only works where <code>min-width: 0</code> is applied to the flex child (the <code>&lt;li&gt;</code>).</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gef-tabs</span> &gt; <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span> {
   <span class="hljs-attribute">min-width</span>: <span class="hljs-number">0</span>;
 }
@@ -168,7 +211,6 @@
   }
 
   <span class="hljs-selector-class">.gef-tabs</span> &gt; <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span> {
-    <span class="hljs-attribute">flex-shrink</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">flex-basis</span>: <span class="hljs-number">100%</span>;
     <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0.25rem</span>;
@@ -181,7 +223,7 @@
   <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid transparent; <span class="hljs-comment">/* for high contrast mode */</span>
 }
 </code></pre>
-<p>In addition, an <code>@media</code> query detecting high contrast mode is used to create an alternative <code>aria-current</code> style for the selected tab. It is positioned <code>2px</code> down from its natural position. This obscures the line between the tab and panel, making them appear as one.</p>
+<p>In addition, an <code>@media</code> query detecting high contrast mode<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> is used to create an alternative <code>aria-current</code> style for the selected tab. It is positioned <code>2px</code> down from its natural position. This obscures the line between the tab and panel, making them appear as one.</p>
 <pre class="hljs"><code>@<span class="hljs-keyword">media</span> (-ms-high-contrast: active) {
   <span class="hljs-selector-class">.gef-tabs</span> <span class="hljs-selector-attr">[aria-current]</span> {
     <span class="hljs-attribute">position</span>: relative;
@@ -190,20 +232,15 @@
 }
 </code></pre>
 <p><img src="/gef-docs/static/images/hcm_tabs.png" alt="Borders define the tabs and panels"></p>
-<h3 id="focus-styles">Focus styles</h3>
-<p>The tab elements themselves are rectangular and take a <code>background-color</code> making some user agents' default focus styling unclear. It is recommended a solid <code>outline</code> style is applied.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-tabs</span> &gt; <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span>,
-<span class="hljs-selector-class">.gef-tabs</span> &gt; <span class="hljs-selector-tag">section</span><span class="hljs-selector-pseudo">:focus</span> {
-  <span class="hljs-attribute">outline</span>: <span class="hljs-number">2px</span> solid;
-  <span class="hljs-attribute">outline-offset</span>: -<span class="hljs-number">2px</span>;
-}
-</code></pre>
-<h2 id="expected-behaviour">Expected behaviour</h2>
-<h3 id="selecting-a-tab">Selecting a tab</h3>
+<h2 id="recommended-behaviour">Recommended behaviour</h2>
+<h3 id="without-javascript">Without JavaScript</h3>
+<p>The links and <code>&lt;section&gt;</code>s are communicated as such in screen reader output and the interface behaves like an interactive table of contents. As described in <a href="#recommended-layout">Recommended layout</a>, <code>&lt;section&gt;</code>s (would-be tab panels) are each visible at all times and receive focus (revealing their focus styles) when their corresponding link is activated.</p>
+<h3 id="with-javascript">With JavaScript</h3>
+<h4 id="selecting-a-tab">Selecting a tab</h4>
 <p>By mouse or touch, clicking or pressing a tab will reveal its corresponding tab panel. For keyboard users, unselected tabs are focusable and can be activated with the <kbd>Enter</kbd> key.</p>
 <p>To preserve the behaviour of the same-page links upon which the tabs are created and to address trouble screen readers have been observed experiencing moving from the tab to the tab panel, clicking a tab programmatically moves focus to the visible tab panel. The tab panel is identified in screen readers as a tab panel, and the tab panel's label (borrowed from the corresponding tab using <code>aria-labelledby</code>) is also announced.</p>
-<p>The tab panel is now the sequential focus starting point, making the first interactive element inside (or past) the tab panel next in focus order. However, the tab panel itself is not user focusable (it employs <code>tabindex=&quot;-1&quot;</code>, not <code>tabindex=&quot;0&quot;</code>), meaning <kbd>Shift</kbd> + <kbd>Tab</kbd> will take the user directly back to the tab list. Screen readers' reading position (or 'virtual cursor'<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> position) will also be transported to the start of the tab panel, allowing users to read downwards from there.</p>
-<h3 id="back-button-support">Back button support</h3>
+<p>The tab panel is now the sequential focus starting point, making the first interactive element inside (or past) the tab panel next in focus order. However, the tab panel itself is not user focusable (it employs <code>tabindex=&quot;-1&quot;</code>, not <code>tabindex=&quot;0&quot;</code>), meaning <kbd>Shift</kbd> + <kbd>Tab</kbd> will take the user directly back to the tab list. Screen readers' 'virtual cursor'<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup> behavior is not augmented or overridden in any way. Non-interactive user-focusable elements (elements with <code>tabindex=&quot;0&quot;</code>) are usually considered a violation of <strong>WCAG2.1 2.4.3 Focus Order</strong><sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup>.</p>
+<h4 id="back-button-support">Back button support</h4>
 <p>Since the interface is driven by the <code>hashchange</code> events elicited by clicking the tab link elements, the back button is supported. Pressing the back button will take you to the previously opened tab if there was one.</p>
 <pre class="hljs"><code><span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'hashchange'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
   <span class="hljs-keyword">var</span> selected = tablist.querySelector(<span class="hljs-string">'[aria-current]'</span>);
@@ -211,7 +248,7 @@
   switchTab(oldIndex, tabInfo());
 }, <span class="hljs-literal">false</span>);
 </code></pre>
-<p>Whenever the hash changes to something <em>not</em> corresponding to a tab, the first tab panel is shown but not focused.</p>
+<p>Whenever the hash changes to something <em>not</em> corresponding to a tab, the first tab panel is shown but not focused (since it is not the document fragment requested by the user at this point in time).</p>
 <h3 id="page-load">Page load</h3>
 <p>The tabs are permitted to continue updating the document's <code>hash</code> as tabs are selected, preserving the behaviour of same-page links. When the document first loads, if the URL hash corresponds to a tab panel, that tab panel is shown by default. If there is no hash component to the URL, or the hash does not match a tab panel's <code>id</code>, the first tab panel is shown and the first tab selected.</p>
 <p>The following code is a snippet from the reference implementation.</p>
@@ -254,25 +291,36 @@ title: Tabs
   document.addEventListener('DOMContentLoaded', function (event) {
     window.gef && gef.Tabs.init();
 
-    //var tabsElem = document.querySelector('.gef-tabs');
-    //var tabs = new gef.Tabs.constructor(tabsElem);
+    var tabsElem = document.querySelector('.gef-tabs');
+    var tabs = new gef.Tabs.constructor(tabsElem);
   });
 </script></div>
         
           <p><a class="gef-cta gel-long-primer-bold" href="../demos/tabs/" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
         <h2 id="related-research">Related research</h2>
-<p>This topic does not yet have any related research available.</p>
+<p>During the development of the tabs implementation, the BBC accessibility team undertook research and hosted two days of usability testing with a number of blind and partially sighted participants.</p>
+<p>These participants were presented with four variations of the tab interface. Version 1 appeared as a tab interface but retained the semantics and behavior of an interactive table of contents (see <a href="#initial-markup">Initial markup</a>). Version 2 implemented all of the recommended semantics and behaviors of the <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel">ARIA Authoring practices</a> guide, including tabs only being focusable/selectable by arrow key. The remaining versions constituted compromise positions: Version 3 implemented the tab semantics but behaved as a table of contents (moving focus to panels on tab activation). Version 4 implemented <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel">ARIA Authoring practices tabs</a> except without arrow navigation (tabs remained focusable using the <kbd>Tab</kbd> key).</p>
+<p>The majority of participants were uncomfortable with same-page links and felt there were already a large number of links in BBC pages to contend with. Arrow key navigation was either not discovered by participants, was confounding, or interfered with the expected behavior of browsing by arrow key using their screen reader's virtual cursor. The concept of 'tabs' as a semantic grouping mechanism was generally popular.</p>
+<p>Accordingly, the implementation described here follows that of version 3, and degrades to an interactive table of contents where JavaScript does not run.</p>
 <h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>&quot;Tabs, Used Right&quot; — Nielsen Norman Group, <a href="https://www.nngroup.com/articles/tabs-used-right/">https://www.nngroup.com/articles/tabs-used-right/</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+<li id="fn1" class="footnote-item"><p>Tabs, Used Right — Nielsen Norman Group, <a href="https://www.nngroup.com/articles/tabs-used-right/">https://www.nngroup.com/articles/tabs-used-right/</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
 <li id="fn2" class="footnote-item"><p>Tabs: ARIA Authoring Practices, <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel">https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn3" class="footnote-item"><p>&quot;Danger! ARIA Tabs&quot;, <a href="https://simplyaccessible.com/article/danger-aria-tabs/">https://simplyaccessible.com/article/danger-aria-tabs/</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+<li id="fn3" class="footnote-item"><p>Danger! ARIA Tabs — Simply Accessible, <a href="https://simplyaccessible.com/article/danger-aria-tabs/">https://simplyaccessible.com/article/danger-aria-tabs/</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn4" class="footnote-item"><p>&quot;Reading Commands and Cursors&quot; — Freedom Scientific, <a href="https://doccenter.freedomscientific.com/doccenter/doccenter/rs11f929e9c511/2012-04-24_teachersandtrainers-l7/02_jawsandmagicreadingcommandsandcursors.htm">https://doccenter.freedomscientific.com/doccenter/doccenter/rs11f929e9c511/2012-04-24_teachersandtrainers-l7/02_jawsandmagicreadingcommandsandcursors.htm</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+<li id="fn4" class="footnote-item"><p>In-Page Links and Input Focus — Accessible Culture, <a href="http://accessibleculture.org/articles/2010/05/in-page-links/">http://accessibleculture.org/articles/2010/05/in-page-links/</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>Removing Semantics Using The Presentation Role — Accessibility Developer Guide, <a href="https://www.accessibility-developer-guide.com/examples/sensible-aria-usage/presentation/">https://www.accessibility-developer-guide.com/examples/sensible-aria-usage/presentation/</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p><code>-ms-high-contrast</code> @media query — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/-ms-high-contrast">https://developer.mozilla.org/en-US/docs/Web/CSS/@media/-ms-high-contrast</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>Reading Commands and Cursors — Freedom Scientific, <a href="https://doccenter.freedomscientific.com/doccenter/doccenter/rs11f929e9c511/2012-04-24_teachersandtrainers-l7/02_jawsandmagicreadingcommandsandcursors.htm">https://doccenter.freedomscientific.com/doccenter/doccenter/rs11f929e9c511/2012-04-24_teachersandtrainers-l7/02_jawsandmagicreadingcommandsandcursors.htm</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p>WCAG2.1 2.4.3 Focus Order — W3C, <a href="https://www.w3.org/TR/WCAG21/#focus-order">https://www.w3.org/TR/WCAG21/#focus-order</a> <a href="#fnref8" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
