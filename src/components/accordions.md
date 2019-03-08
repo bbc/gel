@@ -47,40 +47,40 @@ Wrapping this set of `<section>`s in a `class="gef-accordion"` element produces 
 <h1>Main heading of page</h1>
 <div class="gef-accordion">
 	<section>
-		<h2 class="gef-accordion-handle">
+		<h2 class="gef-accordion__handle">
 			<button aria-expanded="false" type="button">
 				<span>Section 1</span>
 				<svg viewBox="0 0 32 32" class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
 				<path d="M16 29L32 3h-7.2L16 18.3 7.2 3H0"></path></svg>
 			</button>
 		</h2>
-		<div class="gef-accordion-drawer" hidden>
+		<div class="gef-accordion__drawer" hidden>
 			<p>Some text...</p><img src="http://www.example.com/path/to/image" alt="description">
 			<p>Some more text...</p>
 		</div>
 	</section>
 	<section>
-		<h2 class="gef-accordion-handle">
+		<h2 class="gef-accordion__handle">
 			<button aria-expanded="false" type="button">
 				<span>Section 2</span>
 				<svg viewBox="0 0 32 32" class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
 				<path d="M16 29L32 3h-7.2L16 18.3 7.2 3H0"></path></svg>
 			</button>
 		</h2>
-		<div class="gef-accordion-drawer" hidden>
+		<div class="gef-accordion__drawer" hidden>
 			<p>Some text here...</p>
 			<p>Additional text...</p>
 		</div>
 	</section>
 	<section>
-		<h2 class="gef-accordion-handle">
+		<h2 class="gef-accordion__handle">
 			<button aria-expanded="false" type="button">
 				<span>Section 3</span>
 				<svg viewBox="0 0 32 32" class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
 				<path d="M16 29L32 3h-7.2L16 18.3 7.2 3H0"></path></svg>
 			</button>
 		</h2>
-		<div class="gef-accordion-drawer" hidden>
+		<div class="gef-accordion__drawer" hidden>
 			<img src="http://www.example.com/path/to/image" alt="another description">
 			<blockquote>A quotation from somewhere</blockquote>
 		</div>
@@ -88,7 +88,7 @@ Wrapping this set of `<section>`s in a `class="gef-accordion"` element produces 
 </div>
 ```
 
-* `class="gef-accordion-drawer"` and `hidden`: All the content except the 'handle' is grouped inside this element so its visibility can be toggled easily. The drawer is hidden by default.
+* `class="gef-accordion__drawer"` and `hidden`: All the content except the 'handle' is grouped inside this element so its visibility can be toggled easily. The drawer is hidden by default.
 * `<button>` and `aria-expanded`: The visibility of the drawer (see above) is affected by the toggle button. The `aria-expanded` state is set to either `false` (drawer closed; default on page load) or `true` (drawer open)
 * `SVG`: An SVG based on the [GEL Iconography `gel-icon-down`](http://bbc.github.io/gel-iconography/). This has `focusable="false"` to remove it from focus order, and `aria-hidden="true"` to hide it from browsers/assistive technologies that erroneously expose it.
 
@@ -139,7 +139,7 @@ The visual design of a generic accordion is specified in the [GEL Accordion docu
 The `gel-icon-down` arrow must point downwards in the closed (`aria-expanded="false"`) state, and upwards in the open (`aria-expanded="true"`) state. For the sake of code brevity, this is achieved in the [Reference implementation](#reference-implementation) using a simple CSS transform.
 
 ```css
-.gef-accordion-handle [aria-expanded="true"] svg {
+.gef-accordion__handle [aria-expanded="true"] svg {
   transform: rotate(180deg);
 }
 ```
@@ -147,13 +147,13 @@ The `gel-icon-down` arrow must point downwards in the closed (`aria-expanded="fa
 The text appears on the left of the button and the SVG on the right (thanks to `justify-content: space-between`). Some margin is added to the left of the SVG to separate it from the button's text. The `flex-shrink: 0` declaration prevents the SVG from erroneously becoming proportionately narrower when the total space is diminished.
 
 ```css
-.gef-accordion-handle button {
+.gef-accordion__handle button {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
-.gef-accordion-handle svg {
+.gef-accordion__handle svg {
   margin-left: 0.5rem;
   flex-shrink: 0;
 }

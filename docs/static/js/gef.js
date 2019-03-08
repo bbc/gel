@@ -19,7 +19,7 @@
 
       // Make the first element in the section the 'handle'
       section.handle = section.elem.firstElementChild;
-      section.handle.classList.add('gef-accordion-handle');
+      section.handle.classList.add('gef-accordion__handle');
 
       if (section.handle.nodeName === 'BUTTON') {
         console.error('The first child of each accordion element must not be a <button>');
@@ -42,7 +42,7 @@
       var contents = Array.prototype.slice.call(section.elem.children, 1);
       // Create the drawer into which to place the contents
       section.drawer = document.createElement('div');
-      section.drawer.classList.add('gef-accordion-drawer');
+      section.drawer.classList.add('gef-accordion__drawer');
       section.drawer.hidden = true;
       // Place the contents in the draw
       contents.forEach(function (node) {
@@ -160,14 +160,14 @@
     // Save the first focusable link or button in the dialog
     // (to be focused on opening the dialog)
     this.firstControl = this.dialogElem.querySelector('a[href], button:not(:disabled)');
-    this.closeButton = this.dialogElem.querySelector('.gef-action-dialog-close');
+    this.closeButton = this.dialogElem.querySelector('.gef-action-dialog__close');
     // Move the dialog element to be a child of <body>
     // (needed for the `inert` functionality to work)
     document.body.appendChild(this.dialogElem);
 
     // Honor the center positioning if chosen
     if (center) {
-      this.dialogElem.classList.add('gef-action-dialog-center');
+      this.dialogElem.classList.add('gef-action-dialog__center');
     }
 
     // If the invoking element exists, 
@@ -198,7 +198,7 @@
   // The open method
   self.constructor.prototype.open = function () {
     // Add a class to the body for [inert] styling
-    document.body.classList.add('gef-action-dialog-open');
+    document.body.classList.add('gef-action-dialog--open');
     // Make all siblings of the dialog inert
     Array.prototype.forEach.call(this.inertElems, function (elem) {
       if (elem !== this.dialogElem) {
@@ -213,7 +213,7 @@
 
   // The close method
   self.constructor.prototype.close = function () {
-    document.body.classList.remove('gef-action-dialog-open');
+    document.body.classList.remove('gef-action-dialog--open');
     Array.prototype.forEach.call(this.inertElems, function (elem) {
       elem.removeAttribute('inert');
     }.bind(this));
@@ -239,8 +239,8 @@
 
   self.constructor = function (cardElem) {
     var moreBtn = cardElem.querySelector('[aria-expanded="false"]');
-    var moreElem = cardElem.querySelector('.gef-card-info');
-    var moreHeading = moreElem.querySelector('.gef-card-info-heading');
+    var moreElem = cardElem.querySelector('.gef-card__info');
+    var moreHeading = moreElem.querySelector('.gef-card-info__heading');
 
     moreBtn.addEventListener('click', function () {
       moreElem.hidden = !moreElem.hidden;
@@ -291,12 +291,12 @@
 
     self.constructor = function (elem) {
       // Save refs to elements
-      var scrollable = elem.querySelector('.gef-carousel-scrollable');
-      var buttons = elem.querySelector('.gef-carousel-buttons');
-      var list = elem.querySelector('.gef-carousel-list');
+      var scrollable = elem.querySelector('.gef-carousel__scrollable');
+      var buttons = elem.querySelector('.gef-carousel__buttons');
+      var list = elem.querySelector('.gef-carousel__list');
       var items = list.children;
-      var prev = elem.querySelector('.gef-carousel-prev');
-      var next = elem.querySelector('.gef-carousel-next');
+      var prev = elem.querySelector('.gef-carousel__prev');
+      var next = elem.querySelector('.gef-carousel__next');
 
       // Reveal button functionality now JS has run
       buttons.hidden = false;
@@ -383,17 +383,17 @@
     // Make sure the parent has the right classes
     this.elem = elem;
     this.elem.classList.add('gef-infopanel');
-    this.elem.classList.add('gef-infopanel-with-js');
+    this.elem.classList.add('gef-infopanel--with-js');
 
     // Save key elements
-    this.button = this.elem.querySelector('.gef-infopanel-button');
-    this.panel = this.elem.querySelector('.gef-infopanel-panel');
-    this.closeButton = this.panel.querySelector('.gef-infopanel-close-button');
+    this.button = this.elem.querySelector('.gef-infopanel__button');
+    this.panel = this.elem.querySelector('.gef-infopanel__panel');
+    this.closeButton = this.panel.querySelector('.gef-infopanel__close-button');
 
     // Add the alignment classes
     this.panel.classList.add(
-      'gef-infopanel-' + settings.hAlign,
-      'gef-infopanel-' + settings.vAlign
+      'gef-infopanel--' + settings.hAlign,
+      'gef-infopanel--' + settings.vAlign
     );
 
     // toggle the open/closed state on button clicks
@@ -448,7 +448,7 @@
     document.addEventListener('click', this.closeOnBlur);
     // For adding `position: relative` dynamically
     // to avoid z-index issues
-    this.elem.classList.add('gef-infopanel-showing');
+    this.elem.classList.add('gef-infopanel--showing');
     this.closeButton.focus();
   }
 
@@ -457,7 +457,7 @@
     this.panel.hidden = true;
     this.button.setAttribute('aria-expanded', 'false');
     document.removeEventListener('click', this.closeOnBlur);
-    this.elem.classList.remove('gef-infopanel-showing');
+    this.elem.classList.remove('gef-infopanel--showing');
   }
 })();/**
  * Masthead
@@ -474,18 +474,18 @@
 
   self.constructor = function (elem) {
     // Add JS class for upgrading styles
-    elem.classList.add('gef-masthead-with-js');
+    elem.classList.add('gef-masthead--with-js');
 
     // Save an object of all submenus
-    var links = elem.querySelector('.gef-masthead-links');
+    var links = elem.querySelector('.gef-masthead__links');
     var menus = [
       {
-        link: elem.querySelector('.gef-masthead-alerts-option a'),
-        target: elem.querySelector('.gef-masthead-alerts')
+        link: elem.querySelector('.gef-masthead__alerts-option a'),
+        target: elem.querySelector('.gef-masthead__alerts')
       },
       {
-        link: elem.querySelector('.gef-masthead-more-option a'),
-        target: elem.querySelector('.gef-masthead-more-menu')
+        link: elem.querySelector('.gef-masthead__more-option a'),
+        target: elem.querySelector('.gef-masthead__more-menu')
       }
     ];
 
@@ -512,7 +512,7 @@
 
       var closeButton = document.createElement('button');
       closeButton.innerHTML = '<span class="gef-sr">Close</span><svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false" viewBox="0 0 32 32"> <path d="M32 3.5L28.5 0 16 12.5 3.5 0 0 3.5 12.5 16 0 28.5 3.5 32 16 19.5 28.5 32l3.5-3.5L19.5 16"/> </svg>';
-      closeButton.classList.add('gef-masthead-close-button');
+      closeButton.classList.add('gef-masthead__close-button');
       closeButton.addEventListener('click', function () {
         menu.target.style.display = 'none';
         menu.link.focus();
@@ -523,7 +523,7 @@
     // Watch the visibility of masthead link items to add
     // or drop from the UI
     if ('IntersectionObserver' in window) {
-      links.classList.add('gef-masthead-links-observed');
+      links.classList.add('gef-masthead__links-observed');
       var items = links.querySelectorAll('li');
       var observerSettings = {
         root: links,
@@ -533,9 +533,9 @@
       var callback = function (items, observer) {
         Array.prototype.forEach.call(items, function (item) {
           if (item.intersectionRatio > 0.98) {
-            item.target.classList.remove('gef-masthead-link-hidden');
+            item.target.classList.remove('gef-masthead__link-hidden');
           } else {
-            item.target.classList.add('gef-masthead-link-hidden');
+            item.target.classList.add('gef-masthead__link-hidden');
           }
         });
       }
@@ -585,7 +585,7 @@
     this.elem = elem;
     this.height = height;
     this.continueText = continueText || 'Continued below...';
-    this.truncated = this.elem.querySelector('.gef-pocket-truncated');
+    this.truncated = this.elem.querySelector('.gef-pocket__truncated');
 
     // Feature detect IntersectionObserver before continuing
     if ('IntersectionObserver' in window) {
@@ -619,7 +619,7 @@
 
       // Create the footer element
       this.foot = document.createElement('div');
-      this.foot.classList.add('gef-pocket-foot');
+      this.foot.classList.add('gef-pocket__foot');
 
       // Create the 'show more' button
       this.button = document.createElement('button');
@@ -636,13 +636,13 @@
       // Create continue element
       this.continue = document.createElement('div');
       this.continue.textContent = this.continueText;
-      this.continue.classList.add('gef-pocket-continue');
+      this.continue.classList.add('gef-pocket__continue');
       this.continue.tabIndex = -1;
 
       // Toggle on click
       this.button.addEventListener('click', function () {
         this.shown ? this.showLess() : this.showMore();
-        this.foot.classList.toggle('gef-pocket-foot-shown');
+        this.foot.classList.toggle('gef-pocket--foot-shown');
       }.bind(this));
 
       // Show less initially
@@ -680,10 +680,10 @@
   self.init = function () { }
 
   self.constructor = function (elem) {
-    elem.classList.add('gef-sitemenu-with-js');
-    this.moreButtons = elem.querySelectorAll('.gef-sitemenu-more-button');
-    this.menuButton = elem.querySelector('.gef-sitemenu-menu-button');
-    this.menu = elem.querySelector('.gef-sitemenu-list');
+    elem.classList.add('gef-sitemenu--with-js');
+    this.moreButtons = elem.querySelectorAll('.gef-sitemenu__more-button');
+    this.menuButton = elem.querySelector('.gef-sitemenu__menu-button');
+    this.menu = elem.querySelector('.gef-sitemenu__list');
 
     Array.prototype.forEach.call(this.moreButtons, function (btn) {
       var submenu = btn.nextElementSibling;
@@ -719,7 +719,7 @@
   self.constructor.prototype.menuToggle = function () {
     var currentState = this.menuButton.getAttribute('aria-expanded') === 'true' || false;
     this.menuButton.setAttribute('aria-expanded', !currentState);
-    this.menu.classList.toggle('gef-sitemenu-open', !currentState);
+    this.menu.classList.toggle('gef-sitemenu__open', !currentState);
   }
 })();/**
  * Switch
@@ -873,7 +873,7 @@
     // Create and insert general message live region
     var warn = document.createElement('div');
     warn.setAttribute('aria-live', 'assertive');
-    warn.classList.add('gel-form-warning');
+    warn.classList.add('gef-form__warning');
     submit.parentNode.insertBefore(warn, submit);
 
     // Do not initially bother users by validating for required

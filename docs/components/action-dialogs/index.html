@@ -118,17 +118,17 @@
 <p>For more context, consult the <a href="http://www.bbc.co.uk/gel/guidelines/confirmation-and-error-messages">Confirmation &amp; Error Messages GEL page</a>.</p>
 <h2 id="recommended-markup">Recommended markup</h2>
 <p>In the following example, we imagine the user has tried to add a programme to 'My Programmes'. Since this functionality is only available to authenticated users, an action dialog asks the user to either sign in or register in order to continue.</p>
-<pre class="hljs"><code>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-action-dialog"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"dialog"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"gef-action-dialog-label-1"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"gef-action-dialog-desc-1"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"gef-action-dialog-label-1"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-action-dialog-title"</span>&gt;</span>Add to enjoy later<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"gef-action-dialog-desc-1"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-action-dialog-content"</span>&gt;</span>
+<pre class="hljs"><code>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-action-dialog"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"dialog"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"gef-action-dialog__label-1"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"gef-action-dialog__desc-1"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"gef-action-dialog-label__1"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-action-dialog__title"</span>&gt;</span>Add to enjoy later<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"gef-action-dialog-desc__1"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-action-dialog__content"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Sign in to add to My Programmes and enjoy it later on other devices<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-action-dialog-buttons"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-action-dialog__buttons"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#/path/to/sign-in"</span>&gt;</span>Sign in<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
       or 
       <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#/path/to/register"</span>&gt;</span>Register<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-action-dialog-close"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-action-dialog__close"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>close<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#gel-icon-no"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
@@ -141,8 +141,8 @@
 <ul>
 <li><strong><code>role=&quot;dialog&quot;</code>:</strong> This <code>role</code> is critical for making the dialog behave in an expected way in assistive technologies such as screen reader software. It also identifies the dialog <em>as</em> a dialog when it is opened and focus is placed inside it.</li>
 <li><strong><code>aria-labelledby</code> and <code>aria-describedby</code>:</strong> These relationship attributes associate the text of the dialog's heading/label and content with the dialog element itself. Along with the dialog role, this information is announced upon the dialog being opened. You will need to write or generate unique identifiers for the <code>id</code>s required here.</li>
-<li><strong><code>class=&quot;gef-action-dialog-buttons&quot;</code>:</strong> A simple, non-semantic wrapper for the action elements. Action elements must be marked up as <code>&lt;button&gt;</code>s if they instigate something on the same page (such as a change of setting or state) or links if they take the user to a new page.</li>
-<li><strong><code>class=&quot;gef-action-dialog-close&quot;</code>:</strong> Provide a close button if doing <em>nothing</em> (not authenticating to add a programme after all, in this example) is a viable option. The visually hidden <code>vh</code><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> class is provided here to include accessible, translatable text alongside the screen reader inaccessible icon. The close button is deprioritized in favour of the named actions, appearing last in source and focus order.</li>
+<li><strong><code>class=&quot;gef-action-dialog__buttons&quot;</code>:</strong> A simple, non-semantic wrapper for the action elements. Action elements must be marked up as <code>&lt;button&gt;</code>s if they instigate something on the same page (such as a change of setting or state) or links if they take the user to a new page.</li>
+<li><strong><code>class=&quot;gef-action-dialog__close&quot;</code>:</strong> Provide a close button if doing <em>nothing</em> (not authenticating to add a programme after all, in this example) is a viable option. The visually hidden <code>vh</code><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> class is provided here to include accessible, translatable text alongside the screen reader inaccessible icon. The close button is deprioritized in favour of the named actions, appearing last in source and focus order.</li>
 <li><strong><code>&lt;/body&gt;</code>:</strong> For the overlay/inert characteristic to function correctly, the dialog must be a child of the <code>&lt;body&gt;</code> element. See <a href="#expected-behaviour">Recommended behaviour</a></li>
 </ul>
 <h2 id="recommended-layout">Recommended layout</h2>
@@ -156,21 +156,21 @@
 }
 </code></pre>
 <p>The center configuration requires a <code>transform</code> to place the element in the vertical center irrespective of its natural height:</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-action-dialog-center</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-action-dialog__center</span> {
   <span class="hljs-attribute">top</span>: <span class="hljs-number">50%</span>;
   <span class="hljs-attribute">bottom</span>: auto;
   <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;
   <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(-50%, -50%);
 }
 </code></pre>
-<p>With this translation in place, dialogs with considerable content will become obscured at the top and bottom of the viewport. To avoid this, the dialog description element (<code>class=&quot;gef-action-dialog-desc&quot;</code>) is given a <code>max-height</code> and allowed to scroll vertically:</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-action-dialog-desc</span> {
+<p>With this translation in place, dialogs with considerable content will become obscured at the top and bottom of the viewport. To avoid this, the dialog description element (<code>class=&quot;gef-action-dialog__desc&quot;</code>) is given a <code>max-height</code> and allowed to scroll vertically:</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-action-dialog__desc</span> {
   <span class="hljs-attribute">max-height</span>: <span class="hljs-number">30vh</span>;
   <span class="hljs-attribute">overflow-y</span>: auto;
 }
 </code></pre>
 <p>When the dialog is open, sibling elements are given the <code>inert</code> attribute (see <a href="#expected-behaviour"><strong>expected behaviour</strong></a>, below). The inert content should <em>appear</em> inert by diminishing its visibility. Opacity and/or filtering can achieve this effect.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-action-dialog-open</span> <span class="hljs-selector-attr">[inert]</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-action-dialog--open</span> <span class="hljs-selector-attr">[inert]</span> {
   <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.3</span>;
 }
 </code></pre>
@@ -186,7 +186,7 @@
 <ol>
 <li>The dialog element appears in its designated position</li>
 <li>The surrounding page becomes inert (non-interactive, unavailable to assistive technologies, and not focusable by keyboard)</li>
-<li>Focus is moved to the first control (a link or button that is not disabled) inside the <code>class=&quot;gef-action-dialog-buttons&quot;</code> element</li>
+<li>Focus is moved to the first control (a link or button that is not disabled) inside the <code>class=&quot;gef-action-dialog__buttons&quot;</code> element</li>
 </ol>
 <h3 id="when-the-dialog-closes">When the dialog closes</h3>
 <ol>
@@ -210,18 +210,18 @@
 title: Action dialogs
  -->
 
-<div id="my-action-dialog-1" class="gef-action-dialog" role="dialog" aria-labelledby="my-action-dialog-label-1"
-  aria-describedby="my-action-dialog-desc-1">
-  <h3 id="my-action-dialog-label-1" class="gef-action-dialog-title">Add to enjoy later</h3>
-  <div id="my-action-dialog-desc-1" class="gef-action-dialog-content">
+<div id="my-action-dialog__1" class="gef-action-dialog" role="dialog" aria-labelledby="my-action-dialog__label-1"
+  aria-describedby="my-action-dialog__desc-1">
+  <h3 id="my-action-dialog__label-1" class="gef-action-dialog__title">Add to enjoy later</h3>
+  <div id="my-action-dialog__desc-1" class="gef-action-dialog__content">
     <p>Sign in to add to My Programmes and enjoy it later on other devices</p>
   </div>
-  <div class="gef-action-dialog-buttons">
+  <div class="gef-action-dialog__buttons">
     <a href="#/path/to/sign-in">Sign in</a>
     or
     <a href="#/path/to/register">Register</a>
   </div>
-  <button class="gef-action-dialog-close">
+  <button class="gef-action-dialog__close">
     <span class="gef-sr">close</span>
     <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
       <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-no"></use>
@@ -229,18 +229,18 @@ title: Action dialogs
   </button>
 </div>
 
-<div id="my-action-dialog-2" class="gef-action-dialog" role="dialog" aria-labelledby="my-action-dialog-label-2"
-  aria-describedby="my-action-dialog-desc-2">
-  <h3 id="my-action-dialog-label-2" class="gef-action-dialog-title">Add to enjoy later</h3>
-  <div id="my-action-dialog-desc-2" class="gef-action-dialog-content">
+<div id="my-action-dialog__2" class="gef-action-dialog" role="dialog" aria-labelledby="my-action-dialog__label-2"
+  aria-describedby="my-action-dialog__desc-2">
+  <h3 id="my-action-dialog__label-2" class="gef-action-dialog__title">Add to enjoy later</h3>
+  <div id="my-action-dialog__desc-2" class="gef-action-dialog__content">
     <p>Sign in to add to My Programmes and enjoy it later on other devices</p>
   </div>
-  <div class="gef-action-dialog-buttons">
+  <div class="gef-action-dialog__buttons">
     <a href="#/path/to/sign-in">Sign in</a>
     or
     <a href="#/path/to/register">Register</a>
   </div>
-  <button class="gef-action-dialog-close">
+  <button class="gef-action-dialog__close">
     <span class="gef-sr">close</span>
     <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
       <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-no"></use>
@@ -248,21 +248,21 @@ title: Action dialogs
   </button>
 </div>
 
-<p><button class="gef-button gef-button--primary" id="gef-action-dialog-invoker-1">Open action dialog (bottom)</button></p>
-<p><button class="gef-button gef-button--primary" id="gef-action-dialog-invoker-2">Open action dialog (center)</button></p>
+<p><button class="gef-button gef-button--primary" id="gef-action-dialog__invoker-1">Open action dialog (bottom)</button></p>
+<p><button class="gef-button gef-button--primary" id="gef-action-dialog__invoker-2">Open action dialog (center)</button></p>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function () {
     window.gef && gef.ActionDialog.init();
 
     // Example 1: Dialog aligned to bottom of screen
-    var dialogBottomElem = document.getElementById('my-action-dialog-1');
-    var dialogBottomInvoker = document.getElementById('gef-action-dialog-invoker-1');
+    var dialogBottomElem = document.getElementById('my-action-dialog__1');
+    var dialogBottomInvoker = document.getElementById('gef-action-dialog__invoker-1');
     var d1 = new gef.ActionDialog.constructor(dialogBottomElem, dialogBottomInvoker);
 
     // Example 2: Dialog centered in viewport
-    var dialogCenterElem = document.getElementById('my-action-dialog-2');
-    var dialogCenterInvoker = document.getElementById('gef-action-dialog-invoker-2');
+    var dialogCenterElem = document.getElementById('my-action-dialog__2');
+    var dialogCenterInvoker = document.getElementById('gef-action-dialog__invoker-2');
     var d2 = new gef.ActionDialog.constructor(dialogCenterElem, dialogCenterInvoker, true);
   });
 </script></div>

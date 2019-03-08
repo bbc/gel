@@ -33,10 +33,10 @@
                 <h2>Reference implementation</h2>
 
                 
-<aside class="gef-sharetools" aria-labelledby="gef-sharetools-label">
-  <h3 role="presentation" id="gef-sharetools-label" aria-hidden="true">Share this</h3>
-  <a href="#gef-sharetools-end" class="gef-sr gef-sr__focusable">Skip sharing</a>
-  <ul class="gef-sharetools-options">
+<aside class="gef-sharetools" aria-labelledby="gef-sharetools__label">
+  <h3 role="presentation" id="gef-sharetools__label" aria-hidden="true">Share this</h3>
+  <a href="#gef-sharetools__end" class="gef-sr gef-sr__focusable">Skip sharing</a>
+  <ul class="gef-sharetools__options">
     <li>
       <a class="gef-button" href="#" target="_blank">
         <span class="gef-sr">Email, share this, external</span>
@@ -70,24 +70,24 @@
       </a>
     </li>
     <li class="gef-infopanel">
-      <button class="gef-infopanel-button gef-button" type="button" aria-haspopup="true" aria-expanded="false">
+      <button class="gef-infopanel__button gef-button" type="button" aria-haspopup="true" aria-expanded="false">
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
           <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-share"></use>
         </svg>
         <span>Share</span>
       </button>
-      <div class="gef-infopanel-panel" role="group" aria-labelledby="unique-ref1" style="width: 15rem;" hidden>
-        <div class="gef-infopanel-title-area">
+      <div class="gef-infopanel__panel" role="group" aria-labelledby="unique-ref1" style="width: 15rem;" hidden>
+        <div class="gef-infopanel__title-area">
           <span id="unique-ref1" aria-hidden="true">Share</span>
-          <button class="gef-infopanel-close-button">
+          <button class="gef-infopanel__close-button">
             <span class="gef-sr">close</span>
             <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
               <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-no"></use>
             </svg>
           </button>
         </div>
-        <div class="gef-sharetools-complete">
-          <ul class="gef-sharetools-options">
+        <div class="gef-sharetools__complete">
+          <ul class="gef-sharetools__options">
             <li>
               <a class="gef-button" href="#">
                 <span class="gef-sr">Email, share this, external</span>
@@ -121,16 +121,16 @@
               </a>
             </li>
           </ul>
-          <div class="gef-sharetools-link">
-            <label for="gef-sharetools-link-input">Copy this link</label>
-            <input class="gef-sharetools-link-input" type="text" id="gef-sharetools-link-input" value="http://bbc.in/3x4mp1e"
+          <div class="gef-sharetools__link">
+            <label for="gef-sharetools__link-input">Copy this link</label>
+            <input class="gef-sharetools__link-input" type="text" id="gef-sharetools__link-input" value="http://bbc.in/3x4mp1e"
               readonly />
           </div>
         </div>
       </div>
     </li>
   </ul>
-  <div class="gef-sr gef-sr__focusable" id="gef-sharetools-end" tabindex="-1">End of sharing tools</div>
+  <div class="gef-sr gef-sr__focusable" id="gef-sharetools__end" tabindex="-1">End of sharing tools</div>
 </aside>
 
 <script>
@@ -143,7 +143,7 @@
 
     // Little script to select the contents of the 
     // 'Copy this link' input on focus
-    var copyLink = document.querySelector('.gef-sharetools-link-input');
+    var copyLink = document.querySelector('.gef-sharetools__link-input');
     copyLink.addEventListener('focus', function () {
       copyLink.select();
       document.execCommand('copy');

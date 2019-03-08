@@ -213,14 +213,14 @@ However, in some specific circumstances an invisible but accessible label is acc
 A couple of provisions are made to better support Windows High Contrast Mode. A transparent border is added to the error messages so they appear as boxes and, for supporting browsers, the message takes an inversion filter to give it the appearance of a background:
 
 ```css
-.gef-form-field-error,
-.gef-form-warning {
+.gef-form__field-error,
+.gef-form__warning {
   border: 1px solid transparent;
 }
 
 @media (-ms-high-contrast: active) {
-  .gef-form-field-error,
-  .gef-form-warning {
+  .gef-form__field-error,
+  .gef-form__warning {
     filter: invert(100%);
   }
 }
@@ -246,8 +246,8 @@ A CSS filter is used to reverse the colors of the error message:
 
 ```css
 @media (-ms-high-contrast: active) {
-  .gef-form-field-error,
-  .gef-form-warning {
+  .gef-form__field-error,
+  .gef-form__warning {
     filter: invert(100%);
   }
 }

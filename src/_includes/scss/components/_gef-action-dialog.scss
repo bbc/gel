@@ -10,24 +10,24 @@
   bottom: 0;
 }
 
-.gef-action-dialog-center {
+.gef-action-dialog__center {
   top: 50%;
   bottom: auto;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.gef-action-dialog-desc {
+.gef-action-dialog__desc {
   max-height: 30vh;
   overflow-y: auto;
 }
 
-.gef-action-dialog-buttons a,
-.gef-action-dialog-buttons button  {
+.gef-action-dialog__buttons a,
+.gef-action-dialog__buttons button  {
   margin: 0.5rem;
 }
 
-.gef-action-dialog-close {
+.gef-action-dialog__close {
   background: none;
   border: 0;
   padding: 0;
@@ -37,11 +37,11 @@
   line-height: 0;
 }
 
-.gef-action-dialog-close svg {
+.gef-action-dialog__close svg {
   width: 1rem;
   height: 1rem;
 }
 
-.gef-action-dialog-open [inert] {
+.gef-action-dialog--open [inert] {
   opacity: 0.3;
 }

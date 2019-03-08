@@ -116,22 +116,22 @@
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-code-is-elided">
               <h4 id="aside-info-code-is-elided" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Code is elided</h4><div><p>The markup is elided for brevity. The <code>&lt;li&gt;</code> elements represent the containers for the content items, such as <a href="../cards"><strong>Cards</strong></a> or <a href="../promos"><strong>Promos</strong></a>.</p>
 </aside><pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-carousel"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-carousel-buttons"</span> <span class="hljs-attr">hidden</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-carousel-prev"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-carousel__buttons"</span> <span class="hljs-attr">hidden</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-carousel__prev"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sr"</span>&gt;</span>previous<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"/gef-docs/static/images/gel-icons-all.svg#gel-icon-previous"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-carousel-next"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-carousel__next"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sr"</span>&gt;</span>next<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"/gef-docs/static/images/gel-icons-all.svg#gel-icon-next"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-carousel-scrollable"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-carousel-list"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-carousel__scrollable"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-carousel__list"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
@@ -150,8 +150,8 @@
 <li><strong>previous and next buttons:</strong> One can scroll the through the content in incremental steps using the previous and next buttons. It's important these are <code>&lt;button&gt;</code> elements with <code>type=&quot;button&quot;</code>. Their labels are provided using visually hidden text (the <code>gef-sr</code> class) because, unlike <code>aria-label</code>, it will be translated by browser translation extensions. Buttons that are not applicable (e.g. the previous button on page load) receive the <code>disabled</code> property. The button is removed from focus order and identified as disabled (or 'dimmed') in screen reader output.</li>
 <li><strong><code>hidden</code>:</strong> The buttons are hidden by default because they do not work in the absence of JavaScript. They are revealed when the JavaScript runs.</li>
 <li><strong><code>gel-icon</code> SVGs:</strong> These must be the official <code>#gel-icon-previous</code> and <code>#gel-icon-next</code> icons from the <a href="http://bbc.github.io/gel-iconography/">GEL Iconography</a> set. They have <code>aria-hidden=&quot;true&quot;</code> and <code>scrollable=&quot;flase&quot;</code> to hide them from assistive technologies and remove them from focus order.</li>
-<li><strong><code>gef-carousel-scrollable</code>:</strong> This is the scrollable 'window' for the list of carousel content items (see <a href="#recommended-layout">Recommended layout</a>)</li>
-<li><strong><code>gef-carousel-list</code>:</strong> The singular child element of <code>gef-carousel-scrollable</code> must be a <code>&lt;ul&gt;</code>, with each item as an <code>&lt;li&gt;</code>. List markup is identified as such in assistive technologies, and the items are enumerated. This lets screen reader users know they are met with a set of related content, and how much of it there is.</li>
+<li><strong><code>gef-carousel__scrollable</code>:</strong> This is the scrollable 'window' for the list of carousel content items (see <a href="#recommended-layout">Recommended layout</a>)</li>
+<li><strong><code>gef-carousel__list</code>:</strong> The singular child element of <code>gef-carousel__scrollable</code> must be a <code>&lt;ul&gt;</code>, with each item as an <code>&lt;li&gt;</code>. List markup is identified as such in assistive technologies, and the items are enumerated. This lets screen reader users know they are met with a set of related content, and how much of it there is.</li>
 </ul>
 <h2 id="recommended-layout">Recommended layout</h2>
 <p>The basic scrolling functionality is achieved without JavaScript by making sure:</p>
@@ -160,7 +160,7 @@
 <li>The parent has <code>overflow-x: auto</code></li>
 </ol>
 <p>This basic layout uses <code>inline-block</code> and enhances to a Flexbox context using <code>@supports</code>. The advantage of Flexbox is that its stretching algorithm makes each of the items (<strong>Promos</strong> in the <a href="#reference-implementation">Reference implementation</a>) the same height.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-carousel-list</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-carousel__list</span> {
   <span class="hljs-attribute">display</span>: flex;
   <span class="hljs-attribute">list-style</span>: none;
   <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
@@ -168,7 +168,7 @@
   <span class="hljs-attribute">white-space</span>: nowrap;
 }
 
-<span class="hljs-selector-class">.gef-carousel-list</span> &gt; <span class="hljs-selector-tag">li</span> {
+<span class="hljs-selector-class">.gef-carousel__list</span> &gt; <span class="hljs-selector-tag">li</span> {
   <span class="hljs-attribute">display</span>: flex;
   <span class="hljs-attribute">flex-shrink</span>: <span class="hljs-number">0</span>;
   <span class="hljs-attribute">white-space</span>: normal;
@@ -176,48 +176,48 @@
   <span class="hljs-attribute">transition</span>: opacity <span class="hljs-number">0.5s</span> linear;
 }
 
-<span class="hljs-selector-class">.gef-carousel-list</span> &gt; <span class="hljs-selector-tag">li</span> + <span class="hljs-selector-tag">li</span> {
+<span class="hljs-selector-class">.gef-carousel__list</span> &gt; <span class="hljs-selector-tag">li</span> + <span class="hljs-selector-tag">li</span> {
   <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">1rem</span>;
 }
 </code></pre>
 <p>On some operating systems, the horizontal scrollbar is not visible by default, meaning the scrollable container lacks perceived affordance<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>. It's possible to reveal the scrollbar in webkit browsers by giving them a custom styling:</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-carousel-scrollable</span><span class="hljs-selector-pseudo">::-webkit-scrollbar</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-carousel__scrollable</span><span class="hljs-selector-pseudo">::-webkit-scrollbar</span> {
   <span class="hljs-attribute">height</span>: <span class="hljs-number">0.5rem</span>;
 }
 
-<span class="hljs-selector-class">.gef-carousel-scrollable</span><span class="hljs-selector-pseudo">::-webkit-scrollbar-track</span> {
+<span class="hljs-selector-class">.gef-carousel__scrollable</span><span class="hljs-selector-pseudo">::-webkit-scrollbar-track</span> {
   <span class="hljs-attribute">background-color</span>: $gel-color--dusty-gray;
 }
 
-<span class="hljs-selector-class">.gef-carousel-scrollable</span><span class="hljs-selector-pseudo">::-webkit-scrollbar-thumb</span> {
+<span class="hljs-selector-class">.gef-carousel__scrollable</span><span class="hljs-selector-pseudo">::-webkit-scrollbar-thumb</span> {
   <span class="hljs-attribute">background-color</span>: $gel-color--tundora;
 }
 </code></pre>
 <h3 id="obscured-items">Obscured items</h3>
 <p>Items that are less than 50% in view are made to look faint with a reduced opacity. This indicates that the item must be brought further into view before it is interactive (see <a href="#recommended-behaviour"><strong>Recommended behaviour</strong></a>). The opacity style is applied using a CSS transition, to avoid a distracting 'blinking' effect as the user scrolls back and forth.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-carousel-list</span> &gt; <span class="hljs-selector-tag">li</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-carousel__list</span> &gt; <span class="hljs-selector-tag">li</span> {
   <span class="hljs-attribute">transition</span>: opacity <span class="hljs-number">0.5s</span> linear;
 }
 
-<span class="hljs-selector-class">.gef-carousel-list</span> &gt; <span class="hljs-selector-tag">li</span><span class="hljs-selector-attr">[inert]</span> {
+<span class="hljs-selector-class">.gef-carousel__list</span> &gt; <span class="hljs-selector-tag">li</span><span class="hljs-selector-attr">[inert]</span> {
   <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.3</span>;
 }
 </code></pre>
 <h3 id="buttons">Buttons</h3>
-<p>The previous and next buttons, <code>class=&quot;gef-carousel-buttons&quot;</code>, is absolutely positioned over the <strong>Carousel</strong> at the top right, necessitating <code>position: relative</code> on the parent <code>gef-carousel</code> element. Disabled buttons take a reduced opacity.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-carousel-buttons</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-attr">[disabled]</span> {
+<p>The previous and next buttons, <code>class=&quot;gef-carousel__buttons&quot;</code>, is absolutely positioned over the <strong>Carousel</strong> at the top right, necessitating <code>position: relative</code> on the parent <code>gef-carousel</code> element. Disabled buttons take a reduced opacity.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-carousel__buttons</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-attr">[disabled]</span> {
   <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.5</span>;
 }
 </code></pre>
 <h3 id="smooth-scrolling">Smooth scrolling</h3>
 <p>Where supported, <code>scroll-behavior: smooth</code> animates scrolling, whether scrolling is instigated by pressing a previous or next button, or by other means. Where the property is not supported, the browser steps over it and the interface remains usable.</p>
 <p>This feature is only applied if the user has not chosen to reduce animations in their system settings:</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-carousel-scrollable</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-carousel__scrollable</span> {
   <span class="hljs-attribute">scroll-behavior</span>: smooth;
 }
 
 @<span class="hljs-keyword">media</span> (prefers-reduced-motion: reduce) {
-  <span class="hljs-selector-class">.gef-carousel-scrollable</span> {
+  <span class="hljs-selector-class">.gef-carousel__scrollable</span> {
     <span class="hljs-attribute">scroll-behavior</span>: auto;
   }
 }
@@ -267,28 +267,28 @@ title: Carousels
 
 <div style="margin-bottom: 1rem;">
   <div class="gef-carousel" role="group">
-    <div class="gef-carousel-buttons" hidden>
-      <button class="gef-carousel-prev" type="button">
+    <div class="gef-carousel__buttons" hidden>
+      <button class="gef-carousel__prev" type="button">
         <span class="gef-sr">previous</span>
         <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
           <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-previous"></use>
         </svg>
       </button>
-      <button class="gef-carousel-next" type="button">
+      <button class="gef-carousel__next" type="button">
         <span class="gef-sr">next</span>
         <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
           <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-next"></use>
         </svg>
       </button>
     </div>
-    <div class="gef-carousel-scrollable">
-      <ul class="gef-carousel-list">
+    <div class="gef-carousel__scrollable">
+      <ul class="gef-carousel__list">
         <li class="gef-promo">
-          <div class="gef-promo-image">
+          <div class="gef-promo__image">
             <img src="/gef-docs/static/images/placeholder.png" alt="">
           </div>
-          <div class="gef-promo-content">
-            <a class="gef-promo-headline" href="#link/to/content">
+          <div class="gef-promo__content">
+            <a class="gef-promo__headline" href="#link/to/content">
               Definitive supreme statements still stand
             </a>
             <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica,
@@ -316,11 +316,11 @@ title: Carousels
           </div>
         </li>
         <li class="gef-promo">
-          <div class="gef-promo-image">
+          <div class="gef-promo__image">
             <img src="/gef-docs/static/images/placeholder.png" alt="">
           </div>
-          <div class="gef-promo-content">
-            <a class="gef-promo-headline" href="#link/to/content">
+          <div class="gef-promo__content">
+            <a class="gef-promo__headline" href="#link/to/content">
               Psychologists revise retroactive reports
             </a>
             <p>Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.</p>
@@ -347,11 +347,11 @@ title: Carousels
           </div>
         </li>
         <li class="gef-promo">
-          <div class="gef-promo-image">
+          <div class="gef-promo__image">
             <img src="/gef-docs/static/images/placeholder.png" alt="">
           </div>
-          <div class="gef-promo-content">
-            <a class="gef-promo-headline" href="#link/to/content">
+          <div class="gef-promo__content">
+            <a class="gef-promo__headline" href="#link/to/content">
               Mercury gains in galaxy
             </a>
             <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.
@@ -379,11 +379,11 @@ title: Carousels
           </div>
         </li>
         <li class="gef-promo">
-          <div class="gef-promo-image">
+          <div class="gef-promo__image">
             <img src="/gef-docs/static/images/placeholder.png" alt="">
           </div>
-          <div class="gef-promo-content">
-            <a class="gef-promo-headline" href="#link/to/content">
+          <div class="gef-promo__content">
+            <a class="gef-promo__headline" href="#link/to/content">
               Staff said to summarily 'suspend assaults'
             </a>
             <p>Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del
@@ -411,11 +411,11 @@ title: Carousels
           </div>
         </li>
         <li class="gef-promo">
-          <div class="gef-promo-image">
+          <div class="gef-promo__image">
             <img src="/gef-docs/static/images/placeholder.png" alt="">
           </div>
-          <div class="gef-promo-content">
-            <a class="gef-promo-headline" href="#link/to/content">
+          <div class="gef-promo__content">
+            <a class="gef-promo__headline" href="#link/to/content">
               Engineers eye exploits
             </a>
             <p>Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam
@@ -443,11 +443,11 @@ title: Carousels
           </div>
         </li>
         <li class="gef-promo">
-          <div class="gef-promo-image">
+          <div class="gef-promo__image">
             <img src="/gef-docs/static/images/placeholder.png" alt="">
           </div>
-          <div class="gef-promo-content">
-            <a class="gef-promo-headline" href="#link/to/content">
+          <div class="gef-promo__content">
+            <a class="gef-promo__headline" href="#link/to/content">
               Transmitter reaches realistic perspectives
             </a>
             <p>A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental
@@ -475,11 +475,11 @@ title: Carousels
           </div>
         </li>
         <li class="gef-promo">
-          <div class="gef-promo-image">
+          <div class="gef-promo__image">
             <img src="/gef-docs/static/images/placeholder.png" alt="">
           </div>
-          <div class="gef-promo-content">
-            <a class="gef-promo-headline" href="#link/to/content">
+          <div class="gef-promo__content">
+            <a class="gef-promo__headline" href="#link/to/content">
               Passengers point to potential differential
             </a>
             <p>At solmen va esser necessi far uniform grammatica, pronunciation e plu commun paroles. Ma quande lingues

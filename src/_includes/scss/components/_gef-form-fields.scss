@@ -1,36 +1,36 @@
-.gef-form-divider * {
+.gef-form__divider * {
   font-size: inherit;
   font-family: inherit;
 }
 
-.gef-form-divider > * + * {
+.gef-form__divider > * + * {
   display: block;
   margin: 0;
   margin-top: 0.125rem;
 }
 
-.gef-form-divider label small {
+.gef-form__divider label small {
   display: block;
   font-size: 0.75rem;
 }
 
-.gef-form-divider + .gef-form-divider {
+.gef-form__divider + .gef-form__divider {
   margin-top: 1.5rem;
 }
 
-.gef-form-divider input {
+.gef-form__divider input {
   border: 1px solid;
   width: 100%;
   max-width: 60ch;
   padding: 0.25rem;
 }
 
-.gef-form-divider input:focus {
+.gef-form__divider input:focus {
   outline: 2px solid;
 }
 
-.gef-form-field-error,
-.gef-form-warning {
+.gef-form__field-error,
+.gef-form__warning {
   padding: 0.25rem;
   background-color: $gel-color--pink;
   border: 1px solid transparent; /* for high contrast mode */
@@ -39,18 +39,18 @@
 }
 
 @media (-ms-high-contrast: active) {
-  .gef-form-field-error,
-  .gef-form-warning {
+  .gef-form__field-error,
+  .gef-form__warning {
     filter: invert(100%);
   }
 }
 
-.gef-form-field-error:empty,
-.gef-form-warning:empty {
+.gef-form__field-error:empty,
+.gef-form__warning:empty {
   display: none;
 }
 
-.gef-form-warning {
+.gef-form__warning {
   background-color: $gel-color--yellow;
   color: $gel-color--black;
 }

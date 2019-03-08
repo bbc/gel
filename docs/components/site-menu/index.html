@@ -125,7 +125,7 @@
 <li>About UX&amp;D</li>
 </ul>
 <p>In practice, this structure is presented within a navigation (<code>&lt;nav&gt;</code>) landmark<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> labelled <em>&quot;This site&quot;</em>. This makes the <strong>Site menu</strong> easily discoverable and identifiable in screen reader software.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sitemenu"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"gef-sitemenu-label"</span>&gt;</span>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sitemenu"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"gef-sitemenu__label"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"gel-sitemenu-label"</span> <span class="hljs-attr">hidden</span>&gt;</span>This site<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span>&gt;</span>
@@ -133,17 +133,17 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
     Menu
   <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sitemenu-list"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sitemenu__list"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">aria-current</span>=<span class="hljs-string">"page"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sitemenu-more-button"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sitemenu__more-button"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>
         Guidelines
         <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"path/to/gel-icons-all.svg#gel-icon-down"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sitemenu-more"</span> <span class="hljs-attr">hidden</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sitemenu-more-inner"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sitemenu__more"</span> <span class="hljs-attr">hidden</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sitemenu__more-inner"</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Foundations<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Design patterns<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
@@ -160,8 +160,8 @@
 <h3 id="notes">Notes</h3>
 <ul>
 <li><strong><code>id=&quot;gel-sitemenu-label&quot;</code>:</strong> A proxy <code>&lt;span&gt;</code> element is used to label the landmark. This method is preferred to using an <code>aria-label</code> which is ignored by Google and Microsoft translation services at the time of writing. Note that the element is <code>hidden</code>. This stops it from being encountered directly while browsing, without silencing it as a proximity label<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</li>
-<li><strong><code>class=&quot;gef-sitemenu-menu-button&quot;</code>:</strong> For narrower viewports, the menu is hidden behind this toggle button and disclosed when it is pressed. This saves vertical space. The element must be a button, and not a link, because it does not take the user to a new location.</li>
-<li><strong><code>class=&quot;gef-sitemenu-more-button&quot;</code></strong> Nested subtopic menus are hidden behind <code>&lt;button&gt;</code>s also. Their accessible <code>aria-expanded</code> state is set to either <code>false</code> (collapsed) or <code>true</code> (expanded).</li>
+<li><strong><code>class=&quot;gef-sitemenu__menu-button&quot;</code>:</strong> For narrower viewports, the menu is hidden behind this toggle button and disclosed when it is pressed. This saves vertical space. The element must be a button, and not a link, because it does not take the user to a new location.</li>
+<li><strong><code>class=&quot;gef-sitemenu__more-button&quot;</code></strong> Nested subtopic menus are hidden behind <code>&lt;button&gt;</code>s also. Their accessible <code>aria-expanded</code> state is set to either <code>false</code> (collapsed) or <code>true</code> (expanded).</li>
 <li><strong><code>class=&quot;gel-icon&quot;</code></strong> Each SVG icon is hidden from assistive technologies with <code>aria-hidden</code> and is removed from the tab order (in some versions of Internet Explorer and Edge) with <code>focusable=&quot;false&quot;</code><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</li>
 <li><strong><code>aria-current=&quot;page&quot;</code>:</strong> This indicates which menu item corresponds to the current page, and is announced as <em>&quot;current&quot;</em> in screen reader software<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>.</li>
 </ul>
@@ -171,13 +171,13 @@
   <span class="hljs-attribute">display</span>: inline;
 }
 
-<span class="hljs-selector-class">.gef-sitemenu-more</span> {
+<span class="hljs-selector-class">.gef-sitemenu__more</span> {
   <span class="hljs-attribute">float</span>: left;
 }
 </code></pre>
 <p>Now the submenu appears below each of the top-level menu items, but the table of contents-like nesting structure remains and focus order is not disrupted. After opening a submenu by clicking its attendant button, the next focusable element is the first of the submenu's options.</p>
 <p>The submenu container must take up the whole of the viewport. This is achieved using <code>calc()</code>:</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-sitemenu-more</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-sitemenu__more</span> {
   <span class="hljs-attribute">width</span>: <span class="hljs-built_in">calc</span>(100vw + 1px);
   <span class="hljs-attribute">position</span>: relative;
   <span class="hljs-attribute">left</span>: <span class="hljs-built_in">calc</span>((100vw - 100%) / <span class="hljs-number">2</span> * -<span class="hljs-number">1</span> - <span class="hljs-number">1px</span>);
@@ -185,8 +185,8 @@
 </code></pre>
 <p>The element's width is first set to <code>100vw</code>, then it is repositioned to be flush with the left edge of the screen. The <code>1px</code> addition and subtraction compensates for the horizontal borders. Multiplying by <code>-1</code> negates the value to pull the position to the left.</p>
 <p>To ensure the submenu's content (<code>.gef-submenu-inner</code>) aligns with the top-level menu, each element is given a <code>max-width</code> of <code>1008px</code> and <code>auto</code> margins.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-sitemenu-more-inner</span>,
-<span class="hljs-selector-class">.gef-sitemenu-list</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-sitemenu__more-inner</span>,
+<span class="hljs-selector-class">.gef-sitemenu__list</span> {
   <span class="hljs-attribute">margin-left</span>: auto;
   <span class="hljs-attribute">margin-right</span>: auto;
   <span class="hljs-attribute">max-width</span>: <span class="hljs-number">1008px</span>;
@@ -195,22 +195,22 @@
 <p>Note that the <code>1008px</code> figure depends on the width of the page's main content and will differ between sites. 1008 is taken from the <a href="https://www.bbc.co.uk/gel/">GEL site's</a> implementation.</p>
 <h3 id="focus-styles">Focus styles</h3>
 <p>The focus style is paired with the hover style.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span>,
-<span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:hover</span>,
-<span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span>,
-<span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:focus</span>,
-<span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-attr">[aria-current]</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-sitemenu__list</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span>,
+<span class="hljs-selector-class">.gef-sitemenu__list</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:hover</span>,
+<span class="hljs-selector-class">.gef-sitemenu__list</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span>,
+<span class="hljs-selector-class">.gef-sitemenu__list</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:focus</span>,
+<span class="hljs-selector-class">.gef-sitemenu__list</span> <span class="hljs-selector-attr">[aria-current]</span> {
   <span class="hljs-attribute">outline</span>: none;
   <span class="hljs-attribute">box-shadow</span>: inset <span class="hljs-number">0</span> -<span class="hljs-number">4px</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> currentColor;
 }
 </code></pre>
 <p>The main style—a <code>4px</code> line at the base of the item—is supplemented by a fallback for Windows High Contrast Mode (because Windows HCM themes tend to remove box shadows<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>). This takes the form of a <code>text-decoration</code> style.</p>
 <pre class="hljs"><code>@<span class="hljs-keyword">media</span> (-ms-high-contrast: active) {
-  <span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span>,
-  <span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:hover</span>,
-  <span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span>,
-  <span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:focus</span>,
-  <span class="hljs-selector-class">.gef-sitemenu-list</span> <span class="hljs-selector-attr">[aria-current]</span> {
+  <span class="hljs-selector-class">.gef-sitemenu__list</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span>,
+  <span class="hljs-selector-class">.gef-sitemenu__list</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:hover</span>,
+  <span class="hljs-selector-class">.gef-sitemenu__list</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span>,
+  <span class="hljs-selector-class">.gef-sitemenu__list</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:focus</span>,
+  <span class="hljs-selector-class">.gef-sitemenu__list</span> <span class="hljs-selector-attr">[aria-current]</span> {
     <span class="hljs-attribute">text-decoration</span>: underline;
   }
 }

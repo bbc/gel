@@ -19,7 +19,7 @@
 
       // Make the first element in the section the 'handle'
       section.handle = section.elem.firstElementChild;
-      section.handle.classList.add('gef-accordion-handle');
+      section.handle.classList.add('gef-accordion__handle');
 
       if (section.handle.nodeName === 'BUTTON') {
         console.error('The first child of each accordion element must not be a <button>');
@@ -42,7 +42,7 @@
       var contents = Array.prototype.slice.call(section.elem.children, 1);
       // Create the drawer into which to place the contents
       section.drawer = document.createElement('div');
-      section.drawer.classList.add('gef-accordion-drawer');
+      section.drawer.classList.add('gef-accordion__drawer');
       section.drawer.hidden = true;
       // Place the contents in the draw
       contents.forEach(function (node) {

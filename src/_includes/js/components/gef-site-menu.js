@@ -11,10 +11,10 @@
   self.init = function () { }
 
   self.constructor = function (elem) {
-    elem.classList.add('gef-sitemenu-with-js');
-    this.moreButtons = elem.querySelectorAll('.gef-sitemenu-more-button');
-    this.menuButton = elem.querySelector('.gef-sitemenu-menu-button');
-    this.menu = elem.querySelector('.gef-sitemenu-list');
+    elem.classList.add('gef-sitemenu--with-js');
+    this.moreButtons = elem.querySelectorAll('.gef-sitemenu__more-button');
+    this.menuButton = elem.querySelector('.gef-sitemenu__menu-button');
+    this.menu = elem.querySelector('.gef-sitemenu__list');
 
     Array.prototype.forEach.call(this.moreButtons, function (btn) {
       var submenu = btn.nextElementSibling;
@@ -50,6 +50,6 @@
   self.constructor.prototype.menuToggle = function () {
     var currentState = this.menuButton.getAttribute('aria-expanded') === 'true' || false;
     this.menuButton.setAttribute('aria-expanded', !currentState);
-    this.menu.classList.toggle('gef-sitemenu-open', !currentState);
+    this.menu.classList.toggle('gef-sitemenu__open', !currentState);
   }
 })();

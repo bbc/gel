@@ -121,14 +121,14 @@
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">main</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"main"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>You searched for "camera"<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-loader"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-loader-items"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-loader__items"</span>&gt;</span>
       <span class="hljs-comment">&lt;!-- loaded items --&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-loader-foot"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-loader-loading"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"status"</span> <span class="hljs-attr">hidden</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-loader__foot"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-loader__loading"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"status"</span> <span class="hljs-attr">hidden</span>&gt;</span>
         <span class="hljs-comment">&lt;!-- the loading indicator (spinner) --&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-loader-button gef-button"</span> <span class="hljs-attr">hidden</span>&gt;</span>Load more<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-loader__button gef-button"</span> <span class="hljs-attr">hidden</span>&gt;</span>Load more<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-pages"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"gef-pagination-label"</span>&gt;</span>
         <span class="hljs-comment">&lt;!-- the pagination functionality --&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
@@ -139,24 +139,24 @@
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-the-main-element">
               <h4 id="aside-info-the-main-element" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>The main element</h4><div><p>The main element<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> has attributes <code>id=&quot;main&quot;</code> and <code>tabindex=&quot;-1&quot;</code>. This is because it is expected to be the focus target of a same-page 'skip link'. In circumstances where the JavaScript does not run and the user must rely on the pagination component, the skip link lets them bypass the page's header/masthead to reach each successive page's content.</p>
-</aside><h3 id="gef-loader-items"><code>gef-loader-items</code></h3>
+</aside><h3 id="gef-loader__items"><code>gef-loader__items</code></h3>
 <p>The loaded content items are presented as a list. List items are enumerated in screen reader software, letting the user know how many items are present in total, and which one they are interacting with (<em>&quot;4 of 37&quot;</em>).</p>
 <p>As elaborated in <a href="#expected-behaviour">Expected behaviour</a>, each time a new set of items is loaded, that set's arrival is confirmed with an introductory 'separator' element. Taking the <code>role=&quot;separator&quot;</code> ARIA attribution<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>, the element is not counted in the list's total, meaning the number of results continues to be reported accurately to assistive technologies.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"separator"</span>&gt;</span>
   Results 6 to 12
 <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 </code></pre>
-<h3 id="gef-loader-loading"><code>gef-loader-loading</code></h3>
+<h3 id="gef-loader__loading"><code>gef-loader__loading</code></h3>
 <p>This construct comprises the visual loading indicator—an SVG icon—and a live region (<code>role=&quot;status&quot;</code>)<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>. In the <a href="#reference-implementation">Reference implementation</a>, <em>&quot;Loading, please wait&quot;</em> is inserted invisibly into the live region as items begin to be requested. This appending of text triggers immediate announcement in screen reader output.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-loader-loading"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"status"</span> <span class="hljs-attr">hidden</span>&gt;</span>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-loader__loading"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"status"</span> <span class="hljs-attr">hidden</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text gel-icon-loading"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"/gef-docs/static/images/gel-icons-all.svg#gel-icon-loading"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-loader-loading-text gef-sr"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-loader__loading-text gef-sr"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 <h3 id="the-load-more-button">The 'load more' button</h3>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-loader-button gef-button"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">hidden</span>&gt;</span>Load more<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-loader__button gef-button"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">hidden</span>&gt;</span>Load more<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre>
 <p>The button is hidden by default. Only where JavaScript runs is it revealed (and the fallback pagination component removed). It must be a standard <code>&lt;button&gt;</code> element, with <code>type=&quot;button&quot;</code>. It is always at the foot of the list of loaded content and can easily be stepped/tabbed past by keyboard.</p>
 <h3 id="individual-results">Individual results</h3>
@@ -240,7 +240,7 @@
   }
 }
 
-<span class="hljs-selector-class">.gef-loader-items</span> <span class="hljs-selector-attr">[role="separator"]</span><span class="hljs-selector-pseudo">:focus</span> {
+<span class="hljs-selector-class">.gef-loader__items</span> <span class="hljs-selector-attr">[role="separator"]</span><span class="hljs-selector-pseudo">:focus</span> {
   <span class="hljs-attribute">outline-width</span>: <span class="hljs-number">0</span>;
   <span class="hljs-attribute">outline-offset</span>: <span class="hljs-number">2px</span>;
   <span class="hljs-attribute">animation</span>: focus <span class="hljs-number">1s</span> linear <span class="hljs-number">1</span>;
@@ -303,49 +303,49 @@ title: Load more
  -->
 
 <div class="gef-loader">
-  <ul class="gef-loader-items">
-    <li class="gef-loader-item">
+  <ul class="gef-loader__items">
+    <li class="gef-loader__item">
       <p>delectus ullam et corporis nulla voluptas sequi</p>
       <a class="gef-cta" href="http://www.example.com/path/to/1">Read more about result 1</a>
     </li>
-    <li class="gef-loader-item">
+    <li class="gef-loader__item">
       <p>iusto eius quod necessitatibus culpa ea</p>
       <a class="gef-cta" href="http://www.example.com/path/to/2">Read more about result 2</a>
     </li>
-    <li class="gef-loader-item">
+    <li class="gef-loader__item">
       <p>a quo magni similique perferendis</p>
       <a class="gef-cta" href="http://www.example.com/path/to/3">Read more about result 3</a>
     </li>
-    <li class="gef-loader-item">
+    <li class="gef-loader__item">
       <p>ullam ut quidem id aut vel consequuntur</p>
       <a class="gef-cta" href="http://www.example.com/path/to/4">Read more about result 4</a>
     </li>
-    <li class="gef-loader-item">
+    <li class="gef-loader__item">
       <p>doloremque illum aliquid sunt</p>
       <a class="gef-cta" href="http://www.example.com/path/to/5">Read more about result 5</a>
     </li>
-    <li class="gef-loader-item">
+    <li class="gef-loader__item">
       <p>qui explicabo molestiae dolorem</p>
       <a class="gef-cta" href="http://www.example.com/path/to/6">Read more about result 6</a>
     </li>
   </ul>
-  <div class="gef-loader-foot">
-    <div class="gef-loader-loading" role="status" hidden>
+  <div class="gef-loader__foot">
+    <div class="gef-loader__loading" role="status" hidden>
       <svg class="gel-icon gel-icon--text gel-icon-loading" focusable="false" aria-hidden="true">
         <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-loading"></use>
       </svg>
-      <div class="gef-loader-loading-text gef-sr"></div>
+      <div class="gef-loader__loading-text gef-sr"></div>
     </div>
-    <button class="gef-loader-button gef-button" type="button" hidden>Load more</button>
+    <button class="gef-loader__button gef-button" type="button" hidden>Load more</button>
     <nav class="gef-pages" aria-labelledby="gef-pagination-label">
-      <div id="gef-pages-label" hidden>Page</div>
-      <a class="gef-pages-prev">
+      <div id="gef-pages__label" hidden>Page</div>
+      <a class="gef-pages__prev">
         <span class="gef-sr">Previous page</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
           <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-previous"></use>
         </svg>
       </a>
-      <ol class="gef-pages-numbered">
+      <ol class="gef-pages__numbered">
         <li><a href="?page=1" aria-current="page">1</a></li>
         <li><a href="?page=2">2</a></li>
         <li><a href="?page=3">3</a></li>
@@ -356,8 +356,8 @@ title: Load more
         <li role="separator">&hellip;</li>
         <li><a href="?page=999">999</a></li>
       </ol>
-      <div class="gef-pages-text">Page 1 of 999</div>
-      <a class="gef-pages-next" href="?page=2">
+      <div class="gef-pages__text">Page 1 of 999</div>
+      <a class="gef-pages__next" href="?page=2">
         <span class="gef-sr">Next page</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
           <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-next"></use>
@@ -372,12 +372,12 @@ title: Load more
   function LoadMore(elem, amount, start, dataProvider) {
     this.elem = elem;
     // Save refs to key elements
-    this.loadBay = this.elem.querySelector('.gef-loader-items');
+    this.loadBay = this.elem.querySelector('.gef-loader__items');
     this.pages = this.elem.querySelector('.gef-pages');
     this.paginator = this.elem.querySelector('.gef-pages');
-    this.button = this.elem.querySelector('.gef-loader-button');
-    this.loading = this.elem.querySelector('.gef-loader-loading');
-    this.loadingText = this.loading.querySelector('.gef-loader-loading-text');
+    this.button = this.elem.querySelector('.gef-loader__button');
+    this.loading = this.elem.querySelector('.gef-loader__loading');
+    this.loadingText = this.loading.querySelector('.gef-loader__loading-text');
 
     // Only run if Promises are supported
     if (typeof Promise !== "undefined" && Promise.toString().indexOf("[native code]") !== -1) {
@@ -409,7 +409,7 @@ title: Load more
         // Factory to create elements to wrap request data
         var createItem = function (item) {
           var itemElem = document.createElement('li');
-          itemElem.classList.add('gef-loader-item');
+          itemElem.classList.add('gef-loader__item');
           itemElem.innerHTML = '<p>' + item.title + '</p>';
           itemElem.innerHTML += '<a class="gef-cta" href="http://www.example.com/path/to/' + item.id + '">Read more about result ' + item.id + '</a>';
           return itemElem;
