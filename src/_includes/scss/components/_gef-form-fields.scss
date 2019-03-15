@@ -31,18 +31,9 @@
 
 .gef-form__field-error,
 .gef-form__warning {
-  padding: 0.25rem;
-  background-color: $gel-color--pink;
-  border: 1px solid transparent; /* for high contrast mode */
-  color: $gel-color--white;
+  display: block;
+  color: $gel-color--pink;
   max-width: 60ch;
-}
-
-@media (-ms-high-contrast: active) {
-  .gef-form__field-error,
-  .gef-form__warning {
-    filter: invert(100%);
-  }
 }
 
 .gef-form__field-error:empty,
@@ -53,6 +44,13 @@
 .gef-form__warning {
   background-color: $gel-color--yellow;
   color: $gel-color--black;
+  padding: 0.5rem;
+}
+
+@media (-ms-high-contrast: active) {
+  .gef-form__warning {
+    filter: invert(100%);
+  }
 }
 
 

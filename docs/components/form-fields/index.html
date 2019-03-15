@@ -189,35 +189,37 @@ to break because they depend on JavaScript in order to function.</p>
 <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"username"</span>&gt;</span>
   Username
   <span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>You set this when you signed up<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">strong</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username-error"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"username-error"</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username-error"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- invalid state--&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"username"</span>&gt;</span>
   Username
   <span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>You set this when you signed up<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">strong</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username-error"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>Error: Your username cannot contain spaces<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"username-error"</span> <span class="hljs-attr">aria-invalid</span>=<span class="hljs-string">"true"</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username-error"</span>&gt;</span>Error: Your username cannot contain spaces<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- valid state--&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"username"</span>&gt;</span>
   Username
   <span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>You set this when you signed up<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">strong</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username-error"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"username-error"</span> <span class="hljs-attr">aria-invalid</span>=<span class="hljs-string">"false"</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username-error"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
+<p>Note that the error message is placed above the input, appended to the label (see <a href="#recommended-layout">Recommended layout</a> for more information).</p>
+<p>Setups that support ARIA will silence the error readout as part of the label (<code>aria-hidden=&quot;true&quot;</code>) but append the information using <code>aria-describedby</code> (the error message is read last). Where ARIA is not supported, the error message is read as part of the label, meaning it is still available to the screen reader user when the input is focused.</p>
 <h4 id="required-fields">Required fields</h4>
 <p>It is assumed that any fields presented to the user should be completed, otherwise they should not be present. In which case, it is considered needlessly obstructive to indicate required fields before or during individual field validation.</p>
 <p>Only when submission is attempted should the <code>aria-required=&quot;true&quot;</code> attribution and error message be instated. This attribution is preferred over the HTML5 <code>required</code> Boolean just as <code>aria-invalid</code> is preferred over <code>invalid</code>.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"username"</span>&gt;</span>
   Username
   <span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>You set this when you signed up<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">strong</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username-error"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>Error: This field is required<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">aria-required</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-invalid</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"username-error"</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username-error"</span>&gt;</span>Error: This field is required<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 <p>Instead of indicating required fields, indicate optional ones. These should be fewer in number. Suffix the <code>&lt;label&gt;</code>'s text with '(optional)'.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"fact"</span>&gt;</span>Interesting fact (optional)<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
@@ -225,8 +227,8 @@ to break because they depend on JavaScript in order to function.</p>
 </code></pre>
 <h2 id="recommended-layout">Recommended layout</h2>
 <h3 id="order-and-orientation">Order and orientation</h3>
-<p>Place labels (and their descriptions, if present) <em>above</em> form elements. This is especially important on mobile platforms because the invoked virtual keyboard has a habit of obscuring labels to the side or below inputs.</p>
-<p>Animated labels that appear as <code>placeholder</code>s, then animate upwards to assume the position of a label, should be avoided for their pressure on cognition<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. A label <em>over</em> an input, similar to a <code>placeholder</code>, can misidentify the field as having a value and being already completed.</p>
+<p>Place labels (and their descriptions/error messages if present) <em>above</em> form elements. This is especially important on mobile platforms because the invoked virtual keyboard has a habit of obscuring labels to the side or below inputs<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
+<p>Animated labels that appear as <code>placeholder</code>s, then animate upwards to assume the position of a label, should be avoided for their pressure on cognition<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. A label <em>over</em> an input, similar to a <code>placeholder</code>, can misidentify the field as having a value and being already completed.</p>
 <h4 id="the-general-error-message">The 'general' error message</h4>
 <p>When the user attempts to submit a form containing errors, a general error message appears (and is alerted to screen reader users as an ARIA live region, see <a href="#reference-implementation">Reference implementation</a>). This error message should appear directly above the submit button, making it visible to the user without the need for scrolling.</p>
 <p>The general error message will appear when submission fails and the live region is populated with the error message.</p>
@@ -240,7 +242,7 @@ to break because they depend on JavaScript in order to function.</p>
 </code></pre>
 <h3 id="invisible-labels">Invisible labels</h3>
 <p>It is strongly recommended that form fields have visible and persistent labels; labels that do not disappear upon focus or input.</p>
-<p>However, in some specific circumstances an invisible but accessible label is acceptable. For example, a single input search form may have a submit button that reads &quot;Search&quot; — effectively providing a label for both the input and the button itself. In this case, you can hide the <code>&lt;label&gt;</code> visually, using a class that keeps the label available to assistive technologies<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>.</p>
+<p>However, in some specific circumstances an invisible but accessible label is acceptable. For example, a single input search form may have a submit button that reads &quot;Search&quot; — effectively providing a label for both the input and the button itself. In this case, you can hide the <code>&lt;label&gt;</code> visually, using a class that keeps the label available to assistive technologies<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"search"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>Your search term<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"search"</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>Search<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
@@ -260,7 +262,7 @@ to break because they depend on JavaScript in order to function.</p>
 }
 </code></pre>
 <h3 id="error-indication">Error indication</h3>
-<p>It is imperative that errors are clearly identified as such. Do not rely on colour to denote an error state<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> since it will fail on monochrome displays, and for those who cannot accurately perceive colour.</p>
+<p>It is imperative that errors are clearly identified as such. Do not rely on colour to denote an error state<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> since it will fail on monochrome displays, and for those who cannot accurately perceive colour.</p>
 <p>Where there are errors, there should always be error messages. Prefixing the error message with 'Error:',  or a warning symbol, ensures the nature of the message is conveyed explicitly.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username-error"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Error:<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span> Your username cannot contain spaces<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
@@ -307,7 +309,7 @@ to break because they depend on JavaScript in order to function.</p>
 </ul>
 <h3 id="variants-and-caveats">Variants and caveats</h3>
 <ul>
-<li>Some implementations disable the submit button until the subject form is free of errors. This is not recommended since it can be confusing and frustrating to some users<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>. Better to allow submission and be explicit with a warning.</li>
+<li>Some implementations disable the submit button until the subject form is free of errors. This is not recommended since it can be confusing and frustrating to some users<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>. Better to allow submission and be explicit with a warning.</li>
 <li>Some implementations disable fields that have been correctly completed, in an effort to make it clearer which fields need addressing. It is recommended that all fields remain enabled, so users can adjust their input at any time. In some cases, correcting one input's value may mean having to adjust another's, even if it is superficially correct in terms of format.</li>
 <li>You may wish to employ 'positive validation', wherein inputs that are successfully completed display a green style and 'tick'. The difficulty here is in discerning between a correct format, and correct information. Showing a tick next to a correctly formatted bank card number, for example, is misleading: the user may believe you're aware it is the correct number for their specific card.</li>
 </ul>
@@ -324,17 +326,19 @@ title: Form fields and validation
 
 <form id="myform-demo">
   <div class="gef-form__divider">
-    <label for="username">Username</label>
+    <label for="username">
+      Username
+      <strong class="gef-form__field-error" id="username-error" aria-hidden="true"></strong>
+    </label>
     <input type="text" id="username" name="username" />
-    <div class="gef-form__field-error" id="username-error"></div>
   </div>
   <div class="gef-form__divider">
     <label for="code">
       Verification code
       <small>This was sent to you by email</small>
+      <strong class="gef-form__field-error" id="code-error" aria-hidden="true"></strong>
     </label>
     <input type="text" id="code" name="code" />
-    <div class="gef-form__field-error" id="code-error"></div>
   </div>
   <div class="gef-form__divider">
     <button class="gef-button" type="submit">Submit</button>
@@ -381,13 +385,15 @@ title: Form fields and validation
 </li>
 <li id="fn2" class="footnote-item"><p>Native Form Validation — Peter-Paul Koch, <a href="https://medium.com/samsung-internet-dev/native-form-validation-part-3-8e643e1dd06">https://medium.com/samsung-internet-dev/native-form-validation-part-3-8e643e1dd06</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn3" class="footnote-item"><p>Floating Labels Are Problematic — Adam Silver, <a href="https://medium.com/simple-human/floating-labels-are-a-bad-idea-82edb64220f6">https://medium.com/simple-human/floating-labels-are-a-bad-idea-82edb64220f6</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+<li id="fn3" class="footnote-item"><p>Avoid Messages Under Fields — Adrian Roselli, <a href="http://adrianroselli.com/2017/01/avoid-messages-under-fields.html">http://adrianroselli.com/2017/01/avoid-messages-under-fields.html</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn4" class="footnote-item"><p>Gist of the <code>vh</code> (visually hidden) class,  <a href="https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472">https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+<li id="fn4" class="footnote-item"><p>Floating Labels Are Problematic — Adam Silver, <a href="https://medium.com/simple-human/floating-labels-are-a-bad-idea-82edb64220f6">https://medium.com/simple-human/floating-labels-are-a-bad-idea-82edb64220f6</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn5" class="footnote-item"><p>WCAG2.1 1.4.1 Use Of Color, <a href="https://www.w3.org/TR/WCAG21/#use-of-color">https://www.w3.org/TR/WCAG21/#use-of-color</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+<li id="fn5" class="footnote-item"><p>Gist of the <code>vh</code> (visually hidden) class,  <a href="https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472">https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn6" class="footnote-item"><p>Disabled buttons suck — Axesslab, <a href="https://axesslab.com/disabled-buttons-suck/">https://axesslab.com/disabled-buttons-suck/</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+<li id="fn6" class="footnote-item"><p>WCAG2.1 1.4.1 Use Of Color, <a href="https://www.w3.org/TR/WCAG21/#use-of-color">https://www.w3.org/TR/WCAG21/#use-of-color</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>Disabled buttons suck — Axesslab, <a href="https://axesslab.com/disabled-buttons-suck/">https://axesslab.com/disabled-buttons-suck/</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>

@@ -6,17 +6,19 @@ title: Form fields and validation
 
 <form id="myform-demo">
   <div class="gef-form__divider">
-    <label for="username">Username</label>
+    <label for="username">
+      Username
+      <strong class="gef-form__field-error" id="username-error" aria-hidden="true"></strong>
+    </label>
     <input type="text" id="username" name="username" />
-    <div class="gef-form__field-error" id="username-error"></div>
   </div>
   <div class="gef-form__divider">
     <label for="code">
       Verification code
       <small>This was sent to you by email</small>
+      <strong class="gef-form__field-error" id="code-error" aria-hidden="true"></strong>
     </label>
     <input type="text" id="code" name="code" />
-    <div class="gef-form__field-error" id="code-error"></div>
   </div>
   <div class="gef-form__divider">
     <button class="gef-button" type="submit">Submit</button>

@@ -129,26 +129,30 @@ Error messages should be concise but descriptive. They are associated to their f
 <label for="username">
   Username
   <small>You set this when you signed up</small>
+  <strong id="username-error" aria-hidden="true"></strong>
 </label>
 <input type="text" id="username" name="username" aria-describedby="username-error" />
-<div id="username-error"></div>
 
 <!-- invalid state-->
 <label for="username">
   Username
   <small>You set this when you signed up</small>
+  <strong id="username-error" aria-hidden="true">Error: Your username cannot contain spaces</strong>
 </label>
 <input type="text" id="username" name="username" aria-describedby="username-error" aria-invalid="true" />
-<div id="username-error">Error: Your username cannot contain spaces</div>
 
 <!-- valid state-->
 <label for="username">
   Username
   <small>You set this when you signed up</small>
+  <strong id="username-error" aria-hidden="true"></strong>
 </label>
 <input type="text" id="username" name="username" aria-describedby="username-error" aria-invalid="false" />
-<div id="username-error"></div>
 ```
+
+Note that the error message is placed above the input, appended to the label (see [Recommended layout](#recommended-layout) for more information).
+
+Setups that support ARIA will silence the error readout as part of the label (`aria-hidden="true"`) but append the information using `aria-describedby` (the error message is read last). Where ARIA is not supported, the error message is read as part of the label, meaning it is still available to the screen reader user when the input is focused.
 
 #### Required fields
 
@@ -160,9 +164,9 @@ Only when submission is attempted should the `aria-required="true"` attribution 
 <label for="username">
   Username
   <small>You set this when you signed up</small>
+  <strong id="username-error" aria-hidden="true">Error: This field is required</strong>
 </label>
 <input type="text" id="username" name="username" aria-required="true" aria-invalid="true" aria-describedby="username-error" />
-<div id="username-error">Error: This field is required</div>
 ```
 
 Instead of indicating required fields, indicate optional ones. These should be fewer in number. Suffix the `<label>`'s text with '(optional)'.
@@ -176,9 +180,9 @@ Instead of indicating required fields, indicate optional ones. These should be f
 
 ### Order and orientation
 
-Place labels (and their descriptions, if present) _above_ form elements. This is especially important on mobile platforms because the invoked virtual keyboard has a habit of obscuring labels to the side or below inputs. 
+Place labels (and their descriptions/error messages if present) _above_ form elements. This is especially important on mobile platforms because the invoked virtual keyboard has a habit of obscuring labels to the side or below inputs[^3]. 
 
-Animated labels that appear as `placeholder`s, then animate upwards to assume the position of a label, should be avoided for their pressure on cognition[^3]. A label _over_ an input, similar to a `placeholder`, can misidentify the field as having a value and being already completed.
+Animated labels that appear as `placeholder`s, then animate upwards to assume the position of a label, should be avoided for their pressure on cognition[^4]. A label _over_ an input, similar to a `placeholder`, can misidentify the field as having a value and being already completed.
 
 #### The 'general' error message
 
@@ -200,7 +204,7 @@ The general error message will appear when submission fails and the live region 
 
 It is strongly recommended that form fields have visible and persistent labels; labels that do not disappear upon focus or input.
 
-However, in some specific circumstances an invisible but accessible label is acceptable. For example, a single input search form may have a submit button that reads "Search" — effectively providing a label for both the input and the button itself. In this case, you can hide the `<label>` visually, using a class that keeps the label available to assistive technologies[^4].
+However, in some specific circumstances an invisible but accessible label is acceptable. For example, a single input search form may have a submit button that reads "Search" — effectively providing a label for both the input and the button itself. In this case, you can hide the `<label>` visually, using a class that keeps the label available to assistive technologies[^5].
 
 ```html
 <label for="search" class="vh">Your search term</label>
@@ -210,16 +214,12 @@ However, in some specific circumstances an invisible but accessible label is acc
 
 ### High Contrast Mode
 
-A couple of provisions are made to better support Windows High Contrast Mode. A transparent border is added to the error messages so they appear as boxes and, for supporting browsers, the message takes an inversion filter to give it the appearance of a background:
+The warning message receives an inversion filter so that it retains its box-like shape when Windows High Contrast Mode is active.
+
 
 ```css
-.gef-form__field-error,
-.gef-form__warning {
-  border: 1px solid transparent;
-}
 
 @media (-ms-high-contrast: active) {
-  .gef-form__field-error,
   .gef-form__warning {
     filter: invert(100%);
   }
@@ -228,7 +228,7 @@ A couple of provisions are made to better support Windows High Contrast Mode. A 
 
 ### Error indication
 
-It is imperative that errors are clearly identified as such. Do not rely on colour to denote an error state[^5] since it will fail on monochrome displays, and for those who cannot accurately perceive colour.
+It is imperative that errors are clearly identified as such. Do not rely on colour to denote an error state[^6] since it will fail on monochrome displays, and for those who cannot accurately perceive colour.
 
 Where there are errors, there should always be error messages. Prefixing the error message with 'Error:',  or a warning symbol, ensures the nature of the message is conveyed explicitly.
 
@@ -287,7 +287,7 @@ The following describes the validation journey, as exemplified by the [Reference
 
 ### Variants and caveats
 
-* Some implementations disable the submit button until the subject form is free of errors. This is not recommended since it can be confusing and frustrating to some users[^6]. Better to allow submission and be explicit with a warning.
+* Some implementations disable the submit button until the subject form is free of errors. This is not recommended since it can be confusing and frustrating to some users[^7]. Better to allow submission and be explicit with a warning.
 * Some implementations disable fields that have been correctly completed, in an effort to make it clearer which fields need addressing. It is recommended that all fields remain enabled, so users can adjust their input at any time. In some cases, correcting one input's value may mean having to adjust another's, even if it is superficially correct in terms of format.
 * You may wish to employ 'positive validation', wherein inputs that are successfully completed display a green style and 'tick'. The difficulty here is in discerning between a correct format, and correct information. Showing a tick next to a correctly formatted bank card number, for example, is misleading: the user may believe you're aware it is the correct number for their specific card.
 
@@ -309,7 +309,8 @@ This topic does not yet have any related research available.
 
 [^1]: Do Not Use The Placeholder Attribute — Eric Bailey (Smashing Magazine), <https://www.smashingmagazine.com/2018/06/placeholder-attribute/>
 [^2]: Native Form Validation — Peter-Paul Koch, <https://medium.com/samsung-internet-dev/native-form-validation-part-3-8e643e1dd06>
-[^3]: Floating Labels Are Problematic — Adam Silver, <https://medium.com/simple-human/floating-labels-are-a-bad-idea-82edb64220f6>
-[^4]: Gist of the `vh` (visually hidden) class,  <https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472> 
-[^5]: WCAG2.1 1.4.1 Use Of Color, <https://www.w3.org/TR/WCAG21/#use-of-color>
-[^6]: Disabled buttons suck — Axesslab, <https://axesslab.com/disabled-buttons-suck/>
+[^3]: Avoid Messages Under Fields — Adrian Roselli, <http://adrianroselli.com/2017/01/avoid-messages-under-fields.html>
+[^4]: Floating Labels Are Problematic — Adam Silver, <https://medium.com/simple-human/floating-labels-are-a-bad-idea-82edb64220f6>
+[^5]: Gist of the `vh` (visually hidden) class,  <https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472> 
+[^6]: WCAG2.1 1.4.1 Use Of Color, <https://www.w3.org/TR/WCAG21/#use-of-color>
+[^7]: Disabled buttons suck — Axesslab, <https://axesslab.com/disabled-buttons-suck/>

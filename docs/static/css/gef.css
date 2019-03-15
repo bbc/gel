@@ -929,17 +929,9 @@ input[type=range]::-ms-thumb {
 
 .gef-form__field-error,
 .gef-form__warning {
-  padding: 0.25rem;
-  background-color: #e4134f;
-  border: 1px solid transparent;
-  /* for high contrast mode */
-  color: #fff;
+  display: block;
+  color: #e4134f;
   max-width: 60ch; }
-
-@media (-ms-high-contrast: active) {
-  .gef-form__field-error,
-  .gef-form__warning {
-    filter: invert(100%); } }
 
 .gef-form__field-error:empty,
 .gef-form__warning:empty {
@@ -947,7 +939,12 @@ input[type=range]::-ms-thumb {
 
 .gef-form__warning {
   background-color: #ffdc48;
-  color: #121212; }
+  color: #121212;
+  padding: 0.5rem; }
+
+@media (-ms-high-contrast: active) {
+  .gef-form__warning {
+    filter: invert(100%); } }
 
 .gef-pocket__truncated {
   overflow-y: hidden; }
