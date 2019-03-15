@@ -1269,6 +1269,9 @@ body {
   margin: 0;
   padding: 0; }
 
+main:focus {
+  outline: none; }
+
 img {
   max-width: 100%; }
 
@@ -1995,3 +1998,12 @@ hr.footnotes-sep {
 sup.footnote-ref {
   margin: -8px 4px 0 4px;
   display: inline-block; }
+
+table {
+  border-collapse: collapse;
+  width: 100%; }
+
+th, td {
+  text-align: left;
+  border: 2px solid;
+  padding: 0.5rem; }
