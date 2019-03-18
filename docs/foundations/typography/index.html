@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/gef-docs/static/images/favicon.ico" type="image/x-icon">
+
+    <title>GEF | Typography</title>
+
+    <script src="/gef-docs/static/js/site.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/gef.css">
+    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/site.css">
+
+    <script type="text/javascript"> // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    <script type="text/javascript">
+        try {
+            (new FontFaceObserver('ReithSans', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-sans-loaded';
+            });
+            (new FontFaceObserver('ReithSerif', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-loaded';
+            });
+        } catch (e) {
+            console.log('Reith fonts did not load within 5 seconds.');
+        }
+    </script>
+
+    <script type="text/javascript">
+        // syntax highlight
+        hljs.initHighlightingOnLoad();
+    </script>
+
+    
+</head>
+
+<body class="gefdocs-body">
+    <p class="gef-sr gef-sr__focusable gef-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('gef-sr__focused')" onblur="this.parentNode.classList.remove('gef-sr__focused')">Skip
+            to content</a>
+    </p>
+
+    <header>
+        <div class="gefdocs-header gs-u-clearfix">
+            <div class="gel-wrap">
+                <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
+                        <title>BBC</title>
+                        <image xlink:href="/gef-docs/static/images/bbc-blocks_grey.svg" src="/gef-docs/static/images/bbc-blocks_grey.png"
+                            width="100%" height="100%"></image>
+                    </svg></a>
+            </div>
+        </div>
+        <div class="gefdocs-header__banner gs-u-clearfix">
+            <div class="gel-wrap">
+                <div class="gel-layout">
+                    <div class="gel-layout__item gel-2/5@l" style="text-align:left; padding-left:14px; margin-bottom:32px;">
+                        <a href="/gef-docs/" class="gefdocs-logo">GEF</a>
+                    </div>
+                    <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
+                        <a class="gefdocs-button gefdocs-button--dark gel-long-primer-bold" href="https://www.bbc.co.uk/gel/guidelines/typography">
+                            Go to BBC GEL
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" tabindex="-1" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <!-- column placeholder-->
+            </div>
+
+            <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
+                <h1 class="gefdocs-header__title">Typography</h1>
+                <p class="gefdocs-header__summary gel-great-primer">Inclusive content must be readable, and for it to be readable it must first be legible</p>
+            </div>
+
+            <div class="gel-layout__item gel-1/5@l">
+                <dl class="gefdocs-standout-box">
+                    
+                    <dt>Version:</dt>
+                    <dd>0.1.0</dd>
+                    
+                    <dt>Status:</dt>
+                    <dd>Draft</dd>
+                    <dt>Accessibility:</dt>
+                    <dd>Pass</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
+                    <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
+                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#font-size">Font size</a></li><li><a href="#alignment">Alignment</a></li><li><a href="#measure">Measure</a></li><li><a href="#leading-and-white-space">Leading and white space</a></li><li><a href="#all-caps">All caps</a></li><li><a href="#links">Links</a></li><li><a href="#contrast">Contrast</a></li><li><a href="#unicode-and-emoji">Unicode and emoji</a></li><li><a href="#related-research">Related research</a></li></ol>
+                </nav>
+            </div>
+
+            <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
+                <h2 id="introduction">Introduction</h2>
+<p>Performant typography starts with a superior typeface. The Reith typeface manifests the BBC's typographic identity, and is designed to <em>&quot;improve the experience of reading for everyone, regardless of ability, context or canvas&quot;</em><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. The typeface conundrum has been solved, leaving just typesetting best practices to be observed.</p>
+<h2 id="font-size">Font size</h2>
+<p>The most fundamental provision for accessible type is font size. The body <code>font-size</code> must be</p>
+<ol>
+<li>Reasonably large by default</li>
+<li>Adjustable by different means</li>
+</ol>
+<p>GEL <a href="https://www.bbc.co.uk/gel/guidelines/typography#type-sizes">type sizes</a> for body text range between 15 and and 18 pixels, depending on the screen dimensions. Although these are prescribed in terms of pixels, they should always be <em>set</em> in relative units such as <code>em</code>s and <code>rem</code>s.</p>
+<p>The reason for this is that a not insignificant number of users (about the same number as there are Microsoft Edge users<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>) adjust the default font size at a browser or operating system level. Text set in <code>px</code> <em>does not</em> honor that setting.</p>
+<p>Accordingly, the root <code>font-size</code> should be set as a percentage of the user's chosen size, and all other sizes should be relative to this one.</p>
+<pre class="hljs"><code><span class="hljs-selector-pseudo">:root</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">100%</span>; <span class="hljs-comment">/* the default value; this line is not needed */</span>
+}
+
+<span class="hljs-selector-tag">h2</span> {
+  @include gel-typography("trafalgar"); <span class="hljs-comment">/* translates to 2rem */</span>
+}
+
+<span class="hljs-selector-tag">small</span> {
+  @include gel-typography("brevier") <span class="hljs-comment">/* translates to 0.8125rem */</span>;
+}
+</code></pre>
+<p>Use font sizes in the scale smaller than 'Body Copy' sparingly, and only for supplementary, tangential information. A <a href="https://bbc.github.io/gel-typography-v2/v2">live demonstration of the type scale</a> is available for comparison.</p>
+<h3 id="pinch-zoom">Pinch zoom</h3>
+<p>In addition, be sure not to suppress zooming by touch on handheld devices. This prohibits users from being able to increase font size, and creates a number of unwanted restrictions<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. Your viewport meta tag should omit <code>user-scalable=no</code> to look like the following:</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1"</span>&gt;</span>
+</code></pre>
+<h2 id="alignment">Alignment</h2>
+<p>There are a number of typographic techniques that have an impact on readers' ability to scan text content. Many of these, including the mandate not to justify text, are covered under <strong>WCAG2.1 1.4.8 Visual Presentation</strong><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. Despite this success criterion belonging to the AAA level, you should adhere closely to the advice. Visually dyslexic readers in particular will benefit.</p>
+<p>Justified text (text aligned along both margins) is achieved by varying the spacing between words, disrupting the regularity of the layout and increasing cognitive strain. Instead, align text along the left hand side. Since this is the default behavior in most browsers the following should not be necessary.</p>
+<pre class="hljs"><code><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">text-align</span>: left;
+}
+</code></pre>
+<h2 id="measure">Measure</h2>
+<p>A measure (line length) that is too long makes it difficult for readers to scan back and find the next line in order to continue. [<strong>WCAG2.1 1.4.8 Visual Presentation</strong><sup class="footnote-ref"><a href="#fn4" id="fnref4:1">[4:1]</a></sup> recommends a measure of no more than 80 characters, but between 60 and 70 is better still.</p>
+<p>The measure must be:</p>
+<ol>
+<li>Set using an appropriate unit</li>
+<li>Allowed to decrease in accordance with the width of its containing element</li>
+</ol>
+<p>A measure set in pixels is not relative to <code>font-size</code>, permitting measure to lengthen as the <code>font-size</code> is decreased. Instead, measure should be set in <code>ch</code>. <code>1ch</code> is roughly equal to the width of one character. Set the value using <code>max-width</code> to allow text wrapping.</p>
+<pre class="hljs"><code><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">max-width</span>: <span class="hljs-number">65ch</span>;
+}
+</code></pre>
+<h2 id="leading-and-white-space">Leading and white space</h2>
+<p><strong>WCAG2.1 1.4.8 Visual Presentation</strong><sup class="footnote-ref"><a href="#fn4" id="fnref4:2">[4:2]</a></sup> recommends a leading (line height) for body text of no less than 1.5. However, this should be treated as a baseline since—as recommended by The Elements Of Typographic Style For The Web<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>—the leading should be chosen to suit the metrics of the font. A comfortable leading for body copy set in Reith Serif is <code>1.375</code>.</p>
+<p>It's most important that the <code>line-height</code> is not hard-coded using the <code>px</code> unit, since this restricts it from adjusting automatically in accordance with <code>font-size</code>. The following uses the unitless multiplier <code>1.375</code> meaning <em>&quot;1.375 times the font size&quot;</em>.</p>
+<pre class="hljs"><code><span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.375</span>;
+}
+</code></pre>
+<p>The most efficient way to manage white space between successive blocks of text while maintaining a good vertical rhythm<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> is to make each space a multiple of the line height. Typically, paragraphs are spaced using one whole line. In the following example, successive paragraphs receive a margin of <code>1.375rem</code> to separate them.</p>
+<pre class="hljs"><code><span class="hljs-selector-tag">p</span> + <span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">1.375rem</span>;
+}
+</code></pre>
+<p>Cognition depends heavily on a sense of belonging, so ensure that related elements are separated with more white space than those that are unrelated. For example, the white space between a preceding section and a heading should be greater than the white space between the heading and the first paragraph of its own section.</p>
+<pre class="hljs"><code><span class="hljs-selector-tag">h2</span> {
+  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">2.75rem</span>; <span class="hljs-comment">/* two lines (2 * 1.375); maintains vertical rhythm */</span>
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">1.375rem</span>;
+}
+</code></pre>
+<p>Larger text, such as <code>&lt;h1&gt;</code> and <code>&lt;h2&gt;</code> headings, benefits from a reduced <code>line-height</code>/leading. <code>1.125</code> is a recommended value.</p>
+<h2 id="all-caps">All caps</h2>
+<p>Text set in all caps (<code>text-transform: uppercase</code>) is harder to read because the characters become similarly 'square' in their occupation of space, and harder to differentiate. Many screen readers also have a habit of interpreting any all-caps text as acronyms, reading words out letter-by-letter. It should, therefore, be avoided in almost all cases.</p>
+<p>Acronyms and initialisms must appear in all-caps. Improve their legibility by increasing their <code>letter-spacing</code> by something in the order of 10%, as suggested in The Elements Of Typographic Style For The Web<sup class="footnote-ref"><a href="#fn5" id="fnref5:1">[5:1]</a></sup>:</p>
+<pre class="hljs"><code><span class="hljs-selector-tag">abbr</span> {
+  <span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0.1em</span>;
+}
+</code></pre>
+<p>Do <em>not</em> increase the <code>letter-spacing</code> of sentence-case text. The Reith typeface is designed for optimal legibility without adjusting the tracking.</p>
+<h2 id="links">Links</h2>
+<p>It is important that links are clearly differentiated from surrounding text. As mandated by <strong>WCAG2.1 1.4.1 Use of color</strong><sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup> this means not differentiating links by color alone. Not all people can (accurately) perceive color differences, and not all devices and screens accurately convey color.</p>
+<p>Lean on established convention by providing an underline, using either <code>text-decoration: underline</code> or a border. Where <code>text-decoration</code> is employed, you can increase legibility by preventing the line from intersecting the font's <a href="https://en.wikipedia.org/wiki/Descender">descenders</a>. Note that some browsers now support <code>text-decoration-skip: ink</code> by default.</p>
+<pre class="hljs"><code><span class="hljs-selector-tag">p</span> <span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">text-decoration</span>: underline;
+  <span class="hljs-attribute">text-decoration-skip</span>: ink;
+}
+</code></pre>
+<p>Do not underline text of any other variety, lest it is mistaken for a link. Highlight <code>&lt;mark&gt;</code> text using a background color instead.</p>
+<p>As set out under <a href="../buttons-and-ctas"><strong>Buttons and CTAs</strong></a>, call-to-action links and buttons should be differentiated visually to reflect their differing behaviour.</p>
+<h2 id="contrast">Contrast</h2>
+<p>It's imperative there is sufficient contrast between foreground text and backgrounds, in line with <strong>WCAG2.1 1.4.3 Contrast</strong><sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup>.</p>
+<p>There are a number of tools for calculating the contrast ratio, including the <a href="https://developer.paciellogroup.com/resources/contrastanalyser/">Color Contrast Analyzer</a> software developed and maintained by The Paciello Group.</p>
+<p>Avoid placing text over complex images such as photographs. Even where the contrast is sufficient, the intersection of characters with complex background shapes and lines impedes legibility.</p>
+<h2 id="unicode-and-emoji">Unicode and emoji</h2>
+<p>The support for unicode differs wildly between platforms, with handheld devices tending to support smaller subsets of unicode points. Where a point is not supported, a square fallback symbol (with a confusing resemblance to a checkbox in some contexts) appears instead.</p>
+<p>In general, avoid unicode symbols in favor of SVG-based icons. These are documented under <a href="../iconography"><strong>Iconography</strong></a>. Icon fonts in particular should be avoided since they tend to map their icons to esoteric / undesignated unicode points. Where users, such as those with dyslexia, override the author's font settings with a user stylesheet, the icons give way to fallback 'missing glyph' symbols.</p>
+<p>Note that screen readers will ignore some unicode points, and interpret others in unexpected ways. For example, the × symbol frequently used for close buttons can be announced as <em>&quot;times&quot;</em>. If you <em>are</em> to use this relatively well supported unicode point, silence the unicode point in screen reader output with <code>aria-hidden=&quot;true&quot;</code>. In the following example, the <em>&quot;close&quot;</em> text label is visually hidden, but still included in screen reader output, using the <code>gef-sr</code> class.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>&amp;times;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sr"</span>&gt;</span>Close<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<p>Emoji are rendered via unicode as well, but are more likely to be perceived as images. Some CMSs and social media platforms even replace the code point with their own image. Where the character is used, it's important to present it <em>as</em> an image, with an accompanying text alternative<sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup>.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"img"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Snowman"</span>&gt;</span>&amp;#9731;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</code></pre>
+<p>This exposes the character as an image in the accessibility tree<sup class="footnote-ref"><a href="#fn10" id="fnref10">[10]</a></sup>, enabling screen readers to identify it as such.</p>
+<h2 id="related-research">Related research</h2>
+<p>This topic does not yet have any related research available.</p>
+<h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Introducing Reith: The new face of the BBC — BBC GEL, <a href="http://www.bbc.co.uk/gel/articles/introducing-bbc-reith">http://www.bbc.co.uk/gel/articles/introducing-bbc-reith</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Pixels Verus Ems: Users Do Change Font Size — Evan Minto,  <a href="https://medium.com/@vamptvo/pixels-vs-ems-users-do-change-font-size-5cfb20831773">https://medium.com/@vamptvo/pixels-vs-ems-users-do-change-font-size-5cfb20831773</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>Don't Disable Zoom — Adrian Roselli, <a href="http://adrianroselli.com/2015/10/dont-disable-zoom.html">http://adrianroselli.com/2015/10/dont-disable-zoom.html</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>WCAG2.1 1.4.8 Visual Presentation, <a href="https://www.w3.org/TR/WCAG21/#visual-presentation">https://www.w3.org/TR/WCAG21/#visual-presentation</a> <a href="#fnref4" class="footnote-backref">↩︎</a> <a href="#fnref4:1" class="footnote-backref">↩︎</a> <a href="#fnref4:2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>The Elements Of Typographic Style For The Web, <a href="http://webtypography.net/2.2.1">http://webtypography.net/2.2.1</a> <a href="#fnref5" class="footnote-backref">↩︎</a> <a href="#fnref5:1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>Compose To A Vertical Rhythm — A List Apart, <a href="https://24ways.org/2006/compose-to-a-vertical-rhythm">https://24ways.org/2006/compose-to-a-vertical-rhythm</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>WCAG2.1 1.4.1 Use Of Color, <a href="https://www.w3.org/TR/WCAG21/#use-of-color">https://www.w3.org/TR/WCAG21/#use-of-color</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p>WCAG2.1 1.4.3 Contrast (Minimum), <a href="https://www.w3.org/TR/WCAG21/#contrast-minimum">https://www.w3.org/TR/WCAG21/#contrast-minimum</a> <a href="#fnref8" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn9" class="footnote-item"><p>Accessible Emoji — Léonie Watson, <a href="https://tink.uk/accessible-emoji/">https://tink.uk/accessible-emoji/</a> <a href="#fnref9" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn10" class="footnote-item"><p>The Accessibility Tree — Google Developers, <a href="https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree">https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree</a> <a href="#fnref10" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+
+                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
+                    <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
+                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
+                            <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use>
+                        </svg>Could you improve this documentation?
+                    </h4>
+                    <div>
+                        <p>
+                            If you think you could make anything you see here a bit better then become one of <a href="/gef-docs/contributors/">our
+                                lovely contributors</a>!
+                        </p>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="gefdocs-feedback-banner">
+        <div class="gel-wrap">
+            <div class="gel-layout">
+                <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
+                    <h2 class="gefdocs-feedback-banner__title">Got a minute?</h2>
+                    <p>We'd love to know what you think of the Code GEL website.</p>
+                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" class="gefdocs-button gefdocs-button__link-button gefdocs-feedback-banner__cta gefdocs-button--primary">
+                        <span class="gefdocs-button__content">Go to survey</span>
+                        <span class="gefdocs-button__icon_wrapper">
+                            <svg class="gefdocs-button__icon gefdocs-icon gefdocs-icon--text">
+                                <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                                    style="fill:undefined;"></use>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script nomodule defer type="text/javascript" src="/gef-docs/static/js/external-svg-polyfill.js"></script>
+    <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
+
+    
+
+    <script type="text/javascript">
+        new Sticky('.sticky');
+        new MenuSpy(document.querySelector('#gefdocs-toc__links'), { enableLocationHash: false });
+        new SweetScroll({
+            trigger: '#gefdocs-toc__links a',
+            quickMode: true,
+            easing: 'easeOutExpo',
+            cancellable: true,
+            updateURL: false,
+        });
+    </script>
+</body>
+
+</html>

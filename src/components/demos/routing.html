@@ -1,0 +1,121 @@
+---
+title: Routing
+---
+
+<style>
+  nav ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+  }
+
+  nav li {
+    display: inline-block;
+    margin: 0.75rem;
+  }
+
+  nav a {
+    text-decoration: none;
+    font-size: 1.125rem;
+    font-weight: bold;
+  }
+
+  nav [aria-current="true"] {
+    border-bottom: 2px solid;
+  }
+</style>
+
+<nav>
+  <ul>
+    <li><a href="#/home">Home</a></li>
+    <li><a href="#/about">About</a></li>
+    <li><a href="#/something-else">Something else</a></li>
+  </ul>
+</nav>
+
+<div id="/home">
+  <h1 tabindex="-1">Home</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed risus ligula, iaculis nec ante vitae, tempus semper
+    erat. Vivamus laoreet erat magna, gravida ultricies turpis consequat et. Donec in aliquet tellus. Donec rhoncus
+    posuere mi et dictum. Vestibulum euismod leo lectus, nec pellentesque risus ultricies eu. Integer non nisl vel ante
+    viverra aliquam. Morbi molestie pretium quam, in consectetur lorem fermentum vitae. Nunc vel aliquam tellus.</p>
+  <p><a href="#subsection">Go to the subsection inside <strong>About</strong></a>.</p>
+</div>
+
+<div id="/about">
+  <h1 tabindex="-1">About</h1>
+  <p>Nam blandit nunc sit amet arcu luctus sodales. Aenean pulvinar ac nunc quis porta. Praesent euismod non urna sed
+    pulvinar. Maecenas hendrerit non tortor ut dignissim. Quisque mattis ultrices metus sit amet congue. Cras a semper
+    felis. Praesent risus orci, finibus at turpis id, viverra pretium dolor. Integer nec lobortis tellus, vitae
+    fringilla nisl. Maecenas finibus, felis faucibus suscipit lacinia, ante sem accumsan ex, ut pharetra eros sem ut
+    justo.</p>
+  <h2 tabindex="-1" id="subsection">Subsection</h2>
+  <p>HCurabitur non risus non libero pretium pharetra in sit amet velit. Praesent tincidunt, ipsum in molestie
+    pulvinar, nunc libero pharetra massa, a vestibulum tortor velit eu orci. Aliquam erat volutpat. Maecenas ac justo
+    eu lorem vestibulum finibus ac nec arcu.</p>
+</div>
+
+<div id="/something-else">
+  <h1 tabindex="-1">Something else</h1>
+  <p>Sed accumsan mi nisi, nec semper mi pharetra non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+    congue viverra ultricies. Integer dui metus, mollis et lectus et, rutrum dictum magna. Cras commodo viverra magna
+    vitae laoreet. Proin auctor viverra ex, at porttitor sem placerat id. Mauris commodo diam a magna congue, et
+    interdum purus facilisis. Vivamus semper massa nec dignissim luctus.</p>
+</div>
+
+<script>
+  var routeElems = document.querySelectorAll('[id^="/"]');
+
+  var routes = [];
+  Array.prototype.forEach.call(routeElems, function (elem) {
+    var route = {};
+    route.elem = elem;
+    route.id = elem.id;
+    route.links = document.querySelectorAll('[href="#' + elem.id + '"]');
+    route.heading = elem.querySelector('h1');
+    routes.push(route);
+  });
+
+  function findRoute(id) {
+    var routeElem;
+    if (id !== '') {
+      routeElem = document.getElementById(id).closest('[id^="/"]');
+    } else {
+      routeElem = routes[0].elem;
+    }
+    var newRoute = routes.find(function (r) {
+      return r.elem === routeElem;
+    });
+
+    return newRoute;
+  }
+
+  function changeRoute(newRoute) {
+    routes.forEach(function (route) {
+      route.elem.hidden = route.id !== newRoute.id ? true : false;
+      Array.prototype.forEach.call(route.links, function (link) {
+        if (route !== newRoute) {
+          link.removeAttribute('aria-current');
+        } else {
+          link.setAttribute('aria-current', 'true');
+        }
+      });
+    });
+  }
+
+  window.addEventListener('hashchange', function () {
+    var id = window.location.hash.substring(1);
+    var newRoute = findRoute(id);
+    changeRoute(newRoute);
+
+    var focusTarget = newRoute.id !== id ? document.getElementById(id) : newRoute.heading;
+    focusTarget.focus();
+  });
+
+  window.addEventListener('DOMContentLoaded', function () {
+    var newRoute = findRoute(window.location.hash.substring(1));
+    changeRoute(newRoute);
+  });
+</script>
