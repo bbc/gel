@@ -217,13 +217,15 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 
 ## Related research
 
-During the development of the tabs implementation, the BBC accessibility team undertook research and hosted two days of usability testing with a number of blind and partially sighted participants.
+During the development of the tabs implementation, BBC News undertook research and hosted two days of usability testing with a number of keyboard-only participants, including blind and partially sighted participants.
 
 These participants were presented with four variations of the tab interface. Version 1 appeared as a tab interface but retained the semantics and behavior of an interactive table of contents (see [Initial markup](#initial-markup)). Version 2 implemented all of the recommended semantics and behaviors of the [ARIA Authoring practices](https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel) guide, including tabs only being focusable/selectable by arrow key. The remaining versions constituted compromise positions: Version 3 implemented the tab semantics but behaved as a table of contents (moving focus to panels on tab activation). Version 4 implemented [ARIA Authoring practices tabs](https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel) except without arrow navigation (tabs remained focusable using the <kbd>Tab</kbd> key).
 
-The majority of participants were uncomfortable with same-page links and felt there were already a large number of links in BBC pages to contend with. Arrow key navigation was either not discovered by participants, was confounding, or interfered with the expected behavior of browsing by arrow key using their screen reader's virtual cursor. The concept of 'tabs' as a semantic grouping mechanism was generally popular.
+These participants were presented with three variations of the tab interface. Version 1 implemented all of the recommended semantics and behaviours of the [ARIA Authoring practices](https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel) guide, including tabs only being focusable/selectable by arrow key. Version 2 constituted a compromise position: tab semantics were implemented but the interface behaved as a table of contents (moving focus to panels on tab activation). Version 3 appeared as a tab interface but retained the semantics and behaviour of an interactive table of contents (see [Initial markup](#initial-markup)).
 
-Accordingly, the implementation described here follows that of version 3, and degrades to an interactive table of contents where JavaScript does not run.
+The majority of participants were uncomfortable with the same-page link (interactive table of contents) pattern (version 3) as this did not correctly describe the content. Arrow key navigation was either not discovered by participants, or interfered with the expected behaviour of browsing by arrow key using their screen reader's virtual cursor. The concept of 'tabs' as a semantic grouping mechanism was more popular than same page links.
+
+Accordingly, the implementation described here follows that of version 2, and degrades to an interactive table of contents where JavaScript does not run.
 
 ### Further reading, elsewhere on the Web
 
