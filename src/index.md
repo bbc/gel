@@ -6,7 +6,7 @@ version: 0.1.0
 linkback: http://www.bbc.co.uk/gel
 ---
 
-## What GEF is
+## What GEF (Global Experience Framework) is
 
 In short: GEF sets out how to code GEL. Or, to put it another way, GEF is development to GEL's design. As a developer seeking out how to best implement a pattern defined in GEL, GEF should have you covered.
 
