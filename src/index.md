@@ -111,7 +111,19 @@ var switchButton = new gef.Switch.constructor(switchElem);
 
 ## What's here?
 
-We are working our way through a list based closely on what's already published in [the BBC GEL Guidelines](http://www.bbc.co.uk/gel/). You should generally start there when seeking to understand any documented pattern but at the point where you're wondering about which HTML tags to use we're here for you!
+We are working our way through a list based closely on what's already published in [the BBC GEL Guidelines](http://www.bbc.co.uk/gel/). You should generally start there when seeking to understand any documented pattern but at the point where you're wondering about which HTML tags and CSS layout techniques to use we're here for you!
+
+### Foundations
+
+| Foundation | Status |
+|-----------|--------|
+| [Grids]({{site.basedir}}foundations/grids/) | Draft / Pending|
+| [Headings]({{site.basedir}}foundations/headings/) | Draft / Pending|
+| [Icons]({{site.basedir}}foundations/iconography/) | Draft / Pending|
+| [Routing]({{site.basedir}}foundations/routing/) | Draft / Pending|
+| [Typography]({{site.basedir}}foundations/typography/) | Draft / Pending|
+
+### Components
 
 | Component | Status |
 |-----------|--------|
@@ -133,13 +145,6 @@ We are working our way through a list based closely on what's already published 
 | [Information Panel]({{site.basedir}}components/info-panels/) | Draft / Pending|
 | [Share Tools]({{site.basedir}}components/share-tools/) | Draft / Pending|
 | [Site Menu]({{site.basedir}}components/site-menu/) | Draft / Pending|
-
-| Atom | Status |
-|-----------|--------|
-| [Grids]({{site.basedir}}atoms/grids/) | Draft / Pending|
-| [Headings]({{site.basedir}}atoms/headings/) | Draft / Pending|
-| [Icons]({{site.basedir}}atoms/iconography/) | Draft / Pending|
-| [Type]({{site.basedir}}atoms/typography/) | Draft / Pending|
 
 ## Questions?
 
