@@ -1697,7 +1697,8 @@ a {
 /* snippet */
 pre {
   margin-top: 32px;
-  margin-bottom: 32px; }
+  margin-bottom: 32px;
+  tab-size: 2; }
 
 /* body-copy */
 .b-reith-loaded .gefdocs-body-copy p, .b-reith-loaded .gefdocs-body-copy ol, .b-reith-loaded .gefdocs-body-copy ul {

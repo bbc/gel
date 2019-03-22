@@ -6,25 +6,25 @@ version: 0.1.0
 linkback: http://www.bbc.co.uk/gel
 ---
 
-## What GEF (Global Experience Framework) is
+## What GEF is
 
-In short: GEF sets out how to code GEL. Or, to put it another way, GEF is development to GEL's design. As a developer seeking out how to best implement a pattern defined in GEL, GEF should have you covered.
+GEF (the BBC's Global Experience Framework) supports developers who write code to build components documented in GEL (the BBC's Global Experience Language). GEF seeks to explain and demonstrate how to develop working web components that follow all relevant BBC standards, guidelines and best-practice.
 
-But what is _best_? It's something that constantly evolves according to changes in web technologies and accumulated user research. While nothing you see in GEF today is, therefore, set in stone, you can be confident is has been written with the following three concerns in mind:
+Specifically GEF has been written with the following three concerns embedded throughout:
 
 * **Accessibility:** The BBC and its content is for everyone. Everything in GEF is written with inclusion in mind, drawing from the accessibility community's wealth of knowledge and experience. Accessibility is not a feature of GEF, but a trait.
 * **Standards:** GEF is deferential to web standards, and the groundwork laid by the W3C's specifications and guidelines — as well as the BBC's own _Mobile Accessibility Guidelines_ and all applicable _BBC Standards and Guidelines_. GEF embraces convention, and does not fix anything unbroken.
 * **Research:** Some aspects of standards, conventions, and other kinds of prior art may be called into question in light of research and testing data. Where research points to the need for innovation, GEF will break that new ground.
  
-GEF invites everyone to join the conversation, and help improve the guidance it offers.
+We understand that standards, guidelines and best-practices evolve according to changes in web technologies and accumulated user research and so we invites everyone to join the conversation: we are stronger when we build and grow together.
  
 ## What GEF isn't
 
-GEF is not a pattern library; it is not intended to be 'plugged in' to your interface directly. For this to be possible, it would have to dictate your environment, stack, and workflow. 
+GEF is not a pattern library; it is not intended to be plugged into your interface directly. For that to be possible, it would have to dictate your environment, stack and workflow. 
 
-GEF appreciates that different teams across the BBC work in different ways, with different coding styles and frameworks. Accordingly, GEF offers recommendations for what needs to be achieved, but not _how_ to achieve it, or with which tools.
+GEF appreciates that different teams across the BBC work in different ways, with different coding styles and frameworks. Accordingly, GEF offers recommendations for what needs to be achieved, but not _how_ to achieve it or with which tools.
 
-For example, one GEF doc' might expound the need for a state change, using `aria-pressed` to make it accessible. The documentation will explain why that state change is needed, how it is communicated in assistive technologies, and even offer a 'reference implementation' demonstrating it in action. But it will not assume you will be implementing that state change using Vue.js, React, a native web component, or any other 'flavour' of frontend technology. That is up to you, and your team.
+For example, one GEF guide might explain the need for a state change using `aria-pressed` to make it accessible. The documentation will show why that state change is needed, how it is communicated in assistive technologies and even offer a 'reference implementation' demonstrating it in action. But it will not assume you will implement that state change using Vue.js, React, a native web component, or any other 'flavour' of frontend technology. That is left up to you and your team.
 
 ## Coding conventions
 
