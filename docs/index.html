@@ -29,7 +29,7 @@
             (new FontFaceObserver('ReithSerif', 5000)).load().then(function () {
                 document.documentElement.className += ' b-reith-loaded';
             });
-        } catch( e ) {
+        } catch (e) {
             console.log('Reith fonts did not load within 5 seconds.');
         }
     </script>
@@ -319,14 +319,6 @@
 
     <script type="text/javascript">
         new Sticky('.sticky');
-        new MenuSpy(document.querySelector('#gefdocs-toc__links'), {enableLocationHash: false});
-        new SweetScroll({
-            trigger: '#gefdocs-toc__links a',
-            quickMode: true,
-            easing: 'easeOutExpo',
-            cancellable: true,
-            updateURL: false, 
-        });
     </script>
 </body>
 

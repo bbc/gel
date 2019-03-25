@@ -37,6 +37,10 @@ div#gel-app {
   @include gel-typography('body-copy');
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     font-size: 62.5%;
     font-family: Arial,Helvetica,freesans,sans-serif;
@@ -324,8 +328,11 @@ a {
     margin-bottom: 8px
 }
 
+.gefdocs-breakout-box a {
+  border-bottom-color: $gel-color--tundora;
+}
+
 .gefdocs-breakout-box p {
-    overflow: hidden;
     margin: 0;
     margin-bottom: 20px;
     font-weight: 400;
@@ -349,7 +356,7 @@ a {
         font-size: 14px;
         font-size: .875rem;
         line-height: 18px;
-        line-height: 1.125rem
+        line-height: 1.25rem
     }
 }
 
@@ -828,6 +835,10 @@ a.gefdocs-button.gefdocs-button__link-button {
 
 hr.footnotes-sep {
   display: none;
+}
+
+.footnotes-list a {
+  word-break: break-all;
 }
 
 sup.footnote-ref {
