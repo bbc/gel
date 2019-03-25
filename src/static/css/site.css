@@ -1262,6 +1262,9 @@ div#gel-app {
         line-height: 22px;
         line-height: 1.375rem; } }
 
+html {
+  scroll-behavior: smooth; }
+
 body {
   font-size: 62.5%;
   font-family: Arial,Helvetica,freesans,sans-serif;

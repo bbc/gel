@@ -37,6 +37,10 @@ div#gel-app {
   @include gel-typography('body-copy');
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     font-size: 62.5%;
     font-family: Arial,Helvetica,freesans,sans-serif;
