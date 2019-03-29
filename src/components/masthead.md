@@ -354,7 +354,7 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 
 <include src="components/demos/masthead.html">
 
-<p><a class="geldocs-button geldocs-button--dark geldocs-long-primer-bold" href="../demos/masthead/" target="_new">Open in new window <svg class="geldocs-button__icon geldocs-icon geldocs-icon--text"><use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:currentColor"></use></svg></a></p>
+<p><a class="geldocs-button geldocs-button--dark geldocs-long-primer-bold" href="../demos/masthead/" target="_new">Open in new window <svg class="geldocs-button__icon geldocs-icon geldocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link" style="fill:currentColor"></use></svg></a></p>
 
 ## Related research
 

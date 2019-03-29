@@ -20,7 +20,7 @@ The following example is a "Note" type breakout. The same structure should be us
 <aside class="gef-breakout-box" aria-labelledby="aside-1540915290281">
   <h4 aria-hidden="true" id="aside-1540915290281">
     <svg class="gel-icon gel-icon--text">
-      <use xlink:href="/code-gel/static/images/gel-icons-core-set.svg#gel-icon-info"></use>
+      <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info"></use>
     </svg>
     The unique title for the breakout
   </h4>
