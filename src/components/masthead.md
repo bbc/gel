@@ -85,7 +85,7 @@ All SVG icons must take `aria-hidden="true"` to hide them from assistive technol
 
 ```html
 <div class="gef-masthead__alerts-option">
-  <a href="#gef-masthead__alerts">
+  <a role="button" aria-expanded="false" aria-haspopup="true" href="#gef-masthead__alerts">
     <span class="gef-sr">Notifications</span>
     <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
       <use xlink:href="path/to/gel-icons-all.svg#gel-icon-alerts"></use>
@@ -94,7 +94,7 @@ All SVG icons must take `aria-hidden="true"` to hide them from assistive technol
 </div>
 ```
 
-The alerts link, like the more link below, is an enhanced same-page link that both opens and sends focus to a target element containing more information/options. In the absence of JavaScript, the More menu is open by default and contains a link to the account page. From this page, the user can access their notifications.
+The alerts link, like the more link below, is an enhanced same-page link that both opens and sends focus to a target element containing more information/options. In the absence of JavaScript, the More menu is open by default and the link simply works as a same-page link. Where JavaScript runs, ARIA attribution is added to reflect that the link behaves as a toggle button, and keeps track of the expanded/collapsed state (`aria-expanded`).
 
 #### Promoted/priority links
 
@@ -118,7 +118,7 @@ These are the main navigation options, grouped within a list so that screen read
 
 ```html
 <div class="gef-masthead__more-option">
-  <a href="#gef-masthead__more">
+  <a role="button" aria-expanded="false" aria-haspopup="true" href="#gef-masthead__more">
     <span class="gef-sr">More</span>
     <span class="gef-masthead__more-option-text" aria-hidden="true">
       More ▾
@@ -130,7 +130,7 @@ These are the main navigation options, grouped within a list so that screen read
 </div>
 ```
 
-The same-page link that reveals and moves focus to the More menu. Note the two instances of 'More'. The first, hidden visually, persistently offers the accessible label to the link. The second is removed from screen reader output with `aria-hidden="true"` and provides a visible label only where the viewport can offer the space. The 'hamburger' icon replaces the visual text label at narrow viewports.
+The same-page link is enhanced into an ARIA toggle button where JavaScript is available (similar to the **alerts link**, above). Note the two instances of 'More'. The first, hidden visually, persistently offers the accessible label to the link. The second is removed from screen reader output with `aria-hidden="true"` and provides a visible label only where the viewport can offer the space. The 'hamburger' icon replaces the visual text label at narrow viewports.
 
 #### The search link
 
