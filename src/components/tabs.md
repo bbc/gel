@@ -221,15 +221,10 @@ During the development of the tabs implementation, BBC News undertook research a
 
 These participants were presented with three variations of the tab interface. Version 1 implemented all of the recommended semantics and behaviours of the [ARIA Authoring practices](https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel) guide, including tabs only being focusable/selectable by arrow key. Version 2 constituted a compromise position: tab semantics were implemented but the interface behaved as a table of contents (moving focus to panels on tab activation). Version 3 appeared as a tab interface but retained the semantics and behaviour of an interactive table of contents (see [Initial markup](#initial-markup)).
 
-<<<<<<< HEAD
-The majority of participants were uncomfortable with the same-page link (interactive table of contents) pattern (version 3) as this did not correctly describe the content. Arrow key navigation was either not discovered by participants, or interfered with the expected behaviour of browsing by arrow key using their screen reader's virtual cursor. The concept of 'tabs' as a semantic grouping mechanism was more popular than same-page links.
-
-=======
 These participants were presented with three variations of the tab interface. Version 1 implemented all of the recommended semantics and behaviours of the [ARIA Authoring practices](https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel) guide, including tabs only being focusable/selectable by arrow key. Version 2 constituted a compromise position: tab semantics were implemented but the interface behaved as a table of contents (moving focus to panels on tab activation). Version 3 appeared as a tab interface but retained the semantics and behaviour of an interactive table of contents (see [Initial markup](#initial-markup)).
 
 The majority of participants were uncomfortable with the same-page link (interactive table of contents) pattern (version 3) as this did not correctly describe the content. Arrow key navigation was either not discovered by participants, or interfered with the expected behaviour of browsing by arrow key using their screen reader's virtual cursor. The concept of 'tabs' as a semantic grouping mechanism was more popular than same page links.
 
->>>>>>> 247d8f31436ce3c0d836a0f94f0cbfce5475b5fc
 Accordingly, the implementation described here follows that of version 2, and degrades to an interactive table of contents where JavaScript does not run.
 
 ### Further reading, elsewhere on the Web

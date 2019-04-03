@@ -167,7 +167,7 @@
 <p>All SVG icons must take <code>aria-hidden=&quot;true&quot;</code> to hide them from assistive technologies and <code>focusable=&quot;false&quot;</code> to ensure Microsoft browsers do not erroneously put them in focus order<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
 <h4 id="the-notificationsalerts-link">The notifications/alerts link</h4>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-masthead__alerts-option"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#gef-masthead__alerts"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#gef-masthead__alerts"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sr"</span>&gt;</span>Notifications<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"path/to/gel-icons-all.svg#gel-icon-alerts"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
@@ -175,7 +175,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<p>The alerts link, like the more link below, is an enhanced same-page link that both opens and sends focus to a target element containing more information/options. In the absence of JavaScript, the More menu is open by default and contains a link to the account page. From this page, the user can access their notifications.</p>
+<p>The alerts link, like the more link below, is an enhanced same-page link that both opens and sends focus to a target element containing more information/options. In the absence of JavaScript, the More menu is open by default and the link simply works as a same-page link. Where JavaScript runs, ARIA attribution is added to reflect that the link behaves as a toggle button, and keeps track of the expanded/collapsed state (<code>aria-expanded</code>).</p>
 <h4 id="promotedpriority-links">Promoted/priority links</h4>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-masthead__links"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"sites-label"</span> <span class="hljs-attr">hidden</span>&gt;</span>BBC sites<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
@@ -192,7 +192,7 @@
 <p>These are the main navigation options, grouped within a list so that screen reader software identifies them as related (and mutually exclusive) and numerates them<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. They each pertain to a BBC site, and this is identified by an auxiliary group label provided to the list element via a hidden <code>&lt;span&gt;</code>. In the absence of JavaScript, the More menu offers a complete list of links. It's important, therefore, that each of these links is also available in the More menu.</p>
 <h4 id="the-more-link">The more link</h4>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-masthead__more-option"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#gef-masthead__more"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#gef-masthead__more"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sr"</span>&gt;</span>More<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-masthead__more-option-text"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
       More ▾
@@ -203,7 +203,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<p>The same-page link that reveals and moves focus to the More menu. Note the two instances of 'More'. The first, hidden visually, persistently offers the accessible label to the link. The second is removed from screen reader output with <code>aria-hidden=&quot;true&quot;</code> and provides a visible label only where the viewport can offer the space. The 'hamburger' icon replaces the visual text label at narrow viewports.</p>
+<p>The same-page link is enhanced into an ARIA toggle button where JavaScript is available (similar to the <strong>alerts link</strong>, above). Note the two instances of 'More'. The first, hidden visually, persistently offers the accessible label to the link. The second is removed from screen reader output with <code>aria-hidden=&quot;true&quot;</code> and provides a visible label only where the viewport can offer the space. The 'hamburger' icon replaces the visual text label at narrow viewports.</p>
 <h4 id="the-search-link">The search link</h4>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-masthead__search-option"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"search"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.bbc.co.uk/search?q="</span>&gt;</span>
