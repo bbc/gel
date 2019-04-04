@@ -66,6 +66,18 @@
       panel.hidden = true;
     });
 
+    // Use event delegation to listen to all 'keyup' events
+    // within `tablist`. If 'Space' was pressed on a tab
+    // element, then click it triggering a 'hashchange'.
+    tablist.addEventListener('keyup', function (e) {
+      var isTab = e.target.matches('[role="tab"]');
+      var keyCode = e.code;
+
+      if (isTab && keyCode === 'Space') {
+        e.target.click();
+      }
+    });
+
     window.addEventListener('hashchange', function (e) {
       var selected = tablist.querySelector('[aria-selected="true"]');
       var oldIndex = selected ? Array.prototype.indexOf.call(tabs, selected) : undefined;

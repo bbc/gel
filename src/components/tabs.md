@@ -173,7 +173,7 @@ The links and `<section>`s are communicated as such in screen reader output and 
 
 #### Selecting a tab
 
-By mouse or touch, clicking or pressing a tab will reveal its corresponding tab panel. For keyboard users, unselected tabs are focusable and can be activated with the <kbd>Enter</kbd> key. 
+By mouse or touch, clicking or pressing a tab will reveal its corresponding tab panel. For keyboard users, unselected tabs are focusable and can be activated with the <kbd>Enter</kbd> and <kbd>Space</kbd> keys. 
 
 To preserve the behaviour of the same-page links upon which the tabs are created and to address trouble screen readers have been observed experiencing moving from the tab to the tab panel, clicking a tab programmatically moves focus to the visible tab panel. The tab panel is identified in screen readers as a tab panel, and the tab panel's label (borrowed from the corresponding tab using `aria-labelledby`) is also announced. 
 
