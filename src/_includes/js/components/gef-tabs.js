@@ -67,7 +67,7 @@
     });
 
     window.addEventListener('hashchange', function (e) {
-      var selected = tablist.querySelector('[aria-selected]');
+      var selected = tablist.querySelector('[aria-selected="true"]');
       var oldIndex = selected ? Array.prototype.indexOf.call(tabs, selected) : undefined;
       switchTab(oldIndex, tabInfo());
     }, false);
