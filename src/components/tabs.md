@@ -67,10 +67,10 @@ Where server-side rendering and progressive enhancement are possible, follow thi
       <a role="tab" id="tab-section1" href="#section1" aria-selected="true">Section 1</a>
     </li>
     <li role="presentation">
-      <a role="tab" id="tab-section2" href="#section2">Section 2</a>
+      <a role="tab" id="tab-section2" href="#section2" aria-selected="false">Section 2</a>
     </li>
     <li role="presentation">
-      <a role="tab" id="tab-section3" href="#section3">Section 3</a>
+      <a role="tab" id="tab-section3" href="#section3" aria-selected="false">Section 3</a>
     </li>
   </ul>
   <section role="tabpanel" id="section1" aria-labelledby="tab-section1" tabindex="-1">

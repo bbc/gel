@@ -826,7 +826,7 @@
 
     var switchTab = function (oldIndex, tabInfo) {
       if (typeof oldIndex !== 'undefined' && oldIndex > -1) {
-        tabs[oldIndex].removeAttribute('aria-selected');
+        tabs[oldIndex].setAttribute('aria-selected', 'false');
         panels[oldIndex].hidden = true;
       }
 
@@ -840,6 +840,7 @@
 
     Array.prototype.forEach.call(tabs, function (tab, i) {
       tab.setAttribute('role', 'tab');
+      tab.setAttribute('aria-selected', 'false');
       tab.parentNode.setAttribute('role', 'presentation');
       tab.id = 'tab-' + tab.getAttribute('href').substring(1);
 
@@ -851,7 +852,7 @@
     });
 
     window.addEventListener('hashchange', function (e) {
-      var selected = tablist.querySelector('[aria-selected]');
+      var selected = tablist.querySelector('[aria-selected="true"]');
       var oldIndex = selected ? Array.prototype.indexOf.call(tabs, selected) : undefined;
       switchTab(oldIndex, tabInfo());
     }, false);

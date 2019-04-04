@@ -45,12 +45,12 @@
   outline-offset: -2px;
 }
 
-.gef-tabs [aria-selected] {
+.gef-tabs [aria-selected="true"] {
   background-color: $gel-color--dusty-gray;
 }
 
 @media (-ms-high-contrast: active) {
-  .gef-tabs [aria-selected] {
+  .gef-tabs [aria-selected="true"] {
     position: relative;
     top: 2px;
   }
