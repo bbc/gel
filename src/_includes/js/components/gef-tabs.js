@@ -55,6 +55,7 @@
 
     Array.prototype.forEach.call(tabs, function (tab, i) {
       tab.setAttribute('role', 'tab');
+      tab.setAttribute('aria-selected', 'false');
       tab.parentNode.setAttribute('role', 'presentation');
       tab.id = 'tab-' + tab.getAttribute('href').substring(1);
 
