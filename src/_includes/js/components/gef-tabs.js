@@ -41,7 +41,7 @@
 
     var switchTab = function (oldIndex, tabInfo) {
       if (typeof oldIndex !== 'undefined' && oldIndex > -1) {
-        tabs[oldIndex].removeAttribute('aria-selected');
+        tabs[oldIndex].setAttribute('aria-selected', 'false');
         panels[oldIndex].hidden = true;
       }
 
