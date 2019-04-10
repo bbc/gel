@@ -10,9 +10,9 @@
     "sass": "sass-pack -s src/_includes/scss/site.scss -o src/static/css/ && sass-pack -s src/_includes/scss/gef.scss -o src/static/css/",
     "js": "uglifyjs node_modules/fontfaceobserver/fontfaceobserver.standalone.js node_modules/highlight.js/lib/highlight.js node_modules/sticky-js/dist/sticky.min.js node_modules/menuspy/dist/menuspy.min.js -o src/static/js/site.js && cat src/_includes/js/components/*.js > src/static/js/gef.js",
     "html": "eleventy --input=./src/ --output=docs/ --formats=md,html",
+    "develop": "gulp",
     "build": "npm run js && npm run sass && npm run html",
     "serve": "eleventy --serve",
-    "develop": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
