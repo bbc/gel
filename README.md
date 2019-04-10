@@ -11,7 +11,7 @@ Prerequisites: Node.js 8+ (known to work on v8.9.4) and NPM.
 ## Develop
 - `npm run develop`
 
-This will watch and compile files, and serve `docs/` on localhost while reloading the browser automatically.
+This will watch and compile files, and serve the `docs` folder on localhost while reloading the browser automatically.
 
 ## Build
 To generate the HTML output into the project `docs` folder, using the markdown from the project `src` folder, run this command...
