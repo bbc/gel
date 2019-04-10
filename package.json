@@ -12,6 +12,7 @@
     "html": "eleventy --input=./src/ --output=docs/ --formats=md,html",
     "build": "npm run js && npm run sass && npm run html",
     "serve": "eleventy --serve",
+    "develop": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -44,5 +45,9 @@
     "sticky-js": "^1.2.0",
     "sweet-scroll": "^3.0.1",
     "uglify-js": "^3.4.9"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0"
   }
 }
