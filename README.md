@@ -1,39 +1,34 @@
 # bbc/gef-docs
-
 Static documentation generator for GEF components.
 
 ## Installation
+Prerequisites: Node.js 8+ (known to work on v8.9.4) and NPM.
 
-Known to work on nodeJS version `v8.9.4`.
+1. `cd gef-docs`
+2. `npm install`
+3. `npm link`
 
-Try...
+## Develop
+- `npm run develop`
 
-`nvm use 8`
-
-And then...
-
-```
-npm install
-npm link
-```
+This will watch and compile files, and serve the `docs` folder on localhost while reloading the browser automatically.
 
 ## Build
-
 To generate the HTML output into the project `docs` folder, using the markdown from the project `src` folder, run this command...
 
-`npm run html`
+- `npm run html`
 
 To make updates to the generated CSS files from the `scss` source...
 
-`npm run sass`
+- `npm run sass`
 
 If you have added new JS files to the project, you may include them in the `main.js` file...
 
-`npm run js`
+- `npm run js`
 
 Or, if you're feeling like you want it all, try this...
 
-`npm run build`
+- `npm run build`
 
 ## Example
 
@@ -47,6 +42,6 @@ If you're trying to preview the site running off of your desktop, I recommend us
 
 From the project base directory simply run...
 
-`serve`
+- `serve`
 
 Then navigate to the resulting server address like so: `http://localhost:8888/gef-docs/components/hello-world` using whatever hostname and port is appropriate.

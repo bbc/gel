@@ -826,7 +826,7 @@
 
     var switchTab = function (oldIndex, tabInfo) {
       if (typeof oldIndex !== 'undefined' && oldIndex > -1) {
-        tabs[oldIndex].removeAttribute('aria-selected');
+        tabs[oldIndex].setAttribute('aria-selected', 'false');
         panels[oldIndex].hidden = true;
       }
 
@@ -840,6 +840,7 @@
 
     Array.prototype.forEach.call(tabs, function (tab, i) {
       tab.setAttribute('role', 'tab');
+      tab.setAttribute('aria-selected', 'false');
       tab.parentNode.setAttribute('role', 'presentation');
       tab.id = 'tab-' + tab.getAttribute('href').substring(1);
 
@@ -850,8 +851,20 @@
       panel.hidden = true;
     });
 
+    // Use event delegation to listen to all 'keyup' events
+    // within `tablist`. If 'Space' was pressed on a tab
+    // element, then click it triggering a 'hashchange'.
+    tablist.addEventListener('keyup', function (e) {
+      var isTab = e.target.matches('[role="tab"]');
+      var keyCode = e.code;
+
+      if (isTab && keyCode === 'Space') {
+        e.target.click();
+      }
+    });
+
     window.addEventListener('hashchange', function (e) {
-      var selected = tablist.querySelector('[aria-selected]');
+      var selected = tablist.querySelector('[aria-selected="true"]');
       var oldIndex = selected ? Array.prototype.indexOf.call(tabs, selected) : undefined;
       switchTab(oldIndex, tabInfo());
     }, false);

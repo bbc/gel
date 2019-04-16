@@ -358,11 +358,11 @@ svg + .gef-promo__indicator-text {
   outline: 2px solid;
   outline-offset: -2px; }
 
-.gef-tabs [aria-selected] {
+.gef-tabs [aria-selected="true"] {
   background-color: #ccc; }
 
 @media (-ms-high-contrast: active) {
-  .gef-tabs [aria-selected] {
+  .gef-tabs [aria-selected="true"] {
     position: relative;
     top: 2px; } }
 
