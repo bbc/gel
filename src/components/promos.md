@@ -23,7 +23,7 @@ A **Promo** can be made up of different content, giving us the flexibility to co
 | Image | An image promoting the target content. |
 | Media indication | Information about the media being promoted. |
 | Description | A short description of the target content. |
-| Metadata | See the [Metadata strip](http://localhost:3000/gef-docs/components/metadata-strips) component. |
+| Metadata | See the [Metadata strip](/gef-docs/components/metadata-strips) component. |
 
 
 ## Recommended markup
