@@ -19,7 +19,7 @@ A **Promo** can be made up of different content, giving us the flexibility to co
 
 | Property | Description |
 | -------- | ----------- |
-| Headline | The target page's `<title>` and `<h1>`. |
+| Headline | Text that uniquely describes the target content. |
 | Image | An image promoting the target content. |
 | Media indication | Information about the media being promoted. |
 | Description | A short description of the target content. |
