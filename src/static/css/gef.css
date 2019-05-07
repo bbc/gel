@@ -338,16 +338,17 @@ svg + .gef-promo__indicator-text {
   min-width: 0; }
 
 .gef-tabs > ul a {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: inherit;
   background-color: #dcdcdc;
+  border-bottom: 0;
   border: 2px solid transparent;
   /* for high contrast mode */
-  border-bottom: 0;
-  white-space: nowrap;
+  color: inherit;
+  display: flex;
+  justify-content: center;
   overflow: hidden;
-  text-overflow: ellipsis; }
+  padding: 0.5rem 1rem;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
 
 .gef-tabs > ul [role="tab"] {
   text-decoration: none;
