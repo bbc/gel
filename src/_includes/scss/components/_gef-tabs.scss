@@ -23,15 +23,16 @@
 }
 
 .gef-tabs > ul a {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: inherit;
   background-color: $gel-color--alto;
-  border: 2px solid transparent; /* for high contrast mode */
   border-bottom: 0;
-  white-space: nowrap;
+  border: 2px solid transparent; /* for high contrast mode */
+  color: inherit;
+  display: flex;
+  justify-content: center;
   overflow: hidden;
+  padding: 0.5rem 1rem;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .gef-tabs > ul [role="tab"] {
