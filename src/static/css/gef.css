@@ -323,9 +323,9 @@ svg + .gef-promo__indicator-text {
   padding: 1rem; }
 
 .gef-tabs > ul {
+  list-style: none;
   margin: 0;
-  padding: 0;
-  list-style: none; }
+  padding: 0; }
 
 .gef-tabs > [role="tablist"] {
   display: flex;
@@ -334,25 +334,26 @@ svg + .gef-promo__indicator-text {
 
 .gef-tabs > ul [role="presentation"] {
   flex: 1 1 auto;
+  background-color: #dcdcdc;
   margin: 0.5rem;
   min-width: 0; }
 
 .gef-tabs > ul a {
-  background-color: #dcdcdc;
-  border-bottom: 0;
   border: 2px solid transparent;
   /* for high contrast mode */
+  border-bottom: 0;
   color: inherit;
-  display: flex;
-  justify-content: center;
+  display: inline-block;
   overflow: hidden;
   padding: 0.5rem 1rem;
+  text-align: center;
   text-overflow: ellipsis;
-  white-space: nowrap; }
+  vertical-align: top;
+  white-space: nowrap;
+  width: 100%; }
 
 .gef-tabs > ul [role="tab"] {
-  text-decoration: none;
-  text-align: center; }
+  text-decoration: none; }
 
 .gef-tabs > ul a:focus,
 .gef-tabs > section:focus {
