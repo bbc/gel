@@ -1,0 +1,68 @@
+.gef-table-container {
+  overflow-x: auto;
+  background-color: #fff;
+  background-image: 
+    linear-gradient(90deg, #fff 0%, transparent 3rem),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, transparent 1rem),
+    linear-gradient(270deg, #fff 0%, transparent 3rem),
+    linear-gradient(270deg, rgba(0, 0, 0, 0.2) 0%, transparent 1rem);
+  background-attachment: local, scroll;
+  border: 1px solid $gel-color--dusty-gray;
+}
+
+.gef-table-container:focus {
+  outline: 2px solid $gel-color--tundora;
+}
+
+.gef-table-container tbody tr:nth-child(even) {
+  background-color: rgba(0,0,0,0.02);
+}
+
+.gef-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+.gef-table-container caption {
+  text-align: left;
+  font-weight: bold;
+  border: 1px solid $gel-color--dusty-gray;
+  border-bottom: 0;
+  padding: 0.5rem;
+}
+
+.gef-table-container th, 
+.gef-table-container td {
+  padding: 0.5rem;
+  text-align: left;
+  border: 1px solid $gel-color--dusty-gray;
+}
+
+.gef-table-container th {
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+}
+
+.gef-table-container thead.sticky th {
+  background-color: #fff;
+}
+
+.gef-table-container th:after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  border-top: 1px solid $gel-color--dusty-gray;
+}
+
+.gef-table-sort {
+  all: unset;
+  cursor: pointer;
+}
+
+.gef-table-sort:focus {
+  outline: 2px solid $gel-color--tundora;
+}

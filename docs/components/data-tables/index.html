@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/gef-docs/static/images/favicon.ico" type="image/x-icon">
+
+    <title>GEF | Data tables</title>
+
+    <script src="/gef-docs/static/js/site.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/gef.css">
+    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/site.css">
+
+    <script type="text/javascript"> // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    <script type="text/javascript">
+        try {
+            (new FontFaceObserver('ReithSans', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-sans-loaded';
+            });
+            (new FontFaceObserver('ReithSerif', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-loaded';
+            });
+        } catch (e) {
+            console.log('Reith fonts did not load within 5 seconds.');
+        }
+    </script>
+
+    <script type="text/javascript">
+        // syntax highlight
+        hljs.initHighlightingOnLoad();
+    </script>
+
+    
+</head>
+
+<body class="gefdocs-body">
+    <p class="gef-sr gef-sr__focusable gef-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('gef-sr__focused')" onblur="this.parentNode.classList.remove('gef-sr__focused')">Skip
+            to content</a>
+    </p>
+
+    <header>
+        <div class="gefdocs-header gs-u-clearfix">
+            <div class="gel-wrap">
+                <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
+                        <title>BBC</title>
+                        <image xlink:href="/gef-docs/static/images/bbc-blocks_grey.svg" src="/gef-docs/static/images/bbc-blocks_grey.png"
+                            width="100%" height="100%"></image>
+                    </svg></a>
+            </div>
+        </div>
+        <div class="gefdocs-header__banner gs-u-clearfix">
+            <div class="gel-wrap">
+                <div class="gel-layout">
+                    <div class="gel-layout__item gel-2/5@l" style="text-align:left; padding-left:14px; margin-bottom:32px;">
+                        <a href="/gef-docs/" class="gefdocs-logo">GEF</a>
+                    </div>
+                    <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
+                        <a class="gefdocs-button gefdocs-button--dark gel-long-primer-bold" href="">
+                            Go to BBC GEL
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" tabindex="-1" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <!-- column placeholder-->
+            </div>
+
+            <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
+                <h1 class="gefdocs-header__title">Data tables</h1>
+                <p class="gefdocs-header__summary gel-great-primer">Tabular data must be presented with a sound semantic and visual structure</p>
+            </div>
+
+            <div class="gel-layout__item gel-1/5@l">
+                <dl class="gefdocs-standout-box">
+                    
+                    <dt>Version:</dt>
+                    <dd>0.1.0</dd>
+                    
+                    <dt>Status:</dt>
+                    <dd>Draft</dd>
+                    <dt>Accessibility:</dt>
+                    <dd>Pending</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
+                    <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
+                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#related-research">Related research</a></li></ol>
+                </nav>
+            </div>
+
+            <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
+                <h2 id="introduction">Introduction</h2>
+<h2 id="recommended-markup">Recommended markup</h2>
+<p>No matter the templating or rendering technology, data tables should be marked up with the <code>&lt;table&gt;</code> and associated elements. Data tables composed from <code>&lt;div&gt;</code> elements require considerable ARIA attribution to elicit the expected screen reader behaviors, and non-trivial amounts of CSS to emulate the grid-like layout behavior.</p>
+<h3 id="column-headers">Column headers</h3>
+<p>Any <code>&lt;table&gt;</code> that does not have column or row headers (<code>&lt;th&gt;</code> elements) cannot be considered a true data table. In fact, some screen readers that encounter a table without headers will determine it as a 'layout table' and communicate it quite differently<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p>
+<h4 id="bad-example">
+          <div class="circular circular__bad" aria-hidden="true">✕</div>
+         Bad example</h4>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Fake column header 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Fake column header 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Fake column header 3<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1, cell 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1, cell 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1, cell 3<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 2, cell 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3, cell 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 4, cell 3<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+</code></pre>
+<h4 id="good-example">
+          <div class="circular circular__good" aria-hidden="true">✓</div>
+         Good example</h4>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Column header 1<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Column header 2<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Column header 3<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1, cell 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1, cell 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1, cell 3<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 2, cell 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3, cell 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 4, cell 3<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+</code></pre>
+<p>Table header elements are <em>labels</em> for column data. With the column headers in place, when you navigate from a table cell in one column to a table cell in an adjacent column, the new column's <code>&lt;th&gt;</code> content is announced for context. This enables users to traverse and understand tables non-visually.</p>
+<h3 id="row-headers">Row headers</h3>
+<p>In most cases, column headers suffice. However, in some tables, the first cell of each row can be considered the 'key' cell and acts like a header for the row. It's recommended you differentiate between column and row headers explicitly using the <code>scope</code> attribute:</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">"col"</span>&gt;</span>Column header 1<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">"col"</span>&gt;</span>Column header 2<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">"col"</span>&gt;</span>Column header 3<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">"row"</span>&gt;</span>Row 1 header<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1, cell 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 1, cell 3<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">"row"</span>&gt;</span>Row 2 header<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 3, cell 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Row 4, cell 3<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+</code></pre>
+<p>Note that the <code>&lt;table&gt;</code> is now divided into a head (<code>&lt;thead&gt;</code>) and body (<code>&lt;tbody&gt;</code>). This does not have any impact on the behavior of the table and its headers. But, as we enhance the table, these elements will come in useful for styling and scripting.</p>
+
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-empty-table-headers">
+              <h4 id="aside-alert-empty-table-headers" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Empty table headers</h4><div><p>In the last example, the first column header is effectively a header for the <em>row</em> headers. Some deem this unnecessary and make the cell empty. This is not recommended, since it can produce unexpected behavior<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>. It is also better to be explicit whenever there is the opportunity. In the <a href="#reference-implementation"><strong>Reference implementation</strong></a> the row headers are each premier league football teams. This could probably be concluded through deduction (and the help of surrounding information), but an explicit <em>&quot;Team&quot;</em> column header removes all doubt.</p>
+</aside><h3 id="captions">Captions</h3>
+<p>So far, we have labeled the rows and columns, but not the table itself. You may be inclined to introduce a table with a heading element, such as an <code>&lt;h2&gt;</code>. This would certainly aid users browsing the page visually. However, a heading would not be directly <em>associated</em> with the table, meaning a screen reader user navigating directly to the table (using a shortcut like <kbd>T</kbd> in NVDA) would not hear a label announced upon arrival.</p>
+<p>Instead, provide a <code>&lt;caption&gt;</code><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. Where there is already a requirement for a heading and you want to eliminate repetition and redundancy, it is permitted to place the heading <em>inside</em> the <code>&lt;caption&gt;</code> element.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">caption</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Example table<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">caption</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- table headers and data --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+</code></pre>
+<p>This will mean screen reader users can reach the table via either table or heading shortcuts provided by their software. In either case, it will be identified by the caption/heading's text.</p>
+<h2 id="recommended-layout">Recommended layout</h2>
+<p>Importantly, the grid structure of data tables must remain intact no matter the available space. That is, elements must not wrap or otherwise change position since they will become labeled incorrectly. For tables with many columns this may precipitate horizontal scrolling. It is recommended a container element with <code>overflow-x: auto</code> is used to contain the horizontal scroll behavior.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-table-container</span> {
+  <span class="hljs-attribute">overflow-x</span>: auto;
+}
+</code></pre>
+<p>To make this element scrollable by keyboard, it must first be focusable. This requires the <code>tabindex=&quot;0&quot;</code> attribution. For screen reader users, this newly interactive element will need a label. It's recommended the element takes the <code>group</code> role and is associated with the <code>&lt;caption&gt;</code> for the labeling.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-table-container"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"caption"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">caption</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"caption"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Example table<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">caption</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- table headers and data --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-conditional-interactivity">
+              <h4 id="aside-alert-conditional-interactivity" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Conditional interactivity</h4><div><p>It is not recommended the table container is made focusable by default, since tables that do not trigger a scrollbar would result in an interactive container that <em>doesn't do anything</em>. In the <a href="#reference-implementation"><strong>Reference implementation</strong></a> <code>tabindex=&quot;0&quot;</code> is removed via <code>ResizeObserver</code> where the container is not overflowing.</p>
+<p><code>tabindex=&quot;0&quot;</code> is added in the markup, and from the outset, in case JavaScript or <code>ResizeObserver</code> are not available.</p>
+</aside><h3 id="indicating-scroll-functionality-visually">Indicating scroll functionality visually</h3>
+<p>Currently, only the bisection of a column indicates an an overflow, and the ability to scroll more data into view. This does not provide a great deal of affordance. In addition, you can apply an indicative shadow/fade to whichever side the overflow is occurring at.</p>
+<p>A set of <code>linear-gradient</code>s with differing <code>background-attachment</code> values are employed to achieve this effect:</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-table-container</span> {
+  <span class="hljs-attribute">overflow-x</span>: auto;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#fff</span>;
+  <span class="hljs-attribute">background-image</span>: 
+    <span class="hljs-built_in">linear-gradient</span>(90deg, #fff 0%, transparent 4rem),
+    <span class="hljs-built_in">linear-gradient</span>(90deg, rgba(0, 0, 0, 0.3) <span class="hljs-number">0%</span>, transparent <span class="hljs-number">2rem</span>),
+    <span class="hljs-built_in">linear-gradient</span>(270deg, #fff 0%, transparent 4rem),
+    <span class="hljs-built_in">linear-gradient</span>(270deg, rgba(0, 0, 0, 0.3) <span class="hljs-number">0%</span>, transparent <span class="hljs-number">2rem</span>);
+  <span class="hljs-attribute">background-attachment</span>: local, scroll;
+}
+</code></pre>
+<p>Where the is no overflow, the white <code>local</code> gradient masks the grey <code>scroll</code> one and hides it<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>.</p>
+<h3 id="sticky-headers">Sticky headers</h3>
+<p>Where there are numerous rows, it's possible to scroll past the headers, making interpreting the data more difficult (since it would require either a good memory, or a lot of scrolling up and down). The conventional solution to this issue is to make the column header row 'sticky', so it follows the user down the page as a persistent reference.</p>
+<p>This is now possible in CSS, with the <code>position: sticky</code> declaration. However, containers with an explicit <code>overflow</code> such as that applied in the last section, will forego the <code>position: sticky</code> behavior. The following is therefore provided as an enhancement for tables not producing an overflow.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-table-container</span> <span class="hljs-selector-tag">th</span> {
+  <span class="hljs-attribute">position</span>: sticky;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>The <code>overflow-x: auto</code> style is removed dynamically, via <code>ResizeObserver</code> in the <a href="#reference-implementation"><strong>Reference implementation</strong></a>, where no overflow is occurring. This reinstates the sticky header behavior.</p>
+<h2 id="recommended-behaviour">Recommended behaviour</h2>
+<p>The handling of overflow/scrolling behaviour already covered in the <a href="#recommended-layout"><strong>Recommended layout</strong></a> is handled progressively, by first feature detecting <code>ResizeObserver</code>.</p>
+<pre class="hljs"><code><span class="hljs-keyword">if</span> (<span class="hljs-string">'ResizeObserver'</span> <span class="hljs-keyword">in</span> <span class="hljs-built_in">window</span>) {
+  <span class="hljs-keyword">var</span> ro = <span class="hljs-keyword">new</span> ResizeObserver(<span class="hljs-function"><span class="hljs-params">entries</span> =&gt;</span> {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> entry <span class="hljs-keyword">of</span> entries) {
+      <span class="hljs-keyword">var</span> cr = entry.contentRect;
+      <span class="hljs-keyword">var</span> noScroll = cr.width &gt;= <span class="hljs-keyword">this</span>.table.offsetWidth;
+      entry.target.tabIndex = noScroll ? <span class="hljs-number">-1</span> : <span class="hljs-number">0</span>;
+      entry.target.style.overflowX = noScroll ? <span class="hljs-string">'visible'</span> : <span class="hljs-string">'auto'</span>;
+      <span class="hljs-keyword">this</span>.thead.classList.toggle(<span class="hljs-string">'sticky'</span>, noScroll);
+    }
+  });
+
+  ro.observe(elem);
+}
+</code></pre>
+<p>Where <code>ResizeObserver</code> (or JavaScript) is not available, the table container acts as if it is liable to scroll, with <code>overflow-x: auto</code> set, and <code>tabindex=&quot;0&quot;</code> (for keyboard control over scrolling) intact.</p>
+<h3 id="sorting">Sorting</h3>
+<p>In addition, sorting functionality is provided where the <a href="#reference-implementation"><strong>Reference implementation</strong></a> constructor's second argument is set to <code>true</code>.</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> tableContainer = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.gef-table-container'</span>);
+<span class="hljs-keyword">var</span> table = <span class="hljs-keyword">new</span> gef.Table.constructor(tableContainer, <span class="hljs-literal">true</span>);
+</code></pre>
+<p>The table is progressively enhanced to include sorting buttons for each of the column headers. These are each labeled <em>'sort'</em> using a visually hidden <code>&lt;span class=&quot;gef-sr&quot; /&gt;</code>, and display the re-order icon from the <a href="http://bbc.github.io/gel-iconography/">GEL iconography suite</a>.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">"col"</span> <span class="hljs-attr">aria-sort</span>=<span class="hljs-string">"ascending"</span>&gt;</span>
+  Teams
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">""</span>&gt;</span>Sort<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> 
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 32 32"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M18.033 25.5v-19l5.6 5.7 2.4-2.4-10-9.8-10 9.8 2.4 2.4 5.6-5.7v19l-5.6-5.7-2.4 2.4 10 9.8 10-9.8-2.4-2.4"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+</code></pre>
+<h2 id="related-research">Related research</h2>
+<p>This topic does not yet have any related research available.</p>
+<h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Layout Tables Versus Data Tables — WebAim, <a href="https://webaim.org/techniques/tables/#uses">https://webaim.org/techniques/tables/#uses</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>VoiceOver and Tables with an Empty First Header Cell, <a href="http://accessibleculture.org/articles/2010/10/voiceover-and-tables-with-an-empty-first-header-cell/">http://accessibleculture.org/articles/2010/10/voiceover-and-tables-with-an-empty-first-header-cell/</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>The Table Caption element — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>Pure CSS scrolling shadows with <code>background-attachment: local</code>, <a href="http://lea.verou.me/2012/04/background-attachment-local/">http://lea.verou.me/2012/04/background-attachment-local/</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+
+                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
+                    <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
+                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
+                            <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use>
+                        </svg>Could you improve this documentation?
+                    </h4>
+                    <div>
+                        <p>
+                            If you think you could make anything you see here a bit better then become one of <a href="/gef-docs/contributors/">our
+                                lovely contributors</a>!
+                        </p>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="gefdocs-feedback-banner">
+        <div class="gel-wrap">
+            <div class="gel-layout">
+                <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
+                    <h2 class="gefdocs-feedback-banner__title">Got a minute?</h2>
+                    <p>We'd love to know what you think of the Code GEL website.</p>
+                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" class="gefdocs-button gefdocs-button__link-button gefdocs-feedback-banner__cta gefdocs-button--primary">
+                        <span class="gefdocs-button__content">Go to survey</span>
+                        <span class="gefdocs-button__icon_wrapper">
+                            <svg class="gefdocs-button__icon gefdocs-icon gefdocs-icon--text">
+                                <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                                    style="fill:undefined;"></use>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script nomodule defer type="text/javascript" src="/gef-docs/static/js/external-svg-polyfill.js"></script>
+    <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
+
+    
+
+    <script type="text/javascript">
+        new Sticky('.sticky');
+    </script>
+</body>
+
+</html>
