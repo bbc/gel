@@ -103,7 +103,7 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
@@ -262,7 +262,7 @@
 <span class="hljs-keyword">var</span> table = <span class="hljs-keyword">new</span> gef.Table.constructor(tableContainer, <span class="hljs-literal">true</span>);
 </code></pre>
 <p>The table is progressively enhanced to include sorting buttons for each of the column headers. These are each labeled <em>'sort'</em> using a visually hidden <code>&lt;span class=&quot;gef-sr&quot; /&gt;</code>, and display the re-order icon from the <a href="http://bbc.github.io/gel-iconography/">GEL iconography suite</a>.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">"col"</span> <span class="hljs-attr">aria-sort</span>=<span class="hljs-string">"ascending"</span>&gt;</span>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">"col"</span> <span class="hljs-attr">aria-sort</span>=<span class="hljs-string">"none"</span>&gt;</span>
   Teams
   <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">""</span>&gt;</span>Sort<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> 
@@ -272,7 +272,269 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
 </code></pre>
-<h2 id="related-research">Related research</h2>
+<p>When a user clicks a header's sort button, ascending order is prioritized and <code>aria-sort</code>'s value switches from <code>none</code> to <code>ascending</code>. Subsequent clicks to the same button will toggle the order between ascending and descending (<code>aria-sort=&quot;descending&quot;</code>). All columns not being used to sort have headers with the <code>none</code> value.</p>
+<p>Sorting is based on the <em>text</em> content of cells, meaning any HTML can be used without breaking the sorting algorithm.</p>
+<h2 id="reference-implementation">Reference implementation</h2>
+
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
+              <h4 id="aside-alert-important" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+</aside>
+          <div class="gefdocs-demo"><!-- 
+title: Data tables
+ -->
+
+<div class="gef-table-container" class="gef-table-container" role="group" aria-labelledby="caption" tabindex="0">
+  <table>
+    <caption id="caption">
+      <h3>Premier League</h3>
+    </caption>
+    <thead>
+      <tr>
+        <th scole="col">Team</th>
+        <th scole="col">Played</th>
+        <th scole="col">Won</th>
+        <th scole="col">Drawn</th>
+        <th scole="col">Lost</th>
+        <th scole="col">For</th>
+        <th scole="col">Against</th>
+        <th scole="col">Goal Difference</th>
+        <th scole="col">Points</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Wolves</th>
+        <td>38</td>
+        <td>16</td>
+        <td>9</td>
+        <td>13</td>
+        <td>47</td>
+        <td>46</td>
+        <td>1</td>
+        <td>57</td>
+      </tr>
+      <tr>
+        <th scope="row">West Ham</th>
+        <td>38</td>
+        <td>15</td>
+        <td>7</td>
+        <td>16</td>
+        <td>52</td>
+        <td>55</td>
+        <td>-3</td>
+        <td>52</td>
+      </tr>
+      <tr>
+        <th scope="row">Watford</th>
+        <td>38</td>
+        <td>14</td>
+        <td>8</td>
+        <td>16</td>
+        <td>52</td>
+        <td>59</td>
+        <td>-7</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <th scope="row">Tottenham</th>
+        <td>38</td>
+        <td>23</td>
+        <td>2</td>
+        <td>13</td>
+        <td>67</td>
+        <td>39</td>
+        <td>28</td>
+        <td>71</td>
+      </tr>
+      <tr>
+        <th scope="row">Southampton</th>
+        <td>38</td>
+        <td>9</td>
+        <td>12</td>
+        <td>17</td>
+        <td>45</td>
+        <td>65</td>
+        <td>-20</td>
+        <td>39</td>
+      </tr>
+      <tr>
+        <th scope="row">Newcastle</th>
+        <td>38</td>
+        <td>12</td>
+        <td>9</td>
+        <td>17</td>
+        <td>42</td>
+        <td>48</td>
+        <td>-6</td>
+        <td>45</td>
+      </tr>
+      <tr>
+        <th scope="row">Man Utd</th>
+        <td>38</td>
+        <td>19</td>
+        <td>9</td>
+        <td>10</td>
+        <td>65</td>
+        <td>54</td>
+        <td>11</td>
+        <td>66</td>
+      </tr>
+      <tr>
+        <th scope="row">Man City</th>
+        <td>38</td>
+        <td>32</td>
+        <td>2</td>
+        <td>4</td>
+        <td>95</td>
+        <td>23</td>
+        <td>72</td>
+        <td>98</td>
+      </tr>
+      <tr>
+        <th scope="row">Liverpool</th>
+        <td>38</td>
+        <td>30</td>
+        <td>7</td>
+        <td>1</td>
+        <td>89</td>
+        <td>22</td>
+        <td>67</td>
+        <td>97</td>
+      </tr>
+      <tr>
+        <th scope="row">Leicester</th>
+        <td>38</td>
+        <td>15</td>
+        <td>7</td>
+        <td>16</td>
+        <td>51</td>
+        <td>48</td>
+        <td>3</td>
+        <td>52</td>
+      </tr>
+      <tr>
+        <th scope="row">Huddersfield</th>
+        <td>38</td>
+        <td>3</td>
+        <td>7</td>
+        <td>28</td>
+        <td>22</td>
+        <td>76</td>
+        <td>-54</td>
+        <td>16</td>
+      </tr>
+      <tr>
+        <th scope="row">Fulham</th>
+        <td>38</td>
+        <td>7</td>
+        <td>5</td>
+        <td>26</td>
+        <td>34</td>
+        <td>81</td>
+        <td>-47</td>
+        <td>26</td>
+      </tr>
+      <tr>
+        <th scope="row">Everton</th>
+        <td>38</td>
+        <td>15</td>
+        <td>9</td>
+        <td>14</td>
+        <td>54</td>
+        <td>46</td>
+        <td>8</td>
+        <td>54</td>
+      </tr>
+      <tr>
+        <th scope="row">Crystal Palace</th>
+        <td>38</td>
+        <td>14</td>
+        <td>7</td>
+        <td>17</td>
+        <td>51</td>
+        <td>53</td>
+        <td>-2</td>
+        <td>49</td>
+      </tr>
+      <tr>
+        <th scope="row">Chelsea</th>
+        <td>38</td>
+        <td>21</td>
+        <td>9</td>
+        <td>8</td>
+        <td>63</td>
+        <td>39</td>
+        <td>24</td>
+        <td>72</td>
+      </tr>
+      <tr>
+        <th scope="row">Cardiff</th>
+        <td>38</td>
+        <td>10</td>
+        <td>4</td>
+        <td>24</td>
+        <td>34</td>
+        <td>69</td>
+        <td>-35</td>
+        <td>34</td>
+      </tr>
+      <tr>
+        <th scope="row">Burnley</th>
+        <td>38</td>
+        <td>11</td>
+        <td>7</td>
+        <td>20</td>
+        <td>45</td>
+        <td>68</td>
+        <td>-23</td>
+        <td>40</td>
+      </tr>
+      <tr>
+        <th scope="row">Brighton</th>
+        <td>38</td>
+        <td>9</td>
+        <td>9</td>
+        <td>20</td>
+        <td>35</td>
+        <td>60</td>
+        <td>-25</td>
+        <td>36</td>
+      </tr>
+      <tr>
+        <th scope="row">Arsenal</th>
+        <td>38</td>
+        <td>21</td>
+        <td>7</td>
+        <td>10</td>
+        <td>73</td>
+        <td>51</td>
+        <td>22</td>
+        <td>70</td>
+      </tr>
+      <tr>
+        <th scope="row">Bournemouth</th>
+        <td>38</td>
+        <td>13</td>
+        <td>6</td>
+        <td>19</td>
+        <td>56</td>
+        <td>70</td>
+        <td>-14</td>
+        <td>45</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var tableContainer = document.querySelector('.gef-table-container');
+    var table = new gef.Table.constructor(tableContainer, true);
+  });
+</script></div>
+        
+          <p><a class="gef-cta gel-long-primer-bold" href="../demos/tables/" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+        <h2 id="related-research">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
 <h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
 <hr class="footnotes-sep">
