@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/gef-docs/static/images/favicon.ico" type="image/x-icon">
+
+    <title>GEF | Infographics</title>
+
+    <script src="/gef-docs/static/js/site.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/gef.css">
+    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/site.css">
+
+    <script type="text/javascript"> // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    <script type="text/javascript">
+        try {
+            (new FontFaceObserver('ReithSans', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-sans-loaded';
+            });
+            (new FontFaceObserver('ReithSerif', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-loaded';
+            });
+        } catch (e) {
+            console.log('Reith fonts did not load within 5 seconds.');
+        }
+    </script>
+
+    <script type="text/javascript">
+        // syntax highlight
+        hljs.initHighlightingOnLoad();
+    </script>
+
+    
+</head>
+
+<body class="gefdocs-body">
+    <p class="gef-sr gef-sr__focusable gef-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('gef-sr__focused')" onblur="this.parentNode.classList.remove('gef-sr__focused')">Skip
+            to content</a>
+    </p>
+
+    <header>
+        <div class="gefdocs-header gs-u-clearfix">
+            <div class="gel-wrap">
+                <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
+                        <title>BBC</title>
+                        <image xlink:href="/gef-docs/static/images/bbc-blocks_grey.svg" src="/gef-docs/static/images/bbc-blocks_grey.png"
+                            width="100%" height="100%"></image>
+                    </svg></a>
+            </div>
+        </div>
+        <div class="gefdocs-header__banner gs-u-clearfix">
+            <div class="gel-wrap">
+                <div class="gel-layout">
+                    <div class="gel-layout__item gel-2/5@l" style="text-align:left; padding-left:14px; margin-bottom:32px;">
+                        <a href="/gef-docs/" class="gefdocs-logo">GEF</a>
+                    </div>
+                    <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
+                        <a class="gefdocs-button gefdocs-button--dark gel-long-primer-bold" href="https://www.bbc.co.uk/gel/guidelines/how-to-design-infographics">
+                            Go to BBC GEL
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" tabindex="-1" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <!-- column placeholder-->
+            </div>
+
+            <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
+                <h1 class="gefdocs-header__title">Infographics</h1>
+                <p class="gefdocs-header__summary gel-great-primer">Infographics should be informative, engaging, and accessible</p>
+            </div>
+
+            <div class="gel-layout__item gel-1/5@l">
+                <dl class="gefdocs-standout-box">
+                    
+                    <dt>Version:</dt>
+                    <dd>0.1.0</dd>
+                    
+                    <dt>Status:</dt>
+                    <dd>Draft</dd>
+                    <dt>Accessibility:</dt>
+                    <dd>Pass</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
+                    <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
+                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#related-research">Related research</a></li></ol>
+                </nav>
+            </div>
+
+            <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
+                <h2 id="introduction">Introduction</h2>
+<p>Visual and figurative representations of information can help readers to quickly grasp the salient points. However, without careful and deliberate design they can be confusing, or even misleading.</p>
+<p>The visual design and labeling of infographics (or 'visualisations') is <a href="https://www.bbc.co.uk/gel/guidelines/how-to-design-infographics">covered comprehensively in GEL</a>. As a complement to the GEL documentation, here we shall explore two topics:</p>
+<ol>
+<li>The technical accessibility requirements of different types of infographic</li>
+<li>Alternative and complementary means of consuming the same data/information, provided to uphold the <strong>Offer choice</strong><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> inclusive design principle</li>
+</ol>
+<h2 id="recommended-markup">Recommended markup</h2>
+<p>How you encode infographics, and what kind of textual alternatives you provide for them, depends heavily on the nature of the infographic in question. However, it is highly recommended the SVG image format encodes the graphic itself. SVG:</p>
+<ul>
+<li>Is scalable without degradation, facilitating zoom/magnification</li>
+<li>Can be highly optimized, especially when using the <a href="https://www.bbc.co.uk/gel/guidelines/how-to-design-infographics#infographic-visual-style-overview">simple shapes and paths recommended</a></li>
+<li>Can be maintained and updated easily, like any other markup</li>
+<li>Unlike runtime-dependent <code>&lt;canvas&gt;</code> graphics, can contain accessibility information, and be downloaded as a self-sufficient asset</li>
+</ul>
+<p>Inline SVG (SVG embedded directly into the HTML) is the most malleable, since you can target individual SVG elements/artifacts with CSS and JavaScript. Embedding SVG also reduces http requests and, most importantly, <em>content reflows</em><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>, by loading and rendering along with the surrounding content.</p>
+<h3 id="labels-and-descriptions">Labels and descriptions</h3>
+<p><em>Every</em> infographic should be provided with alternative text (an accessible label) to describe it to the visually impaired. In addition, <em>some</em> infographics should be accompanied by a caption. The role of the alternative text and the role of the caption are distinct. The alternative text <em>describes</em>, and the caption <em>explains</em>:</p>
+<ul>
+<li><strong>Alternative text:</strong> Describes what is in the infographic; a literal interpretation of its form</li>
+<li><strong>Caption:</strong> Explains what the infographic <em>says</em>; an editorial summary of its salient points</li>
+</ul>
+<p>While the alternative text, describing the image non-visually, should be invisible, the caption should be visible and available to all consumers of the information. Contrary to some misconceptions, a caption (provided as a <code>&lt;figcaption&gt;</code> in the code example to come) is not a <em>replacement</em> for alternative text.</p>
+<p>Consider the following, very simple visualization.</p>
+<svg style="width: 100%; height: auto" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="225.5mm" width="464.9mm" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 1647.2894 799.02088">
+ <g transform="translate(965.07 -87.289)">
+  <path style="stroke:#404040;stroke-width:10;fill:none" d="m-290.51 516.23a340 340 0 0 1 -412.94 245.73 340 340 0 0 1 -246.26 -412.62 340 340 0 0 1 412.31 -246.79 340 340 0 0 1 247.32 411.98"/>
+  <path style="stroke:currentColor;stroke-width:5;fill:currentColor" d="m57.387 366.84a22.523 22.523 0 0 0 -21.297 17.02 22.523 22.523 0 0 0 16.312 27.33 22.523 22.523 0 0 0 27.356 -16.27l.029-.12a22.523 22.523 0 0 0 -16.385 -27.29 22.523 22.523 0 0 0 -6.015 -.67zm122.85 57.14a22.523 22.523 0 0 0 -21.29 17.02 22.523 22.523 0 0 0 16.31 27.34 22.523 22.523 0 0 0 27.36 -16.28l.02-.11a22.523 22.523 0 0 0 -16.38 -27.3 22.523 22.523 0 0 0 -6.02 -.67zm-78.73.43a29.245 29.245 0 0 0 -27.653 22.09 29.245 29.245 0 0 0 21.182 35.5 29.245 29.245 0 0 0 35.521 -21.14l.03-.15a29.245 29.245 0 0 0 -21.27 -35.43 29.245 29.245 0 0 0 -7.81 -.87zm148.57 57.14a29.245 29.245 0 0 0 -27.65 22.1 29.245 29.245 0 0 0 21.18 35.49 29.245 29.245 0 0 0 35.52 -21.14l.04-.14a29.245 29.245 0 0 0 -21.28 -35.44 29.245 29.245 0 0 0 -7.81 -.87zm-91.69 9.25a40 40 0 0 0 -37.82 30.22 40 40 0 0 0 28.97 48.54 40 40 0 0 0 48.58 -28.91l.05-.19a40 40 0 0 0 -29.09 -48.47 40 40 0 0 0 -10.69 -1.19zm85.98 67.89a29.245 29.245 0 0 0 -27.66 22.1 29.245 29.245 0 0 0 21.19 35.49 29.245 29.245 0 0 0 35.51 -21.14l.04-.14a29.245 29.245 0 0 0 -21.27 -35.44 29.245 29.245 0 0 0 -7.81 -.87zm73.02 48.15a22.523 22.523 0 0 0 -21.3 17.02 22.523 22.523 0 0 0 16.31 27.33 22.523 22.523 0 0 0 27.36 -16.28l.03-.11a22.523 22.523 0 0 0 -16.39 -27.29 22.523 22.523 0 0 0 -6.01 -.67z" transform="translate(-965.07 87.289)"/>
+  <path style="stroke:currentColor;stroke-width:10;fill:none" d="m666.64 516.23a340 340 0 0 1 -412.94 245.73 340 340 0 0 1 -246.27 -412.62 340 340 0 0 1 412.31 -246.79 340 340 0 0 1 247.32 411.98"/>
+  <path style="stroke:currentColor;stroke-width:5;fill:currentColor" d="m1040.5 291.88a11.769 11.769 0 0 0 -11.1 8.89 11.769 11.769 0 0 0 8.5 14.28 11.769 11.769 0 0 0 14.3 -8.5v-.06a11.769 11.769 0 0 0 -8.6 -14.26 11.769 11.769 0 0 0 -3.1 -.35zm165.7 25.71a11.769 11.769 0 0 0 -11.1 8.89 11.769 11.769 0 0 0 8.5 14.29 11.769 11.769 0 0 0 14.3 -8.51v-.06a11.769 11.769 0 0 0 -8.5 -14.26 11.769 11.769 0 0 0 -3.2 -.35zm205.7 2.86a11.769 11.769 0 0 0 -11.1 8.89 11.769 11.769 0 0 0 8.5 14.28 11.769 11.769 0 0 0 14.3 -8.5v-.06a11.769 11.769 0 0 0 -8.5 -14.26 11.769 11.769 0 0 0 -3.2 -.35zm-120 37.14a11.769 11.769 0 0 0 -11.1 8.89 11.769 11.769 0 0 0 8.5 14.29 11.769 11.769 0 0 0 14.3 -8.51v-.06a11.769 11.769 0 0 0 -8.5 -14.26 11.769 11.769 0 0 0 -3.2 -.35zm-277.4 9.25a22.523 22.523 0 0 0 -21.27 17.02 22.523 22.523 0 0 0 16.27 27.33 22.523 22.523 0 0 0 27.4 -16.27v-.12a22.523 22.523 0 0 0 -16.4 -27.29 22.523 22.523 0 0 0 -6 -.67zm83.1 7.9a11.769 11.769 0 0 0 -11.1 8.89 11.769 11.769 0 0 0 8.5 14.28 11.769 11.769 0 0 0 14.3 -8.51v-.05a11.769 11.769 0 0 0 -8.5 -14.26 11.769 11.769 0 0 0 -3.2 -.35zm39.8 49.24a22.523 22.523 0 0 0 -21.3 17.02 22.523 22.523 0 0 0 16.3 27.34 22.523 22.523 0 0 0 27.4 -16.28v-.11a22.523 22.523 0 0 0 -16.4 -27.3 22.523 22.523 0 0 0 -6 -.67zm-78.7.43a29.245 29.245 0 0 0 -27.7 22.09 29.245 29.245 0 0 0 21.2 35.5 29.245 29.245 0 0 0 35.5 -21.14v-.15a29.245 29.245 0 0 0 -21.2 -35.43 29.245 29.245 0 0 0 -7.8 -.87zm244.7 16.04a11.769 11.769 0 0 0 -11.2 8.89 11.769 11.769 0 0 0 8.6 14.28 11.769 11.769 0 0 0 14.3 -8.5v-.06a11.769 11.769 0 0 0 -8.6 -14.26 11.769 11.769 0 0 0 -3.1 -.35zm-96.2 41.1a29.245 29.245 0 0 0 -27.6 22.1 29.245 29.245 0 0 0 21.2 35.49 29.245 29.245 0 0 0 35.5 -21.14v-.14a29.245 29.245 0 0 0 -21.3 -35.44 29.245 29.245 0 0 0 -7.8 -.87zm-91.7 9.25a40 40 0 0 0 -37.8 30.22 40 40 0 0 0 29 48.54 40 40 0 0 0 48.6 -28.91v-.19a40 40 0 0 0 -29.1 -48.47 40 40 0 0 0 -10.7 -1.19zm167.9 58.22a11.769 11.769 0 0 0 -11.2 8.89 11.769 11.769 0 0 0 8.6 14.29 11.769 11.769 0 0 0 14.3 -8.51v-.06a11.769 11.769 0 0 0 -8.6 -14.26 11.769 11.769 0 0 0 -3.1 -.35zm-81.9 9.67a29.245 29.245 0 0 0 -27.6 22.1 29.245 29.245 0 0 0 21.1 35.49 29.245 29.245 0 0 0 35.6 -21.14v-.14a29.245 29.245 0 0 0 -21.3 -35.44 29.245 29.245 0 0 0 -7.8 -.87zm170.4 21.76a11.769 11.769 0 0 0 -11.1 8.89 11.769 11.769 0 0 0 8.5 14.28 11.769 11.769 0 0 0 14.3 -8.5v-.06a11.769 11.769 0 0 0 -8.5 -14.26 11.769 11.769 0 0 0 -3.2 -.35zm-97.4 26.39a22.523 22.523 0 0 0 -21.3 17.02 22.523 22.523 0 0 0 16.3 27.33 22.523 22.523 0 0 0 27.4 -16.28v-.11a22.523 22.523 0 0 0 -16.4 -27.29 22.523 22.523 0 0 0 -6 -.67z" transform="translate(-965.07 87.289)"/>
+  <g style="fill:currentColor">
+   <path d="m-883.46 820.95h54.08v11.998h-20.146v52.021h-13.789v-52.021h-20.146v-11.998z"/>
+   <path d="m-800.03 848.26q-5.1931 0-8.7746 4.3873v32.323h-13.251v-66.705h13.251v24.712q5.3722-5.5513 12.893-5.5513 7.6106 0 11.819 4.7454 4.2082 4.6559 4.2082 13.341v29.457h-13.251v-28.92q0-3.8501-1.7907-5.8199t-5.1036-1.9698z"/>
+   <path d="m-744.11 849.24q-6.6257 0-11.013 5.6408v30.084h-13.251v-46.38h11.371l.89537 7.1629q4.9245-7.9687 12.356-7.9687 1.7907 0 3.1338.26861 1.343.2686 2.5966.89536v11.908q-2.5966-1.6117-6.0885-1.6117z"/>
+   <path d="m-694.2 882.64q-6.8943 3.4919-16.296 3.4919-7.6106 0-13.072-2.8652-5.4617-2.8652-8.4164-8.2374-2.8652-5.4617-2.8652-13.072 0-5.6408 1.5221-10.118 1.6117-4.5664 4.5664-7.7897t7.0734-4.9245 9.2222-1.7012q9.7595 0 14.953 6.0885 5.1931 5.9989 5.1931 17.281v3.8501h-29.547q.71629 5.6408 3.9396 8.3269 3.3128 2.6861 9.4909 2.6861 4.1187 0 7.4315-.89536 3.4024-.89536 6.8048-2.8652v10.744zm-18.444-35.635q-3.7605 0-6.0885 2.5966-2.3279 2.507-3.0442 7.2524h17.191q-.35815-5.1036-2.328-7.4315-1.9698-2.4175-5.7303-2.4175z"/>
+   <path d="m-644.71 882.64q-6.8943 3.4919-16.296 3.4919-7.6106 0-13.072-2.8652-5.4617-2.8652-8.4164-8.2374-2.8652-5.4617-2.8652-13.072 0-5.6408 1.5221-10.118 1.6116-4.5664 4.5664-7.7897 2.9547-3.2233 7.0734-4.9245t9.2222-1.7012q9.7595 0 14.953 6.0885 5.1931 5.9989 5.1931 17.281v3.8501h-29.547q.71629 5.6408 3.9396 8.3269 3.3128 2.6861 9.4908 2.6861 4.1187 0 7.4315-.89536 3.4024-.89536 6.8048-2.8652v10.744zm-18.444-35.635q-3.7605 0-6.0885 2.5966-2.328 2.507-3.0442 7.2524h17.191q-.35815-5.1036-2.328-7.4315-1.9698-2.4175-5.7303-2.4175z"/>
+   <path d="m-574.77 884.97q-2.2384-7.4315-4.3873-14.863-2.0593-7.5211-4.0291-15.042-2.0593 7.521-4.2082 15.042-2.1489 7.4315-4.3873 14.863h-13.251q-3.4919-11.461-6.7152-23.1-3.2233-11.64-6.178-23.279h13.968q1.5221 8.5955 3.1338 16.922 1.7012 8.3269 3.4919 16.564 2.1489-7.8792 4.1187-15.758 2.0593-7.8792 3.9396-15.937h12.356q1.8803 7.8792 3.8501 15.669 1.9698 7.7897 4.1187 15.49 1.8803-8.2374 3.4919-16.385 1.7012-8.1478 3.2233-16.564h13.61q-2.9547 11.64-6.178 23.279-3.2233 11.55-6.7152 23.1h-13.251z"/>
+   <path d="m-503.41 882.64q-6.8943 3.4919-16.296 3.4919-7.6106 0-13.072-2.8652-5.4617-2.8652-8.4164-8.2374-2.8652-5.4617-2.8652-13.072 0-5.6408 1.5221-10.118 1.6116-4.5664 4.5664-7.7897 2.9547-3.2233 7.0734-4.9245t9.2222-1.7012q9.7595 0 14.953 6.0885 5.1931 5.9989 5.1931 17.281v3.8501h-29.547q.71629 5.6408 3.9396 8.3269 3.3128 2.6861 9.4909 2.6861 4.1187 0 7.4315-.89536 3.4024-.89536 6.8048-2.8652v10.744zm-18.444-35.635q-3.7605 0-6.0885 2.5966-2.328 2.507-3.0442 7.2524h17.191q-.35814-5.1036-2.3279-7.4315-1.9698-2.4175-5.7303-2.4175z"/>
+   <path d="m-453.92 882.64q-6.8943 3.4919-16.296 3.4919-7.6106 0-13.072-2.8652-5.4617-2.8652-8.4164-8.2374-2.8652-5.4617-2.8652-13.072 0-5.6408 1.5221-10.118 1.6117-4.5664 4.5664-7.7897t7.0734-4.9245 9.2222-1.7012q9.7595 0 14.953 6.0885 5.1931 5.9989 5.1931 17.281v3.8501h-29.547q.71629 5.6408 3.9396 8.3269 3.3128 2.6861 9.4909 2.6861 4.1187 0 7.4315-.89536 3.4024-.89536 6.8048-2.8652v10.744zm-18.444-35.635q-3.7605 0-6.0885 2.5966-2.3279 2.507-3.0442 7.2524h17.191q-.35814-5.1036-2.3279-7.4315-1.9698-2.4175-5.7303-2.4175z"/>
+   <path d="m-426.82 865.45h-2.6861v19.519h-13.251v-66.705h13.251v37.068h2.7756q3.5815-4.2978 6.8048-8.4164 3.3128-4.1187 6.4466-8.3269h14.774q-4.2978 5.4617-8.685 10.744-4.3873 5.2826-8.7746 10.386 5.014 6.3571 9.849 12.535 4.835 6.178 9.5804 12.714h-15.669q-3.7605-5.4617-7.2524-10.207-3.4919-4.7454-7.1629-9.3118z"/>
+   <path d="m-376.69 886.13q-4.2082 0-8.1478-.89536-3.9396-.80583-7.4315-2.507v-10.834q3.1338 2.0593 6.8943 3.2233 3.8501 1.164 7.5211 1.164 8.2373 0 8.2373-4.5664 0-1.9698-1.6116-2.9547-1.5221-.9849-5.3722-1.9698-5.9094-1.4326-9.4909-3.3128-3.4919-1.8803-5.1036-4.5664-1.5221-2.7756-1.5221-6.7152 0-4.5664 2.3279-7.8792 2.4175-3.3128 6.7152-5.1036 4.3873-1.7907 10.476-1.7907 4.1187 0 7.9687.89536 3.8501.80583 6.8943 2.507v10.744q-2.6861-2.0593-6.2676-3.1338-3.4919-1.164-7.0734-1.164-3.7605 0-5.9094 1.0744t-2.1489 3.2233q0 1.343.62676 2.1489.62675.80583 2.1489 1.4326 1.6116.62676 4.4768 1.343 5.7303 1.4326 9.2222 3.3128 3.4919 1.8803 5.1036 4.6559 1.6116 2.6861 1.6116 6.6257 0 4.7454-2.4175 8.1478t-6.8943 5.1931q-4.4768 1.7012-10.834 1.7012z"/>
+  </g>
+  <g style="fill:currentColor" transform="translate(151.43)">
+   <path d="m2.2106 886.31q-5.2826 0-10.476-1.164-5.1036-1.164-9.849-3.671v-12.356q9.5804 5.8199 20.325 5.8199 6.0885 0 9.2222-2.0593 3.2233-2.0593 3.2233-5.7303 0-2.7756-1.6117-4.2978-1.5221-1.6116-4.1187-2.507-2.5966-.9849-5.8199-1.7907-5.2826-1.2535-9.3118-2.8652-4.0291-1.6116-6.8048-3.7605-2.7756-2.2384-4.2082-5.2826-1.4326-3.1338-1.4326-7.4315 0-6.0885 3.0442-10.476 3.1338-4.3873 8.7746-6.7152 5.6408-2.4175 13.43-2.4175 5.1036 0 10.028 1.164 4.9245 1.164 8.8641 3.1338v12.177q-3.9396-2.4175-8.9536-3.7605-4.9245-1.343-9.9385-1.343-5.4617 0-8.506 1.8803-2.9547 1.8803-2.9547 5.3722 0 2.507 1.4326 4.0291 1.4326 1.4326 4.0291 2.4175 2.6861.89536 6.2675 1.7907 4.5664 1.164 8.506 2.5966 3.9396 1.343 6.8943 3.4919 3.0442 2.1489 4.6559 5.4617 1.7012 3.3128 1.7012 8.1478 0 6.3571-3.1338 10.923-3.1338 4.4768-9.0432 6.8943-5.9094 2.3279-14.236 2.3279z"/>
+   <path d="m45.03 817.99q3.5815 0 5.6408 1.8803 2.0593 1.7907 2.0593 5.014 0 3.1338-2.0593 5.014-2.0593 1.7907-5.6408 1.7907t-5.6408-1.7907q-2.0593-1.8803-2.0593-5.014 0-3.2233 2.0593-5.014 2.0593-1.8803 5.6408-1.8803zm-6.6257 20.593h13.251v46.38h-13.251v-46.38z"/>
+   <path d="m91.611 884.97q-4.4768-7.7897-9.5804-15.758-2.3279 3.7605-4.7454 7.7897-2.4175 3.9396-4.6559 7.9687h-14.326q3.9396-5.9989 7.9687-11.908 4.1187-5.9094 8.2373-11.55-3.8501-5.7303-7.6106-11.461-3.671-5.7303-7.2524-11.461h14.684q1.8803 3.7605 3.8501 7.4315 2.0593 3.671 4.2082 7.342 4.4768-7.4315 8.2373-14.774h14.326q-3.4919 5.7303-7.2524 11.461-3.7605 5.7303-7.6106 11.371 4.1187 5.7303 8.1478 11.64 4.1187 5.9094 8.0583 11.908h-14.684z"/>
+   <path d="m171.85 884.97q-2.2384-7.4315-4.3873-14.863-2.0593-7.5211-4.0291-15.042-2.0593 7.521-4.2082 15.042-2.1489 7.4315-4.3873 14.863h-13.251q-3.4919-11.461-6.7152-23.1-3.2233-11.64-6.178-23.279h13.968q1.5221 8.5955 3.1338 16.922 1.7012 8.3269 3.4919 16.564 2.1489-7.8792 4.1187-15.758 2.0593-7.8792 3.9396-15.937h12.356q1.8803 7.8792 3.8501 15.669 1.9698 7.7897 4.1187 15.49 1.8803-8.2374 3.4919-16.385 1.7012-8.1478 3.2233-16.564h13.61q-2.9547 11.64-6.178 23.279-3.2233 11.55-6.7152 23.1h-13.251z"/>
+   <path d="m243.21 882.64q-6.8943 3.4919-16.296 3.4919-7.6106 0-13.072-2.8652-5.4617-2.8652-8.4164-8.2374-2.8652-5.4617-2.8652-13.072 0-5.6408 1.5221-10.118 1.6116-4.5664 4.5664-7.7897 2.9547-3.2233 7.0734-4.9245t9.2222-1.7012q9.7595 0 14.953 6.0885 5.1931 5.9989 5.1931 17.281v3.8501h-29.547q.71629 5.6408 3.9396 8.3269 3.3128 2.6861 9.4908 2.6861 4.1187 0 7.4315-.89536 3.4024-.89536 6.8048-2.8652v10.744zm-18.444-35.635q-3.7605 0-6.0885 2.5966-2.328 2.507-3.0442 7.2524h17.191q-.35815-5.1036-2.328-7.4315-1.9698-2.4175-5.7303-2.4175z"/>
+   <path d="m292.7 882.64q-6.8943 3.4919-16.296 3.4919-7.6106 0-13.072-2.8652-5.4617-2.8652-8.4164-8.2374-2.8652-5.4617-2.8652-13.072 0-5.6408 1.5221-10.118 1.6116-4.5664 4.5664-7.7897 2.9547-3.2233 7.0734-4.9245t9.2222-1.7012q9.7595 0 14.953 6.0885 5.1931 5.9989 5.1931 17.281v3.8501h-29.547q.71629 5.6408 3.9396 8.3269 3.3128 2.6861 9.4909 2.6861 4.1187 0 7.4315-.89536 3.4024-.89536 6.8048-2.8652v10.744zm-18.444-35.635q-3.7605 0-6.0885 2.5966-2.328 2.507-3.0442 7.2524h17.191q-.35814-5.1036-2.3279-7.4315-1.9698-2.4175-5.7303-2.4175z"/>
+   <path d="m319.8 865.45h-2.6861v19.519h-13.251v-66.705h13.251v37.068h2.7756q3.5815-4.2978 6.8048-8.4164 3.3128-4.1187 6.4466-8.3269h14.774q-4.2978 5.4617-8.685 10.744-4.3873 5.2826-8.7746 10.386 5.014 6.3571 9.849 12.535 4.835 6.178 9.5804 12.714h-15.669q-3.7605-5.4617-7.2524-10.207-3.4919-4.7454-7.1629-9.3118z"/>
+   <path d="m369.93 886.13q-4.2082 0-8.1478-.89536-3.9396-.80583-7.4315-2.507v-10.834q3.1338 2.0593 6.8943 3.2233 3.8501 1.164 7.5211 1.164 8.2374 0 8.2374-4.5664 0-1.9698-1.6117-2.9547-1.5221-.9849-5.3722-1.9698-5.9094-1.4326-9.4909-3.3128-3.4919-1.8803-5.1036-4.5664-1.5221-2.7756-1.5221-6.7152 0-4.5664 2.328-7.8792 2.4175-3.3128 6.7152-5.1036 4.3873-1.7907 10.476-1.7907 4.1187 0 7.9687.89536 3.8501.80583 6.8943 2.507v10.744q-2.6861-2.0593-6.2676-3.1338-3.4919-1.164-7.0734-1.164-3.7605 0-5.9094 1.0744t-2.1489 3.2233q0 1.343.62675 2.1489.62675.80583 2.1489 1.4326 1.6117.62676 4.4768 1.343 5.7303 1.4326 9.2222 3.3128 3.4919 1.8803 5.1036 4.6559 1.6117 2.6861 1.6117 6.6257 0 4.7454-2.4175 8.1478t-6.8943 5.1931q-4.4768 1.7012-10.834 1.7012z"/>
+  </g>
+ </g>
+</svg>
+<p>Here is how one would mark it up, and might provide alternative text and a caption (with notes to follow):</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">figure</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"image"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">""</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"figure-1"</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span>
+</code></pre>
+<h2 id="related-research">Related research</h2>
+<p>This topic does not yet have any related research available.</p>
+<h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Offer choice — Inclusive Design Principles, <a href="https://inclusivedesignprinciples.org/#offer-choice">https://inclusivedesignprinciples.org/#offer-choice</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Preventing Content Rflows from Lazy-Loaded Images — CSS-Tricks, <a href="https://css-tricks.com/preventing-content-reflow-from-lazy-loaded-images/">https://css-tricks.com/preventing-content-reflow-from-lazy-loaded-images/</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+
+                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
+                    <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
+                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
+                            <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use>
+                        </svg>Could you improve this documentation?
+                    </h4>
+                    <div>
+                        <p>
+                            If you think you could make anything you see here a bit better then become one of <a href="/gef-docs/contributors/">our
+                                lovely contributors</a>!
+                        </p>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="gefdocs-feedback-banner">
+        <div class="gel-wrap">
+            <div class="gel-layout">
+                <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
+                    <h2 class="gefdocs-feedback-banner__title">Got a minute?</h2>
+                    <p>We'd love to know what you think of the Code GEL website.</p>
+                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" class="gefdocs-button gefdocs-button__link-button gefdocs-feedback-banner__cta gefdocs-button--primary">
+                        <span class="gefdocs-button__content">Go to survey</span>
+                        <span class="gefdocs-button__icon_wrapper">
+                            <svg class="gefdocs-button__icon gefdocs-icon gefdocs-icon--text">
+                                <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                                    style="fill:undefined;"></use>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script nomodule defer type="text/javascript" src="/gef-docs/static/js/external-svg-polyfill.js"></script>
+    <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
+
+    
+
+    <script type="text/javascript">
+        new Sticky('.sticky');
+    </script>
+</body>
+
+</html>
