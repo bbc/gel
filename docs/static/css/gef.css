@@ -853,11 +853,11 @@ input[type=range]::-ms-thumb {
   border: 1px solid #ccc; }
 
 .gef-table-container th {
-  font-weight: bold;
-  position: sticky;
-  top: 0; }
+  font-weight: bold; }
 
 .gef-table-container thead.sticky th {
+  position: sticky;
+  top: 0;
   background-color: #fff; }
 
 .gef-table-container th:after {

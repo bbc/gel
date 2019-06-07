@@ -422,6 +422,21 @@ a {
   transition: .3s
 }
 
+/* figures */
+
+figcaption {
+  font-style: italic;
+  text-align: center;
+}
+
+* + figcaption {
+  margin-top: 1rem;
+}
+
+figcaption + * {
+  margin-top: 1rem;
+}
+
 /* icon */
 
 .gefdocs-icon {
