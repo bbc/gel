@@ -77,7 +77,7 @@ Here is how one would mark it up, and might provide alternative text and a capti
     ...
   </svg>
   <figcaption id="figure-1">
-    After three weeks, some sites of growth had emerged, localized around one edge. By the six week mark, these had begun to multiply and spread towards other areas of the cell-culture dish.
+    After three weeks, some cultures had emerged, localized towards one side. By the six week mark, these had begun to multiply and spread towards other areas of the cell-culture dish.
   </figure>
 </figure>
 ```
@@ -243,6 +243,22 @@ An infographic key that depends on flat colors would fail **WCAG 2.1 1.4.1: Use 
 
 ![Four coloured boxes: red, green, blue, yellow. All with stripes of different orientations to distinguish them better]({{site.basedir}}static/images/components/infographic_key_good.png)
 
+## Recommended behaviour
+
+It is possible to use focus management and ARIA attribution[^5] to make (SVG-based) interactive visualisations technically accessible. However, this is an ambitious undertaking. In addition, sighted screen reader users are liable to be confused by what appears to be a graph being announced (and behaving) as a table or other semantic structure. 
+
+In most cases, you should avoid creating interactive visualisations, and instead use the recommended combination of alternative text, caption, and supplementary data table/source. 
+
+## Reference implementation
+
+The implementation included in the [**Recommended layout**](#recommended-layout) section is available to explore (and test) [in it's own window](../demos/infographic-tabs/).
+
+::: alert Important
+Reference implementations are intended to demonstrate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
+:::
+
+<cta label="Open in new window" href="../demos/infographic-tabs/">
+
 ## Related research
 
 This topic does not yet have any related research available.
@@ -253,3 +269,4 @@ This topic does not yet have any related research available.
 [^2]: Preventing Content Rflows from Lazy-Loaded Images — CSS-Tricks, <https://css-tricks.com/preventing-content-reflow-from-lazy-loaded-images/>
 [^3]: How do you figure? — Scott O'Hara, <https://www.scottohara.me/blog/2019/01/21/how-do-you-figure.html>
 [^4]: WCAG2.1 1.4.1: Use Of Color, <https://www.w3.org/TR/WCAG21/#x1-4-1-use-of-color>
+[^5]: Accessible SVG Line Graphs, <https://tink.uk/accessible-svg-line-graphs/>
