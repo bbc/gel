@@ -110,8 +110,101 @@
             <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="introduction">Introduction</h2>
 <h2 id="recommended-markup">Recommended markup</h2>
+<p>Whether local or global, the search must be marked up as a <code>role=&quot;search&quot;</code> landmark, making it available to screen reader shortcuts. The <code>role=&quot;search&quot;</code> attribution must not be placed on the form, but instead on a wrapping element<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. ARIA roles suppress implicit roles, and remove their associated behaviors. Screen readers should still be able to identify the form as a form.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-search"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"search"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-search-controls"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- search functionality here --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>The search region is composed of two main parts: the search controls (<code>class=&quot;gef-search-controls&quot;</code>), and the search suggestions (<code>class=&quot;gef-search-suggestions&quot;</code>).</p>
+<h3 id="search-controls">Search controls</h3>
+<p>The following example is for a global search region. It would be revealed by pressing a button in the page's <a href="../masthead"><strong>Masthead</strong></a>, and includes a close button to dismiss it again. SVG data is elided. There are notes to follow.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-search-controls"</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"get"</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"https://search.bbc.co.uk/search"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"search"</span> <span class="hljs-attr">hidden</span>&gt;</span>Search the BBC<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"search"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"search"</span> <span class="hljs-attr">autocomplete</span>=<span class="hljs-string">"off"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sr"</span>&gt;</span>Search<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span>&gt;</span>
+      ...
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-search-close"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sr"</span>&gt;</span>Close<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span>&gt;</span>
+      ...
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</code></pre>
+<ul>
+<li><strong>&quot;Search the BBC&quot;:</strong> Because this is a global search region, the label for the search input simply reads <em>&quot;Search the BBC&quot;</em>. This text is <code>hidden</code> but associated with the input, and available to screen readers, by making the <code>&lt;label&gt;</code>'s <code>for</code> attribute and the input's <code>id</code> share a value.</li>
+<li><strong>Buttons:</strong> Each button uses the native button element. The close button takes <code>type=&quot;button&quot;</code> to differentiate it from a submit button and prevent it from erroneously submitting the form<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</li>
+<li><strong>SVG:</strong> Each SVG must take <code>focusable=&quot;false&quot;</code> and <code>aria-hidden=&quot;true&quot;</code> to ensure it is unavailable to assistive technologies and not focusable by keyboard</li>
+</ul>
+<p>A local search region differs in three ways:</p>
+<ul>
+<li>A logo is included for branding purposes</li>
+<li>The input label reads <em>&quot;Search BBC [site name]&quot;</em> (a non-visual equivalent of the logo)</li>
+<li>The close button is omitted, since local search is a permanent fixture, placed under the masthead</li>
+</ul>
+<p>See the <a href="../demos/local-search">local search reference implementation</a>.</p>
+<h3 id="search-suggestions">Search suggestions</h3>
+<p>Where available, typing into the search input populates a region below the search controls with suggested links. This region looks like the following in its initial state (with notes to follow):</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-search-suggestions"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Search suggestions"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">hidden</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-search-suggestions-label"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"status"</span> <span class="hljs-attr">aria-live</span>=<span class="hljs-string">"polite"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-search-suggestions-links"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
+</code></pre>
+<ul>
+<li><strong><code>&amp;lt;aside&gt;</code>:</strong> The suggestions region is provided as a complementary landmark. This makes it easy to locate using screen reader software (while it is available) and allows for the descriptive label: <em>&quot;Search suggestions&quot;</em>. When a screen reader user enters the region and focuses a suggestion link they will hear something similar to, <em>&quot;search suggestions, complementary region, list of 5 items, first item, [item text], link&quot;</em> (where 5 suggestions are available and presented in a list — which is recommended).</li>
+<li><strong><code>aria-hidden=&quot;true&quot;</code> and <code>hidden</code>:</strong> In the initial state, the region is not visible, on account of having zero height and <code>overflow: hidden</code> (see the <a href="#recommended-layout"><strong>Recommended layout</strong></a> section. To achieve parity for screen reader users, <code>aria-hidden=&quot;true&quot;</code> 'hides' the region from their software. The <code>hidden</code> property hides the region unless JavaScript (upon which it depends) runs and can remove it.</li>
+<li><strong><code>role=&quot;status&quot;</code>:</strong> When suggestions become available, screen reader users should be informed — and without stealing their focus. A live region is populated with text following the template <em>&quot;We have [n] suggestions for you&lt;span class=&quot;gef-sr&quot;&gt;, please find them below&lt;/span&gt;:&quot;</em>. The <em>&quot;please find them below&quot;</em> portion is only helpful non-visually, so is visually hidden using the <code>.gef-sr</code> class. The <code>aria-live=&quot;polite&quot;</code> attribution is equivalent to <code>role=&quot;status&quot;</code>. Some browsers only support one of the two, so this maximizes compatibility.</li>
+<li><strong><code>.gef-search-suggestions-links</code>:</strong> A function provided by the developer would be used to populate lists of suggestions (see the <a href="#reference-implementation"><strong>Reference implementations</strong></a>)</li>
+</ul>
 <h2 id="recommended-layout">Recommended layout</h2>
+<p>The search region itself uses Flexbox to bring its items inline. The input is allowed to grow and shrink, helping the component support a range of viewport widths.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-search-controls</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+}
+
+<span class="hljs-selector-class">.gef-search-controls</span> &gt; <span class="hljs-selector-tag">input</span> {
+  <span class="hljs-attribute">flex-grow</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attribute">min-width</span>: <span class="hljs-number">0</span>;
+}
+</code></pre>
+<h3 id="focus-styles">Focus styles</h3>
+<p>Strong—not just default—focus styles are recommended. In the <a href="#reference-implementation"><strong>Reference implementations</strong></a>, a solid <code>outline</code> is employed, with a negative <code>outline-offset</code> to bring the outline inside the input and button boxes:</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-search-controls</span> &gt; <span class="hljs-selector-tag">input</span><span class="hljs-selector-pseudo">:focus</span>,
+<span class="hljs-selector-class">.gef-search-controls</span> &gt; <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:focus</span> {
+  <span class="hljs-attribute">outline</span>: <span class="hljs-number">2px</span> solid;
+  <span class="hljs-attribute">outline-offset</span>: -<span class="hljs-number">2px</span>;
+}
+</code></pre>
 <h2 id="recommended-behaviour">Recommended behaviour</h2>
+<p>Here is the basic workflow for using search, with actions/behaviours specific to global search marked as such:</p>
+<ol>
+<li>Click the search button in the <a href="../masthead"><strong>Masthead</strong></a> → the search region is revealed and the search input is focused. (<em>global search only</em>)</li>
+<li>Type inside the search field → If suggestions are available, they populate the suggestions region, and it is revealed. For screen reader users, the presence of suggestions (and the number available) is announced.</li>
+<li>Click on the submit button → The user is taken to the search page (<a href="https://search.bbc.co.uk/search">https://search.bbc.co.uk/search</a>)</li>
+<li>Click on a suggestion → The user is taken to that suggestion's permalink</li>
+<li>Click on the close ('X') button → the search region is hidden and the Masthead's search button is regains keyboard focus (<em>global search only</em>)</li>
+</ol>
+<h3 id="animating-the-suggestions-region">Animating the suggestions region</h3>
+<p>The animation (sliding up and down) of the suggestions region uses JavaScript, not just CSS. This is because you cannot animate to an <code>auto</code> height, and the height of the region—including the dynamic suggestions content—cannot be known ahead of time. Instead, the <code>scrollHeight</code> of the region must be determined and that height made the 'target' for the animation end. Importantly, the function that populates the suggestions <em>must be executed before the animation function</em>. Otherwise the target height will be incorrect.</p>
+<p>Here is the entire process:</p>
+<pre class="hljs"><code><span class="hljs-comment">// Use the supplied function to populate the suggestions</span>
+buildFunction(<span class="hljs-keyword">this</span>);
+<span class="hljs-comment">// Set `aria-hidden` to `false` so:</span>
+<span class="hljs-comment">// (a) the live region will announce</span>
+<span class="hljs-comment">// (b) the suggestions will be available to screen readers</span>
+<span class="hljs-keyword">this</span>.suggestions.setAttribute(<span class="hljs-string">'aria-hidden'</span>, <span class="hljs-string">'false'</span>);
+<span class="hljs-comment">// Now safely populate the live region</span>
+<span class="hljs-keyword">this</span>.suggestionsLabel.innerHTML = <span class="hljs-string">'We have &lt;span class="search-suggestion-count"&gt;'</span> + <span class="hljs-keyword">this</span>.suggestionsLinks.querySelector(<span class="hljs-string">'a'</span>).length + <span class="hljs-string">'&lt;/span&gt; suggestions for you&lt;span class="gef-sr"&gt;, please find them below&lt;/span&gt;:'</span>
+<span class="hljs-comment">// Finally, animate the region into view</span>
+<span class="hljs-keyword">this</span>.showSuggestions();
+</code></pre>
 <h2 id="reference-implementation">Reference implementation</h2>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
@@ -119,6 +212,15 @@
 </aside><h2 id="related-research">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
 <h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Where To Put Your Search Role — Adrian Roselli, <a href="http://adrianroselli.com/2015/08/where-to-put-your-search-role.html">http://adrianroselli.com/2015/08/where-to-put-your-search-role.html</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Why it's important to give your HTML button a type — <a href="http://dev.to">dev.to</a> (Claire Parker), <a href="https://dev.to/claireparkerjones/why-its-important-to-give-your-html-button-a-type-58k9">https://dev.to/claireparkerjones/why-its-important-to-give-your-html-button-a-type-58k9</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
 
                 <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
