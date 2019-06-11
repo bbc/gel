@@ -131,6 +131,7 @@ We are working our way through a list based closely on what's already published 
 | [Action dialogs]({{site.basedir}}components/action-dialogs/) | Draft / Pending|
 | [Breakout boxes]({{site.basedir}}components/breakout-boxes/) | Draft / Pending|
 | [Buttons and CTAs]({{site.basedir}}components/buttons-and-ctas/) | Draft / Pending|
+| [Data tables]({{site.basedir}}components/data-tables/) | Draft / Pending|
 | [Cards]({{site.basedir}}components/cards/) | Draft / Pending|
 | [Carousels]({{site.basedir}}components/carousels/) | Draft / Pending|
 | [External links]({{site.basedir}}components/external-links/) | Draft / Pending|
@@ -145,6 +146,7 @@ We are working our way through a list based closely on what's already published 
 | [Information Panel]({{site.basedir}}components/info-panels/) | Draft / Pending|
 | [Share Tools]({{site.basedir}}components/share-tools/) | Draft / Pending|
 | [Site Menu]({{site.basedir}}components/site-menu/) | Draft / Pending|
+| [Infographics]({{site.basedir}}components/infographics/) | Draft / Pending|
 
 ## Questions?
 
