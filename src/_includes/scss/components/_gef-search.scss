@@ -1,0 +1,35 @@
+.gef-search-controls {
+  font-size: 2rem;
+  padding: 2rem;
+  display: flex;
+  background-color: $gel-color--dusty-gray;
+}
+
+.gef-search-controls > * {
+  font-size: inherit;
+  flex: 0 1 auto;
+}
+
+.gef-search-controls > input,
+.gef-search-controls > button {
+  padding: 0.5rem;
+}
+
+.gef-search-controls input {
+  flex-grow: 1;
+  border: 0;
+}
+
+.gef-search-controls button {
+  border: 0;
+  background: transparent;
+}
+
+.gef-search-controls [type="submit"] {
+  background: #fff;
+}
+
+.gef-search-controls > * + input,
+.gef-search-controls button:last-child {
+  margin-left: 0.5rem;
+}
