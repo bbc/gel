@@ -1600,27 +1600,42 @@ of 'open all' and 'close all' tools
   font-size: 2rem;
   padding: 2rem;
   display: flex;
+  align-items: center;
   background-color: #ccc; }
 
 .gef-search-controls > * {
   font-size: inherit;
   flex: 0 1 auto; }
 
+.gef-search-controls-brand {
+  max-height: 3rem; }
+
 .gef-search-controls > input,
 .gef-search-controls > button {
   padding: 0.5rem; }
 
+.gef-search-controls > input:focus,
+.gef-search-controls > button:focus {
+  outline: 2px solid;
+  outline-offset: -2px; }
+
 .gef-search-controls input {
   flex-grow: 1;
+  min-width: 0;
   border: 0; }
 
 .gef-search-controls button {
   border: 0;
-  background: transparent; }
+  background: transparent;
+  color: inherit; }
 
 .gef-search-controls [type="submit"] {
   background: #fff; }
 
 .gef-search-controls > * + input,
-.gef-search-controls button:last-child {
-  margin-left: 0.5rem; }
+.gef-search-controls > .gef-search-close {
+  margin-left: 1rem; }
+
+.gef-search-suggestions {
+  overflow: hidden;
+  transition: height 0.3s ease-out; }
