@@ -1,4 +1,4 @@
-.gef-search-controls {
+.gef-search__controls {
   font-size: 2rem;
   padding: 2rem;
   display: flex;
@@ -6,48 +6,48 @@
   background-color: $gel-color--dusty-gray;
 }
 
-.gef-search-controls > * {
+.gef-search__controls > * {
   font-size: inherit;
   flex: 0 1 auto;
 }
 
-.gef-search-controls-brand {
+.gef-search__controls-brand {
   max-height: 3rem;
 }
 
-.gef-search-controls > input,
-.gef-search-controls > button {
+.gef-search__controls > input,
+.gef-search__controls > button {
   padding: 0.5rem;
 }
 
-.gef-search-controls > input:focus,
-.gef-search-controls > button:focus {
+.gef-search__controls > input:focus,
+.gef-search__controls > button:focus {
   outline: 2px solid;
   outline-offset: -2px;
 }
 
-.gef-search-controls input {
+.gef-search__controls input {
   flex-grow: 1;
   min-width: 0;
   border: 0;
 }
 
-.gef-search-controls button {
+.gef-search__controls button {
   border: 0;
   background: transparent;
   color: inherit;
 }
 
-.gef-search-controls [type="submit"] {
+.gef-search__controls [type="submit"] {
   background: #fff;
 }
 
-.gef-search-controls > * + input,
-.gef-search-controls > .gef-search-close {
+.gef-search__controls > * + input,
+.gef-search__controls > .gef-search__close {
   margin-left: 1rem;
 }
 
-.gef-search-suggestions {
+.gef-search__suggestions {
   overflow: hidden;
   transition: height 0.3s ease-out;
 }
