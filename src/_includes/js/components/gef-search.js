@@ -15,7 +15,7 @@
     button.hidden = false;
 
     var input = search.querySelector('input');
-    var closeButton = search.querySelector('.gef-search-close');
+    var closeButton = search.querySelector('.gef-search__close');
     button.addEventListener('click', function () {
       search.hidden = false;
       input.focus();
@@ -41,10 +41,10 @@
 
     this.data = data;
     this.input = elem.querySelector('input');
-    this.suggestions = elem.querySelector('.gef-search-suggestions');
+    this.suggestions = elem.querySelector('.gef-search__suggestions');
     this.suggestions.hidden = false;
-    this.suggestionsLinks = this.suggestions.querySelector('.gef-search-suggestions-links');
-    this.suggestionsLabel = this.suggestions.querySelector('.gef-search-suggestions-label');
+    this.suggestionsLinks = this.suggestions.querySelector('.gef-search__suggestions-links');
+    this.suggestionsLabel = this.suggestions.querySelector('.gef-search__suggestions-label');
 
     this.suggestions.style.height = '0';
 
@@ -79,7 +79,7 @@
       } else {
         buildFunction(this);
         this.suggestions.setAttribute('aria-hidden', 'false');
-        this.suggestionsLabel.innerHTML = 'We have <span class="search-suggestion-count">' + this.suggestionsLinks.querySelector('a').length + '</span> suggestions for you<span class="gef-sr">, please find them below</span>:'
+        this.suggestionsLabel.innerHTML = 'We have <span class="gef-search__suggestions-count">' + this.suggestionsLinks.querySelectorAll('a').length + '</span> suggestions for you<span class="gef-sr">, please find them below</span>:'
         this.showSuggestions();
       }
     }
