@@ -74,7 +74,7 @@ Where available, typing into the search input populates a region below the searc
 * **`.gef-search-suggestions-links`:** A function provided by the developer would be used to populate lists of suggestions (see the [**Reference implementations**](#reference-implementation))
 
 ::: alert An unconventional pattern
-The pattern described here is intended to best reflect [the GEL documentation for search](https://www.bbc.co.uk/gel/guidelines/local-search). Simpler auto-suggest patterns, such as those using the native `<datalist>` element[^4], or `listbox` ARIA are not flexible enough to accommodate the structured content permissable in the `.gef-search-suggestions-links` container.
+The pattern described here is intended to best reflect [the GEL documentation for search](https://www.bbc.co.uk/gel/guidelines/local-search). Simpler auto-suggest patterns, such as those using the native `<datalist>` element[^4], or combobox ARIA[^5] are not flexible enough to accommodate the structured content permissable in the `.gef-search-suggestions-links` container.
 :::
 
 ## Recommended layout
@@ -164,3 +164,4 @@ This topic does not yet have any related research available.
 [^2]: When To Use An ARIA Role — Paciello Group blog, <https://developer.paciellogroup.com/blog/2012/06/html5-accessibility-chops-when-to-use-an-aria-role/>
 [^3]: Why it's important to give your HTML button a type — dev.to (Claire Parker), <https://dev.to/claireparkerjones/why-its-important-to-give-your-html-button-a-type-58k9>
 [^4]: `<datalist>` — MDN, <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist>
+[^5]: Combobox - ARIA Authoring Practices, <https://www.w3.org/TR/wai-aria-practices/#combobox>
