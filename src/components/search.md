@@ -29,7 +29,7 @@ The following example is for a global search region. It would be revealed by pre
 ```html
 <form class="gef-search-controls" method="get" action="https://search.bbc.co.uk/search">
   <label for="search" hidden>Search the BBC</label>
-  <input type="text" id="search" name="search" autocomplete="off" />
+  <input type="text" id="search" name="search" />
   <button type="submit">
     <span class="gef-sr">Search</span>
     <svg class="gel-icon gel-icon--text" focusable="false">
