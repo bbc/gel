@@ -117,7 +117,7 @@
 <h2 id="recommended-markup">Recommended markup</h2>
 <p>No matter the templating or rendering technology, data tables should be marked up with the <code>&lt;table&gt;</code> and associated elements. Data tables composed from <code>&lt;div&gt;</code> elements require considerable ARIA attribution to elicit the expected screen reader behaviors, and non-trivial amounts of CSS to emulate the grid-like layout behavior.</p>
 <h3 id="column-headers">Column headers</h3>
-<p>Any <code>&lt;table&gt;</code> that does not have column or row headers (<code>&lt;th&gt;</code> elements) cannot be considered a true data table. In fact, some screen readers that encounter a table without headers will determine it as a 'layout table' and communicate it quite differently<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p>
+<p>Any <code>&lt;table&gt;</code> that does not have column or row headers (<code>&lt;th&gt;</code> elements) cannot be considered a true data table. In fact, some screen readers that encounter a table without headers will treat it as a 'layout table' and communicate it quite differently<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p>
 <h4 id="bad-example">
           <div class="circular circular__bad" aria-hidden="true">✕</div>
          Bad example</h4>
@@ -188,9 +188,9 @@
 <p>Note that the <code>&lt;table&gt;</code> is now divided into a head (<code>&lt;thead&gt;</code>) and body (<code>&lt;tbody&gt;</code>). This does not have any impact on the behavior of the table and its headers. But, as we enhance the table, these elements will come in useful for styling and scripting.</p>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-empty-table-headers">
-              <h4 id="aside-alert-empty-table-headers" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Empty table headers</h4><div><p>In the last example, the first column header is effectively a header for the <em>row</em> headers. Some deem this unnecessary and make the cell empty. This is not recommended, since it can produce unexpected behavior<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>. It is also better to be explicit whenever there is the opportunity. In the <a href="#reference-implementation"><strong>Reference implementation</strong></a> the row headers are each premier league football teams. This could probably be concluded through deduction (and the help of surrounding information), but an explicit <em>&quot;Team&quot;</em> column header removes all doubt.</p>
+              <h4 id="aside-alert-empty-table-headers" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Empty table headers</h4><div><p>In the last example, the first column header is effectively a header for the <em>row</em> headers. Some deem this unnecessary and make the cell empty. This is not recommended, since it can produce unexpected behavior<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>. It is also better to be explicit whenever there is the opportunity. In the <a href="#reference-implementation"><strong>Reference implementation</strong></a> the row headers are each Premier League football teams. This could probably be concluded through deduction (and the help of surrounding information), but an explicit <em>&quot;Team&quot;</em> column header removes all doubt.</p>
 </aside><h3 id="captions">Captions</h3>
-<p>So far, we have labeled the rows and columns, but not the table itself. You may be inclined to introduce a table with a heading element, such as an <code>&lt;h2&gt;</code>. This would certainly aid users browsing the page visually. However, a heading would not be directly <em>associated</em> with the table, meaning a screen reader user navigating directly to the table (using a shortcut like <kbd>T</kbd> in NVDA) would not hear a label announced upon arrival.</p>
+<p>So far, we have labelled the rows and columns, but not the table itself. You may be inclined to introduce a table with a heading element, such as an <code>&lt;h2&gt;</code>. This would certainly aid users browsing the page visually. However, a heading would not be directly <em>associated</em> with the table, meaning a screen reader user navigating directly to the table (using a shortcut like <kbd>T</kbd> in NVDA) would not hear a label announced upon arrival.</p>
 <p>Instead, provide a <code>&lt;caption&gt;</code><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. Where there is already a requirement for a heading and you want to eliminate repetition and redundancy, it is permitted to place the heading <em>inside</em> the <code>&lt;caption&gt;</code> element.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">caption</span>&gt;</span>
@@ -201,7 +201,7 @@
 </code></pre>
 <p>This will mean screen reader users can reach the table via either table or heading shortcuts provided by their software. In either case, it will be identified by the caption/heading's text.</p>
 <h2 id="recommended-layout">Recommended layout</h2>
-<p>Importantly, the grid structure of data tables must remain intact no matter the available space. That is, elements must not wrap or otherwise change position since they will become labeled incorrectly. For tables with many columns this may precipitate horizontal scrolling. It is recommended a container element with <code>overflow-x: auto</code> is used to contain the horizontal scroll behavior.</p>
+<p>Importantly, the grid structure of data tables must remain intact no matter the available space. That is, elements must not wrap or otherwise change position since they will become labelled incorrectly. For tables with many columns this may result in horizontal scrolling. It is recommended a container element with <code>overflow-x: auto</code> is used to contain the horizontal scroll behavior.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gef-table</span> {
   <span class="hljs-attribute">overflow-x</span>: auto;
 }
@@ -218,7 +218,7 @@
 </code></pre>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-conditional-interactivity">
-              <h4 id="aside-alert-conditional-interactivity" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Conditional interactivity</h4><div><p>It is not recommended the table container is made focusable by default, since tables that do not trigger a scrollbar would result in an interactive container that <em>doesn't do anything</em>. In the <a href="#reference-implementation"><strong>Reference implementation</strong></a> <code>tabindex=&quot;0&quot;</code> is removed via <code>ResizeObserver</code> where the container is not overflowing.</p>
+              <h4 id="aside-alert-conditional-interactivity" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Conditional interactivity</h4><div><p>It is not recommended the table container is made focusable by default, since tables that do not trigger a scrollbar would result in an interactive container that <em>doesn't do anything</em>. In the <a href="#reference-implementation"><strong>Reference implementation</strong></a> <code>tabindex=&quot;0&quot;</code> is removed via <code>ResizeObserver</code> where the container does not overflow.</p>
 <p><code>tabindex=&quot;0&quot;</code> is added in the markup, and from the outset, in case JavaScript or <code>ResizeObserver</code> are not available.</p>
 </aside><h3 id="indicating-scroll-functionality-visually">Indicating scroll functionality visually</h3>
 <p>Currently, only the bisection of a column indicates an an overflow, and the ability to scroll more data into view. This does not provide a great deal of affordance. In addition, you can apply an indicative shadow/fade to whichever side the overflow is occurring at.</p>
@@ -266,7 +266,7 @@
 <pre class="hljs"><code><span class="hljs-keyword">var</span> tableContainer = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.gef-table'</span>);
 <span class="hljs-keyword">var</span> table = <span class="hljs-keyword">new</span> gef.Table.constructor(tableContainer, <span class="hljs-literal">true</span>);
 </code></pre>
-<p>The table is progressively enhanced to include sorting buttons for each of the column headers. These are each labeled <em>'sort'</em> using a visually hidden <code>&lt;span class=&quot;gef-sr&quot; /&gt;</code>, and display the re-order icon from the <a href="http://bbc.github.io/gel-iconography/">GEL iconography suite</a>.</p>
+<p>The table is progressively enhanced to include sorting buttons for each of the column headers. These are each labelled <em>'sort'</em> using a visually hidden <code>&lt;span class=&quot;gef-sr&quot; /&gt;</code>, and display the re-order icon from the <a href="http://bbc.github.io/gel-iconography/">GEL iconography suite</a>.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">"col"</span> <span class="hljs-attr">aria-sort</span>=<span class="hljs-string">"none"</span>&gt;</span>
   Teams
   <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>
@@ -295,15 +295,15 @@ title: Data table
     </caption>
     <thead>
       <tr>
-        <th scole="col">Team</th>
-        <th scole="col">Played</th>
-        <th scole="col">Won</th>
-        <th scole="col">Drawn</th>
-        <th scole="col">Lost</th>
-        <th scole="col">For</th>
-        <th scole="col">Against</th>
-        <th scole="col">Goal Difference</th>
-        <th scole="col">Points</th>
+        <th scope="col">Team</th>
+        <th scope="col">Played</th>
+        <th scope="col">Won</th>
+        <th scope="col">Drawn</th>
+        <th scope="col">Lost</th>
+        <th scope="col">For</th>
+        <th scope="col">Against</th>
+        <th scope="col">Goal Difference</th>
+        <th scope="col">Points</th>
       </tr>
     </thead>
     <tbody>

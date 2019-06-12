@@ -14,7 +14,7 @@ No matter the templating or rendering technology, data tables should be marked u
 
 ### Column headers
 
-Any `<table>` that does not have column or row headers (`<th>` elements) cannot be considered a true data table. In fact, some screen readers that encounter a table without headers will determine it as a 'layout table' and communicate it quite differently[^1].
+Any `<table>` that does not have column or row headers (`<th>` elements) cannot be considered a true data table. In fact, some screen readers that encounter a table without headers will treat it as a 'layout table' and communicate it quite differently[^1].
 
 #### <mark is="bad"> Bad example
 
@@ -93,12 +93,12 @@ In most cases, column headers suffice. However, in some tables, the first cell o
 Note that the `<table>` is now divided into a head (`<thead>`) and body (`<tbody>`). This does not have any impact on the behavior of the table and its headers. But, as we enhance the table, these elements will come in useful for styling and scripting.
 
 ::: alert Empty table headers
-In the last example, the first column header is effectively a header for the _row_ headers. Some deem this unnecessary and make the cell empty. This is not recommended, since it can produce unexpected behavior[^2]. It is also better to be explicit whenever there is the opportunity. In the [**Reference implementation**](#reference-implementation) the row headers are each premier league football teams. This could probably be concluded through deduction (and the help of surrounding information), but an explicit _"Team"_ column header removes all doubt.
+In the last example, the first column header is effectively a header for the _row_ headers. Some deem this unnecessary and make the cell empty. This is not recommended, since it can produce unexpected behavior[^2]. It is also better to be explicit whenever there is the opportunity. In the [**Reference implementation**](#reference-implementation) the row headers are each Premier League football teams. This could probably be concluded through deduction (and the help of surrounding information), but an explicit _"Team"_ column header removes all doubt.
 :::
 
 ### Captions
 
-So far, we have labeled the rows and columns, but not the table itself. You may be inclined to introduce a table with a heading element, such as an `<h2>`. This would certainly aid users browsing the page visually. However, a heading would not be directly _associated_ with the table, meaning a screen reader user navigating directly to the table (using a shortcut like <kbd>T</kbd> in NVDA) would not hear a label announced upon arrival. 
+So far, we have labelled the rows and columns, but not the table itself. You may be inclined to introduce a table with a heading element, such as an `<h2>`. This would certainly aid users browsing the page visually. However, a heading would not be directly _associated_ with the table, meaning a screen reader user navigating directly to the table (using a shortcut like <kbd>T</kbd> in NVDA) would not hear a label announced upon arrival. 
 
 Instead, provide a `<caption>`[^3]. Where there is already a requirement for a heading and you want to eliminate repetition and redundancy, it is permitted to place the heading _inside_ the `<caption>` element.
 
@@ -115,7 +115,7 @@ This will mean screen reader users can reach the table via either table or headi
 
 ## Recommended layout
 
-Importantly, the grid structure of data tables must remain intact no matter the available space. That is, elements must not wrap or otherwise change position since they will become labeled incorrectly. For tables with many columns this may precipitate horizontal scrolling. It is recommended a container element with `overflow-x: auto` is used to contain the horizontal scroll behavior.
+Importantly, the grid structure of data tables must remain intact no matter the available space. That is, elements must not wrap or otherwise change position since they will become labelled incorrectly. For tables with many columns this may result in horizontal scrolling. It is recommended a container element with `overflow-x: auto` is used to contain the horizontal scroll behavior.
 
 ```css
 .gef-table {
@@ -137,7 +137,7 @@ To make this element scrollable by keyboard, it must first be focusable. This re
 ```
 
 ::: alert Conditional interactivity
-It is not recommended the table container is made focusable by default, since tables that do not trigger a scrollbar would result in an interactive container that _doesn't do anything_. In the [**Reference implementation**](#reference-implementation) `tabindex="0"` is removed via `ResizeObserver` where the container is not overflowing. 
+It is not recommended the table container is made focusable by default, since tables that do not trigger a scrollbar would result in an interactive container that _doesn't do anything_. In the [**Reference implementation**](#reference-implementation) `tabindex="0"` is removed via `ResizeObserver` where the container does not overflow. 
 
 `tabindex="0"` is added in the markup, and from the outset, in case JavaScript or `ResizeObserver` are not available.
 :::
@@ -209,7 +209,7 @@ var tableContainer = document.querySelector('.gef-table');
 var table = new gef.Table.constructor(tableContainer, true);
 ```
 
-The table is progressively enhanced to include sorting buttons for each of the column headers. These are each labeled _'sort'_ using a visually hidden `<span class="gef-sr" />`, and display the re-order icon from the [GEL iconography suite](http://bbc.github.io/gel-iconography/).
+The table is progressively enhanced to include sorting buttons for each of the column headers. These are each labelled _'sort'_ using a visually hidden `<span class="gef-sr" />`, and display the re-order icon from the [GEL iconography suite](http://bbc.github.io/gel-iconography/).
 
 ```html
 <th scope="col" aria-sort="none">

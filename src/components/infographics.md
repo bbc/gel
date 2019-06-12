@@ -23,9 +23,9 @@ How you encode infographics, and what kind of textual alternatives you provide f
 * Is scalable without degradation, facilitating zoom/magnification
 * Can be highly optimized, especially when using the [simple shapes and paths recommended](https://www.bbc.co.uk/gel/guidelines/how-to-design-infographics#infographic-visual-style-overview)
 * Can be maintained and updated easily, like any other markup
-* Unlike runtime-dependent `<canvas>` graphics, can contain accessibility information, and be downloaded as a self-sufficient asset
+* Unlike runtime-dependent `<canvas>` graphics, can contain accessibility information, and be downloaded as a self-contained asset
 
-Inline SVG (SVG embedded directly into the HTML) is the most malleable, since you can target individual SVG elements/artifacts with CSS and JavaScript. Embedding SVG also reduces http requests and, most importantly, _content reflows_[^2], by loading and rendering along with the surrounding content.
+Inline SVG (SVG embedded directly into the HTML) is the most malleable, since you can target individual SVG elements/artefacts with CSS and JavaScript. Embedding SVG also reduces http requests and, most importantly, _content reflows_[^2], by loading and rendering along with the surrounding content.
 
 ### Labels and descriptions
 
