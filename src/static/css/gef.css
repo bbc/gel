@@ -1608,7 +1608,8 @@ of 'open all' and 'close all' tools
   flex: 0 1 auto; }
 
 .gef-search__controls-brand {
-  max-height: 3rem; }
+  height: 3rem;
+  width: auto; }
 
 .gef-search__controls > input,
 .gef-search__controls > button {
