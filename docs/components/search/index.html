@@ -103,7 +103,7 @@
             <div class="gel-layout__item gel-1/5@l">
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#undefined">Suggestions:</a></li><li><a href="#undefined">Suggestions:</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#undefined">Suggestions:</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
@@ -162,7 +162,10 @@
 <li><strong><code>role=&quot;status&quot;</code>:</strong> When suggestions become available, screen reader users should be informed — and without stealing their focus. A live region is populated with text following the template <em>&quot;We have [n] suggestions for you&lt;span class=&quot;gef-sr&quot;&gt;, please find them below&lt;/span&gt;:&quot;</em>. The <em>&quot;please find them below&quot;</em> portion is only helpful non-visually, so is visually hidden using the <code>.gef-sr</code> class. The <code>aria-live=&quot;polite&quot;</code> attribution is equivalent to <code>role=&quot;status&quot;</code>. Some browsers only support one of the two, so this maximizes compatibility.</li>
 <li><strong><code>.gef-search-suggestions-links</code>:</strong> A function provided by the developer would be used to populate lists of suggestions (see the <a href="#reference-implementation"><strong>Reference implementations</strong></a>)</li>
 </ul>
-<h2 id="recommended-layout">Recommended layout</h2>
+
+            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-an-unconventional-pattern">
+              <h4 id="aside-alert-an-unconventional-pattern" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>An unconventional pattern</h4><div><p>The pattern described here is intended to best reflect <a href="https://www.bbc.co.uk/gel/guidelines/local-search">the GEL documentation for search</a>. Simpler auto-suggest patterns, such as those using the native <code>&lt;datalist&gt;</code> element<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>, or <code>listbox</code> ARIA are not flexible enough to accommodate the structured content permissable in the <code>.gef-search-suggestions-links</code> container.</p>
+</aside><h2 id="recommended-layout">Recommended layout</h2>
 <p>The search region itself uses Flexbox to bring its items inline. The input is allowed to grow and shrink, helping the component support a range of viewport widths.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gef-search-controls</span> {
   <span class="hljs-attribute">display</span>: flex;
@@ -209,6 +212,7 @@ buildFunction(<span class="hljs-keyword">this</span>);
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
               <h4 id="aside-alert-important" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+<p>The search script's constructor takes a <code>buildFunction</code> parameter. In <a href="../demos/local-search/">the demonstration</a>, this function just uses some fake data to create suggestions based on the first letter typed by the user. It is anticipated that a <em>real</em> suggestions function would be more complex, and use live data. The reference implementation just demonstrates the recommended UI behaviour.</p>
 </aside><h3 id="local-search">Local search</h3>
 
           <div class="gefdocs-demo"><!-- 
@@ -298,185 +302,8 @@ title: Local search
         
           <p><a class="gef-cta gel-long-primer-bold" href="../demos/local-search/" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
         <h3 id="global-search">Global search</h3>
+<p>The global search implementation uses the <a href="../masthead"><strong>Masthead</strong></a> component, and must be opened in a new window.</p>
 
-          <div class="gefdocs-demo"><!-- 
-title: Global search
- -->
-
-<nav class="gef-masthead" aria-labelledby="gef-masthead__label">
-  <span id="gef-masthead__label" hidden>BBC sites</span>
-  <div class="gef-masthead__bar">
-    <div class="gef-masthead__logo">
-      <a href="https://bbc.co.uk">
-        <span class="gef-sr">BBC homepage</span>
-        <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
-          <use xlink:href="/gef-docs/static/images/bbc-logo.svg#bbc-logo"></use>
-        </svg>
-      </a>
-    </div>
-    <div class="gef-masthead__account-option">
-      <a href="https://account.bbc.com/account">
-        <span class="gef-sr">Your account,</span>
-        <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
-          <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-sign-in"></use>
-        </svg>
-        <span class="gef-masthead__account-text">User</span>
-      </a>
-    </div>
-    <div class="gef-masthead__alerts-option">
-      <a href="#gef-masthead__alerts">
-        <span class="gef-sr">Notifications</span>
-        <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
-          <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-alerts"></use>
-        </svg>
-      </a>
-    </div>
-    <div class="gef-masthead__links">
-      <span id="sites-label" hidden>BBC sites</span>
-      <ul aria-labelledby="sites-label">
-        <li><a href="https://www.bbc.co.uk/news">News</a></li>
-        <li><a href="https://www.bbc.co.uk/sport">Sport</a></li>
-        <li><a href="https://www.bbc.co.uk/weather">Weather</a></li>
-        <li><a href="https://www.bbc.co.uk/iplayer">iPlayer</a></li>
-        <li><a href="https://www.bbc.co.uk/sounds">Sounds</a></li>
-        <li><a href="https://www.bbc.co.uk/cbbc">CBBC</a></li>
-      </ul>
-    </div>
-    <div class="gef-masthead__more-option">
-      <a href="#gef-masthead__more">
-        <span class="gef-sr">More</span>
-        <span class="gef-masthead__more-option-text" aria-hidden="true">
-          More
-          <span aria-hidden="true">▾</span>
-        </span>
-        <svg class="gef-masthead__more-option-icon gel-icon gel-icon--text" aria-hidden="true" focusable="false">
-          <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-list"></use>
-        </svg>
-      </a>
-    </div>
-    <div class="gef-masthead__search-option" role="search">
-      <button aria-haspopup="true">
-        <span>Search</span>
-        <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
-          <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-search"></use>
-        </svg>
-      </button>
-    </div>
-  </div>
-  <div id="gef-masthead__more" class="gef-masthead__more-menu gef-masthead__popup">
-    <div class="gef-masthead__more-menu-inner">
-      <h2 aria-hidden="true" class="gef-masthead__more-menu-label no-toc">MORE</h2>
-      <ul>
-        <li><a href="https://www.bbc.co.uk/news">News</a></li>
-        <li><a href="https://www.bbc.co.uk/sport">Sport</a></li>
-        <li><a href="https://www.bbc.co.uk/weather">Weather</a></li>
-        <li><a href="https://www.bbc.co.uk/iplayer">iPlayer</a></li>
-        <li><a href="https://www.bbc.co.uk/sounds">Sounds</a></li>
-        <li><a href="https://www.bbc.co.uk/cbbc">CBBC</a></li>
-        <li class="gel-masthead-more-account-link">
-          <a href="https://account.bbc.com/account">
-            <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
-              <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-sign-in"></use>
-            </svg>
-            Your account
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div id="gef-masthead__alerts" class="gef-masthead__alerts gef-masthead__popup">
-    <h2 class="no-toc">Notifications</h2>
-    <p>No notifications right now. We'll let you know when something from your favourite programmes, artists and
-      playlists is available for you.</p>
-    <p>If your notifications are turned off, you can always turn them back on. Just go to settings.</p>
-  </div>
-  <div class="gef-masthead__banner">
-    <a href="/" class="gef-masthead__banner-logo">
-      <span class="gef-sr">
-        BBC gef homepage
-      </span>
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 478.2 165.8">
-        <use xlink:href="/gef-docs/static/images/gef-logo.svg#gef-logo"></use>
-      </svg>
-    </a>
-  </div>
-</nav>
-<div class="gef-search gef-global-search" role="search">
-  <form class="gef-search__controls" method="get" action="https://search.bbc.co.uk/search">
-    <label for="search" hidden>Search the BBC</label>
-    <input type="text" id="search" name="search" autocomplete="off" />
-    <button type="submit">
-      <span class="gef-sr">Search</span>
-      <svg class="gel-icon gel-icon--text" focusable="false">
-        <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-search"></use>
-      </svg>
-    </button>
-    <button type="button" class="gef-search__close">
-      <span class="gef-sr">Close</span>
-      <svg class="gel-icon gel-icon--text" focusable="false">
-        <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-no"></use>
-      </svg>
-    </button>
-  </form>
-  <aside class="gef-search__suggestions" aria-label="Search suggestions" aria-hidden="true" hidden>
-    <h2 class="gef-search__suggestions-label" role="status" aria-live="polite">Suggestions:</h2>
-    <div class="gef-search__suggestions-links"></div>
-  </aside>
-</div>
-
-<script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function (event) {
-    window.gef && gef.Masthead.init();
-
-    var mastheadElem = document.querySelector('.gef-masthead');
-    var masthead = new gef.Masthead.constructor(mastheadElem);
-
-    var globalSearchElem = document.querySelector('.gef-global-search');
-
-    // Dummy suggestions data
-    var globalData = {
-      a: [
-        'Aenean',
-        'Arcu',
-        'Aliquam'
-      ],
-      b: [
-        'Blandit',
-        'Bibendum'
-      ],
-      c: [
-        'Curae',
-        'Curabitur',
-        'Congue',
-        'Cras'
-      ],
-      d: [
-        'Dignissim',
-        'Dictum'
-      ]
-    }
-
-    // Toggle the search region's visibility
-    var openButton = document.querySelector('.gef-masthead__search-option button');
-    gef.Search.toggle(openButton, globalSearchElem);
-
-    // A placeholder function for building the 
-    // suggestions HTML
-    var globalBuildFunction = function (context) {
-      var letter = context.input.value.charAt(0);
-      var hasSuggestions = context.data.hasOwnProperty(letter);
-      if (hasSuggestions) {
-        var listItems = context.data[letter].map(function (l) {
-          return '<li><a href="#">' + l + '</a></li>';
-        }).join('');
-        context.suggestionsLinks.innerHTML = '<ul>' + listItems + '</ul>';
-      }
-    }
-
-    var globalSearch = new gef.Search.constructor(globalSearchElem, globalData, globalBuildFunction);
-  });
-</script></div>
-        
           <p><a class="gef-cta gel-long-primer-bold" href="../demos/global-search/" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
         <h2 id="related-research">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
@@ -487,6 +314,8 @@ title: Global search
 <li id="fn1" class="footnote-item"><p>Where To Put Your Search Role — Adrian Roselli, <a href="http://adrianroselli.com/2015/08/where-to-put-your-search-role.html">http://adrianroselli.com/2015/08/where-to-put-your-search-role.html</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
 <li id="fn2" class="footnote-item"><p>Why it's important to give your HTML button a type — <a href="http://dev.to">dev.to</a> (Claire Parker), <a href="https://dev.to/claireparkerjones/why-its-important-to-give-your-html-button-a-type-58k9">https://dev.to/claireparkerjones/why-its-important-to-give-your-html-button-a-type-58k9</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><code>&lt;datalist&gt;</code> — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>

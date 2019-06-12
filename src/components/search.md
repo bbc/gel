@@ -73,6 +73,10 @@ Where available, typing into the search input populates a region below the searc
 * **`role="status"`:** When suggestions become available, screen reader users should be informed — and without stealing their focus. A live region is populated with text following the template _"We have \[n\] suggestions for you&lt;span class="gef-sr">, please find them below&lt;/span>:"_. The _"please find them below"_ portion is only helpful non-visually, so is visually hidden using the `.gef-sr` class. The `aria-live="polite"` attribution is equivalent to `role="status"`. Some browsers only support one of the two, so this maximizes compatibility.
 * **`.gef-search-suggestions-links`:** A function provided by the developer would be used to populate lists of suggestions (see the [**Reference implementations**](#reference-implementation))
 
+::: alert An unconventional pattern
+The pattern described here is intended to best reflect [the GEL documentation for search](https://www.bbc.co.uk/gel/guidelines/local-search). Simpler auto-suggest patterns, such as those using the native `<datalist>` element[^4], or `listbox` ARIA are not flexible enough to accommodate the structured content permissable in the `.gef-search-suggestions-links` container.
+:::
+
 ## Recommended layout
 
 The search region itself uses Flexbox to bring its items inline. The input is allowed to grow and shrink, helping the component support a range of viewport widths.
@@ -134,6 +138,8 @@ this.showSuggestions();
 
 ::: alert Important
 Reference implementations are intended to demonstrate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
+
+The search script's constructor takes a `buildFunction` parameter. In [the demonstration](../demos/local-search/), this function just uses some fake data to create suggestions based on the first letter typed by the user. It is anticipated that a _real_ suggestions function would be more complex, and use live data. The reference implementation just demonstrates the recommended UI behaviour.
 :::
 
 ### Local search
@@ -157,3 +163,4 @@ This topic does not yet have any related research available.
 [^1]: Where To Put Your Search Role — Adrian Roselli, <http://adrianroselli.com/2015/08/where-to-put-your-search-role.html>
 [^2]: When To Use An ARIA Role — Paciello Group blog, <https://developer.paciellogroup.com/blog/2012/06/html5-accessibility-chops-when-to-use-an-aria-role/>
 [^3]: Why it's important to give your HTML button a type — dev.to (Claire Parker), <https://dev.to/claireparkerjones/why-its-important-to-give-your-html-button-a-type-58k9>
+[^4]: `<datalist>` — MDN, <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist>
