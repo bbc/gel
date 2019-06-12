@@ -118,7 +118,7 @@ This will mean screen reader users can reach the table via either table or headi
 Importantly, the grid structure of data tables must remain intact no matter the available space. That is, elements must not wrap or otherwise change position since they will become labeled incorrectly. For tables with many columns this may precipitate horizontal scrolling. It is recommended a container element with `overflow-x: auto` is used to contain the horizontal scroll behavior.
 
 ```css
-.gef-table-container {
+.gef-table {
   overflow-x: auto;
 }
 ```
@@ -126,7 +126,7 @@ Importantly, the grid structure of data tables must remain intact no matter the 
 To make this element scrollable by keyboard, it must first be focusable. This requires the `tabindex="0"` attribution. For screen reader users, this newly interactive element will need a label. It's recommended the element takes the `group` role and is associated with the `<caption>` for the labeling.
 
 ```html
-<div class="gef-table-container" role="group" aria-labelledby="caption" tabindex="0">
+<div class="gef-table" role="group" aria-labelledby="caption" tabindex="0">
   <table>
     <caption id="caption">
       <h2>Example table</h2>
@@ -149,7 +149,7 @@ Currently, only the bisection of a column indicates an an overflow, and the abil
 A set of `linear-gradient`s with differing `background-attachment` values are employed to achieve this effect:
 
 ```css
-.gef-table-container {
+.gef-table {
   overflow-x: auto;
   background-color: #fff;
   background-image: 
@@ -170,7 +170,7 @@ Where there are numerous rows, it's possible to scroll past the headers, making 
 This is now possible in CSS, with the `position: sticky` declaration. However, containers with an explicit `overflow` such as that applied in the last section, will forego the `position: sticky` behavior. The following is therefore provided as an enhancement for tables not producing an overflow. 
 
 ```css
-.gef-table-container th {
+.gef-table th {
   position: sticky;
   top: 0;
 }
@@ -205,7 +205,7 @@ Where `ResizeObserver` (or JavaScript) is not available, the table container act
 In addition, sorting functionality is provided where the [**Reference implementation**](#reference-implementation) constructor's second argument is set to `true`.
 
 ```js
-var tableContainer = document.querySelector('.gef-table-container');
+var tableContainer = document.querySelector('.gef-table');
 var table = new gef.Table.constructor(tableContainer, true);
 ```
 
@@ -233,9 +233,9 @@ Sorting is based on the _text_ content of cells, meaning any HTML can be used wi
 Reference implementations are intended to demonstrate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
 :::
 
-<include src="components/demos/tables.html">
+<include src="components/demos/data-table.html">
 
-<cta label="Open in new window" href="../demos/tables/">
+<cta label="Open in new window" href="../demos/data-table/">
 
 ## Related research
 

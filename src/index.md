@@ -135,7 +135,6 @@ We are working our way through a list based closely on what's already published 
 | [Carousels]({{site.basedir}}components/carousels/) | Draft / Pending|
 | [External links]({{site.basedir}}components/external-links/) | Draft / Pending|
 | [Metadata strips]({{site.basedir}}components/metadata-strips/) | Draft / Pending|
-| [Headings]({{site.basedir}}components/headings/) | Draft / Pending|
 | [Promos]({{site.basedir}}components/promos/) | Draft / Pending|
 | [Tabs]({{site.basedir}}components/tabs/) | Draft / Pending|
 | [Form fields and validation]({{site.basedir}}components/form-fields/) | Draft / Pending|
@@ -145,6 +144,8 @@ We are working our way through a list based closely on what's already published 
 | [Information Panel]({{site.basedir}}components/info-panels/) | Draft / Pending|
 | [Share Tools]({{site.basedir}}components/share-tools/) | Draft / Pending|
 | [Site Menu]({{site.basedir}}components/site-menu/) | Draft / Pending|
+| [Data tables]({{site.basedir}}components/data-tables/) | Draft / Pending|
+| [Infographics]({{site.basedir}}components/infographics/) | Draft / Pending|
 
 ## Questions?
 

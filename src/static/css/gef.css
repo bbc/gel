@@ -821,46 +821,46 @@ input[type=range]::-ms-thumb {
     width: 100%;
     margin: 7px 0; } }
 
-.gef-table-container {
+.gef-table {
   overflow-x: auto;
   background-color: #fff;
   background-image: linear-gradient(90deg, #fff 0%, transparent 3rem), linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, transparent 1rem), linear-gradient(270deg, #fff 0%, transparent 3rem), linear-gradient(270deg, rgba(0, 0, 0, 0.2) 0%, transparent 1rem);
   background-attachment: local, scroll;
   border: 1px solid #ccc; }
 
-.gef-table-container:focus {
+.gef-table:focus {
   outline: 2px solid #404040; }
 
-.gef-table-container tbody tr:nth-child(even) {
+.gef-table tbody tr:nth-child(even) {
   background-color: rgba(0, 0, 0, 0.02); }
 
-.gef-table-container table {
+.gef-table table {
   width: 100%;
   border-collapse: collapse;
   overflow-x: auto; }
 
-.gef-table-container caption {
+.gef-table caption {
   text-align: left;
   font-weight: bold;
   border: 1px solid #ccc;
   border-bottom: 0;
   padding: 0.5rem; }
 
-.gef-table-container th,
-.gef-table-container td {
+.gef-table th,
+.gef-table td {
   padding: 0.5rem;
   text-align: left;
   border: 1px solid #ccc; }
 
-.gef-table-container th {
+.gef-table th {
   font-weight: bold; }
 
-.gef-table-container thead.sticky th {
+.gef-table thead.sticky th {
   position: sticky;
   top: 0;
   background-color: #fff; }
 
-.gef-table-container th:after {
+.gef-table th:after {
   content: '';
   position: absolute;
   bottom: -1px;
@@ -868,11 +868,11 @@ input[type=range]::-ms-thumb {
   right: 0;
   border-top: 1px solid #ccc; }
 
-.gef-table-sort {
+.gef-table__sort {
   all: unset;
   cursor: pointer; }
 
-.gef-table-sort:focus {
+.gef-table__sort:focus {
   outline: 2px solid #404040; }
 
 .gef-button, .gef-cta {

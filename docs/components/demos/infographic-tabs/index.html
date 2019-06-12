@@ -204,8 +204,7 @@
       </figure>
     </section>
     <section id="section2" tabindex="-1">
-      <div class="gef-table-container infographic-table" class="gef-table-container" role="group"
-        aria-labelledby="caption" tabindex="0">
+      <div class="gef-table infographic-table" class="gef-table" role="group" aria-labelledby="caption" tabindex="0">
         <table>
           <caption id="caption">Cell culture morphology over time</caption>
           <thead>
@@ -273,7 +272,7 @@
     var infographicTabs = new gef.Tabs.constructor(infographicTabsElem);
 
     var infographicTableElem = document.querySelector('.infographic-table');
-    var infographicTable = new gef.Table.constructor(infographicTableElem);
+    var infographicTable = new gef.DataTable.constructor(infographicTableElem);
   });
 </script>
             </div>

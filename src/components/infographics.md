@@ -97,7 +97,7 @@ Consider the following infographic, which charts cellular growth, but categorize
 
 The source data can be presented in tabular form, using a [table component]({{site.basedir}}components/tables):
 
-<div class="gef-table-container table-example" class="gef-table-container" role="group" aria-labelledby="caption" tabindex="0">
+<div class="gef-table table-example" role="group" aria-labelledby="caption" tabindex="0">
   <table>
     <caption id="caption">Cell culture morphology over time</caption>
     <thead>
@@ -159,7 +159,7 @@ The source data can be presented in tabular form, using a [table component]({{si
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     var tableContainer = document.querySelector('.table-example');
-    var table = new gef.Table.constructor(tableContainer);
+    var table = new gef.DataTable.constructor(tableContainer);
   });
 </script>
 
