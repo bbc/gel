@@ -122,7 +122,7 @@
 <p>The following example is for a global search region. It would be revealed by pressing a button in the page's <a href="../masthead"><strong>Masthead</strong></a>, and includes a close button to dismiss it again. SVG data is elided. There are notes to follow.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-search-controls"</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"get"</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"https://search.bbc.co.uk/search"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"search"</span> <span class="hljs-attr">hidden</span>&gt;</span>Search the BBC<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"search"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"search"</span> <span class="hljs-attr">autocomplete</span>=<span class="hljs-string">"off"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"search"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"search"</span> /&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sr"</span>&gt;</span>Search<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span>&gt;</span>
@@ -164,7 +164,7 @@
 </ul>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-an-unconventional-pattern">
-              <h4 id="aside-alert-an-unconventional-pattern" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>An unconventional pattern</h4><div><p>The pattern described here is intended to best reflect <a href="https://www.bbc.co.uk/gel/guidelines/local-search">the GEL documentation for search</a>. Simpler auto-suggest patterns, such as those using the native <code>&lt;datalist&gt;</code> element<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>, or <code>listbox</code> ARIA are not flexible enough to accommodate the structured content permissable in the <code>.gef-search-suggestions-links</code> container.</p>
+              <h4 id="aside-alert-an-unconventional-pattern" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>An unconventional pattern</h4><div><p>The pattern described here is intended to best reflect <a href="https://www.bbc.co.uk/gel/guidelines/local-search">the GEL documentation for search</a>. Simpler auto-suggest patterns, such as those using the native <code>&lt;datalist&gt;</code> element<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>, or combobox ARIA<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> are not flexible enough to accommodate the structured content permissable in the <code>.gef-search-suggestions-links</code> container.</p>
 </aside><h2 id="recommended-layout">Recommended layout</h2>
 <p>The search region itself uses Flexbox to bring its items inline. The input is allowed to grow and shrink, helping the component support a range of viewport widths.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gef-search-controls</span> {
@@ -241,7 +241,7 @@ title: Local search
       <label for="search">
         <span class="gef-sr">Search this site</span>
       </label>
-      <input type="text" id="search" name="search" autocomplete="off" />
+      <input type="text" id="search" name="search" />
       <button type="submit">
         <span class="gef-sr">Search</span>
         <svg class="gel-icon gel-icon--text" focusable="false">
@@ -316,6 +316,8 @@ title: Local search
 <li id="fn2" class="footnote-item"><p>Why it's important to give your HTML button a type — <a href="http://dev.to">dev.to</a> (Claire Parker), <a href="https://dev.to/claireparkerjones/why-its-important-to-give-your-html-button-a-type-58k9">https://dev.to/claireparkerjones/why-its-important-to-give-your-html-button-a-type-58k9</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
 <li id="fn3" class="footnote-item"><p><code>&lt;datalist&gt;</code> — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>Combobox - ARIA Authoring Practices, <a href="https://www.w3.org/TR/wai-aria-practices/#combobox">https://www.w3.org/TR/wai-aria-practices/#combobox</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
