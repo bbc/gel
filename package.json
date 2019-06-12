@@ -47,7 +47,7 @@
     "uglify-js": "^3.5.4"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.26.7",
     "gulp": "^4.0.0"
   }
 }
