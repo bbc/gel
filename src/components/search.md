@@ -1,6 +1,6 @@
 ---
 title: Search
-summary: Share tools offer unobtrusive options to share BBC content on social media
+summary: The global and local search components each include 
 version: 0.1.0
 published: false
 linkback: https://www.bbc.co.uk/gel/guidelines/local-search
@@ -8,9 +8,13 @@ linkback: https://www.bbc.co.uk/gel/guidelines/local-search
 
 ## Introduction
 
+GEL documents [global](https://www.bbc.co.uk/gel/guidelines/global-search) and [local](https://www.bbc.co.uk/gel/guidelines/local-search) search separately. However, for the sake of consistency, each _mode_ of search is implemented as a similar visual, semantic, and interactive pattern.
+
+This Page does not document search results or filtering. Choosing a suggestion based on a search term takes the user directly to the suggested permalink, whereas pressing the submit button will take the user to the [www.bbc.co.uk/search](https://www.bbc.co.uk/search) page to browse and filter results.
+
 ## Recommended markup
 
-Whether local or global, the search must be marked up as a `role="search"` landmark, making it available to screen reader shortcuts. The `role="search"` attribution must not be placed on the form, but instead on a wrapping element[^1]. ARIA roles suppress implicit roles, and remove their associated behaviors. Screen readers should still be able to identify the form as a form.
+Whether local or global, the search component must be marked up as a `role="search"` landmark, making it available to screen reader shortcuts. The `role="search"` attribution must not be placed on the form, but instead on a wrapping element[^1]. ARIA roles suppress implicit roles, and remove their associated behaviors. Screen readers should still be able to identify the form as a form.
 
 ```html
 <div class="gef-search" role="search">
@@ -20,11 +24,11 @@ Whether local or global, the search must be marked up as a `role="search"` landm
 </div>
 ```
 
-The search region is composed of two main parts: the search controls (`class="gef-search-controls"`), and the search suggestions (`class="gef-search-suggestions"`).
+The search component is composed of two main parts: the search controls (`class="gef-search-controls"`), and the associated search suggestions (`class="gef-search-suggestions"`).
 
 ### Search controls
 
-The following example is for a global search region. It would be revealed by pressing a button in the page's [**Masthead**](../masthead), and includes a close button to dismiss it again. SVG data is elided. There are notes to follow.
+The following example is for a global search region. It would be revealed by pressing the search button in the page's [**Masthead**](../masthead), and includes a close button to dismiss it again. SVG data is elided. There are notes to follow.
 
 ```html
 <form class="gef-search-controls" method="get" action="https://search.bbc.co.uk/search">
@@ -47,13 +51,13 @@ The following example is for a global search region. It would be revealed by pre
 
 * **"Search the BBC":** Because this is a global search region, the label for the search input simply reads _"Search the BBC"_. This text is `hidden` but associated with the input, and available to screen readers, by making the `<label>`'s `for` attribute and the input's `id` share a value.
 * **Buttons:** Each button uses the native button element. The close button takes `type="button"` to differentiate it from a submit button and prevent it from erroneously submitting the form[^3].
-* **SVG:** Each SVG must take `focusable="false"` and `aria-hidden="true"` to ensure it is unavailable to assistive technologies and not focusable by keyboard
+* **SVG:** Each SVG must take `focusable="false"` and `aria-hidden="true"` to ensure it is unavailable to assistive technologies and not focusable by keyboard.
 
 A local search region differs in three ways:
 
-* A logo is included for branding purposes
-* The input label reads _"Search BBC [site name]"_ (a non-visual equivalent of the logo)
-* The close button is omitted, since local search is a permanent fixture, placed under the masthead
+* A logo is included for branding purposes.
+* The input label reads _"Search BBC [site name]"_ (a non-visual equivalent of the logo).
+* The close button is omitted, since local search is a permanent fixture placed under the masthead.
 
 See the [local search reference implementation](../demos/local-search).
 
@@ -70,11 +74,23 @@ Where available, typing into the search input populates a region below the searc
 
 * **`&lt;aside>`:** The suggestions region is provided as a complementary landmark. This makes it easy to locate using screen reader software (while it is available) and allows for the descriptive label: _"Search suggestions"_. When a screen reader user enters the region and focuses a suggestion link they will hear something similar to, _"search suggestions, complementary region, list of 5 items, first item, [item text], link"_ (where 5 suggestions are available and presented in a list — which is recommended).
 * **`aria-hidden="true"` and `hidden`:** In the initial state, the region is not visible, on account of having zero height and `overflow: hidden` (see the [**Recommended layout**](#recommended-layout) section. To achieve parity for screen reader users, `aria-hidden="true"` 'hides' the region from their software. The `hidden` property hides the region unless JavaScript (upon which it depends) runs and can remove it.
-* **`role="status"`:** When suggestions become available, screen reader users should be informed — and without stealing their focus. A live region is populated with text following the template _"We have \[n\] suggestions for you&lt;span class="gef-sr">, please find them below&lt;/span>:"_. The _"please find them below"_ portion is only helpful non-visually, so is visually hidden using the `.gef-sr` class. The `aria-live="polite"` attribution is equivalent to `role="status"`. Some browsers only support one of the two, so this maximizes compatibility.
+* **`role="status"`:** When suggestions become available, screen reader users should be informed — and without stealing their focus. A live region is populated with text following the template _"We have \[n\] suggestions for you&lt;span class="gef-sr">, please find them below&lt;/span>:"_. The _"please find them below"_ portion is only helpful non-visually, so is visually hidden using the `.gef-sr` class. The `aria-live="polite"` attribution is equivalent to `role="status"`. Some browsers only support one of the two attributes, so this maximizes compatibility.
 * **`.gef-search-suggestions-links`:** A function provided by the developer would be used to populate lists of suggestions (see the [**Reference implementations**](#reference-implementation))
 
-::: alert An unconventional pattern
+::: alert Suggestions structure
 The pattern described here is intended to best reflect [the GEL documentation for search](https://www.bbc.co.uk/gel/guidelines/local-search). Simpler auto-suggest patterns, such as those using the native `<datalist>` element[^4], or combobox ARIA[^5] are not flexible enough to accommodate the structured content permissable in the `.gef-search-suggestions-links` container.
+
+Suggestions should be grouped into lists of links. Where there are different varieties of suggestions, each group should be introduced by a heading of the appropriate level. Given that the live region is based on an `<h2>` in the example, `<h3>` headings should label (generic) _"Suggestions"_ and _"Latest results"_:
+
+```html
+<aside class="gef-search-suggestions" aria-label="Search suggestions" aria-hidden="true" hidden>
+  <h2 class="gef-search-suggestions-label" role="status" aria-live="polite"></h2>
+  <h3>Suggestions</h3>
+  <!-- unordered list of links -->
+  <h3>Latest results</h3>
+  <!-- unordered list of links -->
+</aside>
+```
 :::
 
 ## Recommended layout
@@ -110,10 +126,10 @@ Strong—not just default—focus styles are recommended. In the [**Reference im
 Here is the basic workflow for using search, with actions/behaviours specific to global search marked as such:
 
 1. Click the search button in the [**Masthead**](../masthead) → the search region is revealed and the search input is focused. (_global search only_)
-2. Type inside the search field → If suggestions are available, they populate the suggestions region, and it is revealed. For screen reader users, the presence of suggestions (and the number available) is announced.
+2. Type inside the search field → If suggestions are available, they populate the suggestions region, and it is revealed. For screen reader users, the presence of suggestions (and the number available) is announced via the live region.
 3. Click on the submit button → The user is taken to the search page (https://search.bbc.co.uk/search)
 4. Click on a suggestion → The user is taken to that suggestion's permalink
-5. Click on the close ('X') button → the search region is hidden and the Masthead's search button is regains keyboard focus (_global search only_)
+5. Click on the close ('X') button → the search region is hidden and the Masthead's search button regains keyboard focus (_global search only_)
 
 ### Animating the suggestions region
 
@@ -139,7 +155,7 @@ this.showSuggestions();
 ::: alert Important
 Reference implementations are intended to demonstrate **what needs to be achieved**, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.
 
-The search script's constructor takes a `buildFunction` parameter. In [the demonstration](../demos/local-search/), this function just uses some fake data to create suggestions based on the first letter typed by the user. It is anticipated that a _real_ suggestions function would be more complex, and use live data. The reference implementation just demonstrates the recommended UI behaviour.
+The search script's constructor takes a `buildFunction` parameter. In [the demonstration](../demos/local-search/), this function just takes some example data to create suggestions based on the first letter typed by the user. It is anticipated that a _real_ suggestions function would be more complex, and use live data. The reference implementation just demonstrates the recommended UI behaviour.
 :::
 
 ### Local search
