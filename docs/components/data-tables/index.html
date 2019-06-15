@@ -206,7 +206,7 @@
   <span class="hljs-attribute">overflow-x</span>: auto;
 }
 </code></pre>
-<p>To make this element scrollable by keyboard, it must first be focusable. This requires the <code>tabindex=&quot;0&quot;</code> attribution. For screen reader users, this newly interactive element will need a label. It's recommended the element takes the <code>group</code> role and is associated with the <code>&lt;caption&gt;</code> for the labeling.</p>
+<p>To make this element scrollable by keyboard, it must first be focusable. This requires the <code>tabindex=&quot;0&quot;</code> attribution. For screen reader users, this newly interactive element will need a label. It's recommended the element takes the <code>group</code> role and is associated with the <code>&lt;caption&gt;</code> for the labelling.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-table"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"caption"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">caption</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"caption"</span>&gt;</span>
@@ -603,6 +603,10 @@ title: Data table
     <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
 
     
+
+    <script type="text/javascript">
+        new Sticky('.sticky');
+    </script>
 </body>
 
 </html>

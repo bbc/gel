@@ -463,7 +463,7 @@
           entry.target.tabIndex = noScroll ? -1 : 0;
           // Instate sticky headers for non-scrolling table
           entry.target.style.overflowX = noScroll ? 'visible' : 'auto';
-          this.thead.classList.toggle('sticky', noScroll);
+          this.thead.classList.toggle('gef-table__sticky', noScroll);
         }
       });
 

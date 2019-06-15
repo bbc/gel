@@ -165,6 +165,10 @@
     {% if includejs %}
     <script type="text/javascript" src="{{site.basedir}}static/js/{{ includejs }}"></script>
     {% endif %}
+
+    <script type="text/javascript">
+        new Sticky('.sticky');
+    </script>
 </body>
 
 </html>

@@ -123,7 +123,7 @@ Importantly, the grid structure of data tables must remain intact no matter the 
 }
 ```
 
-To make this element scrollable by keyboard, it must first be focusable. This requires the `tabindex="0"` attribution. For screen reader users, this newly interactive element will need a label. It's recommended the element takes the `group` role and is associated with the `<caption>` for the labeling.
+To make this element scrollable by keyboard, it must first be focusable. This requires the `tabindex="0"` attribution. For screen reader users, this newly interactive element will need a label. It's recommended the element takes the `group` role and is associated with the `<caption>` for the labelling.
 
 ```html
 <div class="gef-table" role="group" aria-labelledby="caption" tabindex="0">

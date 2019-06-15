@@ -855,7 +855,7 @@ input[type=range]::-ms-thumb {
 .gef-table th {
   font-weight: bold; }
 
-.gef-table thead.sticky th {
+.gef-table thead.gef-table__sticky th {
   position: sticky;
   top: 0;
   background-color: #fff; }
