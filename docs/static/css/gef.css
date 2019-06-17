@@ -860,7 +860,10 @@ input[type=range]::-ms-thumb {
   top: 0;
   background-color: #fff; }
 
-.gef-table th:after {
+.gef-table thead th {
+  position: relative; }
+
+.gef-table thead th:after {
   content: '';
   position: absolute;
   bottom: -1px;
