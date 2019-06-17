@@ -58,6 +58,7 @@ A local search region differs in three ways:
 * A logo is included for branding purposes.
 * The input label reads _"Search BBC [site name]"_ (a non-visual equivalent of the logo).
 * The close button is omitted, since local search is a permanent fixture placed under the masthead.
+* A `placeholder` may be included, but not as a replacement for the `<label>` which must remain intact. As [GEL's local search documentation](https://www.bbc.co.uk/gel/guidelines/local-search) recommends, the placeholder should contain search suggestions, for example _"enter a town, city, or postcode"_
 
 See the [local search reference implementation](../demos/local-search).
 
@@ -72,7 +73,7 @@ Where available, typing into the search input populates a region below the searc
 </aside>
 ```
 
-* **`&lt;aside>`:** The suggestions region is provided as a complementary landmark. This makes it easy to locate using screen reader software (while it is available) and allows for the descriptive label: _"Search suggestions"_. When a screen reader user enters the region and focuses a suggestion link they will hear something similar to, _"search suggestions, complementary region, list of 5 items, first item, [item text], link"_ (where 5 suggestions are available and presented in a list — which is recommended).
+* **`<aside>`:** The suggestions region is provided as a complementary landmark. This makes it easy to locate using screen reader software (while it is available) and allows for the descriptive label: _"Search suggestions"_. When a screen reader user enters the region and focuses a suggestion link they will hear something similar to, _"search suggestions, complementary region, list of 5 items, first item, [item text], link"_ (where 5 suggestions are available and presented in a list — which is recommended).
 * **`aria-hidden="true"` and `hidden`:** In the initial state, the region is not visible, on account of having zero height and `overflow: hidden` (see the [**Recommended layout**](#recommended-layout) section. To achieve parity for screen reader users, `aria-hidden="true"` 'hides' the region from their software. The `hidden` property hides the region unless JavaScript (upon which it depends) runs and can remove it.
 * **`role="status"`:** When suggestions become available, screen reader users should be informed — and without stealing their focus. A live region is populated with text following the template _"We have \[n\] suggestions for you&lt;span class="gef-sr">, please find them below&lt;/span>:"_. The _"please find them below"_ portion is only helpful non-visually, so is visually hidden using the `.gef-sr` class. The `aria-live="polite"` attribution is equivalent to `role="status"`. Some browsers only support one of the two attributes, so this maximizes compatibility.
 * **`.gef-search-suggestions-links`:** A function provided by the developer would be used to populate lists of suggestions (see the [**Reference implementations**](#reference-implementation))
