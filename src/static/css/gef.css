@@ -821,6 +821,63 @@ input[type=range]::-ms-thumb {
     width: 100%;
     margin: 7px 0; } }
 
+.gef-table {
+  overflow-x: auto;
+  background-color: #fff;
+  background-image: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0) 3rem), linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, transparent 1rem), linear-gradient(270deg, white 0%, rgba(255, 255, 255, 0) 3rem), linear-gradient(270deg, rgba(0, 0, 0, 0.2) 0%, transparent 1rem);
+  background-attachment: local, scroll, local, scroll;
+  border: 1px solid #ccc; }
+
+.gef-table:focus {
+  outline: 2px solid #404040; }
+
+.gef-table tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02); }
+
+.gef-table table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto; }
+
+.gef-table caption {
+  text-align: left;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+  padding: 0.5rem; }
+
+.gef-table th,
+.gef-table td {
+  padding: 0.5rem;
+  text-align: left;
+  border: 1px solid #ccc; }
+
+.gef-table th {
+  font-weight: bold; }
+
+.gef-table thead.gef-table__sticky th {
+  position: sticky;
+  top: 0;
+  background-color: #fff; }
+
+.gef-table thead th {
+  position: relative; }
+
+.gef-table thead th:after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #ccc; }
+
+.gef-table__sort {
+  all: unset;
+  cursor: pointer; }
+
+.gef-table__sort:focus {
+  outline: 2px solid #404040; }
+
 .gef-button, .gef-cta {
   padding: 16px;
   color: #121212;

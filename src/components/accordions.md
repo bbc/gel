@@ -2,8 +2,7 @@
 title: Accordions
 summary: The accordion consists of a number of collapsed sections, each with a button to expand that section's content
 version: 0.1.0
-published: false
-accessibility: true
+published: falseif ('customElements' in window) {
 linkback: https://www.bbc.co.uk/gel/guidelines/accordion
 ---
 

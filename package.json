@@ -26,15 +26,15 @@
   },
   "homepage": "https://github.com/bbc/code-gel#readme",
   "dependencies": {
-    "@11ty/eleventy": "^0.8.2",
+    "@11ty/eleventy": "^0.8.3",
     "cheerio": "^1.0.0-rc.3",
     "fontfaceobserver": "^2.1.0",
     "gel-grid": "^4.0.0",
     "gel-sass-tools": "^1.2.1",
     "gel-typography": "^2.0.5",
-    "highlight.js": "^9.15.6",
+    "highlight.js": "^9.15.8",
     "markdown-it": "^8.4.2",
-    "markdown-it-anchor": "^5.0.2",
+    "markdown-it-anchor": "^5.2.4",
     "markdown-it-container": "^2.0.0",
     "markdown-it-footnote": "^3.0.1",
     "markdown-it-shortcode-tag": "^1.1.0",
@@ -44,10 +44,10 @@
     "slug": "^0.9.4",
     "sticky-js": "^1.2.0",
     "sweet-scroll": "^3.0.1",
-    "uglify-js": "^3.5.4"
+    "uglify-js": "^3.6.0"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
-    "gulp": "^4.0.0"
+    "gulp": "^4.0.2"
   }
 }
