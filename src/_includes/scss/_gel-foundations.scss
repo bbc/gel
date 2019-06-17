@@ -54,6 +54,12 @@ a {
   transition: color 300ms;
 }
 
+button {
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+}
+
 *,
 *:before,
 *:after {
