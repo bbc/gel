@@ -10,7 +10,8 @@
 
     <script src="/gef-docs/static/js/site.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
     <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/gef.css">
     <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/site.css">
 
@@ -44,24 +45,27 @@
 
 <body class="gefdocs-body">
     <p class="gef-sr gef-sr__focusable gef-sr__overlay" tabindex="0">
-        <a href="#main" onfocus="this.parentNode.classList.add('gef-sr__focused')" onblur="this.parentNode.classList.remove('gef-sr__focused')">Skip
+        <a href="#main" onfocus="this.parentNode.classList.add('gef-sr__focused')"
+            onblur="this.parentNode.classList.remove('gef-sr__focused')">Skip
             to content</a>
     </p>
 
     <header>
         <div class="gefdocs-header gs-u-clearfix">
             <div class="gel-wrap">
-                <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24" viewBox="0 0 100 24">
+                <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24"
+                        viewBox="0 0 100 24">
                         <title>BBC</title>
-                        <image xlink:href="/gef-docs/static/images/bbc-blocks_grey.svg" src="/gef-docs/static/images/bbc-blocks_grey.png"
-                            width="100%" height="100%"></image>
+                        <image xlink:href="/gef-docs/static/images/bbc-blocks_grey.svg"
+                            src="/gef-docs/static/images/bbc-blocks_grey.png" width="100%" height="100%"></image>
                     </svg></a>
             </div>
         </div>
         <div class="gefdocs-header__banner gs-u-clearfix">
             <div class="gel-wrap">
                 <div class="gel-layout">
-                    <div class="gel-layout__item gel-2/5@l" style="text-align:left; padding-left:14px; margin-bottom:32px;">
+                    <div class="gel-layout__item gel-2/5@l"
+                        style="text-align:left; padding-left:14px; margin-bottom:32px;">
                         <a href="/gef-docs/" class="gefdocs-logo">GEF</a>
                     </div>
                     <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
@@ -101,7 +105,8 @@
 
         <div class="gel-layout">
             <div class="gel-layout__item gel-1/5@l">
-                <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900" style="padding-top:32px">
+                <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900"
+                    style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
                     <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#undefined">Suggestions:</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
@@ -149,6 +154,7 @@
 <li>A logo is included for branding purposes.</li>
 <li>The input label reads <em>&quot;Search BBC [site name]&quot;</em> (a non-visual equivalent of the logo).</li>
 <li>The close button is omitted, since local search is a permanent fixture placed under the masthead.</li>
+<li>A <code>placeholder</code> may be included, but not as a replacement for the <code>&lt;label&gt;</code> which must remain intact. As <a href="https://www.bbc.co.uk/gel/guidelines/local-search">GEL's local search documentation</a> recommends, the placeholder should contain search suggestions, for example <em>&quot;enter a town, city, or postcode&quot;</em></li>
 </ul>
 <p>See the <a href="../demos/local-search">local search reference implementation</a>.</p>
 <h3 id="search-suggestions">Search suggestions</h3>
@@ -159,7 +165,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
 </code></pre>
 <ul>
-<li><strong><code>&amp;lt;aside&gt;</code>:</strong> The suggestions region is provided as a complementary landmark. This makes it easy to locate using screen reader software (while it is available) and allows for the descriptive label: <em>&quot;Search suggestions&quot;</em>. When a screen reader user enters the region and focuses a suggestion link they will hear something similar to, <em>&quot;search suggestions, complementary region, list of 5 items, first item, [item text], link&quot;</em> (where 5 suggestions are available and presented in a list — which is recommended).</li>
+<li><strong><code>&lt;aside&gt;</code>:</strong> The suggestions region is provided as a complementary landmark. This makes it easy to locate using screen reader software (while it is available) and allows for the descriptive label: <em>&quot;Search suggestions&quot;</em>. When a screen reader user enters the region and focuses a suggestion link they will hear something similar to, <em>&quot;search suggestions, complementary region, list of 5 items, first item, [item text], link&quot;</em> (where 5 suggestions are available and presented in a list — which is recommended).</li>
 <li><strong><code>aria-hidden=&quot;true&quot;</code> and <code>hidden</code>:</strong> In the initial state, the region is not visible, on account of having zero height and <code>overflow: hidden</code> (see the <a href="#recommended-layout"><strong>Recommended layout</strong></a> section. To achieve parity for screen reader users, <code>aria-hidden=&quot;true&quot;</code> 'hides' the region from their software. The <code>hidden</code> property hides the region unless JavaScript (upon which it depends) runs and can remove it.</li>
 <li><strong><code>role=&quot;status&quot;</code>:</strong> When suggestions become available, screen reader users should be informed — and without stealing their focus. A live region is populated with text following the template <em>&quot;We have [n] suggestions for you&lt;span class=&quot;gef-sr&quot;&gt;, please find them below&lt;/span&gt;:&quot;</em>. The <em>&quot;please find them below&quot;</em> portion is only helpful non-visually, so is visually hidden using the <code>.gef-sr</code> class. The <code>aria-live=&quot;polite&quot;</code> attribution is equivalent to <code>role=&quot;status&quot;</code>. Some browsers only support one of the two attributes, so this maximizes compatibility.</li>
 <li><strong><code>.gef-search-suggestions-links</code>:</strong> A function provided by the developer would be used to populate lists of suggestions (see the <a href="#reference-implementation"><strong>Reference implementations</strong></a>)</li>
@@ -338,15 +344,18 @@ title: Local search
 </section>
 
 
-                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-Could-you-improve-this-documentation">
+                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding"
+                    aria-labelledby="aside-info-Could-you-improve-this-documentation">
                     <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
                         <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
-                            <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use>
+                            <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info"
+                                style="fill:#404040;"></use>
                         </svg>Could you improve this documentation?
                     </h4>
                     <div>
                         <p>
-                            If you think you could make anything you see here a bit better then become one of <a href="/gef-docs/contributors/">our
+                            If you think you could make anything you see here a bit better then become one of <a
+                                href="/gef-docs/contributors/">our
                                 lovely contributors</a>!
                         </p>
                     </div>
@@ -362,7 +371,8 @@ title: Local search
                 <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
                     <h2 class="gefdocs-feedback-banner__title">Got a minute?</h2>
                     <p>We'd love to know what you think of the Code GEL website.</p>
-                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/" class="gefdocs-button gefdocs-button__link-button gefdocs-feedback-banner__cta gefdocs-button--primary">
+                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/"
+                        class="gefdocs-button gefdocs-button__link-button gefdocs-feedback-banner__cta gefdocs-button--primary">
                         <span class="gefdocs-button__content">Go to survey</span>
                         <span class="gefdocs-button__icon_wrapper">
                             <svg class="gefdocs-button__icon gefdocs-icon gefdocs-icon--text">

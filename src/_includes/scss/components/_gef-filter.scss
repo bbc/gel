@@ -1,0 +1,29 @@
+.gef-filter__bar {
+  display: flex;
+  align-items: center;
+}
+
+.gef-filter__bar > * {
+  flex: 0 0 auto;
+}
+
+.gef-filter__list {
+  list-style: none;
+  flex-grow: 1;
+  display: flex;
+  overflow-x: auto;
+}
+
+.gef-filter__bar a,
+.gef-filter__bar button,
+.gef-filter__label {
+  text-decoration: none;
+  border: 0;
+  background: none;
+  padding: 0.5rem;
+}
+
+.gef-filter__label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
