@@ -131,6 +131,14 @@ Here is the basic workflow for using search, with actions/behaviours specific to
 4. Click on a suggestion → The user is taken to that suggestion's permalink
 5. Click on the close ('X') button → the search region is hidden and the Masthead's search button regains keyboard focus (_global search only_)
 
+### Opening global search
+
+The [**Reference implementation**](#reference-implementation) includes a `toggle` method for assigning and enhancing an element intended for opening and focusing the search component. In the [global search demo](../demos/global-search/), this element is the 'Search' link in the [**Masthead**](../masthead). 
+
+Where JavaScript does not run, this link is followed and the search page opened (in the same tab). Where JavaScript does run, the link is enhanced into a popup button (taking `role="button"` and `aria-haspopup="true"`). The `event.preventDefault()` method is applied, and the newly coined button launches the search component described in this page instead. 
+
+When the user presses the close button to the right of the search input's submit button, focus is returned to the invoking popup button, as described in (5), above.
+
 ### Animating the suggestions region
 
 The animation (sliding up and down) of the suggestions region uses JavaScript, not just CSS. This is because you cannot animate to an `auto` height, and the height of the region—including the dynamic suggestions content—cannot be known ahead of time. Instead, the `scrollHeight` of the region must be determined and that height made the 'target' for the animation end. Importantly, the function that populates the suggestions _must be executed before the animation function_. Otherwise the target height will be incorrect. 
