@@ -13,10 +13,13 @@
   self.toggle = function (button, search) {
     search.hidden = true;
     button.hidden = false;
+    button.setAttribute('role', 'button');
+    button.setAttribute('aria-haspopup', 'true');
 
     var input = search.querySelector('input');
     var closeButton = search.querySelector('.gef-search__close');
-    button.addEventListener('click', function () {
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
       search.hidden = false;
       input.focus();
     });

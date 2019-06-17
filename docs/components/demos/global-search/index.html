@@ -85,12 +85,12 @@
       </a>
     </div>
     <div class="gef-masthead__search-option" role="search">
-      <button aria-haspopup="true">
+      <a href="https://www.bbc.co.uk/search">
         <span>Search</span>
         <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
           <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-search"></use>
         </svg>
-      </button>
+      </a>
     </div>
   </div>
   <div id="gef-masthead__more" class="gef-masthead__more-menu gef-masthead__popup">
@@ -187,7 +187,7 @@
     }
 
     // Toggle the search region's visibility
-    var openButton = document.querySelector('.gef-masthead__search-option button');
+    var openButton = document.querySelector('.gef-masthead__search-option a');
     gef.Search.toggle(openButton, globalSearchElem);
 
     // A placeholder function for building the 
