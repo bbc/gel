@@ -83,6 +83,11 @@ a {
 *:after {
   box-sizing: inherit; }
 
+button {
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit; }
+
 /**
  * Utility
  */
@@ -1325,7 +1330,6 @@ input[type=range]::-ms-thumb {
   width: 100%;
   text-align: left;
   font-weight: bold;
-  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center; }
