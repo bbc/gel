@@ -8,6 +8,12 @@ accessibility: false
 
 ## Introduction
 
+BBC tables follow longstanding conventions for the structuring of tabular data. However, some enhancements are included in the following implementation. 
+
+Since _wrapping_ table cells, for the purposes of responsive design, would make a nonsense of the data structure, data tables must retain their rigid, two-dimensional arrangement. Accommodating tables with many columns therefore becomes a question of allowing horizontal scrolling. Since horizontal scrolling is typically avoided, and may be unexpected, it must only be applied where necessary, with both additional visual affordance (see [**Recommended layout**](#recommended-layout)) and keyboard interaction supported.
+
+The following implementation also includes 'sticky' column header support, to help users peruse tables with a considerable number of rows, and the option to apply column sorting functionality.
+
 ## Recommended markup
 
 No matter the templating or rendering technology, data tables should be marked up with the `<table>` and associated elements. Data tables composed from `<div>` elements require considerable ARIA attribution to elicit the expected screen reader behaviors, and non-trivial amounts of CSS to emulate the grid-like layout behavior. 
