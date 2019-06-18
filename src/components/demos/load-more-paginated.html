@@ -1,0 +1,74 @@
+---
+title: Load more – paginated
+---
+
+<div class="gef-loader">
+  <ul class="gef-loader__items">
+    <li class="gef-loader__item">
+      <p>delectus ullam et corporis nulla voluptas sequi</p>
+      <a class="gef-cta" href="http://www.example.com/path/to/1">Read more about result 1</a>
+    </li>
+    <li class="gef-loader__item">
+      <p>iusto eius quod necessitatibus culpa ea</p>
+      <a class="gef-cta" href="http://www.example.com/path/to/2">Read more about result 2</a>
+    </li>
+    <li class="gef-loader__item">
+      <p>a quo magni similique perferendis</p>
+      <a class="gef-cta" href="http://www.example.com/path/to/3">Read more about result 3</a>
+    </li>
+    <li class="gef-loader__item">
+      <p>ullam ut quidem id aut vel consequuntur</p>
+      <a class="gef-cta" href="http://www.example.com/path/to/4">Read more about result 4</a>
+    </li>
+    <li class="gef-loader__item">
+      <p>doloremque illum aliquid sunt</p>
+      <a class="gef-cta" href="http://www.example.com/path/to/5">Read more about result 5</a>
+    </li>
+    <li class="gef-loader__item">
+      <p>qui explicabo molestiae dolorem</p>
+      <a class="gef-cta" href="http://www.example.com/path/to/6">Read more about result 6</a>
+    </li>
+  </ul>
+  <div class="gef-loader__foot">
+    <div class="gef-loader__loading" role="status" hidden>
+      <svg class="gel-icon gel-icon--text gel-icon-loading" focusable="false" aria-hidden="true">
+        <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-loading"></use>
+      </svg>
+      <div class="gef-loader__loading-text gef-sr"></div>
+    </div>
+    <button class="gef-loader__button gef-button" type="button" hidden>Load more</button>
+    <nav class="gef-pages" aria-labelledby="gef-pagination-label">
+      <div id="gef-pages__label" hidden>Page</div>
+      <a class="gef-pages__prev">
+        <span class="gef-sr">Previous page</span>
+        <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+          <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-previous"></use>
+        </svg>
+      </a>
+      <ol class="gef-pages__numbered">
+        <li><a href="?page=1" aria-current="page">1</a></li>
+        <li><a href="?page=2">2</a></li>
+        <li><a href="?page=3">3</a></li>
+        <li><a href="?page=4">4</a></li>
+        <li><a href="?page=5">5</a></li>
+        <li><a href="?page=6">6</a></li>
+        <li><a href="?page=7">7</a></li>
+        <li role="separator">&hellip;</li>
+        <li><a href="?page=999">999</a></li>
+      </ol>
+      <div class="gef-pages__text">Page 1 of 999</div>
+      <a class="gef-pages__next" href="?page=2">
+        <span class="gef-sr">Next page</span>
+        <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+          <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-next"></use>
+        </svg>
+      </a>
+    </nav>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function LoadMorePaginated(elem) {
+    this.elem = elem;
+  }
+</script>

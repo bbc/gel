@@ -242,6 +242,12 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 
 <cta label="Open in new window" href="../demos/load-more/">
 
+### Paginated
+
+<include src="components/demos/load-more-paginated.html">
+
+<cta label="Open in new window" href="../demos/load-more-paginated/">
+
 ## Related research
 
 This topic does not yet have any related research available.
