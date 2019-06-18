@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/gef-docs/static/images/favicon.ico" type="image/x-icon">
+
+    <title>GEF | Load more – paginated Demo</title>
+
+    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/gef.css">
+
+    <script type="text/javascript"> // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    
+</head>
+
+<body class="gel-guideline-body">
+    <main id="main" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-5/5@l" style="padding-right: 12px;">
+                <h1 class="gel-guideline-header__title">Load more – paginated</h1>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-5/5@l">
+                <h2>Reference implementation</h2>
+
+                
+<div class="gef-loader">
+  <ul class="gef-loader__items">
+    <li class="gef-loader__item">
+      <p>delectus ullam et corporis nulla voluptas sequi</p>
+      <a class="gef-cta" href="http://www.example.com/path/to/1">Read more about result 1</a>
+    </li>
+    <li class="gef-loader__item">
+      <p>iusto eius quod necessitatibus culpa ea</p>
+      <a class="gef-cta" href="http://www.example.com/path/to/2">Read more about result 2</a>
+    </li>
+    <li class="gef-loader__item">
+      <p>a quo magni similique perferendis</p>
+      <a class="gef-cta" href="http://www.example.com/path/to/3">Read more about result 3</a>
+    </li>
+    <li class="gef-loader__item">
+      <p>ullam ut quidem id aut vel consequuntur</p>
+      <a class="gef-cta" href="http://www.example.com/path/to/4">Read more about result 4</a>
+    </li>
+    <li class="gef-loader__item">
+      <p>doloremque illum aliquid sunt</p>
+      <a class="gef-cta" href="http://www.example.com/path/to/5">Read more about result 5</a>
+    </li>
+    <li class="gef-loader__item">
+      <p>qui explicabo molestiae dolorem</p>
+      <a class="gef-cta" href="http://www.example.com/path/to/6">Read more about result 6</a>
+    </li>
+  </ul>
+  <div class="gef-loader__foot">
+    <div class="gef-loader__loading" role="status" hidden>
+      <svg class="gel-icon gel-icon--text gel-icon-loading" focusable="false" aria-hidden="true">
+        <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-loading"></use>
+      </svg>
+      <div class="gef-loader__loading-text gef-sr"></div>
+    </div>
+    <button class="gef-loader__button gef-button" type="button" hidden>Load more</button>
+    <nav class="gef-pages" aria-labelledby="gef-pagination-label">
+      <div id="gef-pages__label" hidden>Page</div>
+      <a class="gef-pages__prev">
+        <span class="gef-sr">Previous page</span>
+        <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+          <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-previous"></use>
+        </svg>
+      </a>
+      <ol class="gef-pages__numbered">
+        <li><a href="?page=1" aria-current="page">1</a></li>
+        <li><a href="?page=2">2</a></li>
+        <li><a href="?page=3">3</a></li>
+        <li><a href="?page=4">4</a></li>
+        <li><a href="?page=5">5</a></li>
+        <li><a href="?page=6">6</a></li>
+        <li><a href="?page=7">7</a></li>
+        <li role="separator">&hellip;</li>
+        <li><a href="?page=999">999</a></li>
+      </ol>
+      <div class="gef-pages__text">Page 1 of 999</div>
+      <a class="gef-pages__next" href="?page=2">
+        <span class="gef-sr">Next page</span>
+        <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+          <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-next"></use>
+        </svg>
+      </a>
+    </nav>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function LoadMorePaginated(elem) {
+    this.elem = elem;
+  }
+</script>
+
+            </div>
+        </div>
+    </main>
+
+    <script nomodule defer type="text/javascript" src="/gef-docs/static/js/external-svg-polyfill.js"></script>
+    <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
+
+    
+</body>
+
+</html>

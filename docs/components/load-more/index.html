@@ -255,9 +255,9 @@
 <p>For maximum backwards compatibility with minimum code, <code>inline-block</code> places the items side-by-side. In the <a href="#reference-implementation">Reference implementation</a>, the expanded layout (with 9 numbered items, including the ellipsis and end item) switches down to the compact version (with the text element; specified in <a href="https://www.bbc.co.uk/gel/guidelines/numbered-pagination">GEL Numbered Pagination</a>) at <code>650px</code>. This will differ for your setup due to the inevitable discrepancy between the pagination container's and the viewport's width. It will need adjusting.</p>
 <pre class="hljs"><code>@<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">650px</span>) {
   <span class="hljs-selector-class">.gef-pages-text</span> {
-    <span class="hljs-attribute">display</span>: none;  
+    <span class="hljs-attribute">display</span>: none;
   }
-  
+
   <span class="hljs-selector-class">.gef-pages-numbered</span> {
     <span class="hljs-attribute">display</span>: inline-block;
   }
@@ -292,7 +292,7 @@
 
 <span class="hljs-keyword">var</span> loaderElem = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.gef-loader'</span>);
 <span class="hljs-keyword">var</span> loader = <span class="hljs-keyword">new</span> gef.LoadMore.constructor(
-  loaderElem, 
+  loaderElem,
   <span class="hljs-number">6</span>, <span class="hljs-comment">// The number of results fetched each time</span>
   <span class="hljs-number">7</span>, <span class="hljs-comment">// The starting result (6 items server rendered + 1)</span>
   baseURL
@@ -506,6 +506,85 @@ title: Load more
 </script></div>
         
           <p><a class="gef-cta gel-long-primer-bold" href="../demos/load-more/" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+        <h3 id="paginated">Paginated</h3>
+
+          <div class="gefdocs-demo"><!-- 
+title: Load more – paginated
+ -->
+
+<div class="gef-loader">
+  <ul class="gef-loader__items">
+    <li class="gef-loader__item">
+      <p>delectus ullam et corporis nulla voluptas sequi</p>
+      <a class="gef-cta" href="http://www.example.com/path/to/1">Read more about result 1</a>
+    </li>
+    <li class="gef-loader__item">
+      <p>iusto eius quod necessitatibus culpa ea</p>
+      <a class="gef-cta" href="http://www.example.com/path/to/2">Read more about result 2</a>
+    </li>
+    <li class="gef-loader__item">
+      <p>a quo magni similique perferendis</p>
+      <a class="gef-cta" href="http://www.example.com/path/to/3">Read more about result 3</a>
+    </li>
+    <li class="gef-loader__item">
+      <p>ullam ut quidem id aut vel consequuntur</p>
+      <a class="gef-cta" href="http://www.example.com/path/to/4">Read more about result 4</a>
+    </li>
+    <li class="gef-loader__item">
+      <p>doloremque illum aliquid sunt</p>
+      <a class="gef-cta" href="http://www.example.com/path/to/5">Read more about result 5</a>
+    </li>
+    <li class="gef-loader__item">
+      <p>qui explicabo molestiae dolorem</p>
+      <a class="gef-cta" href="http://www.example.com/path/to/6">Read more about result 6</a>
+    </li>
+  </ul>
+  <div class="gef-loader__foot">
+    <div class="gef-loader__loading" role="status" hidden>
+      <svg class="gel-icon gel-icon--text gel-icon-loading" focusable="false" aria-hidden="true">
+        <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-loading"></use>
+      </svg>
+      <div class="gef-loader__loading-text gef-sr"></div>
+    </div>
+    <button class="gef-loader__button gef-button" type="button" hidden>Load more</button>
+    <nav class="gef-pages" aria-labelledby="gef-pagination-label">
+      <div id="gef-pages__label" hidden>Page</div>
+      <a class="gef-pages__prev">
+        <span class="gef-sr">Previous page</span>
+        <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+          <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-previous"></use>
+        </svg>
+      </a>
+      <ol class="gef-pages__numbered">
+        <li><a href="?page=1" aria-current="page">1</a></li>
+        <li><a href="?page=2">2</a></li>
+        <li><a href="?page=3">3</a></li>
+        <li><a href="?page=4">4</a></li>
+        <li><a href="?page=5">5</a></li>
+        <li><a href="?page=6">6</a></li>
+        <li><a href="?page=7">7</a></li>
+        <li role="separator">&hellip;</li>
+        <li><a href="?page=999">999</a></li>
+      </ol>
+      <div class="gef-pages__text">Page 1 of 999</div>
+      <a class="gef-pages__next" href="?page=2">
+        <span class="gef-sr">Next page</span>
+        <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+          <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-next"></use>
+        </svg>
+      </a>
+    </nav>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function LoadMorePaginated(elem) {
+    this.elem = elem;
+  }
+</script>
+</div>
+        
+          <p><a class="gef-cta gel-long-primer-bold" href="../demos/load-more-paginated/" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
         <h2 id="related-research">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
 <h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
