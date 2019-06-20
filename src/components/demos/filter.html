@@ -31,22 +31,37 @@ title: Search filter
     </button>
   </div>
   <div class="gef-filter__popup" hidden></div>
+  <div class="gef-filter__sort">
+    <span class="gef-filter__sort-label">Sort by:</span>
+    <ul>
+      <li><a href=".?filter=filter+1&sort=relevance">Relevance</a></li>
+      <li><a href=".?filter=filter+1&sort=date">Date</a></li>
+    </ul>
+  </div>
 </nav>
 
 <div id="results-placeholder">Results, presented using the <a href="../../load-more"><strong>Load more</strong></a>
-  component, to appear here.</div>
+  component (to appear in place of this message).</div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     var filterElem = document.querySelector('.gef-filter');
     var filter = new gef.Filter.constructor(filterElem);
 
-    // Placeholder for the **Load More** search results pattern
+    // Just for this demo, to emulate full page reloads:
     var search = location.search.substring(1);
     var searchParsed = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
-    var current = document.querySelector('[href*="' + searchParsed.filter + '"]');
-    current.setAttribute('aria-current', 'true');
+    var relevanceLink = document.querySelector('[href*="sort=relevance"]');
+    var dateLink = document.querySelector('[href*="sort=date"]');
+    relevanceLink.href = '.?filter=' + searchParsed.filter + '&sort=relevance';
+    dateLink.href = '.?filter=' + searchParsed.filter + '&sort=date';
+    var currentLinks = document.querySelectorAll('.gef-filter__list [href*="' + searchParsed.filter + '"], .gef-filter__sort [href*="' + searchParsed.sort + '"]');
+    var currentLinksArray = Array.prototype.slice.call(currentLinks);
+    currentLinksArray.forEach(function (l) {
+      l.setAttribute('aria-current', 'true');
+    });
     var placeholder = document.getElementById('results-placeholder');
-    placeholder.innerHTML = 'Results for the <code>' + searchParsed.filter.replace('+', ' ') + '</code> filter, presented using the <a href="../../load-more"><strong>Load more</strong></a> component, to appear here.';
+    var sortMessage = searchParsed.sort ? ' and ' + searchParsed.sort + ' sort' : '';
+    placeholder.innerHTML = 'Results for the <code>' + searchParsed.filter.replace('+', ' ') + '</code> filter' + sortMessage + ', presented using the <a href="../../load-more"><strong>Load more</strong></a> component (to appear in place of this message).';
   });
 </script>

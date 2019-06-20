@@ -1,9 +1,6 @@
-.gef-filter {
-  border-bottom: 2px solid $gel-color--dusty-gray;
-}
-
 .gef-filter__bar {
   display: flex;
+  border-bottom: 2px solid $gel-color--dusty-gray;
 }
 
 .gef-filter__bar > * {
@@ -70,7 +67,8 @@
   background-image: linear-gradient(360deg, $gel-color--star-command-blue, $gel-color--star-command-blue 0.25rem, transparent 0.25rem);
 }
 
-.gef-filter__label {
+.gef-filter__label,
+.gef-filter__sort-label {
   font-size: 0.75rem;
   text-transform: uppercase;
 }
@@ -79,7 +77,8 @@
   background-color: $gel-color--dusty-gray;
 }
 
-.gef-filter__popup ul {
+.gef-filter__popup ul,
+.gef-filter__sort ul {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -90,4 +89,31 @@
 .gef-filter__popup li {
   padding: 0.75rem;
   flex: 0 1 auto;
+}
+
+.gef-filter__sort {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.gef-filter__sort-label {
+  margin-right: 0.5rem;
+}
+
+.gef-filter__sort ul {
+  display: flex;
+  list-style: none;
+}
+
+.gef-filter__sort a {
+  display: block;
+  padding: 0.5rem;
+}
+
+.gef-filter__sort [aria-current] {
+  text-decoration: none;
+  background-color: $gel-color--star-command-blue;
+  color: #fff;
 }

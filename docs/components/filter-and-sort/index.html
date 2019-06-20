@@ -108,14 +108,14 @@
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900"
                     style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#sorting-options">Sorting options</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
             <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="introduction">Introduction</h2>
 <p>Users arrive at search results pages having submitted a search query to a global or local <a href="../search"><strong>Search</strong></a> component. To help them find what they are looking for among the results, filtering and sorting tools are provided.</p>
-<p>Unlike in some implementations, utilizing XHR requests, BBC filtering tools constitute a set of links corresponding to the &quot;q&quot; query parameter. The base URL is <a href="https://www.bbc.co.uk/search">https://www.bbc.co.uk/search</a>. Since this method does not require JavaScript, the filtering itself should not either. JavaScript is only incorporated as a progressive enhancement, and only to improve the component's responsiveness.</p>
+<p>Unlike in some implementations, utilizing XHR requests, BBC filtering tools constitute a set of links corresponding to query parameters. The base URL is <a href="https://www.bbc.co.uk/search">https://www.bbc.co.uk/search</a>. Since this mechanism does not require JavaScript, the interface itself should not either. JavaScript is only incorporated as a progressive enhancement, and only to improve the component's responsiveness.</p>
 <h2 id="recommended-markup">Recommended markup</h2>
 <p>Since it incorporates lists of links to separate pages, the filtering functionality is encapsulated in a navigation region<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. The following code sample illustrates the filter component in its initial state, where JavaScript has yet to run. It is perfectly funtional in this state.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-filter"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"filter-label"</span>&gt;</span>
@@ -135,6 +135,13 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-filter__popup"</span> <span class="hljs-attr">hidden</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-filter__sort"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-filter__sort-label"</span>&gt;</span>Sort by:<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">".?filter=filter+1&amp;sort=relevance"</span> <span class="hljs-attr">aria-current</span>=<span class="hljs-string">"page"</span>&gt;</span>Relevance<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">".?filter=filter+1&amp;sort=date"</span>&gt;</span>Date<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
 </code></pre>
 <h3 id="notes">Notes</h3>
@@ -143,10 +150,12 @@
 <li><strong><code>.gef-filter__list</code>:</strong> As is conventional for navigation, options/links are grouped into lists. Lists are identified in screen readers and their items enumerated, proffering valuable non-visual context.</li>
 <li><strong><code>.gef-filter__more</code>:</strong> The &quot;More&quot; button is hidden by default (taking <code>hidden</code>), and acts as a toggle button where available. Its initial state is <code>false</code>, meaning the button would be identified as <em>&quot;More, toggle button, collapsed&quot;</em> or similar in screen readers.</li>
 <li><strong><code>.gef-filter__popup</code>:</strong> An empty element is included, <code>hidden</code> by default. This is populated by the additional items accessible from the &quot;More&quot; button where JavaScript is available and <code>IntersectionObserver</code> supported. See the <a href="#recommended-behaviour"><strong>Recommended behaviour</strong></a> section for more.</li>
+<li><strong><code>.gef-filter__sort</code>:</strong> A supplementary list of links are provided for sorting the current filter option.</li>
+<li><strong><code>aria-current=&quot;page&quot;</code>:</strong> The <code>aria-current</code> attribute<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> is used to indicate the link corresponding to the current page. In this example, the first filter and &quot;Relevance&quot; sorting option both correspond to the current page, so each take the attribute (the page's query string would be <code>?filter=filter+1&amp;sort=relevance</code> — as on the sorting link's <code>href</code>).</li>
 </ul>
 <h2 id="recommended-layout">Recommended layout</h2>
-<p>The horizontal configuration of the filter subcomponents is facilitated by the widely supported Flexbox module<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</p>
-<p>In the absence of JavaScript, the principle list of filter links is allowed to grow and shrink, and takes <code>overflow-x: auto</code>. That is, where there is not enough room to display all of the filter links, horizontal scrolling is instated. To give the scrollable region more perceived affordance<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> in systems, like MacOS, that tend to hide scrollbars, explicit scrollbar styling is included:</p>
+<p>The horizontal configuration of the filter subcomponents is facilitated by the widely supported Flexbox module<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
+<p>In the absence of JavaScript, the principle list of filter links is allowed to grow and shrink, and takes <code>overflow-x: auto</code>. That is, where there is not enough room to display all of the filter links, horizontal scrolling is instated. To give the scrollable region more perceived affordance<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> in systems, like MacOS, that tend to hide scrollbars, explicit scrollbar styling is included:</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gef-filter__list</span><span class="hljs-selector-pseudo">::-webkit-scrollbar</span> {
   <span class="hljs-attribute">height</span>: <span class="hljs-number">0.125rem</span>;
 }
@@ -159,7 +168,7 @@
   <span class="hljs-attribute">background-color</span>: $gel-color--tundora; 
 }
 </code></pre>
-<p>Where JavaScript runs, and <code>IntersectionObserver</code><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> is supported, <code>overflow: hidden</code> is instated instead. Items that do not fit within the available space are hidden visually, from screen reader output, and prevented from being focused with <code>visibility: hidden</code>. Clones are made of these hidden items, and they are placed in the auxiliary &quot;More&quot; menu (<code>.gef-filter__popup</code>). See <a href="#recommended-behaviour"><strong>Recommended behaviour</strong></a>, below, for more.</p>
+<p>Where JavaScript runs, and <code>IntersectionObserver</code><sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> is supported, <code>overflow: hidden</code> is instated instead. Items that do not fit within the available space are hidden visually, from screen reader output, and prevented from being focused with <code>visibility: hidden</code>. Clones are made of these hidden items, and they are placed in the auxiliary &quot;More&quot; menu (<code>.gef-filter__popup</code>). See <a href="#recommended-behaviour"><strong>Recommended behaviour</strong></a>, below, for more.</p>
 <h2 id="recommended-behaviour">Recommended behaviour</h2>
 <p>The benefit of using native link elements and (RESTful) URLs is that the functionality works in the absence of JavaScript. As mentioned in <a href="#recommended-layout"><strong>Recommended layout</strong></a>, horizontal scrolling allows the user to access links obscured by a narrow viewport. Where JavaScript runs, these obscured links are appended to the auxiliary <code>.gef-filter__popup</code> element, the appearance of which—hidden or unhidden—being toggled by the <code>.gef-filter__more</code> button. Two methods are provided in the <a href="#reference-implementation"><strong>Reference implementation</strong></a>: <code>showPopup()</code> and <code>hidePopup</code>.</p>
 <pre class="hljs"><code>self.constructor.prototype.showPopup = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
@@ -172,9 +181,18 @@ self.constructor.prototype.hidePopup = <span class="hljs-function"><span class="
   <span class="hljs-keyword">this</span>.popup.hidden = <span class="hljs-literal">true</span>;
 }
 </code></pre>
-<p>The first link of the <code>.gef-filter__popup</code> is the next interactive element in focus order after the &quot;More&quot; button, making focus management<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> (and/or reliance on the poorly supported <code>aria-controls</code> attribute<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>) unnecessary.</p>
+<p>The first link of the <code>.gef-filter__popup</code> is the next interactive element in focus order after the &quot;More&quot; button, making focus management<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> (and/or reliance on the poorly supported <code>aria-controls</code> attribute<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>) unnecessary.</p>
 <h3 id="results">Results</h3>
 <p>The results attained by choosing a filter link should be organized and behave as outlined in the <a href="../load-more"><strong>Load more</strong></a> pattern. In the <a href="#reference-implementation"><strong>Reference implementation</strong></a> here, a live implementation of the <a href="../load-more"><strong>Load more</strong></a> pattern is supplanted by a simple, descriptive placeholder for brevity.</p>
+<h2 id="sorting-options">Sorting options</h2>
+<p>Some implementations of sorting options take the form of dropdown menus. Since sorting options are few in number, there's no need to obscure options inside a menu. Radio buttons are preferable, since they show all the available options simultaneously. However, loading a page 'on input', would go against expected and standard behaviour, and would violate <strong>WCAG2.1 3.2.2 On Input</strong><sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup>.</p>
+<p>Instead, the sorting options are provided as links (like the filtering options), and the chosen sorting option takes <code>aria-current=&quot;page&quot;</code>. An attribute selector is used to style the element.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gef-filter__sort</span> <span class="hljs-selector-attr">[aria-current]</span> {
+  <span class="hljs-attribute">text-decoration</span>: none;
+  <span class="hljs-attribute">background-color</span>: $gel-color--star-command-blue;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
+}
+</code></pre>
 <h2 id="reference-implementation">Reference implementation</h2>
 
             <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
@@ -213,23 +231,38 @@ title: Search filter
     </button>
   </div>
   <div class="gef-filter__popup" hidden></div>
+  <div class="gef-filter__sort">
+    <span class="gef-filter__sort-label">Sort by:</span>
+    <ul>
+      <li><a href=".?filter=filter+1&sort=relevance">Relevance</a></li>
+      <li><a href=".?filter=filter+1&sort=date">Date</a></li>
+    </ul>
+  </div>
 </nav>
 
 <div id="results-placeholder">Results, presented using the <a href="../../load-more"><strong>Load more</strong></a>
-  component, to appear here.</div>
+  component (to appear in place of this message).</div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     var filterElem = document.querySelector('.gef-filter');
     var filter = new gef.Filter.constructor(filterElem);
 
-    // Placeholder for the **Load More** search results pattern
+    // Just for this demo, to emulate full page reloads:
     var search = location.search.substring(1);
     var searchParsed = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
-    var current = document.querySelector('[href*="' + searchParsed.filter + '"]');
-    current.setAttribute('aria-current', 'true');
+    var relevanceLink = document.querySelector('[href*="sort=relevance"]');
+    var dateLink = document.querySelector('[href*="sort=date"]');
+    relevanceLink.href = '.?filter=' + searchParsed.filter + '&sort=relevance';
+    dateLink.href = '.?filter=' + searchParsed.filter + '&sort=date';
+    var currentLinks = document.querySelectorAll('.gef-filter__list [href*="' + searchParsed.filter + '"], .gef-filter__sort [href*="' + searchParsed.sort + '"]');
+    var currentLinksArray = Array.prototype.slice.call(currentLinks);
+    currentLinksArray.forEach(function (l) {
+      l.setAttribute('aria-current', 'true');
+    });
     var placeholder = document.getElementById('results-placeholder');
-    placeholder.innerHTML = 'Results for the <code>' + searchParsed.filter.replace('+', ' ') + '</code> filter, presented using the <a href="../../load-more"><strong>Load more</strong></a> component, to appear here.';
+    var sortMessage = searchParsed.sort ? ' and ' + searchParsed.sort + ' sort' : '';
+    placeholder.innerHTML = 'Results for the <code>' + searchParsed.filter.replace('+', ' ') + '</code> filter' + sortMessage + ', presented using the <a href="../../load-more"><strong>Load more</strong></a> component (to appear in place of this message).';
   });
 </script></div>
         
@@ -242,15 +275,19 @@ title: Search filter
 <ol class="footnotes-list">
 <li id="fn1" class="footnote-item"><p>ARIA landmark example — W3C, <a href="https://www.w3.org/TR/wai-aria-practices/examples/landmarks/navigation.html">https://www.w3.org/TR/wai-aria-practices/examples/landmarks/navigation.html</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn2" class="footnote-item"><p>CSS Flexible Box Layout Module — <a href="http://caniuse.com">caniuse.com</a>, <a href="https://caniuse.com/#feat=flexbox">https://caniuse.com/#feat=flexbox</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+<li id="fn2" class="footnote-item"><p>Using the <code>aria-current</code> attribute — Léonie Watson, <a href="https://tink.uk/using-the-aria-current-attribute/">https://tink.uk/using-the-aria-current-attribute/</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn3" class="footnote-item"><p>Perceived Affordances — Johnny Holland, <a href="http://johnnyholland.org/2010/04/perceived-affordances-and-designing-for-task-flow/">http://johnnyholland.org/2010/04/perceived-affordances-and-designing-for-task-flow/</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+<li id="fn3" class="footnote-item"><p>CSS Flexible Box Layout Module — <a href="http://caniuse.com">caniuse.com</a>, <a href="https://caniuse.com/#feat=flexbox">https://caniuse.com/#feat=flexbox</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn4" class="footnote-item"><p><code>IntersectionObserver</code> API — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API">https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+<li id="fn4" class="footnote-item"><p>Perceived Affordances — Johnny Holland, <a href="http://johnnyholland.org/2010/04/perceived-affordances-and-designing-for-task-flow/">http://johnnyholland.org/2010/04/perceived-affordances-and-designing-for-task-flow/</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn5" class="footnote-item"><p>Managing Focus For Accessibility — Rob Dodson, <a href="https://dev.to/robdodson/managing-focus-64l">https://dev.to/robdodson/managing-focus-64l</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+<li id="fn5" class="footnote-item"><p><code>IntersectionObserver</code> API — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API">https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn6" class="footnote-item"><p>ARIA-controls is Poop — <a href="http://heydonworks.com">heydonworks.com</a>, <a href="https://www.heydonworks.com/article/aria-controls-is-poop">https://www.heydonworks.com/article/aria-controls-is-poop</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+<li id="fn6" class="footnote-item"><p>Managing Focus For Accessibility — Rob Dodson, <a href="https://dev.to/robdodson/managing-focus-64l">https://dev.to/robdodson/managing-focus-64l</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>ARIA-controls is Poop — <a href="http://heydonworks.com">heydonworks.com</a>, <a href="https://www.heydonworks.com/article/aria-controls-is-poop">https://www.heydonworks.com/article/aria-controls-is-poop</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p>WCAG2.1 3.2.2 On Input — W3C, <a href="https://www.w3.org/TR/WCAG21/#on-input">https://www.w3.org/TR/WCAG21/#on-input</a> <a href="#fnref8" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>

@@ -1662,7 +1662,6 @@ of 'open all' and 'close all' tools
   font-size: 2rem;
   padding: 2rem;
   display: flex;
-  align-items: center;
   background-color: #ccc; }
 
 .gef-search__controls > * {
@@ -1671,7 +1670,8 @@ of 'open all' and 'close all' tools
 
 .gef-search__controls-brand {
   height: 3rem;
-  width: auto; }
+  width: auto;
+  align-self: center; }
 
 .gef-search__controls > input,
 .gef-search__controls > button {
@@ -1703,11 +1703,9 @@ of 'open all' and 'close all' tools
   overflow: hidden;
   transition: height 0.3s ease-out; }
 
-.gef-filter {
-  border-bottom: 2px solid #ccc; }
-
 .gef-filter__bar {
-  display: flex; }
+  display: flex;
+  border-bottom: 2px solid #ccc; }
 
 .gef-filter__bar > * {
   flex: 0 0 auto; }
@@ -1761,14 +1759,16 @@ of 'open all' and 'close all' tools
   color: #007bb8;
   background-image: linear-gradient(360deg, #007bb8, #007bb8 0.25rem, transparent 0.25rem); }
 
-.gef-filter__label {
+.gef-filter__label,
+.gef-filter__sort-label {
   font-size: 0.75rem;
   text-transform: uppercase; }
 
 .gef-filter__popup {
   background-color: #ccc; }
 
-.gef-filter__popup ul {
+.gef-filter__popup ul,
+.gef-filter__sort ul {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -1778,3 +1778,25 @@ of 'open all' and 'close all' tools
 .gef-filter__popup li {
   padding: 0.75rem;
   flex: 0 1 auto; }
+
+.gef-filter__sort {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 1rem; }
+
+.gef-filter__sort-label {
+  margin-right: 0.5rem; }
+
+.gef-filter__sort ul {
+  display: flex;
+  list-style: none; }
+
+.gef-filter__sort a {
+  display: block;
+  padding: 0.5rem; }
+
+.gef-filter__sort [aria-current] {
+  text-decoration: none;
+  background-color: #007bb8;
+  color: #fff; }

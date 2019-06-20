@@ -2,7 +2,6 @@
   font-size: 2rem;
   padding: 2rem;
   display: flex;
-  align-items: center;
   background-color: $gel-color--dusty-gray;
 }
 
@@ -14,6 +13,7 @@
 .gef-search__controls-brand {
   height: 3rem;
   width: auto;
+  align-self: center;
 }
 
 .gef-search__controls > input,
