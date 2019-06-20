@@ -207,7 +207,17 @@ title: Search filter
     border: 1px dashed currentColor;
     margin-top: 1.5rem;
   }
+  .filler {
+    color: #ddd;
+  }
 </style>
+
+<p  class="filler" aria-hidden="true">
+  In facilis noluisse nec. Per eu omnes corrumpit omittantur, sit in amet fierent adipiscing. Cum et ferri tempor pertinax. Ut vis dolor nemore eleifend. Duo et modus utamur perpetua, est dico inimicus salutandi ad. Ponderum theophrastus no quo, omnis iusto meliore vis ea. Ad nullam everti corpora nec, nec ex elit error eligendi, dolorum vocibus perfecto ex nec?
+</p>
+<p  class="filler" aria-hidden="true">
+  Per debitis meliore propriae at. In iudico malorum eam. Mel malorum saperet id, vel an quidam virtute. Clita vocent ne vix, aperiri temporibus sed ut.
+</p>
 
 <nav class="gef-filter" aria-labelledby="filter-label">
   <div class="gef-filter__bar">
@@ -240,8 +250,7 @@ title: Search filter
   </div>
 </nav>
 
-<div id="results-placeholder">Results, presented using the <a href="../../load-more"><strong>Load more</strong></a>
-  component (to appear in place of this message).</div>
+<div id="results-placeholder" tabindex="0">Results for the filter to appear in place of this message.</div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
@@ -262,11 +271,12 @@ title: Search filter
     });
     var placeholder = document.getElementById('results-placeholder');
     var sortMessage = searchParsed.sort ? ' and ' + searchParsed.sort + ' sort' : '';
-    placeholder.innerHTML = 'Results for the <code>' + searchParsed.filter.replace('+', ' ') + '</code> filter' + sortMessage + ', presented using the <a href="../../load-more"><strong>Load more</strong></a> component (to appear in place of this message).';
+    placeholder.innerHTML = 'Results for <code>' + searchParsed.filter.replace('+', ' ') + '</code> ' + sortMessage + ' to appear in place of this message.';
+    placeholder.focus();
   });
 </script></div>
         
-          <p><a class="gef-cta gel-long-primer-bold" href="../demos/filter/" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+          <p><a class="gef-cta gel-long-primer-bold" href="../demos/filter/?filter=filter+1&sort=relevance" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
         <h2 id="related-research">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
 <h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>

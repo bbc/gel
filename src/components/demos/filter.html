@@ -7,7 +7,17 @@ title: Search filter
     border: 1px dashed currentColor;
     margin-top: 1.5rem;
   }
+  .filler {
+    color: #ddd;
+  }
 </style>
+
+<p  class="filler" aria-hidden="true">
+  In facilis noluisse nec. Per eu omnes corrumpit omittantur, sit in amet fierent adipiscing. Cum et ferri tempor pertinax. Ut vis dolor nemore eleifend. Duo et modus utamur perpetua, est dico inimicus salutandi ad. Ponderum theophrastus no quo, omnis iusto meliore vis ea. Ad nullam everti corpora nec, nec ex elit error eligendi, dolorum vocibus perfecto ex nec?
+</p>
+<p  class="filler" aria-hidden="true">
+  Per debitis meliore propriae at. In iudico malorum eam. Mel malorum saperet id, vel an quidam virtute. Clita vocent ne vix, aperiri temporibus sed ut.
+</p>
 
 <nav class="gef-filter" aria-labelledby="filter-label">
   <div class="gef-filter__bar">
@@ -40,8 +50,7 @@ title: Search filter
   </div>
 </nav>
 
-<div id="results-placeholder">Results, presented using the <a href="../../load-more"><strong>Load more</strong></a>
-  component (to appear in place of this message).</div>
+<div id="results-placeholder" tabindex="0">Results for the filter to appear in place of this message.</div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
@@ -62,6 +71,7 @@ title: Search filter
     });
     var placeholder = document.getElementById('results-placeholder');
     var sortMessage = searchParsed.sort ? ' and ' + searchParsed.sort + ' sort' : '';
-    placeholder.innerHTML = 'Results for the <code>' + searchParsed.filter.replace('+', ' ') + '</code> filter' + sortMessage + ', presented using the <a href="../../load-more"><strong>Load more</strong></a> component (to appear in place of this message).';
+    placeholder.innerHTML = 'Results for <code>' + searchParsed.filter.replace('+', ' ') + '</code> ' + sortMessage + ' to appear in place of this message.';
+    placeholder.focus();
   });
 </script>
