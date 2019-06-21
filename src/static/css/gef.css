@@ -229,10 +229,24 @@ button {
   height: 10rem;
   overflow: hidden;
   position: relative;
-  /* to improve the appearance where 
+  /* to improve the appearance where
   object fit isn't supported ↓ */
   text-align: center;
   background-color: #404040; }
+
+.gef-promo__label {
+  background-color: #121212;
+  color: #fff;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: bold;
+  line-height: 1;
+  padding: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-transform: uppercase;
+  z-index: 10; }
 
 .gef-promo__image img {
   height: 100%;
