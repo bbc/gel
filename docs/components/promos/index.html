@@ -108,7 +108,7 @@
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900"
                     style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#example-implementation">Example implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#content-properties">Content properties</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#example-implementation">Example implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
@@ -116,6 +116,38 @@
                 <h2 id="introduction">Introduction</h2>
 <p>The <strong>Promo</strong> component is used to advertise BBC content. Principally it is a link to that content, but it can include a combination of supporting content to draw the reader's attention, such as media, data, and information about the content's author.</p>
 <p>The full range of supporting <strong>Promo</strong> content is outlined on the <a href="https://www.bbc.co.uk/gel/guidelines/promos">GEL Promo page</a>.</p>
+<h2 id="content-properties">Content properties</h2>
+<p>A <strong>Promo</strong> can be made up of different content, giving us the flexibility to communicate the right message. Below is a list of the content properties covered in this document.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Headline</td>
+<td>Text that uniquely describes the target content.</td>
+</tr>
+<tr>
+<td>Image</td>
+<td>An image promoting the target content.</td>
+</tr>
+<tr>
+<td>Media indication</td>
+<td>Information about the media being promoted.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>A short description of the target content.</td>
+</tr>
+<tr>
+<td>Metadata</td>
+<td>See the <a href="/gef-docs/components/metadata-strips">Metadata strip</a> component.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="recommended-markup">Recommended markup</h2>
 <p><strong>Promos</strong> can appear individually or in groups. In either case, they should be marked up inside an <code>&lt;aside&gt;</code> (complementary landmark<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>). This marks the <strong>Promo(s)</strong> out as being tangential; they break away from the host page's main content to suggest complementary reading or resources.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"unique-promo-label"</span>&gt;</span>

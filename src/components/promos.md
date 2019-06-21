@@ -13,6 +13,19 @@ The **Promo** component is used to advertise BBC content. Principally it is a li
 
 The full range of supporting **Promo** content is outlined on the [GEL Promo page](https://www.bbc.co.uk/gel/guidelines/promos).
 
+## Content properties
+
+A **Promo** can be made up of different content, giving us the flexibility to communicate the right message. Below is a list of the content properties covered in this document.
+
+| Property | Description |
+| -------- | ----------- |
+| Headline | Text that uniquely describes the target content. |
+| Image | An image promoting the target content. |
+| Media indication | Information about the media being promoted. |
+| Description | A short description of the target content. |
+| Metadata | See the [Metadata strip](/gef-docs/components/metadata-strips) component. |
+
+
 ## Recommended markup
 
 **Promos** can appear individually or in groups. In either case, they should be marked up inside an `<aside>` (complementary landmark[^1]). This marks the **Promo(s)** out as being tangential; they break away from the host page's main content to suggest complementary reading or resources.
