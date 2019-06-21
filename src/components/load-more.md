@@ -186,9 +186,9 @@ For maximum backwards compatibility with minimum code, `inline-block` places the
 ```css
 @media (min-width: 650px) {
   .gef-pages-text {
-    display: none;  
+    display: none;
   }
-  
+
   .gef-pages-numbered {
     display: inline-block;
   }
@@ -214,7 +214,7 @@ The behaviour differs depending on whether JavaScript has run and the `Promise` 
 3. When the button is pressed, the loading indicator ('spinner') appears above the button, and _"loading, please wait"_ is announced in screen readers via the supplemental live region.
 4. When the results have been fetched, two things happen:
     1. The loading indicator is hidden, and the live region emptied of content. In some setups this will silence the region immediately; in others the _"loading, please wait"_ message will be read out in its entirety (if it has not been already).
-    2. The results appear, introduced by a separator element. This element confirms how many items have been loaded (_"items 12 to 18:"_, for example) and is focused. 
+    2. The results appear, introduced by a separator element. This element confirms how many items have been loaded (_"items 12 to 18:"_, for example) and is focused.
 5. The focused separator element announces its confirmation text in screen reader software and places the keyboard user in an appropriate position to browse to the newly appended items.
 
 Note that the specific behaviour and messaging in the [Reference implementation](#reference-implementation) (and the JavaScript used to achieve it) is partly dependent on the nature of the dummy data being used. In this case, items can be fetched using a base URL and enumeration.
@@ -225,7 +225,7 @@ var baseURL = 'https://jsonplaceholder.typicode.com/posts/';
 
 var loaderElem = document.querySelector('.gef-loader');
 var loader = new gef.LoadMore.constructor(
-  loaderElem, 
+  loaderElem,
   6, // The number of results fetched each time
   7, // The starting result (6 items server rendered + 1)
   baseURL
@@ -241,6 +241,12 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 <include src="components/demos/load-more.html">
 
 <cta label="Open in new window" href="../demos/load-more/">
+
+### Paginated
+
+<include src="components/demos/load-more-paginated.html">
+
+<cta label="Open in new window" href="../demos/load-more-paginated/">
 
 ## Related research
 
