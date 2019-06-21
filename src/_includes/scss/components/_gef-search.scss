@@ -1,0 +1,54 @@
+.gef-search__controls {
+  font-size: 2rem;
+  padding: 2rem;
+  display: flex;
+  background-color: $gel-color--dusty-gray;
+}
+
+.gef-search__controls > * {
+  font-size: inherit;
+  flex: 0 1 auto;
+}
+
+.gef-search__controls-brand {
+  height: 3rem;
+  width: auto;
+  align-self: center;
+}
+
+.gef-search__controls > input,
+.gef-search__controls > button {
+  padding: 0.5rem;
+}
+
+.gef-search__controls > input:focus,
+.gef-search__controls > button:focus {
+  outline: 2px solid;
+  outline-offset: -2px;
+}
+
+.gef-search__controls input {
+  flex-grow: 1;
+  min-width: 0;
+  border: 0;
+}
+
+.gef-search__controls button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.gef-search__controls [type="submit"] {
+  background: #fff;
+}
+
+.gef-search__controls > * + input,
+.gef-search__controls > .gef-search__close {
+  margin-left: 1rem;
+}
+
+.gef-search__suggestions {
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+}

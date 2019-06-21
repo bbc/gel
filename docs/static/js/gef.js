@@ -471,6 +471,74 @@
     }
   }
 })();/**
+ * Filter
+ * @namespace gef
+ * @method gef.Filter.init 
+ */
+
+(function () {
+  if (!window.gef) { window.gef = {}; }
+  var self = gef.Filter = {};
+
+  self.init = function () { }
+
+  self.constructor = function (elem) {
+    this.list = elem.querySelector('.gef-filter__list');
+    this.popup = elem.querySelector('.gef-filter__popup');
+    this.moreButton = elem.querySelector('.gef-filter__more');
+
+    this.moreButton.addEventListener('click', function () {
+      this.popup.hidden ? this.showPopup() : this.hidePopup();
+    }.bind(this));
+
+    if ('IntersectionObserver' in window) {
+      this.list.classList.add('gef-filter__list-observed');
+      var items = this.list.querySelectorAll('li');
+      var observerSettings = {
+        root: this.list,
+        threshold: 0.98
+      }
+
+      var callback = function (items, observer) {
+        Array.prototype.forEach.call(items, function (item) {
+          if (item.intersectionRatio > 0.98) {
+            item.target.classList.remove('gef-filter__item-more');
+          } else {
+            item.target.classList.add('gef-filter__item-more');
+          }
+          var moreElems = this.list.querySelectorAll('.gef-filter__item-more')
+          var moreElemsArray = Array.prototype.slice.call(moreElems);
+          if (moreElemsArray.length > 0) {
+            this.moreButton.hidden = false;
+            var moreElemStrings = moreElemsArray.map(function (i) {
+              return i.outerHTML;
+            });
+            this.popup.innerHTML = '<ul>' + moreElemStrings.join('') + '</ul>';
+          } else {
+            this.moreButton.hidden = true;
+            this.hidePopup();
+            this.popup.innerHTML = '';
+          }
+        }.bind(this));
+      }.bind(this);
+
+      var observer = new IntersectionObserver(callback, observerSettings);
+      Array.prototype.forEach.call(items, function (item) {
+        observer.observe(item);
+      });
+    }
+  }
+
+  self.constructor.prototype.showPopup = function () {
+    this.moreButton.setAttribute('aria-expanded', 'true');
+    this.popup.hidden = false;
+  }
+
+  self.constructor.prototype.hidePopup = function () {
+    this.moreButton.setAttribute('aria-expanded', 'false');
+    this.popup.hidden = true;
+  }
+})();/**
  * Info Panel
  * @namespace gef
  * @method gef.InfoPanel.init
@@ -812,6 +880,107 @@
     this.truncated.style.height = this.height;
     this.truncated.contains(this.continue) && this.continue.parentNode.removeChild(this.continue);
     this.button.innerHTML = '<span>Show more</span> ' + this.buttonIcon;
+  }
+})();/**
+ * Search
+ * @namespace gef
+ * @method gef.Search.init
+ */
+
+(function () {
+  if (!window.gef) { window.gef = {}; }
+  var self = gef.Search = {};
+
+  self.init = function () { }
+
+  self.toggle = function (button, search) {
+    search.hidden = true;
+    button.hidden = false;
+    button.setAttribute('role', 'button');
+    button.setAttribute('aria-haspopup', 'true');
+
+    var input = search.querySelector('input');
+    var closeButton = search.querySelector('.gef-search__close');
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+      search.hidden = false;
+      input.focus();
+    });
+
+    closeButton.addEventListener('click', function () {
+      search.hidden = true;
+      button.focus();
+    });
+  }
+
+  self.constructor = function (elem, data, buildFunction, options) {
+    var settings = {
+      debounce: 250
+    };
+
+    // Overwrite defaults where they are provided in options
+    for (var setting in options) {
+      if (options.hasOwnProperty(setting)) {
+        settings[setting] = options[setting];
+      }
+    }
+
+    this.data = data;
+    this.input = elem.querySelector('input');
+    this.suggestions = elem.querySelector('.gef-search__suggestions');
+    this.suggestions.hidden = false;
+    this.suggestionsLinks = this.suggestions.querySelector('.gef-search__suggestions-links');
+    this.suggestionsLabel = this.suggestions.querySelector('.gef-search__suggestions-label');
+
+    this.suggestions.style.height = '0';
+
+    this.hideSuggestions = function () {
+      var height = this.suggestions.scrollHeight;
+      var elTransition = this.suggestions.style.transition;
+      this.suggestions.style.transition = '';
+
+      requestAnimationFrame(function () {
+        this.suggestions.style.height = height + 'px';
+        this.suggestions.style.transition = elTransition;
+
+        requestAnimationFrame(function () {
+          this.suggestions.style.height = 0 + 'px';
+        }.bind(this));
+      }.bind(this));
+
+      this.suggestions.setAttribute('aria-hidden', 'true');
+    }
+
+    this.showSuggestions = function () {
+      var height = this.suggestions.scrollHeight;
+
+      this.suggestions.style.height = height + 'px';
+    }
+
+    this.suggest = function (input) {
+      if (input.value === '') {
+        this.suggestions.setAttribute('aria-hidden', 'true');
+        this.hideSuggestions();
+        return;
+      } else {
+        buildFunction(this);
+        this.suggestions.setAttribute('aria-hidden', 'false');
+        this.suggestionsLabel.innerHTML = 'We have <span class="gef-search__suggestions-count">' + this.suggestionsLinks.querySelectorAll('a').length + '</span> suggestions for you<span class="gef-sr">, please find them below</span>:'
+        this.showSuggestions();
+      }
+    }
+
+    var debounced;
+    this.input.addEventListener('keyup', function (e) {
+      var key = e.which || e.keyCode;
+      // Don't run on the Tab and Shift keys
+      if (key !== 9 && key !== 16) {
+        window.clearTimeout(debounced);
+        debounced = setTimeout(function () {
+          this.suggest(this.input);
+        }.bind(this), settings.debounce);
+      }
+    }.bind(this));
   }
 })();/**
  * Site menu

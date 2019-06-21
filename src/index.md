@@ -146,6 +146,8 @@ We are working our way through a list based closely on what's already published 
 | [Site Menu]({{site.basedir}}components/site-menu/) | Draft / Pending|
 | [Data tables]({{site.basedir}}components/data-tables/) | Draft / Pending|
 | [Infographics]({{site.basedir}}components/infographics/) | Draft / Pending|
+| [Search]({{site.basedir}}components/search/) | Draft / Pending|
+| [Filter & Sort]({{site.basedir}}components/filter-and-sort/?filter=filter+1&sort=relevance) | Draft / Pending|
 
 ## Questions?
 

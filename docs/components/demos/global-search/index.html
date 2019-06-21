@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/gef-docs/static/images/favicon.ico" type="image/x-icon">
+
+    <title>GEF | Global search Demo</title>
+
+    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/gef.css">
+
+    <script type="text/javascript"> // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    
+</head>
+
+<body class="gel-guideline-body">
+    <main id="main" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-5/5@l" style="padding-right: 12px;">
+                <h1 class="gel-guideline-header__title">Global search</h1>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-5/5@l">
+                <h2>Reference implementation</h2>
+
+                
+<nav class="gef-masthead" aria-labelledby="gef-masthead__label">
+  <span id="gef-masthead__label" hidden>BBC sites</span>
+  <div class="gef-masthead__bar">
+    <div class="gef-masthead__logo">
+      <a href="https://bbc.co.uk">
+        <span class="gef-sr">BBC homepage</span>
+        <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+          <use xlink:href="/gef-docs/static/images/bbc-logo.svg#bbc-logo"></use>
+        </svg>
+      </a>
+    </div>
+    <div class="gef-masthead__account-option">
+      <a href="https://account.bbc.com/account">
+        <span class="gef-sr">Your account,</span>
+        <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+          <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-sign-in"></use>
+        </svg>
+        <span class="gef-masthead__account-text">User</span>
+      </a>
+    </div>
+    <div class="gef-masthead__alerts-option">
+      <a href="#gef-masthead__alerts">
+        <span class="gef-sr">Notifications</span>
+        <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+          <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-alerts"></use>
+        </svg>
+      </a>
+    </div>
+    <div class="gef-masthead__links">
+      <span id="sites-label" hidden>BBC sites</span>
+      <ul aria-labelledby="sites-label">
+        <li><a href="https://www.bbc.co.uk/news">News</a></li>
+        <li><a href="https://www.bbc.co.uk/sport">Sport</a></li>
+        <li><a href="https://www.bbc.co.uk/weather">Weather</a></li>
+        <li><a href="https://www.bbc.co.uk/iplayer">iPlayer</a></li>
+        <li><a href="https://www.bbc.co.uk/sounds">Sounds</a></li>
+        <li><a href="https://www.bbc.co.uk/cbbc">CBBC</a></li>
+      </ul>
+    </div>
+    <div class="gef-masthead__more-option">
+      <a href="#gef-masthead__more">
+        <span class="gef-sr">More</span>
+        <span class="gef-masthead__more-option-text" aria-hidden="true">
+          More
+          <span aria-hidden="true">▾</span>
+        </span>
+        <svg class="gef-masthead__more-option-icon gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+          <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-list"></use>
+        </svg>
+      </a>
+    </div>
+    <div class="gef-masthead__search-option" role="search">
+      <a href="https://www.bbc.co.uk/search">
+        <span>Search</span>
+        <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+          <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-search"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div id="gef-masthead__more" class="gef-masthead__more-menu gef-masthead__popup">
+    <div class="gef-masthead__more-menu-inner">
+      <h2 aria-hidden="true" class="gef-masthead__more-menu-label no-toc">MORE</h2>
+      <ul>
+        <li><a href="https://www.bbc.co.uk/news">News</a></li>
+        <li><a href="https://www.bbc.co.uk/sport">Sport</a></li>
+        <li><a href="https://www.bbc.co.uk/weather">Weather</a></li>
+        <li><a href="https://www.bbc.co.uk/iplayer">iPlayer</a></li>
+        <li><a href="https://www.bbc.co.uk/sounds">Sounds</a></li>
+        <li><a href="https://www.bbc.co.uk/cbbc">CBBC</a></li>
+        <li class="gel-masthead-more-account-link">
+          <a href="https://account.bbc.com/account">
+            <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+              <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-sign-in"></use>
+            </svg>
+            Your account
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="gef-masthead__alerts" class="gef-masthead__alerts gef-masthead__popup">
+    <h2 class="no-toc">Notifications</h2>
+    <p>No notifications right now. We'll let you know when something from your favourite programmes, artists and
+      playlists is available for you.</p>
+    <p>If your notifications are turned off, you can always turn them back on. Just go to settings.</p>
+  </div>
+  <div class="gef-masthead__banner">
+    <a href="/" class="gef-masthead__banner-logo">
+      <span class="gef-sr">
+        BBC gef homepage
+      </span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 478.2 165.8">
+        <use xlink:href="/gef-docs/static/images/gef-logo.svg#gef-logo"></use>
+      </svg>
+    </a>
+  </div>
+</nav>
+<div class="gef-search gef-global-search" role="search">
+  <form class="gef-search__controls" method="get" action="https://search.bbc.co.uk/search">
+    <label for="search" hidden>Search the BBC</label>
+    <input type="text" id="search" name="search" />
+    <button type="submit">
+      <span class="gef-sr">Search</span>
+      <svg class="gel-icon gel-icon--text" focusable="false">
+        <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-search"></use>
+      </svg>
+    </button>
+    <button type="button" class="gef-search__close">
+      <span class="gef-sr">Close</span>
+      <svg class="gel-icon gel-icon--text" focusable="false">
+        <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-no"></use>
+      </svg>
+    </button>
+  </form>
+  <aside class="gef-search__suggestions" aria-label="Search suggestions" aria-hidden="true" hidden>
+    <h2 class="gef-search__suggestions-label" role="status" aria-live="polite">Suggestions:</h2>
+    <div class="gef-search__suggestions-links"></div>
+  </aside>
+</div>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function (event) {
+    window.gef && gef.Masthead.init();
+
+    var mastheadElem = document.querySelector('.gef-masthead');
+    var masthead = new gef.Masthead.constructor(mastheadElem);
+
+    var globalSearchElem = document.querySelector('.gef-global-search');
+
+    // Dummy suggestions data
+    var globalData = {
+      a: [
+        'Aenean',
+        'Arcu',
+        'Aliquam'
+      ],
+      b: [
+        'Blandit',
+        'Bibendum'
+      ],
+      c: [
+        'Curae',
+        'Curabitur',
+        'Congue',
+        'Cras'
+      ],
+      d: [
+        'Dignissim',
+        'Dictum'
+      ]
+    }
+
+    // Toggle the search region's visibility
+    var openButton = document.querySelector('.gef-masthead__search-option a');
+    gef.Search.toggle(openButton, globalSearchElem);
+
+    // A placeholder function for building the 
+    // suggestions HTML
+    var globalBuildFunction = function (context) {
+      var letter = context.input.value.charAt(0);
+      var hasSuggestions = context.data.hasOwnProperty(letter);
+      if (hasSuggestions) {
+        var listItems = context.data[letter].map(function (l) {
+          return '<li><a href="#">' + l + '</a></li>';
+        }).join('');
+        context.suggestionsLinks.innerHTML = '<ul>' + listItems + '</ul>';
+      }
+    }
+
+    var globalSearch = new gef.Search.constructor(globalSearchElem, globalData, globalBuildFunction);
+  });
+</script>
+            </div>
+        </div>
+    </main>
+
+    <script nomodule defer type="text/javascript" src="/gef-docs/static/js/external-svg-polyfill.js"></script>
+    <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
+
+    
+</body>
+
+</html>
