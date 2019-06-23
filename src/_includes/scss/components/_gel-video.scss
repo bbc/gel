@@ -1,0 +1,132 @@
+.gel-video__container {
+  position: relative;
+}
+
+.gel-video__container button:focus {
+  outline: 2px solid;
+}
+
+.gel-video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gel-video__controls {
+  padding: 0.5rem;
+  background-color: $gel-color--tundora;
+  color: $gel-color--white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gel-video__play-button,
+.gel-video__mute-button {
+  border: 0;
+  background: none;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.25rem;
+  color: $gel-color--white;
+}
+
+.gel-video__timeline-container {
+  padding: 0 0.5rem;
+  flex: auto;
+  display: flex;
+  align-items: center;
+}
+
+.gel-video__timeline-container input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+}
+
+.gel-video__timeline-container input[type=range]:focus {
+  outline: none;
+}
+
+.gel-video__timeline-container input[type=range]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  background: $gel-color--white;
+}
+
+.gel-video__timeline-container input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 10px;
+  background: $gel-color--white;
+  cursor: pointer;
+  margin-top: -7px;
+}
+
+.gel-video__timeline-container input[type=range]:focus::-webkit-slider-thumb {
+  outline: 2px solid $gel-color--white;
+  outline-offset: 2px;
+}
+
+.gel-video__timeline-container input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  background: $gel-color--white;
+}
+
+.gel-video__timeline-container input[type=range]::-moz-range-thumb {
+  border: 0;
+  border-radius: 0;
+  height: 20px;
+  width: 10px;
+  background: $gel-color--white;
+  cursor: pointer;
+}
+
+.gel-video__timeline-container input[type=range]:focus::-moz-range-thumb {
+  outline: 2px solid $gel-color--white;
+  outline-offset: 2px;
+}
+
+input[type=range]::-ms-fill-lower,
+input[type=range]::-ms-fill-upper,
+input[type=range]::-ms-thumb {
+  border-bottom: 1px solid $gel-color--white;
+  background-color: $gel-color--white;
+}
+
+.gel-video__button-on {
+  display: none;
+}
+
+[class*="gel-video"].active .gel-video__button-on {
+  display: block;
+}
+
+[class*="gel-video"].active .gel-video__button-off {
+  display: none;
+}
+
+.gel-video__container [hidden] {
+  display: none;
+}
+
+@media (-ms-high-contrast: active) {
+  .gel-video__timeline-container input[type=range],
+  .gel-video__timeline-container input[type=range]::-webkit-slider-runnable-track,
+  .gel-video__timeline-container input[type=range]::-webkit-slider-thumb,
+  .gel-video__timeline-container input[type=range]:focus::-webkit-slider-runnable-track,
+  .gel-video__timeline-container input[type=range]::-webkit-slider-thumb,
+  .gel-video__timeline-container input[type=range]:focus::-webkit-slider-runnable-track,
+  .gel-video__timeline-container input[type=range]::-moz-range-track,
+  .gel-video__timeline-container input[type=range]::-moz-range-thumb {
+    all: initial;
+  }
+
+  .gel-video__timeline-container input[type=range] {
+    width: 100%;
+    margin: 7px 0;
+  }
+}

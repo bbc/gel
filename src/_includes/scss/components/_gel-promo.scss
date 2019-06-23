@@ -1,0 +1,151 @@
+.gel-promo {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  background-color: $gel-color--alto;
+  outline: 2px solid transparent; /* for high contrast mode */
+}
+
+.gel-promo__content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.gel-promo__image {
+  height: 10rem;
+  overflow: hidden;
+  position: relative;
+  /* to improve the appearance where
+  object fit isn't supported ↓ */
+  text-align: center;
+  background-color: $gel-color--tundora;
+}
+
+.gel-promo__label {
+  background-color: $gel-color--black;
+  color: $gel-color--white;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: bold;
+  line-height: 1;
+  padding: 4px;
+  position: absolute;
+    top: 0;
+    left: 0;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+.gel-promo__image img {
+  height: 100%;
+  width: auto;
+}
+
+@supports (object-fit: cover) {
+  .gel-promo__image img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.gel-promo__headline {
+  font-size: 1.125rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: inherit;
+}
+
+.gel-promo__headline::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.gel-promo a:not(.gel-promo__headline) {
+  position: relative;
+}
+
+.gel-promo__headline:hover,
+.gel-promo__headline:focus {
+  outline: none;
+  text-decoration: underline;
+}
+
+.gel-promo:focus-within {
+  outline: 0.25rem solid;
+}
+
+.gel-promo .gel-icon {
+  margin-top: 0;
+}
+
+.gel-promo__indicator {
+  padding: 0.5rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+}
+
+svg + .gel-promo__indicator-text {
+  margin-left: 0.25rem;
+}
+
+.gel-promo__content .gel-metadata-strip {
+  padding: 0;
+  margin: 0;
+  margin-top: auto;
+}
+
+.gel-promo.gel-promo--horizontal {
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.gel-promo.gel-promo--horizontal .gel-promo__image {
+  flex: 1;
+  min-width: 266px;
+  height: auto;
+}
+
+.gel-promo.gel-promo--horizontal .gel-promo__content {
+  min-width: 266px;
+  flex: 999;
+}
+
+.gel-promos {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gel-promos > * {
+  flex: 0 0 266px;
+  margin: 0 1rem 1rem 0;
+}
+
+@supports (display: grid) {
+  .gel-promos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
+    margin: 0;
+    grid-gap: 1rem;
+  }
+
+  .gel-promo.gel-promo--horizontal {
+    grid-column: span 2;
+  }
+
+  .gel-promos > * {
+    margin: 0;
+    max-width: none;
+  }
+}

@@ -4,16 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/gef-docs/static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/gel-tags/static/images/favicon.ico" type="image/x-icon">
 
-    <title>GEF | Grids</title>
+    <title>GEL | Grids</title>
 
-    <script src="/gef-docs/static/js/site.js"></script>
+    <script src="/gel-tags/static/js/site.js"></script>
 
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/gef.css">
-    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/site.css">
+    <link rel="stylesheet" type="text/css" href="/gel-tags/static/css/gel.css">
+    <link rel="stylesheet" type="text/css" href="/gel-tags/static/css/site.css">
 
     <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
@@ -43,30 +43,30 @@
     
 </head>
 
-<body class="gefdocs-body">
-    <p class="gef-sr gef-sr__focusable gef-sr__overlay" tabindex="0">
-        <a href="#main" onfocus="this.parentNode.classList.add('gef-sr__focused')"
-            onblur="this.parentNode.classList.remove('gef-sr__focused')">Skip
+<body class="geltags-body">
+    <p class="gel-sr gel-sr__focusable gel-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('gel-sr__focused')"
+            onblur="this.parentNode.classList.remove('gel-sr__focused')">Skip
             to content</a>
     </p>
 
     <header>
-        <div class="gefdocs-header gs-u-clearfix">
+        <div class="geltags-header gs-u-clearfix">
             <div class="gel-wrap">
                 <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24"
                         viewBox="0 0 100 24">
                         <title>BBC</title>
-                        <image xlink:href="/gef-docs/static/images/bbc-blocks_grey.svg"
-                            src="/gef-docs/static/images/bbc-blocks_grey.png" width="100%" height="100%"></image>
+                        <image xlink:href="/gel-tags/static/images/bbc-blocks_grey.svg"
+                            src="/gel-tags/static/images/bbc-blocks_grey.png" width="100%" height="100%"></image>
                     </svg></a>
             </div>
         </div>
-        <div class="gefdocs-header__banner gs-u-clearfix">
+        <div class="geltags-header__banner gs-u-clearfix">
             <div class="gel-wrap">
                 <div class="gel-layout">
                     <div class="gel-layout__item gel-2/5@l"
                         style="text-align:left; padding-left:14px; margin-bottom:32px; margin-top: -10px;">
-                        <a href="/gef-docs/" class="gefdocs-logo"><img src="/gef-docs/static/images/bbc-gel-tags.png" style="max-width: 175px;"></a>
+                        <a href="/gel-tags/" class="geltags-logo"><img src="/gel-tags/static/images/bbc-gel-tags.png" style="max-width: 175px;"></a>
                     </div>
                     
                 </div>
@@ -81,12 +81,12 @@
             </div>
 
             <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
-                <h1 class="gefdocs-header__title">Grids</h1>
-                <p class="gefdocs-header__summary gel-great-primer">Visual layout should be efficient and consistent, without impeding document structure and accessibility</p>
+                <h1 class="geltags-header__title">Grids</h1>
+                <p class="geltags-header__summary gel-great-primer">Visual layout should be efficient and consistent, without impeding document structure and accessibility</p>
             </div>
 
             <div class="gel-layout__item gel-1/5@l">
-                <dl class="gefdocs-standout-box">
+                <dl class="geltags-standout-box">
                     
                     <dt>Version:</dt>
                     <dd>0.1.0</dd>
@@ -102,11 +102,11 @@
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900"
                     style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="geltags-toc__links" class="geltags-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
-            <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
+            <div class="geltags-sections geltags-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="introduction">Introduction</h2>
 <p>The following guidance builds upon <a href="https://www.bbc.co.uk/gel/guidelines/grid">GEL's Grid specification</a> with progressive enhancements to capitalize on recent CSS layout developments.</p>
 <h2 id="recommended-markup">Recommended markup</h2>
@@ -182,8 +182,8 @@
 </code></pre>
 <p>In the example, the grid is defined using <code>role=&quot;list&quot;</code>. Children are explicitly removed from the accessibility tree using <code>role=&quot;presentation&quot;</code>, and items are marked with <code>role=&quot;listitem&quot;</code>. The outcome is that assistive technologies correctly report one list encapsulating eight list items.</p>
 
-            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-compatibility-and-the-presentation-role">
-              <h4 id="aside-info-compatibility-and-the-presentation-role" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Compatibility and the presentation role</h4><div><p>The application of <code>role=&quot;presentation&quot;</code><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> on a <code>&lt;div&gt;</code> should be redundant, since <code>&lt;div&gt;</code> already has no implicit <code>role</code>. However, some browsers, together with screen readers, treat any children of <code>role=&quot;list&quot;</code> as a list item, hence the explicit <code>role</code> augmentation.</p>
+            <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-info-compatibility-and-the-presentation-role">
+              <h4 id="aside-info-compatibility-and-the-presentation-role" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Compatibility and the presentation role</h4><div><p>The application of <code>role=&quot;presentation&quot;</code><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> on a <code>&lt;div&gt;</code> should be redundant, since <code>&lt;div&gt;</code> already has no implicit <code>role</code>. However, some browsers, together with screen readers, treat any children of <code>role=&quot;list&quot;</code> as a list item, hence the explicit <code>role</code> augmentation.</p>
 </aside><h3 id="headings">Headings</h3>
 <p>Headings, together with lists, create a perceivable structure non-visually, and provide navigational cues<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2:1]</a></sup>. A page should make liberal but appropriate use of headings, whether the layout is divided into a grid or exists as a single column of text.</p>
 <p>It's quite legitimate to place headings within list items, and beneficial where they represent grid items that contain a lot of structured content. But be aware that a list represents a <em>flat</em> hierarchical structure, so each heading should be of the same level, to reflect this. This level is determined by the level of the heading that introduces the list itself.</p>
@@ -264,17 +264,17 @@
 <h3 id="css-grid-enhancement">CSS Grid enhancement</h3>
 <p>The CSS Grid module<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup> is preferable to Flexbox in some circumstances. With CSS Grid it is possible to create a responsive grid of an indeterminate number of items, where each item automatically conforms to the same width, regardless of wrapping behaviour. This behaviour removes the necessity for <code>@media</code> breakpoints, and is particularly useful when arranging sets of  <a href="../cards"><strong>Cards</strong></a> or <a href="../promos"><strong>Promos</strong></a>.</p>
 <p>In the <a href="../cards"><strong>Cards</strong></a> pattern, progressive enhancement is achieved using <code>@supports</code>:</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-cards</span> &gt; * + * {
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-cards</span> &gt; * + * {
   <span class="hljs-attribute">list-style</span>: none;
   <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">1rem</span>;
 }
 
 @<span class="hljs-keyword">supports</span> (display: grid) {
-  <span class="hljs-selector-class">.gef-cards</span> &gt; * + * {
+  <span class="hljs-selector-class">.gel-cards</span> &gt; * + * {
     <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">0</span>;
   }
 
-  <span class="hljs-selector-class">.gef-cards</span> {
+  <span class="hljs-selector-class">.gel-cards</span> {
     <span class="hljs-attribute">display</span>: grid;
     <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(auto-fill, minmax(266px, 1fr));
     <span class="hljs-attribute">grid-gap</span>: <span class="hljs-number">1rem</span>;
@@ -319,18 +319,18 @@
 </section>
 
 
-                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding"
+                <aside class="geltags-breakout-box geltags-breakout-box extra-padding"
                     aria-labelledby="aside-info-Could-you-improve-this-documentation">
                     <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
-                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
-                            <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info"
+                        <svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text">
+                            <use xlink:href="/gel-docs/static/images/gel-icons-core-set.svg#gel-icon-info"
                                 style="fill:#404040;"></use>
                         </svg>Could you improve this documentation?
                     </h4>
                     <div>
                         <p>
                             If you think you could make anything you see here a bit better then become one of <a
-                                href="/gef-docs/contributors/">our
+                                href="/gel-tags/contributors/">our
                                 lovely contributors</a>!
                         </p>
                     </div>
@@ -340,18 +340,18 @@
         </div>
     </main>
 
-    <div class="gefdocs-feedback-banner">
+    <div class="geltags-feedback-banner">
         <div class="gel-wrap">
             <div class="gel-layout">
                 <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
-                    <h2 class="gefdocs-feedback-banner__title">Got a minute?</h2>
-                    <p>We'd love to know what you think of the Code GEL website.</p>
+                    <h2 class="geltags-feedback-banner__title">Got a minute?</h2>
+                    <p>We'd love to know what you think of our website.</p>
                     <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/"
-                        class="gefdocs-button gefdocs-button__link-button gefdocs-feedback-banner__cta gefdocs-button--primary">
-                        <span class="gefdocs-button__content">Go to survey</span>
-                        <span class="gefdocs-button__icon_wrapper">
-                            <svg class="gefdocs-button__icon gefdocs-icon gefdocs-icon--text">
-                                <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                        class="geltags-button geltags-button__link-button geltags-feedback-banner__cta geltags-button--primary">
+                        <span class="geltags-button__content">Go to survey</span>
+                        <span class="geltags-button__icon_wrapper">
+                            <svg class="geltags-button__icon geltags-icon geltags-icon--text">
+                                <use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-external-link"
                                     style="fill:undefined;"></use>
                             </svg>
                         </span>
@@ -361,8 +361,8 @@
         </div>
     </div>
 
-    <script nomodule defer type="text/javascript" src="/gef-docs/static/js/external-svg-polyfill.js"></script>
-    <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
+    <script nomodule defer type="text/javascript" src="/gel-tags/static/js/external-svg-polyfill.js"></script>
+    <script type="text/javascript" src="/gel-tags/static/js/gel.js"></script>
 
     
 

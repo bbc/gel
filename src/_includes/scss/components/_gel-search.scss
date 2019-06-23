@@ -1,0 +1,54 @@
+.gel-search__controls {
+  font-size: 2rem;
+  padding: 2rem;
+  display: flex;
+  background-color: $gel-color--dusty-gray;
+}
+
+.gel-search__controls > * {
+  font-size: inherit;
+  flex: 0 1 auto;
+}
+
+.gel-search__controls-brand {
+  height: 3rem;
+  width: auto;
+  align-self: center;
+}
+
+.gel-search__controls > input,
+.gel-search__controls > button {
+  padding: 0.5rem;
+}
+
+.gel-search__controls > input:focus,
+.gel-search__controls > button:focus {
+  outline: 2px solid;
+  outline-offset: -2px;
+}
+
+.gel-search__controls input {
+  flex-grow: 1;
+  min-width: 0;
+  border: 0;
+}
+
+.gel-search__controls button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.gel-search__controls [type="submit"] {
+  background: #fff;
+}
+
+.gel-search__controls > * + input,
+.gel-search__controls > .gel-search__close {
+  margin-left: 1rem;
+}
+
+.gel-search__suggestions {
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+}

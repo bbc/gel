@@ -1,0 +1,159 @@
+.gel-cards {
+  list-style: none;
+  padding: 0;
+}
+
+.gel-card {
+  background-color: #F1F1F1;
+  outline: 2px solid transparent; /* for high contrast mode */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.gel-card__content {
+  position: relative;
+  overflow: hidden;
+  height: 10rem;
+  order: -1;
+}
+
+.gel-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gel-cards > * {
+  flex: 0 0 266px;
+  margin: 0 1rem 1rem 0;
+}
+
+@supports (display: grid) {
+  .gel-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
+    grid-gap: 1rem;
+  }
+
+  .gel-cards > * {
+    margin: 0;
+  }
+}
+
+.gel-card__content img,
+.gel-card__content video {
+  height: 100%;
+  width: auto;
+}
+
+/* to neaten up where object-fit isn't supported */
+.gel-card__content {
+  text-align: center;
+  background-color: $gel-color--tundora; 
+}
+
+@supports (object-fit: cover) {
+  .gel-card__content img, 
+  .gel-card__content video {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.gel-card__headline, .gel-card__desc {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.gel-card__toolbar {
+  font-size: 0.85rem;
+  height: 2.5rem;
+  list-style: none;
+  display: flex;
+  background-color: #e5e5e5;
+  margin-top: auto;
+  border-top: 1px solid transparent; /* for high contrast mode */
+}
+
+.gel-card__toolbar button {
+  background: none;
+  border: none;
+  font-size: inherit;
+  display: inline-block;
+  color: $gel-color--tundora;
+}
+
+.gel-card__toolbar > * {
+  padding: 0.5rem 1rem;
+}
+
+.gel-card__toolbar [aria-expanded] {
+  text-align: left;
+  flex-grow: 999;
+}
+
+.gel-card__close-label {
+  display: none;
+}
+
+[aria-expanded="true"] .gel-card__close-label {
+  display: block;
+}
+
+[aria-expanded="true"] .gel-card-more-label {
+  display: none;
+}
+
+.gel-card__toolbar button:hover,
+.gel-card__toolbar button:focus {
+  outline: 2px solid transparent; /* for high contrast mode */
+  outline-offset: -2px; /* for high contrast mode */
+  background-color: $gel-color--star-command-blue;
+  color: $gel-color--white;
+}
+
+.gel-card__info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 2.5rem;
+  left: 0;
+  margin: 0;
+  padding: 1rem;
+  background-color: #F1F1F1;
+  overflow-y: auto;
+}
+
+.gel-card-info__heading:focus {
+  outline: none;
+}
+
+/* Video */
+
+.gel-card .gel-card__play-button,
+.gel-card .gel-card__mute-button {
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  border: 0;
+  border-radius: 0;
+  background-color: hsla(0, 0%, 100%, 0.5);
+  color: $gel-color--tundora;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.gel-card .gel-card__play-button:focus,
+.gel-card .gel-card__mute-button:focus {
+  outline: 2px solid $gel-color--black;
+}
+
+.gel-card .gel-card__mute-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  top: 0;
+  left: auto;
+  right: 0;
+}

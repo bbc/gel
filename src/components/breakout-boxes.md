@@ -17,10 +17,10 @@ Sometimes its worth noting or alerting users to certain information, but that in
 The following example is a "Note" type breakout. The same structure should be used for other types of breakout, differing only in terms of content and iconography.
 
 ```html
-<aside class="gef-breakout-box" aria-labelledby="aside-1540915290281">
+<aside class="gel-breakout-box" aria-labelledby="aside-1540915290281">
   <h4 aria-hidden="true" id="aside-1540915290281">
     <svg class="gel-icon gel-icon--text">
-      <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info"></use>
+      <use xlink:href="/gel-docs/static/images/gel-icons-core-set.svg#gel-icon-info"></use>
     </svg>
     The unique title for the breakout
   </h4>
@@ -55,7 +55,7 @@ The icon supplied to the heading must be from the [GEL Iconography Set](http://b
 The `background-color` that demarcates the **Breakout box** from the surrounding page will be eliminated by Windows High Contrast Mode. A transparent top and bottom border is applied. This becomes visible as a solid colour when Windows HCM is turned on, achieving the same purpose of demarcation.
 
 ```css
-.gef-breakout-box {
+.gel-breakout-box {
   background: #eee;
   border-top: 1px solid transparent; /* for high contrast mode */
   border-bottom: 1px solid transparent; /* for high contrast mode */

@@ -1,7 +1,7 @@
 'use strict';
 
 const DATA_SRC = {
-    github: 'https://api.github.com/repos/bbc/gef-docs/contributors'
+    github: 'https://api.github.com/repos/bbc/gel-tags/contributors'
 };
 
 const path = require( 'path' );
@@ -19,7 +19,7 @@ if (!apiToken) {
 console.log( '# [INFO] Fetching new contributor data.' );
 
 request.get( {
-    uri: 'https://api.github.com/repos/bbc/gef-docs/contributors',
+    uri: 'https://api.github.com/repos/bbc/gel-tags/contributors',
     method: 'GET', 
     json: true,
     headers: {

@@ -1,0 +1,78 @@
+
+.gel-breakout-box {
+  background: #eee;
+  border-top: 1px solid transparent; /* for high contrast mode */
+  border-bottom: 1px solid transparent; /* for high contrast mode */
+  padding: 8px;
+  margin: 20px 0 32px 0;
+  width: 100%
+}
+
+.gel-breakout-box.extra-padding {
+  padding: 16px 16px 16px 18px
+}
+.gel-breakout-box.extra-margin {
+  margin-top: 18px;
+}
+
+.gel-breakout-box h4 {
+  margin-top: 8px;
+  margin-bottom: 8px
+}
+
+.gel-breakout-box p {
+  overflow: hidden;
+  margin: 0;
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 15px;
+  font-size: .9375rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+  color: #404040;
+}
+.b-reith-sans-loaded .gel-breakout-box p {
+    @include reith(false, true);
+}
+
+@media (min-width: 37.5em) {
+  .gel-breakout-box p {
+      line-height:20px;
+      line-height: 1.25rem;
+  }
+
+  .no-touch .gel-breakout-box p {
+    font-size: 14px;
+    font-size: .875rem;
+    line-height: 18px;
+    line-height: 1.125rem;
+  }
+}
+
+.gel-breakout-box__icon {
+    float: left;
+    display: inline;
+    margin-right: 8px;
+    position: relative;
+    top: 1px
+}
+
+.gel-standout-box {
+  background: #eee;
+  width: 100%;
+  overflow: auto;
+  zoom: 1;
+  padding: double($gel-spacing-unit);
+  @include gel-typography('brevier');
+  dt, dd {
+    float: left;
+    line-height: 150%;
+  }
+  dt {
+    clear:both;
+    font-weight: bold;
+  }
+  dd {
+    margin-inline-start: 8px;
+  }
+}

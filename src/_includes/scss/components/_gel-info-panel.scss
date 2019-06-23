@@ -1,0 +1,100 @@
+.gel-infopanel {
+  display: none; 
+}
+
+.gel-infopanel--with-js {
+  display: inline-block;
+}
+
+.gel-infopanel--showing {
+  position: relative;
+}
+
+.gel-infopanel__panel {
+  text-align: left;
+  background-color: $gel-color--alto;
+  border: 2px solid transparent; /* for high contrast mode */
+  position: absolute;
+  max-width: 80vw;
+}
+
+.gel-infopanel__title-area {
+  line-height: 1;
+  padding: 0.75rem;
+  font-size: 1.125rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gel-infopanel__close-button {
+  color: $gel-color--tundora;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+.gel-infopanel__close-button:focus {
+  outline: 1px solid;
+  outline-offset: 2px;
+}
+
+.gel-infopanel--below {
+  top: calc(100% + 1rem);
+}
+
+.gel-infopanel--above {
+  bottom: calc(100% + 1rem);
+}
+
+.gel-infopanel--right {
+  right: 0;
+}
+
+.gel-infopanel--center {
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+@supports (clip-path: inset(100%)) {
+  .gel-infopanel__panel::after {
+    content: '';
+    display: inline-block;
+    background-color: inherit;
+    width: 0.75rem;
+    height: 0.75rem;
+    position: absolute;
+  }
+
+  .gel-infopanel--below::after {
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+    top: calc(-0.75rem + 1px);
+  }
+
+  .gel-infopanel--above::after{
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    bottom: calc(-0.75rem + 1px);
+  }
+
+  .gel-infopanel--left::after {
+    left: 1.5rem;
+  }
+
+  .gel-infopanel--right::after {
+    right: 1.5rem;
+  }
+  
+  .gel-infopanel--center::after {
+    left: calc(50% - 0.375rem);
+  }
+}
+
+/* share tools styles */
+
+.gel-infopanel .gel-sharetools__complete > * {
+  padding: 0 0.75rem 0.75rem;
+}
+
+.gel-infopanel .gel-sharetools__complete a {
+  padding: 0.5rem;
+}

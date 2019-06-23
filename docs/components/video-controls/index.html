@@ -4,16 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/gef-docs/static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/gel-tags/static/images/favicon.ico" type="image/x-icon">
 
-    <title>GEF | Video controls</title>
+    <title>GEL | Video controls</title>
 
-    <script src="/gef-docs/static/js/site.js"></script>
+    <script src="/gel-tags/static/js/site.js"></script>
 
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/gef.css">
-    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/site.css">
+    <link rel="stylesheet" type="text/css" href="/gel-tags/static/css/gel.css">
+    <link rel="stylesheet" type="text/css" href="/gel-tags/static/css/site.css">
 
     <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
@@ -43,30 +43,30 @@
     
 </head>
 
-<body class="gefdocs-body">
-    <p class="gef-sr gef-sr__focusable gef-sr__overlay" tabindex="0">
-        <a href="#main" onfocus="this.parentNode.classList.add('gef-sr__focused')"
-            onblur="this.parentNode.classList.remove('gef-sr__focused')">Skip
+<body class="geltags-body">
+    <p class="gel-sr gel-sr__focusable gel-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('gel-sr__focused')"
+            onblur="this.parentNode.classList.remove('gel-sr__focused')">Skip
             to content</a>
     </p>
 
     <header>
-        <div class="gefdocs-header gs-u-clearfix">
+        <div class="geltags-header gs-u-clearfix">
             <div class="gel-wrap">
                 <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24"
                         viewBox="0 0 100 24">
                         <title>BBC</title>
-                        <image xlink:href="/gef-docs/static/images/bbc-blocks_grey.svg"
-                            src="/gef-docs/static/images/bbc-blocks_grey.png" width="100%" height="100%"></image>
+                        <image xlink:href="/gel-tags/static/images/bbc-blocks_grey.svg"
+                            src="/gel-tags/static/images/bbc-blocks_grey.png" width="100%" height="100%"></image>
                     </svg></a>
             </div>
         </div>
-        <div class="gefdocs-header__banner gs-u-clearfix">
+        <div class="geltags-header__banner gs-u-clearfix">
             <div class="gel-wrap">
                 <div class="gel-layout">
                     <div class="gel-layout__item gel-2/5@l"
                         style="text-align:left; padding-left:14px; margin-bottom:32px; margin-top: -10px;">
-                        <a href="/gef-docs/" class="gefdocs-logo"><img src="/gef-docs/static/images/bbc-gel-tags.png" style="max-width: 175px;"></a>
+                        <a href="/gel-tags/" class="geltags-logo"><img src="/gel-tags/static/images/bbc-gel-tags.png" style="max-width: 175px;"></a>
                     </div>
                     
                 </div>
@@ -81,12 +81,12 @@
             </div>
 
             <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
-                <h1 class="gefdocs-header__title">Video controls</h1>
-                <p class="gefdocs-header__summary gel-great-primer">Custom HTML5 video functionality must be accessible and intuitive</p>
+                <h1 class="geltags-header__title">Video controls</h1>
+                <p class="geltags-header__summary gel-great-primer">Custom HTML5 video functionality must be accessible and intuitive</p>
             </div>
 
             <div class="gel-layout__item gel-1/5@l">
-                <dl class="gefdocs-standout-box">
+                <dl class="geltags-standout-box">
                     
                     <dt>Version:</dt>
                     <dd>0.1.0</dd>
@@ -102,11 +102,11 @@
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900"
                     style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="geltags-toc__links" class="geltags-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
-            <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
+            <div class="geltags-sections geltags-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="introduction">Introduction</h2>
 <p>Video is an important consideration for a broadcasting company. The BBC presents web-based video in a variety of different ways. Sometimes the video is embedded in a fully-featured player, and in other cases just a couple of basic controls are present. The purpose of this documentation is to set out the recommended interaction design for custom video controls.</p>
 <h2 id="recommended-markup">Recommended markup</h2>
@@ -137,7 +137,7 @@
 </ul>
 <h3 id="enhancement">Enhancement</h3>
 <p>Custom controls should be added progressively. Until JavaScript is run, the <code>&lt;video&gt;</code> should take <code>controls</code> to provide the native controls, and any custom controls should be hidden with <code>hidden</code>:</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-video__container"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span>&gt;</span>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-video__container"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">controls</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path/to/video.webm"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"video/webm"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path/to/video.mp4"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"video/mp4"</span>&gt;</span>
@@ -146,14 +146,14 @@
       <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/video.mp4"</span> <span class="hljs-attr">download</span>&gt;</span>Download<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> the video instead.
     <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-video__controls"</span> <span class="hljs-attr">hidden</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-video__controls"</span> <span class="hljs-attr">hidden</span>&gt;</span>
     <span class="hljs-comment">&lt;!-- custom controls here --&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 
-            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-the-group-role">
-              <h4 id="aside-info-the-group-role" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>The group role</h4><div><p>Note the inclusion of the ARIA <code>group</code> role<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> in the above example. This communicates to assistive technologies that the video player and custom controls are semantically related.</p>
+            <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-info-the-group-role">
+              <h4 id="aside-info-the-group-role" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>The group role</h4><div><p>Note the inclusion of the ARIA <code>group</code> role<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> in the above example. This communicates to assistive technologies that the video player and custom controls are semantically related.</p>
 </aside><p>The JavaScript to switch to the enhanced/custom version is trivial:</p>
 <pre class="hljs"><code><span class="hljs-comment">// Where `video` represents the &lt;video&gt; node</span>
 <span class="hljs-comment">// and `customControls` the custom controls container</span>
@@ -172,23 +172,23 @@ customControls.hidden = <span class="hljs-literal">false</span>;
 <li>Paused state → shows the familiar triangle-shaped icon → &quot;play&quot;</li>
 <li>Playing state → shows the familiar two-vertical-lines icon → &quot;pause&quot;</li>
 </ul>
-<p>In the <a href="#reference-implementation">reference implementation</a>, an <code>active</code> class is appended to the parent button in its active state. This is used as a styling hook to toggle between the two text labels and their icons. In the following example, <code>class=&quot;gef-docs-video-button-play-off</code> is hidden with <code>display: none</code> and is not available to assistive technologies. The calculated accessible name<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> is <em>&quot;Pause&quot;</em>.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-video__play-button active"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-video__button-off"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sr"</span>&gt;</span>Play<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<p>In the <a href="#reference-implementation">reference implementation</a>, an <code>active</code> class is appended to the parent button in its active state. This is used as a styling hook to toggle between the two text labels and their icons. In the following example, <code>class=&quot;gel-docs-video-button-play-off</code> is hidden with <code>display: none</code> and is not available to assistive technologies. The calculated accessible name<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> is <em>&quot;Pause&quot;</em>.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-video__play-button active"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-video__button-off"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr"</span>&gt;</span>Play<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">svg</span>&gt;</span><span class="hljs-comment">&lt;!-- play icon --&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-video__button-on"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sr"</span>&gt;</span>Pause<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-video__button-on"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr"</span>&gt;</span>Pause<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">svg</span>&gt;</span><span class="hljs-comment">&lt;!-- pause icon --&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre>
-<p>The text labels are included as <code>&lt;span&gt;</code>s and hidden visually using the <code>gef-sr</code> class.</p>
+<p>The text labels are included as <code>&lt;span&gt;</code>s and hidden visually using the <code>gel-sr</code> class.</p>
 <pre class="hljs"><code><span class="hljs-comment">/*
 Visually hide an element, but leave it available for screen readers 
  */</span>
-<span class="hljs-selector-class">.gef-sr</span> {
+<span class="hljs-selector-class">.gel-sr</span> {
     <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">clip</span>: <span class="hljs-built_in">rect</span>(0 0 0 0);
     <span class="hljs-attribute">height</span>: <span class="hljs-number">1px</span>;
@@ -213,21 +213,21 @@ Visually hide an element, but leave it available for screen readers
 <li>To allow the user to select a point along this timeline</li>
 </ol>
 <p>The timeline must, therefore, be keyboard and screen reader accessible. The <code>type=&quot;range&quot;</code> input is a robust solution.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"timeline"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-video__scrub-container"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sr"</span>&gt;</span>Timeline<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"timeline"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-video__scrub-container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr"</span>&gt;</span>Timeline<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"timeline"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"95.2"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"14.7"</span> /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 </code></pre>
 <p>Note <code>min</code>, <code>max</code>, and <code>value</code>, which determine the range and the current play position. These values are in seconds. The <code>max</code> and <code>value</code> values map to the <code>&lt;video&gt;</code>'s <code>duration</code> and <code>currentTime</code> properties.</p>
 <p>To make these values more readable non-visually, they are rounded up into whole numbers and converted into minutes and seconds to be represented by the <code>aria-valuemin</code>, <code>aria-valuemax</code>, and <code>aria-valuenow</code> properties.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"timeline"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-video__scrub-container"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sr"</span>&gt;</span>Timeline<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"timeline"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-video__scrub-container"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr"</span>&gt;</span>Timeline<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"timeline"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">aria-valuemin</span>=<span class="hljs-string">"0 seconds"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"95.2"</span> <span class="hljs-attr">aria-valuemax</span>=<span class="hljs-string">"1 minutes and 35 seconds"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"14.7"</span> <span class="hljs-attr">aria-valuenow</span>=<span class="hljs-string">"0 minutes and 14 seconds"</span> /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 </code></pre>
 <h2 id="recommended-layout">Recommended layout</h2>
 <p>The layout will differ depending on the context and number of simultaneous controls that are implemented. It is, however, recommended the controls are sufficiently large enough to be targeted by mouse and touch, and they carry clear focus styles.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-video__container</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:focus</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-video__container</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:focus</span> {
   <span class="hljs-attribute">outline</span>: <span class="hljs-number">2px</span> solid $gel-color--tundora;
 }
 </code></pre>
@@ -235,22 +235,22 @@ Visually hide an element, but leave it available for screen readers
 <p>The <code>type=&quot;range&quot;</code> input (for the timeline) requires a number of proprietary styles to have a custom appearance<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>.</p>
 <p>Many of the custom styles are not visible where Windows High Contrast Mode is active, so we reinstate the user agent styles in an <code>@media</code> block:</p>
 <pre class="hljs"><code>@<span class="hljs-keyword">media</span> (-ms-high-contrast: active) {
-  <span class="hljs-selector-class">.gef-video__timeline-container</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=range]</span>,
-  <span class="hljs-selector-class">.gef-video__timeline-container</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=range]</span><span class="hljs-selector-pseudo">::-webkit-slider-runnable-track</span>,
-  <span class="hljs-selector-class">.gef-video__timeline-container</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=range]</span><span class="hljs-selector-pseudo">::-webkit-slider-thumb</span>,
-  <span class="hljs-selector-class">.gef-video__timeline-container</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=range]</span><span class="hljs-selector-pseudo">:focus</span><span class="hljs-selector-pseudo">::-webkit-slider-runnable-track</span>,
-  <span class="hljs-selector-class">.gef-video__timeline-container</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=range]</span><span class="hljs-selector-pseudo">::-webkit-slider-thumb</span>,
-  <span class="hljs-selector-class">.gef-video__timeline-container</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=range]</span><span class="hljs-selector-pseudo">:focus</span><span class="hljs-selector-pseudo">::-webkit-slider-runnable-track</span>,
-  <span class="hljs-selector-class">.gef-video__timeline-container</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=range]</span><span class="hljs-selector-pseudo">::-moz-range-track</span>,
-  <span class="hljs-selector-class">.gef-video__timeline-container</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=range]</span><span class="hljs-selector-pseudo">::-moz-range-thumb</span> {
+  <span class="hljs-selector-class">.gel-video__timeline-container</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=range]</span>,
+  <span class="hljs-selector-class">.gel-video__timeline-container</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=range]</span><span class="hljs-selector-pseudo">::-webkit-slider-runnable-track</span>,
+  <span class="hljs-selector-class">.gel-video__timeline-container</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=range]</span><span class="hljs-selector-pseudo">::-webkit-slider-thumb</span>,
+  <span class="hljs-selector-class">.gel-video__timeline-container</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=range]</span><span class="hljs-selector-pseudo">:focus</span><span class="hljs-selector-pseudo">::-webkit-slider-runnable-track</span>,
+  <span class="hljs-selector-class">.gel-video__timeline-container</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=range]</span><span class="hljs-selector-pseudo">::-webkit-slider-thumb</span>,
+  <span class="hljs-selector-class">.gel-video__timeline-container</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=range]</span><span class="hljs-selector-pseudo">:focus</span><span class="hljs-selector-pseudo">::-webkit-slider-runnable-track</span>,
+  <span class="hljs-selector-class">.gel-video__timeline-container</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=range]</span><span class="hljs-selector-pseudo">::-moz-range-track</span>,
+  <span class="hljs-selector-class">.gel-video__timeline-container</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=range]</span><span class="hljs-selector-pseudo">::-moz-range-thumb</span> {
     <span class="hljs-attribute">all</span>: initial;
   }
 }
 </code></pre>
-<p><img src="/gef-docs/static/images/hcm_video.png" alt="Standard range input styles are visible, and in high contrast (white on black)"></p>
+<p><img src="/gel-tags/static/images/hcm_video.png" alt="Standard range input styles are visible, and in high contrast (white on black)"></p>
 <h4 id="the-controls-container">The controls container</h4>
 <p>In the <a href="#reference-implementation">reference implementation</a>, the controls container uses Flexbox to distribute the controls along a horizontal axis. The timeline container takes <code>flex: auto</code><sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> to take up any space not taken by surrounding buttons. This makes the control bar responsive and tolerant of different functionality complexity.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-video__timeline-container</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-video__timeline-container</span> {
   <span class="hljs-attribute">flex</span>: auto;
 }
 </code></pre>
@@ -302,77 +302,77 @@ Visually hide an element, but leave it available for screen readers
 <p>The keyboard user is able to focus the input and use the arrow keys to 'scrub' right and left in increments.</p>
 <h3 id="reference-implementation">Reference implementation</h3>
 
-            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
-              <h4 id="aside-alert-important" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation should conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+            <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-alert-important">
+              <h4 id="aside-alert-important" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation should conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
 </aside>
-          <div class="gefdocs-demo"><!-- 
+          <div class="geltags-demo"><!-- 
 title: Video controls
  -->
 
 <div style="margin-bottom: 1rem;">
   <h3>Simple card play/pause</h3>
   <p>This minimal implementation reveals the mute button while the video is playing.</p>
-  <div class="gef-card" style="width: 300px;">
-    <div class="gef-card__headline">
+  <div class="gel-card" style="width: 300px;">
+    <div class="gel-card__headline">
       <h4>The 2001 BBC2 Ident</h4>
     </div>
-    <div class="gef-card__content">
-      <video controls src="/gef-docs/static/videos/ident_clip.mp4">
-        <track label="English" kind="subtitles" srclang="en" src="/gef-docs/static/videos/ident.vtt" default>
+    <div class="gel-card__content">
+      <video controls src="/gel-tags/static/videos/ident_clip.mp4">
+        <track label="English" kind="subtitles" srclang="en" src="/gel-tags/static/videos/ident.vtt" default>
         <p>
           Your browser doesn't support HTML5 video.
-          <a href="/gef-docs/static/videos/ident_clip.mp4">Download</a> the video instead.
+          <a href="/gel-tags/static/videos/ident_clip.mp4">Download</a> the video instead.
         </p>
       </video>
-      <button class="gef-video__play-button gef-card__play-button" type="button" hidden>
-        <span class="gef-video__button-off">
-          <span class="gef-sr">Play</span>
+      <button class="gel-video__play-button gel-card__play-button" type="button" hidden>
+        <span class="gel-video__button-off">
+          <span class="gel-sr">Play</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
-            <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-play"></use>
+            <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-play"></use>
           </svg>
         </span>
-        <span class="gef-video__button-on">
-          <span class="gef-sr">Pause</span>
+        <span class="gel-video__button-on">
+          <span class="gel-sr">Pause</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
-            <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-pause"></use>
+            <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-pause"></use>
           </svg>
         </span>
       </button>
-      <button class="gef-video__mute-button gef-card__mute-button" type="button" hidden>
-        <span class="gef-video__button-off">
-          <span class="gef-sr">Mute</span>
+      <button class="gel-video__mute-button gel-card__mute-button" type="button" hidden>
+        <span class="gel-video__button-off">
+          <span class="gel-sr">Mute</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
-            <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-listen"></use>
+            <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-listen"></use>
           </svg>
         </span>
-        <span class="gef-video__button-on">
-          <span class="gef-sr">Unmute</span>
+        <span class="gel-video__button-on">
+          <span class="gel-sr">Unmute</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
-            <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-sound-off"></use>
+            <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-sound-off"></use>
           </svg>
         </span>
       </button>
     </div>
-    <div class="gef-card__desc">
+    <div class="gel-card__desc">
       <p>Do you remember the radio controlled car?</p>
     </div>
-    <div class="gef-card__toolbar">
+    <div class="gel-card__toolbar">
       <button type="button" aria-expanded="false">
-        <span class="gef-card__more-label">
+        <span class="gel-card__more-label">
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-            <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-up"></use>
+            <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-up"></use>
           </svg>
           More info
         </span>
-        <span class="gef-card__close-label">
+        <span class="gel-card__close-label">
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-            <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-no"></use>
+            <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-no"></use>
           </svg>
           Close
         </span>
       </button>
-      <div class="gef-card__info" role="group" aria-labelledby="more-info-title-1" hidden>
-        <h5 class="gef-card__info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
+      <div class="gel-card__info" role="group" aria-labelledby="more-info-title-1" hidden>
+        <h5 class="gel-card__info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
         <p>The history of BBC television idents begins in the early 1950s, when the BBC first displayed a logo between
           programmes to identify its service. As new technology has become available, these devices have evolved from
           simple still black and white images to the sophisticated full colour short films seen today. With the arrival
@@ -380,64 +380,64 @@ title: Video controls
           broadcasters to be much more important, meaning that idents need to stand out from the competition.</p>
       </div>
       <button type="button" aria-pressed="false">
-        <span class="gef-sr">Love</span>
+        <span class="gel-sr">Love</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-          <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-love-loved-state"></use>
+          <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-love-loved-state"></use>
         </svg>
       </button>
       <button type="button">
-        <span class="gef-sr">Add</span>
+        <span class="gel-sr">Add</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-          <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-add"></use>
+          <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-add"></use>
         </svg>
       </button>
       <button type="button">
-        <span class="gef-sr">Share</span>
+        <span class="gel-sr">Share</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-          <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-share"></use>
+          <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-share"></use>
         </svg>
       </button>
     </div>
   </div>
   <h3>Play, mute, and scrub</h3>
-  <div class="gef-video__container" style="max-width: 400px">
-    <video class=" gef-video" controls src="/gef-docs/static/videos/ident_clip.mp4">
-      <track label="English" kind="subtitles" srclang="en" src="/gef-docs/static/videos/ident.vtt" default>
+  <div class="gel-video__container" style="max-width: 400px">
+    <video class=" gel-video" controls src="/gel-tags/static/videos/ident_clip.mp4">
+      <track label="English" kind="subtitles" srclang="en" src="/gel-tags/static/videos/ident.vtt" default>
       <p>
         Your browser doesn't support HTML5 video.
-        <a href="/gef-docs/static/videos/ident_clip.mp4">Download</a> the video instead.
+        <a href="/gel-tags/static/videos/ident_clip.mp4">Download</a> the video instead.
       </p>
     </video>
-    <div class="gef-video__controls" hidden>
-      <button class="gef-video__play-button" type="button">
-        <span class="gef-video__button-off">
-          <span class="gef-sr">Play</span>
+    <div class="gel-video__controls" hidden>
+      <button class="gel-video__play-button" type="button">
+        <span class="gel-video__button-off">
+          <span class="gel-sr">Play</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-            <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-play"></use>
+            <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-play"></use>
           </svg>
         </span>
-        <span class="gef-video__button-on">
-          <span class="gef-sr">Pause</span>
+        <span class="gel-video__button-on">
+          <span class="gel-sr">Pause</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-            <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-pause"></use>
+            <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-pause"></use>
           </svg>
         </span>
       </button>
-      <label for="timeline" class="gef-video__timeline-container">
-        <span class="gef-sr">Timeline</span>
+      <label for="timeline" class="gel-video__timeline-container">
+        <span class="gel-sr">Timeline</span>
         <input type="range" id="timeline" />
       </label>
-      <button class="gef-video__mute-button" type="button">
-        <span class="gef-video__button-off">
-          <span class="gef-sr">Mute</span>
+      <button class="gel-video__mute-button" type="button">
+        <span class="gel-video__button-off">
+          <span class="gel-sr">Mute</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-            <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-listen"></use>
+            <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-listen"></use>
           </svg>
         </span>
-        <span class="gef-video__button-on">
-          <span class="gef-sr">Unmute</span>
+        <span class="gel-video__button-on">
+          <span class="gel-sr">Unmute</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-            <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-sound-off"></use>
+            <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-sound-off"></use>
           </svg>
         </span>
       </button>
@@ -447,17 +447,17 @@ title: Video controls
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    window.gef && gef.Card.init() && gef.Video.init();
+    window.gel && gel.Card.init() && gel.Video.init();
 
     // Simple card play/pause
-    var cardElem = document.querySelector('.gef-card');
-    var card = new gef.Card.constructor(cardElem);
+    var cardElem = document.querySelector('.gel-card');
+    var card = new gel.Card.constructor(cardElem);
     var videoElem1 = cardElem.querySelector('video');
-    var video1 = new gef.Video.videoInit(videoElem1);
-    var playElem1 = cardElem.querySelector('.gef-card__play-button');
-    var playButton1 = new gef.Video.playButton(playElem1, videoElem1);
-    var muteElem1 = cardElem.querySelector('.gef-card__mute-button');
-    var mute2 = new gef.Video.muteButton(muteElem1, videoElem1);
+    var video1 = new gel.Video.videoInit(videoElem1);
+    var playElem1 = cardElem.querySelector('.gel-card__play-button');
+    var playButton1 = new gel.Video.playButton(playElem1, videoElem1);
+    var muteElem1 = cardElem.querySelector('.gel-card__mute-button');
+    var mute2 = new gel.Video.muteButton(muteElem1, videoElem1);
     // Show custom play and mute buttons when video is initialized
     playElem1.hidden = false;
     muteElem1.hidden = false
@@ -472,22 +472,22 @@ title: Video controls
     })
 
     // Play, mute, and scrub
-    var videoContainer = document.querySelector('.gef-video__container');
-    var videoControls = document.querySelector('.gef-video__controls');
+    var videoContainer = document.querySelector('.gel-video__container');
+    var videoControls = document.querySelector('.gel-video__controls');
     // Show custom controls when video is initialized
     videoControls.hidden = false
-    var videoElem2 = videoContainer.querySelector('.gef-video');
-    var video2 = new gef.Video.videoInit(videoElem2);
-    var playElem2 = videoContainer.querySelector('.gef-video__play-button');
-    var playButton2 = new gef.Video.playButton(playElem2, videoElem2);
-    var muteElem2 = videoContainer.querySelector('.gef-video__mute-button');
-    var mute2 = new gef.Video.muteButton(muteElem2, videoElem2);
+    var videoElem2 = videoContainer.querySelector('.gel-video');
+    var video2 = new gel.Video.videoInit(videoElem2);
+    var playElem2 = videoContainer.querySelector('.gel-video__play-button');
+    var playButton2 = new gel.Video.playButton(playElem2, videoElem2);
+    var muteElem2 = videoContainer.querySelector('.gel-video__mute-button');
+    var mute2 = new gel.Video.muteButton(muteElem2, videoElem2);
     var scrubElem = videoContainer.querySelector('[type="range"]');
-    var scrub = new gef.Video.scrub(scrubElem, videoElem2);
+    var scrub = new gel.Video.scrub(scrubElem, videoElem2);
   });
 </script></div>
         
-          <p><a class="gef-cta gel-long-primer-bold" href="../demos/video/" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+          <p><a class="gel-cta gel-long-primer-bold" href="../demos/video/" target="_new"><span class="gel-button__label">Open in new window</span><svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
         <h2 id="related-research">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
 <h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
@@ -510,18 +510,18 @@ title: Video controls
 </section>
 
 
-                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding"
+                <aside class="geltags-breakout-box geltags-breakout-box extra-padding"
                     aria-labelledby="aside-info-Could-you-improve-this-documentation">
                     <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
-                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
-                            <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info"
+                        <svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text">
+                            <use xlink:href="/gel-docs/static/images/gel-icons-core-set.svg#gel-icon-info"
                                 style="fill:#404040;"></use>
                         </svg>Could you improve this documentation?
                     </h4>
                     <div>
                         <p>
                             If you think you could make anything you see here a bit better then become one of <a
-                                href="/gef-docs/contributors/">our
+                                href="/gel-tags/contributors/">our
                                 lovely contributors</a>!
                         </p>
                     </div>
@@ -531,18 +531,18 @@ title: Video controls
         </div>
     </main>
 
-    <div class="gefdocs-feedback-banner">
+    <div class="geltags-feedback-banner">
         <div class="gel-wrap">
             <div class="gel-layout">
                 <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
-                    <h2 class="gefdocs-feedback-banner__title">Got a minute?</h2>
-                    <p>We'd love to know what you think of the Code GEL website.</p>
+                    <h2 class="geltags-feedback-banner__title">Got a minute?</h2>
+                    <p>We'd love to know what you think of our website.</p>
                     <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/"
-                        class="gefdocs-button gefdocs-button__link-button gefdocs-feedback-banner__cta gefdocs-button--primary">
-                        <span class="gefdocs-button__content">Go to survey</span>
-                        <span class="gefdocs-button__icon_wrapper">
-                            <svg class="gefdocs-button__icon gefdocs-icon gefdocs-icon--text">
-                                <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                        class="geltags-button geltags-button__link-button geltags-feedback-banner__cta geltags-button--primary">
+                        <span class="geltags-button__content">Go to survey</span>
+                        <span class="geltags-button__icon_wrapper">
+                            <svg class="geltags-button__icon geltags-icon geltags-icon--text">
+                                <use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-external-link"
                                     style="fill:undefined;"></use>
                             </svg>
                         </span>
@@ -552,8 +552,8 @@ title: Video controls
         </div>
     </div>
 
-    <script nomodule defer type="text/javascript" src="/gef-docs/static/js/external-svg-polyfill.js"></script>
-    <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
+    <script nomodule defer type="text/javascript" src="/gel-tags/static/js/external-svg-polyfill.js"></script>
+    <script type="text/javascript" src="/gel-tags/static/js/gel.js"></script>
 
     
 

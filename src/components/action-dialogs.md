@@ -23,17 +23,17 @@ For more context, consult the [Confirmation & Error Messages GEL page](http://ww
 In the following example, we imagine the user has tried to add a programme to 'My Programmes'. Since this functionality is only available to authenticated users, an action dialog asks the user to either sign in or register in order to continue.
 
 ```html
-  <div class="gef-action-dialog" role="dialog" aria-labelledby="gef-action-dialog__label-1" aria-describedby="gef-action-dialog__desc-1">
-    <h3 id="gef-action-dialog-label__1" class="gef-action-dialog__title">Add to enjoy later</h2>
-    <div id="gef-action-dialog-desc__1" class="gef-action-dialog__content">
+  <div class="gel-action-dialog" role="dialog" aria-labelledby="gel-action-dialog__label-1" aria-describedby="gel-action-dialog__desc-1">
+    <h3 id="gel-action-dialog-label__1" class="gel-action-dialog__title">Add to enjoy later</h2>
+    <div id="gel-action-dialog-desc__1" class="gel-action-dialog__content">
       <p>Sign in to add to My Programmes and enjoy it later on other devices</p>
     </div>
-    <div class="gef-action-dialog__buttons">
+    <div class="gel-action-dialog__buttons">
       <a href="#/path/to/sign-in">Sign in</a>
       or 
       <a href="#/path/to/register">Register</a>
     </div>
-    <button class="gef-action-dialog__close">
+    <button class="gel-action-dialog__close">
       <span class="vh">close</span>
       <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
         <use xlink:href="#gel-icon-no"></use>
@@ -47,8 +47,8 @@ In the following example, we imagine the user has tried to add a programme to 'M
 
 * **`role="dialog"`:** This `role` is critical for making the dialog behave in an expected way in assistive technologies such as screen reader software. It also identifies the dialog _as_ a dialog when it is opened and focus is placed inside it.
 * **`aria-labelledby` and `aria-describedby`:** These relationship attributes associate the text of the dialog's heading/label and content with the dialog element itself. Along with the dialog role, this information is announced upon the dialog being opened. You will need to write or generate unique identifiers for the `id`s required here.
-* **`class="gef-action-dialog__buttons"`:** A simple, non-semantic wrapper for the action elements. Action elements must be marked up as `<button>`s if they instigate something on the same page (such as a change of setting or state) or links if they take the user to a new page.
-* **`class="gef-action-dialog__close"`:** Provide a close button if doing _nothing_ (not authenticating to add a programme after all, in this example) is a viable option. The visually hidden `vh`[^2] class is provided here to include accessible, translatable text alongside the screen reader inaccessible icon. The close button is deprioritized in favour of the named actions, appearing last in source and focus order.
+* **`class="gel-action-dialog__buttons"`:** A simple, non-semantic wrapper for the action elements. Action elements must be marked up as `<button>`s if they instigate something on the same page (such as a change of setting or state) or links if they take the user to a new page.
+* **`class="gel-action-dialog__close"`:** Provide a close button if doing _nothing_ (not authenticating to add a programme after all, in this example) is a viable option. The visually hidden `vh`[^2] class is provided here to include accessible, translatable text alongside the screen reader inaccessible icon. The close button is deprioritized in favour of the named actions, appearing last in source and focus order.
 * **`</body>`:** For the overlay/inert characteristic to function correctly, the dialog must be a child of the `<body>` element. See [Recommended behaviour](#expected-behaviour)
 
 ## Recommended layout
@@ -56,7 +56,7 @@ In the following example, we imagine the user has tried to add a programme to 'M
 **Action dialogs** can appear in the center, or at the bottom, of the page. In the [**reference implementation**](#reference-implementation) they appear at the bottom by default. The `fixed` position value ensures they cannot be scrolled out of view.
 
 ```css
-.gef-action-dialog {
+.gel-action-dialog {
   position: fixed;
   top: auto;
   left: 0;
@@ -68,7 +68,7 @@ In the following example, we imagine the user has tried to add a programme to 'M
 The center configuration requires a `transform` to place the element in the vertical center irrespective of its natural height:
 
 ```css
-.gef-action-dialog__center {
+.gel-action-dialog__center {
   top: 50%;
   bottom: auto;
   left: 50%;
@@ -76,10 +76,10 @@ The center configuration requires a `transform` to place the element in the vert
 }
 ```
 
-With this translation in place, dialogs with considerable content will become obscured at the top and bottom of the viewport. To avoid this, the dialog description element (`class="gef-action-dialog__desc"`) is given a `max-height` and allowed to scroll vertically:
+With this translation in place, dialogs with considerable content will become obscured at the top and bottom of the viewport. To avoid this, the dialog description element (`class="gel-action-dialog__desc"`) is given a `max-height` and allowed to scroll vertically:
 
 ```css
-.gef-action-dialog__desc {
+.gel-action-dialog__desc {
   max-height: 30vh;
   overflow-y: auto;
 }
@@ -88,12 +88,12 @@ With this translation in place, dialogs with considerable content will become ob
 When the dialog is open, sibling elements are given the `inert` attribute (see [**expected behaviour**](#expected-behaviour), below). The inert content should _appear_ inert by diminishing its visibility. Opacity and/or filtering can achieve this effect.
 
 ```css
-.gef-action-dialog--open [inert] {
+.gel-action-dialog--open [inert] {
   opacity: 0.3;
 }
 ```
 
-Note that the style is applied via a class placed on the `<body>` using the 'gef-action-dialog' namespace. This ensures the specific inert style is only applied in the presence of an open dialog (the style does not 'leak' to other `inert` instances).
+Note that the style is applied via a class placed on the `<body>` using the 'gel-action-dialog' namespace. This ensures the specific inert style is only applied in the presence of an open dialog (the style does not 'leak' to other `inert` instances).
 
 ### High contrast
 
@@ -111,7 +111,7 @@ The result of an action taken via an action dialog will depend on the purpose of
 
 1. The dialog element appears in its designated position
 2. The surrounding page becomes inert (non-interactive, unavailable to assistive technologies, and not focusable by keyboard)
-3. Focus is moved to the first control (a link or button that is not disabled) inside the `class="gef-action-dialog__buttons"` element
+3. Focus is moved to the first control (a link or button that is not disabled) inside the `class="gel-action-dialog__buttons"` element
 
 ### When the dialog closes
 

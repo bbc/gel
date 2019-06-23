@@ -19,10 +19,10 @@ title: Search filter
   Per debitis meliore propriae at. In iudico malorum eam. Mel malorum saperet id, vel an quidam virtute. Clita vocent ne vix, aperiri temporibus sed ut.
 </p>
 
-<nav class="gef-filter" aria-labelledby="filter-label">
-  <div class="gef-filter__bar">
-    <span class="gef-filter__label" id="filter-label" aria-hidden="true">Filter:</span>
-    <ul class="gef-filter__list">
+<nav class="gel-filter" aria-labelledby="filter-label">
+  <div class="gel-filter__bar">
+    <span class="gel-filter__label" id="filter-label" aria-hidden="true">Filter:</span>
+    <ul class="gel-filter__list">
       <li><a href=".?filter=filter+1">Filter 1</a></li>
       <li><a href=".?filter=filter+2">Filter 2</a></li>
       <li><a href=".?filter=filter+3">Filter 3</a></li>
@@ -33,16 +33,16 @@ title: Search filter
       <li><a href=".?filter=filter+8">Filter 8</a></li>
       <li><a href=".?filter=filter+9">Filter 9</a></li>
     </ul>
-    <button class="gef-filter__more" aria-expanded="false" hidden>
+    <button class="gel-filter__more" aria-expanded="false" hidden>
       More
       <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
         <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-down"></use>
       </svg>
     </button>
   </div>
-  <div class="gef-filter__popup" hidden></div>
-  <div class="gef-filter__sort">
-    <span class="gef-filter__sort-label">Sort by:</span>
+  <div class="gel-filter__popup" hidden></div>
+  <div class="gel-filter__sort">
+    <span class="gel-filter__sort-label">Sort by:</span>
     <ul>
       <li><a href=".?filter=filter+1&sort=relevance">Relevance</a></li>
       <li><a href=".?filter=filter+1&sort=date">Date</a></li>
@@ -54,8 +54,8 @@ title: Search filter
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var filterElem = document.querySelector('.gef-filter');
-    var filter = new gef.Filter.constructor(filterElem);
+    var filterElem = document.querySelector('.gel-filter');
+    var filter = new gel.Filter.constructor(filterElem);
 
     // Just for this demo, to emulate full page reloads:
     var search = location.search.substring(1);
@@ -64,7 +64,7 @@ title: Search filter
     var dateLink = document.querySelector('[href*="sort=date"]');
     relevanceLink.href = '.?filter=' + searchParsed.filter + '&sort=relevance';
     dateLink.href = '.?filter=' + searchParsed.filter + '&sort=date';
-    var currentLinks = document.querySelectorAll('.gef-filter__list [href*="' + searchParsed.filter + '"], .gef-filter__sort [href*="' + searchParsed.sort + '"]');
+    var currentLinks = document.querySelectorAll('.gel-filter__list [href*="' + searchParsed.filter + '"], .gel-filter__sort [href*="' + searchParsed.sort + '"]');
     var currentLinksArray = Array.prototype.slice.call(currentLinks);
     currentLinksArray.forEach(function (l) {
       l.setAttribute('aria-current', 'true');

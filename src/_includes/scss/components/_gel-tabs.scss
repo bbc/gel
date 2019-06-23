@@ -1,0 +1,60 @@
+.gel-tabs > section {
+  background-color: $gel-color--dusty-gray;
+  border: 2px solid transparent; /* for high contrast mode */
+  padding: 1rem;
+}
+
+.gel-tabs > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gel-tabs > [role="tablist"] {
+  display: flex;
+  margin: -0.5rem;
+  overflow: hidden;
+}
+
+// <li />'s
+.gel-tabs > ul [role="presentation"] {
+  flex: 1 1 auto;
+  background-color: $gel-color--alto;
+  margin: 0.5rem;
+  min-width: 0;
+}
+
+.gel-tabs > ul a {
+  border: 2px solid transparent; /* for high contrast mode */
+  border-bottom: 0;
+  color: inherit;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-overflow: ellipsis;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.gel-tabs > ul [role="tab"] {
+  text-decoration: none;
+}
+
+.gel-tabs > ul a:focus,
+.gel-tabs > section:focus {
+  outline: 2px solid;
+  outline-offset: -2px;
+}
+
+.gel-tabs [aria-selected="true"] {
+  background-color: $gel-color--dusty-gray;
+}
+
+@media (-ms-high-contrast: active) {
+  .gel-tabs [aria-selected="true"] {
+    position: relative;
+    top: 2px;
+  }
+}

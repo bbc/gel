@@ -154,12 +154,12 @@ The support for unicode differs wildly between platforms, with handheld devices 
 
 In general, avoid unicode symbols in favor of SVG-based icons. These are documented under [**Iconography**](../iconography). Icon fonts in particular should be avoided since they tend to map their icons to esoteric / undesignated unicode points. Where users, such as those with dyslexia, override the author's font settings with a user stylesheet, the icons give way to fallback 'missing glyph' symbols.
 
-Note that screen readers will ignore some unicode points, and interpret others in unexpected ways. For example, the × symbol frequently used for close buttons can be announced as _"times"_. If you _are_ to use this relatively well supported unicode point, silence the unicode point in screen reader output with `aria-hidden="true"`. In the following example, the _"close"_ text label is visually hidden, but still included in screen reader output, using the `gef-sr` class.
+Note that screen readers will ignore some unicode points, and interpret others in unexpected ways. For example, the × symbol frequently used for close buttons can be announced as _"times"_. If you _are_ to use this relatively well supported unicode point, silence the unicode point in screen reader output with `aria-hidden="true"`. In the following example, the _"close"_ text label is visually hidden, but still included in screen reader output, using the `gel-sr` class.
 
 ```html
 <button>
   <span aria-hidden="true">&times;</span>
-  <span class="gef-sr">Close</span>
+  <span class="gel-sr">Close</span>
 </button>
 ```
 

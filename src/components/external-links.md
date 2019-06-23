@@ -26,7 +26,7 @@ The example places the external link within a paragraph. The paragraph text surr
 ```html
 <p>...
   <a href="http://example.com/link/to/external/resource">
-    <span class="gef-sr">leave BBC site:</span>
+    <span class="gel-sr">leave BBC site:</span>
     Football Association of 
     <span class="gel-nowrap">
       Wales
@@ -40,7 +40,7 @@ The example places the external link within a paragraph. The paragraph text surr
 
 #### Notes
 
-* **`<span class="gef-sr">leave BBC site:</span>`:** This text comes before the link's unique text content in both inline and list-based external links. It is visually hidden using the `gef-sr` class[^1] and warns screen reader users of the change in context `target="_blank"` will invoke. In most screen reader software it will be read after the link role, resulting in _"link, leave BBC site: [unique link text]"_. The appended colon ensures there is a pause between _"leave BBC site"_ and the link text.
+* **`<span class="gel-sr">leave BBC site:</span>`:** This text comes before the link's unique text content in both inline and list-based external links. It is visually hidden using the `gel-sr` class[^1] and warns screen reader users of the change in context `target="_blank"` will invoke. In most screen reader software it will be read after the link role, resulting in _"link, leave BBC site: [unique link text]"_. The appended colon ensures there is a pause between _"leave BBC site"_ and the link text.
 * **`gel-icon`:** The icon must use the [GEL Iconography](https://www.bbc.co.uk/gel/guidelines/iconography) external link icon. In addition, apply `focusable="false"` to ensure Internet Explorer and some versions of Edge do not place the SVG in focus order[^2] if JavaScript is not taking care of this already.
 * **`gel-nowrap`:** Use this `<span>` to wrap the icon and the last word of the link's unique text. By applying `white-space: nowrap` it ensures the icon never becomes a widow (wraps onto a new link by itself)
 
@@ -48,13 +48,13 @@ The example places the external link within a paragraph. The paragraph text surr
 
 ```html
 <h2>Further reading</h2>
-<ul class="gef-external-links">
+<ul class="gel-external-links">
   <li>
     <a href="http://example.com/external/link">
       <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
         <use xlink:href="path/to/gel-icons-all.svg#gel-icon-external-link" style="undefined"></use>
       </svg>
-      <span class="gef-sr">leave BBC site:</span>
+      <span class="gel-sr">leave BBC site:</span>
       Football Association of Wales
     </a>
   </li>
@@ -63,7 +63,7 @@ The example places the external link within a paragraph. The paragraph text surr
       <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
         <use xlink:href="path/to/gel-icons-all.svg#gel-icon-external-link" style="undefined"></use>
       </svg>
-      <span class="gef-sr">leave BBC site:</span>
+      <span class="gel-sr">leave BBC site:</span>
       Europa League final
     </a>
   </li>
@@ -72,7 +72,7 @@ The example places the external link within a paragraph. The paragraph text surr
       <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
         <use xlink:href="path/to/gel-icons-all.svg#gel-icon-external-link" style="undefined"></use>
       </svg>
-      <span class="gef-sr">leave BBC site:</span>
+      <span class="gel-sr">leave BBC site:</span>
       West Bromwich Albion official site
     </a>
   </li>
@@ -87,10 +87,10 @@ The example places the external link within a paragraph. The paragraph text surr
 
 ## Recommended layout
 
-The link itself does not need any special styling, and should inherit link styling for the context. But be sure to wrap the last word and icon in a `gef-nowrap` `<span>` to stop the icon becoming a widow (inline external links only).
+The link itself does not need any special styling, and should inherit link styling for the context. But be sure to wrap the last word and icon in a `gel-nowrap` `<span>` to stop the icon becoming a widow (inline external links only).
 
 ```css
-.gef-nowrap {
+.gel-nowrap {
   white-space: nowrap;
 }
 ```
@@ -98,11 +98,11 @@ The link itself does not need any special styling, and should inherit link styli
 Unfortunately, upon removing the bullets from the list using `list-style: none`, some Voiceover versions cease to identify the list. This can be remedied by placing some arbitrary pseudo-content before each item. In the following solution[^2], a zero-width space is added:
 
 ```css
-.gef-external-links {
+.gel-external-links {
   list-style-type: none;
 }
 
-.gef-external-links li::before {
+.gel-external-links li::before {
   content: '\200B';
 }
 ```
@@ -110,7 +110,7 @@ Unfortunately, upon removing the bullets from the list using `list-style: none`,
 Some white space is placed between external links in the list formation to improve demarcation and legibility:
 
 ```css
-.gef-external-links li + li {
+.gel-external-links li + li {
   margin-top: 0.5rem;
 }
 ```
@@ -138,6 +138,6 @@ This topic does not yet have any related research available.
 
 ### Further reading, elsewhere on the Web
 
-[^1]: Gist of the `gef-sr` (visually hidden) class <https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472> 
+[^1]: Gist of the `gel-sr` (visually hidden) class <https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472> 
 [^2]: "Removing SVG Keyboard Focus in IE" — websemantics.uk, <https://websemantics.uk/articles/removing-svg-keyboard-focus-in-internet-explorer/>
 [^3]: "VoiceOver and list-style-type: none" — unfetteredthoughts.net, <https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/>

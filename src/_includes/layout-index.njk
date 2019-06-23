@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link rel="stylesheet" type="text/css" href="{{site.basedir}}static/css/gef.css">
+    <link rel="stylesheet" type="text/css" href="{{site.basedir}}static/css/gel.css">
     <link rel="stylesheet" type="text/css" href="{{site.basedir}}static/css/site.css">
 
     <script type="text/javascript"> // feature detects
@@ -45,15 +45,15 @@
     {% endif %}
 </head>
 
-<body class="gefdocs-body">
-    <p class="gef-sr gef-sr__focusable gef-sr__overlay" tabindex="0">
-        <a href="#main" onfocus="this.parentNode.classList.add('gef-sr__focused')"
-            onblur="this.parentNode.classList.remove('gef-sr__focused')">Skip
+<body class="geltags-body">
+    <p class="gel-sr gel-sr__focusable gel-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('gel-sr__focused')"
+            onblur="this.parentNode.classList.remove('gel-sr__focused')">Skip
             to content</a>
     </p>
 
     <header>
-        <div class="gefdocs-header gs-u-clearfix">
+        <div class="geltags-header gs-u-clearfix">
             <div class="gel-wrap">
                 <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24"
                         viewBox="0 0 100 24">
@@ -63,16 +63,16 @@
                     </svg></a>
             </div>
         </div>
-        <div class="gefdocs-header__banner gs-u-clearfix">
+        <div class="geltags-header__banner gs-u-clearfix">
             <div class="gel-wrap">
                 <div class="gel-layout">
                     <div class="gel-layout__item gel-2/5@l"
                         style="text-align:left; padding-left:14px; margin-bottom:32px; margin-top: -10px;">
-                        <a href="{{site.basedir}}" class="gefdocs-logo"><img src="{{site.basedir}}static/images/bbc-gel-tags.png" style="max-width: 175px;"></a>
+                        <a href="{{site.basedir}}" class="geltags-logo"><img src="{{site.basedir}}static/images/bbc-gel-tags.png" style="max-width: 175px;"></a>
                     </div>
                     {#% if linkback %}
                     <div class="gel-layout__item gel-2/5@l gel-pull__right@l" style="margin-bottom: 16px;">
-                        <a class="gefdocs-button gefdocs-button--dark gel-long-primer-bold" href="{{linkback}}">
+                        <a class="geltags-button geltags-button--dark gel-long-primer-bold" href="{{linkback}}">
                             Go to BBC GEL
                         </a>
                     </div>
@@ -89,8 +89,8 @@
             </div>
 
             <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
-                <h1 class="gefdocs-header__title">{{title}}</h1>
-                <p class="gefdocs-header__summary gel-great-primer">{{summary}}</p>
+                <h1 class="geltags-header__title">{{title}}</h1>
+                <p class="geltags-header__summary gel-great-primer">{{summary}}</p>
             </div>
         </div>
 
@@ -103,23 +103,23 @@
                 </nav>
             </div>
 
-            <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
+            <div class="geltags-sections geltags-body-copy gel-layout__item gel-3/5@l">
                 {{ content | safe }}
             </div>
         </div>
     </main>
 
-    <div class="gefdocs-feedback-banner">
+    <div class="geltags-feedback-banner">
         <div class="gel-wrap">
             <div class="gel-layout">
                 <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
-                    <h2 class="gefdocs-feedback-banner__title">Got a minute?</h2>
-                    <p>We'd love to know what you think of the Code GEL website.</p>
+                    <h2 class="geltags-feedback-banner__title">Got a minute?</h2>
+                    <p>We'd love to know what you think of our website.</p>
                     <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/"
-                        class="gefdocs-button gefdocs-button__link-button gefdocs-feedback-banner__cta gefdocs-button--primary">
-                        <span class="gefdocs-button__content">Go to survey</span>
-                        <span class="gefdocs-button__icon_wrapper">
-                            <svg class="gefdocs-button__icon gefdocs-icon gefdocs-icon--text">
+                        class="geltags-button geltags-button__link-button geltags-feedback-banner__cta geltags-button--primary">
+                        <span class="geltags-button__content">Go to survey</span>
+                        <span class="geltags-button__icon_wrapper">
+                            <svg class="geltags-button__icon geltags-icon geltags-icon--text">
                                 <use xlink:href="{{site.basedir}}static/images/gel-icons-core-set.svg#gel-icon-external-link"
                                     style="fill:undefined;"></use>
                             </svg>
@@ -130,7 +130,7 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="{{site.basedir}}static/js/gef.js"></script>
+    <script type="text/javascript" src="{{site.basedir}}static/js/gel.js"></script>
 
     {% if includejs %}
     <script type="text/javascript" src="{{site.basedir}}static/js/{{ includejs }}"></script>

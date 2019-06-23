@@ -1,0 +1,48 @@
+.gel-pocket__truncated {
+  overflow-y: hidden;
+}
+
+.gel-pocket__foot {
+  text-align: center;
+  border: 2px solid $gel-color--tundora;
+  height: 0;
+}
+
+.gel-pocket__foot.gel-pocket--foot-shown {
+  margin-top: double($gel-spacing-unit);
+}
+
+.gel-pocket__foot.gel-pocket--foot-shown svg {
+  transform: rotate(180deg);
+}
+
+.gel-pocket__foot button {
+  transform: translateY(-50%);
+}
+
+.gel-pocket [inert] {
+  opacity: 0.5;
+}
+
+.gel-pocket__continue {
+  font-weight: bold;
+}
+
+@keyframes focus {
+  0%{
+    outline-width: 0px;
+  }
+  50% {
+    outline-width: 2px;
+  }
+  100% {
+    outline-width: 0px; 
+  }
+}
+
+.gel-pocket__continue:focus {
+  outline-style: solid;
+  outline-width: 0px;
+  outline-offset: 2px;
+  animation: focus 1s linear 1;
+}

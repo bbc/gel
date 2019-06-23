@@ -36,10 +36,10 @@ In all cases, icons should accompany either visible or visually hidden text labe
 
 Only where icons are extremely well-established—such as the play and stop buttons of a media player—is it reliable to use them without supplementary visual text. In these cases, a visually hidden `<span>` is recommended, since `aria-label` encounters translation issues[^3].
 
-In these instances, hide the label's `<span>` using the `gef-sr` class or similar. This class obscures the text visually without silencing its announcement in screen readers.
+In these instances, hide the label's `<span>` using the `gel-sr` class or similar. This class obscures the text visually without silencing its announcement in screen readers.
 
 ```css
-.gef-sr {
+.gel-sr {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -142,8 +142,8 @@ The movement icons get around this by using a diagonal line-through style for th
 The CTA (Call To Action) links documented under [**Buttons & CTAs**](../buttons-and-ctas) use a `text-decoration` style on `:hover` and `:focus`. To stop the `text-decoration` line intersecting with the icon, `text-decoration-skip` is employed:
 
 ```css
-.gef-cta:hover,
-.gef-cta:focus {
+.gel-cta:hover,
+.gel-cta:focus {
   border-color: $gel-color--tundora;
   text-decoration: underline;
   text-decoration-skip: objects;
@@ -154,18 +154,18 @@ The CTA (Call To Action) links documented under [**Buttons & CTAs**](../buttons-
 
 SVG icons are typically incorporated into interactive elements, which have their own behaviours. For toggle buttons specifically, the icon should help to communicate the state (on or off; open or closed; etc). This can be achieved by either replacing the icon, or augmenting it in some way.
 
-The play/pause button documented under [**Video controls**](../video-controls) replaces the familiar 'play' triangle with the two vertical lines of 'pause'. Importantly, the textual label (though visually hidden) changes with the corresponding icon to update the state accessibly. At any one time, either the `gef-video-button-off` or the `gef-video-button-on` `<span>` is visible.
+The play/pause button documented under [**Video controls**](../video-controls) replaces the familiar 'play' triangle with the two vertical lines of 'pause'. Importantly, the textual label (though visually hidden) changes with the corresponding icon to update the state accessibly. At any one time, either the `gel-video-button-off` or the `gel-video-button-on` `<span>` is visible.
 
 ```html
-<button class="gef-video-play-button" type="button">
-  <span class="gef-video-button-off">
-    <span class="gef-sr">Play</span>
+<button class="gel-video-play-button" type="button">
+  <span class="gel-video-button-off">
+    <span class="gel-sr">Play</span>
     <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
       <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-play"></use>
     </svg>
   </span>
-  <span class="gef-video-button-on">
-    <span class="gef-sr">Pause</span>
+  <span class="gel-video-button-on">
+    <span class="gel-sr">Pause</span>
     <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
       <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-pause"></use>
     </svg>
@@ -176,7 +176,7 @@ The play/pause button documented under [**Video controls**](../video-controls) r
 The arrow icon used in the [**Accordion**](../accordions) component faces downwards in the closed/collapsed state, and rotates to point upwards in the open/expanded state. That is, it points in the direction the **Accordion** item's 'drawer' will go. In the code snippet to follow, the `aria-expanded="true"` attribution is the hook to apply the rotation transform.
 
 ```css
-.gef-accordion-handle [aria-expanded="true"] svg {
+.gel-accordion-handle [aria-expanded="true"] svg {
   transform: rotate(180deg);
 }
 ```

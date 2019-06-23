@@ -4,16 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/gef-docs/static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/gel-tags/static/images/favicon.ico" type="image/x-icon">
 
-    <title>GEF | Tabs</title>
+    <title>GEL | Tabs</title>
 
-    <script src="/gef-docs/static/js/site.js"></script>
+    <script src="/gel-tags/static/js/site.js"></script>
 
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/gef.css">
-    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/site.css">
+    <link rel="stylesheet" type="text/css" href="/gel-tags/static/css/gel.css">
+    <link rel="stylesheet" type="text/css" href="/gel-tags/static/css/site.css">
 
     <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
@@ -43,30 +43,30 @@
     
 </head>
 
-<body class="gefdocs-body">
-    <p class="gef-sr gef-sr__focusable gef-sr__overlay" tabindex="0">
-        <a href="#main" onfocus="this.parentNode.classList.add('gef-sr__focused')"
-            onblur="this.parentNode.classList.remove('gef-sr__focused')">Skip
+<body class="geltags-body">
+    <p class="gel-sr gel-sr__focusable gel-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('gel-sr__focused')"
+            onblur="this.parentNode.classList.remove('gel-sr__focused')">Skip
             to content</a>
     </p>
 
     <header>
-        <div class="gefdocs-header gs-u-clearfix">
+        <div class="geltags-header gs-u-clearfix">
             <div class="gel-wrap">
                 <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24"
                         viewBox="0 0 100 24">
                         <title>BBC</title>
-                        <image xlink:href="/gef-docs/static/images/bbc-blocks_grey.svg"
-                            src="/gef-docs/static/images/bbc-blocks_grey.png" width="100%" height="100%"></image>
+                        <image xlink:href="/gel-tags/static/images/bbc-blocks_grey.svg"
+                            src="/gel-tags/static/images/bbc-blocks_grey.png" width="100%" height="100%"></image>
                     </svg></a>
             </div>
         </div>
-        <div class="gefdocs-header__banner gs-u-clearfix">
+        <div class="geltags-header__banner gs-u-clearfix">
             <div class="gel-wrap">
                 <div class="gel-layout">
                     <div class="gel-layout__item gel-2/5@l"
                         style="text-align:left; padding-left:14px; margin-bottom:32px; margin-top: -10px;">
-                        <a href="/gef-docs/" class="gefdocs-logo"><img src="/gef-docs/static/images/bbc-gel-tags.png" style="max-width: 175px;"></a>
+                        <a href="/gel-tags/" class="geltags-logo"><img src="/gel-tags/static/images/bbc-gel-tags.png" style="max-width: 175px;"></a>
                     </div>
                     
                 </div>
@@ -81,12 +81,12 @@
             </div>
 
             <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
-                <h1 class="gefdocs-header__title">Tabs</h1>
-                <p class="gefdocs-header__summary gel-great-primer">Tabs make it easy to view and navigate stacked panels of related content.</p>
+                <h1 class="geltags-header__title">Tabs</h1>
+                <p class="geltags-header__summary gel-great-primer">Tabs make it easy to view and navigate stacked panels of related content.</p>
             </div>
 
             <div class="gel-layout__item gel-1/5@l">
-                <dl class="gefdocs-standout-box">
+                <dl class="geltags-standout-box">
                     
                     <dt>Version:</dt>
                     <dd>0.1.0</dd>
@@ -102,21 +102,21 @@
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900"
                     style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="geltags-toc__links" class="geltags-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
-            <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
+            <div class="geltags-sections geltags-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="introduction">Introduction</h2>
 <p>Tabbed interfaces, like accordions, allow users to view long-form content one section at a time. Clearly labelled tabs representing the individual sections make it easy for users to identify and reveal the content pertinent to them.</p>
 <p>Use tabs where the subject sections are not too numerous (more than four or five tabs in total) and the tab labels are not lengthy. Tab content should be self-sufficient: do not force users to switch back and forth between tabs to complete tasks<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. Where more than five sections/labels are present, or the tab labels are lengthy, an <a href="../accordions"><strong>Accordion</strong></a> pattern is preferred.</p>
 
-            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-divergence-from-authoring-practices">
-              <h4 id="aside-alert-divergence-from-authoring-practices" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Divergence from authoring practices</h4><div><p>The GEL tabs implementation diverges from the ARIA Authoring Practices specification<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> in behaviour. This is to address usability issues found in both internal and external research<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> with ARIA tab interfaces. See <a href="#related-research">Related research</a>.</p>
+            <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-alert-divergence-from-authoring-practices">
+              <h4 id="aside-alert-divergence-from-authoring-practices" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Divergence from authoring practices</h4><div><p>The GEL tabs implementation diverges from the ARIA Authoring Practices specification<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> in behaviour. This is to address usability issues found in both internal and external research<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> with ARIA tab interfaces. See <a href="#related-research">Related research</a>.</p>
 </aside><h2 id="recommended-markup">Recommended markup</h2>
 <h3 id="initial-markup">Initial markup</h3>
 <p>Where server-side rendering and progressive enhancement are possible, follow this pattern for authoring your tab interface. Where JavaScript runs, this table-of-contents (linking to the subsequent content sections) will be enhanced with ARIA attribution.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-tabs"</span>&gt;</span>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-tabs"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#section1"</span>&gt;</span>Section 1<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
@@ -150,7 +150,7 @@
 <li><strong>tabindex=&quot;-1&quot;:</strong> Each <code>&lt;section&gt;</code> takes <code>tabindex=&quot;-1&quot;</code>. This forces browsers to move focus to the target element / hash fragment when activating a same-page link <sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>.</li>
 </ul>
 <h3 id="enhanced-markup">Enhanced markup</h3>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-tabs"</span>&gt;</span>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-tabs"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"tablist"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"presentation"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"tab"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tab-section1"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#section1"</span> <span class="hljs-attr">aria-selected</span>=<span class="hljs-string">"true"</span>&gt;</span>Section 1<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
@@ -186,18 +186,18 @@
 <h2 id="recommended-layout">Recommended layout</h2>
 <p>The <a href="https://www.bbc.co.uk/gel/guidelines/tabs">main GEL page</a> covers visual design considerations in detail.</p>
 <p>Where JavaScript does not run, the tabs appear as links within what resembles a table of contents. Each <code>&lt;section&gt;</code> is visible at all times, and activating a link (a would-be tab) moves focus to the corresponding section, revealing its focus style. A clear, solid outline style is recommended.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-tabs</span> &gt; <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span>,
-<span class="hljs-selector-class">.gef-tabs</span> &gt; <span class="hljs-selector-tag">section</span><span class="hljs-selector-pseudo">:focus</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-tabs</span> &gt; <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span>,
+<span class="hljs-selector-class">.gel-tabs</span> &gt; <span class="hljs-selector-tag">section</span><span class="hljs-selector-pseudo">:focus</span> {
   <span class="hljs-attribute">outline</span>: <span class="hljs-number">2px</span> solid;
   <span class="hljs-attribute">outline-offset</span>: -<span class="hljs-number">2px</span>;
 }
 </code></pre>
 <p>Where JavaScript runs, the links appear as tabs, and are placed side-by-side. Shortened labels are preferred to wrapped text, so <code>white-space: nowrap</code> and <code>text-overflow: ellipsis</code> are applied by default. Note that this only works where <code>min-width: 0</code> is applied to the flex child (the <code>&lt;li&gt;</code>).</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-tabs</span> &gt; <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-tabs</span> &gt; <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span> {
   <span class="hljs-attribute">min-width</span>: <span class="hljs-number">0</span>;
 }
 
-<span class="hljs-selector-class">.gef-tabs</span> &gt; <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">a</span> {
+<span class="hljs-selector-class">.gel-tabs</span> &gt; <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">a</span> {
   <span class="hljs-attribute">white-space</span>: nowrap;
   <span class="hljs-attribute">overflow</span>: hidden;
   <span class="hljs-attribute">text-overflow</span>: ellipsis;
@@ -205,11 +205,11 @@
 </code></pre>
 <p>However, this can easily result in illegible labels for very narrow viewports. It is recommended you create a breakpoint based on the content at which to reconfigure the tabs into a single column. This might be implemented something like the following:</p>
 <pre class="hljs"><code>@<span class="hljs-keyword">media</span> (max-width: <span class="hljs-number">400px</span>) {
-  <span class="hljs-selector-class">.gef-tabs</span> &gt; <span class="hljs-selector-tag">ul</span> {
+  <span class="hljs-selector-class">.gel-tabs</span> &gt; <span class="hljs-selector-tag">ul</span> {
     <span class="hljs-attribute">flex-wrap</span>: wrap;
   }
 
-  <span class="hljs-selector-class">.gef-tabs</span> &gt; <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span> {
+  <span class="hljs-selector-class">.gel-tabs</span> &gt; <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span> {
     <span class="hljs-attribute">flex-basis</span>: <span class="hljs-number">100%</span>;
     <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0.25rem</span>;
@@ -218,19 +218,19 @@
 </code></pre>
 <h3 id="high-contrast-mode">High contrast mode</h3>
 <p>Where Windows High Contrast Mode is active, the backgrounds that mark out the tabs and panels are eliminated. Accordingly, supplementary borders are added. These are set to <code>transparent</code> and will be invisible unless Windows HCM is running.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-tabs</span> &gt; <span class="hljs-selector-tag">section</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-tabs</span> &gt; <span class="hljs-selector-tag">section</span> {
   <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid transparent; <span class="hljs-comment">/* for high contrast mode */</span>
 }
 </code></pre>
 <p>In addition, an <code>@media</code> query detecting high contrast mode<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> is used to create an alternative <code>aria-current</code> style for the selected tab. It is positioned <code>2px</code> down from its natural position. This obscures the line between the tab and panel, making them appear as one.</p>
 <pre class="hljs"><code>@<span class="hljs-keyword">media</span> (-ms-high-contrast: active) {
-  <span class="hljs-selector-class">.gef-tabs</span> <span class="hljs-selector-attr">[aria-current]</span> {
+  <span class="hljs-selector-class">.gel-tabs</span> <span class="hljs-selector-attr">[aria-current]</span> {
     <span class="hljs-attribute">position</span>: relative;
     <span class="hljs-attribute">top</span>: <span class="hljs-number">2px</span>;
   }
 }
 </code></pre>
-<p><img src="/gef-docs/static/images/hcm_tabs.png" alt="Borders define the tabs and panels"></p>
+<p><img src="/gel-tags/static/images/hcm_tabs.png" alt="Borders define the tabs and panels"></p>
 <h2 id="recommended-behaviour">Recommended behaviour</h2>
 <h3 id="without-javascript">Without JavaScript</h3>
 <p>The links and <code>&lt;section&gt;</code>s are communicated as such in screen reader output and the interface behaves like an interactive table of contents. As described in <a href="#recommended-layout">Recommended layout</a>, <code>&lt;section&gt;</code>s (would-be tab panels) are each visible at all times and receive focus (revealing their focus styles) when their corresponding link is activated.</p>
@@ -257,15 +257,15 @@
 </code></pre>
 <h2 id="reference-implementation">Reference implementation</h2>
 
-            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
-              <h4 id="aside-alert-important" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+            <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-alert-important">
+              <h4 id="aside-alert-important" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
 </aside>
-          <div class="gefdocs-demo"><!-- 
+          <div class="geltags-demo"><!-- 
 title: Tabs
  -->
 
 <div style="margin-bottom: 1rem;">
-  <div class="gef-tabs">
+  <div class="gel-tabs">
     <ul>
       <li><a href="#section1">Section 1</a></li>
       <li><a href="#section2">Section 2</a></li>
@@ -288,14 +288,14 @@ title: Tabs
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function (event) {
-    window.gef && gef.Tabs.init();
+    window.gel && gel.Tabs.init();
 
-    var tabsElem = document.querySelector('.gef-tabs');
-    var tabs = new gef.Tabs.constructor(tabsElem);
+    var tabsElem = document.querySelector('.gel-tabs');
+    var tabs = new gel.Tabs.constructor(tabsElem);
   });
 </script></div>
         
-          <p><a class="gef-cta gel-long-primer-bold" href="../demos/tabs/" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+          <p><a class="gel-cta gel-long-primer-bold" href="../demos/tabs/" target="_new"><span class="gel-button__label">Open in new window</span><svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
         <h2 id="related-research">Related research</h2>
 <p>During the development of the tabs implementation, BBC News undertook research and hosted two days of usability testing with a number of keyboard-only participants, including blind and partially sighted participants.</p>
 <p>These participants were presented with three variations of the tab interface. Version 1 implemented all of the recommended semantics and behaviours of the <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel">ARIA Authoring practices</a> guide, including tabs only being focusable/selectable by arrow key. Version 2 constituted a compromise position: tab semantics were implemented but the interface behaved as a table of contents (moving focus to panels on tab activation). Version 3 appeared as a tab interface but retained the semantics and behaviour of an interactive table of contents (see <a href="#initial-markup">Initial markup</a>).</p>
@@ -326,18 +326,18 @@ title: Tabs
 </section>
 
 
-                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding"
+                <aside class="geltags-breakout-box geltags-breakout-box extra-padding"
                     aria-labelledby="aside-info-Could-you-improve-this-documentation">
                     <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
-                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
-                            <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info"
+                        <svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text">
+                            <use xlink:href="/gel-docs/static/images/gel-icons-core-set.svg#gel-icon-info"
                                 style="fill:#404040;"></use>
                         </svg>Could you improve this documentation?
                     </h4>
                     <div>
                         <p>
                             If you think you could make anything you see here a bit better then become one of <a
-                                href="/gef-docs/contributors/">our
+                                href="/gel-tags/contributors/">our
                                 lovely contributors</a>!
                         </p>
                     </div>
@@ -347,18 +347,18 @@ title: Tabs
         </div>
     </main>
 
-    <div class="gefdocs-feedback-banner">
+    <div class="geltags-feedback-banner">
         <div class="gel-wrap">
             <div class="gel-layout">
                 <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
-                    <h2 class="gefdocs-feedback-banner__title">Got a minute?</h2>
-                    <p>We'd love to know what you think of the Code GEL website.</p>
+                    <h2 class="geltags-feedback-banner__title">Got a minute?</h2>
+                    <p>We'd love to know what you think of our website.</p>
                     <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/"
-                        class="gefdocs-button gefdocs-button__link-button gefdocs-feedback-banner__cta gefdocs-button--primary">
-                        <span class="gefdocs-button__content">Go to survey</span>
-                        <span class="gefdocs-button__icon_wrapper">
-                            <svg class="gefdocs-button__icon gefdocs-icon gefdocs-icon--text">
-                                <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                        class="geltags-button geltags-button__link-button geltags-feedback-banner__cta geltags-button--primary">
+                        <span class="geltags-button__content">Go to survey</span>
+                        <span class="geltags-button__icon_wrapper">
+                            <svg class="geltags-button__icon geltags-icon geltags-icon--text">
+                                <use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-external-link"
                                     style="fill:undefined;"></use>
                             </svg>
                         </span>
@@ -368,8 +368,8 @@ title: Tabs
         </div>
     </div>
 
-    <script nomodule defer type="text/javascript" src="/gef-docs/static/js/external-svg-polyfill.js"></script>
-    <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
+    <script nomodule defer type="text/javascript" src="/gel-tags/static/js/external-svg-polyfill.js"></script>
+    <script type="text/javascript" src="/gel-tags/static/js/gel.js"></script>
 
     
 

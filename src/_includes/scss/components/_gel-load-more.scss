@@ -1,0 +1,52 @@
+.gel-loader [hidden] {
+  display: none !important;
+}
+
+.gel-loader__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gel-loader__item {
+  border: 2px solid;
+  padding: 1rem;
+}
+
+.gel-loader__loading {
+  color: inherit;
+  margin-bottom: 0.5rem;
+}
+
+.gel-loader__loading svg {
+  font-size: 2rem;
+}
+
+.gel-loader__item + .gel-loader__item {
+  margin-top: 1rem;
+}
+
+.gel-loader__items [role="separator"] {
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+@keyframes focus {
+  0%{
+    outline: 2px dotted $gel-color--tundora;
+  }
+  100% {
+    outline: 2px dotted transparent;
+  }
+}
+
+.gel-loader__items [role="separator"]:focus {
+  outline-width: 0;
+  outline-offset: 2px;
+  animation: focus 1s linear 1;
+}
+
+.gel-loader__foot {
+  margin: 1rem 0;
+  text-align: center;
+}

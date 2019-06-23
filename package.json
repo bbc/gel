@@ -1,5 +1,5 @@
 {
-  "name": "gef-docs",
+  "name": "gel-tags",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
@@ -7,8 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "sass": "sass-pack -s src/_includes/scss/site.scss -o src/static/css/ && sass-pack -s src/_includes/scss/gef.scss -o src/static/css/",
-    "js": "uglifyjs node_modules/fontfaceobserver/fontfaceobserver.standalone.js node_modules/highlight.js/lib/highlight.js node_modules/sticky-js/dist/sticky.min.js node_modules/menuspy/dist/menuspy.min.js -o src/static/js/site.js && cat src/_includes/js/components/*.js > src/static/js/gef.js",
+    "sass": "sass-pack -s src/_includes/scss/site.scss -o src/static/css/ && sass-pack -s src/_includes/scss/gel.scss -o src/static/css/",
+    "js": "uglifyjs node_modules/fontfaceobserver/fontfaceobserver.standalone.js node_modules/highlight.js/lib/highlight.js node_modules/sticky-js/dist/sticky.min.js node_modules/menuspy/dist/menuspy.min.js -o src/static/js/site.js && cat src/_includes/js/components/*.js > src/static/js/gel.js",
     "html": "eleventy --input=./src/ --output=docs/ --formats=md,html",
     "develop": "gulp",
     "build": "npm run js && npm run sass && npm run html",

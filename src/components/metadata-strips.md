@@ -18,9 +18,9 @@ The following example assumes the content is a [Promo](../promos) and includes j
 :::
 
 ```html
-<dl class="gef-metadata-strip">
+<dl class="gel-metadata-strip">
   <div>
-    <dt class="gef-sr">Published:</dt>
+    <dt class="gel-sr">Published:</dt>
     <dd>
       <span aria-hidden="true">
         <svg class="gel-icon gel-icon--text" focusable="false">
@@ -28,11 +28,11 @@ The following example assumes the content is a [Promo](../promos) and includes j
         </svg>
         1m
       </span>
-      <span class="gef-sr">1 minute ago</span>
+      <span class="gel-sr">1 minute ago</span>
     </dd>
   </div>
   <div>
-    <dt class="gef-sr">From:</dt>
+    <dt class="gel-sr">From:</dt>
     <dd>
       <a href="link/to/category">UK</a>
     </dd>
@@ -41,16 +41,16 @@ The following example assumes the content is a [Promo](../promos) and includes j
 ```
 
 * **`<dl>` and `<div>`:** The most appropriate markup for key/value based information is the definition (or 'description') list. It is permitted[^1] to use `<div>` elements to wrap pairs of `<dt>` and `<dd>` elements for layout purposes. 
-* **`class="gef-sr"` for `<dt>`:** The definition titles (`<dt>`s) are only needed for non-visual clarification in screen reader output. They are hidden visually using the `gef-sr` class.
+* **`class="gel-sr"` for `<dt>`:** The definition titles (`<dt>`s) are only needed for non-visual clarification in screen reader output. They are hidden visually using the `gel-sr` class.
 * **gel-icon:** The SVG icon (if present) is hidden along with the display text. It takes `focusable="false"` to remove it from focus order in some versions of IE and Edge[^2]
-* **`aria-hidden="true"`** In some cases, the visually displayed text may not be sufficient for synthetic voice announcement. In these cases, the displayed text (and associated iconography) is hidden from assistive technologies with `aria-hidden="true"`[^3] and an alternative wording is provided non-visually (using the `gef-sr` class to hide this text visually).
+* **`aria-hidden="true"`** In some cases, the visually displayed text may not be sufficient for synthetic voice announcement. In these cases, the displayed text (and associated iconography) is hidden from assistive technologies with `aria-hidden="true"`[^3] and an alternative wording is provided non-visually (using the `gel-sr` class to hide this text visually).
 
 ## Recommended layout
 
 The `<dl>`, `<dt>`, and `<dd>` must have their user agent styles removed. The child `<div>`s are set to `inline-block`, with `white-space: nowrap`.
 
 ```css
-.gef-metadata-strip > div {
+.gel-metadata-strip > div {
   display: inline-block;
   white-space: nowrap;
 }
@@ -61,7 +61,7 @@ The purpose of `nowrap` is to ensure pairs of definition titles and their defini
 A border separator is included between—and only between—definition `<div>`s using pseudo-content:
 
 ```css
-.gef-metadata-strip > div + div::before {
+.gel-metadata-strip > div + div::before {
   content: '';
   border-left: 1px solid;
   margin: 0 0.25rem;
@@ -77,7 +77,7 @@ Some metadata values may be linked, such as the 'From' value in the [**Expected 
 Accompany any colour differentiation with `text-decoration: underline`, if this style is not already being inherited.
 
 ```css
-.gef-metadata-strip a {
+.gel-metadata-strip a {
   text-decoration: underline;
 }
 ```
@@ -89,7 +89,7 @@ Aside from linked metadata, metadata strips are largely static. If a link uses `
 ```html
 <a href="/link/to/category">
   UK
-  <span class="gef-sr">(opens new tab)</span>
+  <span class="gel-sr">(opens new tab)</span>
   <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
     <use xlink:href="assets/svg/gel-icons-core-set.svg#gel-icon-external-link"></use>
   </svg>

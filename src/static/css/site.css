@@ -9,7 +9,7 @@
  * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
  * @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
-.gef-sr {
+.gel-sr {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -25,9 +25,9 @@
  * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
  * @link https://www.drupal.org/node/897638
  */
-.gef-sr__focusable:active,
-.gef-sr__focusable:focus,
-.gef-sr__focused {
+.gel-sr__focusable:active,
+.gel-sr__focusable:focus,
+.gel-sr__focused {
   position: static;
   clip: auto;
   height: auto;
@@ -36,7 +36,7 @@
   white-space: normal;
   width: auto; }
 
-.gef-sr__overlay {
+.gel-sr__overlay {
   position: absolute;
   top: 18px;
   left: 18px;
@@ -1064,7 +1064,7 @@ h4 {
  * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
  * @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
-.gef-sr {
+.gel-sr {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -1080,9 +1080,9 @@ h4 {
  * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
  * @link https://www.drupal.org/node/897638
  */
-.gef-sr__focusable:active,
-.gef-sr__focusable:focus,
-.gef-sr__focused {
+.gel-sr__focusable:active,
+.gel-sr__focusable:focus,
+.gel-sr__focused {
   position: static;
   clip: auto;
   height: auto;
@@ -1091,7 +1091,7 @@ h4 {
   white-space: normal;
   width: auto; }
 
-.gef-sr__overlay {
+.gel-sr__overlay {
   position: absolute;
   top: 18px;
   left: 18px;
@@ -1207,19 +1207,19 @@ button {
   fill: currentColor; }
 
 /*-- util -----------------------------*/
-.gef-u-flex-rw {
+.gel-u-flex-rw {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex; }
 
-.gef-u-flex-rw, .gef-u-flex-rw * {
+.gel-u-flex-rw, .gel-u-flex-rw * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-.gef-u-flex-rt {
+.gel-u-flex-rt {
   -webkit-box-ordinal-group: 2;
   -moz-box-ordinal-group: 2;
   -ms-flex-order: 2;
@@ -1228,7 +1228,7 @@ button {
   width: 50%;
   -moz-box-flex: 1; }
 
-.gef-u-flex-lf {
+.gel-u-flex-lf {
   -webkit-box-ordinal-group: 1;
   -moz-box-ordinal-group: 1;
   -ms-flex-order: 1;
@@ -1287,31 +1287,31 @@ img {
 a {
   text-decoration: none; }
 
-.gefdocs-body-copy a {
+.geltags-body-copy a {
   font-weight: bold;
   text-decoration: none;
   border-bottom: 1px solid #ccc; }
 
-.gefdocs-body-copy a:hover {
+.geltags-body-copy a:hover {
   color: #397cb8;
   border-bottom: 1px solid #397cb8;
   transition: 300ms; }
 
-.gefdocs-body-copy h1 a, .gefdocs-body-copy h2 a, .gefdocs-body-copy h3 a, .gefdocs-body-copy h4 a, .gefdocs-body-copy h5 a, .gefdocs-body-copy h6 a, .gefdocs-body-copy li a {
+.geltags-body-copy h1 a, .geltags-body-copy h2 a, .geltags-body-copy h3 a, .geltags-body-copy h4 a, .geltags-body-copy h5 a, .geltags-body-copy h6 a, .geltags-body-copy li a {
   border-bottom: 1px solid transparent; }
 
-.gefdocs-body-copy h1 a:hover, .gefdocs-body-copy h2 a:hover, .gefdocs-body-copy h3 a:hover, .gefdocs-body-copy h4 a:hover, .gefdocs-body-copy h5 a:hover, .gefdocs-body-copy h6 a:hover, .gefdocs-body-copy li a:hover {
+.geltags-body-copy h1 a:hover, .geltags-body-copy h2 a:hover, .geltags-body-copy h3 a:hover, .geltags-body-copy h4 a:hover, .geltags-body-copy h5 a:hover, .geltags-body-copy h6 a:hover, .geltags-body-copy li a:hover {
   border-bottom: 1px solid #397cb8; }
 
-.gefdocs-body-copy h2 {
+.geltags-body-copy h2 {
   border-top: 1px solid #ccc;
   padding-top: 30px;
   margin-top: 64px; }
 
-.gefdocs-link--last-word {
+.geltags-link--last-word {
   white-space: nowrap; }
 
-.gefdocs-icon--inline-text {
+.geltags-icon--inline-text {
   height: 0.75em;
   width: 0.75em;
   left: 0;
@@ -1323,29 +1323,29 @@ a {
   color: inherit; }
 
 /* Type Styles for the Code GEL website body */
-.gefdocs-body, .gefdocs-article-body {
+.geltags-body, .geltags-article-body {
   font-size: 15px;
   font-size: 0.9375rem;
   line-height: 20px;
   line-height: 1.25rem; }
   @media (min-width: 20em) {
-    .gefdocs-body, .gefdocs-article-body {
+    .geltags-body, .geltags-article-body {
       font-size: 16px;
       font-size: 1rem;
       line-height: 22px;
       line-height: 1.375rem; } }
   @media (min-width: 37.5em) {
-    .gefdocs-body, .gefdocs-article-body {
+    .geltags-body, .geltags-article-body {
       font-size: 18px;
       font-size: 1.125rem;
       line-height: 24px;
       line-height: 1.5rem; }
-      .no-touch .gefdocs-body, .no-touch .gefdocs-article-body {
+      .no-touch .geltags-body, .no-touch .geltags-article-body {
         font-size: 16px;
         font-size: 1rem;
         line-height: 22px;
         line-height: 1.375rem; } }
-  .gefdocs-body h1, .gefdocs-article-body h1 {
+  .geltags-body h1, .geltags-article-body h1 {
     font-size: 28px;
     font-size: 1.75rem;
     line-height: 32px;
@@ -1358,23 +1358,23 @@ a {
     margin-top: 12px;
     margin-bottom: 12px; }
     @media (min-width: 20em) {
-      .gefdocs-body h1, .gefdocs-article-body h1 {
+      .geltags-body h1, .geltags-article-body h1 {
         font-size: 32px;
         font-size: 2rem;
         line-height: 36px;
         line-height: 2.25rem; } }
     @media (min-width: 37.5em) {
-      .gefdocs-body h1, .gefdocs-article-body h1 {
+      .geltags-body h1, .geltags-article-body h1 {
         font-size: 52px;
         font-size: 3.25rem;
         line-height: 56px;
         line-height: 3.5rem; }
-        .no-touch .gefdocs-body h1, .no-touch .gefdocs-article-body h1 {
+        .no-touch .geltags-body h1, .no-touch .geltags-article-body h1 {
           font-size: 44px;
           font-size: 2.75rem;
           line-height: 48px;
           line-height: 3rem; } }
-  .gefdocs-body h2, .gefdocs-article-body h2 {
+  .geltags-body h2, .geltags-article-body h2 {
     font-size: 20px;
     font-size: 1.25rem;
     line-height: 24px;
@@ -1387,23 +1387,23 @@ a {
     margin-top: 24px;
     margin-bottom: 24px; }
     @media (min-width: 20em) {
-      .gefdocs-body h2, .gefdocs-article-body h2 {
+      .geltags-body h2, .geltags-article-body h2 {
         font-size: 24px;
         font-size: 1.5rem;
         line-height: 28px;
         line-height: 1.75rem; } }
     @media (min-width: 37.5em) {
-      .gefdocs-body h2, .gefdocs-article-body h2 {
+      .geltags-body h2, .geltags-article-body h2 {
         font-size: 36px;
         font-size: 2.25rem;
         line-height: 40px;
         line-height: 2.5rem; }
-        .no-touch .gefdocs-body h2, .no-touch .gefdocs-article-body h2 {
+        .no-touch .geltags-body h2, .no-touch .geltags-article-body h2 {
           font-size: 32px;
           font-size: 2rem;
           line-height: 36px;
           line-height: 2.25rem; } }
-  .gefdocs-body h3, .gefdocs-article-body h3 {
+  .geltags-body h3, .geltags-article-body h3 {
     font-size: 18px;
     font-size: 1.125rem;
     line-height: 22px;
@@ -1413,19 +1413,19 @@ a {
     margin-top: 20px;
     margin-bottom: 12px; }
     @media (min-width: 20em) {
-      .gefdocs-body h3, .gefdocs-article-body h3 {
+      .geltags-body h3, .geltags-article-body h3 {
         letter-spacing: -1px;
         letter-spacing: -0.0625rem; } }
     @media (min-width: 37.5em) {
-      .gefdocs-body h3, .gefdocs-article-body h3 {
+      .geltags-body h3, .geltags-article-body h3 {
         font-size: 21px;
         font-size: 1.3125rem;
         line-height: 24px;
         line-height: 1.5rem; }
-        .no-touch .gefdocs-body h3, .no-touch .gefdocs-article-body h3 {
+        .no-touch .geltags-body h3, .no-touch .geltags-article-body h3 {
           font-size: 20px;
           font-size: 1.25rem; } }
-  .gefdocs-body h4, .gefdocs-article-body h4 {
+  .geltags-body h4, .geltags-article-body h4 {
     font-size: 15px;
     font-size: 0.9375rem;
     line-height: 20px;
@@ -1435,32 +1435,32 @@ a {
     margin-top: 20px;
     margin-bottom: 12px; }
     @media (min-width: 20em) {
-      .gefdocs-body h4, .gefdocs-article-body h4 {
+      .geltags-body h4, .geltags-article-body h4 {
         font-size: 16px;
         font-size: 1rem;
         line-height: 20px;
         line-height: 1.25rem; } }
     @media (min-width: 37.5em) {
-      .gefdocs-body h4, .gefdocs-article-body h4 {
+      .geltags-body h4, .geltags-article-body h4 {
         font-size: 18px;
         font-size: 1.125rem;
         line-height: 22px;
         line-height: 1.375rem; }
-        .no-touch .gefdocs-body h4, .no-touch .gefdocs-article-body h4 {
+        .no-touch .geltags-body h4, .no-touch .geltags-article-body h4 {
           font-size: 16px;
           font-size: 1rem;
           line-height: 20px;
           line-height: 1.25rem; } }
-  .gefdocs-body p, .gefdocs-article-body p {
+  .geltags-body p, .geltags-article-body p {
     margin-bottom: 16px; }
     @media (min-width: 80em) {
-      .gefdocs-body p, .gefdocs-article-body p {
+      .geltags-body p, .geltags-article-body p {
         margin-bottom: 20px; } }
-  .gefdocs-body code.hljs, .gefdocs-article-body code.hljs {
+  .geltags-body code.hljs, .geltags-article-body code.hljs {
     padding: 16px;
     margin: 16px; }
 
-.gefdocs-feedback-banner {
+.geltags-feedback-banner {
   margin-top: 192px; }
 
 /*
@@ -1492,14 +1492,14 @@ a {
 .noscript .noscriptElement {
   display: block; }
 
-.noscript .gefdocs-enhanced {
+.noscript .geltags-enhanced {
   display: none; }
 
 /*
  * gel styles
  */
 /* header */
-.gefdocs-logo {
+.geltags-logo {
   display: inline-block;
   font-size: 46px;
   font-weight: 700;
@@ -1507,26 +1507,26 @@ a {
   letter-spacing: -1.3333px; }
 
 @media (max-width: 37.5em) {
-  .gefdocs-logo {
+  .geltags-logo {
     margin-left: -8px; } }
 
-.gefdocs-header {
+.geltags-header {
   background: #fff;
   padding: 8px 0 3px 0;
   border-bottom: 1px solid #dcdcdc; }
 
-.gefdocs-header .gel-wrap {
+.geltags-header .gel-wrap {
   padding-left: 8px !important; }
 
-.gefdocs-header__banner {
+.geltags-header__banner {
   padding: 24px 0 16px;
   border-bottom: 1px solid #dcdcdc;
   margin-bottom: 24px; }
 
-.gefdocs-header__data {
+.geltags-header__data {
   margin-top: 24px; }
 
-.gefdocs-header__title {
+.geltags-header__title {
   margin: 12px 0 24px;
   font-size: 28px;
   font-size: 1.75rem;
@@ -1536,19 +1536,19 @@ a {
   font-weight: 800; }
 
 @media (min-width: 20em) {
-  .gefdocs-header__title {
+  .geltags-header__title {
     font-size: 32px;
     font-size: 2rem;
     line-height: 36px;
     line-height: 2.25rem; } }
 
 @media (min-width: 37.5em) {
-  .gefdocs-header__title {
+  .geltags-header__title {
     font-size: 52px;
     font-size: 3.25rem;
     line-height: 56px;
     line-height: 3.5rem; }
-  .no-touch .gefdocs-header__title {
+  .no-touch .geltags-header__title {
     font-size: 44px;
     font-size: 2.75rem;
     line-height: 48px;
@@ -1576,26 +1576,26 @@ a {
   background: #bb3626; }
 
 /* breakout */
-.gefdocs-breakout-box {
+.geltags-breakout-box {
   background: #eee;
   padding: 8px;
   margin: 20px 0 32px 0;
   width: 100%; }
 
-.gefdocs-breakout-box.extra-padding {
+.geltags-breakout-box.extra-padding {
   padding: 16px 16px 16px 18px; }
 
-.gefdocs-breakout-box.extra-margin {
+.geltags-breakout-box.extra-margin {
   margin-top: 18px; }
 
-.gefdocs-breakout-box h4 {
+.geltags-breakout-box h4 {
   margin-top: 8px;
   margin-bottom: 8px; }
 
-.gefdocs-breakout-box a {
+.geltags-breakout-box a {
   border-bottom-color: #404040; }
 
-.gefdocs-breakout-box p {
+.geltags-breakout-box p {
   margin: 0;
   margin-bottom: 20px;
   font-weight: 400;
@@ -1605,27 +1605,27 @@ a {
   line-height: 1.125rem;
   color: #404040; }
 
-.b-reith-sans-loaded .gefdocs-breakout-box p {
+.b-reith-sans-loaded .geltags-breakout-box p {
   font-family: ReithSans, Helvetica, Arial, freesans, sans-serif !important; }
 
 @media (min-width: 37.5em) {
-  .gefdocs-breakout-box p {
+  .geltags-breakout-box p {
     line-height: 20px;
     line-height: 1.25rem; }
-  .no-touch .gefdocs-breakout-box p {
+  .no-touch .geltags-breakout-box p {
     font-size: 14px;
     font-size: .875rem;
     line-height: 18px;
     line-height: 1.25rem; } }
 
-.gefdocs-breakout-box__icon {
+.geltags-breakout-box__icon {
   float: left;
   display: inline;
   margin-right: 8px;
   position: relative;
   top: 1px; }
 
-.gefdocs-standout-box {
+.geltags-standout-box {
   background: #eee;
   width: 100%;
   overflow: auto;
@@ -1636,26 +1636,26 @@ a {
   line-height: 16px;
   line-height: 1rem; }
   @media (min-width: 20em) {
-    .gefdocs-standout-box {
+    .geltags-standout-box {
       line-height: 18px;
       line-height: 1.125rem; } }
   @media (min-width: 37.5em) {
-    .no-touch .gefdocs-standout-box {
+    .no-touch .geltags-standout-box {
       font-size: 13px;
       font-size: 0.8125rem;
       line-height: 16px;
       line-height: 1rem; } }
-  .gefdocs-standout-box dt, .gefdocs-standout-box dd {
+  .geltags-standout-box dt, .geltags-standout-box dd {
     float: left;
     line-height: 150%; }
-  .gefdocs-standout-box dt {
+  .geltags-standout-box dt {
     clear: both;
     font-weight: bold; }
-  .gefdocs-standout-box dd {
+  .geltags-standout-box dd {
     margin-inline-start: 8px; }
 
 /* toc */
-.gefdocs-toc {
+.geltags-toc {
   list-style-type: none;
   padding-left: 0;
   margin-top: 0; }
@@ -1664,22 +1664,22 @@ a {
   #side-nav {
     padding-top: 36px; } }
 
-.gefdocs-toc li {
+.geltags-toc li {
   margin-bottom: 2px; }
 
-.gefdocs-toc a {
+.geltags-toc a {
   text-decoration: none;
   font-weight: bold;
   line-height: 160%;
   border-bottom: 1px solid transparent; }
 
-.gefdocs-toc a:hover,
-.gefdocs-toc a:focus,
-.gefdocs-toc li.active a {
+.geltags-toc a:hover,
+.geltags-toc a:focus,
+.geltags-toc li.active a {
   color: #397cb8;
   transition: .3s; }
 
-.gefdocs-toc a:hover {
+.geltags-toc a:hover {
   border-bottom: 1px solid #397cb8;
   transition: .3s; }
 
@@ -1695,22 +1695,22 @@ figcaption + * {
   margin-top: 1rem; }
 
 /* icon */
-.gefdocs-icon {
+.geltags-icon {
   fill: currentColor; }
 
-.gefdocs-icon--small {
+.geltags-icon--small {
   height: 16px;
   width: 16px; }
 
-.gefdocs-icon--medium {
+.geltags-icon--medium {
   height: 32px;
   width: 32px; }
 
-.gefdocs-icon--large {
+.geltags-icon--large {
   height: 64px;
   width: 64px; }
 
-.gefdocs-icon--text {
+.geltags-icon--text {
   margin-top: .1em;
   height: 1em;
   width: 1em;
@@ -1723,29 +1723,29 @@ pre {
   tab-size: 2; }
 
 /* body-copy */
-.b-reith-loaded .gefdocs-body-copy p, .b-reith-loaded .gefdocs-body-copy ol, .b-reith-loaded .gefdocs-body-copy ul {
+.b-reith-loaded .geltags-body-copy p, .b-reith-loaded .geltags-body-copy ol, .b-reith-loaded .geltags-body-copy ul {
   font-family: ReithSerif, "Times New Roman", serif; }
 
-.gefdocs-body-copy {
+.geltags-body-copy {
   font-size: 15px;
   font-size: 0.9375rem;
   line-height: 20px;
   line-height: 1.25rem; }
 
 @media (min-width: 20em) {
-  .gefdocs-body-copy {
+  .geltags-body-copy {
     font-size: 16px;
     font-size: 1rem;
     line-height: 22px;
     line-height: 1.375rem; } }
 
 @media (min-width: 37.5em) {
-  .gefdocs-body-copy {
+  .geltags-body-copy {
     font-size: 18px;
     font-size: 1.125rem;
     line-height: 24px;
     line-height: 1.5rem; }
-  .no-touch .gefdocs-body-copy {
+  .no-touch .geltags-body-copy {
     font-size: 16px;
     font-size: 1rem;
     line-height: 22px;
@@ -1755,7 +1755,7 @@ body {
   font-family: Helvetica, Arial, freesans, sans-serif; }
 
 /* button */
-.gefdocs-button {
+.geltags-button {
   border: 1px solid transparent;
   cursor: pointer;
   display: inline-block;
@@ -1768,87 +1768,87 @@ body {
   padding: 16px;
   text-decoration: none; }
 
-.b-reith-sans-loaded .gefdocs-button {
+.b-reith-sans-loaded .geltags-button {
   font-family: ReithSans; }
 
-a.gefdocs-button:hover {
+a.geltags-button:hover {
   color: white; }
 
 @media (min-width: 37.5em) {
-  .gefdocs-button {
+  .geltags-button {
     line-height: 20px;
     line-height: 1.25rem; }
-  .no-touch .gefdocs-button {
+  .no-touch .geltags-button {
     font-size: 14px;
     font-size: .875rem;
     line-height: 18px;
     line-height: 1.125rem; } }
 
-.gefdocs-button:hover:not(.is-disabled) {
+.geltags-button:hover:not(.is-disabled) {
   text-decoration: none; }
 
-.gefdocs-button.is-disabled {
+.geltags-button.is-disabled {
   cursor: default;
   opacity: .6; }
 
-.gefdocs-button.gefdocs-button--primary {
+.geltags-button.geltags-button--primary {
   background: transparent;
   border-color: #5a5a5a;
   color: #404040;
   transition: background-color .2s ease; }
 
-.gefdocs-button.gefdocs-button--primary:hover {
+.geltags-button.geltags-button--primary:hover {
   transition: .3s;
   border: 1px solid #397cb8;
   color: #397cb8; }
 
-.gefdocs-button.gefdocs-button--primary:hover .gefdocs-button__content {
+.geltags-button.geltags-button--primary:hover .geltags-button__content {
   text-decoration: none;
   border-bottom: 1px solid #397cb8;
   transition: border-bottom .3s; }
 
-.gefdocs-button__content {
+.geltags-button__content {
   border-bottom: 1px solid transparent;
   margin-right: 12px;
   float: left; }
 
-.gefdocs-button--secondary {
+.geltags-button--secondary {
   border-color: #404040;
   color: #404040;
   background: transparent; }
 
-.gefdocs-button--light {
+.geltags-button--light {
   border-color: #fff;
   color: #fff;
   background: transparent; }
 
-.gefdocs-button--light:hover {
+.geltags-button--light:hover {
   transition: .3s; }
 
-.gefdocs-button--light:hover .gefdocs-button__content {
+.geltags-button--light:hover .geltags-button__content {
   text-decoration: none;
   border-bottom: 1px solid #fff;
   transition: border-bottom .3s; }
 
-.gefdocs-button--minor {
+.geltags-button--minor {
   background: transparent; }
 
-.gefdocs-button--dark {
+.geltags-button--dark {
   text-decoration: none;
   background: #121212;
   color: #fff; }
 
-.gefdocs-button--dark:hover:not(.is-disabled) {
+.geltags-button--dark:hover:not(.is-disabled) {
   text-decoration: underline; }
 
-.gefdocs-button--danger {
+.geltags-button--danger {
   background: #e4134f;
   color: #fff; }
 
-.gefdocs-button--danger:hover:not(.is-disabled) {
+.geltags-button--danger:hover:not(.is-disabled) {
   background: #b50f3f; }
 
-.gefdocs-input {
+.geltags-input {
   border: 1px solid #121212;
   padding: 12px;
   width: 100%;
@@ -1859,26 +1859,26 @@ a.gefdocs-button:hover {
   line-height: 1.25rem; }
 
 @media (min-width: 20em) {
-  .gefdocs-input {
+  .geltags-input {
     font-size: 16px;
     font-size: 1rem;
     line-height: 20px;
     line-height: 1.25rem; } }
 
 @media (min-width: 37.5em) {
-  .gefdocs-input {
+  .geltags-input {
     font-size: 18px;
     font-size: 1.125rem;
     line-height: 22px;
     line-height: 1.375rem; }
-  .no-touch .gefdocs-input {
+  .no-touch .geltags-input {
     font-size: 16px;
     font-size: 1rem;
     line-height: 20px;
     line-height: 1.25rem; } }
 
 /* feedback banner */
-.gefdocs-feedback-banner {
+.geltags-feedback-banner {
   background-color: #ffdc48;
   color: #404040;
   padding: 32px 0;
@@ -1888,28 +1888,28 @@ a.gefdocs-button:hover {
   line-height: 1.375rem; }
 
 @media (min-width: 37.5em) {
-  .gefdocs-feedback-banner {
+  .geltags-feedback-banner {
     font-size: 21px;
     font-size: 1.3125rem;
     line-height: 24px;
     line-height: 1.5rem; }
-  .no-touch .gefdocs-feedback-banner {
+  .no-touch .geltags-feedback-banner {
     font-size: 20px;
     font-size: 1.25rem; } }
 
-.gefdocs-feedback-banner p {
+.geltags-feedback-banner p {
   max-width: 600px;
   margin-top: 0; }
 
-.gefdocs-feedback-banner__icon {
+.geltags-feedback-banner__icon {
   padding-bottom: 24px;
   margin-top: 24px; }
 
-.gefdocs-feedback-banner__icon svg {
+.geltags-feedback-banner__icon svg {
   width: 72px;
   height: 72px; }
 
-.gefdocs-feedback-banner__title {
+.geltags-feedback-banner__title {
   font-size: 20px;
   font-size: 1.25rem;
   line-height: 24px;
@@ -1921,39 +1921,39 @@ a.gefdocs-button:hover {
   margin-top: 24px; }
 
 @media (min-width: 20em) {
-  .gefdocs-feedback-banner__title {
+  .geltags-feedback-banner__title {
     font-size: 24px;
     font-size: 1.5rem;
     line-height: 28px;
     line-height: 1.75rem; } }
 
 @media (min-width: 37.5em) {
-  .gefdocs-feedback-banner__title {
+  .geltags-feedback-banner__title {
     font-size: 36px;
     font-size: 2.25rem;
     line-height: 40px;
     line-height: 2.5rem; }
-  .no-touch .gefdocs-feedback-banner__title {
+  .no-touch .geltags-feedback-banner__title {
     font-size: 32px;
     font-size: 2rem;
     line-height: 36px;
     line-height: 2.25rem; } }
 
-.gefdocs-feedback-banner__cta {
+.geltags-feedback-banner__cta {
   margin-top: 16px;
   margin-bottom: 16px; }
 
-.gefdocs-feedback-banner__cta .gefdocs-button__icon {
+.geltags-feedback-banner__cta .geltags-button__icon {
   height: 16px;
   width: 16px;
   position: relative; }
 
-.gefdocs-feedback-banner__cta .gefdocs-button__icon svg {
+.geltags-feedback-banner__cta .geltags-button__icon svg {
   position: absolute;
   top: 2px;
   left: 0; }
 
-a.gefdocs-button.gefdocs-button__link-button {
+a.geltags-button.geltags-button__link-button {
   font-size: 15px;
   font-size: .9375rem;
   line-height: 18px;
@@ -1964,10 +1964,10 @@ a.gefdocs-button.gefdocs-button__link-button {
   text-align: center; }
 
 @media (min-width: 37.5em) {
-  a.gefdocs-button.gefdocs-button__link-button {
+  a.geltags-button.geltags-button__link-button {
     line-height: 20px;
     line-height: 1.25rem; }
-  .no-touch a.gefdocs-button.gefdocs-button__link-button {
+  .no-touch a.geltags-button.geltags-button__link-button {
     font-size: 14px;
     font-size: .875rem;
     line-height: 18px;
@@ -1975,43 +1975,43 @@ a.gefdocs-button.gefdocs-button__link-button {
 
 /* two-colum definition list */
 @media (min-width: 37.5em) {
-  dl.gefdocs-2col-list {
+  dl.geltags-2col-list {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     font-family: "Times New Roman", serif; }
-  .b-reith-loaded dl.gefdocs-2col-list {
+  .b-reith-loaded dl.geltags-2col-list {
     font-family: ReithSerif !important; }
-  dl.gefdocs-2col-list dt {
+  dl.geltags-2col-list dt {
     padding: 1rem 0;
     flex: 0 0 35%;
     overflow: hidden;
     /* Prevents long words in labels from causing layout to break */ }
-  dl.gefdocs-2col-list dd {
+  dl.geltags-2col-list dd {
     padding: 1rem 0 1rem 0;
     margin-left: 0;
     flex: 65% 0 0;
     padding-left: 1rem;
     max-width: 65%;
     /* Fix for IE issue in which box-sizing is not taken into account when using flex */ }
-  dl.gefdocs-2col-list dd + dd {
+  dl.geltags-2col-list dd + dd {
     margin-left: 35%; }
-  dl.gefdocs-2col-list dt {
+  dl.geltags-2col-list dt {
     flex: 0 0 25%; }
-  dl.gefdocs-2col-list dd {
+  dl.geltags-2col-list dd {
     flex: 75% 0 0;
     max-width: 75%; }
-  dl.gefdocs-2col-list dd + dd {
+  dl.geltags-2col-list dd + dd {
     margin-left: 25%; }
-  dl.gefdocs-2col-list *, dl.gefdocs-2col-list *:after, dl.gefdocs-2col-list *:before {
+  dl.geltags-2col-list *, dl.geltags-2col-list *:after, dl.geltags-2col-list *:before {
     box-sizing: border-box; } }
 
 @media (max-width: 37.5em) {
-  dl.gefdocs-2col-list dt {
+  dl.geltags-2col-list dt {
     padding-top: 1rem; }
-  dl.gefdocs-2col-list dd {
+  dl.geltags-2col-list dd {
     margin-left: 0; }
-  dl.gefdocs-2col-list dd + dd {
+  dl.geltags-2col-list dd + dd {
     margin-left: 0; } }
 
 /* hacks */

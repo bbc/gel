@@ -1,0 +1,93 @@
+.gel-button, .gel-cta  {
+  padding: double($gel-spacing-unit);
+  color: $gel-color--black;
+  border: 2px solid transparent; /* for high contrast mode */
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  font-family: inherit;
+}
+
+.gel-cta, .gel-cta a {
+  border: 1px solid $gel-color--black !important;
+}
+
+.gel-button {
+  background-color: $gel-color--black;
+  color: $gel-color--white;
+}
+
+.gel-cta {
+  text-decoration: none;
+}
+
+.gel-button, .gel-cta, a.gel-cta {
+  font-size: 15px;
+  font-size: .9375rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+  font-weight: 700;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center
+}
+
+@media (min-width: 37.5em) {
+  .gel-button, .gel-cta, a.gel-cta {
+      line-height:20px;
+      line-height: 1.25rem;
+      font-size: 14px;
+      font-size: .875rem;
+      line-height: 18px;
+      line-height: 1.125rem
+  }
+}
+
+.gel-button svg, .gel-cta svg {
+  fill: currentColor;
+  margin-top: .1em;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-top;
+}
+
+.gel-button svg:last-child, .gel-cta svg:last-child {
+  margin-left: 0.9em;
+}
+
+.gel-button svg:first-child, .gel-cta svg:first-child {
+  margin-right: 0.9em;
+}
+
+.gel-button svg:only-child,
+.gel-button .gel-sr + svg {
+  margin: 0;
+}
+
+.gel-button-switch [aria-hidden] {
+  display: inline-block;
+  border: 2px solid transparent; /* for high contrast mode */
+  margin-left: $gel-spacing-unit;
+  font-weight: bold;
+  background-color: $gel-color--white;
+  color: $gel-color--black;
+  padding: 0.125rem 0.25rem;
+  vertical-align: middle;
+}
+
+.gel-button:hover {
+  background-color: $gel-color--tundora;
+  border-color: $gel-color--tundora;
+}
+
+.gel-cta:hover,
+.gel-cta:focus {
+  border-color: $gel-color--tundora;
+  text-decoration: underline;
+  text-decoration-skip: objects;
+}
+
+.gel-button:focus,
+.gel-cta:focus {
+  outline: 3px solid $gel-color--blue;
+}

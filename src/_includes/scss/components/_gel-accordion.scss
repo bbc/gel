@@ -1,0 +1,82 @@
+.gel-accordion, .gel-accordion button {
+  color: $gel-color--tundora;
+}
+
+.gel-accordion .gel-accordion__handle {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.gel-accordion__handle button {
+  border: 0;
+  background-color: $gel-color--alto;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gel-accordion__handle button:hover,
+.gel-accordion__handle button:focus {
+  outline: 2px solid transparent; /* fallback for high contrast mode */
+  outline-offset: 2px;
+  background-color: $gel-color--star-command-blue;
+  color: $gel-color--white;
+}
+
+.gel-accordion__handle svg {
+  margin-left: 0.5rem;
+  flex-shrink: 0;
+}
+
+.gel-accordion__handle [aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.gel-accordion__handle, .gel-accordion__drawer {
+  margin: 0;
+  padding: 0;
+}
+
+.gel-accordion > * {
+  border-top: 1px solid $gel-color--cod-dark-gray;
+  border-bottom: 1px solid $gel-color--cod-dark-gray;
+}
+
+.gel-accordion > * + * {
+  border-top: 0;
+}
+
+.gel-accordion__handle button, .gel-accordion__drawer {
+  padding: 0.75rem;
+}
+
+.gel-accordion__drawer {
+  background-color: $gel-color--gallery;
+}
+
+/* 
+Optional, example implementation
+of 'open all' and 'close all' tools
+*/
+.gel-accordion__controls {
+  text-align: right;
+  margin: 0.5rem 0;
+}
+
+.gel-accordion__controls button {
+  font-size: 0.8rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.gel-accordion__controls button + button {
+  margin-left: 0.5rem;
+}

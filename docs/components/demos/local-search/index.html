@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/gef-docs/static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/gel-tags/static/images/favicon.ico" type="image/x-icon">
 
-    <title>GEF | Local search Demo</title>
+    <title>GEL | Local search Demo</title>
 
-    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/gef.css">
+    <link rel="stylesheet" type="text/css" href="/gel-tags/static/css/gel.css">
 
     <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
@@ -34,9 +34,9 @@
 
                 
 <div style="max-width: 1008px;">
-  <div class="gef-search gef-local-search" role="search">
-    <form class="gef-search__controls" method="get" action="https://search.bbc.co.uk/search">
-      <svg class="gef-search__controls-brand" viewBox="0 0 619.7119 128.69999" aria-hidden="true" focusable="false">
+  <div class="gel-search gel-local-search" role="search">
+    <form class="gel-search__controls" method="get" action="https://search.bbc.co.uk/search">
+      <svg class="gel-search__controls-brand" viewBox="0 0 619.7119 128.69999" aria-hidden="true" focusable="false">
         <g transform="translate(903.62 -383.66)">
           <g style="fill:#404040">
             <path style="fill:#404040"
@@ -53,26 +53,26 @@
         </g>
       </svg>
       <label for="search">
-        <span class="gef-sr">Search this site</span>
+        <span class="gel-sr">Search this site</span>
       </label>
       <input type="text" id="search" name="search" />
       <button type="submit">
-        <span class="gef-sr">Search</span>
+        <span class="gel-sr">Search</span>
         <svg class="gel-icon gel-icon--text" focusable="false">
-          <use xlink:href="/gef-docs/static/images/gel-icons-all.svg#gel-icon-search"></use>
+          <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-search"></use>
         </svg>
       </button>
     </form>
-    <aside class="gef-search__suggestions" aria-label="Search suggestions" aria-hidden="true" hidden>
-      <h2 class="gef-search__suggestions-label" role="status" aria-live="polite">Suggestions:</h2>
-      <div class="gef-search__suggestions-links"></div>
+    <aside class="gel-search__suggestions" aria-label="Search suggestions" aria-hidden="true" hidden>
+      <h2 class="gel-search__suggestions-label" role="status" aria-live="polite">Suggestions:</h2>
+      <div class="gel-search__suggestions-links"></div>
     </aside>
   </div>
 </div>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function (event) {
-    var localSearchElem = document.querySelector('.gef-local-search');
+    var localSearchElem = document.querySelector('.gel-local-search');
 
     // Dummy suggestions data
     var localData = {
@@ -110,15 +110,15 @@
       }
     }
 
-    var localSearch = new gef.Search.constructor(localSearchElem, localData, localBuildFunction);
+    var localSearch = new gel.Search.constructor(localSearchElem, localData, localBuildFunction);
   });
 </script>
             </div>
         </div>
     </main>
 
-    <script nomodule defer type="text/javascript" src="/gef-docs/static/js/external-svg-polyfill.js"></script>
-    <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
+    <script nomodule defer type="text/javascript" src="/gel-tags/static/js/external-svg-polyfill.js"></script>
+    <script type="text/javascript" src="/gel-tags/static/js/gel.js"></script>
 
     
 </body>

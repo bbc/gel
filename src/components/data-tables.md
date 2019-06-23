@@ -124,7 +124,7 @@ This will mean screen reader users can reach the table via either table or headi
 Importantly, the grid structure of data tables must remain intact no matter the available space. That is, elements must not wrap or otherwise change position since they will become labelled incorrectly. For tables with many columns this may result in horizontal scrolling. It is recommended a container element with `overflow-x: auto` is used to contain the horizontal scroll behavior.
 
 ```css
-.gef-table {
+.gel-table {
   overflow-x: auto;
 }
 ```
@@ -132,7 +132,7 @@ Importantly, the grid structure of data tables must remain intact no matter the 
 To make this element scrollable by keyboard, it must first be focusable. This requires the `tabindex="0"` attribution. For screen reader users, this newly interactive element will need a label. It's recommended the element takes the `group` role and is associated with the `<caption>` for the labelling.
 
 ```html
-<div class="gef-table" role="group" aria-labelledby="caption" tabindex="0">
+<div class="gel-table" role="group" aria-labelledby="caption" tabindex="0">
   <table>
     <caption id="caption">
       <h2>Example table</h2>
@@ -155,7 +155,7 @@ Currently, only the bisection of a column indicates an an overflow, and the abil
 A set of `linear-gradient`s with differing `background-attachment` values are employed to achieve this effect:
 
 ```css
-.gef-table {
+.gel-table {
   overflow-x: auto;
   background-color: #fff;
   background-image: 
@@ -176,7 +176,7 @@ Where there are numerous rows, it's possible to scroll past the headers, making 
 This is now possible in CSS, with the `position: sticky` declaration. However, containers with an explicit `overflow` such as that applied in the last section, will forego the `position: sticky` behavior. The following is therefore provided as an enhancement for tables not producing an overflow. 
 
 ```css
-.gef-table th {
+.gel-table th {
   position: sticky;
   top: 0;
 }
@@ -211,11 +211,11 @@ Where `ResizeObserver` (or JavaScript) is not available, the table container act
 In addition, sorting functionality is provided where the [**Reference implementation**](#reference-implementation) constructor's second argument is set to `true`.
 
 ```js
-var tableContainer = document.querySelector('.gef-table');
-var table = new gef.Table.constructor(tableContainer, true);
+var tableContainer = document.querySelector('.gel-table');
+var table = new gel.Table.constructor(tableContainer, true);
 ```
 
-The table is progressively enhanced to include sorting buttons for each of the column headers. These are each labelled _'sort'_ using a visually hidden `<span class="gef-sr" />`, and display the re-order icon from the [GEL iconography suite](http://bbc.github.io/gel-iconography/).
+The table is progressively enhanced to include sorting buttons for each of the column headers. These are each labelled _'sort'_ using a visually hidden `<span class="gel-sr" />`, and display the re-order icon from the [GEL iconography suite](http://bbc.github.io/gel-iconography/).
 
 ```html
 <th scope="col" aria-sort="none">

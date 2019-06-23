@@ -216,17 +216,17 @@ The CSS Grid module[^8] is preferable to Flexbox in some circumstances. With CSS
 In the [**Cards**](../cards) pattern, progressive enhancement is achieved using `@supports`:
 
 ```css
-.gef-cards > * + * {
+.gel-cards > * + * {
   list-style: none;
   margin-top: 1rem;
 }
 
 @supports (display: grid) {
-  .gef-cards > * + * {
+  .gel-cards > * + * {
     margin-top: 0;
   }
 
-  .gef-cards {
+  .gel-cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
     grid-gap: 1rem;

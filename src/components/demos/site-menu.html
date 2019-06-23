@@ -3,25 +3,25 @@ title: Table of contents
 layout: layout-demos-full-width.njk
 ---
 
-<nav class="gef-sitemenu" aria-labelledby="gef-sitemenu__label">
+<nav class="gel-sitemenu" aria-labelledby="gel-sitemenu__label">
   <span id="gel-sitemenu-label" hidden>This site</span>
-  <button class="gef-sitemenu__menu-button" type="button" aria-expanded="false">
+  <button class="gel-sitemenu__menu-button" type="button" aria-expanded="false">
     <svg class="gel-icon gel-icon--text" focusable="false">
       <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-list"></use>
     </svg>
     Menu
   </button>
-  <ul class="gef-sitemenu__list">
+  <ul class="gel-sitemenu__list">
     <li><a href="#" aria-current="page">Home</a></li>
     <li>
-      <button class="gef-sitemenu__more-button" type="button" aria-expanded="false">
+      <button class="gel-sitemenu__more-button" type="button" aria-expanded="false">
         Guidelines
         <svg class="gel-icon gel-icon--text" focusable="false">
           <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-down"></use>
         </svg>
       </button>
-      <div class="gef-sitemenu__more">
-        <div class="gef-sitemenu__more-inner">
+      <div class="gel-sitemenu__more">
+        <div class="gel-sitemenu__more-inner">
           <ul>
             <li><a href="#">Foundations</a></li>
             <li><a href="#">Design patterns</a></li>
@@ -37,9 +37,9 @@ layout: layout-demos-full-width.njk
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    window.gef && gef.SiteMenu.init();
+    window.gel && gel.SiteMenu.init();
 
-    var menuElem = document.querySelector('.gef-sitemenu');
-    var menu = new gef.SiteMenu.constructor(menuElem);
+    var menuElem = document.querySelector('.gel-sitemenu');
+    var menu = new gel.SiteMenu.constructor(menuElem);
   });
 </script>

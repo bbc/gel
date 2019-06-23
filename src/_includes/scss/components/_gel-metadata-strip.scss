@@ -1,0 +1,16 @@
+.gel-metadata-strip > div {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.gel-metadata-strip > div + div::before {
+  content: '';
+  border-left: 1px solid $gel-color--cod-gray;
+  margin: 0 0.25rem;
+}
+
+.gel-metadata-strip dt,
+.gel-metadata-strip dd {
+  margin: 0;
+  display: inline;
+}

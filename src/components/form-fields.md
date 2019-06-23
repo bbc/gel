@@ -213,14 +213,14 @@ However, in some specific circumstances an invisible but accessible label is acc
 A couple of provisions are made to better support Windows High Contrast Mode. A transparent border is added to the error messages so they appear as boxes and, for supporting browsers, the message takes an inversion filter to give it the appearance of a background:
 
 ```css
-.gef-form__field-error,
-.gef-form__warning {
+.gel-form__field-error,
+.gel-form__warning {
   border: 1px solid transparent;
 }
 
 @media (-ms-high-contrast: active) {
-  .gef-form__field-error,
-  .gef-form__warning {
+  .gel-form__field-error,
+  .gel-form__warning {
     filter: invert(100%);
   }
 }
@@ -246,8 +246,8 @@ A CSS filter is used to reverse the colors of the error message:
 
 ```css
 @media (-ms-high-contrast: active) {
-  .gef-form__field-error,
-  .gef-form__warning {
+  .gel-form__field-error,
+  .gel-form__warning {
     filter: invert(100%);
   }
 }
@@ -299,7 +299,7 @@ Example implementations are intended to demonstrate **what needs to be achieved*
 
 <include src="components/demos/form-fields.html">
 
-<p><a class="gef-cta gel-long-primer-bold" href="../demos/form-fields/" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+<p><a class="gel-cta gel-long-primer-bold" href="../demos/form-fields/" target="_new"><span class="gel-button__label">Open in new window</span><svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/gel-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
 
 ## Related research
 

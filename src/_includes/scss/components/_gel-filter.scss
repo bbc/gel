@@ -1,0 +1,119 @@
+.gel-filter__bar {
+  display: flex;
+  border-bottom: 2px solid $gel-color--dusty-gray;
+}
+
+.gel-filter__bar > * {
+  flex: 0 0 auto;
+}
+
+.gel-filter__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex: 1 1 auto;
+  display: flex;
+  overflow-x: auto;
+}
+
+.gel-filter__list-observed {
+  overflow: hidden;
+}
+
+.gel-filter__list .gel-filter__item-more {
+  visibility: hidden;
+}
+
+.gel-filter__list::-webkit-scrollbar {
+  height: 0.125rem;
+}
+
+.gel-filter__list::-webkit-scrollbar-track {
+  background-color: $gel-color--dusty-gray; 
+}
+
+.gel-filter__list::-webkit-scrollbar-thumb {
+  background-color: $gel-color--tundora; 
+}
+
+.gel-filter__bar a,
+.gel-filter__bar button,
+.gel-filter__label {
+  display: block;
+  text-decoration: none;
+  border: 0;
+  background: none;
+  padding: 0.75rem;
+  white-space: nowrap;
+}
+
+.gel-filter__more[hidden] {
+  display: none;
+}
+
+.gel-filter__more[aria-expanded="true"] {
+  background-color: $gel-color--dusty-gray;
+}
+
+.gel-filter__more[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.gel-filter__list a:hover, 
+.gel-filter__list a:focus,
+.gel-filter__list [aria-current] {
+  font-weight: bold;
+  color: $gel-color--star-command-blue;
+  background-image: linear-gradient(360deg, $gel-color--star-command-blue, $gel-color--star-command-blue 0.25rem, transparent 0.25rem);
+}
+
+.gel-filter__label,
+.gel-filter__sort-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.gel-filter__popup {
+  background-color: $gel-color--dusty-gray;
+}
+
+.gel-filter__popup ul,
+.gel-filter__sort ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gel-filter__popup li {
+  padding: 0.75rem;
+  flex: 0 1 auto;
+}
+
+.gel-filter__sort {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.gel-filter__sort-label {
+  margin-right: 0.5rem;
+}
+
+.gel-filter__sort ul {
+  display: flex;
+  list-style: none;
+}
+
+.gel-filter__sort a {
+  display: block;
+  padding: 0.5rem;
+}
+
+.gel-filter__sort [aria-current] {
+  text-decoration: none;
+  background-color: $gel-color--star-command-blue;
+  color: #fff;
+}

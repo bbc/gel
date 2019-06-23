@@ -18,18 +18,18 @@ The construction of GEL's **Share tools** must, therefore, be both unobtrusive a
 Omitting the individual social media buttons for the time being, let's explore the outer structure:
 
 ```html
-<aside class="gef-sharetools" aria-labelledby="gef-sharetools__label">
-  <h3 id="gef-sharetools__label" aria-hidden="true">Share this</h3>
-  <a href="#gef-sharetools__end" class="gef-sr gef-sr__focusable">Skip sharing</a>
+<aside class="gel-sharetools" aria-labelledby="gel-sharetools__label">
+  <h3 id="gel-sharetools__label" aria-hidden="true">Share this</h3>
+  <a href="#gel-sharetools__end" class="gel-sr gel-sr__focusable">Skip sharing</a>
   <!-- list of social media buttons here -->
-  <div class="gef-sr gef-sr__focusable" id="gef-sharetools__end" tabindex="-1">End of sharing tools</div>
+  <div class="gel-sr gel-sr__focusable" id="gel-sharetools__end" tabindex="-1">End of sharing tools</div>
 </aside>
 ```
 
 * **`<aside>`:** **Share tools** should be encapsulated in a complementary landmark (`<aside>`) with a label similar to "Share this" or "Sharing". This makes them easily discoverable and identifiable in screen reader landmark navigation.
 * **`aria-labelledby` and `aria-hidden`:** The heading text is used to label the landmark itself. This label is announced along with the complementary role when the user enters the region/landmark. Ensure that, if **Share tools** appears more than once on the same page, each instance uses a unique identifier for the matching `aria-labelledby` and `id` values. 
 * **`aria-hidden="true"`:** The **Share tools** heading should not be part of the host page's structure / document outline because the component represents tangential content. Nor should the text be encountered directly, while browsing. The `aria-hidden="true"` attribution achieves both these ends _without_ suppressing the element's text as a means of labelling the the parent `<aside>`.
-* **`href="#gef-sharetools__end"`:** Because the **Share tools** represent a number of tab stops, a mechanism is provided to 'skip' past the region and to the salient page content that comes after it. This is achieved using a same-page link and a visually hidden target element that reads _"End of sharing tools"_ when focused.
+* **`href="#gel-sharetools__end"`:** Because the **Share tools** represent a number of tab stops, a mechanism is provided to 'skip' past the region and to the salient page content that comes after it. This is achieved using a same-page link and a visually hidden target element that reads _"End of sharing tools"_ when focused.
 * **`tabindex="-1"`:** The `tabindex="-1"` attribution ensures the target of the skip link receives focus when the skip link is activated[^3].
 
 ### Individual tools
@@ -40,30 +40,30 @@ Here is the Twitter Share tool, for example:
 
 ```html
 <li>
-  <a class="gef-button" href="path/to/external/Twitter/API" target="_blank">
-    <span class="gef-sr">Twitter, share this, external</span>
+  <a class="gel-button" href="path/to/external/Twitter/API" target="_blank">
+    <span class="gel-sr">Twitter, share this, external</span>
     <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-      <use xlink:href="path/to/gef-icons-social.svg#gef-icon-twitter"></use>
+      <use xlink:href="path/to/gel-icons-social.svg#gel-icon-twitter"></use>
     </svg>
   </a>
 </li>
 ```
 
-* **`class="gef-sr"`:** This class visually hides the textual label without making it unavailable to assistive technologies. The commas in the text itself produce pauses in the output, making it easier to understand. The _"external"_ part warns screen reader users that `target="_blank"` will change their context to a new page and UI.
+* **`class="gel-sr"`:** This class visually hides the textual label without making it unavailable to assistive technologies. The commas in the text itself produce pauses in the output, making it easier to understand. The _"external"_ part warns screen reader users that `target="_blank"` will change their context to a new page and UI.
 * **`focusable="false"` and `aria-hidden="true"`:** The SVG icon is a visual cue only, and should not be identified in assistive technologies (`aria-hidden="true"`) or focusable by keyboard (`focusable="false"`; an issue in some versions of Microsoft browsers[^4]).
 
 ### Information panel
 
-As set out in [GEL's **Share tools** documentation](https://www.bbc.co.uk/gel/guidelines/share-tools), the final item in the list of tools secrete an [**Information panel**](../info-panels). This contains a `class="gef-sharetools__complete"` element comprising a complete set of social media buttons (including those not featured outside the **Information panel**) and the option to copy the host page's link from an input element.
+As set out in [GEL's **Share tools** documentation](https://www.bbc.co.uk/gel/guidelines/share-tools), the final item in the list of tools secrete an [**Information panel**](../info-panels). This contains a `class="gel-sharetools__complete"` element comprising a complete set of social media buttons (including those not featured outside the **Information panel**) and the option to copy the host page's link from an input element.
 
 ```html
-<div class="gef-sharetools__complete">
-  <ul class="gef-sharetools__options">
+<div class="gel-sharetools__complete">
+  <ul class="gel-sharetools__options">
     <!-- all sharing buttons -->
   </ul>
-  <div class="gef-sharetools__link">
-    <label for="gef-sharetools__link-input">Copy this link</label>
-    <input class="gef-sharetools__link-input" type="text" id="gef-sharetools__link-input" value="http://bbc.in/3x4mp1e" readonly />
+  <div class="gel-sharetools__link">
+    <label for="gel-sharetools__link-input">Copy this link</label>
+    <input class="gel-sharetools__link-input" type="text" id="gel-sharetools__link-input" value="http://bbc.in/3x4mp1e" readonly />
   </div>
 </div>
 ```
@@ -78,20 +78,20 @@ As set out in [GEL's **Share tools** documentation](https://www.bbc.co.uk/gel/gu
 The `<ul>` of tools appears directly after the heading (`role="presentation"`) element. The items receive a margin on all sides, meaning there is a visible gap between items however they wrap. The excess margin is removed using a negative margin on the parent `<ul>`. This ensures the subcomponent does not show an indentation on either side.
 
 ```css
-.gef-sharetools__options {
+.gel-sharetools__options {
   display: flex;
   flex-wrap: wrap;
   margin: -0.125rem; /* excess margin removed */
 }
 
-.gef-sharetools__options > li {
+.gel-sharetools__options > li {
   margin: 0.125rem; /* margin added */
 }
 ```
 
 ### The skip link
 
-The skip link (_"Skip sharing"_) takes the classes `gef-sr` and `gef-sr__focusable`. The first hides the link visually, but does not remove it from focus order. The second ensures the link appears _when_ it is focused. Only keyboard users (including screen reader users) will be aware of the link.
+The skip link (_"Skip sharing"_) takes the classes `gel-sr` and `gel-sr__focusable`. The first hides the link visually, but does not remove it from focus order. The second ensures the link appears _when_ it is focused. Only keyboard users (including screen reader users) will be aware of the link.
 
 ### The Information panel
 
@@ -115,10 +115,10 @@ Keyboard users (including screen reader users) traversing the page will first en
 The interaction behaviour of the **Information panel** is covered in the [Information panel documentation](../info-panel).
 :::
 
-The experience of copying the link from the `class="gef-sharetools__link-input"` element is aided slightly by selecting the input's value and copying it to the clipboard on focus. The script for this behaviour is embedded in the demonstration page:
+The experience of copying the link from the `class="gel-sharetools__link-input"` element is aided slightly by selecting the input's value and copying it to the clipboard on focus. The script for this behaviour is embedded in the demonstration page:
 
 ```js
-var copyLink = document.querySelector('.gef-sharetools__link-input');
+var copyLink = document.querySelector('.gel-sharetools__link-input');
 copyLink.addEventListener('focus', function () {
   copyLink.select();
   document.execCommand('copy');

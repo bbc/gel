@@ -24,7 +24,7 @@ The GEL tabs implementation diverges from the ARIA Authoring Practices specifica
 Where server-side rendering and progressive enhancement are possible, follow this pattern for authoring your tab interface. Where JavaScript runs, this table-of-contents (linking to the subsequent content sections) will be enhanced with ARIA attribution.
 
 ```html
-<div class="gef-tabs">
+<div class="gel-tabs">
   <ul>
     <li>
       <a href="#section1">Section 1</a>
@@ -61,7 +61,7 @@ Where server-side rendering and progressive enhancement are possible, follow thi
 ### Enhanced markup
 
 ```html
-<div class="gef-tabs">
+<div class="gel-tabs">
   <ul role="tablist">
     <li role="presentation">
       <a role="tab" id="tab-section1" href="#section1" aria-selected="true">Section 1</a>
@@ -102,8 +102,8 @@ The [main GEL page](https://www.bbc.co.uk/gel/guidelines/tabs) covers visual des
 Where JavaScript does not run, the tabs appear as links within what resembles a table of contents. Each `<section>` is visible at all times, and activating a link (a would-be tab) moves focus to the corresponding section, revealing its focus style. A clear, solid outline style is recommended.
 
 ```css
-.gef-tabs > ul a:focus,
-.gef-tabs > section:focus {
+.gel-tabs > ul a:focus,
+.gel-tabs > section:focus {
   outline: 2px solid;
   outline-offset: -2px;
 }
@@ -112,11 +112,11 @@ Where JavaScript does not run, the tabs appear as links within what resembles a 
 Where JavaScript runs, the links appear as tabs, and are placed side-by-side. Shortened labels are preferred to wrapped text, so `white-space: nowrap` and `text-overflow: ellipsis` are applied by default. Note that this only works where `min-width: 0` is applied to the flex child (the `<li>`).
 
 ```css
-.gef-tabs > ul li {
+.gel-tabs > ul li {
   min-width: 0;
 }
 
-.gef-tabs > ul a {
+.gel-tabs > ul a {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -127,11 +127,11 @@ However, this can easily result in illegible labels for very narrow viewports. I
 
 ```css
 @media (max-width: 400px) {
-  .gef-tabs > ul {
+  .gel-tabs > ul {
     flex-wrap: wrap;
   }
 
-  .gef-tabs > ul li {
+  .gel-tabs > ul li {
     flex-basis: 100%;
     margin: 0;
     margin-bottom: 0.25rem;
@@ -144,7 +144,7 @@ However, this can easily result in illegible labels for very narrow viewports. I
 Where Windows High Contrast Mode is active, the backgrounds that mark out the tabs and panels are eliminated. Accordingly, supplementary borders are added. These are set to `transparent` and will be invisible unless Windows HCM is running. 
 
 ```css
-.gef-tabs > section {
+.gel-tabs > section {
   border: 2px solid transparent; /* for high contrast mode */
 }
 ```
@@ -153,7 +153,7 @@ In addition, an `@media` query detecting high contrast mode[^7] is used to creat
 
 ```css
 @media (-ms-high-contrast: active) {
-  .gef-tabs [aria-current] {
+  .gel-tabs [aria-current] {
     position: relative;
     top: 2px;
   }

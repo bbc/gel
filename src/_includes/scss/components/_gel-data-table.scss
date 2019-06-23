@@ -1,0 +1,72 @@
+.gel-table {
+  overflow-x: auto;
+  background-color: #fff;
+  background-image: 
+    linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 3rem),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, transparent 1rem),
+    linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 3rem),
+    linear-gradient(270deg, rgba(0, 0, 0, 0.2) 0%, transparent 1rem);
+  background-attachment: local, scroll, local, scroll;
+  border: 1px solid $gel-color--dusty-gray;
+}
+
+.gel-table:focus {
+  outline: 2px solid $gel-color--tundora;
+}
+
+.gel-table tbody tr:nth-child(even) {
+  background-color: rgba(0,0,0,0.02);
+}
+
+.gel-table table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+.gel-table caption {
+  text-align: left;
+  font-weight: bold;
+  border: 1px solid $gel-color--dusty-gray;
+  border-bottom: 0;
+  padding: 0.5rem;
+}
+
+.gel-table th, 
+.gel-table td {
+  padding: 0.5rem;
+  text-align: left;
+  border: 1px solid $gel-color--dusty-gray;
+}
+
+.gel-table th {
+  font-weight: bold;
+}
+
+.gel-table thead.gel-table__sticky th {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+}
+
+.gel-table thead th {
+  position: relative;
+}
+
+.gel-table thead th:after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  border-top: 1px solid $gel-color--dusty-gray;
+}
+
+.gel-table__sort {
+  all: unset;
+  cursor: pointer;
+}
+
+.gel-table__sort:focus {
+  outline: 2px solid $gel-color--tundora;
+}

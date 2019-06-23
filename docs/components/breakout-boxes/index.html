@@ -4,16 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/gef-docs/static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/gel-tags/static/images/favicon.ico" type="image/x-icon">
 
-    <title>GEF | Breakout boxes</title>
+    <title>GEL | Breakout boxes</title>
 
-    <script src="/gef-docs/static/js/site.js"></script>
+    <script src="/gel-tags/static/js/site.js"></script>
 
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/gef.css">
-    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/site.css">
+    <link rel="stylesheet" type="text/css" href="/gel-tags/static/css/gel.css">
+    <link rel="stylesheet" type="text/css" href="/gel-tags/static/css/site.css">
 
     <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
@@ -43,30 +43,30 @@
     
 </head>
 
-<body class="gefdocs-body">
-    <p class="gef-sr gef-sr__focusable gef-sr__overlay" tabindex="0">
-        <a href="#main" onfocus="this.parentNode.classList.add('gef-sr__focused')"
-            onblur="this.parentNode.classList.remove('gef-sr__focused')">Skip
+<body class="geltags-body">
+    <p class="gel-sr gel-sr__focusable gel-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('gel-sr__focused')"
+            onblur="this.parentNode.classList.remove('gel-sr__focused')">Skip
             to content</a>
     </p>
 
     <header>
-        <div class="gefdocs-header gs-u-clearfix">
+        <div class="geltags-header gs-u-clearfix">
             <div class="gel-wrap">
                 <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24"
                         viewBox="0 0 100 24">
                         <title>BBC</title>
-                        <image xlink:href="/gef-docs/static/images/bbc-blocks_grey.svg"
-                            src="/gef-docs/static/images/bbc-blocks_grey.png" width="100%" height="100%"></image>
+                        <image xlink:href="/gel-tags/static/images/bbc-blocks_grey.svg"
+                            src="/gel-tags/static/images/bbc-blocks_grey.png" width="100%" height="100%"></image>
                     </svg></a>
             </div>
         </div>
-        <div class="gefdocs-header__banner gs-u-clearfix">
+        <div class="geltags-header__banner gs-u-clearfix">
             <div class="gel-wrap">
                 <div class="gel-layout">
                     <div class="gel-layout__item gel-2/5@l"
                         style="text-align:left; padding-left:14px; margin-bottom:32px; margin-top: -10px;">
-                        <a href="/gef-docs/" class="gefdocs-logo"><img src="/gef-docs/static/images/bbc-gel-tags.png" style="max-width: 175px;"></a>
+                        <a href="/gel-tags/" class="geltags-logo"><img src="/gel-tags/static/images/bbc-gel-tags.png" style="max-width: 175px;"></a>
                     </div>
                     
                 </div>
@@ -81,12 +81,12 @@
             </div>
 
             <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
-                <h1 class="gefdocs-header__title">Breakout boxes</h1>
-                <p class="gefdocs-header__summary gel-great-primer">Breakout Boxes interject supplementary content within the flow of a document</p>
+                <h1 class="geltags-header__title">Breakout boxes</h1>
+                <p class="geltags-header__summary gel-great-primer">Breakout Boxes interject supplementary content within the flow of a document</p>
             </div>
 
             <div class="gel-layout__item gel-1/5@l">
-                <dl class="gefdocs-standout-box">
+                <dl class="geltags-standout-box">
                     
                     <dt>Version:</dt>
                     <dd>0.1.0</dd>
@@ -102,20 +102,20 @@
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900"
                     style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="geltags-toc__links" class="geltags-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
-            <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
+            <div class="geltags-sections geltags-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="introduction">Introduction</h2>
 <p>Sometimes its worth noting or alerting users to certain information, but that information cannot be considered part of the main narrative for the document. This is what the <strong>Breakout box</strong> component is for.</p>
 <p><strong>Breakout boxes</strong> can contain tips, warnings, research notes, interesting facts, and all sorts of tangential information.</p>
 <h2 id="recommended-markup">Recommended markup</h2>
 <p>The following example is a &quot;Note&quot; type breakout. The same structure should be used for other types of breakout, differing only in terms of content and iconography.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-breakout-box"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"aside-1540915290281"</span>&gt;</span>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-breakout-box"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"aside-1540915290281"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"aside-1540915290281"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"/gel-docs/static/images/gel-icons-core-set.svg#gel-icon-info"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
     The unique title for the breakout
   <span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
@@ -129,8 +129,8 @@
 <li><strong><code>aria-hidden=&quot;true&quot;</code>:</strong> <strong>Breakout boxes</strong> should not be considered part of the parent document's main structure; their headings are for labeling and presentational purposes only. The <code>aria-hidden</code> attribute removes the heading from the document outline (and screen reader navigation) but does <em>not</em> silence the text node as an associated label.</li>
 </ul>
 
-            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-info-labeling-by-relationship">
-              <h4 id="aside-info-labeling-by-relationship" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Labeling by relationship</h4><div><p>To associate <code>aria-labelledby</code> with the respective <code>id</code>, they must share a value and that value must be unique. In your templating system, you can create a unique string at the time of compilation using <code>Date()</code>:</p>
+            <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-info-labeling-by-relationship">
+              <h4 id="aside-info-labeling-by-relationship" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Labeling by relationship</h4><div><p>To associate <code>aria-labelledby</code> with the respective <code>id</code>, they must share a value and that value must be unique. In your templating system, you can create a unique string at the time of compilation using <code>Date()</code>:</p>
 <pre class="hljs"><code><span class="hljs-keyword">const</span> unique = + <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(); <span class="hljs-comment">// e.g. 1540915290281</span>
 </code></pre>
 <p>An <code>id</code> that is not unique is considered a parsing error and, since it affects accessible naming associations here, would mean a failure under <strong>WCAG 4.1.1 Parsing</strong><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
@@ -139,29 +139,29 @@
 <p>The icon supplied to the heading must be from the <a href="http://bbc.github.io/gel-iconography/">GEL Iconography Set</a>. It must have a fill of <code>currentColor</code> so that it matches the surround text colour and respects high contrast settings.</p>
 <h3 id="windows-high-contrast-mode">Windows High Contrast Mode</h3>
 <p>The <code>background-color</code> that demarcates the <strong>Breakout box</strong> from the surrounding page will be eliminated by Windows High Contrast Mode. A transparent top and bottom border is applied. This becomes visible as a solid colour when Windows HCM is turned on, achieving the same purpose of demarcation.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-breakout-box</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-breakout-box</span> {
   <span class="hljs-attribute">background</span>: <span class="hljs-number">#eee</span>;
   <span class="hljs-attribute">border-top</span>: <span class="hljs-number">1px</span> solid transparent; <span class="hljs-comment">/* for high contrast mode */</span>
   <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">1px</span> solid transparent; <span class="hljs-comment">/* for high contrast mode */</span>
 }
 </code></pre>
-<p><img src="/gef-docs/static/images/hcm_breakout_boxes.png" alt="A white border appears above and below the breakout"></p>
+<p><img src="/gel-tags/static/images/hcm_breakout_boxes.png" alt="A white border appears above and below the breakout"></p>
 <h2 id="recommended-behaviour">Recommended behaviour</h2>
 <p>The <strong>Breakout box</strong> has no special behaviours; it is a static component.</p>
 <h2 id="reference-implementation">Reference implementation</h2>
 
-            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-important">
-              <h4 id="aside-alert-important" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+            <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-alert-important">
+              <h4 id="aside-alert-important" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
 </aside><p>The following implementation is a copy of the <code>aria-labelledby</code> tip provided in this document.</p>
 
-          <div class="gefdocs-demo"><!-- 
+          <div class="geltags-demo"><!-- 
 title: Breakout Boxes
  -->
 
 <div style="margin-bottom: 1rem;">
-  <aside class="gef-breakout-box gef-breakout-box extra-padding" aria-labelledby="aside-1541071173689">
-    <h4 id="aside-1541071173689" aria-hidden="true"><svg class="gef-breakout-box__icon gel-icon gel-icon--text">
-        <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info"></use>
+  <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541071173689">
+    <h4 id="aside-1541071173689" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text">
+        <use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-info"></use>
       </svg>Tip</h4>
     <div>
       <p>To associate <code>aria-labelledby</code> with the respective <code>id</code>, they must share a value and
@@ -176,7 +176,7 @@ title: Breakout Boxes
   </aside>
 </div></div>
         
-          <p><a class="gef-cta gel-long-primer-bold" href="../demos/breakout-boxes/" target="_new"><span class="gef-button__label">Open in new window</span><svg class="gef-button__icon gef-icon gel-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+          <p><a class="gel-cta gel-long-primer-bold" href="../demos/breakout-boxes/" target="_new"><span class="gel-button__label">Open in new window</span><svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
         <h2 id="related-research">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
 <h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
@@ -193,18 +193,18 @@ title: Breakout Boxes
 </section>
 
 
-                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding"
+                <aside class="geltags-breakout-box geltags-breakout-box extra-padding"
                     aria-labelledby="aside-info-Could-you-improve-this-documentation">
                     <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
-                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
-                            <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info"
+                        <svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text">
+                            <use xlink:href="/gel-docs/static/images/gel-icons-core-set.svg#gel-icon-info"
                                 style="fill:#404040;"></use>
                         </svg>Could you improve this documentation?
                     </h4>
                     <div>
                         <p>
                             If you think you could make anything you see here a bit better then become one of <a
-                                href="/gef-docs/contributors/">our
+                                href="/gel-tags/contributors/">our
                                 lovely contributors</a>!
                         </p>
                     </div>
@@ -214,18 +214,18 @@ title: Breakout Boxes
         </div>
     </main>
 
-    <div class="gefdocs-feedback-banner">
+    <div class="geltags-feedback-banner">
         <div class="gel-wrap">
             <div class="gel-layout">
                 <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
-                    <h2 class="gefdocs-feedback-banner__title">Got a minute?</h2>
-                    <p>We'd love to know what you think of the Code GEL website.</p>
+                    <h2 class="geltags-feedback-banner__title">Got a minute?</h2>
+                    <p>We'd love to know what you think of our website.</p>
                     <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/"
-                        class="gefdocs-button gefdocs-button__link-button gefdocs-feedback-banner__cta gefdocs-button--primary">
-                        <span class="gefdocs-button__content">Go to survey</span>
-                        <span class="gefdocs-button__icon_wrapper">
-                            <svg class="gefdocs-button__icon gefdocs-icon gefdocs-icon--text">
-                                <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                        class="geltags-button geltags-button__link-button geltags-feedback-banner__cta geltags-button--primary">
+                        <span class="geltags-button__content">Go to survey</span>
+                        <span class="geltags-button__icon_wrapper">
+                            <svg class="geltags-button__icon geltags-icon geltags-icon--text">
+                                <use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-external-link"
                                     style="fill:undefined;"></use>
                             </svg>
                         </span>
@@ -235,8 +235,8 @@ title: Breakout Boxes
         </div>
     </div>
 
-    <script nomodule defer type="text/javascript" src="/gef-docs/static/js/external-svg-polyfill.js"></script>
-    <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
+    <script nomodule defer type="text/javascript" src="/gel-tags/static/js/external-svg-polyfill.js"></script>
+    <script type="text/javascript" src="/gel-tags/static/js/gel.js"></script>
 
     
 

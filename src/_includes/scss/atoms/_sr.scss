@@ -3,7 +3,7 @@
  * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
  * @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
-.gef-sr {
+.gel-sr {
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -20,9 +20,9 @@
  * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
  * @link https://www.drupal.org/node/897638
  */
-.gef-sr__focusable:active,
-.gef-sr__focusable:focus,
-.gef-sr__focused {
+.gel-sr__focusable:active,
+.gel-sr__focusable:focus,
+.gel-sr__focused {
     position: static;
     clip: auto;
     height: auto;
@@ -32,7 +32,7 @@
     width: auto;
 }
 
-.gef-sr__overlay {
+.gel-sr__overlay {
     position: absolute;
     top: 18px;
     left: 18px;

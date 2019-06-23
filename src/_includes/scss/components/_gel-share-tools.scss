@@ -1,0 +1,19 @@
+.gel-sharetools__options {
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.125rem;
+}
+
+.gel-sharetools__options > li {
+  margin: 0.125rem;
+}
+
+.gel-sharetools__link-input {
+  border: 0;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.25rem;
+}

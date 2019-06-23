@@ -1,0 +1,24 @@
+
+/* list version */
+.gel-external-links {
+  list-style-type: none;
+  padding: 0;
+}
+
+.gel-external-links li::before {
+  content: '\200B';
+}
+
+.gel-external-links li + li {
+  margin-top: 0.5rem;
+}
+
+/* 
+Prevent widows for inline external links
+by wrapping the icon and the last word in 
+this <span> style
+*/
+span.gel-nowrap {
+  white-space: nowrap;
+}
+

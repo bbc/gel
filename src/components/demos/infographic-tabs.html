@@ -3,7 +3,7 @@ title: Infographic example
 ---
 
 <div style="max-width: 80ch">
-  <div class="gef-tabs">
+  <div class="gel-tabs">
     <ul>
       <li><a href="#section1">Chart</a></li>
       <li><a href="#section2">Data</a></li>
@@ -173,7 +173,7 @@ title: Infographic example
       </figure>
     </section>
     <section id="section2" tabindex="-1">
-      <div class="gef-table infographic-table" class="gef-table" role="group" aria-labelledby="caption" tabindex="0">
+      <div class="gel-table infographic-table" class="gel-table" role="group" aria-labelledby="caption" tabindex="0">
         <table>
           <caption id="caption">Cell culture morphology over time</caption>
           <thead>
@@ -237,10 +237,10 @@ title: Infographic example
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var infographicTabsElem = document.querySelector('.gef-tabs');
-    var infographicTabs = new gef.Tabs.constructor(infographicTabsElem);
+    var infographicTabsElem = document.querySelector('.gel-tabs');
+    var infographicTabs = new gel.Tabs.constructor(infographicTabsElem);
 
     var infographicTableElem = document.querySelector('.infographic-table');
-    var infographicTable = new gef.DataTable.constructor(infographicTableElem);
+    var infographicTable = new gel.DataTable.constructor(infographicTableElem);
   });
 </script>

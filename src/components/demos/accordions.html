@@ -2,11 +2,11 @@
 title: Accordions
 ---
 
-<div class="gef-accordion__controls">
-  <button class="gef-button" id="openAll">Open all</button>
-  <button class="gef-button" id="closeAll">Close all</button>
+<div class="gel-accordion__controls">
+  <button class="gel-button" id="openAll">Open all</button>
+  <button class="gel-button" id="closeAll">Close all</button>
 </div>
-<div class="gef-accordion">
+<div class="gel-accordion">
   <section id="how-can-I-purchase-bbc-dvds-merchandise">
     <h3>How can I purchase BBC DVDs/Merchandise?</h3>
     <p>It is no longer possible to buy DVDs, Blu-ray discs, games, toys or other BBC related products direct from the
@@ -48,11 +48,11 @@ title: Accordions
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    window.gef && gef.Accordion.init();
+    window.gel && gel.Accordion.init();
 
-    // Initialize on the `class="gef-accordion"` parent element
-    var accordionElem = document.querySelector('.gef-accordion');
-    var accordion = new gef.Accordion.constructor(accordionElem);
+    // Initialize on the `class="gel-accordion"` parent element
+    var accordionElem = document.querySelector('.gel-accordion');
+    var accordion = new gel.Accordion.constructor(accordionElem);
 
     // Support for opening all the drawers at once
     var openAllButton = document.getElementById('openAll');

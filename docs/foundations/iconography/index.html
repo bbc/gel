@@ -4,16 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/gef-docs/static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/gel-tags/static/images/favicon.ico" type="image/x-icon">
 
-    <title>GEF | Iconography</title>
+    <title>GEL | Iconography</title>
 
-    <script src="/gef-docs/static/js/site.js"></script>
+    <script src="/gel-tags/static/js/site.js"></script>
 
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/gef.css">
-    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/site.css">
+    <link rel="stylesheet" type="text/css" href="/gel-tags/static/css/gel.css">
+    <link rel="stylesheet" type="text/css" href="/gel-tags/static/css/site.css">
 
     <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
@@ -43,30 +43,30 @@
     
 </head>
 
-<body class="gefdocs-body">
-    <p class="gef-sr gef-sr__focusable gef-sr__overlay" tabindex="0">
-        <a href="#main" onfocus="this.parentNode.classList.add('gef-sr__focused')"
-            onblur="this.parentNode.classList.remove('gef-sr__focused')">Skip
+<body class="geltags-body">
+    <p class="gel-sr gel-sr__focusable gel-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('gel-sr__focused')"
+            onblur="this.parentNode.classList.remove('gel-sr__focused')">Skip
             to content</a>
     </p>
 
     <header>
-        <div class="gefdocs-header gs-u-clearfix">
+        <div class="geltags-header gs-u-clearfix">
             <div class="gel-wrap">
                 <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24"
                         viewBox="0 0 100 24">
                         <title>BBC</title>
-                        <image xlink:href="/gef-docs/static/images/bbc-blocks_grey.svg"
-                            src="/gef-docs/static/images/bbc-blocks_grey.png" width="100%" height="100%"></image>
+                        <image xlink:href="/gel-tags/static/images/bbc-blocks_grey.svg"
+                            src="/gel-tags/static/images/bbc-blocks_grey.png" width="100%" height="100%"></image>
                     </svg></a>
             </div>
         </div>
-        <div class="gefdocs-header__banner gs-u-clearfix">
+        <div class="geltags-header__banner gs-u-clearfix">
             <div class="gel-wrap">
                 <div class="gel-layout">
                     <div class="gel-layout__item gel-2/5@l"
                         style="text-align:left; padding-left:14px; margin-bottom:32px; margin-top: -10px;">
-                        <a href="/gef-docs/" class="gefdocs-logo"><img src="/gef-docs/static/images/bbc-gel-tags.png" style="max-width: 175px;"></a>
+                        <a href="/gel-tags/" class="geltags-logo"><img src="/gel-tags/static/images/bbc-gel-tags.png" style="max-width: 175px;"></a>
                     </div>
                     
                 </div>
@@ -81,12 +81,12 @@
             </div>
 
             <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
-                <h1 class="gefdocs-header__title">Iconography</h1>
-                <p class="gefdocs-header__summary gel-great-primer">Iconography aids communication, but should not take precedence over text</p>
+                <h1 class="geltags-header__title">Iconography</h1>
+                <p class="geltags-header__summary gel-great-primer">Iconography aids communication, but should not take precedence over text</p>
             </div>
 
             <div class="gel-layout__item gel-1/5@l">
-                <dl class="gefdocs-standout-box">
+                <dl class="geltags-standout-box">
                     
                     <dt>Version:</dt>
                     <dd>0.1.0</dd>
@@ -102,11 +102,11 @@
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900"
                     style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="gefdocs-toc__links" class="gefdocs-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="geltags-toc__links" class="geltags-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
-            <div class="gefdocs-sections gefdocs-body-copy gel-layout__item gel-3/5@l">
+            <div class="geltags-sections geltags-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="introduction">Introduction</h2>
 <p>Text is the primary form of communication on the web, and is highly interoperable. Only use icons where additional clarity is sought. Icons may help those with cognitive impairments, and others who find themselves on a page that isn't in their first language.</p>
 <p>A <a href="http://bbc.github.io/gel-iconography/">comprehensive and standardized set</a> of BBC icons is available. It is not recommended you create your own iconography. Cognition depends heavily on convention, and only by using established iconography can you foster familiarity.</p>
@@ -124,8 +124,8 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre>
 <p>Only where icons are extremely well-established—such as the play and stop buttons of a media player—is it reliable to use them without supplementary visual text. In these cases, a visually hidden <code>&lt;span&gt;</code> is recommended, since <code>aria-label</code> encounters translation issues<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
-<p>In these instances, hide the label's <code>&lt;span&gt;</code> using the <code>gef-sr</code> class or similar. This class obscures the text visually without silencing its announcement in screen readers.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-sr</span> {
+<p>In these instances, hide the label's <code>&lt;span&gt;</code> using the <code>gel-sr</code> class or similar. This class obscures the text visually without silencing its announcement in screen readers.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-sr</span> {
   <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
   <span class="hljs-attribute">clip</span>: <span class="hljs-built_in">rect</span>(0 0 0 0);
   <span class="hljs-attribute">height</span>: <span class="hljs-number">1px</span>;
@@ -158,8 +158,8 @@
 }
 </code></pre>
 
-            <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding" aria-labelledby="aside-alert-the-title-attribute">
-              <h4 id="aside-alert-the-title-attribute" aria-hidden="true"><svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text"><use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>The title attribute</h4><div><p><strong>Important:</strong> <a href="https://developer.paciellogroup.com/blog/2012/01/html5-accessibility-chops-title-attribute-use-and-abuse/">Do not rely on the <code>title</code> attribute</a> for your tooltips. These do not appear on focus, and are therefore not keyboard accessible. They are also not typically announced in screen readers without adjusting the software's verbosity settings.</p>
+            <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-alert-the-title-attribute">
+              <h4 id="aside-alert-the-title-attribute" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>The title attribute</h4><div><p><strong>Important:</strong> <a href="https://developer.paciellogroup.com/blog/2012/01/html5-accessibility-chops-title-attribute-use-and-abuse/">Do not rely on the <code>title</code> attribute</a> for your tooltips. These do not appear on focus, and are therefore not keyboard accessible. They are also not typically announced in screen readers without adjusting the software's verbosity settings.</p>
 </aside><p>If the tooltip element appears outside the control, associate it to the control element using <code>aria-labelledby</code>. In the following example, <code>aria-labelledby</code> and the tooltip's <code>id</code> share the value <code>download-tooltip</code>.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"download-container"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"link/to/download"</span> <span class="hljs-attr">download</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"download-tooltip"</span>&gt;</span>
@@ -195,8 +195,8 @@
 <p><img src="./assets/movement.png" alt="Movement on and movement off icons, with a line through the off version from top right to bottom left">.</p>
 <h3 id="text-decoration">Text decoration</h3>
 <p>The CTA (Call To Action) links documented under <a href="../buttons-and-ctas"><strong>Buttons &amp; CTAs</strong></a> use a <code>text-decoration</code> style on <code>:hover</code> and <code>:focus</code>. To stop the <code>text-decoration</code> line intersecting with the icon, <code>text-decoration-skip</code> is employed:</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-cta</span><span class="hljs-selector-pseudo">:hover</span>,
-<span class="hljs-selector-class">.gef-cta</span><span class="hljs-selector-pseudo">:focus</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-cta</span><span class="hljs-selector-pseudo">:hover</span>,
+<span class="hljs-selector-class">.gel-cta</span><span class="hljs-selector-pseudo">:focus</span> {
   <span class="hljs-attribute">border-color</span>: $gel-color--tundora;
   <span class="hljs-attribute">text-decoration</span>: underline;
   <span class="hljs-attribute">text-decoration-skip</span>: objects;
@@ -204,24 +204,24 @@
 </code></pre>
 <h2 id="recommended-behaviour">Recommended behaviour</h2>
 <p>SVG icons are typically incorporated into interactive elements, which have their own behaviours. For toggle buttons specifically, the icon should help to communicate the state (on or off; open or closed; etc). This can be achieved by either replacing the icon, or augmenting it in some way.</p>
-<p>The play/pause button documented under <a href="../video-controls"><strong>Video controls</strong></a> replaces the familiar 'play' triangle with the two vertical lines of 'pause'. Importantly, the textual label (though visually hidden) changes with the corresponding icon to update the state accessibly. At any one time, either the <code>gef-video-button-off</code> or the <code>gef-video-button-on</code> <code>&lt;span&gt;</code> is visible.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-video-play-button"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-video-button-off"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sr"</span>&gt;</span>Play<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<p>The play/pause button documented under <a href="../video-controls"><strong>Video controls</strong></a> replaces the familiar 'play' triangle with the two vertical lines of 'pause'. Importantly, the textual label (though visually hidden) changes with the corresponding icon to update the state accessibly. At any one time, either the <code>gel-video-button-off</code> or the <code>gel-video-button-on</code> <code>&lt;span&gt;</code> is visible.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-video-play-button"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-video-button-off"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr"</span>&gt;</span>Play<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"/gef-docs/static/images/gel-icons-all.svg#gel-icon-play"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"/gel-tags/static/images/gel-icons-all.svg#gel-icon-play"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-video-button-on"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gef-sr"</span>&gt;</span>Pause<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-video-button-on"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr"</span>&gt;</span>Pause<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"/gef-docs/static/images/gel-icons-all.svg#gel-icon-pause"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"/gel-tags/static/images/gel-icons-all.svg#gel-icon-pause"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre>
 <p>The arrow icon used in the <a href="../accordions"><strong>Accordion</strong></a> component faces downwards in the closed/collapsed state, and rotates to point upwards in the open/expanded state. That is, it points in the direction the <strong>Accordion</strong> item's 'drawer' will go. In the code snippet to follow, the <code>aria-expanded=&quot;true&quot;</code> attribution is the hook to apply the rotation transform.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gef-accordion-handle</span> <span class="hljs-selector-attr">[aria-expanded="true"]</span> <span class="hljs-selector-tag">svg</span> {
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-accordion-handle</span> <span class="hljs-selector-attr">[aria-expanded="true"]</span> <span class="hljs-selector-tag">svg</span> {
   <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(180deg);
 }
 </code></pre>
@@ -245,18 +245,18 @@
 </section>
 
 
-                <aside class="gefdocs-breakout-box gefdocs-breakout-box extra-padding"
+                <aside class="geltags-breakout-box geltags-breakout-box extra-padding"
                     aria-labelledby="aside-info-Could-you-improve-this-documentation">
                     <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
-                        <svg class="gefdocs-breakout-box__icon gefdocs-icon gefdocs-icon--text">
-                            <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-info"
+                        <svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text">
+                            <use xlink:href="/gel-docs/static/images/gel-icons-core-set.svg#gel-icon-info"
                                 style="fill:#404040;"></use>
                         </svg>Could you improve this documentation?
                     </h4>
                     <div>
                         <p>
                             If you think you could make anything you see here a bit better then become one of <a
-                                href="/gef-docs/contributors/">our
+                                href="/gel-tags/contributors/">our
                                 lovely contributors</a>!
                         </p>
                     </div>
@@ -266,18 +266,18 @@
         </div>
     </main>
 
-    <div class="gefdocs-feedback-banner">
+    <div class="geltags-feedback-banner">
         <div class="gel-wrap">
             <div class="gel-layout">
                 <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
-                    <h2 class="gefdocs-feedback-banner__title">Got a minute?</h2>
-                    <p>We'd love to know what you think of the Code GEL website.</p>
+                    <h2 class="geltags-feedback-banner__title">Got a minute?</h2>
+                    <p>We'd love to know what you think of our website.</p>
                     <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/"
-                        class="gefdocs-button gefdocs-button__link-button gefdocs-feedback-banner__cta gefdocs-button--primary">
-                        <span class="gefdocs-button__content">Go to survey</span>
-                        <span class="gefdocs-button__icon_wrapper">
-                            <svg class="gefdocs-button__icon gefdocs-icon gefdocs-icon--text">
-                                <use xlink:href="/gef-docs/static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                        class="geltags-button geltags-button__link-button geltags-feedback-banner__cta geltags-button--primary">
+                        <span class="geltags-button__content">Go to survey</span>
+                        <span class="geltags-button__icon_wrapper">
+                            <svg class="geltags-button__icon geltags-icon geltags-icon--text">
+                                <use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-external-link"
                                     style="fill:undefined;"></use>
                             </svg>
                         </span>
@@ -287,8 +287,8 @@
         </div>
     </div>
 
-    <script nomodule defer type="text/javascript" src="/gef-docs/static/js/external-svg-polyfill.js"></script>
-    <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
+    <script nomodule defer type="text/javascript" src="/gel-tags/static/js/external-svg-polyfill.js"></script>
+    <script type="text/javascript" src="/gel-tags/static/js/gel.js"></script>
 
     
 

@@ -108,7 +108,7 @@ However, in a single-page application, screens are analogous to pages and each s
 
 Where possible, the user should not have to wait for the screen's content to load upon rerouting to said screen. It's recommended to `preload` critical resources for all routes, and pre-cache unvisited screens in the background. This is referred to as the PRPL Pattern[^7].
 
-Where this is not possible, or pre-caching has not had time to take place, a loading indicator should be provided until all the content is ready to be revealed. The indicator (a 'spinner' or other progress animation) should include a textual label like _"Loading"_ or _"Please wait"_. The text may be visually hidden, but must be available to screen readers (note the `gef-sr` utility class):
+Where this is not possible, or pre-caching has not had time to take place, a loading indicator should be provided until all the content is ready to be revealed. The indicator (a 'spinner' or other progress animation) should include a textual label like _"Loading"_ or _"Please wait"_. The text may be visually hidden, but must be available to screen readers (note the `gel-sr` utility class):
 
 ```html
 <h1>Brexitcast</h1>
@@ -116,7 +116,7 @@ Where this is not possible, or pre-caching has not had time to take place, a loa
   <svg class="gel-icon gel-icon--text gel-icon-loading" focusable="false" aria-hidden="true">
     <use xlink:href="path/to/#gel-icon-loading"></use>
   </svg>
-  <span class="gef-sr">Loading...</span>
+  <span class="gel-sr">Loading...</span>
 </div>
 ```
 

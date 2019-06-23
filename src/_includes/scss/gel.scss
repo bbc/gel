@@ -1,0 +1,37 @@
+/**
+ * Dependencies
+ */
+@import "gel-foundations";
+@import 'atoms/colours';
+@import 'bbc-grandstand/dist/bbc-grandstand.min.css';
+@import 'reith.css';
+@import "components/common/util";
+@import "components/common/mixins";
+
+/**
+ * Components
+ */
+
+@import "components/gel-metadata-strip";
+@import "components/gel-promo";
+@import "components/gel-tabs";
+@import "components/gel-breakout-box";
+@import "components/gel-card";
+@import "components/gel-carousel";
+@import "components/gel-external-link";
+@import "components/gel-action-dialog";
+@import "components/gel-video";
+@import "components/gel-data-table";
+@import "components/gel-buttons-and-ctas";
+@import "components/gel-form-fields";
+@import "components/gel-pocket";
+@import "components/gel-masthead";
+@import "components/gel-load-more";
+@import "components/gel-paginator";
+@import "components/gel-accordion";
+@import "components/gel-info-panel";
+@import "components/gel-share-tools";
+@import "components/gel-site-menu";
+@import "components/gel-search";
+@import "components/gel-filter";
+

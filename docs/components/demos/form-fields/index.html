@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/gef-docs/static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/gel-tags/static/images/favicon.ico" type="image/x-icon">
 
-    <title>GEF | Form fields and validation Demo</title>
+    <title>GEL | Form fields and validation Demo</title>
 
-    <link rel="stylesheet" type="text/css" href="/gef-docs/static/css/gef.css">
+    <link rel="stylesheet" type="text/css" href="/gel-tags/static/css/gel.css">
 
     <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
@@ -36,27 +36,27 @@
 <h3>Form fields and validation</h3>
 
 <form id="myform-demo">
-  <div class="gef-form__divider">
+  <div class="gel-form__divider">
     <label for="username">Username</label>
     <input type="text" id="username" name="username" />
-    <div class="gef-form__field-error" id="username-error"></div>
+    <div class="gel-form__field-error" id="username-error"></div>
   </div>
-  <div class="gef-form__divider">
+  <div class="gel-form__divider">
     <label for="code">
       Verification code
       <small>This was sent to you by email</small>
     </label>
     <input type="text" id="code" name="code" />
-    <div class="gef-form__field-error" id="code-error"></div>
+    <div class="gel-form__field-error" id="code-error"></div>
   </div>
-  <div class="gef-form__divider">
-    <button class="gef-button" type="submit">Submit</button>
+  <div class="gel-form__divider">
+    <button class="gel-button" type="submit">Submit</button>
   </div>
 </form>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function () {
-    window.gef && gef.Validation.init();
+    window.gel && gel.Validation.init();
 
     var rules = [
       {
@@ -80,15 +80,15 @@
     ];
 
     var form = document.getElementById('myform-demo');
-    var formValidation = new gef.Validation.constructor(form, rules);
+    var formValidation = new gel.Validation.constructor(form, rules);
   });
 </script>
             </div>
         </div>
     </main>
 
-    <script nomodule defer type="text/javascript" src="/gef-docs/static/js/external-svg-polyfill.js"></script>
-    <script type="text/javascript" src="/gef-docs/static/js/gef.js"></script>
+    <script nomodule defer type="text/javascript" src="/gel-tags/static/js/external-svg-polyfill.js"></script>
+    <script type="text/javascript" src="/gel-tags/static/js/gel.js"></script>
 
     
 </body>

@@ -1,0 +1,58 @@
+.gel-form__divider * {
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.gel-form__divider > * + * {
+  display: block;
+  margin: 0;
+  margin-top: 0.125rem;
+}
+
+.gel-form__divider label small {
+  display: block;
+  font-size: 0.75rem;
+}
+
+.gel-form__divider + .gel-form__divider {
+  margin-top: 1.5rem;
+}
+
+.gel-form__divider input {
+  border: 1px solid;
+  width: 100%;
+  max-width: 60ch;
+  padding: 0.25rem;
+}
+
+.gel-form__divider input:focus {
+  outline: 2px solid;
+}
+
+.gel-form__field-error,
+.gel-form__warning {
+  padding: 0.25rem;
+  background-color: $gel-color--pink;
+  border: 1px solid transparent; /* for high contrast mode */
+  color: $gel-color--white;
+  max-width: 60ch;
+}
+
+@media (-ms-high-contrast: active) {
+  .gel-form__field-error,
+  .gel-form__warning {
+    filter: invert(100%);
+  }
+}
+
+.gel-form__field-error:empty,
+.gel-form__warning:empty {
+  display: none;
+}
+
+.gel-form__warning {
+  background-color: $gel-color--yellow;
+  color: $gel-color--black;
+}
+
+

@@ -23,7 +23,7 @@ A **Promo** can be made up of different content, giving us the flexibility to co
 | Image | An image promoting the target content. |
 | Media indication | Information about the media being promoted. |
 | Description | A short description of the target content. |
-| Metadata | See the [Metadata strip](/gef-docs/components/metadata-strips) component. |
+| Metadata | See the [Metadata strip](/gel-docs/components/metadata-strips) component. |
 
 
 ## Recommended markup
@@ -61,12 +61,12 @@ A group of promos should be marked up as a list. This enables structural and nav
 
 ```html
 <aside aria-labelledby="unique-promo-label">
-  <span class="gef-sr" id="unique-promo-label">More like this</span>
-  <ul class="gef-promos">
-    <li class="gef-promo">...</li>
-    <li class="gef-promo">...</li>
-    <li class="gef-promo">...</li>
-    <li class="gef-promo">...</li>
+  <span class="gel-sr" id="unique-promo-label">More like this</span>
+  <ul class="gel-promos">
+    <li class="gel-promo">...</li>
+    <li class="gel-promo">...</li>
+    <li class="gel-promo">...</li>
+    <li class="gel-promo">...</li>
   </ul>
 </aside>
 ```
@@ -80,9 +80,9 @@ The most important thing to remember about **Promo** components is they have a s
 The **Promo** must contain a link as its main label (or 'headline'). The wording of this link should resemble that of the target page's `<title>` and `<h1>`. This consistency aids cognitive accessibility and improves <abbr title="search engine optimization">SEO</abbr>[^4].
 
 ```html
-<div class="gef-promo">
-  <div class="gef-promo__content">
-    <a class="gef-promo__headline" href="path/to/content">University Challenge</a>
+<div class="gel-promo">
+  <div class="gel-promo__content">
+    <a class="gel-promo__headline" href="path/to/content">University Challenge</a>
   </div>
 </div>
 ```
@@ -96,12 +96,12 @@ Unlike **Cards**, **Promos** do not need to have a heading as their title/headli
 Frequently, an image is used to help promote the **Promo's** target content. This is the only content permitted _before_ the link in the source.
 
 ```html
-<div class="gef-promo">
-  <div class="gef-promo__image">
+<div class="gel-promo">
+  <div class="gel-promo__image">
     <img src="path/to/image" alt="">
   </div>
-  <div class="gef-promo__content">
-    <a class="gef-promo__headline" href="path/to/content">University Challenge</a>
+  <div class="gel-promo__content">
+    <a class="gel-promo__headline" href="path/to/content">University Challenge</a>
   </div>
 </div>
 ```
@@ -112,41 +112,41 @@ The image must _not_ be inside its own link, whether it contains `alt` text or o
 
 #### Media indication
 
-You can indicate information about the media being promoted, if relevant. This is the job of the `class="gef-promo__indicator"` element, found inside `class="gef-promo__image"`.
+You can indicate information about the media being promoted, if relevant. This is the job of the `class="gel-promo__indicator"` element, found inside `class="gel-promo__image"`.
 
 ```html
-<div class="gef-promo">
-  <div class="gef-promo__image">
+<div class="gel-promo">
+  <div class="gel-promo__image">
     <img src="path/to/image" alt="">
-    <div class="gef-promo__indicator" aria-hidden="true">
+    <div class="gel-promo__indicator" aria-hidden="true">
       <svg class="gel-icon gel-icon--text" focusable="false">
         <use xlink:href="{{site.basedir}}static/images/gel-icons-all.svg#gel-icon-play"></use>
       </svg>
-      <span class="gef-promo__indicator-text">04:35</span>
+      <span class="gel-promo__indicator-text">04:35</span>
     </div>
   </div>
-  <div class="gef-promo__content">
-    <a class="gef-promo__headline" href="path/to/content">
+  <div class="gel-promo__content">
+    <a class="gel-promo__headline" href="path/to/content">
       University Challenge
-      <span class="gef-sr">Video, 4 minutes and 35 seconds</span>
+      <span class="gel-sr">Video, 4 minutes and 35 seconds</span>
     </a>
   </div>
 </div>
 ```
 
-Importantly, the `class="gef-promo__indicator"` is hidden from assistive technologies with `aria-hidden="true"`. This is because it would not make sense encountered before the headline. Append a readable version of the information in a visually hidden span after the main headline text (_"Video, 4 minutes and 35 seconds"_ in the example). 
+Importantly, the `class="gel-promo__indicator"` is hidden from assistive technologies with `aria-hidden="true"`. This is because it would not make sense encountered before the headline. Append a readable version of the information in a visually hidden span after the main headline text (_"Video, 4 minutes and 35 seconds"_ in the example). 
 
 #### Description
 
 If present, the description (a couple of sentences; no more) should appear after the headline and before the metadata (see the following example). Media indication is omitted from the following example for brevity. 
 
 ```html
-<div class="gef-promo">
-  <div class="gef-promo__image">
+<div class="gel-promo">
+  <div class="gel-promo__image">
     <img src="path/to/image" alt="">
   </div>
-  <div class="gef-promo__content">
-    <a class="gef-promo__headline" href="path/to/content">University Challenge</a>
+  <div class="gel-promo__content">
+    <a class="gel-promo__headline" href="path/to/content">University Challenge</a>
     <p>It is the first of the semi-finals in the Christmas quiz for graduates.</p>
   </div>
 </div>
@@ -157,14 +157,14 @@ If present, the description (a couple of sentences; no more) should appear after
 The [**Metadata strip**](../metadata-strips) is described as its own component. It provides metadata in key value pairs, using a description list (`<dl>`).
 
 ```html
-<div class="gef-promo">
-  <div class="gef-promo__image">
+<div class="gel-promo">
+  <div class="gel-promo__image">
     <img src="path/to/image" alt="">
   </div>
-  <div class="gef-promo__content">
-    <a class="gef-promo__headline" href="path/to/content">University Challenge</a>
+  <div class="gel-promo__content">
+    <a class="gel-promo__headline" href="path/to/content">University Challenge</a>
     <p>It is the first of the semi-finals in the Christmas quiz for graduates.</p>
-    <dl class="gef-metadata-strip">
+    <dl class="gel-metadata-strip">
       <div>
         <dt class="vh">Published:</dt>
         <dd>
@@ -193,39 +193,39 @@ The [**Metadata strip**](../metadata-strips) is described as its own component. 
 A group of Promos in a set should share the same height. This is possible by making the parent (`class="gel-promos"`; `<ul>` if there are multiple **Promos** or a simple `<div>` if there is just one) a CSS Grid context. It's important there is a fallback, hence `display: inline-block` and `max-width` above the `@supports` block.
 
 ```css
-.gef-promos > * {
+.gel-promos > * {
   display: inline-block;
   max-width: 266px;
 }
 
 @supports (display: grid) {
-  .gef-promos {
+  .gel-promos {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
     grid-gap: 1rem;
   }
   
-  .gef-promos > * {
+  .gel-promos > * {
     max-width: none;
   }
 }
 ```
 
-The appearance of each promo is improved by distributing the metadata (if present) to the bottom of the container. This is possible by making the **Promo** and its nested `class="gef-promo__content"` element Flexbox contexts and giving the metadata element `margin-top: auto`.
+The appearance of each promo is improved by distributing the metadata (if present) to the bottom of the container. This is possible by making the **Promo** and its nested `class="gel-promo__content"` element Flexbox contexts and giving the metadata element `margin-top: auto`.
 
 ```css
-.gef-promo {
+.gel-promo {
   display: flex;
   flex-direction: column;
 }
 
-.gef-promo__content {
+.gel-promo__content {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 
-.gef-promo__content .gef-metadata-strip {
+.gel-promo__content .gel-metadata-strip {
   margin-top: auto;
 }
 ```
@@ -236,7 +236,7 @@ The image will need to fit the available space, regardless of the Promo's dimens
 
 ```css
 @supports (object-fit: cover) {
-  .gef-promo__image img {
+  .gel-promo__image img {
     width: 100%;
     object-fit: cover;
   }
@@ -247,7 +247,7 @@ The image will need to fit the available space, regardless of the Promo's dimens
 At the time of writing, the `object-fit` property is supported everywhere but Internet Explorer. The code uses `@supports` and falls back to a 'letterboxed' style using `text-align: center` and a `background-color`:
 
 ```css
-.gef-promo__image {
+.gel-promo__image {
   text-align: center;
   background-color: $gel-color--tundora; 
 }
@@ -259,21 +259,21 @@ At the time of writing, the `object-fit` property is supported everywhere but In
 In the [Reference implementation](#reference-implementation), a horizontal configuration (with the image to the left of the text content) can be achieved by placing the `gel-promo--horizontal` class on the `gel-promo` element. This change's the element's flex-direction.
 
 ```css
-.gef-promo.gef-promo--horizontal {
+.gel-promo.gel-promo--horizontal {
   flex-wrap: wrap;
   flex-direction: row;
 }
 ```
 
-The `flex-wrap: wrap` declaration ensures the image is _only_ placed to the side where there is room. The `gef-promo__image` and `gef-promo__content` elements are not permitted to become smaller than the `266px` threshold of the vertical **Promo** counterparts. At this point, wrapping occurs and the horizontal **Promo** displays as a vertical one.
+The `flex-wrap: wrap` declaration ensures the image is _only_ placed to the side where there is room. The `gel-promo__image` and `gel-promo__content` elements are not permitted to become smaller than the `266px` threshold of the vertical **Promo** counterparts. At this point, wrapping occurs and the horizontal **Promo** displays as a vertical one.
 
 ```css
-.gef-promo.gef-promo--horizontal .gef-promo__image {
+.gel-promo.gel-promo--horizontal .gel-promo__image {
   flex: 1;
   min-width: 266px;
 }
 
-.gef-promo.gef-promo--horizontal .gef-promo__content {
+.gel-promo.gel-promo--horizontal .gel-promo__content {
   flex: 999; /* Take up all but 266px where adjacent */
   min-width: 266px;
 }
@@ -282,7 +282,7 @@ The `flex-wrap: wrap` declaration ensures the image is _only_ placed to the side
 In a grid context, **Promos** with the class `gel-promo--horizontal` are directed to take up two columns of the grid wherever they are placed.
 
 ```css
-.gef-promo.gef-promo--horizontal {
+.gel-promo.gel-promo--horizontal {
   grid-column: span 2;
 }
 ```
@@ -292,13 +292,13 @@ In a grid context, **Promos** with the class `gel-promo--horizontal` are directe
 A `text-decoration` focus style is recommended for the headline link, paired with its hover style. To make focusing the card and its headline clearer, an additional `:focus-within` style can be added to the card itself.
 
 ```css
-.gef-promo__headline:hover,
-.gef-promo__headline:focus {
+.gel-promo__headline:hover,
+.gel-promo__headline:focus {
   outline: none;
   text-decoration: underline;
 }
 
-.gef-promo:focus-within {
+.gel-promo:focus-within {
   outline: 0.25rem solid;
 }
 ```
@@ -312,7 +312,7 @@ How the component looks with a [Windows High Contrast Mode](https://support.micr
 Transparent borders are applied on all sides. These become visible when Windows HCM is active, and define the shape of the Promo in the absence of the `background-color`:
 
 ```css
-.gef-promo {
+.gel-promo {
   background-color: $gel-color--alto;
   border: 2px solid transparent; /* for high contrast mode */
 }
@@ -328,7 +328,7 @@ Transparent borders are applied on all sides. These become visible when Windows 
 Instead, the headline link's pseudo-content is positioned _over_ the entire **Promo**. 
 
 ```css
-.gef-promo__headline::after {
+.gel-promo__headline::after {
   content: '';
   position: absolute;
   top: 0;
@@ -341,13 +341,13 @@ Instead, the headline link's pseudo-content is positioned _over_ the entire **Pr
 This leaves one piece of unfinished business: any links appearing after the headline are now not clickable. This is remedied by raising these links over the pseudo-content with `position: relative`.
 
 ```css
-.gef-promo a:not(.gef-promo__headline) {
+.gel-promo a:not(.gel-promo__headline) {
   position: relative;
 }
 ```
 
 ::: alert Supplementary links
-The headline link (`.gef-promo__headline`) is the primary purpose of the **Promo**. Although the **Metadata strip** may contain links (to category pages in the example implementation to follow) supplementary links should generally be omitted.
+The headline link (`.gel-promo__headline`) is the primary purpose of the **Promo**. Although the **Metadata strip** may contain links (to category pages in the example implementation to follow) supplementary links should generally be omitted.
 :::
 
 ## Example implementation

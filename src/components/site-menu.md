@@ -26,7 +26,7 @@ The semantic structure of the **Site menu** is that of a table of contents: a ma
 In practice, this structure is presented within a navigation (`<nav>`) landmark[^1] labelled _"This site"_. This makes the **Site menu** easily discoverable and identifiable in screen reader software.
 
 ```html
-<nav class="gef-sitemenu" aria-labelledby="gef-sitemenu__label">
+<nav class="gel-sitemenu" aria-labelledby="gel-sitemenu__label">
   <span id="gel-sitemenu-label" hidden>This site</span>
   <button type="button" aria-expanded="false">
     <svg class="gel-icon gel-icon--text" focusable="false">
@@ -34,17 +34,17 @@ In practice, this structure is presented within a navigation (`<nav>`) landmark[
     </svg>
     Menu
   </button>
-  <ul class="gef-sitemenu__list">
+  <ul class="gel-sitemenu__list">
     <li><a href="#" aria-current="page">Home</a></li>
     <li>
-      <button class="gef-sitemenu__more-button" type="button" aria-expanded="false">
+      <button class="gel-sitemenu__more-button" type="button" aria-expanded="false">
         Guidelines
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
           <use xlink:href="path/to/gel-icons-all.svg#gel-icon-down"></use>
         </svg>
       </button>
-      <div class="gef-sitemenu__more" hidden>
-        <div class="gef-sitemenu__more-inner">
+      <div class="gel-sitemenu__more" hidden>
+        <div class="gel-sitemenu__more-inner">
           <ul>
             <li><a href="#">Foundations</a></li>
             <li><a href="#">Design patterns</a></li>
@@ -62,8 +62,8 @@ In practice, this structure is presented within a navigation (`<nav>`) landmark[
 ### Notes
 
 * **`id="gel-sitemenu-label"`:** A proxy `<span>` element is used to label the landmark. This method is preferred to using an `aria-label` which is ignored by Google and Microsoft translation services at the time of writing. Note that the element is `hidden`. This stops it from being encountered directly while browsing, without silencing it as a proximity label[^2].
-* **`class="gef-sitemenu__menu-button"`:** For narrower viewports, the menu is hidden behind this toggle button and disclosed when it is pressed. This saves vertical space. The element must be a button, and not a link, because it does not take the user to a new location.
-* **`class="gef-sitemenu__more-button"`** Nested subtopic menus are hidden behind `<button>`s also. Their accessible `aria-expanded` state is set to either `false` (collapsed) or `true` (expanded).
+* **`class="gel-sitemenu__menu-button"`:** For narrower viewports, the menu is hidden behind this toggle button and disclosed when it is pressed. This saves vertical space. The element must be a button, and not a link, because it does not take the user to a new location.
+* **`class="gel-sitemenu__more-button"`** Nested subtopic menus are hidden behind `<button>`s also. Their accessible `aria-expanded` state is set to either `false` (collapsed) or `true` (expanded).
 * **`class="gel-icon"`** Each SVG icon is hidden from assistive technologies with `aria-hidden` and is removed from the tab order (in some versions of Internet Explorer and Edge) with `focusable="false"`[^3].
 * **`aria-current="page"`:** This indicates which menu item corresponds to the current page, and is announced as _"current"_ in screen reader software[^4].
 
@@ -72,11 +72,11 @@ In practice, this structure is presented within a navigation (`<nav>`) landmark[
 The **Site menu's** submenus must appear under the top-level menu items _without_ breaking the semantic structure. This is achieved with a combination of `display: inline` (menu items) and `float: left` (submenu):
 
 ```css
-.gef-sitemenu li {
+.gel-sitemenu li {
   display: inline;
 }
 
-.gef-sitemenu__more {
+.gel-sitemenu__more {
   float: left;
 }
 ```
@@ -86,7 +86,7 @@ Now the submenu appears below each of the top-level menu items, but the table of
 The submenu container must take up the whole of the viewport. This is achieved using `calc()`:
 
 ```css
-.gef-sitemenu__more {
+.gel-sitemenu__more {
   width: calc(100vw + 1px);
   position: relative;
   left: calc((100vw - 100%) / 2 * -1 - 1px);
@@ -95,11 +95,11 @@ The submenu container must take up the whole of the viewport. This is achieved u
 
 The element's width is first set to `100vw`, then it is repositioned to be flush with the left edge of the screen. The `1px` addition and subtraction compensates for the horizontal borders. Multiplying by `-1` negates the value to pull the position to the left.
 
-To ensure the submenu's content (`.gef-submenu-inner`) aligns with the top-level menu, each element is given a `max-width` of `1008px` and `auto` margins.
+To ensure the submenu's content (`.gel-submenu-inner`) aligns with the top-level menu, each element is given a `max-width` of `1008px` and `auto` margins.
 
 ```css
-.gef-sitemenu__more-inner,
-.gef-sitemenu__list {
+.gel-sitemenu__more-inner,
+.gel-sitemenu__list {
   margin-left: auto;
   margin-right: auto;
   max-width: 1008px;
@@ -113,11 +113,11 @@ Note that the `1008px` figure depends on the width of the page's main content an
 The focus style is paired with the hover style. 
 
 ```css
-.gef-sitemenu__list a:hover,
-.gef-sitemenu__list button:hover,
-.gef-sitemenu__list a:focus,
-.gef-sitemenu__list button:focus,
-.gef-sitemenu__list [aria-current] {
+.gel-sitemenu__list a:hover,
+.gel-sitemenu__list button:hover,
+.gel-sitemenu__list a:focus,
+.gel-sitemenu__list button:focus,
+.gel-sitemenu__list [aria-current] {
   outline: none;
   box-shadow: inset 0 -4px 0 0 currentColor;
 }
@@ -127,11 +127,11 @@ The main style—a `4px` line at the base of the item—is supplemented by a fal
 
 ```css
 @media (-ms-high-contrast: active) {
-  .gef-sitemenu__list a:hover,
-  .gef-sitemenu__list button:hover,
-  .gef-sitemenu__list a:focus,
-  .gef-sitemenu__list button:focus,
-  .gef-sitemenu__list [aria-current] {
+  .gel-sitemenu__list a:hover,
+  .gel-sitemenu__list button:hover,
+  .gel-sitemenu__list a:focus,
+  .gel-sitemenu__list button:focus,
+  .gel-sitemenu__list [aria-current] {
     text-decoration: underline;
   }
 }
