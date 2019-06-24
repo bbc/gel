@@ -1,10 +1,9 @@
-# bbc/gel-tags
-Static documentation generator for GEL technical accessibility guides.
+# bbc/gel Technical Accessibility Guides.
 
 ## Installation
 Prerequisites: Node.js 8+ (known to work on v8.9.4) and NPM.
 
-1. `cd gel-tags`
+1. `cd gel`
 2. `npm install`
 3. `npm link`
 
@@ -32,7 +31,7 @@ Or, if you're feeling like you want it all, try this...
 
 ## Example
 
-This is only an example: https://bbc.github.io/gel-tags/components/hello-world/
+This is only an example: https://bbc.github.io/gel/components/hello-world/
 
 ## Testing
 
@@ -44,4 +43,4 @@ From the project base directory simply run...
 
 - `serve`
 
-Then navigate to the resulting server address like so: `http://localhost:8888/gel-tags/components/hello-world` using whatever hostname and port is appropriate.
+Then navigate to the resulting server address like so: `http://localhost:8888/gel/components/hello-world` using whatever hostname and port is appropriate.
