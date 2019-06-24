@@ -86,7 +86,7 @@ In regards to (3), toggle buttons often have a persistent label and communicate 
 * Paused state → shows the familiar triangle-shaped icon → "play"
 * Playing state → shows the familiar two-vertical-lines icon → "pause"
 
-In the [reference implementation](#reference-implementation), an `active` class is appended to the parent button in its active state. This is used as a styling hook to toggle between the two text labels and their icons. In the following example, `class="gel-docs-video-button-play-off` is hidden with `display: none` and is not available to assistive technologies. The calculated accessible name[^2] is _"Pause"_.
+In the [reference implementation](#reference-implementation), an `active` class is appended to the parent button in its active state. This is used as a styling hook to toggle between the two text labels and their icons. In the following example, `class="gel-video-button-play-off` is hidden with `display: none` and is not available to assistive technologies. The calculated accessible name[^2] is _"Pause"_.
 
 ```html
 <button class="gel-video__play-button active" type="button">

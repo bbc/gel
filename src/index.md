@@ -13,39 +13,38 @@ We are working our way through a list based closely on what's already published 
 
 ### Foundations
 
-| Foundation | Status |
+| Foundation Title | Status |
 |-----------|--------|
-| [Grids]({{site.basedir}}foundations/grids/) | Draft / Pending|
-| [Headings]({{site.basedir}}foundations/headings/) | Draft / Pending|
-| [Icons]({{site.basedir}}foundations/iconography/) | Draft / Pending|
-| [Routing]({{site.basedir}}foundations/routing/) | Draft / Pending|
-| [Typography]({{site.basedir}}foundations/typography/) | Draft / Pending|
+| [Grids]({{site.basedir}}foundations/grids/) | Draft|
+| [Headings]({{site.basedir}}foundations/headings/) | Draft|
+| [Icons]({{site.basedir}}foundations/iconography/) | Draft|
+| [Routing]({{site.basedir}}foundations/routing/) | Draft|
+| [Typography]({{site.basedir}}foundations/typography/) | Draft|
 
 ### Components
 
-| Component | Status |
+| Component Title | Status |
 |-----------|--------|
-| [Accordions]({{site.basedir}}components/accordions/) | Draft / Pending|
-| [Action dialogs]({{site.basedir}}components/action-dialogs/) | Draft / Pending|
-| [Breakout boxes]({{site.basedir}}components/breakout-boxes/) | Draft / Pending|
-| [Buttons and CTAs]({{site.basedir}}components/buttons-and-ctas/) | Draft / Pending|
-| [Cards]({{site.basedir}}components/cards/) | Draft / Pending|
-| [Carousels]({{site.basedir}}components/carousels/) | Draft / Pending|
-| [External links]({{site.basedir}}components/external-links/) | Draft / Pending|
-| [Metadata strips]({{site.basedir}}components/metadata-strips/) | Draft / Pending|
-| [Promos]({{site.basedir}}components/promos/) | Draft / Pending|
-| [Tabs]({{site.basedir}}components/tabs/) | Draft / Pending|
-| [Form fields and validation]({{site.basedir}}components/form-fields/) | Draft / Pending|
-| [Video controls]({{site.basedir}}components/video-controls/) | Draft / Pending|
-| [Pocket]({{site.basedir}}components/pockets/) | Draft / Pending|
-| [Pagination]({{site.basedir}}components/load-more/) | Draft / Pending|
-| [Information Panel]({{site.basedir}}components/info-panels/) | Draft / Pending|
-| [Share Tools]({{site.basedir}}components/share-tools/) | Draft / Pending|
-| [Site Menu]({{site.basedir}}components/site-menu/) | Draft / Pending|
-| [Data tables]({{site.basedir}}components/data-tables/) | Draft / Pending|
-| [Infographics]({{site.basedir}}components/infographics/) | Draft / Pending|
-| [Search]({{site.basedir}}components/search/) | Draft / Pending|
-| [Filter & Sort]({{site.basedir}}components/filter-and-sort/?filter=filter+1&sort=relevance) | Draft / Pending|
+| [Accordions]({{site.basedir}}components/accordions/) | Draft|
+| [Action dialogs]({{site.basedir}}components/action-dialogs/) | Draft|
+| [Breakout boxes]({{site.basedir}}components/breakout-boxes/) | Draft|
+| [Buttons and CTAs]({{site.basedir}}components/buttons-and-ctas/) | Draft|
+| [Cards]({{site.basedir}}components/cards/) | Draft|
+| [Carousels]({{site.basedir}}components/carousels/) | Draft|
+| [Data tables]({{site.basedir}}components/data-tables/) | Draft|
+| [External links]({{site.basedir}}components/external-links/) | Draft|
+| [Form fields and validation]({{site.basedir}}components/form-fields/) | Draft|
+| [Infographics]({{site.basedir}}components/infographics/) | Draft|
+| [Information Panel]({{site.basedir}}components/info-panels/) | Draft|
+| [Metadata strips]({{site.basedir}}components/metadata-strips/) | Draft|
+| [Promos]({{site.basedir}}components/promos/) | Draft|
+| [Pagination]({{site.basedir}}components/load-more/) | Draft|
+| [Pocket]({{site.basedir}}components/pockets/) | Draft|
+| [Share Tools]({{site.basedir}}components/share-tools/) | Draft|
+| [Site Menu]({{site.basedir}}components/site-menu/) | Draft|
+| [Search]({{site.basedir}}components/search/) | Draft|
+| [Tabs]({{site.basedir}}components/tabs/) | Draft|
+| [Video controls]({{site.basedir}}components/video-controls/) | Draft|
 
 
 ## Coding conventions
