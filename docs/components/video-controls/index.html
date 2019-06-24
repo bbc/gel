@@ -4,16 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/gel-tags/static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/gel/static/images/favicon.ico" type="image/x-icon">
 
     <title>GEL | Video controls</title>
 
-    <script src="/gel-tags/static/js/site.js"></script>
+    <script src="/gel/static/js/site.js"></script>
 
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link rel="stylesheet" type="text/css" href="/gel-tags/static/css/gel.css">
-    <link rel="stylesheet" type="text/css" href="/gel-tags/static/css/site.css">
+    <link rel="stylesheet" type="text/css" href="/gel/static/css/gel.css">
+    <link rel="stylesheet" type="text/css" href="/gel/static/css/site.css">
 
     <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
@@ -56,8 +56,8 @@
                 <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24"
                         viewBox="0 0 100 24">
                         <title>BBC</title>
-                        <image xlink:href="/gel-tags/static/images/bbc-blocks_grey.svg"
-                            src="/gel-tags/static/images/bbc-blocks_grey.png" width="100%" height="100%"></image>
+                        <image xlink:href="/gel/static/images/bbc-blocks_grey.svg"
+                            src="/gel/static/images/bbc-blocks_grey.png" width="100%" height="100%"></image>
                     </svg></a>
             </div>
         </div>
@@ -66,7 +66,7 @@
                 <div class="gel-layout">
                     <div class="gel-layout__item gel-2/5@l"
                         style="text-align:left; padding-left:14px; margin-bottom:32px; margin-top: -10px;">
-                        <a href="/gel-tags/" class="geltags-logo"><img src="/gel-tags/static/images/bbc-gel-tags.png" style="max-width: 175px;"></a>
+                        <a href="/gel/" class="geltags-logo"><img src="/gel/static/images/bbc-gel-tags.png" style="max-width: 175px;"></a>
                     </div>
                     
                 </div>
@@ -153,7 +153,7 @@
 </code></pre>
 
             <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-info-the-group-role">
-              <h4 id="aside-info-the-group-role" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>The group role</h4><div><p>Note the inclusion of the ARIA <code>group</code> role<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> in the above example. This communicates to assistive technologies that the video player and custom controls are semantically related.</p>
+              <h4 id="aside-info-the-group-role" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>The group role</h4><div><p>Note the inclusion of the ARIA <code>group</code> role<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> in the above example. This communicates to assistive technologies that the video player and custom controls are semantically related.</p>
 </aside><p>The JavaScript to switch to the enhanced/custom version is trivial:</p>
 <pre class="hljs"><code><span class="hljs-comment">// Where `video` represents the &lt;video&gt; node</span>
 <span class="hljs-comment">// and `customControls` the custom controls container</span>
@@ -247,7 +247,7 @@ Visually hide an element, but leave it available for screen readers
   }
 }
 </code></pre>
-<p><img src="/gel-tags/static/images/hcm_video.png" alt="Standard range input styles are visible, and in high contrast (white on black)"></p>
+<p><img src="/gel/static/images/hcm_video.png" alt="Standard range input styles are visible, and in high contrast (white on black)"></p>
 <h4 id="the-controls-container">The controls container</h4>
 <p>In the <a href="#reference-implementation">reference implementation</a>, the controls container uses Flexbox to distribute the controls along a horizontal axis. The timeline container takes <code>flex: auto</code><sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> to take up any space not taken by surrounding buttons. This makes the control bar responsive and tolerant of different functionality complexity.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gel-video__timeline-container</span> {
@@ -303,7 +303,7 @@ Visually hide an element, but leave it available for screen readers
 <h3 id="reference-implementation">Reference implementation</h3>
 
             <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-alert-important">
-              <h4 id="aside-alert-important" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation should conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+              <h4 id="aside-alert-important" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation should conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
 </aside>
           <div class="geltags-demo"><!-- 
 title: Video controls
@@ -317,24 +317,24 @@ title: Video controls
       <h4>The 2001 BBC2 Ident</h4>
     </div>
     <div class="gel-card__content">
-      <video controls src="/gel-tags/static/videos/ident_clip.mp4">
-        <track label="English" kind="subtitles" srclang="en" src="/gel-tags/static/videos/ident.vtt" default>
+      <video controls src="/gel/static/videos/ident_clip.mp4">
+        <track label="English" kind="subtitles" srclang="en" src="/gel/static/videos/ident.vtt" default>
         <p>
           Your browser doesn't support HTML5 video.
-          <a href="/gel-tags/static/videos/ident_clip.mp4">Download</a> the video instead.
+          <a href="/gel/static/videos/ident_clip.mp4">Download</a> the video instead.
         </p>
       </video>
       <button class="gel-video__play-button gel-card__play-button" type="button" hidden>
         <span class="gel-video__button-off">
           <span class="gel-sr">Play</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
-            <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-play"></use>
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-play"></use>
           </svg>
         </span>
         <span class="gel-video__button-on">
           <span class="gel-sr">Pause</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
-            <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-pause"></use>
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-pause"></use>
           </svg>
         </span>
       </button>
@@ -342,13 +342,13 @@ title: Video controls
         <span class="gel-video__button-off">
           <span class="gel-sr">Mute</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
-            <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-listen"></use>
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-listen"></use>
           </svg>
         </span>
         <span class="gel-video__button-on">
           <span class="gel-sr">Unmute</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
-            <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-sound-off"></use>
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-sound-off"></use>
           </svg>
         </span>
       </button>
@@ -360,13 +360,13 @@ title: Video controls
       <button type="button" aria-expanded="false">
         <span class="gel-card__more-label">
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-            <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-up"></use>
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-up"></use>
           </svg>
           More info
         </span>
         <span class="gel-card__close-label">
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-            <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-no"></use>
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-no"></use>
           </svg>
           Close
         </span>
@@ -382,30 +382,30 @@ title: Video controls
       <button type="button" aria-pressed="false">
         <span class="gel-sr">Love</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-          <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-love-loved-state"></use>
+          <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-love-loved-state"></use>
         </svg>
       </button>
       <button type="button">
         <span class="gel-sr">Add</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-          <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-add"></use>
+          <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-add"></use>
         </svg>
       </button>
       <button type="button">
         <span class="gel-sr">Share</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-          <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-share"></use>
+          <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-share"></use>
         </svg>
       </button>
     </div>
   </div>
   <h3>Play, mute, and scrub</h3>
   <div class="gel-video__container" style="max-width: 400px">
-    <video class=" gel-video" controls src="/gel-tags/static/videos/ident_clip.mp4">
-      <track label="English" kind="subtitles" srclang="en" src="/gel-tags/static/videos/ident.vtt" default>
+    <video class=" gel-video" controls src="/gel/static/videos/ident_clip.mp4">
+      <track label="English" kind="subtitles" srclang="en" src="/gel/static/videos/ident.vtt" default>
       <p>
         Your browser doesn't support HTML5 video.
-        <a href="/gel-tags/static/videos/ident_clip.mp4">Download</a> the video instead.
+        <a href="/gel/static/videos/ident_clip.mp4">Download</a> the video instead.
       </p>
     </video>
     <div class="gel-video__controls" hidden>
@@ -413,13 +413,13 @@ title: Video controls
         <span class="gel-video__button-off">
           <span class="gel-sr">Play</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-            <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-play"></use>
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-play"></use>
           </svg>
         </span>
         <span class="gel-video__button-on">
           <span class="gel-sr">Pause</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-            <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-pause"></use>
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-pause"></use>
           </svg>
         </span>
       </button>
@@ -431,13 +431,13 @@ title: Video controls
         <span class="gel-video__button-off">
           <span class="gel-sr">Mute</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-            <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-listen"></use>
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-listen"></use>
           </svg>
         </span>
         <span class="gel-video__button-on">
           <span class="gel-sr">Unmute</span>
           <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-            <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-sound-off"></use>
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-sound-off"></use>
           </svg>
         </span>
       </button>
@@ -487,7 +487,7 @@ title: Video controls
   });
 </script></div>
         
-          <p><a class="gel-cta gel-long-primer-bold" href="../demos/video/" target="_new"><span class="gel-button__label">Open in new window</span><svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+          <p><a class="gel-cta gel-long-primer-bold" href="../demos/video/" target="_new"><span class="gel-button__label">Open in new window</span><svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
         <h2 id="related-research">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
 <h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
@@ -521,7 +521,7 @@ title: Video controls
                     <div>
                         <p>
                             If you think you could make anything you see here a bit better then become one of <a
-                                href="/gel-tags/contributors/">our
+                                href="/gel/contributors/">our
                                 lovely contributors</a>!
                         </p>
                     </div>
@@ -542,7 +542,7 @@ title: Video controls
                         <span class="geltags-button__content">Go to survey</span>
                         <span class="geltags-button__icon_wrapper">
                             <svg class="geltags-button__icon geltags-icon geltags-icon--text">
-                                <use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                                <use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"
                                     style="fill:undefined;"></use>
                             </svg>
                         </span>
@@ -552,8 +552,8 @@ title: Video controls
         </div>
     </div>
 
-    <script nomodule defer type="text/javascript" src="/gel-tags/static/js/external-svg-polyfill.js"></script>
-    <script type="text/javascript" src="/gel-tags/static/js/gel.js"></script>
+    <script nomodule defer type="text/javascript" src="/gel/static/js/external-svg-polyfill.js"></script>
+    <script type="text/javascript" src="/gel/static/js/gel.js"></script>
 
     
 

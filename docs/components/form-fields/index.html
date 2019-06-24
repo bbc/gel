@@ -4,16 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/gel-tags/static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/gel/static/images/favicon.ico" type="image/x-icon">
 
     <title>GEL | Form fields and validation</title>
 
-    <script src="/gel-tags/static/js/site.js"></script>
+    <script src="/gel/static/js/site.js"></script>
 
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link rel="stylesheet" type="text/css" href="/gel-tags/static/css/gel.css">
-    <link rel="stylesheet" type="text/css" href="/gel-tags/static/css/site.css">
+    <link rel="stylesheet" type="text/css" href="/gel/static/css/gel.css">
+    <link rel="stylesheet" type="text/css" href="/gel/static/css/site.css">
 
     <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
@@ -56,8 +56,8 @@
                 <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24"
                         viewBox="0 0 100 24">
                         <title>BBC</title>
-                        <image xlink:href="/gel-tags/static/images/bbc-blocks_grey.svg"
-                            src="/gel-tags/static/images/bbc-blocks_grey.png" width="100%" height="100%"></image>
+                        <image xlink:href="/gel/static/images/bbc-blocks_grey.svg"
+                            src="/gel/static/images/bbc-blocks_grey.png" width="100%" height="100%"></image>
                     </svg></a>
             </div>
         </div>
@@ -66,7 +66,7 @@
                 <div class="gel-layout">
                     <div class="gel-layout__item gel-2/5@l"
                         style="text-align:left; padding-left:14px; margin-bottom:32px; margin-top: -10px;">
-                        <a href="/gel-tags/" class="geltags-logo"><img src="/gel-tags/static/images/bbc-gel-tags.png" style="max-width: 175px;"></a>
+                        <a href="/gel/" class="geltags-logo"><img src="/gel/static/images/bbc-gel-tags.png" style="max-width: 175px;"></a>
                     </div>
                     
                 </div>
@@ -118,7 +118,7 @@
 </code></pre>
 
             <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-info-name-and-id">
-              <h4 id="aside-info-name-and-id" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg><code>name</code> and <code>id</code></h4><div><p>It is a common misconception that the <code>name</code> attribute is used in label calculation. Although it often takes the same value as the <code>id</code>, it is only the <code>id</code> that associates the label to the input.</p>
+              <h4 id="aside-info-name-and-id" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg><code>name</code> and <code>id</code></h4><div><p>It is a common misconception that the <code>name</code> attribute is used in label calculation. Although it often takes the same value as the <code>id</code>, it is only the <code>id</code> that associates the label to the input.</p>
 </aside><h4 id="group-labels">Group labels</h4>
 <p>Sometimes multiple form elements should be grouped together under a common label. The standard method for creating such a group is with the <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> elements. The <code>&lt;legend&gt;</code> must be the first child inside the <code>&lt;fieldset&gt;</code>.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
@@ -145,7 +145,7 @@
 </code></pre>
 
             <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-info-label-wrappers">
-              <h4 id="aside-info-label-wrappers" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Label wrappers</h4><div><p>Note the use of labels <em>wrapping</em> inputs in the above example. Only when wrapping inputs in <code>&lt;label&gt;</code>s can you omit the <code>for</code> and <code>id</code> association. It is a common pattern for radios and checkboxes.</p>
+              <h4 id="aside-info-label-wrappers" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Label wrappers</h4><div><p>Note the use of labels <em>wrapping</em> inputs in the above example. Only when wrapping inputs in <code>&lt;label&gt;</code>s can you omit the <code>for</code> and <code>id</code> association. It is a common pattern for radios and checkboxes.</p>
 </aside><p>It's quite legitimate to place headings inside <code>&lt;legend&gt;</code>s. In fact, this helps to give your form a semantic structure (improving navigation by screen reader users) without having to create separate and redundant labels.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Group label<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
@@ -167,7 +167,7 @@
 <p>Where specialist HTML5 input types are well supported, it is advised they are used in place of the generic (and default) <code>type=&quot;text&quot;</code>. The <code>number</code> <code>type</code>, for example, helpfully restricts input to numerals, allows incrementation—typically by providing up and down buttons—and elicits the display of a numerical virtual keyboard.</p>
 
             <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-alert-avoid-custom-form-elements">
-              <h4 id="aside-alert-avoid-custom-form-elements" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Avoid custom form elements</h4><div><p>The most efficient and robust way to implement accessible form fields is to use the native <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements. These elements have predefined and expected behaviours, and automatically communicate their roles, values, and states to assistive technologies.</p>
+              <h4 id="aside-alert-avoid-custom-form-elements" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Avoid custom form elements</h4><div><p>The most efficient and robust way to implement accessible form fields is to use the native <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements. These elements have predefined and expected behaviours, and automatically communicate their roles, values, and states to assistive technologies.</p>
 <p>It is <em>possible</em> to emulate native form element behaviour with WAI-ARIA attribution and JavaScript, but it<br>
 is rarely a good idea. Implementations tend towards complexity, and are necessarily more likely<br>
 to break because they depend on JavaScript in order to function.</p>
@@ -265,7 +265,7 @@ to break because they depend on JavaScript in order to function.</p>
 </code></pre>
 <h3 id="high-contrast">High contrast</h3>
 <p>How the component looks with a <a href="https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode">Windows High Contrast Mode</a> theme active.</p>
-<p><img src="/gel-tags/static/images/hcm_form_fields.png" alt="The error message is white with black text"></p>
+<p><img src="/gel/static/images/hcm_form_fields.png" alt="The error message is white with black text"></p>
 <p>A CSS filter is used to reverse the colors of the error message:</p>
 <pre class="hljs"><code>@<span class="hljs-keyword">media</span> (-ms-high-contrast: active) {
   <span class="hljs-selector-class">.gel-form__field-error</span>,
@@ -313,7 +313,7 @@ to break because they depend on JavaScript in order to function.</p>
 <h2 id="reference-implementation">Reference implementation</h2>
 
             <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-alert-important">
-              <h4 id="aside-alert-important" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Example implementations are intended to demonstrate <strong>what needs to be achieved</strong> but not how to achieve it. To meet our recommendations your HTML semantics, layout and behaviour must conform to the example implementation. Your server-side and front-end frameworks will likely differ.</p>
+              <h4 id="aside-alert-important" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Example implementations are intended to demonstrate <strong>what needs to be achieved</strong> but not how to achieve it. To meet our recommendations your HTML semantics, layout and behaviour must conform to the example implementation. Your server-side and front-end frameworks will likely differ.</p>
 </aside>
           <div class="geltags-demo"><!-- 
 title: Form fields and validation
@@ -403,7 +403,7 @@ title: Form fields and validation
                     <div>
                         <p>
                             If you think you could make anything you see here a bit better then become one of <a
-                                href="/gel-tags/contributors/">our
+                                href="/gel/contributors/">our
                                 lovely contributors</a>!
                         </p>
                     </div>
@@ -424,7 +424,7 @@ title: Form fields and validation
                         <span class="geltags-button__content">Go to survey</span>
                         <span class="geltags-button__icon_wrapper">
                             <svg class="geltags-button__icon geltags-icon geltags-icon--text">
-                                <use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                                <use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"
                                     style="fill:undefined;"></use>
                             </svg>
                         </span>
@@ -434,8 +434,8 @@ title: Form fields and validation
         </div>
     </div>
 
-    <script nomodule defer type="text/javascript" src="/gel-tags/static/js/external-svg-polyfill.js"></script>
-    <script type="text/javascript" src="/gel-tags/static/js/gel.js"></script>
+    <script nomodule defer type="text/javascript" src="/gel/static/js/external-svg-polyfill.js"></script>
+    <script type="text/javascript" src="/gel/static/js/gel.js"></script>
 
     
 

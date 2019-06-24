@@ -4,16 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/gel-tags/static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/gel/static/images/favicon.ico" type="image/x-icon">
 
     <title>GEL | Share tools</title>
 
-    <script src="/gel-tags/static/js/site.js"></script>
+    <script src="/gel/static/js/site.js"></script>
 
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link rel="stylesheet" type="text/css" href="/gel-tags/static/css/gel.css">
-    <link rel="stylesheet" type="text/css" href="/gel-tags/static/css/site.css">
+    <link rel="stylesheet" type="text/css" href="/gel/static/css/gel.css">
+    <link rel="stylesheet" type="text/css" href="/gel/static/css/site.css">
 
     <script type="text/javascript"> // feature detects
         document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
@@ -56,8 +56,8 @@
                 <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24"
                         viewBox="0 0 100 24">
                         <title>BBC</title>
-                        <image xlink:href="/gel-tags/static/images/bbc-blocks_grey.svg"
-                            src="/gel-tags/static/images/bbc-blocks_grey.png" width="100%" height="100%"></image>
+                        <image xlink:href="/gel/static/images/bbc-blocks_grey.svg"
+                            src="/gel/static/images/bbc-blocks_grey.png" width="100%" height="100%"></image>
                     </svg></a>
             </div>
         </div>
@@ -66,7 +66,7 @@
                 <div class="gel-layout">
                     <div class="gel-layout__item gel-2/5@l"
                         style="text-align:left; padding-left:14px; margin-bottom:32px; margin-top: -10px;">
-                        <a href="/gel-tags/" class="geltags-logo"><img src="/gel-tags/static/images/bbc-gel-tags.png" style="max-width: 175px;"></a>
+                        <a href="/gel/" class="geltags-logo"><img src="/gel/static/images/bbc-gel-tags.png" style="max-width: 175px;"></a>
                     </div>
                     
                 </div>
@@ -177,14 +177,14 @@
 <p>The expected layout of the <strong>Information panel</strong> is documented with the <a href="../info-panel"><strong>Information panel</strong> component</a>.</p>
 <h3 id="high-contrast">High contrast</h3>
 <p>How the component looks with a <a href="https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode">Windows High Contrast Mode</a> theme active.</p>
-<p><img src="/gel-tags/static/images/hcm_share_tools.png" alt="Borders make the buttons visible"></p>
+<p><img src="/gel/static/images/hcm_share_tools.png" alt="Borders make the buttons visible"></p>
 <h2 id="recommended-behaviour">Recommended behaviour</h2>
 <p><strong>Share tools</strong> consists of a list of external links, which open social media platforms' respective pages in new tabs. As described in <a href="#expected-markup">Expected markup</a>, screen reader users are forewarned about this change in context by each link's visually hidden label being appended with <em>&quot;external&quot;</em>.</p>
 <p>Keyboard users (including screen reader users) traversing the page will first encounter the skip link (reading <em>&quot;Skip sharing&quot;</em> in the reference implementation). This link will be revealed visually upon being focused. Users wishing to bypass the <strong>Share tools</strong> can activate the link. Screen reader users will hear <em>&quot;End of sharing tools&quot;</em> as the target element is focused. Sighted keyboard users will see the focused element appear, including the focus style. From there, the user can continue down the page, focusing the remainder of interactive elements sequentially.</p>
 <h3 id="the-link-input">The link input</h3>
 
             <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-info-information-panel-behaviour">
-              <h4 id="aside-info-information-panel-behaviour" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Information panel behaviour</h4><div><p>The interaction behaviour of the <strong>Information panel</strong> is covered in the <a href="../info-panel">Information panel documentation</a>.</p>
+              <h4 id="aside-info-information-panel-behaviour" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Information panel behaviour</h4><div><p>The interaction behaviour of the <strong>Information panel</strong> is covered in the <a href="../info-panel">Information panel documentation</a>.</p>
 </aside><p>The experience of copying the link from the <code>class=&quot;gel-sharetools__link-input&quot;</code> element is aided slightly by selecting the input's value and copying it to the clipboard on focus. The script for this behaviour is embedded in the demonstration page:</p>
 <pre class="hljs"><code><span class="hljs-keyword">var</span> copyLink = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.gel-sharetools__link-input'</span>);
 copyLink.addEventListener(<span class="hljs-string">'focus'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
@@ -196,7 +196,7 @@ copyLink.addEventListener(<span class="hljs-string">'focus'</span>, <span class=
 <h2 id="reference-implementation">Reference implementation</h2>
 
             <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-alert-important">
-              <h4 id="aside-alert-important" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+              <h4 id="aside-alert-important" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
 </aside>
           <div class="geltags-demo"><!-- 
 title: Share tools
@@ -210,7 +210,7 @@ title: Share tools
       <a class="gel-button" href="#" target="_blank">
         <span class="gel-sr">Email, share this, external</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-          <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-email"></use>
+          <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-email"></use>
         </svg>
       </a>
     </li>
@@ -218,7 +218,7 @@ title: Share tools
       <a class="gel-button" href="#" target="_blank">
         <span class="gel-sr">Facebook, share this, external</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-          <use xlink:href="/gel-tags/static/images/gel-icons-social.svg#gel-icon-facebook"></use>
+          <use xlink:href="/gel/static/images/gel-icons-social.svg#gel-icon-facebook"></use>
         </svg>
       </a>
     </li>
@@ -226,7 +226,7 @@ title: Share tools
       <a class="gel-button" href="#" target="_blank">
         <span class="gel-sr">Twitter, share this, external</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-          <use xlink:href="/gel-tags/static/images/gel-icons-social.svg#gel-icon-twitter"></use>
+          <use xlink:href="/gel/static/images/gel-icons-social.svg#gel-icon-twitter"></use>
         </svg>
       </a>
     </li>
@@ -234,14 +234,14 @@ title: Share tools
       <a class="gel-button" href="#" target="_blank">
         <span class="gel-sr">LinkedIn, share this, external</span>
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-          <use xlink:href="/gel-tags/static/images/gel-icons-social.svg#gel-icon-linkedin"></use>
+          <use xlink:href="/gel/static/images/gel-icons-social.svg#gel-icon-linkedin"></use>
         </svg>
       </a>
     </li>
     <li class="gel-infopanel">
       <button class="gel-infopanel__button gel-button" type="button" aria-haspopup="true" aria-expanded="false">
         <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-          <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-share"></use>
+          <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-share"></use>
         </svg>
         <span>Share</span>
       </button>
@@ -251,7 +251,7 @@ title: Share tools
           <button class="gel-infopanel__close-button">
             <span class="gel-sr">close</span>
             <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-              <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-no"></use>
+              <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-no"></use>
             </svg>
           </button>
         </div>
@@ -261,7 +261,7 @@ title: Share tools
               <a class="gel-button" href="#">
                 <span class="gel-sr">Email, share this, external</span>
                 <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-                  <use xlink:href="/gel-tags/static/images/gel-icons-all.svg#gel-icon-email"></use>
+                  <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-email"></use>
                 </svg>
               </a>
             </li>
@@ -269,7 +269,7 @@ title: Share tools
               <a class="gel-button" href="#">
                 <span class="gel-sr">Facebook, share this, external</span>
                 <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-                  <use xlink:href="/gel-tags/static/images/gel-icons-social.svg#gel-icon-facebook"></use>
+                  <use xlink:href="/gel/static/images/gel-icons-social.svg#gel-icon-facebook"></use>
                 </svg>
               </a>
             </li>
@@ -277,7 +277,7 @@ title: Share tools
               <a class="gel-button" href="#">
                 <span class="gel-sr">Twitter, share this, external</span>
                 <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-                  <use xlink:href="/gel-tags/static/images/gel-icons-social.svg#gel-icon-twitter"></use>
+                  <use xlink:href="/gel/static/images/gel-icons-social.svg#gel-icon-twitter"></use>
                 </svg>
               </a>
             </li>
@@ -285,7 +285,7 @@ title: Share tools
               <a class="gel-button" href="#">
                 <span class="gel-sr">LinkedIn, share this, external</span>
                 <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
-                  <use xlink:href="/gel-tags/static/images/gel-icons-social.svg#gel-icon-linkedin"></use>
+                  <use xlink:href="/gel/static/images/gel-icons-social.svg#gel-icon-linkedin"></use>
                 </svg>
               </a>
             </li>
@@ -320,7 +320,7 @@ title: Share tools
   });
 </script></div>
         
-          <p><a class="gel-cta gel-long-primer-bold" href="../demos/share-tools/" target="_new"><span class="gel-button__label">Open in new window</span><svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
+          <p><a class="gel-cta gel-long-primer-bold" href="../demos/share-tools/" target="_new"><span class="gel-button__label">Open in new window</span><svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
         <h2 id="related-research">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
 <h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
@@ -350,7 +350,7 @@ title: Share tools
                     <div>
                         <p>
                             If you think you could make anything you see here a bit better then become one of <a
-                                href="/gel-tags/contributors/">our
+                                href="/gel/contributors/">our
                                 lovely contributors</a>!
                         </p>
                     </div>
@@ -371,7 +371,7 @@ title: Share tools
                         <span class="geltags-button__content">Go to survey</span>
                         <span class="geltags-button__icon_wrapper">
                             <svg class="geltags-button__icon geltags-icon geltags-icon--text">
-                                <use xlink:href="/gel-tags/static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                                <use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"
                                     style="fill:undefined;"></use>
                             </svg>
                         </span>
@@ -381,8 +381,8 @@ title: Share tools
         </div>
     </div>
 
-    <script nomodule defer type="text/javascript" src="/gel-tags/static/js/external-svg-polyfill.js"></script>
-    <script type="text/javascript" src="/gel-tags/static/js/gel.js"></script>
+    <script nomodule defer type="text/javascript" src="/gel/static/js/external-svg-polyfill.js"></script>
+    <script type="text/javascript" src="/gel/static/js/gel.js"></script>
 
     
 
