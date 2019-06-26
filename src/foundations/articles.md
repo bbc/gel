@@ -55,7 +55,7 @@ As set out in [**Headings**](../../foundations/headings), subsequent subheadings
 
 </figure>
 
-Headings are labels for sections of content, and heading tags should be used for no other purpose. A byline, for example, might take a heading-like larger/bolder text style. However, the name of the article's author does not name a subsection of the article itself. To 'pick out' the author name, use a `class` or a `<strong>` element.
+Headings are labels for sections of content, and heading tags should be used for no other purpose. A byline, for example, might take a heading-like larger/bolder text style. However, the name of the article's author does not name a subsection of the article. To 'pick out' the author name, use a `class` or a `<strong>` element.
 
 ### <mark is="bad"> Bad example: byline as heading
 
