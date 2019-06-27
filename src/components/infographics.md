@@ -171,13 +171,13 @@ What remains is to piece all of these pieces together, and provide an interface 
 
 <include src="components/demos/infographic-tabs.html">
 
-### Color concerns
+### Colour concerns
 
-It's recommended that color is only added to your infographics as a progressive enhancement. Design it monochrome to begin with, and only add color where desirable. This way, you'll end up with a chart that is decipherable even on non-color displays and among people with color perception impairments.
+It's recommended that colour is only added to your infographics as a progressive enhancement. Design it monochrome to begin with, and only add colour where desirable. This way, you'll end up with a chart that is decipherable even on non-colour displays and among people with colour perception impairments.
 
-The previous example is not dependent on color since each cell culture morphology can be identified with a distinct shape. Where illustrative symbols are not appropriate, or there is no room to display them at a reasonable size, it is recommended color differentiation is supplemented by pattern differentiation.
+The previous example is not dependent on colour since each cell culture morphology can be identified with a distinct shape. Where illustrative symbols are not appropriate, or there is no room to display them at a reasonable size, it is recommended colour differentiation is supplemented by pattern differentiation.
 
-Using CSS `linear-gradient` and a translucent RGBA color value, four colors can become four coloured patterns:
+Using CSS `linear-gradient` and a translucent RGBA colour value, four colours can become four coloured patterns:
 
 ```css
 .red {
@@ -235,7 +235,7 @@ Using CSS `linear-gradient` and a translucent RGBA color value, four colors can 
 
 ### <mark is="bad"> Bad example
 
-An infographic key that depends on flat colors would fail **WCAG 2.1 1.4.1: Use of color**[^5]
+An infographic key that depends on flat colours would fail **WCAG 2.1 1.4.1: Use of color**[^5]
 
 ![Four coloured boxes: red, green, blue, yellow]({{site.basedir}}static/images/components/infographic_key_bad.png)
 

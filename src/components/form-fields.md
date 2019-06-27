@@ -242,7 +242,7 @@ How the component looks with a [Windows High Contrast Mode](https://support.micr
 
 ![The error message is white with black text]({{site.basedir}}static/images/hcm_form_fields.png)
 
-A CSS filter is used to reverse the colors of the error message:
+A CSS filter is used to reverse the colours of the error message:
 
 ```css
 @media (-ms-high-contrast: active) {

@@ -113,13 +113,13 @@ Sizing and alignment for inline text is taken care of by the `gel-icon--text` cl
 
 Note that the `em` unit allows the icon to scale proportionate to the parent element's `font-size`. Using `rem` or `px` would break this relationship, and the text would scale without the icon.
 
-### Color
+### Colour
 
-The usual WCAG rules[^4] for color contrast apply to icons, although the impact of icons with inadequate contrast is likely to be less critical than text. As with text, the larger the icon the more minimal the impact of low contrast. There is no good reason, however, to consider low contrast combinations under any circumstances.
+The usual WCAG rules[^4] for colour contrast apply to icons, although the impact of icons with inadequate contrast is likely to be less critical than text. As with text, the larger the icon the more minimal the impact of low contrast. There is no good reason, however, to consider low contrast combinations under any circumstances.
 
 ### High Contrast Mode
 
-In Windows High Contrast Mode, the text color is augmented to become very dark or very light. In order for SVG to adopt the same high contrast color of the text, use `currentColor`. This is applied in the examples in this site using the `gel-icon` class.
+In Windows High Contrast Mode, the text colour is augmented to become very dark or very light. In order for SVG to adopt the same high contrast colour of the text, use `currentColor`. This is applied in the examples in this site using the `gel-icon` class.
 
 ```css
 .gel-icon {
@@ -129,9 +129,9 @@ In Windows High Contrast Mode, the text color is augmented to become very dark o
 
 Note that SVG uses `fill`, not `color` or `background-color`.
 
-### Color independence
+### Colour independence
 
-Controls often exist in changing states: active, disabled etc. It's important these states are not communicated in color alone, as outlined in **WCAG2.1 1.4.1: Use of Color**[^5]. Otherwise they will not be perceivable to some color blind users, and others using non-color displays.
+Controls often exist in changing states: active, disabled etc. It's important these states are not communicated in colour alone, as outlined in **WCAG2.1 1.4.1: Use of Color**[^5]. Otherwise they will not be perceivable to some colour blind users, and others using non-colour displays.
 
 The movement icons get around this by using a diagonal line-through style for the "off" state (pictured).
 

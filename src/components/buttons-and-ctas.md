@@ -117,7 +117,7 @@ Button and CTA design differs somewhat between BBC sites and products. However, 
 
 1. **Be consistent:** All of your buttons should share the same basic design, and so should all of your CTAs. Be consistent with colour, font size and weight, and padding.
 2. **Differentiate buttons and links:** It is recommended your CTAs are visually distinct from your `<button>`s: form should follow function. A common approach is to give all `<button>`s a background colour, but make CTAs 'ghosts' (with a transparent background but a surrounding border).
-3. **Give affordance:** Make sure your buttons and CTAs invite the user to click them. Use the site's established link color, if not just inherited; include clear hover and focus styles (see below); use imperative language.
+3. **Give affordance:** Make sure your buttons and CTAs invite the user to click them. Use the site's established link colour, if not just inherited; include clear hover and focus styles (see below); use imperative language.
 
 ::: alert Contrast
 No matter the brand colours employed, the contrast between the foreground (text) and background colours must meet minimum contrast requirements (WCAG Level AA[^7])

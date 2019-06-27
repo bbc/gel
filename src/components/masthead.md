@@ -61,7 +61,7 @@ A proxy label is provided using `aria-labelledby` and a hidden proxy element to 
 </div>
 ```
 
-The logo is provided as an inline SVG. This is preferable to a background image, which will be eliminated by some high contrast modes[^1] in some browsers. Its `fill` is set to `currentColor` so that it honors Windows High Contrast Mode text colors. The visually hidden `<span>` reads _"BBC homepage"_ and becomes the parent link's accessible label. The local home page link of the banner (see below) should be differentiated by mentioning the local site's name, for example _"BBC Gel homepage"_.
+The logo is provided as an inline SVG. This is preferable to a background image, which will be eliminated by some high contrast modes[^1] in some browsers. Its `fill` is set to `currentColor` so that it honors Windows High Contrast Mode text colours. The visually hidden `<span>` reads _"BBC homepage"_ and becomes the parent link's accessible label. The local home page link of the banner (see below) should be differentiated by mentioning the local site's name, for example _"BBC Gel homepage"_.
 
 #### The account link
 
@@ -227,7 +227,7 @@ The global navigation bar is responsive by own of three means:
 
 ### Icons
 
-The icons are taken from the standard [GEL Iconography library](http://bbc.github.io/gel-iconography/). To ensure they adopt the appropriate color via `currentColor`, the parent sometimes needs to explicitly inherit the context's `color`
+The icons are taken from the standard [GEL Iconography library](http://bbc.github.io/gel-iconography/). To ensure they adopt the appropriate colour via `currentColor`, the parent sometimes needs to explicitly inherit the context's `color`
 
 ```css
 .gel-masthead a,
@@ -277,7 +277,7 @@ Where a user has not ascertained they can scroll the element to reveal more link
 
 How the component looks with a [Windows High Contrast Mode](https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode) theme active. 
 
-![The borders become white and the background color black]({{site.basedir}}static/images/hcm_masthead.png)
+![The borders become white and the background colour black]({{site.basedir}}static/images/hcm_masthead.png)
 
 Not shown in the image: supplementary outline styles for focus (since the `box-shadow` style is eliminated by Windows HCM):
 
