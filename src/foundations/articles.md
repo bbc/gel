@@ -83,9 +83,68 @@ The `<p>` tag is used as a generic block element, to ensure the byline is identi
 
 **TODO: Section on including quotes/segments in different languages (using fonts that support the necessary glyphs / accents; `lang` attribute; translation tools etc.)**
 
+## Lists
+
+Lists are helpful for highlighting salient points and itemizing related resources (see the next section, [**Links**](#links), for more). For assistive technology users to perceive the list, it must be marked up as such. 
+
+```html
+<ul>
+  <li>
+    <a href="/news/health-41129960">Public 'tricked' into buying unhealthy food</a>
+  </li>
+  <li>
+    <a href="/news/health-43112790">Third of adults 'underestimate calories'</a>
+  </li>
+  <li>
+    <a href="/news/health-39433143">Sugar targets set for cakes and chocolate</a>
+  </li>
+</ul>
+```
+
+Lists are identified by assistive technologies, and their items are enumerated. Many screen readers also provide shortcuts to traverse list items, such as [the <kbd>i</kbd> key in NVDA](https://webaim.org/resources/shortcuts/nvda).
+
+### Listicles
+
+Listicles[^8] are articles presented wholly or partly as lists. Articles on the BBC like [Fifa Women's World Cup: Five ways women's football beats men's](https://www.bbc.co.uk/news/uk-48742850) can be considered listicles, and should conform to a certain semantic and editorial structure:
+
+1. A title that indicates the number of items in the list. Examples: _"The 10 best..."_, _"6 ways to get better at..."_, _"5 chefs name their favourite..."_
+2. A short introduction
+3. An ordered list (`<ol>`) with numbered headings. In the [Five ways women's football beats men's](https://www.bbc.co.uk/news/uk-48742850) article, the first `<h2>` reads _"1. Value for money"_
+
+Each list item's enumerated heading should introduce the `<li>` for that item. The recommended code structure (elided):
+
+```html
+<h1>Fifa Women's World Cup: Five ways women's football beats men's</h1>
+<p>[Brief introduction here]</p>
+<ol>
+  <li>
+    <h2>1. Value for money</h2>
+    <!-- first point content -->
+  </li>
+  <li>
+    <h2>2. More goals</h2>
+    <!-- second point content -->
+  </li>
+  <li>
+    <h2>3. Women stick to the rules</h2>
+    <!-- third point content -->
+  </li>
+  <li>
+    <h2>4. Global competition</h2>
+    <!-- fourth point content -->
+  </li>
+  <li>
+    <h2>5. LGBT+ support</h2>
+    <!-- fifth point content -->
+  </li>
+</ol>
+```
+
+As in the [Five ways women's football beats men's](https://www.bbc.co.uk/news/uk-48742850) article, each list item may be accompanied by an illustration. See the [**Images**](#images) section for advice on alternative text.
+
 ## Links
 
-Links must be adequately, and inclusively, differentiated from surrounding text. As mandated by WCAG2.1 1.4.1 Use of color[^8], this means not differentiating links by color alone. Not all people can (accurately) perceive color differences, and not all devices and screens accurately convey color.
+Links must be adequately, and inclusively, differentiated from surrounding text. As mandated by **WCAG2.1 1.4.1 Use of color**[^9], this means not differentiating links by color alone. Not all people can (accurately) perceive color differences, and not all devices and screens accurately convey color.
 
 Lean on established convention by providing an underline, using either `text-decoration: underline` or a border.
 
@@ -151,7 +210,7 @@ If it is not practical to template structured data, you can instead include an a
 
 ### Publish date
 
-In the preceding code examples, we used a `<time>` element and structured data to provide a machine readable date. It's important this date is also _human_ readable, and placed near the beginning of the article — preferably shortly after the `<h1>` heading. Since screen reader users commonly navigate _by_ heading, any key information about the article placed _before_ its main/introductory heading is liable to be missed.
+In the preceding code examples, we used a `<time>` element and structured data to provide a machine readable date. It's important this date is also _human_ readable, and placed near the beginning of the article — preferably directly after the `<h1>` heading. Since screen reader users commonly navigate _by_ heading, any key information about the article placed _before_ its main/introductory heading is liable to be missed.
 
 <figure>
 
@@ -224,11 +283,31 @@ If a caption _is_ provided, divide the information between the alternative text 
 </figure>
 ```
 
-Note the `aria-describedy` attribute, pointing to the caption's `id` value. The `<figure>` should be identified by role, and its `<figcaption>` used to label it. However, this is not consistent or dependable across different screen reader software[^9]. Accordingly, `aria-describedy` (pointing to the `<figcaption>`'s id) is used to associate the caption with the image directly. In most screen readers, the ARIA description is read after the label, with a pause to separate each of these announcements.
+Note the `aria-describedy` attribute, pointing to the caption's `id` value. The `<figure>` should be identified by role, and its `<figcaption>` used to label it. However, this is not consistent or dependable across different screen reader software[^10]. Accordingly, `aria-describedy` (pointing to the `<figcaption>`'s id) is used to associate the caption with the image directly. In most screen readers, the ARIA description is read after the label, with a pause to separate each of these announcements.
+
+#### Image copyright
+
+You will be obliged to provide copyright for all applicable images. This should appear inside the caption, after any other caption content. To demarcate the main caption content from the copyright notice non-visually, insert a visually hidden `<span>` with the text _"Image copyright:"_. The `gel-sr` class is used to hide the _"Image copyright:"_ element visually but keep it in screen reader output:
+
+```html
+<figcaption>
+  Volunteer your expertise
+  <span class="gel-sr">Image copyright:</span>
+  <span class="gel-copyright">AFP/Getty Images</span>
+</figcaption>
+```
+
+## Video
+
+Frequently, the primary focus of an article will be a video. Interaction design provisions for videos are documented in [**Video controls**](../video-controls). Here is some high level advice for videos in articles:
+
+* Do not auto play videos. Leave the user to activate the video at their discretion (omit the `autoplay` attribute).
+* Provide closed captions where the video contains dialogue
+* Describe the content of the video in the article's body text, and provide a transcription of the dialogue
 
 ### Infographics
 
-Infographics can be an incisive and compelling way to communicate complex concepts otherwise stated in text[^10], but they need to be accessible too. Infographics need alternative text, and frequently benefit from a caption — as described in [**Infographics**](../infographics). 
+Infographics can be an incisive and compelling way to communicate complex concepts otherwise stated in text[^11], but they need to be accessible too. Infographics need alternative text, and frequently benefit from a caption — as described in [**Infographics**](../infographics). 
 
 Charts and graphs can be expressed as tabular data. As [**Infographics**](../infographics) contends, the (source) [**Data table**](../data-tables) should be provided alongside the visualisation, both providing an accessible interface for the full data set, and a means to explore that data set in a granular fashion. 
 
@@ -270,6 +349,7 @@ This topic does not yet have any related research available.
 [^5]: Understanding SC 2.4.3: Focus Order, <https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-order.html>
 [^6]: Organization of schemas — schema.org, <https://schema.org/docs/schemas.html>
 [^7]: The Aside element — MDN, <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside>
-[^8]: WCAG2.1 1.4.1 Use of color, <https://www.w3.org/TR/WCAG21/#use-of-color>
-[^9]: How do you figure? — Scott O'Hara, <https://www.scottohara.me/blog/2019/01/21/how-do-you-figure.html>
-[^10]: How to design infographics — BBC GEL, <https://www.bbc.co.uk/gel/guidelines/how-to-design-infographics>
+[^8]: Listicle — Wikipedia, <https://en.wikipedia.org/wiki/Listicle>
+[^9]: WCAG2.1 1.4.1 Use of color, <https://www.w3.org/TR/WCAG21/#use-of-color>
+[^10]: How do you figure? — Scott O'Hara, <https://www.scottohara.me/blog/2019/01/21/how-do-you-figure.html>
+[^11]: How to design infographics — BBC GEL, <https://www.bbc.co.uk/gel/guidelines/how-to-design-infographics>

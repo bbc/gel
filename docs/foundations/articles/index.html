@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/gel/static/images/favicon.ico" type="image/x-icon">
+
+    <title>GEL | Articles</title>
+
+    <script src="/gel/static/js/site.js"></script>
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link rel="stylesheet" type="text/css" href="/gel/static/css/gel.css">
+    <link rel="stylesheet" type="text/css" href="/gel/static/css/site.css">
+
+    <script type="text/javascript"> // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    <script type="text/javascript">
+        try {
+            (new FontFaceObserver('ReithSans', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-sans-loaded';
+            });
+            (new FontFaceObserver('ReithSerif', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-loaded';
+            });
+        } catch (e) {
+            console.log('Reith fonts did not load within 5 seconds.');
+        }
+    </script>
+
+    <script type="text/javascript">
+        // syntax highlight
+        hljs.initHighlightingOnLoad();
+    </script>
+
+    
+</head>
+
+<body class="geltags-body">
+    <p class="gel-sr gel-sr__focusable gel-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('gel-sr__focused')"
+            onblur="this.parentNode.classList.remove('gel-sr__focused')">Skip
+            to content</a>
+    </p>
+
+    <header>
+        <div class="geltags-header gs-u-clearfix">
+            <div class="gel-wrap">
+                <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24"
+                        viewBox="0 0 100 24">
+                        <title>BBC</title>
+                        <image xlink:href="/gel/static/images/bbc-blocks_grey.svg"
+                            src="/gel/static/images/bbc-blocks_grey.png" width="100%" height="100%"></image>
+                    </svg></a>
+            </div>
+        </div>
+        <div class="geltags-header__banner gs-u-clearfix">
+            <div class="gel-wrap">
+                <div class="gel-layout">
+                    <div class="gel-layout__item gel-2/5@l"
+                        style="text-align:left; padding-left:14px; margin-bottom:32px; margin-top: -10px;">
+                        <a href="/gel/" class="geltags-logo"><img src="/gel/static/images/bbc-gel-tags.png" style="max-width: 175px;"></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" tabindex="-1" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <!-- column placeholder-->
+            </div>
+
+            <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
+                <h1 class="geltags-header__title">Articles</h1>
+                <p class="geltags-header__summary gel-great-primer">A lot of BBC content is organized into articles. Structuring articles accessibly is a question of which elements and components to use where, when, in what number, and in which order.</p>
+            </div>
+
+            <div class="gel-layout__item gel-1/5@l">
+                <dl class="geltags-standout-box">
+                    
+                    <dt>Version:</dt>
+                    <dd>0.1.0</dd>
+                    
+                    <dt>Status:</dt>
+                    <dd>Draft</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900"
+                    style="padding-top:32px">
+                    <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
+                    <ol id="geltags-toc__links" class="geltags-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#semantic-structure">Semantic structure</a></li><li><a href="#headings">Headings</a></li><li><a href="#paragraph-content">Paragraph content</a></li><li><a href="#links">Links</a></li><li><a href="#structured-data">Structured data</a></li><li><a href="#typography">Typography</a></li><li><a href="#images">Images</a></li><li><a href="#interjections">Interjections</a></li><li><a href="#related-research">Related research</a></li></ol>
+                </nav>
+            </div>
+
+            <div class="geltags-sections geltags-body-copy gel-layout__item gel-3/5@l">
+                <h2 id="introduction">Introduction</h2>
+<p>The HTML5 specification proffered a number of <em>sectioning elements</em>, including the <code>&lt;article&gt;</code> element<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. Many adopted the element under a somewhat literal interpretation of its name, placing any and all prosaic and longform content inside <code>&lt;article&gt;</code>s.</p>
+<p>The <code>&lt;article&gt;</code> has a specific purpose: it <em>&quot;represents a complete, or self-contained, composition in a document, page, application, or site.&quot;</em> Accordingly, it is not necessary or appropriate to mark up <em>articles</em> as <code>&lt;article&gt;</code>s, unless they share a page with other articles or article extracts, or do not constitute the main content of the page.</p>
+<p>Conversely, a BBC article is the principle focus of the page found at its permalink<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> URL. How that content and functionality is composed is the subject of this guide.</p>
+<h2 id="semantic-structure">Semantic structure</h2>
+<p><em>&quot;The <code>&lt;main&gt;</code> element represents the main content section of the body of a document or application&quot;</em>.<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> Hence, <code>&lt;main&gt;</code> should contain the page's article content (no <code>&lt;article&gt;</code> markup necessary). The page is likely to include other content, such as <em>&quot;site navigation links, copyright information, ...and search forms&quot;</em>, but such content should exist <em>outside</em> <code>&lt;main&gt;</code> since it will be shared by multiple pages of the same conventional structure.</p>
+<figure>
+<p><img src="/gel/static/images/article_main.svg" alt="Standard page layout with the navigation at the top, main content in the middle, and footer at the bottom"></p>
+</figure>
+
+            <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-info-navigation-and-search">
+              <h4 id="aside-info-navigation-and-search" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Navigation and search</h4><div><p>The <a href="../masthead"><strong>Masthead</strong></a> and <a href="../site-menu"><strong>Site menu</strong></a> documents cover global and local navigation schema respectively. <a href="../search"><strong>Search</strong></a> covers both global and local search functionality.</p>
+</aside><p>The <code>&lt;main&gt;</code> element is accessible via screen reader keyboard shortcuts. For example, JAWS' <kbd>Q</kbd> key navigates the user to the <code>&lt;main&gt;</code> element from their current location anywhere in the page.</p>
+<p>As described in <a href="../../foundations/routing"><strong>Routing</strong></a>, keyboard users not operating screen readers do not have access to such shortcuts. To enable them to reach the <code>&lt;main&gt;</code> content from the top of the page, implement a bypass<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> in the form of a 'skip link'. Note the <code>href</code> and <code>id</code> match, as well as the <code>tabindex=&quot;-1&quot;</code> attribution. This forces browsers to move keyboard focus to <code>&lt;main&gt;</code> when the skip link is activated. The <code>-1</code> value means it is not erroneously included in sequential focus navigation, however<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#main"</span>&gt;</span>Skip to content<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- navigation/banner content here --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">main</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"main"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+</code></pre>
+<h2 id="headings">Headings</h2>
+<p>The principle, <code>&lt;h1&gt;</code>, heading for the article and page should be placed <em>inside</em> the <code>&lt;main&gt;</code> element and before any lower-level (sub)headings. It is advised that the <code>&lt;h1&gt;</code> is the first textual element inside <code>&lt;main&gt;</code>, but some content (such as a 'feature' or 'hero' image) is permissable before the <code>&lt;h1&gt;</code> in the source order.</p>
+<p>The <code>&lt;h1&gt;</code> text is the article title, and should be included with the site name in the page <code>&lt;title&gt;</code>:</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Royal wedding 2018: Bouquet laid on tomb of unknown warrior - BBC News<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+</code></pre>
+<p>As set out in <a href="../../foundations/headings"><strong>Headings</strong></a>, subsequent subheadings should be organized according to belonging: An <code>&lt;h2&gt;</code> represents a subheading belonging to the <code>&lt;h1&gt;</code> supersection; an <code>&lt;h3&gt;</code> represents a subheading inside an <code>&lt;h2&gt;</code> subsection.</p>
+<figure>
+<p><img src="/gel/static/images/article_nesting.svg" alt="Nested boxes. The outermost box is labelled h1 level. A box directly inside it is labelled h2 level, and a box inside an h2 level box is labelled h3 level"></p>
+</figure>
+<p>Headings are labels for sections of content, and heading tags should be used for no other purpose. A byline, for example, might take a heading-like larger/bolder text style. However, the name of the article's author does not name a subsection of the article. To 'pick out' the author name, use a <code>class</code> or a <code>&lt;strong&gt;</code> element.</p>
+<h3 id="bad-example-byline-as-heading">
+          <div class="circular circular__bad" aria-hidden="true">✕</div>
+         Bad example: byline as heading</h3>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Film Review: Toy Story 4<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Nicholas Barber<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+</code></pre>
+<h3 id="good-example-byline-in-strong-element">
+          <div class="circular circular__bad" aria-hidden="true">✕</div>
+         Good example: byline in strong element</h3>
+<p>The <code>&lt;p&gt;</code> tag is used as a generic block element, to ensure the byline is identified as a separate block, on a new line.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Film Review: Toy Story 4<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>By Nicholas Barber<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<p><strong>TODO: section on heading microcopy. Should probably refer back to <a href="../../foundations/headings/#wording">wording, in the headings document</a></strong></p>
+<h2 id="paragraph-content">Paragraph content</h2>
+<p><strong>TODO: Section on writing good paragraphs. Rhythm, simple language, etc.</strong></p>
+<h3 id="non-english-content">Non-english content</h3>
+<p><strong>TODO: Section on including quotes/segments in different languages (using fonts that support the necessary glyphs / accents; <code>lang</code> attribute; translation tools etc.)</strong></p>
+<h2 id="links">Links</h2>
+<p>Links must be adequately, and inclusively, differentiated from surrounding text. As mandated by WCAG2.1 1.4.1 Use of color<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>, this means not differentiating links by color alone. Not all people can (accurately) perceive color differences, and not all devices and screens accurately convey color.</p>
+<p>Lean on established convention by providing an underline, using either <code>text-decoration: underline</code> or a border.</p>
+<h3 id="bad-example-removing-text-decoration">
+          <div class="circular circular__bad" aria-hidden="true">✕</div>
+         Bad example: removing text decoration</h3>
+<pre class="hljs"><code><span class="hljs-selector-tag">p</span> <span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">text-decoration</span>: none;
+}
+</code></pre>
+<h3 id="good-examples-underlines-or-borders">
+          <div class="circular circular__bad" aria-hidden="true">✕</div>
+         Good examples: underlines or borders</h3>
+<pre class="hljs"><code><span class="hljs-selector-tag">p</span> <span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">text-decoration</span>: underline;
+}
+</code></pre>
+<pre class="hljs"><code><span class="hljs-selector-tag">p</span> <span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">text-decoration</span>: none;
+  <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">2px</span> solid;
+}
+</code></pre>
+<p>Consult <a href="../external-links"><strong>External links</strong></a> on how to indicate links that take users away from the current site. External links navigate the user to new and potentially unfamiliar user interfaces, and this can be particularly disorientating for blind users. Ensure all external links follow the <a href="../external-links"><strong>External links</strong></a> advice.</p>
+<h3 id="link-labels">Link labels</h3>
+<p><strong>TODO: section on good link text (i.e. descriptive; makes sense independent of context)</strong></p>
+<h3 id="promos">Promos</h3>
+<p><a href="../promos"><strong>Promos</strong></a> are illustrated links, presented as cards, and used to promote BBC content. They should be treated as <em>interjections</em>, and contained by labelled <code>&lt;aside&gt;</code> landmarks (as set out in the <a href="#interjections">interjections section</a>).</p>
+<h2 id="structured-data">Structured data</h2>
+<p>The inclusion of structured data<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup> can help to make search results for articles more visible and better structured. The <strong>Article</strong> or <strong>NewsArticle</strong> schemas are appropriate:</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">main</span> <span class="hljs-attr">itemscope</span> <span class="hljs-attr">itemtype</span>=<span class="hljs-string">"https://schema.org/NewsArticle"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"main"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">itemprop</span>=<span class="hljs-string">"headline"</span>&gt;</span>Royal wedding 2018: Bouquet laid on tomb of unknown warrior<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">time</span> <span class="hljs-attr">itemprop</span>=<span class="hljs-string">"datePublished"</span> <span class="hljs-attr">datetime</span>=<span class="hljs-string">"2019-04-05"</span>&gt;</span>5 April 2019<span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">itemprop</span>=<span class="hljs-string">"articleBody"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- the main text of the article --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+</code></pre>
+<p>If it is not practical to template structured data, you can instead include an auxiliary JSON-LD (JavaScript Object Notation for Linked Data) <code>&lt;script&gt;</code> in the head of the page:</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"application/ld+json"</span>&gt;</span><span class="actionscript">
+  {
+    <span class="hljs-string">"@context"</span>: <span class="hljs-string">"http://schema.org"</span>, 
+    <span class="hljs-string">"@type"</span>: <span class="hljs-string">"NewsArticle"</span>,
+    <span class="hljs-string">"headline"</span>: <span class="hljs-string">"Royal wedding 2018: Bouquet laid on tomb of unknown warrior"</span>,
+    <span class="hljs-string">"datePublished"</span>: <span class="hljs-string">"2019-04-05"</span>
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h3 id="publish-date">Publish date</h3>
+<p>In the preceding code examples, we used a <code>&lt;time&gt;</code> element and structured data to provide a machine readable date. It's important this date is also <em>human</em> readable, and placed near the beginning of the article — preferably shortly after the <code>&lt;h1&gt;</code> heading. Since screen reader users commonly navigate <em>by</em> heading, any key information about the article placed <em>before</em> its main/introductory heading is liable to be missed.</p>
+<figure>
+<p><img src="/gel/static/images/article_order.svg" alt="The left example shows the meta information above/before the main heading. The right example shows the main heading first and is labelled preferred."></p>
+</figure>
+<p>Sometimes the publish time should be accompanied by other meta information. This is covered by the <a href="../metadata-strips"><strong>Metadata strip</strong></a> component. In the following example, the time is human readable as <em>&quot;Five days ago&quot;</em>. It is accompanied, in a description list, by the location: <em>From: UK</em>. This is identified to structured data parsers using the <code>locationCreated</code> property.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">dl</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-metadata-strip"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr"</span>&gt;</span>Published:<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"path/to/gel-icons-all.svg#gel-icon-duration"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">time</span> <span class="hljs-attr">itemprop</span>=<span class="hljs-string">"datePublished"</span> <span class="hljs-attr">datetime</span>=<span class="hljs-string">"2019-04-05"</span>&gt;</span>Five days ago<span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr"</span>&gt;</span>From:<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">itemProp</span>=<span class="hljs-string">"locationCreated"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"link/to/category"</span>&gt;</span>UK<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dl</span>&gt;</span>
+</code></pre>
+<p>Note that the <code>&lt;dt&gt;</code> elements are visually hidden, but available to screen readers using the <code>gel-sr</code> class.</p>
+<h2 id="typography">Typography</h2>
+<p>The <a href="../../foundations/typography"><strong>Typography</strong></a> <strong>foundation</strong> document covers the pillars of legible type in detail:</p>
+<ol>
+<li><a href="../../foundations/typography#font-size">Font size</a></li>
+<li><a href="../../foundations/typography#alignment">Alignment</a></li>
+<li><a href="../../foundations/typography#measure">Measure</a></li>
+<li><a href="../../foundations/typography#leading-and-white-space">Leading</a></li>
+<li><a href="../../foundations/typography#contrast">Contrast</a></li>
+</ol>
+<p>Suffice it to say that paragraph text is the most abundant part of any article. The BBC typeface, <a href="https://www.bbc.co.uk/gel/articles/introducing-bbc-reith">Reith</a> has been designed with accessibility in mind, but the aforementioned legibility concerns need to be observed to do the typeface justice.</p>
+<h2 id="images">Images</h2>
+<p>All images used to illustrate articles must be accompanied by alternative text: a textual description of the information the image conveys, for blind and partially sighted users operating screen readers.</p>
+<p>Partially sighted users are able to see the image, albeit not clearly. Therefore it is important to include clarification on the <em>form</em> of the image as well as its meaning/intent. If no caption is provided, all of this information must be included in the alternative text.</p>
+<h3 id="bad-example-only-conveys-intent">
+          <div class="circular circular__bad" aria-hidden="true">✕</div>
+         Bad example: only conveys intent</h3>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path/to/image"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Two women sit in conversation."</span> /&gt;</span>
+</code></pre>
+<h3 id="good-example-conveys-intent-and-form">
+          <div class="circular circular__bad" aria-hidden="true">✕</div>
+         Good example: conveys intent and form</h3>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path/to/image"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Two women sit in conversation. The woman in the foreground, with her back to the camera, is raising her arm."</span> /&gt;</span>
+</code></pre>
+<h3 id="figures">Figures</h3>
+<p>If a caption <em>is</em> provided, divide the information between the alternative text (form) and caption (intent), inside <code>&lt;figure&gt;</code> element.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">figure</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path/to/image"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Two women sit across from one another at a desk. The woman in the foreground has her back to the camera and is raising her arm."</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"figure-1-caption"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"figure-1-caption"</span>&gt;</span>Volunteer your expertise<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span>
+</code></pre>
+<p>Note the <code>aria-describedy</code> attribute, pointing to the caption's <code>id</code> value. The <code>&lt;figure&gt;</code> should be identified by role, and its <code>&lt;figcaption&gt;</code> used to label it. However, this is not consistent or dependable across different screen reader software<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup>. Accordingly, <code>aria-describedy</code> (pointing to the <code>&lt;figcaption&gt;</code>'s id) is used to associate the caption with the image directly. In most screen readers, the ARIA description is read after the label, with a pause to separate each of these announcements.</p>
+<h3 id="infographics">Infographics</h3>
+<p>Infographics can be an incisive and compelling way to communicate complex concepts otherwise stated in text<sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup>, but they need to be accessible too. Infographics need alternative text, and frequently benefit from a caption — as described in <a href="../infographics"><strong>Infographics</strong></a>.</p>
+<p>Charts and graphs can be expressed as tabular data. As <a href="../infographics"><strong>Infographics</strong></a> contends, the (source) <a href="../data-tables"><strong>Data table</strong></a> should be provided alongside the visualisation, both providing an accessible interface for the full data set, and a means to explore that data set in a granular fashion.</p>
+<p>Screen readers provide shortcuts to navigate between and around data tables, with their column and row headers exposed as labels for the grid of cells / data points.</p>
+<h2 id="interjections">Interjections</h2>
+<p>The main <em>thrust</em> of an article is carried by its paragraph text, organized under subheadings where appropriate. However, it is permissible to include tangential information and supplementary functionality. These <em>interjections</em> must be clearly demarcated and accessibly marked up.</p>
+<p>Both the <a href="../breakout-boxes"><strong>Breakout box</strong></a> and <a href="../share-tools"><strong>Share tools</strong></a> components are encapsulated in <code>&lt;aside&gt;</code> elements<sup class="footnote-ref"><a href="#fn10" id="fnref10">[10]</a></sup>, representing complementary landmarks in assistive technologies. Each <code>&lt;aside&gt;</code> must have a unique label, since it will need identifying among similar landmarks in screen readers' aggregated landmark lists.</p>
+<p>The label is associated with the landmark using <code>aria-labelledby</code>. Although a heading element is used for presentational purposes, it is removed from screen reader output and navigation with <code>aria-hidden=&quot;true&quot;</code>. Only headings directly related to the article should form part of the article's outline.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"the-complementary-aria-role"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"the-complementary-aria-role"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>The complementary ARIA role<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>The complementary ARIA role (<span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>role="complementary"<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span>) maps to <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>&amp;lt;aside;&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span>. Since support for <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>&amp;lt;aside;&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span> is high, the ARIA role is redundant and not necessary.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
+</code></pre>
+<p>Some interjections may be considered obstructive. The <a href="../share-tools"><strong>Share tools</strong></a> incorporates its own skip link, enabling keyboard users to forego its functionality if desired.</p>
+<figure>
+<p><img src="/gel/static/images/article_skip.svg" alt="A set of social sharing tools are interjected in the flow of an article. An arrow indicates you can press 'skip sharing' to land on an element with the text 'end of sharing tools'"></p>
+</figure>
+<h2 id="related-research">Related research</h2>
+<p>This topic does not yet have any related research available.</p>
+<h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>The <code>&lt;article&gt;</code> element — W3C, <a href="https://www.w3.org/TR/html51/sections.html#the-article-element">https://www.w3.org/TR/html51/sections.html#the-article-element</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Permalink — Wikipedia, <a href="https://en.wikipedia.org/wiki/Permalink">https://en.wikipedia.org/wiki/Permalink</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>The <code>&lt;main&gt;</code> element — W3C, <a href="https://www.w3.org/TR/html-main-element/#the-main-element">https://www.w3.org/TR/html-main-element/#the-main-element</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>WCAG2.1 2.4.1 Bypass Blocks, <a href="https://www.w3.org/TR/WCAG21/#bypass-blocks">https://www.w3.org/TR/WCAG21/#bypass-blocks</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>Understanding SC 2.4.3: Focus Order, <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-order.html">https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-order.html</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>WCAG2.1 1.4.1 Use of color, <a href="https://www.w3.org/TR/WCAG21/#use-of-color">https://www.w3.org/TR/WCAG21/#use-of-color</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>Organization of schemas — <a href="http://schema.org">schema.org</a>, <a href="https://schema.org/docs/schemas.html">https://schema.org/docs/schemas.html</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p>How do you figure? — Scott O'Hara, <a href="https://www.scottohara.me/blog/2019/01/21/how-do-you-figure.html">https://www.scottohara.me/blog/2019/01/21/how-do-you-figure.html</a> <a href="#fnref8" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn9" class="footnote-item"><p>How to design infographics — BBC GEL, <a href="https://www.bbc.co.uk/gel/guidelines/how-to-design-infographics">https://www.bbc.co.uk/gel/guidelines/how-to-design-infographics</a> <a href="#fnref9" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn10" class="footnote-item"><p>The Aside element — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside</a> <a href="#fnref10" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+
+                <aside class="geltags-breakout-box geltags-breakout-box extra-padding"
+                    aria-labelledby="aside-info-Could-you-improve-this-documentation">
+                    <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
+                        <svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text">
+                            <use xlink:href="/gel-docs/static/images/gel-icons-core-set.svg#gel-icon-info"
+                                style="fill:#404040;"></use>
+                        </svg>Could you improve this documentation?
+                    </h4>
+                    <div>
+                        <p>
+                            If you think you could make anything you see here a bit better then become one of <a
+                                href="/gel/contributors/">our
+                                lovely contributors</a>!
+                        </p>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="geltags-feedback-banner">
+        <div class="gel-wrap">
+            <div class="gel-layout">
+                <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
+                    <h2 class="geltags-feedback-banner__title">Got a minute?</h2>
+                    <p>We'd love to know what you think of our website.</p>
+                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/"
+                        class="geltags-button geltags-button__link-button geltags-feedback-banner__cta geltags-button--primary">
+                        <span class="geltags-button__content">Go to survey</span>
+                        <span class="geltags-button__icon_wrapper">
+                            <svg class="geltags-button__icon geltags-icon geltags-icon--text">
+                                <use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                                    style="fill:undefined;"></use>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script nomodule defer type="text/javascript" src="/gel/static/js/external-svg-polyfill.js"></script>
+    <script type="text/javascript" src="/gel/static/js/gel.js"></script>
+
+    
+
+    <script type="text/javascript">
+        new Sticky('.sticky');
+    </script>
+</body>
+
+</html>
