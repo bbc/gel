@@ -336,6 +336,12 @@ Some interjections may be considered obstructive. The [**Share tools**](../share
 
 </figure>
 
+## Truncation
+
+Articles can become quite long. To make it easier for users to access supplementary content that might appear after the article body, sometimes the article is truncated (shortened) to just its introduction. A "show more" button enables the user to expand the full article should that be their wish.
+
+An accessible implementation of this truncation mechanism is outlined in [**Pockets**](../../components/pockets), based on the original GEL documentation[^12].
+
 ## Related research
 
 This topic does not yet have any related research available.
@@ -353,3 +359,4 @@ This topic does not yet have any related research available.
 [^9]: WCAG2.1 1.4.1 Use of color, <https://www.w3.org/TR/WCAG21/#use-of-color>
 [^10]: How do you figure? — Scott O'Hara, <https://www.scottohara.me/blog/2019/01/21/how-do-you-figure.html>
 [^11]: How to design infographics — BBC GEL, <https://www.bbc.co.uk/gel/guidelines/how-to-design-infographics>
+[^12]: Pocket — GEL, <https://www.bbc.co.uk/gel/guidelines/pocket>
