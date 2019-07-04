@@ -9,7 +9,7 @@ linkback: http://www.bbc.co.uk/gel
 
 ## What's here?
 
-We are working our way through a list based closely on what's already published in [the BBC GEL Guidelines](http://www.bbc.co.uk/gel/). You should generally start there when seeking to understand any documented pattern but at the point where you're wondering about which HTML tags and CSS layout techniques to use we're here for you!
+We are writing technical recommendations for developers who build the patterns in [the BBC GEL Guidelines](http://www.bbc.co.uk/gel/). Each of these technical guides detail the recommended HTML, JS and CSS to use in your front-end code. The examples in each guide are for reference only and are not intended to be used as a library.
 
 ### Foundations
 
@@ -46,6 +46,13 @@ We are working our way through a list based closely on what's already published 
 | [Tabs]({{site.basedir}}components/tabs/) | Draft|
 | [Video controls]({{site.basedir}}components/video-controls/) | Draft|
 
+## About this site
+
+The BBC Global Experience Language (GEL) Technical Guides are a series of framework-agnostic, code-centric recommendations and examples for building GEL design patterns in websites. They illustrate how to create websites that comply with all BBC guidelines and industry best practice, giving special emphasis to accessibility.
+
+Our guides are for BBC developers following the BBC GEL design patterns, including all BBC employees, contractors and suppliers, however they are publicly available for anyone who may be interested in how the BBC recommends building websites.
+
+You can use these guides under an Open Government Licence for Public Sector Information. Details can be found on [the National Archives website](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
 
 ## Coding conventions
 

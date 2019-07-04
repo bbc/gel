@@ -180,17 +180,17 @@
 }
 </code></pre>
 <p>Note that the <code>em</code> unit allows the icon to scale proportionate to the parent element's <code>font-size</code>. Using <code>rem</code> or <code>px</code> would break this relationship, and the text would scale without the icon.</p>
-<h3 id="color">Color</h3>
-<p>The usual WCAG rules<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> for color contrast apply to icons, although the impact of icons with inadequate contrast is likely to be less critical than text. As with text, the larger the icon the more minimal the impact of low contrast. There is no good reason, however, to consider low contrast combinations under any circumstances.</p>
+<h3 id="colour">Colour</h3>
+<p>The usual WCAG rules<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> for colour contrast apply to icons, although the impact of icons with inadequate contrast is likely to be less critical than text. As with text, the larger the icon the more minimal the impact of low contrast. There is no good reason, however, to consider low contrast combinations under any circumstances.</p>
 <h3 id="high-contrast-mode">High Contrast Mode</h3>
-<p>In Windows High Contrast Mode, the text color is augmented to become very dark or very light. In order for SVG to adopt the same high contrast color of the text, use <code>currentColor</code>. This is applied in the examples in this site using the <code>gel-icon</code> class.</p>
+<p>In Windows High Contrast Mode, the text colour is augmented to become very dark or very light. In order for SVG to adopt the same high contrast colour of the text, use <code>currentColor</code>. This is applied in the examples in this site using the <code>gel-icon</code> class.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gel-icon</span> {
   <span class="hljs-attribute">fill</span>: currentColor;
 }
 </code></pre>
 <p>Note that SVG uses <code>fill</code>, not <code>color</code> or <code>background-color</code>.</p>
-<h3 id="color-independence">Color independence</h3>
-<p>Controls often exist in changing states: active, disabled etc. It's important these states are not communicated in color alone, as outlined in <strong>WCAG2.1 1.4.1: Use of Color</strong><sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>. Otherwise they will not be perceivable to some color blind users, and others using non-color displays.</p>
+<h3 id="colour-independence">Colour independence</h3>
+<p>Controls often exist in changing states: active, disabled etc. It's important these states are not communicated in colour alone, as outlined in <strong>WCAG2.1 1.4.1: Use of Color</strong><sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>. Otherwise they will not be perceivable to some colour blind users, and others using non-colour displays.</p>
 <p>The movement icons get around this by using a diagonal line-through style for the &quot;off&quot; state (pictured).</p>
 <p><img src="./assets/movement.png" alt="Movement on and movement off icons, with a line through the off version from top right to bottom left">.</p>
 <h3 id="text-decoration">Text decoration</h3>

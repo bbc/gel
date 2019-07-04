@@ -150,7 +150,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<p>The logo is provided as an inline SVG. This is preferable to a background image, which will be eliminated by some high contrast modes<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> in some browsers. Its <code>fill</code> is set to <code>currentColor</code> so that it honors Windows High Contrast Mode text colors. The visually hidden <code>&lt;span&gt;</code> reads <em>&quot;BBC homepage&quot;</em> and becomes the parent link's accessible label. The local home page link of the banner (see below) should be differentiated by mentioning the local site's name, for example <em>&quot;BBC Gel homepage&quot;</em>.</p>
+<p>The logo is provided as an inline SVG. This is preferable to a background image, which will be eliminated by some high contrast modes<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> in some browsers. Its <code>fill</code> is set to <code>currentColor</code> so that it honors Windows High Contrast Mode text colours. The visually hidden <code>&lt;span&gt;</code> reads <em>&quot;BBC homepage&quot;</em> and becomes the parent link's accessible label. The local home page link of the banner (see below) should be differentiated by mentioning the local site's name, for example <em>&quot;BBC Gel homepage&quot;</em>.</p>
 <h4 id="the-account-link">The account link</h4>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-masthead__account-option"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://account.bbc.com/account"</span>&gt;</span>
@@ -276,7 +276,7 @@
 <li>Where there's no JavaScript, the More menu (containing the priority links and more) is revealed by default and the priority links become hidden. Links within the More menu wrap automatically.</li>
 </ol>
 <h3 id="icons">Icons</h3>
-<p>The icons are taken from the standard <a href="http://bbc.github.io/gel-iconography/">GEL Iconography library</a>. To ensure they adopt the appropriate color via <code>currentColor</code>, the parent sometimes needs to explicitly inherit the context's <code>color</code></p>
+<p>The icons are taken from the standard <a href="http://bbc.github.io/gel-iconography/">GEL Iconography library</a>. To ensure they adopt the appropriate colour via <code>currentColor</code>, the parent sometimes needs to explicitly inherit the context's <code>color</code></p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gel-masthead</span> <span class="hljs-selector-tag">a</span>,
 <span class="hljs-selector-class">.gel-masthead</span> <span class="hljs-selector-tag">button</span> {
   <span class="hljs-attribute">font-size</span>: inherit;
@@ -312,7 +312,7 @@
 <p>Where a user has not ascertained they can scroll the element to reveal more links, the more menu remains available and should contain all of the same options and more.</p>
 <h3 id="high-contrast">High contrast</h3>
 <p>How the component looks with a <a href="https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode">Windows High Contrast Mode</a> theme active.</p>
-<p><img src="/gel/static/images/hcm_masthead.png" alt="The borders become white and the background color black"></p>
+<p><img src="/gel/static/images/hcm_masthead.png" alt="The borders become white and the background colour black"></p>
 <p>Not shown in the image: supplementary outline styles for focus (since the <code>box-shadow</code> style is eliminated by Windows HCM):</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gel-masthead__bar</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span>,
 <span class="hljs-selector-class">.gel-masthead__bar</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span> {
