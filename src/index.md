@@ -94,7 +94,7 @@ In CSS, a basic layout is put in place then enhanced with modern layout modules 
 }
 ```
 
-### Name spacing
+### Namespacing
 
 Components are identified in their markup using classes and the `gel-component` structure. For example, the **Site menu** pattern uses `class="gel-sitemenu"` on the parent element, and `gel-sitemenu-more` to identify each (hidden by default) submenu.
 
