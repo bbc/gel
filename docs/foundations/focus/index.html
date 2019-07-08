@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/gel/static/images/favicon.ico" type="image/x-icon">
+
+    <title>GEL | Focus</title>
+
+    <script src="/gel/static/js/site.js"></script>
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <link rel="stylesheet" type="text/css" href="/gel/static/css/gel.css">
+    <link rel="stylesheet" type="text/css" href="/gel/static/css/site.css">
+
+    <script type="text/javascript"> // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    <script type="text/javascript">
+        try {
+            (new FontFaceObserver('ReithSans', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-sans-loaded';
+            });
+            (new FontFaceObserver('ReithSerif', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-loaded';
+            });
+        } catch (e) {
+            console.log('Reith fonts did not load within 5 seconds.');
+        }
+    </script>
+
+    <script type="text/javascript">
+        // syntax highlight
+        hljs.initHighlightingOnLoad();
+    </script>
+
+    
+</head>
+
+<body class="geltags-body">
+    <p class="gel-sr gel-sr__focusable gel-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('gel-sr__focused')"
+            onblur="this.parentNode.classList.remove('gel-sr__focused')">Skip
+            to content</a>
+    </p>
+
+    <header>
+        <div class="geltags-header gs-u-clearfix">
+            <div class="gel-wrap">
+                <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24"
+                        viewBox="0 0 100 24">
+                        <title>BBC</title>
+                        <image xlink:href="/gel/static/images/bbc-blocks_grey.svg"
+                            src="/gel/static/images/bbc-blocks_grey.png" width="100%" height="100%"></image>
+                    </svg></a>
+            </div>
+        </div>
+        <div class="geltags-header__banner gs-u-clearfix">
+            <div class="gel-wrap">
+                <div class="gel-layout">
+                    <div class="gel-layout__item gel-2/5@l"
+                        style="text-align:left; padding-left:13px; margin-bottom:32px; margin-top: -12px;">
+                        <a href="/gel/" class="geltags-logo"><img src="/gel/static/images/bbc-gel-logo.png" alt="BBC GEL, global experience language" style="max-width:169px;"></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" tabindex="-1" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <!-- column placeholder-->
+            </div>
+
+            <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
+                <h1 class="geltags-header__title">Focus</h1>
+                <p class="geltags-header__summary gel-great-primer">Indicating and managing focus is integral to keyboard accessibility</p>
+            </div>
+
+            <div class="gel-layout__item gel-1/5@l">
+                <dl class="geltags-standout-box">
+                    
+                    <dt>Version:</dt>
+                    <dd>0.1.0</dd>
+                    
+                    <dt>Status:</dt>
+                    <dd>Draft</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900"
+                    style="padding-top:32px">
+                    <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
+                    <ol id="geltags-toc__links" class="geltags-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#related-research">Related research</a></li></ol>
+                </nav>
+            </div>
+
+            <div class="geltags-sections geltags-body-copy gel-layout__item gel-3/5@l">
+                <h2 id="introduction">Introduction</h2>
+<p>When discussing access to web content, we often use the term assistive technologies<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>: software and devices to help those with disabilities. However, assistive technologies, unlike <em>adaptive technologies</em>, do not necessarily address disability. A screen reader is not just for blind and vision-impaired users; it can be called upon to address educational and productivity requirements as well.</p>
+<p>The keyboard, whether mechanical or virtual, is used by most anyone at some point during interaction. The term <em>&quot;keyboard users&quot;</em>, used to demarcate a disability demographic, is therefore misleading. All people use keyboards; some depend on them more than others.</p>
+<p>For many, including those with temporary injuries and long term ailments, operating a mouse (or 'pointer') is not easy. The keyboard is <em>assistive</em> in that it provides an alternative means of selecting and activating interactive content — one that does not require fine motor control.</p>
+<p>Accordingly, WCAG2.1 has a number of success criteria that cover keyboard navigation access. <strong>Keyboard Accessible</strong><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> is its own section, and is complemented by the <strong>Focus Order</strong> and <strong>Focus visible</strong> rules under <strong>Navigation</strong><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
+<p>The purpose of this guide is to collate the various keyboard accessibility considerations for BBC content.</p>
+<h2 id="recommended-markup">Recommended markup</h2>
+<p>Only interactive elements should be focusable by keyboard. If an element does not do anything when pressed, clicked, or tapped, it should not appear in <em>focus order</em>: the succession of elements focusable by using the <kbd>Tab</kbd> key.</p>
+<p>The HTML standard offers a handful of elements for interactive purposes, including links (<code>&lt;a&gt;</code>), buttons (<code>&lt;button&gt;</code>), and form controls. These are not only focusable by default, but each provide an implicit <em>role</em>. The role identifies the class of element non-visually. For example, a link is identified as <em>&quot;link&quot;</em> and a button as <em>&quot;button&quot;</em> in screen reader output upon focusing the element. Blind and vision impaired screen reader users are typically keyboard users, since they cannot (easily) perceive the interface's topology in order to guide a mouse/pointer.</p>
+<p>It is possible, but not recommended, to create interactive elements from non-semantic HTML.</p>
+<h3 id="javascript-dependency">
+          <div class="circular circular__bad" aria-hidden="true">✕</div>
+         JavaScript dependency</h3>
+<p>The following will be identified as a button, and focusable by the application of a <code>tabindex</code> value of <code>0</code><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. However, it cannot be activated like a <code>&lt;button&gt;</code> by keyboard unless a keyboard event listener (for <kbd>Enter</kbd> and/or <kbd>Space</kbd> key presses) is supplied by JavaScript.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>Press me<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h3 id="built-in-behaviour">
+          <div class="circular circular__good" aria-hidden="true">✓</div>
+         Built in behaviour</h3>
+<p>The <code>&lt;button&gt;</code> element does not require an explicit ARIA role, and it is focusable by default. Click events are triggered by <kbd>Enter</kbd> and/or <kbd>Space</kbd> automatically.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button"</span>&gt;</span>Press me<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<h3 id="focus-order">Focus order</h3>
+<p>Focus order is the order in which interactive elements receive focus. Interfaces become confusing for sighted keyboard users when the focus order is at odds with the visual layout. This is exacerbated by magnification: when a user is zoomed in and navigating by focus, the interface may take them in unexpected directions and to unexpected locations.</p>
+<p>There are two main things that are likely to disrupt focus order:</p>
+<h4 id="positive-tabindex-values">Positive <code>tabindex</code> values</h4>
+<p>By default, focus order follows source order. But numbered <code>tabindex</code> values override this. That is: an element with <code>tabindex=&quot;1&quot;</code> will be the first focusable element on the page regardless of the source order. Navigation by keyboard would likely mean passing over interactive content — content that would become focusable <em>after</em> the <code>tabindex=&quot;1&quot;</code> element has been unfocused. This is unlikely to be desirable.</p>
+<p>Avoid positive <code>tabindex</code> values.</p>
+<h4 id="layout-augmentation">Layout augmentation</h4>
+<p>On English language websites, flow content is laid out from top to bottom (the <em>block flow direction</em>) and inline content from left to right (the <em>writing direction</em>)<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>. However, this can be disrupted by an improper use of some CSS layout techniques.</p>
+<p>For example, the first (in source order) of two flow elements could be floated right, and the second floated left. This effectively <em>reverses</em> their visual order. If either element is focusable, or contains focusable content, the focus order will contradict the reading order.</p>
+<pre class="hljs"><code><span class="hljs-selector-pseudo">:first-child</span> {
+  <span class="hljs-attribute">float</span>: right;
+}
+
+<span class="hljs-selector-pseudo">:last-child</span> {
+  <span class="hljs-attribute">float</span>: left;
+}
+</code></pre>
+<p>The <code>order</code> property, available in Flexbox and Grid contexts can reorder elements along either the horizontal or vertical axes.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.flex</span> {
+  <span class="hljs-attribute">display</span>: flex;
+}
+
+<span class="hljs-selector-class">.flex</span> &gt; <span class="hljs-selector-pseudo">:first-child</span> {
+  <span class="hljs-attribute">order</span>: <span class="hljs-number">2</span>;
+}
+</code></pre>
+<p>As detailed in <a href="../grids#order"><strong>Grids</strong></a>, <code>order</code> should be avoided, especially where interactive content is involved.</p>
+<h2 id="recommended-layout">Recommended layout</h2>
+<p>As the <strong>WCAG2.1 2.4.7 Focus Visible</strong> mandates: <em>&quot;any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible&quot;</em>. Without visible indication, it's not easy to tell which element currently has focus, if any.</p>
+<p>User agents provide focus styles by default, but these diverge considerably, and are not sufficient under many circumstances<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>.</p>
+<p>To normalize browser behaviour, and make focus styles more apparent, remove the default style and provide your own. Any CSS declaration can be applied to the <code>:focus</code> state, but be mindful that focus styles are <em>functional</em> styles, and must be visible under all circumstances.</p>
+<p>In some browsers, background images are eliminated when Windows High Contrast Mode is active. Changes to colour alone would also fail <strong>WCAG2.1 1.4.1 Use of Color</strong><sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>. Instead, provide a reasonably thick <code>outline</code>. In most circumstances, this should share the text's <code>color</code> (since the contrast for <code>color</code> should already differentiate it from the local background). Just omit a color value:</p>
+<pre class="hljs"><code><span class="hljs-selector-pseudo">:focus</span> {
+  <span class="hljs-attribute">outline</span>: <span class="hljs-number">2px</span> solid;
+}
+</code></pre>
+<p>You may find your mouse users are confused or distracted by the focus style appearing when the element is clicked (activation and focus happen simultaneously). With progressive enhancement, you can suppress focus styles for mouse users in browsers that support <code>:focus-visible</code>.</p>
+<pre class="hljs"><code><span class="hljs-selector-pseudo">:focus</span> {
+  <span class="hljs-attribute">outline</span>: <span class="hljs-number">2px</span> solid;
+}
+
+<span class="hljs-selector-pseudo">:focus</span><span class="hljs-selector-pseudo">:not(</span><span class="hljs-selector-pseudo">:focus-visible)</span> {
+  <span class="hljs-attribute">outline</span>: none;
+}
+</code></pre>
+<p>The second declaration block is dropped in browsers not supporting <code>:focus-visible</code>, meaning the first declaration remains intact and all keyboard users are provided focus styles.</p>
+<h2 id="related-research">Related research</h2>
+<p>This topic does not yet have any related research available.</p>
+<h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Assistive technology — Wikipedia, <a href="https://en.wikipedia.org/wiki/Assistive_technology">https://en.wikipedia.org/wiki/Assistive_technology</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>WCAG2.1 2.1 KeyboardAccessible, <a href="https://www.w3.org/TR/WCAG21/#keyboard-accessible">https://www.w3.org/TR/WCAG21/#keyboard-accessible</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>WCAG2.1 2.4 Navigable, <a href="https://www.w3.org/TR/WCAG21/#navigable">https://www.w3.org/TR/WCAG21/#navigable</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>Using the <code>tabindex</code> attribute — The Paciello Group, <a href="https://developer.paciellogroup.com/blog/2014/08/using-the-tabindex-attribute/">https://developer.paciellogroup.com/blog/2014/08/using-the-tabindex-attribute/</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><code>writing-mode</code> — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode">https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>Avoid default browser focus styles — Adrian Roselli, <a href="http://adrianroselli.com/2017/02/avoid-default-browser-focus-styles.html">http://adrianroselli.com/2017/02/avoid-default-browser-focus-styles.html</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>WCAG2.1 1.4.1 Use of Color, <a href="https://www.w3.org/TR/WCAG21/#use-of-color">https://www.w3.org/TR/WCAG21/#use-of-color</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+
+                <aside class="geltags-breakout-box geltags-breakout-box extra-padding"
+                    aria-labelledby="aside-info-Could-you-improve-this-documentation">
+                    <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
+                        <svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text">
+                            <use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-info"
+                                style="fill:#404040;"></use>
+                        </svg>Could you improve this documentation?
+                    </h4>
+                    <div>
+                        <p>
+                            If you think you could make anything you see here a bit better then become one of <a
+                                href="/gel/contributors/">our
+                                lovely contributors</a>!
+                        </p>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="geltags-feedback-banner">
+        <div class="gel-wrap">
+            <div class="gel-layout">
+                <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
+                    <h2 class="geltags-feedback-banner__title">Got a minute?</h2>
+                    <p>We'd love to know what you think of our website.</p>
+                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/"
+                        class="geltags-button geltags-button__link-button geltags-feedback-banner__cta geltags-button--primary">
+                        <span class="geltags-button__content">Go to survey</span>
+                        <span class="geltags-button__icon_wrapper">
+                            <svg class="geltags-button__icon geltags-icon geltags-icon--text">
+                                <use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"
+                                    style="fill:undefined;"></use>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script nomodule defer type="text/javascript" src="/gel/static/js/external-svg-polyfill.js"></script>
+    <script type="text/javascript" src="/gel/static/js/gel.js"></script>
+
+    
+
+    <script type="text/javascript">
+        new Sticky('.sticky');
+    </script>
+</body>
+
+</html>
