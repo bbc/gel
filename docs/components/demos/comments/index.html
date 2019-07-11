@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/gel/static/images/favicon.ico" type="image/x-icon">
+
+    <title>GEL | Comments Demo</title>
+
+    <link rel="stylesheet" type="text/css" href="/gel/static/css/gel.css">
+
+    <script type="text/javascript"> // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    
+</head>
+
+<body class="gel-guideline-body">
+    <main id="main" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-5/5@l" style="padding-right: 12px;">
+                <h1 class="gel-guideline-header__title">Comments</h1>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-5/5@l">
+                <h2>Reference implementation</h2>
+
+                
+<form id="comment-form">
+  <div class="gel-form__divider">
+    <label for="comment">Add your comment:</label>
+    <input type="text" id="comment" name="comment" />
+    <div class="gel-form__field-error" id="comment-error"></div>
+  </div>
+  <div class="gel-form__divider">
+    <button class="gel-button" type="submit" aria-describedby="disclaimer">Submit</button>
+  </div>
+  <p id="disclaimer">All comments are <a
+      href="https://www.bbc.co.uk/social/moderation/house-rules">reactively-moderated</a> and must follow <a
+      href="https://www.bbc.co.uk/social/moderation/house-rules">the rules</a>.</p>
+</form>
+<fieldset id="sortControls">
+  <legend>Sort by:</legend>
+  <label>
+    Latest
+    <input type="radio" id="time" value="time" name="sorting" checked>
+  </label>
+  <label>
+    Points
+    <input type="radio" id="points" value="points" name="sorting">
+  </label>
+</fieldset>
+<div id="comments">
+</div>
+
+<script>
+  var testData = [
+    {
+      id: 'z50fsmh2h',
+      time: 1562746598697,
+      name: 'Clive Warren',
+      comment: 'I like this very much.',
+      points: 4
+    },
+    {
+      id: '4wi00jios',
+      time: 1562746727083,
+      name: 'Clive Smythe',
+      comment: 'I do not understand this at all.',
+      points: 8
+    },
+    {
+      id: 'm1tx9pbj2',
+      time: 1562747117059,
+      name: 'Clive Henderson',
+      comment: 'I don\'t like this at all and think it\'s bad.',
+      points: 32
+    },
+    {
+      id: 'lmu4jrrnt',
+      time: 1562762936794,
+      name: 'The Clive Archive',
+      comment: 'I\'m <span>indifferent</span>, to be perfectly honest.',
+      points: 17
+    }
+  ];
+
+  function sanitize(str) {
+    var temp = document.createElement('div');
+    temp.textContent = str;
+    return temp.innerHTML;
+  }
+
+  function Comments(selector, options) {
+    this.node = document.querySelector(selector);
+    this.data = options.data;
+    this.template = options.template;
+  }
+
+  Comments.prototype.render = function () {
+    if (!this.node) return;
+    var data = this.data;
+    var prop = this.sortProp;
+    if (prop) {
+      data.sort(function (a, b) {
+        return b[prop] - a[prop];
+      });
+    }
+    this.node.innerHTML = this.template(data);
+  }
+
+  Comments.prototype.addComment = function (comment) {
+    this.data.push(comment);
+    this.render();
+  }
+
+  Comments.prototype.sortBy = function (prop) {
+    this.sortProp = prop;
+    this.render();
+  }
+
+  Comments.addPoint = function (id) {
+    var target = null;
+    this.data.forEach(function (c, i) {
+      if (c.id === id) {
+        target = this.data[i];
+      }
+    }.bind(this));
+  }
+
+  var comments = new Comments('#comments', {
+    data: testData,
+    template: function (props) {
+      if (props.length < 1) {
+        return '<p><strong>There are no comments so far.</strong></p>';
+      }
+      return '<ul class="gel-comments">' + props.map(function (item) {
+        var timeParsed = new Date(item.time);
+        var date = timeParsed.toString().substring(0, 15);
+        var time = timeParsed.getHours() + ':' + timeParsed.getMinutes();
+        return '<li class="gel-comments__comment" id="' + item.id + '" tabindex="-1"><h3>' + item.name + ' <time datetime=""><a href="#' + item.id + '">on ' + date + ' at ' + time + '</a></time>:</h3> <div>' + item.comment + '</div><div class="gel-comment__options"><a href="https://www.bbc.co.uk/moderation/complaints/comments/' + this.id + '">Report</a></div></li>';
+      }).join('') + '</ul>';
+    }
+  });
+
+  comments.sortBy('time');
+
+  var sortControls = document.getElementById('sortControls');
+  sortControls.addEventListener('change', function (e) {
+    comments.sortBy(e.target.value);
+  });
+
+  var rules = [
+    {
+      name: 'comment',
+      required: true,
+    }
+  ];
+
+  document.addEventListener('DOMContentLoaded', function () {
+    window.gel && gel.Validation.init();
+    var form = document.getElementById('comment-form');
+    var formValidation = new gel.Validation.constructor(form, rules);
+
+    form.addEventListener('submit', function () {
+      comments.addComment({
+        id: Math.random().toString(36).substr(2, 9),
+        time: Date.now(),
+        name: 'Your Name',
+        comment: sanitize(form.comment.value),
+        points: 0
+      });
+
+      form.comment.value = '';
+    });
+  });
+</script>
+            </div>
+        </div>
+    </main>
+
+    <script nomodule defer type="text/javascript" src="/gel/static/js/external-svg-polyfill.js"></script>
+    <script type="text/javascript" src="/gel/static/js/gel.js"></script>
+
+    
+</body>
+
+</html>

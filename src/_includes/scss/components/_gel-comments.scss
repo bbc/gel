@@ -1,0 +1,51 @@
+.gel-comments__stream {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gel-comment + .gel-comment {
+  border-top: 2px solid;
+}
+
+.gel-comment {
+  padding: 1rem 0;
+}
+
+.gel-comment > * {
+  margin: 0;
+}
+
+.gel-comment > * + * {
+  margin-top: 1rem;
+}
+
+.gel-comment time {
+  display: block;
+  font-size: 1rem;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.gel-comment__options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gel-comments__form {
+  background-color: $gel-color--alto;
+  padding: 1rem;
+}
+
+.gel-comments__form textarea {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.gel-comments__form textarea:focus {
+  outline: 2px solid;
+}
+
+.gel-comments__add-link {
+  text-align: center;
+}
