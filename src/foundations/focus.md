@@ -9,7 +9,7 @@ published: false
 
 When discussing access to web content, we often use the term assistive technologies[^1]: software and devices to help those with disabilities. However, assistive technologies, unlike _adaptive technologies_ (such as hearing aids), do not just address disability. A screen reader is not just for blind and vision-impaired users; it can be called upon to address educational and productivity requirements as well.
 
-The keyboard, whether mechanical or virtual, is used by most anyone at some point during interaction. The term _"keyboard users"_, used to demarcate a disability demographic, is therefore misleading. All people use keyboards; some depend on them more than others. 
+It’s misleading to think that the term "keyboard users" only applies to disabled people. The keyboard, whether mechanical or virtual, is used by most anyone at some point during interaction. All people use keyboards; some depend on them more than others.
 
 For many, including those with temporary injuries and long term ailments, operating a mouse (or 'pointer') is not easy. The keyboard is _assistive_ in that it provides an alternative means of selecting and activating interactive content — one that does not require fine motor control.
 
@@ -21,9 +21,9 @@ The purpose of this guide is to collate the various keyboard accessibility consi
 
 Only interactive elements should be focusable by keyboard. If an element does not do anything when pressed, clicked, or tapped, it should not appear in _focus order_: the succession of elements focusable by using the <kbd>Tab</kbd> key.
 
-The HTML standard offers a handful of elements for interactive purposes, including links (`<a>`), buttons (`<button>`), and form controls. These are not only focusable by default, but each provide an implicit _role_. The role identifies the class of element non-visually. For example, a link is identified as _"link"_ and a button as _"button"_ in screen reader output upon focusing the element. Blind and vision impaired screen reader users are typically keyboard users, since they cannot (easily) perceive the interface's topology in order to guide a mouse/pointer.
+The HTML standard offers a handful of elements for interactive purposes, including links (`<a>`), buttons (`<button>`), and form controls. These are not only focusable by default, but each provide an implicit _role_. The role identifies the class of element non-visually. For example, a link is identified as _"link"_ and a button as _"button"_ in screen reader output upon focusing the element. Blind and vision-impaired screen reader users are typically keyboard users, since they cannot (easily) perceive the interface's topology in order to guide a mouse/pointer.
 
-It is possible, but not recommended, to create interactive elements from non-semantic HTML. 
+We recommend that only semantic HTML be used for interactive elements. Creating accessible interactive elements for non-semantic markup is verbose and less robust.
 
 ### <mark is="bad"> JavaScript dependency
 
@@ -49,7 +49,7 @@ There are two main things that are likely to disrupt focus order:
 
 #### Positive `tabindex` values
 
-By default, focus order follows source order. But numbered `tabindex` values override this. That is: an element with `tabindex="1"` will be the first focusable element on the page regardless of the source order. Navigation by keyboard would likely mean passing over interactive content — content that would become focusable _after_ the `tabindex="1"` element has been unfocused. This is unlikely to be desirable. 
+By default, focus order follows source order: the order that the elements appear in the markup. But numbered `tabindex` values override this. That is: an element with `tabindex="1"` will be the first focusable element on the page regardless of the source order. Navigation by keyboard would likely mean passing over interactive content — content that would become focusable _after_ the `tabindex="1"` element has been unfocused. This is unlikely to be desirable. 
 
 Avoid positive `tabindex` values.
 
