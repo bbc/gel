@@ -1,7 +1,7 @@
 /**
  * Data table
  * @namespace gel
- * @method gel.DataTable.init 
+ * @method gel.DataTable.init
  */
 
 (function () {
