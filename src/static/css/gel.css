@@ -1855,5 +1855,23 @@ of 'open all' and 'close all' tools
 .gel-comments__form textarea:focus {
   outline: 2px solid; }
 
+.gel-comments__form [type="submit"]:disabled {
+  opacity: 0.5; }
+
 .gel-comments__add-link {
-  text-align: center; }
+  text-align: center;
+  margin-top: 1rem; }
+
+.gel-comments__success {
+  background-color: #0b8a0b;
+  padding: 0.25rem;
+  border: 1px solid transparent;
+  /* for high contrast mode */
+  color: #fff;
+  max-width: 60ch; }
+
+.gel-comments__success:empty {
+  display: none; }
+
+.gel-comments__sort-controls {
+  margin: 0.5rem 0; }

@@ -46,6 +46,27 @@
   outline: 2px solid;
 }
 
+.gel-comments__form [type="submit"]:disabled {
+  opacity: 0.5;
+}
+
 .gel-comments__add-link {
   text-align: center;
+  margin-top: 1rem;
+}
+
+.gel-comments__success {
+  background-color: $gel-color--green;
+  padding: 0.25rem;
+  border: 1px solid transparent; /* for high contrast mode */
+  color: $gel-color--white;
+  max-width: 60ch;
+}
+
+.gel-comments__success:empty {
+  display: none;
+}
+
+.gel-comments__sort-controls {
+  margin: 0.5rem 0;
 }

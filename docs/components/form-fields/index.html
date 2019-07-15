@@ -280,7 +280,7 @@ to break because they depend on JavaScript in order to function.</p>
 <li>Individual field validation</li>
 <li>Form submission and validation</li>
 </ol>
-<p>The following describes the validation journey, as exemplified by the <a href="#reference-implementation">Reference implementation</a>.</p>
+<p>The following describes the validation journey, as exemplified by the <a href="#reference-implementation"><strong>Reference implementation</strong></a>.</p>
 <h3 id="1-initial-state">1. Initial state</h3>
 <ul>
 <li>No fields have the <code>aria-required</code> or <code>aria-invalid</code> attribution</li>
@@ -290,7 +290,7 @@ to break because they depend on JavaScript in order to function.</p>
 <ul>
 <li>Fields are validated as the user types subject to a debouncing function, giving the user a chance to type a full valid entry before an error message is displayed.</li>
 <li><code>aria-invalid</code> is toggled between <code>true</code> and <code>false</code> as the field becomes valid or invalid.</li>
-<li>The error element is populated with a priority error message when the field is in an invalid state (priority depends on the order the <code>tests</code> array is populated in the <code>rules</code> object; see the <a href="#reference-implementation">Reference implementation</a>).</li>
+<li>The error element is populated with a priority error message when the field is in an invalid state (priority depends on the order the <code>tests</code> array is populated in the <code>rules</code> object; see the <a href="#reference-implementation"><strong>Reference implementation</strong></a>).</li>
 <li>Fields are <em>not</em> tested as required; only specific formatting errors are addressed.</li>
 </ul>
 <h3 id="3-failed-submission">3. Failed submission</h3>
@@ -303,6 +303,10 @@ to break because they depend on JavaScript in order to function.</p>
 <ul>
 <li>Both formatting errors and the required mandate (if present) are now tested against.</li>
 <li>Upon all individual errors being corrected, the general error message is removed.</li>
+</ul>
+<h3 id="5-successful-submission">5. Successful submission</h3>
+<ul>
+<li>The custom <code>gel-submitted</code> event is fired on the form. In the <a href="#reference-implementation"><strong>Reference implementation</strong></a> this is just used to fire an <code>alert</code>.</li>
 </ul>
 <h3 id="variants-and-caveats">Variants and caveats</h3>
 <ul>
@@ -366,7 +370,12 @@ title: Form fields and validation
     ];
 
     var form = document.getElementById('myform-demo');
-    var formValidation = new gel.Validation.constructor(form, rules);
+    var formValidation = new gel.Validation.constructor(form, rules, function () {
+      console.log('form valid!');
+    });
+    form.addEventListener('gel-submitted', function () {
+      alert('Form successfully submitted!');
+    });
   });
 </script></div>
         <p><a class="gel-cta gel-long-primer-bold" href="../demos/form-fields/" target="_new"><span class="gel-button__label">Open in new window</span><svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>

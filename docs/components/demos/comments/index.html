@@ -33,31 +33,45 @@
                 <h2>Reference implementation</h2>
 
                 
-<form id="comment-form">
-  <div class="gel-form__divider">
-    <label for="comment">Add your comment:</label>
-    <input type="text" id="comment" name="comment" />
-    <div class="gel-form__field-error" id="comment-error"></div>
+<div class="gel-comments">
+  <form class="gel-comments__form" id="comment-form">
+    <p>
+      You're signed in as <strong>Your Name</strong>.
+      <a href="https://account.bbc.com/signout">Sign out</a>
+    </p>
+    <div class="gel-form__divider">
+      <label for="comment">Add your comment:</label>
+      <textarea id="comment" name="comment" rows="5"></textarea>
+      <div class="gel-form__field-error" id="comment-error"></div>
+    </div>
+    <div class="gel-form__divider">
+      <div class="gel-comments__success" role="status" aria-live="polite"></div>
+    </div>
+    <div class="gel-form__divider">
+      <button class="gel-button" type="submit" aria-describedby="disclaimer" disabled>Post comment</button>
+    </div>
+    <p id="disclaimer">All comments are <a
+        href="https://www.bbc.co.uk/social/moderation/house-rules">reactively-moderated</a> and must follow <a
+        href="https://www.bbc.co.uk/social/moderation/house-rules">the rules</a>.</p>
+  </form>
+  <fieldset class="gel-comments__sort-controls">
+    <legend>Sort by</legend>
+    <label>
+      <input name="sort" type="radio" value="timeDesc" checked>
+      <span>Newest first</span>
+    </label>
+    <label>
+      <input name="sort" type="radio" value="timeAsc">
+      <span>Oldest first</span>
+    </label>
+  </fieldset>
+  <div class="gel-comments__stream">
+    <noscript>You cannot read or write comments with JavaScript disabled. Please enable JavaScript and refresh the
+      page.</noscript>
   </div>
-  <div class="gel-form__divider">
-    <button class="gel-button" type="submit" aria-describedby="disclaimer">Submit</button>
+  <div class="gel-comments__add-link">
+    <a href="#comment">Add your comment</a>
   </div>
-  <p id="disclaimer">All comments are <a
-      href="https://www.bbc.co.uk/social/moderation/house-rules">reactively-moderated</a> and must follow <a
-      href="https://www.bbc.co.uk/social/moderation/house-rules">the rules</a>.</p>
-</form>
-<fieldset id="sortControls">
-  <legend>Sort by:</legend>
-  <label>
-    Latest
-    <input type="radio" id="time" value="time" name="sorting" checked>
-  </label>
-  <label>
-    Points
-    <input type="radio" id="points" value="points" name="sorting">
-  </label>
-</fieldset>
-<div id="comments">
 </div>
 
 <script>
@@ -66,54 +80,80 @@
       id: 'z50fsmh2h',
       time: 1562746598697,
       name: 'Clive Warren',
-      comment: 'I like this very much.',
-      points: 4
+      comment: 'I like this very much.'
     },
     {
       id: '4wi00jios',
       time: 1562746727083,
       name: 'Clive Smythe',
-      comment: 'I do not understand this at all.',
-      points: 8
+      comment: 'I do not understand this at all.'
     },
     {
       id: 'm1tx9pbj2',
       time: 1562747117059,
       name: 'Clive Henderson',
-      comment: 'I don\'t like this at all and think it\'s bad.',
-      points: 32
+      comment: 'I don\'t like this at all and think it\'s bad.'
     },
     {
       id: 'lmu4jrrnt',
       time: 1562762936794,
       name: 'The Clive Archive',
-      comment: 'I\'m <span>indifferent</span>, to be perfectly honest.',
-      points: 17
+      comment: 'I\'m <span>indifferent</span>, to be perfectly honest.'
     }
   ];
-
-  function sanitize(str) {
-    var temp = document.createElement('div');
-    temp.textContent = str;
-    return temp.innerHTML;
-  }
 
   function Comments(selector, options) {
     this.node = document.querySelector(selector);
     this.data = options.data;
     this.template = options.template;
+    this.form = this.node.querySelector('form');
+    this.commentBox = this.form.querySelector('textarea');
+    this.submitBtn = this.form.querySelector('[type="submit"]');
+    this.success = this.form.querySelector('.gel-comment__success');
+    this.stream = this.node.querySelector('.gel-comments__stream');
+
+    this.submitBtn.disabled = false;
+
+    this.sanitize = function (str) {
+      var temp = document.createElement('div');
+      temp.textContent = str;
+      return temp.innerHTML;
+    }
+
+    this.form.addEventListener('submit', function () {
+      comments.addComment({
+        id: Math.random().toString(36).substr(2, 9),
+        time: Date.now(),
+        name: 'Your Name',
+        comment: this.sanitize(this.form.comment.value)
+      });
+    }.bind(this));
+
+    this.form.addEventListener('gel-submitted', function () {
+      this.success.textContent = 'Your comment was posted successfully.';
+      this.commentBox.value = '';
+    }.bind(this));
+
+    this.commentBox.addEventListener('focus', function () {
+      this.success.textContent = '';
+    }.bind(this));
   }
 
   Comments.prototype.render = function () {
-    if (!this.node) return;
+    if (!this.stream) return;
     var data = this.data;
-    var prop = this.sortProp;
-    if (prop) {
-      data.sort(function (a, b) {
-        return b[prop] - a[prop];
-      });
+    switch (this.sortMethod) {
+      case 'timeAsc':
+        data.sort(function (a, b) {
+          return a.time - b.time;
+        });
+        break;
+      default: // by time, ascending
+        data.sort(function (a, b) {
+          return b.time - a.time;
+        });
     }
-    this.node.innerHTML = this.template(data);
+    this.stream.innerHTML = this.template(data);
   }
 
   Comments.prototype.addComment = function (comment) {
@@ -121,65 +161,52 @@
     this.render();
   }
 
-  Comments.prototype.sortBy = function (prop) {
-    this.sortProp = prop;
+  Comments.prototype.sortBy = function (mode) {
+    this.sortMethod = mode;
     this.render();
   }
 
-  Comments.addPoint = function (id) {
-    var target = null;
-    this.data.forEach(function (c, i) {
-      if (c.id === id) {
-        target = this.data[i];
-      }
-    }.bind(this));
-  }
-
-  var comments = new Comments('#comments', {
+  var comments = new Comments('.gel-comments', {
     data: testData,
     template: function (props) {
       if (props.length < 1) {
         return '<p><strong>There are no comments so far.</strong></p>';
       }
-      return '<ul class="gel-comments">' + props.map(function (item) {
+      return '<ul class="gel-comments__stream">' + props.map(function (item) {
         var timeParsed = new Date(item.time);
         var date = timeParsed.toString().substring(0, 15);
         var time = timeParsed.getHours() + ':' + timeParsed.getMinutes();
-        return '<li class="gel-comments__comment" id="' + item.id + '" tabindex="-1"><h3>' + item.name + ' <time datetime=""><a href="#' + item.id + '">on ' + date + ' at ' + time + '</a></time>:</h3> <div>' + item.comment + '</div><div class="gel-comment__options"><a href="https://www.bbc.co.uk/moderation/complaints/comments/' + this.id + '">Report</a></div></li>';
+        return '' +
+          '<li class="gel-comment" id="' + item.id + '" tabindex="-1">' +
+          '<h3>' + item.name + ' <time datetime="">on ' + date + ' at ' + time + '</time></h3>' +
+          '<div>' + item.comment + '</div>' +
+          '<div class="gel-comment__options">' +
+          '<a href="https://www.bbc.co.uk/moderation/complaints/comments/' + this.id + '">Report</a>' +
+          '<a href="#' + item.id + '">Link to</a>' +
+          '</div>' +
+          '</li>';
       }).join('') + '</ul>';
     }
   });
 
-  comments.sortBy('time');
+  comments.render();
 
-  var sortControls = document.getElementById('sortControls');
+  var sortControls = document.querySelector('.gel-comments__sort-controls');
   sortControls.addEventListener('change', function (e) {
     comments.sortBy(e.target.value);
   });
 
-  var rules = [
-    {
-      name: 'comment',
-      required: true,
-    }
-  ];
-
   document.addEventListener('DOMContentLoaded', function () {
+    var rules = [
+      {
+        name: 'comment',
+        required: true,
+      }
+    ];
+
     window.gel && gel.Validation.init();
     var form = document.getElementById('comment-form');
-    var formValidation = new gel.Validation.constructor(form, rules);
-
-    form.addEventListener('submit', function () {
-      comments.addComment({
-        id: Math.random().toString(36).substr(2, 9),
-        time: Date.now(),
-        name: 'Your Name',
-        comment: sanitize(form.comment.value),
-        points: 0
-      });
-
-      form.comment.value = '';
-    });
+    var formValidation = new gel.Validation.constructor(form, rules)
   });
 </script>
             </div>

@@ -1319,6 +1319,10 @@
         validate(field);
       });
       showHideWarn();
+      if (allErrors.length < 1) {
+        var event = new Event('gel-submitted');
+        formElem.dispatchEvent(event);
+      }
     });
   }
 })();/**

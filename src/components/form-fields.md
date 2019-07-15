@@ -260,7 +260,7 @@ Form validation should comprise of two phases:
 1. Individual field validation
 2. Form submission and validation
 
-The following describes the validation journey, as exemplified by the [Reference implementation](#reference-implementation).
+The following describes the validation journey, as exemplified by the [**Reference implementation**](#reference-implementation).
 
 ### 1. Initial state
 
@@ -271,7 +271,7 @@ The following describes the validation journey, as exemplified by the [Reference
 
 * Fields are validated as the user types subject to a debouncing function, giving the user a chance to type a full valid entry before an error message is displayed. 
 * `aria-invalid` is toggled between `true` and `false` as the field becomes valid or invalid.
-* The error element is populated with a priority error message when the field is in an invalid state (priority depends on the order the `tests` array is populated in the `rules` object; see the [Reference implementation](#reference-implementation)).
+* The error element is populated with a priority error message when the field is in an invalid state (priority depends on the order the `tests` array is populated in the `rules` object; see the [**Reference implementation**](#reference-implementation)).
 * Fields are _not_ tested as required; only specific formatting errors are addressed.
 
 ### 3. Failed submission
@@ -284,6 +284,10 @@ The following describes the validation journey, as exemplified by the [Reference
 
 * Both formatting errors and the required mandate (if present) are now tested against.
 * Upon all individual errors being corrected, the general error message is removed.
+
+### 5. Successful submission
+
+* The custom `gel-submitted` event is fired on the form. In the [**Reference implementation**](#reference-implementation) this is just used to fire an `alert`.
 
 ### Variants and caveats
 

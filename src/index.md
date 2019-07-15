@@ -31,6 +31,7 @@ We are writing technical recommendations for developers who build the patterns i
 | [Buttons and CTAs]({{site.basedir}}components/buttons-and-ctas/) | Draft|
 | [Cards]({{site.basedir}}components/cards/) | Draft|
 | [Carousels]({{site.basedir}}components/carousels/) | Draft|
+| [Comments]({{site.basedir}}components/comments/) | Draft|
 | [Data tables]({{site.basedir}}components/data-tables/) | Draft|
 | [External links]({{site.basedir}}components/external-links/) | Draft|
 | [Form fields and validation]({{site.basedir}}components/form-fields/) | Draft|
