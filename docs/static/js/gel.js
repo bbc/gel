@@ -356,7 +356,7 @@
 })();/**
  * Data table
  * @namespace gel
- * @method gel.DataTable.init 
+ * @method gel.DataTable.init
  */
 
 (function () {
@@ -454,8 +454,8 @@
 
     // Feature RO first
     if ('ResizeObserver' in window) {
-      var ro = new ResizeObserver(entries => {
-        for (var entry of entries) {
+      var ro = new ResizeObserver(function (entries) {
+        entries.forEach(function (entry) {
           var cr = entry.contentRect;
           // Comparison: true if the container is overflowing
           var noScroll = cr.width >= this.table.offsetWidth;
@@ -464,13 +464,14 @@
           // Instate sticky headers for non-scrolling table
           entry.target.style.overflowX = noScroll ? 'visible' : 'auto';
           this.thead.classList.toggle('gel-table__sticky', noScroll);
-        }
-      });
+        }.bind(this));
+      }.bind(this));
 
       ro.observe(elem);
     }
   }
-})();/**
+})();
+/**
  * Filter
  * @namespace gel
  * @method gel.Filter.init 
