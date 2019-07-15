@@ -29,7 +29,7 @@ The [**Masthead**](../masthead) and [**Site menu**](../site-menu) documents cove
 
 The `<main>` element is accessible via screen reader keyboard shortcuts. For example, JAWS' <kbd>Q</kbd> key navigates the user to the `<main>` element from their current location anywhere in the page. 
 
-As described in [**Routing**](../../foundations/routing), keyboard users not operating screen readers do not have access to such shortcuts. To enable them to reach the `<main>` content from the top of the page, implement a bypass[^4] in the form of a 'skip link'. Note the `href` and `id` match, as well as the `tabindex="-1"` attribution. This forces browsers to move keyboard focus to `<main>` when the skip link is activated. The `-1` value means it is not erroneously included in sequential focus navigation, however[^5].
+As described in [**Routing**](../../foundations/routing), keyboard users not operating screen readers do not have access to such shortcuts. To enable them to reach the `<main>` content from the top of the page, implement a bypass[^4] in the form of a 'skip link'. Note the `href` and `id` match, as well as the `tabindex="-1"` attribution. This forces browsers to move keyboard focus to `<main>` when the skip link is activated. Unlike a `0` value, `-1` means the non-interactive `<main>` is not erroneously included in sequential focus navigation[^5].
 
 ```html
 <a href="#main">Skip to content</a>
@@ -39,7 +39,7 @@ As described in [**Routing**](../../foundations/routing), keyboard users not ope
 
 ## Headings
 
-The principle, `<h1>`, heading for the article and page should be placed _inside_ the `<main>` element and before any lower-level (sub)headings. It is advised that the `<h1>` is the first textual element inside `<main>`, but some content (such as a 'feature' or 'hero' image) is permissable before the `<h1>` in the source order.
+The principle `<h1>` heading for the article and page should be placed _inside_ the `<main>` element and before any lower-level (sub)headings. It is advised the `<h1>` is the first textual element inside `<main>`, but some content (such as a 'feature' or 'hero' image) is permissable before the `<h1>` in the source order.
 
 The `<h1>` text is the article title, and should be included with the site name in the page `<title>`:
 
@@ -105,7 +105,7 @@ Lists are identified by assistive technologies, and their items are enumerated. 
 
 ### Listicles
 
-Listicles[^8] are articles presented wholly or partly as lists. Articles on the BBC like [Fifa Women's World Cup: Five ways women's football beats men's](https://www.bbc.co.uk/news/uk-48742850) can be considered listicles, and should conform to a certain semantic and editorial structure:
+Listicles[^8] are articles presented wholly or partially as lists. Articles on the BBC like [Fifa Women's World Cup: Five ways women's football beats men's](https://www.bbc.co.uk/news/uk-48742850) can be considered listicles, and should conform to a certain semantic and editorial structure:
 
 1. A title that indicates the number of items in the list. Examples: _"The 10 best..."_, _"6 ways to get better at..."_, _"5 chefs name their favourite..."_
 2. A short introduction
