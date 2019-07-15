@@ -102,25 +102,25 @@
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900"
                     style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="geltags-toc__links" class="geltags-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="geltags-toc__links" class="geltags-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
             <div class="geltags-sections geltags-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="introduction">Introduction</h2>
-<p>When discussing access to web content, we often use the term assistive technologies<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>: software and devices to help those with disabilities. However, assistive technologies, unlike <em>adaptive technologies</em>, do not necessarily address disability. A screen reader is not just for blind and vision-impaired users; it can be called upon to address educational and productivity requirements as well.</p>
-<p>The keyboard, whether mechanical or virtual, is used by most anyone at some point during interaction. The term <em>&quot;keyboard users&quot;</em>, used to demarcate a disability demographic, is therefore misleading. All people use keyboards; some depend on them more than others.</p>
+<p>When discussing access to web content, we often use the term assistive technologies<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>: software and devices to help those with disabilities. However, assistive technologies, unlike <em>adaptive technologies</em> (such as hearing aids), do not just address disability. A screen reader is not just for blind and vision-impaired users; it can be called upon to address educational and productivity requirements as well.</p>
+<p>It’s misleading to think that the term &quot;keyboard users&quot; only applies to disabled people. The keyboard, whether mechanical or virtual, is used by most anyone at some point during interaction. All people use keyboards; some depend on them more than others.</p>
 <p>For many, including those with temporary injuries and long term ailments, operating a mouse (or 'pointer') is not easy. The keyboard is <em>assistive</em> in that it provides an alternative means of selecting and activating interactive content — one that does not require fine motor control.</p>
 <p>Accordingly, WCAG2.1 has a number of success criteria that cover keyboard navigation access. <strong>Keyboard Accessible</strong><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> is its own section, and is complemented by the <strong>Focus Order</strong> and <strong>Focus visible</strong> rules under <strong>Navigation</strong><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
 <p>The purpose of this guide is to collate the various keyboard accessibility considerations for BBC content.</p>
 <h2 id="recommended-markup">Recommended markup</h2>
 <p>Only interactive elements should be focusable by keyboard. If an element does not do anything when pressed, clicked, or tapped, it should not appear in <em>focus order</em>: the succession of elements focusable by using the <kbd>Tab</kbd> key.</p>
-<p>The HTML standard offers a handful of elements for interactive purposes, including links (<code>&lt;a&gt;</code>), buttons (<code>&lt;button&gt;</code>), and form controls. These are not only focusable by default, but each provide an implicit <em>role</em>. The role identifies the class of element non-visually. For example, a link is identified as <em>&quot;link&quot;</em> and a button as <em>&quot;button&quot;</em> in screen reader output upon focusing the element. Blind and vision impaired screen reader users are typically keyboard users, since they cannot (easily) perceive the interface's topology in order to guide a mouse/pointer.</p>
-<p>It is possible, but not recommended, to create interactive elements from non-semantic HTML.</p>
+<p>The HTML standard offers a handful of elements for interactive purposes, including links (<code>&lt;a&gt;</code>), buttons (<code>&lt;button&gt;</code>), and form controls. These are not only focusable by default, but each provide an implicit <em>role</em>. The role identifies the class of element non-visually. For example, a link is identified as <em>&quot;link&quot;</em> and a button as <em>&quot;button&quot;</em> in screen reader output upon focusing the element. Blind and vision-impaired screen reader users are typically keyboard users, since they cannot (easily) perceive the interface's topology in order to guide a mouse/pointer.</p>
+<p>We recommend that only semantic HTML be used for interactive elements. Creating accessible interactive elements for non-semantic markup is verbose and less robust.</p>
 <h3 id="javascript-dependency">
           <div class="circular circular__bad" aria-hidden="true">✕</div>
          JavaScript dependency</h3>
-<p>The following will be identified as a button, and focusable by the application of a <code>tabindex</code> value of <code>0</code><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. However, it cannot be activated like a <code>&lt;button&gt;</code> by keyboard unless a keyboard event listener (for <kbd>Enter</kbd> and/or <kbd>Space</kbd> key presses) is supplied by JavaScript.</p>
+<p>The following will be identified as a button, and focusable with the application of a <code>tabindex</code> value of <code>0</code><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. However, it cannot be activated like a <code>&lt;button&gt;</code> by keyboard unless a keyboard event listener (for <kbd>Enter</kbd> and/or <kbd>Space</kbd> key presses) is supplied by JavaScript.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>Press me<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 <h3 id="built-in-behaviour">
@@ -133,7 +133,7 @@
 <p>Focus order is the order in which interactive elements receive focus. Interfaces become confusing for sighted keyboard users when the focus order is at odds with the visual layout. This is exacerbated by magnification: when a user is zoomed in and navigating by focus, the interface may take them in unexpected directions and to unexpected locations.</p>
 <p>There are two main things that are likely to disrupt focus order:</p>
 <h4 id="positive-tabindex-values">Positive <code>tabindex</code> values</h4>
-<p>By default, focus order follows source order. But numbered <code>tabindex</code> values override this. That is: an element with <code>tabindex=&quot;1&quot;</code> will be the first focusable element on the page regardless of the source order. Navigation by keyboard would likely mean passing over interactive content — content that would become focusable <em>after</em> the <code>tabindex=&quot;1&quot;</code> element has been unfocused. This is unlikely to be desirable.</p>
+<p>By default, focus order follows source order: the order that the elements appear in the markup. But numbered <code>tabindex</code> values override this. That is: an element with <code>tabindex=&quot;1&quot;</code> will be the first focusable element on the page regardless of the source order. Navigation by keyboard would likely mean passing over interactive content — content that would become focusable <em>after</em> the <code>tabindex=&quot;1&quot;</code> element has been unfocused. This is unlikely to be desirable.</p>
 <p>Avoid positive <code>tabindex</code> values.</p>
 <h4 id="layout-augmentation">Layout augmentation</h4>
 <p>On English language websites, flow content is laid out from top to bottom (the <em>block flow direction</em>) and inline content from left to right (the <em>writing direction</em>)<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>. However, this can be disrupted by an improper use of some CSS layout techniques.</p>
@@ -146,7 +146,7 @@
   <span class="hljs-attribute">float</span>: left;
 }
 </code></pre>
-<p>The <code>order</code> property, available in Flexbox and Grid contexts can reorder elements along either the horizontal or vertical axes.</p>
+<p>The <code>order</code> property, available in Flexbox and Grid contexts, can reorder elements along either the horizontal or vertical axes.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.flex</span> {
   <span class="hljs-attribute">display</span>: flex;
 }
@@ -160,7 +160,7 @@
 <p>As the <strong>WCAG2.1 2.4.7 Focus Visible</strong> mandates: <em>&quot;any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible&quot;</em>. Without visible indication, it's not easy to tell which element currently has focus, if any.</p>
 <p>User agents provide focus styles by default, but these diverge considerably, and are not sufficient under many circumstances<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>.</p>
 <p>To normalize browser behaviour, and make focus styles more apparent, remove the default style and provide your own. Any CSS declaration can be applied to the <code>:focus</code> state, but be mindful that focus styles are <em>functional</em> styles, and must be visible under all circumstances.</p>
-<p>In some browsers, background images are eliminated when Windows High Contrast Mode is active. Changes to colour alone would also fail <strong>WCAG2.1 1.4.1 Use of Color</strong><sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>. Instead, provide a reasonably thick <code>outline</code>. In most circumstances, this should share the text's <code>color</code> (since the contrast for <code>color</code> should already differentiate it from the local background). Just omit a color value:</p>
+<p>In some browsers, background images are eliminated when Windows High Contrast Mode is active. Changes to colour alone would also fail <strong>WCAG2.1 1.4.1 Use of Color</strong><sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>. Instead, provide a reasonably thick <code>outline</code>. In most circumstances, this should share the text's <code>color</code> (since the contrast for <code>color</code> should already differentiate it from the local background). Just omit a color value to achieve this:</p>
 <pre class="hljs"><code><span class="hljs-selector-pseudo">:focus</span> {
   <span class="hljs-attribute">outline</span>: <span class="hljs-number">2px</span> solid;
 }
@@ -175,6 +175,29 @@
 }
 </code></pre>
 <p>The second declaration block is dropped in browsers not supporting <code>:focus-visible</code>, meaning the first declaration remains intact and all keyboard users are provided focus styles.</p>
+<h2 id="recommended-behaviour">Recommended behaviour</h2>
+<p>Your principle responsibility towards focus behaviour is not to disrupt standard browser behaviour for focus. Only interactive elements should typically receive focus, and in an expected and logical order. As already covered, you should therefore avoid positive <code>tabindex</code> values, and visual arrangements that contradict source order. Users should be able to press <kbd>Tab</kbd> to focus the next interactive element, and <kbd>Shift</kbd> and <kbd>Tab</kbd> to focus the previous one.</p>
+<p>In rare cases, programmatic focus (focus elicited on the user's behalf) <em>is</em> necessary. For example, <a href="../../components/action-dialogs"><strong>Action dialogs</strong></a> must take focus upon being opened. If not, the keyboard user would not be able to easily locate and operate that dialog's controls. It's important components like dialogs have the correct semantic information (in this case: <code>role=&quot;dialog&quot;</code> and an associated label). This information provides context when the user's focus is moved, letting them know what has happened and where they are.</p>
+<p>Sometimes, as outlined in <a href="../routing"><strong>Routing</strong></a>, it's beneficial to move focus to a non-interactive element, such as a heading. This is legitimate so long as the element is not made <em>user</em>-focusable. A <code>tabindex</code> value of <code>-1</code> allows the element to be focused using JavaScript's <code>focus()</code> method <em>without</em> placing it in focus order. It's a technique whereby the user's focus position can be moved without creating confusion or obstruction.</p>
+<p>For convenience, here is the code from <a href="../routing"><strong>Routing</strong></a>, describing how to focus a single-page application's view upon route change. By focusing the heading, its content is announced in screen reader software, identifying the newly loaded view to the screen reader user.</p>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> mainHeading = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'h1'</span>);
+mainHeading.tabindex = <span class="hljs-number">-1</span>;
+mainHeading.focus();
+</code></pre>
+<p>In React, you would defer to the <code>refs</code> API<sup class="footnote-ref"><a href="#fn5" id="fnref5:1">[5:1]</a></sup>:</p>
+<pre class="hljs"><code><span class="hljs-comment">// Initialize &lt;h1 ref={this.mainHeading} tabindex="-1"&gt;Brexitcast&lt;/h1&gt;</span>
+<span class="hljs-keyword">this</span>.mainHeading = React.createRef();
+
+<span class="hljs-comment">// Focus the ref's DOM node (accessible as `current`)</span>
+<span class="hljs-keyword">this</span>.mainHeading.current.focus();
+</code></pre>
+<h3 id="keyboard-traps">Keyboard traps</h3>
+<p>Under all circumstances, it should be possible to leave the web page, and the browser, via keyboard. Accordingly, <strong>WCAG2.1 2.1.2 No Keyboard Trap</strong><sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup> mandates focus can be moved <em>away</em> from any focusable element.</p>
+<p>Restricting focus to the inside of a dialog (and between the various dialog elements) is not recommended. This technique makes it difficult for users to focus and operate parts of the browser chrome  outside viewport, such as the address bar.</p>
+<p>Instead, as outlined in <a href="../../components/action-dialogs"><strong>Action dialogs</strong></a>, all content outside of the dialog should receive the <code>inert</code> property while the dialog is open. This property (and its polyfill<sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup>) removes content from both focus order and screen reader announcement. The dialog becomes the only focusable context <em>by default</em> and explicitly confining focus to the dialog by augmenting focus order is no longer necessary.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"content"</span> <span class="hljs-attr">inert</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"dialog"</span> <span class="hljs-attr">open</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
 <h2 id="related-research">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
 <h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
@@ -189,11 +212,15 @@
 </li>
 <li id="fn4" class="footnote-item"><p>Using the <code>tabindex</code> attribute — The Paciello Group, <a href="https://developer.paciellogroup.com/blog/2014/08/using-the-tabindex-attribute/">https://developer.paciellogroup.com/blog/2014/08/using-the-tabindex-attribute/</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn5" class="footnote-item"><p><code>writing-mode</code> — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode">https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+<li id="fn5" class="footnote-item"><p><code>writing-mode</code> — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode">https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode</a> <a href="#fnref5" class="footnote-backref">↩︎</a> <a href="#fnref5:1" class="footnote-backref">↩︎</a></p>
 </li>
 <li id="fn6" class="footnote-item"><p>Avoid default browser focus styles — Adrian Roselli, <a href="http://adrianroselli.com/2017/02/avoid-default-browser-focus-styles.html">http://adrianroselli.com/2017/02/avoid-default-browser-focus-styles.html</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
 </li>
 <li id="fn7" class="footnote-item"><p>WCAG2.1 1.4.1 Use of Color, <a href="https://www.w3.org/TR/WCAG21/#use-of-color">https://www.w3.org/TR/WCAG21/#use-of-color</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p>WCAG2.1 2.1.2 No Keyboard Trap, <a href="https://www.w3.org/TR/WCAG21/#no-keyboard-trap">https://www.w3.org/TR/WCAG21/#no-keyboard-trap</a> <a href="#fnref8" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn9" class="footnote-item"><p>WICG <code>inert</code> (polyfill), <a href="https://github.com/WICG/inert">https://github.com/WICG/inert</a> <a href="#fnref9" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
