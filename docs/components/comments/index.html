@@ -230,7 +230,7 @@
 <li>Comment form (or sign-in form if the user is not signed in)</li>
 <li>Comment sorting controls (described in <a href="#recommended-behaviour"><strong>Recommended behaviour</strong></a>)</li>
 <li>The comments list</li>
-<li>An <em>&quot;Add your comment&quot;</em> link that focuses the <em>&quot;Add your comment&quot;</em> textarea in the form above the comments list</li>
+<li>An <em>&quot;Add your comment&quot;</em> link pointing to the <em>&quot;Add your comment&quot;</em> textarea in the form above the comments list</li>
 </ol>
 <p>See the <a href="#reference-implementation"><strong>Reference implementation</strong></a> for an example layout implementation.</p>
 <h2 id="recommended-behaviour">Recommended behaviour</h2>
@@ -250,7 +250,7 @@
   }
 ];
 </code></pre>
-<p>Submission is suppressed where the required field is empty, and the field's associated error element is populated. The field is marked as invalid with <code>aria-invalid=&quot;true&quot;</code>.</p>
+<p>Submission is suppressed where the required field is empty, and the field's associated error element is populated. The field is marked as invalid with <code>aria-invalid=&quot;true&quot;</code><sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-form__divider"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"comment"</span>&gt;</span>Add your comment:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"comment"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"comment"</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">"5"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"comment-error"</span> <span class="hljs-attr">aria-required</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-invalid</span>=<span class="hljs-string">"true"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
@@ -303,6 +303,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
 </code></pre>
+<p>Screen readers identify both the fieldset (by the <code>&lt;legend&gt;</code> group label) and the individual inputs. When focused is moved onto the <code>checked</code> <em>&quot;Newest first&quot;</em> radio, users will hear something similar to <em>&quot;Group, sorted by, Newest first, radio, checked, one of two&quot;</em></p>
 <pre class="hljs"><code><span class="hljs-keyword">var</span> sortControls = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.gel-comments__sort-controls'</span>);
 sortControls.addEventListener(<span class="hljs-string">'change'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
   comments.sortBy(e.target.value);
@@ -419,7 +420,7 @@ title: Comments
     {
       id: 'lmu4jrrnt',
       time: 1562762936794,
-      name: 'The Clive Archive',
+      name: 'Clive Skogsberg',
       comment: 'I\'m <span>indifferent</span>, to be perfectly honest.'
     }
   ];
@@ -546,6 +547,8 @@ title: Comments
 <li id="fn3" class="footnote-item"><p>ARIA live regions — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions">https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
 </li>
 <li id="fn4" class="footnote-item"><p>NVDA Keyboard Shortcuts — Deque University, <a href="https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts">https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>Using the <code>aria-invalid</code> attribute — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-invalid_attribute">https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-invalid_attribute</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>

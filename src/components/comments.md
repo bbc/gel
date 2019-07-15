@@ -155,7 +155,7 @@ The aesthetic for comments will vary between BBC sites. For example, CBBC commen
 2. Comment form (or sign-in form if the user is not signed in)
 3. Comment sorting controls (described in [**Recommended behaviour**](#recommended-behaviour))
 4. The comments list
-5. An _"Add your comment"_ link that focuses the _"Add your comment"_ textarea in the form above the comments list
+5. An _"Add your comment"_ link pointing to the _"Add your comment"_ textarea in the form above the comments list
 
 See the [**Reference implementation**](#reference-implementation) for an example layout implementation.
 
@@ -185,7 +185,7 @@ var rules = [
 ];
 ```
 
-Submission is suppressed where the required field is empty, and the field's associated error element is populated. The field is marked as invalid with `aria-invalid="true"`.
+Submission is suppressed where the required field is empty, and the field's associated error element is populated. The field is marked as invalid with `aria-invalid="true"`[^5].
 
 ```html
 <div class="gel-form__divider">
@@ -257,6 +257,8 @@ It is recommended sorting controls are implemented using a fieldset of radio but
 </fieldset>
 ```
 
+Screen readers identify both the fieldset (by the `<legend>` group label[^6]) and the individual inputs. When focused is moved onto the `checked` _"Newest first"_ radio, users will hear something similar to _"Newest first, selected radio button, 1 of 2, group, Sort by"_. The order of readout and the precise wording varies between screen readers, browsers, and operating systems.
+
 ```js
 var sortControls = document.querySelector('.gel-comments__sort-controls');
 sortControls.addEventListener('change', function (e) {
@@ -266,7 +268,7 @@ sortControls.addEventListener('change', function (e) {
 
 ### Linking to comments
 
-Clicking any comment's _"Link to"_ link simply links to the comment—as document fragment—itself. In the [**Reference implementation**](#reference-implementation) this invokes a default focus ring around the comment.
+Clicking any comment's _"Link to"_ link simply links to the comment—as a document fragment—itself. In the [**Reference implementation**](#reference-implementation) this invokes a default focus ring around the comment.
 
 ### Reporting comments
 
@@ -290,7 +292,7 @@ Some BBC sites' comment streams include the ability to upvote comments. Upvote b
 
 Note the `gel-sr` `<span>`, which provides visually hidden information to screen readers. The text _"votes in total"_ adds clarification for blind screen reader users for whom the nature of the functionality may be less clear.
 
-Comments that include a `points` property could be sorted by points. You could adapt the [**Reference implementation**](#reference-implementation) like so:
+Comments that include a `points` property could be sorted by points. You can adapt the [**Reference implementation**](#reference-implementation) like so:
 
 ```js
 switch (this.sortMethod) {
@@ -336,3 +338,5 @@ This topic does not yet have any related research available.
 [^2]: Using the `aria-describedby` attribute — MDN, <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute>
 [^3]: ARIA live regions — MDN, <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions>
 [^4]: NVDA Keyboard Shortcuts — Deque University, <https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts>
+[^5]: Using the `aria-invalid` attribute — MDN, <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-invalid_attribute>
+[^6]: Grouping Controls — W3C, <https://www.w3.org/WAI/tutorials/forms/grouping/>
