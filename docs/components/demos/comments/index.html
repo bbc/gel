@@ -75,128 +75,66 @@
 </div>
 
 <script>
-  var testData = [
-    {
-      id: 'z50fsmh2h',
-      time: 1562746598697,
-      name: 'Clive Warren',
-      comment: 'I like this very much.'
-    },
-    {
-      id: '4wi00jios',
-      time: 1562746727083,
-      name: 'Clive Smythe',
-      comment: 'I do not understand this at all.'
-    },
-    {
-      id: 'm1tx9pbj2',
-      time: 1562747117059,
-      name: 'Clive Henderson',
-      comment: 'I don\'t like this at all and think it\'s bad.'
-    },
-    {
-      id: 'lmu4jrrnt',
-      time: 1562762936794,
-      name: 'Clive Skogsberg',
-      comment: 'I\'m <span>indifferent</span>, to be perfectly honest.'
-    }
-  ];
-
-  function Comments(selector, options) {
-    this.node = document.querySelector(selector);
-    this.data = options.data;
-    this.template = options.template;
-    this.form = this.node.querySelector('form');
-    this.commentBox = this.form.querySelector('textarea');
-    this.submitBtn = this.form.querySelector('[type="submit"]');
-    this.success = this.form.querySelector('.gel-comment__success');
-    this.stream = this.node.querySelector('.gel-comments__stream');
-
-    this.submitBtn.disabled = false;
-
-    this.sanitize = function (str) {
-      var temp = document.createElement('div');
-      temp.textContent = str;
-      return temp.innerHTML;
-    }
-
-    this.form.addEventListener('submit', function () {
-      comments.addComment({
-        id: Math.random().toString(36).substr(2, 9),
-        time: Date.now(),
-        name: 'Your Name',
-        comment: this.sanitize(this.form.comment.value)
-      });
-    }.bind(this));
-
-    this.form.addEventListener('gel-submitted', function () {
-      this.success.textContent = 'Your comment was posted successfully.';
-      this.commentBox.value = '';
-    }.bind(this));
-
-    this.commentBox.addEventListener('focus', function () {
-      this.success.textContent = '';
-    }.bind(this));
-  }
-
-  Comments.prototype.render = function () {
-    if (!this.stream) return;
-    var data = this.data;
-    switch (this.sortMethod) {
-      case 'timeAsc':
-        data.sort(function (a, b) {
-          return a.time - b.time;
-        });
-        break;
-      default: // by time, ascending
-        data.sort(function (a, b) {
-          return b.time - a.time;
-        });
-    }
-    this.stream.innerHTML = this.template(data);
-  }
-
-  Comments.prototype.addComment = function (comment) {
-    this.data.push(comment);
-    this.render();
-  }
-
-  Comments.prototype.sortBy = function (mode) {
-    this.sortMethod = mode;
-    this.render();
-  }
-
-  var comments = new Comments('.gel-comments', {
-    data: testData,
-    template: function (props) {
-      if (props.length < 1) {
-        return '<p><strong>There are no comments so far.</strong></p>';
-      }
-      return '<ul class="gel-comments__stream">' + props.map(function (item) {
-        var timeParsed = new Date(item.time);
-        var date = timeParsed.toString().substring(0, 15);
-        var time = timeParsed.getHours() + ':' + timeParsed.getMinutes();
-        return '' +
-          '<li class="gel-comment" id="' + item.id + '" tabindex="-1">' +
-          '<h3>' + item.name + ' <time datetime="">on ' + date + ' at ' + time + '</time></h3>' +
-          '<div>' + item.comment + '</div>' +
-          '<div class="gel-comment__options">' +
-          '<a href="https://www.bbc.co.uk/moderation/complaints/comments/' + this.id + '">Report</a>' +
-          '<a href="#' + item.id + '">Link to</a>' +
-          '</div>' +
-          '</li>';
-      }).join('') + '</ul>';
-    }
-  });
-
-  comments.render();
-
-  var sortControls = document.querySelector('.gel-comments__sort-controls');
-  sortControls.addEventListener('change', function (e) {
-    comments.sortBy(e.target.value);
-  });
-
   document.addEventListener('DOMContentLoaded', function () {
+    window.gel && gel.Comments.init();
+
+    var testData = [
+      {
+        id: 'z50fsmh2h',
+        time: 1562746598697,
+        name: 'Clive Warren',
+        comment: 'I like this very much.'
+      },
+      {
+        id: '4wi00jios',
+        time: 1562746727083,
+        name: 'Clive Smythe',
+        comment: 'I do not understand this at all.'
+      },
+      {
+        id: 'm1tx9pbj2',
+        time: 1562747117059,
+        name: 'Clive Henderson',
+        comment: 'I don\'t like this at all and think it\'s bad.'
+      },
+      {
+        id: 'lmu4jrrnt',
+        time: 1562762936794,
+        name: 'Clive Skogsberg',
+        comment: 'I\'m <span>indifferent</span>, to be perfectly honest.'
+      }
+    ];
+
+    var comments = new gel.Comments.constructor('.gel-comments', {
+      data: testData,
+      template: function (props) {
+        if (props.length < 1) {
+          return '<p><strong>There are no comments so far.</strong></p>';
+        }
+        return '<ul class="gel-comments__stream">' + props.map(function (item) {
+          var timeParsed = new Date(item.time);
+          var date = (new Date(item.time)).toLocaleDateString('en-GB', { month: 'short', day: 'numeric', year: 'numeric' });
+          var time = timeParsed.getHours() + ':' + timeParsed.getMinutes();
+          return '' +
+            '<li class="gel-comment" id="' + item.id + '" tabindex="-1">' +
+            '<h3>' + item.name + ' <time datetime="' + timeParsed.getFullYear() + "-" + (timeParsed.getMonth() + 1) + "-" + timeParsed.getDate() + 'T' + timeParsed.getHours() + ":" + timeParsed.getMinutes() + '">on ' + date + ' at ' + time + '</time></h3>' +
+            '<div>' + item.comment + '</div>' +
+            '<div class="gel-comment__options">' +
+            '<a href="https://www.bbc.co.uk/moderation/complaints/comments/' + this.id + '">Report</a>' +
+            '<a href="#' + item.id + '">Link to</a>' +
+            '</div>' +
+            '</li>';
+        }).join('') + '</ul>';
+      }
+    });
+
+    comments.render();
+
+    var sortControls = document.querySelector('.gel-comments__sort-controls');
+    sortControls.addEventListener('change', function (e) {
+      comments.sortBy(e.target.value);
+    });
+
     var rules = [
       {
         name: 'comment',

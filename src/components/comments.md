@@ -161,7 +161,9 @@ See the [Reference implementation](#reference-implementation) for an example lay
 
 ## Recommended behaviour
 
-Comments, and the ability to write them, should be considered a progressive enhancement and the functionality provided via JavaScript. In the [Reference implementation](#reference-implementation), some plain ES5 JavaScript is used to handle comment submissions and (re)render the comment stream. In practice, you are more likely to use a library like React or Vue, and fetch comment data over XHR. The [Reference implementation](#reference-implementation) uses dummy data and just exemplifies the expected layout and interaction behaviour.
+Comments, and the ability to write them, should be considered a progressive enhancement and the functionality provided via JavaScript. In the [Reference implementation](#reference-implementation), some plain ES5 JavaScript is used to handle comment submissions and (re)render the comment stream. In practice, you are more likely to use a library like React or Vue, and fetch comment data over XHR. 
+
+Where there is latency, a loading spinner may need to be incorporated similar to that implemented in the [Load more component](../load-more). The [Reference implementation](#reference-implementation) uses dummy data and just exemplifies the expected layout and interaction behaviour. Rendering is instantaneous.
 
 Where JavaScript is not available, the comment form's submit button is disabled and dimmed. The `<noscript>` tag for the comments stream is visible.
 

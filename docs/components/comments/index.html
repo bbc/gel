@@ -109,7 +109,7 @@
             <div class="geltags-sections geltags-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="introduction">Introduction</h2>
 <h2 id="recommended-markup">Recommended markup</h2>
-<p>There are two main parts to a comments section for a BBC <a href="../../foundations/articles"><strong>Article</strong></a>: the comments form and the comments themselves. Since comments, and the ability to leave a comment, are tangential to the article itself these are grouped into an <code>&lt;aside&gt;</code> element. The <code>&lt;aside&gt;</code> element represents a complementary landmark<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> to assistive technology users.</p>
+<p>There are two main parts to a comments section for a BBC <a href="../../foundations/articles">Article</a>: the comments form and the comments themselves. Since comments, and the ability to leave a comment, are tangential to the article itself these are grouped into an <code>&lt;aside&gt;</code> element. The <code>&lt;aside&gt;</code> element represents a complementary landmark<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> to assistive technology users.</p>
 <p>The following example assumes the user is already signed in and able to comment.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"comments-label"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"comments-label"</span>&gt;</span>Comments<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
@@ -141,15 +141,15 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
 </code></pre>
 <ul>
-<li><strong><code>aria-labelledby</code>:</strong> This property labels the <code>&lt;aside&gt;</code> by association to the heading's <code>id</code>. In aggregated landmark menus, this makes it possible to identify the <strong>Breakout box</strong> by its label. The label is announced along with the ('complementary') role when the user traverses into the <code>&lt;aside&gt;</code> element. It also labels the <code>&lt;aside&gt;</code> in landmark lists (see the previous point), so it should be unique — that is, not just <em>&quot;Note&quot;</em> or <em>&quot;Warning&quot;</em> in each case.</li>
-<li><strong><code>for=&quot;comment&quot;</code>:</strong> The textarea must be labeled programmatically, by matching its <code>id</code> with a <code>&lt;label&gt;</code>'s <code>for</code> value. As recommended in <a href="../form-fields"><strong>Form fields</strong></a> the label should appear persistently above the input/textarea.</li>
-<li><strong><code>class=&quot;gel-form__field-error&quot;</code>:</strong> The form should use the standard and accessible error messaging mechanism described in <a href="../form-fields"><strong>Form fields</strong></a>. This error element is associated with the <code>&lt;textarea&gt;</code> and populated via the <a href="../form-fields"><strong>Form fields</strong></a> implementation's script.</li>
+<li><strong><code>aria-labelledby</code>:</strong> This property labels the <code>&lt;aside&gt;</code> by association to the heading's <code>id</code>. In aggregated landmark menus, this makes it possible to identify the <strong>Breakout box</strong> by its label. The label is announced along with the complementary role when the user traverses into the <code>&lt;aside&gt;</code> element. It also labels the <code>&lt;aside&gt;</code> in landmark lists (see the previous point), so it should be unique — that is, not just <em>&quot;Note&quot;</em> or <em>&quot;Warning&quot;</em> in each case.</li>
+<li><strong><code>for=&quot;comment&quot;</code>:</strong> The textarea must be labelled programmatically, by matching its <code>id</code> with a <code>&lt;label&gt;</code>'s <code>for</code> value. As recommended in <a href="../form-fields">Form fields</a> the label should appear persistently above the input/textarea.</li>
+<li><strong><code>class=&quot;gel-form__field-error&quot;</code>:</strong> The form should use the standard and accessible error messaging mechanism described in <a href="../form-fields">Form fields</a>. This error element is associated with the <code>&lt;textarea&gt;</code> and populated via the <a href="../form-fields">Form fields</a> implementation's script.</li>
 <li><strong><code>id=&quot;notice&quot;</code>:</strong> All users should be made aware of the moderation rules before submitting their comment. To make this information available to screen reader users in a timely fashion, it is associated with the submit button using <code>aria-describedby</code><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>. That is: it will be read out as part of the button's semantic information while the user is focused on it.</li>
-<li><strong><code>href=&quot;#comment&quot;</code>:</strong> The comment form should be easily accessible at the top of the comments landmark. A link to the <em>&quot;Add your comment&quot;</em> field is also available <em>after</em> the list of comments. This allows a user whose reached the end of the comments to directly access the comment form to add their own.</li>
-<li><strong><code>class=&quot;gel-comments__success&quot;</code>:</strong> This live region<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> is populated with the message <em>&quot;Your comment was posted successfully&quot;</em>. Live regions are announced in screen reader software whever content is appended to them, meaning screen reader users can be kept abreast of changes to state.</li>
+<li><strong><code>href=&quot;#comment&quot;</code>:</strong> The comment form should be easily accessible at the top of the comments landmark. A link to the <em>&quot;Add your comment&quot;</em> field is also available <em>after</em> the list of comments. This allows a user who's reached the end of the comments to directly access the comment form to add their own.</li>
+<li><strong><code>class=&quot;gel-comments__success&quot;</code>:</strong> This live region<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> is populated with the message <em>&quot;Your comment was posted successfully&quot;</em>. Live regions are announced in screen reader software whenever content is appended to them, meaning screen reader users can be kept abreast of changes to state.</li>
 </ul>
 <h3 id="heading-structure">Heading structure</h3>
-<p>As outlined in <a href="../../foundations/headings"><strong>Headings</strong></a>, you should use headings to describe a relationship of belonging. The comments landmark belongs as a direct subsection of the page. It should, therefore, take an <code>&lt;h2&gt;</code> heading to follow the page's main <code>&lt;h1&gt;</code>. Comments themselves each belong to the comments landmark, making the <code>&lt;h3&gt;</code> level applicable in context.</p>
+<p>As outlined in <a href="../../foundations/headings">Headings</a>, you should use headings to describe a relationship of belonging. The comments landmark belongs as a direct subsection of the page. It should, therefore, take an <code>&lt;h2&gt;</code> heading to follow the page's main <code>&lt;h1&gt;</code>. Comments themselves each belong to the comments landmark, making the <code>&lt;h3&gt;</code> level applicable in context.</p>
 <pre class="hljs"><code>* Article title (`<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>`)
     * Comments (`<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>`)
         * Clive Warren on Wed Jul 10 2019, at 13:48: (`<span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>`)
@@ -175,11 +175,11 @@
 </code></pre>
 <ul>
 <li><strong><code>id</code> and <code>tabindex=&quot;-1&quot;</code>:</strong> It's important users are able to link directly to the specific comment — hence the provision of the <em>&quot;Link&quot;</em> inside <code>.gel-comments__options</code>. The <code>tabindex=&quot;-1&quot;</code> attribution ensures keyboard focus, along with scroll position, is moved to the comment.</li>
-<li><strong><code>&lt;h3&gt;</code>:</strong> See <a href="#heading-structure"><strong>Heading structure</strong></a>. The heading level should reflected the nesting level of the comments. In this case, <code>&lt;h3&gt;</code> is expected since it is assumed the (outer) comments section is introduced with an <code>&lt;h2&gt;</code>.</li>
+<li><strong><code>&lt;h3&gt;</code>:</strong> See <a href="#heading-structure">Heading structure</a>. The heading level should reflect the nesting level of the comments. In this case, <code>&lt;h3&gt;</code> is expected since it is assumed the (outer) comments section is introduced with an <code>&lt;h2&gt;</code>.</li>
 <li><strong><code>&lt;time&gt;</code></strong> The <code>&lt;time&gt;</code> element uses <code>datetime</code> to create a machine readable version of the comment's date and time. It does not have any direct impact of the user experience.</li>
 </ul>
 <h3 id="replies">Replies</h3>
-<p>In some cases, the ability to reply directly to extant comments may be deemed beneficial in terms of engagement. A reply button should be provided alongside the other controls inside the <code>.gel-comment__options</code> element:</p>
+<p>The ability to reply directly to comments may increase in engagement. A reply button should be provided alongside the other controls, inside the <code>.gel-comment__options</code> element:</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comment__options"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.bbc.co.uk/moderation/complaints/comments/lmu4jrrnt"</span>&gt;</span>Report<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> 
   <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/this/permalink#lmu4jrrnt"</span>&gt;</span>Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
@@ -221,20 +221,21 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">time</span> <span class="hljs-attr">datetime</span>=<span class="hljs-string">"2019-07-10T13:48"</span>&gt;</span>on Wed Jul 10 2019, at 13:48<span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
 </code></pre>
-<p>Note the <code>&lt;h3&gt;</code>. While the nested list structure describes the nested relationship of replies to original comments, each comment should be considered <em>on the same plain</em> as a contribution to the comment stream / discourse. This way, screen reader users are made aware of the nesting structure, but know that a comment of any type (reply or otherwise) can be navigated to using the <code>&lt;h3&gt;</code> shortcut (<kbd>3</kbd> in NVDA or JAWS on Windows).</p>
-<p>For brevity, comment replies are not implemented in the <a href="#reference-implementation"><strong>Reference implementation</strong></a>.</p>
+<p>Note the <code>&lt;h3&gt;</code>. While the nested list structure describes the nested relationship of replies to original comments, each comment should be considered <em>on the same plane</em> as a contribution to the comment stream / discourse. This way, screen reader users are made aware of the nesting structure, but know that a comment of any type (reply or otherwise) can be navigated to using the <code>&lt;h3&gt;</code> shortcut (<kbd>3</kbd> in NVDA or JAWS on Windows).</p>
+<p>For brevity, comment replies are not implemented in the <a href="#reference-implementation">Reference implementation</a>.</p>
 <h2 id="recommended-layout">Recommended layout</h2>
 <p>The aesthetic for comments will vary between BBC sites. For example, CBBC comments (<a href="https://www.bbc.co.uk/cbbc/joinin/blue-peter-fan-club-page#comments">see an example of a CBBC comments stream here</a>) uses a speech bubble design. All BBC comment sections should follow the following structure (reading from top to bottom):</p>
 <ol>
 <li>Introductory heading (<em>&quot;Comments&quot;</em> or <em>&quot;Your comments&quot;</em>)</li>
 <li>Comment form (or sign-in form if the user is not signed in)</li>
-<li>Comment sorting controls (described in <a href="#recommended-behaviour"><strong>Recommended behaviour</strong></a>)</li>
+<li>Comment sorting controls (described in <a href="#recommended-behaviour">Recommended behaviour</a>)</li>
 <li>The comments list</li>
 <li>An <em>&quot;Add your comment&quot;</em> link pointing to the <em>&quot;Add your comment&quot;</em> textarea in the form above the comments list</li>
 </ol>
-<p>See the <a href="#reference-implementation"><strong>Reference implementation</strong></a> for an example layout implementation.</p>
+<p>See the <a href="#reference-implementation">Reference implementation</a> for an example layout implementation.</p>
 <h2 id="recommended-behaviour">Recommended behaviour</h2>
-<p>Comments, and the ability to write them, should be considered a progressive enhancement and the functionality provided via JavaScript. In the <a href="#reference-implementation"><strong>Reference implementation</strong></a>, some plain ES5 JavaScript is used to handle comment submissions and (re)render the comment stream. In practice, you are more likely to use a library like React or Vue, and fetch comment data over XHR. The <a href="#reference-implementation"><strong>Reference implementation</strong></a> uses dummy data and just exemplifies the expected layout and interaction behaviour.</p>
+<p>Comments, and the ability to write them, should be considered a progressive enhancement and the functionality provided via JavaScript. In the <a href="#reference-implementation">Reference implementation</a>, some plain ES5 JavaScript is used to handle comment submissions and (re)render the comment stream. In practice, you are more likely to use a library like React or Vue, and fetch comment data over XHR.</p>
+<p>Where there is latency, a loading spinner may need to be incorporated similar to that implemented in the <a href="../load-more">Load more component</a>. The <a href="#reference-implementation">Reference implementation</a> uses dummy data and just exemplifies the expected layout and interaction behaviour. Rendering is instantaneous.</p>
 <p>Where JavaScript is not available, the comment form's submit button is disabled and dimmed. The <code>&lt;noscript&gt;</code> tag for the comments stream is visible.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comments__stream"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">noscript</span>&gt;</span>You cannot read or write comments with JavaScript disabled. Please enable JavaScript and refresh the
@@ -242,7 +243,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 <h3 id="posting-a-comment">Posting a comment</h3>
-<p>Where JavaScript is available, the submit button is enabled and form validation is initialized, as implemented in <a href="../form-fields"><strong>Form fields</strong></a>. In this case, the only validation rule is that the <code>id=&quot;comment&quot;</code> <code>&lt;textarea&gt;</code> is <code>required</code>. With the following rules object supplied, the <code>aria-required=&quot;true&quot;</code> attribution is automatically added to the <code>&lt;textarea&gt;</code> element.</p>
+<p>Where JavaScript is available, the submit button is enabled and form validation is initialized, as implemented in <a href="../form-fields">Form fields</a>. In this case, the only validation rule is that the <code>id=&quot;comment&quot;</code> <code>&lt;textarea&gt;</code> is <code>required</code>. With the following rules object supplied, the <code>aria-required=&quot;true&quot;</code> attribution is automatically added to the <code>&lt;textarea&gt;</code> element.</p>
 <pre class="hljs"><code><span class="hljs-keyword">var</span> rules = [
   {
     <span class="hljs-attr">name</span>: <span class="hljs-string">'comment'</span>,
@@ -257,7 +258,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-form__field-error"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"comment-error"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Error:<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span> This field is required<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<p>When a comment is successfully submitted, the comment stream is immediately re-rendered to include the new comment. <em>&quot;Your comment was posted successfully&quot;</em> is appended to the <code>class=&quot;gel-comment__success&quot;</code> live region, and the comment box value is emptied. The custom <code>gel-submitted</code> event from the <a href="../form-fields"><strong>Form fields</strong></a> validation script is the 'hook' for this state management.</p>
+<p>When a comment is successfully submitted, the comment stream is immediately re-rendered to include the new comment. <em>&quot;Your comment was posted successfully&quot;</em> is appended to the <code>class=&quot;gel-comment__success&quot;</code> live region, and the comment box value is emptied. The custom <code>gel-submitted</code> event from the <a href="../form-fields">Form fields</a> validation script is the 'hook' for this state management.</p>
 <pre class="hljs"><code><span class="hljs-keyword">this</span>.form.addEventListener(<span class="hljs-string">'gel-submitted'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">this</span>.success.textContent = <span class="hljs-string">'Your comment was posted successfully.'</span>;
   <span class="hljs-keyword">this</span>.commentBox.value = <span class="hljs-string">''</span>;
@@ -269,7 +270,7 @@
 }.bind(<span class="hljs-keyword">this</span>));
 </code></pre>
 <h3 id="sorting">Sorting</h3>
-<p>To make the exploration of comments easier, you may wish to provide some sorting options. By default, comments in the <a href="#reference-implementation"><strong>Reference implementation</strong></a> are sorted in descending order  by their <code>time</code> property (newest first). The time of submission is acquired with <code>Date.now()</code>:</p>
+<p>To make the exploration of comments easier, you may wish to provide some sorting options. By default, comments in the <a href="#reference-implementation">Reference implementation</a> are sorted in descending order  by their <code>time</code> property (newest first). The time of submission is acquired with <code>Date.now()</code>:</p>
 <pre class="hljs"><code>comments.addComment({
   <span class="hljs-attr">id</span>: <span class="hljs-built_in">Math</span>.random().toString(<span class="hljs-number">36</span>).substr(<span class="hljs-number">2</span>, <span class="hljs-number">9</span>),
   <span class="hljs-attr">time</span>: <span class="hljs-built_in">Date</span>.now(),
@@ -277,7 +278,7 @@
   <span class="hljs-attr">comment</span>: <span class="hljs-keyword">this</span>.sanitize(<span class="hljs-keyword">this</span>.form.comment.value)
 });
 </code></pre>
-<p>The <code>sortBy</code> method enables the re-rendering of the comment stream according to a chosen sorting method. In the <a href="#reference-implementation"><strong>Reference implementation</strong></a>, just <code>timeAsc</code> is implemented alongside the default.</p>
+<p>The <code>sortBy</code> method enables the re-rendering of the comment stream according to a chosen sorting method. In the <a href="#reference-implementation">Reference implementation</a>, just <code>timeAsc</code> is implemented alongside the default.</p>
 <pre class="hljs"><code><span class="hljs-keyword">switch</span> (<span class="hljs-keyword">this</span>.sortMethod) {
   <span class="hljs-keyword">case</span> <span class="hljs-string">'timeAsc'</span>:
     data.sort(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">a, b</span>) </span>{
@@ -303,14 +304,14 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
 </code></pre>
-<p>Screen readers identify both the fieldset (by the <code>&lt;legend&gt;</code> group label) and the individual inputs. When focused is moved onto the <code>checked</code> <em>&quot;Newest first&quot;</em> radio, users will hear something similar to <em>&quot;Group, sorted by, Newest first, radio, checked, one of two&quot;</em></p>
+<p>Screen readers identify both the fieldset (by the <code>&lt;legend&gt;</code> group label<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>) and the individual inputs. When focus is moved onto the <code>checked</code> <em>&quot;Newest first&quot;</em> radio, users will hear something similar to <em>&quot;Newest first, selected radio button, 1 of 2, group, Sort by&quot;</em>. The order of readout and the precise wording varies between screen readers, browsers, and operating systems.</p>
 <pre class="hljs"><code><span class="hljs-keyword">var</span> sortControls = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.gel-comments__sort-controls'</span>);
 sortControls.addEventListener(<span class="hljs-string">'change'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
   comments.sortBy(e.target.value);
 });
 </code></pre>
 <h3 id="linking-to-comments">Linking to comments</h3>
-<p>Clicking any comment's <em>&quot;Link to&quot;</em> link simply links to the comment—as document fragment—itself. In the <a href="#reference-implementation"><strong>Reference implementation</strong></a> this invokes a default focus ring around the comment.</p>
+<p>Clicking any comment's <em>&quot;Link to&quot;</em> link simply links to the comment—as a document fragment—itself. In the <a href="#reference-implementation">Reference implementation</a> this invokes a default focus ring around the comment.</p>
 <h3 id="reporting-comments">Reporting comments</h3>
 <p>Each comment includes a link for reporting abuse. The links URL is appended with the comment <code>id</code> so it can be correctly identified and tracked in the moderation system.</p>
 <pre class="hljs"><code>&lt;a href=<span class="hljs-string">"https://www.bbc.co.uk/moderation/complaints/comments/' + this.id + '"</span>&gt;Report&lt;<span class="hljs-regexp">/a&gt;
@@ -324,7 +325,7 @@ sortControls.addEventListener(<span class="hljs-string">'change'</span>, <span c
 <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 </code></pre>
 <p>Note the <code>gel-sr</code> <code>&lt;span&gt;</code>, which provides visually hidden information to screen readers. The text <em>&quot;votes in total&quot;</em> adds clarification for blind screen reader users for whom the nature of the functionality may be less clear.</p>
-<p>Comments that include a <code>points</code> property could be sorted by points. You could adapt the <a href="#reference-implementation"><strong>Reference implementation</strong></a> like so:</p>
+<p>Comments that include a <code>points</code> property could be sorted by points. You can adapt the <a href="#reference-implementation">Reference implementation</a> like so:</p>
 <pre class="hljs"><code><span class="hljs-keyword">switch</span> (<span class="hljs-keyword">this</span>.sortMethod) {
   <span class="hljs-keyword">case</span> <span class="hljs-string">'timeAsc'</span>:
     data.sort(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">a, b</span>) </span>{
@@ -398,128 +399,66 @@ title: Comments
 </div>
 
 <script>
-  var testData = [
-    {
-      id: 'z50fsmh2h',
-      time: 1562746598697,
-      name: 'Clive Warren',
-      comment: 'I like this very much.'
-    },
-    {
-      id: '4wi00jios',
-      time: 1562746727083,
-      name: 'Clive Smythe',
-      comment: 'I do not understand this at all.'
-    },
-    {
-      id: 'm1tx9pbj2',
-      time: 1562747117059,
-      name: 'Clive Henderson',
-      comment: 'I don\'t like this at all and think it\'s bad.'
-    },
-    {
-      id: 'lmu4jrrnt',
-      time: 1562762936794,
-      name: 'Clive Skogsberg',
-      comment: 'I\'m <span>indifferent</span>, to be perfectly honest.'
-    }
-  ];
-
-  function Comments(selector, options) {
-    this.node = document.querySelector(selector);
-    this.data = options.data;
-    this.template = options.template;
-    this.form = this.node.querySelector('form');
-    this.commentBox = this.form.querySelector('textarea');
-    this.submitBtn = this.form.querySelector('[type="submit"]');
-    this.success = this.form.querySelector('.gel-comment__success');
-    this.stream = this.node.querySelector('.gel-comments__stream');
-
-    this.submitBtn.disabled = false;
-
-    this.sanitize = function (str) {
-      var temp = document.createElement('div');
-      temp.textContent = str;
-      return temp.innerHTML;
-    }
-
-    this.form.addEventListener('submit', function () {
-      comments.addComment({
-        id: Math.random().toString(36).substr(2, 9),
-        time: Date.now(),
-        name: 'Your Name',
-        comment: this.sanitize(this.form.comment.value)
-      });
-    }.bind(this));
-
-    this.form.addEventListener('gel-submitted', function () {
-      this.success.textContent = 'Your comment was posted successfully.';
-      this.commentBox.value = '';
-    }.bind(this));
-
-    this.commentBox.addEventListener('focus', function () {
-      this.success.textContent = '';
-    }.bind(this));
-  }
-
-  Comments.prototype.render = function () {
-    if (!this.stream) return;
-    var data = this.data;
-    switch (this.sortMethod) {
-      case 'timeAsc':
-        data.sort(function (a, b) {
-          return a.time - b.time;
-        });
-        break;
-      default: // by time, ascending
-        data.sort(function (a, b) {
-          return b.time - a.time;
-        });
-    }
-    this.stream.innerHTML = this.template(data);
-  }
-
-  Comments.prototype.addComment = function (comment) {
-    this.data.push(comment);
-    this.render();
-  }
-
-  Comments.prototype.sortBy = function (mode) {
-    this.sortMethod = mode;
-    this.render();
-  }
-
-  var comments = new Comments('.gel-comments', {
-    data: testData,
-    template: function (props) {
-      if (props.length < 1) {
-        return '<p><strong>There are no comments so far.</strong></p>';
-      }
-      return '<ul class="gel-comments__stream">' + props.map(function (item) {
-        var timeParsed = new Date(item.time);
-        var date = timeParsed.toString().substring(0, 15);
-        var time = timeParsed.getHours() + ':' + timeParsed.getMinutes();
-        return '' +
-          '<li class="gel-comment" id="' + item.id + '" tabindex="-1">' +
-          '<h3>' + item.name + ' <time datetime="">on ' + date + ' at ' + time + '</time></h3>' +
-          '<div>' + item.comment + '</div>' +
-          '<div class="gel-comment__options">' +
-          '<a href="https://www.bbc.co.uk/moderation/complaints/comments/' + this.id + '">Report</a>' +
-          '<a href="#' + item.id + '">Link to</a>' +
-          '</div>' +
-          '</li>';
-      }).join('') + '</ul>';
-    }
-  });
-
-  comments.render();
-
-  var sortControls = document.querySelector('.gel-comments__sort-controls');
-  sortControls.addEventListener('change', function (e) {
-    comments.sortBy(e.target.value);
-  });
-
   document.addEventListener('DOMContentLoaded', function () {
+    window.gel && gel.Comments.init();
+
+    var testData = [
+      {
+        id: 'z50fsmh2h',
+        time: 1562746598697,
+        name: 'Clive Warren',
+        comment: 'I like this very much.'
+      },
+      {
+        id: '4wi00jios',
+        time: 1562746727083,
+        name: 'Clive Smythe',
+        comment: 'I do not understand this at all.'
+      },
+      {
+        id: 'm1tx9pbj2',
+        time: 1562747117059,
+        name: 'Clive Henderson',
+        comment: 'I don\'t like this at all and think it\'s bad.'
+      },
+      {
+        id: 'lmu4jrrnt',
+        time: 1562762936794,
+        name: 'Clive Skogsberg',
+        comment: 'I\'m <span>indifferent</span>, to be perfectly honest.'
+      }
+    ];
+
+    var comments = new gel.Comments.constructor('.gel-comments', {
+      data: testData,
+      template: function (props) {
+        if (props.length < 1) {
+          return '<p><strong>There are no comments so far.</strong></p>';
+        }
+        return '<ul class="gel-comments__stream">' + props.map(function (item) {
+          var timeParsed = new Date(item.time);
+          var date = (new Date(item.time)).toLocaleDateString('en-GB', { month: 'short', day: 'numeric', year: 'numeric' });
+          var time = timeParsed.getHours() + ':' + timeParsed.getMinutes();
+          return '' +
+            '<li class="gel-comment" id="' + item.id + '" tabindex="-1">' +
+            '<h3>' + item.name + ' <time datetime="' + timeParsed.getFullYear() + "-" + (timeParsed.getMonth() + 1) + "-" + timeParsed.getDate() + 'T' + timeParsed.getHours() + ":" + timeParsed.getMinutes() + '">on ' + date + ' at ' + time + '</time></h3>' +
+            '<div>' + item.comment + '</div>' +
+            '<div class="gel-comment__options">' +
+            '<a href="https://www.bbc.co.uk/moderation/complaints/comments/' + this.id + '">Report</a>' +
+            '<a href="#' + item.id + '">Link to</a>' +
+            '</div>' +
+            '</li>';
+        }).join('') + '</ul>';
+      }
+    });
+
+    comments.render();
+
+    var sortControls = document.querySelector('.gel-comments__sort-controls');
+    sortControls.addEventListener('change', function (e) {
+      comments.sortBy(e.target.value);
+    });
+
     var rules = [
       {
         name: 'comment',
@@ -549,6 +488,8 @@ title: Comments
 <li id="fn4" class="footnote-item"><p>NVDA Keyboard Shortcuts — Deque University, <a href="https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts">https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
 </li>
 <li id="fn5" class="footnote-item"><p>Using the <code>aria-invalid</code> attribute — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-invalid_attribute">https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-invalid_attribute</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>Grouping Controls — W3C, <a href="https://www.w3.org/WAI/tutorials/forms/grouping/">https://www.w3.org/WAI/tutorials/forms/grouping/</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>

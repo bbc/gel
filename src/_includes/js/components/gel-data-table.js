@@ -8,6 +8,8 @@
   if (!window.gel) { window.gel = {}; }
   var self = gel.DataTable = {};
 
+  self.init = function () { };
+
   self.constructor = function (elem, sortable) {
     // Save the table and (child) thead elements
     this.table = elem.querySelector('table');
