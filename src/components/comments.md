@@ -9,7 +9,7 @@ published: false
 
 ## Recommended markup
 
-There are two main parts to a comments section for a BBC [**Article**](../../foundations/articles): the comments form and the comments themselves. Since comments, and the ability to leave a comment, are tangential to the article itself these are grouped into an `<aside>` element. The `<aside>` element represents a complementary landmark[^1] to assistive technology users.
+There are two main parts to a comments section for a BBC [Article](../../foundations/articles): the comments form and the comments themselves. Since comments, and the ability to leave a comment, are tangential to the article itself these are grouped into an `<aside>` element. The `<aside>` element represents a complementary landmark[^1] to assistive technology users.
 
 The following example assumes the user is already signed in and able to comment.
 
@@ -44,16 +44,16 @@ The following example assumes the user is already signed in and able to comment.
 </aside>
 ```
 
-* **`aria-labelledby`:** This property labels the `<aside>` by association to the heading's `id`. In aggregated landmark menus, this makes it possible to identify the **Breakout box** by its label. The label is announced along with the ('complementary') role when the user traverses into the `<aside>` element. It also labels the `<aside>` in landmark lists (see the previous point), so it should be unique — that is, not just _"Note"_ or _"Warning"_ in each case.
-* **`for="comment"`:** The textarea must be labeled programmatically, by matching its `id` with a `<label>`'s `for` value. As recommended in [**Form fields**](../form-fields) the label should appear persistently above the input/textarea.
-* **`class="gel-form__field-error"`:** The form should use the standard and accessible error messaging mechanism described in [**Form fields**](../form-fields). This error element is associated with the `<textarea>` and populated via the [**Form fields**](../form-fields) implementation's script.
+* **`aria-labelledby`:** This property labels the `<aside>` by association to the heading's `id`. In aggregated landmark menus, this makes it possible to identify the **Breakout box** by its label. The label is announced along with the complementary role when the user traverses into the `<aside>` element. It also labels the `<aside>` in landmark lists (see the previous point), so it should be unique — that is, not just _"Note"_ or _"Warning"_ in each case.
+* **`for="comment"`:** The textarea must be labelled programmatically, by matching its `id` with a `<label>`'s `for` value. As recommended in [Form fields](../form-fields) the label should appear persistently above the input/textarea.
+* **`class="gel-form__field-error"`:** The form should use the standard and accessible error messaging mechanism described in [Form fields](../form-fields). This error element is associated with the `<textarea>` and populated via the [Form fields](../form-fields) implementation's script.
 * **`id="notice"`:** All users should be made aware of the moderation rules before submitting their comment. To make this information available to screen reader users in a timely fashion, it is associated with the submit button using `aria-describedby`[^2]. That is: it will be read out as part of the button's semantic information while the user is focused on it.
-* **`href="#comment"`:** The comment form should be easily accessible at the top of the comments landmark. A link to the _"Add your comment"_ field is also available _after_ the list of comments. This allows a user whose reached the end of the comments to directly access the comment form to add their own.
-* **`class="gel-comments__success"`:** This live region[^3] is populated with the message _"Your comment was posted successfully"_. Live regions are announced in screen reader software whever content is appended to them, meaning screen reader users can be kept abreast of changes to state.
+* **`href="#comment"`:** The comment form should be easily accessible at the top of the comments landmark. A link to the _"Add your comment"_ field is also available _after_ the list of comments. This allows a user who's reached the end of the comments to directly access the comment form to add their own.
+* **`class="gel-comments__success"`:** This live region[^3] is populated with the message _"Your comment was posted successfully"_. Live regions are announced in screen reader software whenever content is appended to them, meaning screen reader users can be kept abreast of changes to state.
 
 ### Heading structure
 
-As outlined in [**Headings**](../../foundations/headings), you should use headings to describe a relationship of belonging. The comments landmark belongs as a direct subsection of the page. It should, therefore, take an `<h2>` heading to follow the page's main `<h1>`. Comments themselves each belong to the comments landmark, making the `<h3>` level applicable in context.
+As outlined in [Headings](../../foundations/headings), you should use headings to describe a relationship of belonging. The comments landmark belongs as a direct subsection of the page. It should, therefore, take an `<h2>` heading to follow the page's main `<h1>`. Comments themselves each belong to the comments landmark, making the `<h3>` level applicable in context.
 
 ```html
 * Article title (`<h1>`)
@@ -86,12 +86,12 @@ The following example illustrates a single comment, as a list item:
 ```
 
 * **`id` and `tabindex="-1"`:** It's important users are able to link directly to the specific comment — hence the provision of the _"Link"_ inside `.gel-comments__options`. The `tabindex="-1"` attribution ensures keyboard focus, along with scroll position, is moved to the comment.
-* **`<h3>`:** See [**Heading structure**](#heading-structure). The heading level should reflected the nesting level of the comments. In this case, `<h3>` is expected since it is assumed the (outer) comments section is introduced with an `<h2>`.
+* **`<h3>`:** See [Heading structure](#heading-structure). The heading level should reflect the nesting level of the comments. In this case, `<h3>` is expected since it is assumed the (outer) comments section is introduced with an `<h2>`.
 * **`<time>`** The `<time>` element uses `datetime` to create a machine readable version of the comment's date and time. It does not have any direct impact of the user experience.
 
 ### Replies
 
-In some cases, the ability to reply directly to extant comments may be deemed beneficial in terms of engagement. A reply button should be provided alongside the other controls inside the `.gel-comment__options` element:
+The ability to reply directly to comments may increase in engagement. A reply button should be provided alongside the other controls, inside the `.gel-comment__options` element:
 
 ```html
 <div class="gel-comment__options">
@@ -143,9 +143,9 @@ The heading for a reply should link back to the original comment by the original
 </h3>
 ```
 
-Note the `<h3>`. While the nested list structure describes the nested relationship of replies to original comments, each comment should be considered _on the same plain_ as a contribution to the comment stream / discourse. This way, screen reader users are made aware of the nesting structure, but know that a comment of any type (reply or otherwise) can be navigated to using the `<h3>` shortcut (<kbd>3</kbd> in NVDA or JAWS on Windows).
+Note the `<h3>`. While the nested list structure describes the nested relationship of replies to original comments, each comment should be considered _on the same plane_ as a contribution to the comment stream / discourse. This way, screen reader users are made aware of the nesting structure, but know that a comment of any type (reply or otherwise) can be navigated to using the `<h3>` shortcut (<kbd>3</kbd> in NVDA or JAWS on Windows).
 
-For brevity, comment replies are not implemented in the [**Reference implementation**](#reference-implementation).
+For brevity, comment replies are not implemented in the [Reference implementation](#reference-implementation).
 
 ## Recommended layout
 
@@ -153,15 +153,15 @@ The aesthetic for comments will vary between BBC sites. For example, CBBC commen
 
 1. Introductory heading (_"Comments"_ or _"Your comments"_)
 2. Comment form (or sign-in form if the user is not signed in)
-3. Comment sorting controls (described in [**Recommended behaviour**](#recommended-behaviour))
+3. Comment sorting controls (described in [Recommended behaviour](#recommended-behaviour))
 4. The comments list
 5. An _"Add your comment"_ link pointing to the _"Add your comment"_ textarea in the form above the comments list
 
-See the [**Reference implementation**](#reference-implementation) for an example layout implementation.
+See the [Reference implementation](#reference-implementation) for an example layout implementation.
 
 ## Recommended behaviour
 
-Comments, and the ability to write them, should be considered a progressive enhancement and the functionality provided via JavaScript. In the [**Reference implementation**](#reference-implementation), some plain ES5 JavaScript is used to handle comment submissions and (re)render the comment stream. In practice, you are more likely to use a library like React or Vue, and fetch comment data over XHR. The [**Reference implementation**](#reference-implementation) uses dummy data and just exemplifies the expected layout and interaction behaviour.
+Comments, and the ability to write them, should be considered a progressive enhancement and the functionality provided via JavaScript. In the [Reference implementation](#reference-implementation), some plain ES5 JavaScript is used to handle comment submissions and (re)render the comment stream. In practice, you are more likely to use a library like React or Vue, and fetch comment data over XHR. The [Reference implementation](#reference-implementation) uses dummy data and just exemplifies the expected layout and interaction behaviour.
 
 Where JavaScript is not available, the comment form's submit button is disabled and dimmed. The `<noscript>` tag for the comments stream is visible.
 
@@ -174,7 +174,7 @@ Where JavaScript is not available, the comment form's submit button is disabled 
 
 ### Posting a comment
 
-Where JavaScript is available, the submit button is enabled and form validation is initialized, as implemented in [**Form fields**](../form-fields). In this case, the only validation rule is that the `id="comment"` `<textarea>` is `required`. With the following rules object supplied, the `aria-required="true"` attribution is automatically added to the `<textarea>` element.
+Where JavaScript is available, the submit button is enabled and form validation is initialized, as implemented in [Form fields](../form-fields). In this case, the only validation rule is that the `id="comment"` `<textarea>` is `required`. With the following rules object supplied, the `aria-required="true"` attribution is automatically added to the `<textarea>` element.
 
 ```js
 var rules = [
@@ -195,7 +195,7 @@ Submission is suppressed where the required field is empty, and the field's asso
 </div>
 ```
 
-When a comment is successfully submitted, the comment stream is immediately re-rendered to include the new comment. _"Your comment was posted successfully"_ is appended to the `class="gel-comment__success"` live region, and the comment box value is emptied. The custom `gel-submitted` event from the [**Form fields**](../form-fields) validation script is the 'hook' for this state management.
+When a comment is successfully submitted, the comment stream is immediately re-rendered to include the new comment. _"Your comment was posted successfully"_ is appended to the `class="gel-comment__success"` live region, and the comment box value is emptied. The custom `gel-submitted` event from the [Form fields](../form-fields) validation script is the 'hook' for this state management.
 
 ```js
 this.form.addEventListener('gel-submitted', function () {
@@ -214,7 +214,7 @@ this.commentBox.addEventListener('focus', function () {
 
 ### Sorting
 
-To make the exploration of comments easier, you may wish to provide some sorting options. By default, comments in the [**Reference implementation**](#reference-implementation) are sorted in descending order  by their `time` property (newest first). The time of submission is acquired with `Date.now()`:
+To make the exploration of comments easier, you may wish to provide some sorting options. By default, comments in the [Reference implementation](#reference-implementation) are sorted in descending order  by their `time` property (newest first). The time of submission is acquired with `Date.now()`:
 
 ```js
 comments.addComment({
@@ -225,7 +225,7 @@ comments.addComment({
 });
 ```
 
-The `sortBy` method enables the re-rendering of the comment stream according to a chosen sorting method. In the [**Reference implementation**](#reference-implementation), just `timeAsc` is implemented alongside the default. 
+The `sortBy` method enables the re-rendering of the comment stream according to a chosen sorting method. In the [Reference implementation](#reference-implementation), just `timeAsc` is implemented alongside the default. 
 
 ```js
 switch (this.sortMethod) {
@@ -257,7 +257,7 @@ It is recommended sorting controls are implemented using a fieldset of radio but
 </fieldset>
 ```
 
-Screen readers identify both the fieldset (by the `<legend>` group label[^6]) and the individual inputs. When focused is moved onto the `checked` _"Newest first"_ radio, users will hear something similar to _"Newest first, selected radio button, 1 of 2, group, Sort by"_. The order of readout and the precise wording varies between screen readers, browsers, and operating systems.
+Screen readers identify both the fieldset (by the `<legend>` group label[^6]) and the individual inputs. When focus is moved onto the `checked` _"Newest first"_ radio, users will hear something similar to _"Newest first, selected radio button, 1 of 2, group, Sort by"_. The order of readout and the precise wording varies between screen readers, browsers, and operating systems.
 
 ```js
 var sortControls = document.querySelector('.gel-comments__sort-controls');
@@ -268,7 +268,7 @@ sortControls.addEventListener('change', function (e) {
 
 ### Linking to comments
 
-Clicking any comment's _"Link to"_ link simply links to the comment—as a document fragment—itself. In the [**Reference implementation**](#reference-implementation) this invokes a default focus ring around the comment.
+Clicking any comment's _"Link to"_ link simply links to the comment—as a document fragment—itself. In the [Reference implementation](#reference-implementation) this invokes a default focus ring around the comment.
 
 ### Reporting comments
 
@@ -292,7 +292,7 @@ Some BBC sites' comment streams include the ability to upvote comments. Upvote b
 
 Note the `gel-sr` `<span>`, which provides visually hidden information to screen readers. The text _"votes in total"_ adds clarification for blind screen reader users for whom the nature of the functionality may be less clear.
 
-Comments that include a `points` property could be sorted by points. You can adapt the [**Reference implementation**](#reference-implementation) like so:
+Comments that include a `points` property could be sorted by points. You can adapt the [Reference implementation](#reference-implementation) like so:
 
 ```js
 switch (this.sortMethod) {
