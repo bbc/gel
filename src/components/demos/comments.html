@@ -1,0 +1,118 @@
+---
+title: Comments
+---
+
+<div class="gel-comments">
+  <form class="gel-comments__form" id="comment-form">
+    <p>
+      You're signed in as <strong>Your Name</strong>.
+      <a href="https://account.bbc.com/signout">Sign out</a>
+    </p>
+    <div class="gel-form__divider">
+      <label for="comment">Add your comment:</label>
+      <textarea id="comment" name="comment" rows="5"></textarea>
+      <div class="gel-form__field-error" id="comment-error"></div>
+    </div>
+    <div class="gel-form__divider">
+      <div class="gel-comments__success" role="status" aria-live="polite"></div>
+    </div>
+    <div class="gel-form__divider">
+      <button class="gel-button" type="submit" aria-describedby="disclaimer" disabled>Post comment</button>
+    </div>
+    <p id="disclaimer">All comments are <a
+        href="https://www.bbc.co.uk/social/moderation/house-rules">reactively-moderated</a> and must follow <a
+        href="https://www.bbc.co.uk/social/moderation/house-rules">the rules</a>.</p>
+  </form>
+  <fieldset class="gel-comments__sort-controls">
+    <legend>Sort by</legend>
+    <label>
+      <input name="sort" type="radio" value="timeDesc" checked>
+      <span>Newest first</span>
+    </label>
+    <label>
+      <input name="sort" type="radio" value="timeAsc">
+      <span>Oldest first</span>
+    </label>
+  </fieldset>
+  <div class="gel-comments__stream">
+    <noscript>You cannot read or write comments with JavaScript disabled. Please enable JavaScript and refresh the
+      page.</noscript>
+  </div>
+  <div class="gel-comments__add-link">
+    <a href="#comment">Add your comment</a>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.gel && gel.Comments.init();
+
+    var testData = [
+      {
+        id: 'z50fsmh2h',
+        time: 1562746598697,
+        name: 'Clive Warren',
+        comment: 'I like this very much.'
+      },
+      {
+        id: '4wi00jios',
+        time: 1562746727083,
+        name: 'Clive Smythe',
+        comment: 'I do not understand this at all.'
+      },
+      {
+        id: 'm1tx9pbj2',
+        time: 1562747117059,
+        name: 'Clive Henderson',
+        comment: 'I don\'t like this at all and think it\'s bad.'
+      },
+      {
+        id: 'lmu4jrrnt',
+        time: 1562762936794,
+        name: 'Clive Skogsberg',
+        comment: 'I\'m <span>indifferent</span>, to be perfectly honest.'
+      }
+    ];
+
+    var comments = new gel.Comments.constructor('.gel-comments', {
+      data: testData,
+      template: function (props) {
+        if (props.length < 1) {
+          return '<p><strong>There are no comments so far.</strong></p>';
+        }
+        return '<ul class="gel-comments__stream">' + props.map(function (item) {
+          var timeParsed = new Date(item.time);
+          var date = (new Date(item.time)).toLocaleDateString('en-GB', { month: 'short', day: 'numeric', year: 'numeric' });
+          var time = timeParsed.getHours() + ':' + timeParsed.getMinutes();
+          return '' +
+            '<li class="gel-comment" id="' + item.id + '" tabindex="-1">' +
+            '<h3>' + item.name + ' <time datetime="' + timeParsed.getFullYear() + "-" + (timeParsed.getMonth() + 1) + "-" + timeParsed.getDate() + 'T' + timeParsed.getHours() + ":" + timeParsed.getMinutes() + '">on ' + date + ' at ' + time + '</time></h3>' +
+            '<div>' + item.comment + '</div>' +
+            '<div class="gel-comment__options">' +
+            '<a href="https://www.bbc.co.uk/moderation/complaints/comments/' + this.id + '">Report</a>' +
+            '<a href="#' + item.id + '">Link to</a>' +
+            '</div>' +
+            '</li>';
+        }).join('') + '</ul>';
+      }
+    });
+
+    comments.render();
+
+    var sortControls = document.querySelector('.gel-comments__sort-controls');
+    sortControls.addEventListener('change', function (e) {
+      comments.sortBy(e.target.value);
+    });
+
+    var rules = [
+      {
+        name: 'comment',
+        required: true,
+      }
+    ];
+
+    window.gel && gel.Validation.init();
+    var form = document.getElementById('comment-form');
+    var formValidation = new gel.Validation.constructor(form, rules)
+  });
+</script>

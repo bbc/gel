@@ -1816,3 +1816,62 @@ of 'open all' and 'close all' tools
   text-decoration: none;
   background-color: #007bb8;
   color: #fff; }
+
+.gel-comments__stream {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.gel-comment + .gel-comment {
+  border-top: 2px solid; }
+
+.gel-comment {
+  padding: 1rem 0; }
+
+.gel-comment > * {
+  margin: 0; }
+
+.gel-comment > * + * {
+  margin-top: 1rem; }
+
+.gel-comment time {
+  display: block;
+  font-size: 1rem;
+  font-weight: normal;
+  font-style: italic; }
+
+.gel-comment__options {
+  display: flex;
+  justify-content: space-between; }
+
+.gel-comments__form {
+  background-color: #dcdcdc;
+  padding: 1rem; }
+
+.gel-comments__form textarea {
+  width: 100%;
+  padding: 0.5rem; }
+
+.gel-comments__form textarea:focus {
+  outline: 2px solid; }
+
+.gel-comments__form [type="submit"]:disabled {
+  opacity: 0.5; }
+
+.gel-comments__add-link {
+  text-align: center;
+  margin-top: 1rem; }
+
+.gel-comments__success {
+  background-color: #0b8a0b;
+  padding: 0.25rem;
+  border: 1px solid transparent;
+  /* for high contrast mode */
+  color: #fff;
+  max-width: 60ch; }
+
+.gel-comments__success:empty {
+  display: none; }
+
+.gel-comments__sort-controls {
+  margin: 0.5rem 0; }

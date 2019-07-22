@@ -49,6 +49,11 @@ title: Form fields and validation
     ];
 
     var form = document.getElementById('myform-demo');
-    var formValidation = new gel.Validation.constructor(form, rules);
+    var formValidation = new gel.Validation.constructor(form, rules, function () {
+      console.log('form valid!');
+    });
+    form.addEventListener('gel-submitted', function () {
+      alert('Form successfully submitted!');
+    });
   });
 </script>
