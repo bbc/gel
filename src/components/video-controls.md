@@ -204,7 +204,9 @@ In the [reference implementation](#reference-implementation), the controls conta
 
 ### Autoplay
 
-If the video is set to `autoplay`, it is imperative the video is muted by default. Some browsers handle this for users already[^6], but not all. In which case, we need to set the muted state on the `loadedmetadata` event (when the video has been appended to the DOM):
+Setting video or audio to autoplay by default will cause disruption and confusion to users with a variety of impairments, particularly those who depend on being able to hear their assistive technology when content first loads. Other vulnerable populations, those with emotional or mental health issues for example, can be affected when forced to consume[^7] intrusive video or audio embedded alongside text-based content too. And you should consider _situational limitations_ that users may experience, which can be exacerbated by anxiety conditions: someone sitting in a crowded but quiet place may be distressed at having their device suddenly and unexpectedly playing music or sounds. This is why the BBC Accessibility Guidelines[^8] tell us to make autoplay an **opt in** feature, do not enable it by default.
+
+But even in cases where `autoplay` has been opted-in to by the user, it is imperative the video is muted by default. This is important since screen reader users depend on being able to hear the voice output of their software to navigate, and this should not be 'talked over' by any video. They are unlikely to know where this uninvited noise is coming from, and it may take them some time to locate the video to mute it. Some browsers handle this for users already[^6], but not all. In which case, we need to set the muted state on the `loadedmetadata` event (when the video has been appended to the DOM):
 
 ```js
 video.addEventListener('loadedmetadata', function () {
@@ -214,7 +216,7 @@ video.addEventListener('loadedmetadata', function () {
 });
 ```
 
-It is especially important that autoplaying videos are muted since screen reader users rely on the synthetic voice output of their software to navigate, and this should not be 'talked over' by any video. They will not know where this uninvited noise is coming from, and it may take them some time to locate the video to mute it.
+Finally, a pause/stop/mute button must be made obvious and immediately accessible to give the user control over the content. And you must make the option to **opt out** of autoplay obvious too, for cases where a user has accidentally or unintentionally enabled it.
 
 ### Play and mute buttons
 
@@ -292,4 +294,7 @@ This topic does not yet have any related research available.
 [^4]: Styling Cross-browser compatibe range inputs — CSS Tricks, <https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/>
 [^5]: Flex — CSS Tricks, <https://css-tricks.com/almanac/properties/f/flex/>
 [^6]: Autoplay Policy Changes — Google Developers, <https://developers.google.com/web/updates/2017/09/autoplay-policy-changes>
+[^7]: BBC News: Virginia shooting: Facebook and Twitter told to rethink autoplay video <https://www.bbc.co.uk/news/technology-34073206>
+[^8]: BBC Mobile Accessibility Guidelines: Autoplay, <https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/audio-and-video/autoplay>
+
 
