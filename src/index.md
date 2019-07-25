@@ -34,6 +34,7 @@ We are writing technical recommendations for developers who build the patterns i
 | [Comments]({{site.basedir}}components/comments/) | Draft|
 | [Data tables]({{site.basedir}}components/data-tables/) | Draft|
 | [External links]({{site.basedir}}components/external-links/) | Draft|
+| [Filter and sort]({{site.basedir}}components/filter-and-sort/) | Draft|
 | [Form fields and validation]({{site.basedir}}components/form-fields/) | Draft|
 | [Infographics]({{site.basedir}}components/infographics/) | Draft|
 | [Information Panel]({{site.basedir}}components/info-panels/) | Draft|
