@@ -55,7 +55,7 @@ As set out in [**Headings**](../../foundations/headings), subsequent subheadings
 
 </figure>
 
-Headings are labels for sections of content, and heading tags should be used for no other purpose. A byline, for example, might take a heading-like larger/bolder text style. However, the name of the article's author does not name a subsection of the article. To 'pick out' the author name, use a `class` or a `<strong>` element.
+Headings are labels for sections of content, and heading tags should be used for no other purpose. A byline, for example, might take a heading-like larger/bolder text style. However, the name of the article's author does not name a subsection of the article. To highlight the author name, use a `class` or a `<strong>` element.
 
 ### <mark is="bad"> Bad example: byline as heading
 
@@ -73,15 +73,7 @@ The `<p>` tag is used as a generic block element, to ensure the byline is identi
 <p><strong>By Nicholas Barber</strong></p>
 ```
 
-**TODO: section on heading microcopy. Should probably refer back to [wording, in the headings document](../../foundations/headings/#wording)**
-
-## Paragraph content
-
-**TODO: Section on writing good paragraphs. Rhythm, simple language, etc.**
-
-### Non-english content
-
-**TODO: Section on including quotes/segments in different languages (using fonts that support the necessary glyphs / accents; `lang` attribute; translation tools etc.)**
+Be aware that many screen readers aggregate headings into a table of contents. This makes it important that headings make sense as labels _independent_ of surrounding/clarifying text. See the [Wording](../headings#wording) section in the [Headings](../headings) documentation.
 
 ## Lists
 
@@ -172,10 +164,6 @@ p a {
 ```
 
 Consult [**External links**](../external-links) on how to indicate links that take users away from the current site. External links navigate the user to new and potentially unfamiliar user interfaces, and this can be particularly disorientating for blind users. Ensure all external links follow the [**External links**](../external-links) advice.
-
-### Link labels
-
-**TODO: section on good link text (i.e. descriptive; makes sense independent of context)**
 
 ### Promos
 
