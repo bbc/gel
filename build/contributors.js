@@ -31,7 +31,7 @@ request.get( {
         console.log( '# [ERROR] ' + res.statusCode, err );
     } else {
         let niceData = data.map(contributor => { return {name: contributor.login, avatar: contributor.avatar_url, url: contributor.html_url }; });
-        
+        niceData = niceData.filter( contributor => !contributor.name.match(/\[bot\]$/i) );
         fs.writeFile( dataFile, JSON.stringify(niceData, null, 4), function( err ) {
             if ( err ) {
                 console.log( '# [ERROR] ', err );

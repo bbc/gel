@@ -13,25 +13,21 @@ summary: This is a community-powered project.
 </section>
 
 <section>
-    <h2>Our recent contributors</h1>
+  <h2>Our recent contributors</h1>
 
-
-<ul class="codegel-promos">
-  {% for contributor in contributors %}
-  <li class="codegel-promo">
-    <div class="codegel-promo-content">
-      <div class="codegel-promo-headline">
-        <h3>
-          <a href="{{ contributor.url }}">{{ contributor.name }}</a>
-        </h3>
+  <ul class="gel-promos">
+    {% for contributor in contributors %}
+    <li class="gel-promo" style="background-color:white">
+      <div class="gel-promo-content">
+        <div class="gel-promo-headline">
+          <h3>
+            <img class="circular" src="{{ contributor.avatar }}" alt="" style="min-width:4rem;vertical-align:middle"> <a href="{{ contributor.url }}">{{ contributor.name }}</a>
+          </h3>
+        </div>
       </div>
-    </div>
-    <div class="codegel-promo-image">
-      <img src="{{ contributor.avatar }}" alt="">
-    </div>
-  </li>
-   {% endfor %}
-  </ul>
-</section>
+    </li>
+     {% endfor %}
+    </ul>
+  </section>
 
 {% endblock %}
