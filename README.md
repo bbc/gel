@@ -1,4 +1,14 @@
-# bbc/gel Technical Accessibility Guides.
+# bbc/gel Technical Guides
+
+## Summary
+
+This repository holds the _documentation_ for the BBC GEL Technical Guides. The purpose of the code in this project is to compile and generate the website found at https://bbc.github.io/gel Notice that there is *no library or framework here*, we're just about documentation.
+
+## Contributing
+
+We love contributors. If you have an idea for how to make an improvement, let us know by [creating an issue to discuss your idea](https://github.com/bbc/gel/issues). We recommend you familiarise yourself with [the process of creating a pull-request in GitHub](https://help.github.com/en/articles/creating-a-pull-request) before proceeding.
+
+Our project is roughly organised into [source files](https://github.com/bbc/gel/tree/master/src) and generated [documentation files](https://github.com/bbc/gel/tree/master/docs). As writers we work in the [Markdown](https://learnxinyminutes.com/docs/markdown/)-formatted files in the `/src` folder. Running the build scripts, described below, will then generate the corresponding web pages in the `/docs` folder.
 
 ## Installation
 Prerequisites: Node.js 8+ (known to work on v8.9.4) and NPM.
