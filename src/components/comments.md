@@ -3,15 +3,105 @@ title: Comments
 summary: The ability to engage with content must be inclusive. Everyone should be able to have their say.
 version: 0.1.0
 published: false
+linkback: https://www.bbc.co.uk/gel/guidelines/comments
 ---
 
 ## Introduction
 
+The principle [GEL Comments guide](https://www.bbc.co.uk/gel/guidelines/comments) goes into some detail about how BBC comments should be presented and behave. The purpose of _this_ guide is to describe the expected technical implementation of a comments section's key features.
+
+Rather than providing a full [reference implementation](#reference-implementation) of a working comments section (which is best achieved using a suitable framework such as React or Vue), we will focus on the individual behaviour of the key subcomponents that contribute together to the pattern. 
+
+Comments, and the ability to write them, should be considered a progressive enhancement and the functionality provided via JavaScript.
+
 ## Recommended markup
+
+### The comments section
+
+The larger comments section comprises:
+
+1. The comment form (or sign in functionality where the user is not authenticated)
+2. Meta information and filtering controls
+3. The comments stream
+
+Since comments, and the ability to leave a comment, are tangential to the article itself these are grouped into an `<aside>` element placed at the end of the article body. The `<aside>` element represents a complementary landmark[^1] to assistive technology users. An `aria-labelledby` attribute is used to label the `<aside>` by association to the heading's `id`. The heading should comprise both the term _"Comments"_ and the question or call-to-action intended to spark participation.
+
+```html
+<aside class="gel-comments" aria-labelledby="comments-label">
+  <h2 class="gel-comments__label" id="comments-label" >
+    <small>Comments</small>
+    <span>Does the England team have any chance of qualifying for the World Cup?</span>
+  </h2>
+  <p>Join in to comment, reply, and rate.</p>
+  <!-- comments form and comments stream here -->
+</aside>
+```
+
+The label is announced along with the complementary role when the user traverses into the `<aside>` element. It is also included as the label in screen readers' aggregated landmark menus. JAWS opens a landmarks/regions menu with <kbd>Insert</kbd> + <kbd>Ctrl</kbd> + <kbd>R</kbd>[^2].
+
+Inside the comments section, the comments form comes first, followed by the meta information and filtering, then the comments stream. A link at the bottom of the section labelled _"Leave your comment"_ points to the comment form's `<textarea>` by `id` (`#your-comment`), so readers can easily leave a comment after reaching the end of the stream.
+
+```html
+<aside class="gel-comments" aria-labelledby="comments-label">
+  <h2 class="gel-comments__label" id="comments-label" >
+    <small>Comments</small>
+    <span>Does the England team have any chance of qualifying for the World Cup?</span>
+  </h2>
+  <p>Join in to comment, reply, and rate.</p>
+  <!-- comments form and comments stream here -->
+  <div class="gel-comments__footer">
+    <a href="#your-comment">Leave your comment</a>
+  </div>
+</aside>
+```
+
+### The comment form
+
+Authentication is out of scope for this article, so you are asked to imagine the user is already signed in—and the sign in call-to-action replaced by the comment form—in the following example.
+
+```html
+<form class="gel-comments__form">
+  <p>You're signed in as <a href="path/to/user/comment/history">Ben</a></p>
+  <div class="gel-form__divider">
+    <label for="your-comment">Add your comment</label>
+    <textarea id="your-comment"></textarea>
+    <div class="gel-form__field-error" id="you-comment-error"></div>
+  </div>
+  <div class="gel-form__divider">
+    <button type="submit" aria-describedby="your-comment-rules" hidden>Post</button>
+  </div>
+  <p id="your-comment-rules">Comments must follow the <a href="path/to/rules">house rules</a></p>
+</form>
+```
+
+* **`for="your-comment"`:** The textarea must be labelled programmatically, by matching its `id` with a `<label>`'s `for` value. As recommended in [Form fields](../form-fields) the label should appear persistently above the input/textarea, and not be supplanted by a `placeholder` attribute, ehich presents various accessibility and usability issues
+* **`class="gel-form__field-error"`:** The form should use the standard and accessible error messaging mechanism described in [Form fields](../form-fields). This error element is associated with the `<textarea>` and populated via the [Form fields](../form-fields) implementation's script.
+* **`id="your-comment-rules"`:** All users should be made aware of the moderation rules before submitting their comment. To make this information available to screen reader users in a timely fashion, it is associated with the submit button using `aria-describedby`[^2]. That is: it will be read out as part of the button's semantic information while the user is focused on it.
+* **`hidden`:** As set out in the principle [GEL Comments guide](https://www.bbc.co.uk/gel/guidelines/comments), the submit button is not revealed until the user has entered some text into the `<textarea>`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 There are two main parts to a comments section for a BBC [Article](../../foundations/articles): the comments form and the comments themselves. Since comments, and the ability to leave a comment, are tangential to the article itself these are grouped into an `<aside>` element. The `<aside>` element represents a complementary landmark[^1] to assistive technology users.
 
-The following example assumes the user is already signed in and able to comment.
+
 
 ```html
 <aside aria-labelledby="comments-label">
