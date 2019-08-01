@@ -13,14 +13,16 @@ Our project is roughly organised into [source files](https://github.com/bbc/gel/
 ## Installation
 Prerequisites: Node.js 8+ (known to work on v8.9.4) and NPM.
 
-1. `cd gel`
-2. `npm install`
-3. `npm link`
+```
+git clone https://github.com/bbc/gel.git
+cd gel
+npm install
+```
 
 ## Develop
 - `npm run develop`
 
-This will watch and compile files, and serve the `docs` folder on localhost while reloading the browser automatically.
+This will watch and build files, and serve the `docs` folder on localhost while reloading the browser automatically.
 
 ## Build
 To generate the HTML output into the project `docs` folder, using the markdown from the project `src` folder, run this command...
@@ -39,18 +41,9 @@ Or, if you're feeling like you want it all, try this...
 
 - `npm run build`
 
-## Example
+## Test
+We use Cypress and a Cucumber pre-processor to run the feature files found in [cypress/integrations](cypress/integrations).
 
-This is only an example: https://bbc.github.io/gel/components/hello-world/
+- `npm test`
 
-## Testing
-
-It's just HTML, so you only need to open up a web browser :-)
-
-If you're trying to preview the site running off of your desktop, I recommend using [the awesome 'serve' module](https://www.npmjs.com/package/serve).
-
-From the project base directory simply run...
-
-- `serve`
-
-Then navigate to the resulting server address like so: `http://localhost:8888/gel/components/hello-world` using whatever hostname and port is appropriate.
+To run the test suite.
