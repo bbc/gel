@@ -13,7 +13,9 @@
     "develop": "gulp",
     "build": "npm run js && npm run sass && npm run html",
     "serve": "eleventy --serve",
-    "test": "npx cypress open"
+    "test": "npm run cypress:run",
+    "cypress:run": "npx cypress run",
+    "cypress:open": "npx cypress open"
   },
   "repository": {
     "type": "git",
