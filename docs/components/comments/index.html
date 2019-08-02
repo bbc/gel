@@ -102,15 +102,317 @@
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900"
                     style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="geltags-toc__links" class="geltags-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="geltags-toc__links" class="geltags-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#meta-information-and-sort-control">Meta information and sort control</a></li><li><a href="#the-comments-stream">The comments stream</a></li><li><a href="#a-single-comment">A single comment</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#recommended-layout-1">Recommended layout</a></li><li><a href="#recommended-behaviour-1">Recommended behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
             <div class="geltags-sections geltags-body-copy gel-layout__item gel-3/5@l">
                 <h2 id="introduction">Introduction</h2>
+<p>The principle <a href="https://www.bbc.co.uk/gel/guidelines/comments">GEL Comments guide</a> goes into some detail about how BBC comments should be presented and behave. The purpose of <em>this</em> guide is to describe the expected technical implementation of a comments section's key features.</p>
+<p>Rather than providing a full <a href="#reference-implementation">reference implementation</a> of a working comments section (which is best achieved using a suitable framework such as React or Vue), we will focus on the individual behaviour of the key subcomponents that contribute together to the pattern.</p>
 <h2 id="recommended-markup">Recommended markup</h2>
-<p>There are two main parts to a comments section for a BBC <a href="../../foundations/articles">Article</a>: the comments form and the comments themselves. Since comments, and the ability to leave a comment, are tangential to the article itself these are grouped into an <code>&lt;aside&gt;</code> element. The <code>&lt;aside&gt;</code> element represents a complementary landmark<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> to assistive technology users.</p>
-<p>The following example assumes the user is already signed in and able to comment.</p>
+<h3 id="the-comments-section">The comments section</h3>
+<p>The larger comments section comprises:</p>
+<ol>
+<li>The comment form (or sign in functionality where the user is not authenticated)</li>
+<li>Meta information and sorting control</li>
+<li>The comments stream</li>
+</ol>
+<p>Since comments, and the ability to leave a comment, are tangential to the article itself these are grouped into an <code>&lt;aside&gt;</code> element placed at the end of the article body. The <code>&lt;aside&gt;</code> element represents a complementary landmark<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> to assistive technology users. An <code>aria-labelledby</code> attribute is used to label the <code>&lt;aside&gt;</code> by association to the heading's <code>id</code>. The heading should comprise both the term <em>&quot;Comments&quot;</em> and the question or call-to-action intended to spark participation.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comments"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"comments-label"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comments__label"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"comments-label"</span> &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>Comments:<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Does the England team have any chance of qualifying for the World Cup?<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Join in to comment, reply, and rate.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- comments form and comments stream here --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
+</code></pre>
+<p>The label is announced along with the complementary role when the user traverses into the <code>&lt;aside&gt;</code> element. It is also included as the label in screen readers' aggregated landmark menus. JAWS opens a landmarks/regions menu with <kbd>Insert</kbd> + <kbd>Ctrl</kbd> + <kbd>R</kbd><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>. The <code>&lt;h2&gt;</code> heading level marks the comments section as a subsection of the parent article, with its <code>&lt;h1&gt;</code> heading.</p>
+<ul>
+<li>All About The World Cup Qualifiers (<code>&lt;h1&gt;</code>)
+<ul>
+<li>Comments: Does the England team have any chance of qualifying for the World Cup? (<code>&lt;h2&gt;</code>)</li>
+</ul>
+</li>
+</ul>
+<p>Screen reader users can navigate directly between headings (and the sections / landmarks they denote), typically using the <kbd>h</kbd> shortcut key.</p>
+<p>Inside the comments section, the comments form comes first, followed by the meta information and sorting, then the comments stream. A link at the bottom of the section labelled <em>&quot;Leave your comment&quot;</em> points to the comment form's <code>&lt;textarea&gt;</code> by <code>id</code> (<code>#your-comment</code>), so readers can easily leave a comment after reaching the end of the stream.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comments"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"comments-label"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comments__label"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"comments-label"</span> &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>Comments:<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Does the England team have any chance of qualifying for the World Cup?<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Join in to comment, reply, and rate.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- comments form and comments stream here --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comments__footer"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#your-comment"</span>&gt;</span>Leave your comment<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
+</code></pre>
+<h3 id="the-comment-form">The comment form</h3>
+<p>Authentication is out of scope for this article, so you are asked to imagine the user is already signed in—and the sign in call-to-action replaced by the comment form—in the following example.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comments__form"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>You're signed in as <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/user/comment/history"</span>&gt;</span>Ben<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-form__divider"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"your-comment"</span>&gt;</span>Add your comment<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"your-comment"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"your-comment"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-form__field-error"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"your-comment-error"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-form__divider"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comments__success"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"status"</span> <span class="hljs-attr">aria-live</span>=<span class="hljs-string">"polite"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-form__divider"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"your-comment-rules"</span> <span class="hljs-attr">hidden</span>&gt;</span>Post<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"your-comment-rules"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>Comments must follow the <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/rules"</span>&gt;</span>house rules<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span>.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</code></pre>
+<ul>
+<li><strong><code>for=&quot;your-comment&quot;</code>:</strong> The textarea must be labelled programmatically, by matching its <code>id</code> with a <code>&lt;label&gt;</code>'s <code>for</code> value. As recommended in <a href="../form-fields">Form fields</a> the label should appear persistently above the input/textarea, and not be supplanted by a <code>placeholder</code> attribute, ehich presents various accessibility and usability issues</li>
+<li><strong><code>class=&quot;gel-form__field-error&quot;</code>:</strong> The form should use the standard and accessible error messaging mechanism described in <a href="../form-fields">Form fields</a>. This error element is associated with the <code>&lt;textarea&gt;</code> and populated via the <a href="../form-fields">Form fields</a> implementation's script (with adds <code>aria-describedby</code>, and <code>aria-invalid</code> where applicable).</li>
+<li><strong><code>id=&quot;your-comment-rules&quot;</code>:</strong> All users should be made aware of the moderation rules before submitting their comment. To make this information available to screen reader users in a timely fashion, it is associated with the submit button using <code>aria-describedby</code><sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2:1]</a></sup>. That is: it will be read out as part of the button's semantic information while the user is focused on it.</li>
+<li><strong><code>hidden</code>:</strong> As set out in the principle <a href="https://www.bbc.co.uk/gel/guidelines/comments">GEL Comments guide</a>, the submit button is not revealed until the user has entered some text into the <code>&lt;textarea&gt;</code></li>
+<li><strong><code>class=&quot;gel-comments__success&quot;</code>:</strong> This live region<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> is populated with the message <em>&quot;Your comment was posted successfully&quot;</em>. Live regions are announced in screen reader software whenever content is appended to them, meaning screen reader users can be kept abreast of changes to state.</li>
+</ul>
+<h2 id="meta-information-and-sort-control">Meta information and sort control</h2>
+<p>Sandwiched between the form and the comment stream is a subcomponent that tells the user the comment count, and allows them to sort the comments based on a handful of different criteria.</p>
+<p>How many sorting criteria are present depends on the complexity of any comment for the specific implementation. At the very least, users should be able to reorder comments by submission time: <em>&quot;Latest first&quot;</em> versus <em>&quot;Oldest first&quot;</em>. Some comments (see <a href="#the-comment-stream">the ensuing comment stream section</a>) include reaction controls. If so, you might implement <em>&quot;Most popular&quot;</em> and <em>&quot;Least popular&quot;</em>.</p>
+<p>The <a href="https://www.bbc.co.uk/gel/guidelines/comments">GEL Comments guide</a> illustrates the sorting control as a kind of <em>dropdown</em> or <code>&lt;select&gt;</code>. It's recommended this is either implemented using the ARIA menu button pattern<sup class="footnote-ref"><a href="#fn3" id="fnref3:1">[3:1]</a></sup> or uses a native <code>&lt;select&gt;</code> element with some special styling. It's possible to achieve the aesthetic illustrated in the <a href="https://www.bbc.co.uk/gel/guidelines/comments">GEL Comments guide</a> with CSS—at least for the closed state<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>, if not for the <code>&lt;option&gt;</code>s. The advantage of using the native control is that semantic HTML is robust and interoperable with minimal code.</p>
+<p>In the following code sample, the comment count is used as a description for the list (<code>&lt;ul&gt;</code>) that encloses <a href="#the-comment-stream">the comment stream</a>.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comments__meta"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"comments-count"</span>&gt;</span>186 comments<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comments__sort"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"comments-sort"</span>&gt;</span>
+    Show:
+    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"comments-sort"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">selected</span>&gt;</span>Latest first<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Oldest first<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"/path/to/gel-icons-all.svg#gel-icon-down"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comments__stream"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"comments-count"</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- stream of comment list items --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+<p>As standard, the SVG takes <code>focusable=&quot;false&quot;</code> and <code>aria-hidden=&quot;true&quot;</code> take it out of focus order and ensure it is not announced in screen reader output.</p>
+<h2 id="the-comments-stream">The comments stream</h2>
+<p>As already contested in the previous section, the comments themselves ought to be marked up as a list. Lists are identified and their items enumerated in screen reader output. Screen readers also provide list navigation shortcuts, such as the <kbd>i</kbd> key for navigating to the next list item in NVDA<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>.</p>
+<p>Where the facility to reply to comments is implemented, replies should be marked up as <em>nested</em> lists appended to the original comment's content. This describes the <strong>relationship of belonging</strong> non-visually and to assistive technology users.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comments__stream"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"comments-count"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- comment content --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- reply comment content --&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+<p>Each comment, regardless of its nesting level in the list structure, should be introduced by an <code>&lt;h3&gt;</code> level heading:  comments are subcomponents of the comments stream.</p>
+<ul>
+<li>All About The World Cup Qualifiers (<code>&lt;h1&gt;</code>)
+<ul>
+<li>Comments: Does the England team have any chance of qualifying for the World Cup? (<code>&lt;h2&gt;</code>)
+<ul>
+<li>Ben (12:00) (<code>&lt;h3&gt;</code>)</li>
+<li>Clive (13:27) (<code>&lt;h3&gt;</code>)</li>
+<li>Judith (14:22) (<code>&lt;h3&gt;</code>)</li>
+<li>Alex (15:08) (<code>&lt;h3&gt;</code>)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>While the nested list structure describes the nested relationship of replies to original comments, each comment should be considered <em>on the same plane</em> as a contribution to the comment stream / discourse. This way, screen reader users are made aware of the nesting structure, but know that a comment of any type (reply or otherwise) can be navigated to using the <code>&lt;h3&gt;</code> shortcut (<kbd>3</kbd> in NVDA or JAWS on Windows).</p>
+<h2 id="a-single-comment">A single comment</h2>
+<p>Every comment on a BBC site must include:</p>
+<ul>
+<li>An <code>&lt;h3&gt;</code> heading containing the commenter's name and the date of submission</li>
+<li>The text/body of the comment</li>
+<li>A link for reporting the comment</li>
+</ul>
+<p>Each comment belonging to the same comment stream may also include:</p>
+<ul>
+<li>A reply button</li>
+<li>A sharing button</li>
+<li>Reaction functionality</li>
+</ul>
+<h3 id="the-heading">The heading</h3>
+<p>The comment's <code>&lt;h3&gt;</code> heading (see the previous <a href="#the-comments-stream">comments stream</a> section) must include <em>both</em> the commenter's name (as derived from the authenticated user) and the time/date the comment was posted. Only by including the time/date does the <code>&lt;h3&gt;</code> become unique<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>, and therefore discernible by screen reader users navigating an aggregated headings list.</p>
+<h4 id="name-only-headings-list">
+          <div class="circular circular__bad" aria-hidden="true">✕</div>
+         Name-only headings list</h4>
+<ul>
+<li>Clive</li>
+<li>Clive</li>
+<li>Clive</li>
+<li>Judith</li>
+</ul>
+<h4 id="headings-include-timings">
+          <div class="circular circular__bad" aria-hidden="true">✕</div>
+         Headings include timings</h4>
+<ul>
+<li>Clive (12:00)</li>
+<li>Clive (12:01)</li>
+<li>Clive (12:04)</li>
+<li>Judith (12:17)</li>
+</ul>
+<h4 id="linking">Linking</h4>
+<p>The heading content should also be wrapped in a link. This enables readers to link directly to, and share, the comment in contention. In the below example, clicking on the link places the comment's unique <code>id</code> in the query string, and focuses the comment itself. The <code>tabindex=&quot;-1&quot;</code> attribution ensures keyboard focus, along with scroll position, is moved to the comment.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comment"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"comment-1562746727083"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#comment-1562746727083"</span>&gt;</span>
+      Clive
+      <span class="hljs-tag">&lt;<span class="hljs-name">time</span> <span class="hljs-attr">datetime</span>=<span class="hljs-string">"2019-7-10T12:04"</span>&gt;</span>12:04<span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+</code></pre>
+<p>The <code>&lt;time&gt;</code> element's text node can display a time, a date, or a colloquialism like <em>&quot;Just now&quot;</em> depending on the circumstances. However, the <code>datetime</code> value should consistently include the machine-readable format of the previous example. Here is how you would convert the current time to this format:</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> now = <span class="hljs-built_in">Date</span>.now();
+<span class="hljs-keyword">var</span> timeParsed = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(timestamp);
+<span class="hljs-keyword">var</span> datetime = timeParsed.getFullYear() + <span class="hljs-string">"-"</span> + (timeParsed.getMonth() + <span class="hljs-number">1</span>) + <span class="hljs-string">"-"</span> + timeParsed.getDate() + <span class="hljs-string">'T'</span> + timeParsed.getHours() + <span class="hljs-string">":"</span> + timeParsed.getMinutes();
+</code></pre>
+<p>Reply comments should contain a link to both the current comment and the comment replied to, using the construction <em>&quot;Person 1 replied to Person 2&quot;</em>:</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#comment-1562746727083"</span>&gt;</span>Clive Robinson<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> 
+  replied to 
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#comment-1562762936794"</span>&gt;</span>Clive Davidson<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">time</span> <span class="hljs-attr">datetime</span>=<span class="hljs-string">"2019-07-10T13:48"</span>&gt;</span>on Wed Jul 10 2019, at 13:48<span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+</code></pre>
+<p>Theoretically, reply nesting could recurse indefinitely. However, to prevent the comment stream from becoming unwieldy, it is recommended an arbitrary limit is set. Comments, say, 3 replies deep would no longer offer a reply button.</p>
+<h3 id="reaction-functionality">Reaction functionality</h3>
+<p>The type of 'reaction' functionality available will vary depending on the specific BBC product. But, as illustrated in the <a href="https://www.bbc.co.uk/gel/guidelines/comments">GEL Comments guide</a>, it is likely to be a voting or like/dislike mechanism.<br>
+Where the like/dislike controls are implemented as illustrated, they should take the form of a toggle button pair:</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comment__vote"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"vote"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-pressed</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-descibedby</span>=<span class="hljs-string">"total-likes-1562746727083"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr"</span>&gt;</span>Like<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"/gel/static/images/gel-icons-all.svg#gel-icon-like"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"total-likes-1562746727083"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>216 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr"</span>&gt;</span>total<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>    
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-pressed</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-descibedby</span>=<span class="hljs-string">"total-dislikes-1562746727083"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr"</span>&gt;</span>Dislike<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"/gel/static/images/gel-icons-all.svg#gel-icon-dislike"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"total-dislikes-1562746727083"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>34 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr"</span>&gt;</span>total<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<ul>
+<li><strong><code>role=&quot;group&quot;</code>:</strong> The group ARIA role[^7] is a generic role to indicate the contents are related/equivalent</li>
+<li><strong><code>aria-label</code>:</strong> This gives a non-visual role to the subcomponent, supplementing visual signification</li>
+<li><strong><code>aria-describedby</code> and <code>aria-hidden=&quot;true&quot;</code>:</strong> <code>aria-describedby</code> appends the total vote count to the <code>&lt;button&gt;</code> screen reader announcement for context. Since the <code>&lt;span&gt;</code> is inside the button, it would also be announced on focus. This is prevented with <code>aria-hidden=&quot;true&quot;</code></li>
+<li><strong><code>gel-sr</code>:</strong> Visually hides elements only needed for non-visual clarification</li>
+</ul>
+<p>See the <a href="#recommended-behaviour">Recommended behaviour</a> section for notes on how state is managed for this functionality.</p>
+<h2 id="recommended-layout">Recommended layout</h2>
+<h3 id="the-sorting-control">The sorting control</h3>
+<p>The biggest challenge in terms of styling is the custom aesthetic for the sorting <code>&lt;select&gt;</code> element. The <a href="http://wtfforms.com">wtfforms.com</a>[^8] site includes a solution using <code>appearance: none</code>[^9] and the positioning of a custom downwards-pointing arrow. The <code>&lt;option&gt;</code> elements cannot take many custom styles (only <code>color</code> and <code>background-color</code> are applicable) but this is considered a fair compromise given the robustness of the underlying native control.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-comments__sort</span> {
+  <span class="hljs-attribute">position</span>: relative;
+}
+
+<span class="hljs-selector-class">.gel-comments__sort</span> <span class="hljs-selector-tag">select</span> {
+  <span class="hljs-attribute">-webkit-appearance</span>: none;
+  <span class="hljs-attribute">appearance</span>: none;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">background</span>: none;
+  <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">1em</span>;
+}
+
+<span class="hljs-selector-class">.gel-comments__sort</span> <span class="hljs-selector-tag">svg</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">0.75em</span>;
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">0.25em</span>;
+}
+</code></pre>
+<h3 id="reply-styling">Reply styling</h3>
+<p>As set forth in <a href="https://www.bbc.co.uk/gel/guidelines/comments">the GEL Comments guide</a>, reply comments should be demarcated using a vertical line down the left-hand side of the comment. It is recommended this is achieved using a <code>border</code> and not an image or gradient. CSS <code>border</code>s are honoured and visible in Windows High Contrast Mode.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-comment--reply</span> {
+  <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">1rem</span>;
+  <span class="hljs-attribute">border-left</span>: <span class="hljs-number">2px</span> solid $gel-color--blue;
+}
+</code></pre>
+<h3 id="state-indication">State indication</h3>
+<p>The pressed (<code>aria-pressed=&quot;true&quot;</code>) state of controls must be indicated not just through a change in color[^10]. In the case of the like and dislike voting controls, the <a href="#reference-implementation">reference implementation</a> uses a blue <code>fill</code> for the button's SVG icon.</p>
+<pre class="hljs"><code>  <span class="hljs-selector-class">.gel-comment__vote</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-attr">[aria-pressed="true"]</span> <span class="hljs-selector-tag">path</span> {
+    <span class="hljs-attribute">fill</span>: $gel-color--star-command-blue;
+  }
+</code></pre>
+<h2 id="recommended-behaviour">Recommended behaviour</h2>
+<p>Comments, and the ability to write them, should be considered a progressive enhancement and the functionality provided via JavaScript. In the <a href="#reference-implementation">Reference implementations</a> to follow, some plain ES5 JavaScript is used to handle rendering to the DOM. In practice, you are more likely to use a library like React or Vue, and fetch comment data over XHR.</p>
+<p>Where there is latency, a loading spinner may need to be incorporated similar to that implemented in the <a href="../load-more">Load more component</a>. The <a href="#reference-implementation">Reference implementations</a> use dummy content and data and just exemplify the expected layout and interaction behaviour. Rendering is instantaneous.</p>
+<h3 id="posting-a-comment">Posting a comment</h3>
+<p>Where JavaScript is available, comments section is rendered and form validation initialized, as implemented in <a href="../form-fields">Form fields</a>. In this case, the only validation rule is that the <code>id=&quot;your-comment&quot;</code> <code>&lt;textarea&gt;</code> is <code>required</code>. With the following rules object supplied, the <code>aria-required=&quot;true&quot;</code> attribution is automatically added to the <code>&lt;textarea&gt;</code> element.</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> rules = [
+  {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'your-comment'</span>,
+    <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>,
+  }
+];
+</code></pre>
+<p>The <code>hidden</code> submit button is visible/available whenever the <code>&lt;textarea&gt;</code>'s value in non-empty. Note that this does not do away with form validation, since we still need to provide associated state information (<code>aria-invalid=&quot;true&quot;</code>) to the user while they are typing, and where they might have deleted all their text. It is better to be explicit.</p>
+<p>Submission is suppressed where the required field is empty, and the field's associated error element is populated. The field is marked as invalid with <code>aria-invalid=&quot;true&quot;</code><sup class="footnote-ref"><a href="#fn5" id="fnref5:1">[5:1]</a></sup>.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-form__divider"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"your-comment"</span>&gt;</span>Add your comment:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"your-comment"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"your-comment"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"comment"</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">"5"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"your-comment-error"</span> <span class="hljs-attr">aria-required</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-invalid</span>=<span class="hljs-string">"true"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-form__field-error"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"your-comment-error"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Error:<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span> This field is required<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>When a comment is successfully submitted, the comment stream should be immediately re-rendered to include the new comment. <em>&quot;Thanks! We will check this as quickly as possible before posting&quot;</em> is appended to the <code>class=&quot;gel-comment__success&quot;</code> live region, and the comment box value is emptied. The custom <code>gel-submitted</code> event from the <a href="../form-fields">Form fields</a> validation script can be the 'hook' for this state management.</p>
+<pre class="hljs"><code>form.addEventListener(<span class="hljs-string">'gel-submitted'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  successMsg.textContent = <span class="hljs-string">'Thanks! We will check this as quickly as possible before posting.'</span>;
+  textarea.value = <span class="hljs-string">''</span>;
+});
+</code></pre>
+<p>This message persists until the user refocuses the comment <code>&lt;textarea&gt;</code> to post another comment (should they ever do so). This is recommended over a timed removal, since this would mark an unexpected change in the UI.</p>
+<pre class="hljs"><code>textarea.addEventListener(<span class="hljs-string">'focus'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  successMsg.textContent = <span class="hljs-string">''</span>;
+});
+</code></pre>
+<h3 id="sorting">Sorting</h3>
+<p>Selecting a sorting option should immediately re-render the comments stream in the new order. The newly selected option doubles as the control's new label (<em>&quot;Oldest first&quot;</em> in the following example). Since a native <code>&lt;select&gt;</code> control is used, all of the expected behaviours for such a control are present.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comments__sort"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"comments-sort"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr"</span>&gt;</span>Sort<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"comments-sort"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Latest first<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">selected</span>&gt;</span>Oldest first<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+</code></pre>
+<h3 id="voting">Voting</h3>
+<p>The example voting functionality illustrated in the <a href="#reaction-functionality">Reaction functionality</a> section can exist in states. At the outset, no voting has taken place. Each <code>&lt;button&gt;</code> takes <code>aria-pressed=&quot;false&quot;</code>.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comment__vote"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"vote"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-pressed</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-descibedby</span>=<span class="hljs-string">"total-likes-1562746727083"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr"</span>&gt;</span>Like<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"/gel/static/images/gel-icons-all.svg#gel-icon-like"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"total-likes-1562746727083"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>216 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr"</span>&gt;</span>total<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>    
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-pressed</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-descibedby</span>=<span class="hljs-string">"total-dislikes-1562746727083"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr"</span>&gt;</span>Dislike<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"/gel/static/images/gel-icons-all.svg#gel-icon-dislike"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"total-dislikes-1562746727083"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>34 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr"</span>&gt;</span>total<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>Where <em>either</em> of the buttons are pressed, that button's <code>aria-pressed</code> state is switched to <code>true</code>.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-pressed</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-descibedby</span>=<span class="hljs-string">"total-likes-1562746727083"</span>&gt;</span>Like<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<p>Press the same <em>&quot;Like&quot;</em> button again and its state should switch back to <code>aria-pressed=&quot;false&quot;</code>. Accordingly, the total for likes should be decremented. If the <em>&quot;Dislike&quot;</em> button is pressed while the <em>&quot;Like&quot;</em> button is in the <code>aria-pressed=&quot;true&quot;</code> state, both button states change: <em>&quot;Like&quot;</em> to <code>false</code> and <em>&quot;Dislike&quot;</em> to <code>true</code>. Likes decrement by <code>1</code> and dislikes increment by <code>1</code>. Users cannot both like and dislike something simultaneously.</p>
+<p>There are two main parts to a comments section for a BBC <a href="../../foundations/articles">Article</a>: the comments form and the comments themselves. Since comments, and the ability to leave a comment, are tangential to the article itself these are grouped into an <code>&lt;aside&gt;</code> element. The <code>&lt;aside&gt;</code> element represents a complementary landmark<sup class="footnote-ref"><a href="#fn1" id="fnref1:1">[1:1]</a></sup> to assistive technology users.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"comments-label"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"comments-label"</span>&gt;</span>Comments<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">form</span>&gt;</span>
@@ -144,9 +446,9 @@
 <li><strong><code>aria-labelledby</code>:</strong> This property labels the <code>&lt;aside&gt;</code> by association to the heading's <code>id</code>. In aggregated landmark menus, this makes it possible to identify the <strong>Breakout box</strong> by its label. The label is announced along with the complementary role when the user traverses into the <code>&lt;aside&gt;</code> element. It also labels the <code>&lt;aside&gt;</code> in landmark lists (see the previous point), so it should be unique — that is, not just <em>&quot;Note&quot;</em> or <em>&quot;Warning&quot;</em> in each case.</li>
 <li><strong><code>for=&quot;comment&quot;</code>:</strong> The textarea must be labelled programmatically, by matching its <code>id</code> with a <code>&lt;label&gt;</code>'s <code>for</code> value. As recommended in <a href="../form-fields">Form fields</a> the label should appear persistently above the input/textarea.</li>
 <li><strong><code>class=&quot;gel-form__field-error&quot;</code>:</strong> The form should use the standard and accessible error messaging mechanism described in <a href="../form-fields">Form fields</a>. This error element is associated with the <code>&lt;textarea&gt;</code> and populated via the <a href="../form-fields">Form fields</a> implementation's script.</li>
-<li><strong><code>id=&quot;notice&quot;</code>:</strong> All users should be made aware of the moderation rules before submitting their comment. To make this information available to screen reader users in a timely fashion, it is associated with the submit button using <code>aria-describedby</code><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>. That is: it will be read out as part of the button's semantic information while the user is focused on it.</li>
+<li><strong><code>id=&quot;notice&quot;</code>:</strong> All users should be made aware of the moderation rules before submitting their comment. To make this information available to screen reader users in a timely fashion, it is associated with the submit button using <code>aria-describedby</code><sup class="footnote-ref"><a href="#fn2" id="fnref2:2">[2:2]</a></sup>. That is: it will be read out as part of the button's semantic information while the user is focused on it.</li>
 <li><strong><code>href=&quot;#comment&quot;</code>:</strong> The comment form should be easily accessible at the top of the comments landmark. A link to the <em>&quot;Add your comment&quot;</em> field is also available <em>after</em> the list of comments. This allows a user who's reached the end of the comments to directly access the comment form to add their own.</li>
-<li><strong><code>class=&quot;gel-comments__success&quot;</code>:</strong> This live region<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> is populated with the message <em>&quot;Your comment was posted successfully&quot;</em>. Live regions are announced in screen reader software whenever content is appended to them, meaning screen reader users can be kept abreast of changes to state.</li>
+<li><strong><code>class=&quot;gel-comments__success&quot;</code>:</strong> This live region<sup class="footnote-ref"><a href="#fn3" id="fnref3:2">[3:2]</a></sup> is populated with the message <em>&quot;Your comment was posted successfully&quot;</em>. Live regions are announced in screen reader software whenever content is appended to them, meaning screen reader users can be kept abreast of changes to state.</li>
 </ul>
 <h3 id="heading-structure">Heading structure</h3>
 <p>As outlined in <a href="../../foundations/headings">Headings</a>, you should use headings to describe a relationship of belonging. The comments landmark belongs as a direct subsection of the page. It should, therefore, take an <code>&lt;h2&gt;</code> heading to follow the page's main <code>&lt;h1&gt;</code>. Comments themselves each belong to the comments landmark, making the <code>&lt;h3&gt;</code> level applicable in context.</p>
@@ -156,8 +458,8 @@
         * Clive Butterworth on Tue Jul 09 2019, at 09:42: (`<span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>`)
         * Clive Symington on Mon Jul 08 2019, at 13:37: (`<span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>`)
 </code></pre>
-<h3 id="a-single-comment">A single comment</h3>
-<p>The comments should be grouped into a list, since lists are identified and their items enumerated in screen reader output. Screen readers also provide list navigation shortcuts, such as the <kbd>i</kbd> key for navigating to the next list item in NVDA<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>.</p>
+<h3 id="a-single-comment-1">A single comment</h3>
+<p>The comments should be grouped into a list, since lists are identified and their items enumerated in screen reader output. Screen readers also provide list navigation shortcuts, such as the <kbd>i</kbd> key for navigating to the next list item in NVDA<sup class="footnote-ref"><a href="#fn4" id="fnref4:1">[4:1]</a></sup>.</p>
 <p>The following example illustrates a single comment, as a list item:</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comment"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"lmu4jrrnt"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
@@ -223,7 +525,7 @@
 </code></pre>
 <p>Note the <code>&lt;h3&gt;</code>. While the nested list structure describes the nested relationship of replies to original comments, each comment should be considered <em>on the same plane</em> as a contribution to the comment stream / discourse. This way, screen reader users are made aware of the nesting structure, but know that a comment of any type (reply or otherwise) can be navigated to using the <code>&lt;h3&gt;</code> shortcut (<kbd>3</kbd> in NVDA or JAWS on Windows).</p>
 <p>For brevity, comment replies are not implemented in the <a href="#reference-implementation">Reference implementation</a>.</p>
-<h2 id="recommended-layout">Recommended layout</h2>
+<h2 id="recommended-layout-1">Recommended layout</h2>
 <p>The aesthetic for comments will vary between BBC sites. For example, CBBC comments (<a href="https://www.bbc.co.uk/cbbc/joinin/blue-peter-fan-club-page#comments">see an example of a CBBC comments stream here</a>) uses a speech bubble design. All BBC comment sections should follow the following structure (reading from top to bottom):</p>
 <ol>
 <li>Introductory heading (<em>&quot;Comments&quot;</em> or <em>&quot;Your comments&quot;</em>)</li>
@@ -233,7 +535,7 @@
 <li>An <em>&quot;Add your comment&quot;</em> link pointing to the <em>&quot;Add your comment&quot;</em> textarea in the form above the comments list</li>
 </ol>
 <p>See the <a href="#reference-implementation">Reference implementation</a> for an example layout implementation.</p>
-<h2 id="recommended-behaviour">Recommended behaviour</h2>
+<h2 id="recommended-behaviour-1">Recommended behaviour</h2>
 <p>Comments, and the ability to write them, should be considered a progressive enhancement and the functionality provided via JavaScript. In the <a href="#reference-implementation">Reference implementation</a>, some plain ES5 JavaScript is used to handle comment submissions and (re)render the comment stream. In practice, you are more likely to use a library like React or Vue, and fetch comment data over XHR.</p>
 <p>Where there is latency, a loading spinner may need to be incorporated similar to that implemented in the <a href="../load-more">Load more component</a>. The <a href="#reference-implementation">Reference implementation</a> uses dummy data and just exemplifies the expected layout and interaction behaviour. Rendering is instantaneous.</p>
 <p>Where JavaScript is not available, the comment form's submit button is disabled and dimmed. The <code>&lt;noscript&gt;</code> tag for the comments stream is visible.</p>
@@ -242,7 +544,7 @@
     page.<span class="hljs-tag">&lt;/<span class="hljs-name">noscript</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<h3 id="posting-a-comment">Posting a comment</h3>
+<h3 id="posting-a-comment-1">Posting a comment</h3>
 <p>Where JavaScript is available, the submit button is enabled and form validation is initialized, as implemented in <a href="../form-fields">Form fields</a>. In this case, the only validation rule is that the <code>id=&quot;comment&quot;</code> <code>&lt;textarea&gt;</code> is <code>required</code>. With the following rules object supplied, the <code>aria-required=&quot;true&quot;</code> attribution is automatically added to the <code>&lt;textarea&gt;</code> element.</p>
 <pre class="hljs"><code><span class="hljs-keyword">var</span> rules = [
   {
@@ -251,7 +553,7 @@
   }
 ];
 </code></pre>
-<p>Submission is suppressed where the required field is empty, and the field's associated error element is populated. The field is marked as invalid with <code>aria-invalid=&quot;true&quot;</code><sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>.</p>
+<p>Submission is suppressed where the required field is empty, and the field's associated error element is populated. The field is marked as invalid with <code>aria-invalid=&quot;true&quot;</code><sup class="footnote-ref"><a href="#fn5" id="fnref5:2">[5:2]</a></sup>.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-form__divider"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"comment"</span>&gt;</span>Add your comment:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"comment"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"comment"</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">"5"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"comment-error"</span> <span class="hljs-attr">aria-required</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-invalid</span>=<span class="hljs-string">"true"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
@@ -269,7 +571,7 @@
   <span class="hljs-keyword">this</span>.success.textContent = <span class="hljs-string">''</span>;
 }.bind(<span class="hljs-keyword">this</span>));
 </code></pre>
-<h3 id="sorting">Sorting</h3>
+<h3 id="sorting-1">Sorting</h3>
 <p>To make the exploration of comments easier, you may wish to provide some sorting options. By default, comments in the <a href="#reference-implementation">Reference implementation</a> are sorted in descending order  by their <code>time</code> property (newest first). The time of submission is acquired with <code>Date.now()</code>:</p>
 <pre class="hljs"><code>comments.addComment({
   <span class="hljs-attr">id</span>: <span class="hljs-built_in">Math</span>.random().toString(<span class="hljs-number">36</span>).substr(<span class="hljs-number">2</span>, <span class="hljs-number">9</span>),
@@ -304,7 +606,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
 </code></pre>
-<p>Screen readers identify both the fieldset (by the <code>&lt;legend&gt;</code> group label<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>) and the individual inputs. When focus is moved onto the <code>checked</code> <em>&quot;Newest first&quot;</em> radio, users will hear something similar to <em>&quot;Newest first, selected radio button, 1 of 2, group, Sort by&quot;</em>. The order of readout and the precise wording varies between screen readers, browsers, and operating systems.</p>
+<p>Screen readers identify both the fieldset (by the <code>&lt;legend&gt;</code> group label<sup class="footnote-ref"><a href="#fn6" id="fnref6:1">[6:1]</a></sup>) and the individual inputs. When focus is moved onto the <code>checked</code> <em>&quot;Newest first&quot;</em> radio, users will hear something similar to <em>&quot;Newest first, selected radio button, 1 of 2, group, Sort by&quot;</em>. The order of readout and the precise wording varies between screen readers, browsers, and operating systems.</p>
 <pre class="hljs"><code><span class="hljs-keyword">var</span> sortControls = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.gel-comments__sort-controls'</span>);
 sortControls.addEventListener(<span class="hljs-string">'change'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
   comments.sortBy(e.target.value);
@@ -316,7 +618,7 @@ sortControls.addEventListener(<span class="hljs-string">'change'</span>, <span c
 <p>Each comment includes a link for reporting abuse. The links URL is appended with the comment <code>id</code> so it can be correctly identified and tracked in the moderation system.</p>
 <pre class="hljs"><code>&lt;a href=<span class="hljs-string">"https://www.bbc.co.uk/moderation/complaints/comments/' + this.id + '"</span>&gt;Report&lt;<span class="hljs-regexp">/a&gt;
 </span></code></pre>
-<h3 id="voting">Voting</h3>
+<h3 id="reactions">Reactions</h3>
 <p>Some BBC sites' comment streams include the ability to upvote comments. Upvote buttons should be implemented as standard <code>&lt;button&gt;</code> elements, associated to the total vote count with <code>aria-describedby</code>. Something like this:</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-button"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"total-z50fsmh2h"</span>&gt;</span>Upvote<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-votes"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"total-z50fsmh2h"</span>&gt;</span>
@@ -357,7 +659,227 @@ sortControls.addEventListener(<span class="hljs-string">'change'</span>, <span c
 title: Comments
  -->
 
-<div class="gel-comments">
+<style>
+  .shadow-box {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.25rem #ccc;
+  }
+
+  .text-align\:right {
+    text-align: right;
+  }
+
+  .gel-comments__form textarea {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .gel-comments__form [type="submit"][hidden] {
+    display: none;
+  }
+
+  .gel-comments__form textarea:focus {
+    outline: 2px solid;
+  }
+
+  .gel-comments__meta {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .gel-comments__sort {
+    position: relative;
+  }
+
+  .gel-comments__sort select {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 0;
+    background: none;
+    font-size: inherit;
+    font-family: inherit;
+    padding-right: 1em;
+  }
+
+  .gel-comments__sort svg {
+    width: 0.75em;
+    position: absolute;
+    right: 0;
+    top: 0.25em;
+    pointer-events: none;
+  }
+
+  .gel-comment__vote {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .gel-comment__vote *+button {
+    margin-left: 0.75rem;
+  }
+
+  .gel-comment__vote button+span {
+    margin-left: 0.25rem;
+  }
+
+  .gel-comment__vote button {
+    border: 0;
+    padding: 0;
+    background: none;
+  }
+
+  .gel-comment__vote button[aria-pressed="true"] path {
+    fill: #007bb8;
+  }
+
+  .gel-comment__vote svg,
+  .gel-comment__vote span {
+    pointer-events: none;
+  }
+</style>
+
+<h3>The comments form</h3>
+
+<div class="shadow-box">
+  <form class="gel-comments__form">
+    <p>You're signed in as <strong><a href="path/to/user/comment/history">Ben</a></strong></p>
+    <div class="gel-form__divider">
+      <div class="gel-comments__success" role="status" aria-live="polite"></div>
+    </div>
+    <div class="gel-form__divider">
+      <label for="your-comment">Add your comment</label>
+      <textarea name="your-comment" id="your-comment"></textarea>
+      <div class="gel-form__field-error" id="your-comment-error"></div>
+    </div>
+    <div class="gel-form__divider">
+      <button type="submit" aria-describedby="your-comment-rules" hidden>Post</button>
+    </div>
+    <p id="your-comment-rules"><small>Comments must follow the <a href="path/to/rules">house rules</a></small>.</p>
+  </form>
+</div>
+
+<h3>The sorting control</h3>
+
+<p>The meta information subcomponent, with a sorting control devised using a native <code>&lt;select></code> element.
+</p>
+
+<div class="shadow-box">
+  <div class="gel-comments__meta">
+    <span id="comments-count">186 comments</span>
+    <label class="gel-comments__sort" for="comments-sort">
+      <strong>Show:</strong>
+      <select id="comments-sort">
+        <option selected>Latest first</option>
+        <option>Oldest first</option>
+      </select>
+      <svg viewBox="0 0 32 32">
+        <path d="M16 29L32 3h-7.2L16 18.3 7.2 3H0"></path>
+      </svg>
+    </label>
+  </div>
+</div>
+
+<h3>Voting</h3>
+
+<p>An ad hoc script is provided to demonstrate the expected UI behaviour. A production implementation would be
+  data-driven, and use declarative rendering.</p>
+
+<div class="shadow-box text-align:right">
+  <div class="gel-comment__vote" role="group" aria-label="vote">
+    <button aria-pressed="false" aria-descibedby="total-likes-1562746727083">
+      <span class="gel-sr">Like</span>
+      <svg viewBox="0 0 867.20184 971.79153" class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+        <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-width="65"
+          d="m32.813 475h102.3v417.06h-102.3zm233.17 441.18c-15.486-12.012-33.662-26.413-40.391-32.002-7.231-6.007-29.949-11.786-55.559-14.133-46.844 19.297-31.451 19.953-30.701-165.41.343-84.794.602-210.39 2.981-219 3.91-14.139-25.535 11.714 8.147 9.976 27.517-1.419 40.953-5.387 51.365-15.169 7.756-7.286 14.101-15.6 14.101-18.477 40.428-124.46 180.55-236.28 212.84-372.26.232-27.611 14.837-59.605 61.079-56.932 34.58 1.999 69.415 25.867 77.951 38.651 46.429 87.686-50.003 222.01-20.802 279.07 5.313 8.603 12.54 17.854 16.061 20.556s51.453 4.405 106.52 3.783c105.51-1.191 121.54 1.765 149.34 27.529 33.966 60.426-4.9564 100.75-54.915 129.02 97.032 30.052 73.367 120.23-12.868 139.48 110.49 74.569 24.96 115.63-5.413 127.13 72.296 53.117 46.778 97.487 9.854 121.49-47.394 23.828-167.81 18.96-239.13 18.857l-222.3-.322z" />
+      </svg>
+      <span aria-hidden="true" id="total-likes-1562746727083">216 <span class="gel-sr">total</span></span>
+    </button>
+    <button aria-pressed="false" aria-descibedby="total-dislikes-1562746727083">
+      <span class="gel-sr">Dislike</span>
+      <svg viewBox="0 0 867.20184 971.79153" class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+        <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-width="65"
+          d="m32.813 496.47h102.3v-417.06h-102.3zm233.17-441.18c-15.486 12.012-33.662 26.413-40.391 32.002-7.231 6.007-29.949 11.786-55.559 14.133-46.844-19.297-31.451-19.953-30.701 165.41.343 84.794.602 210.39 2.981 219 3.91 14.139-25.535-11.714 8.147-9.976 27.517 1.419 40.953 5.387 51.365 15.169 7.756 7.286 14.101 15.6 14.101 18.477 40.428 124.46 180.55 236.28 212.84 372.26.232 27.611 14.837 59.605 61.079 56.932 34.58-1.999 69.415-25.867 77.951-38.651 46.429-87.686-50.003-222.01-20.802-279.07 5.313-8.603 12.54-17.854 16.061-20.556s51.453-4.405 106.52-3.783c105.51 1.191 121.54-1.765 149.34-27.529 33.966-60.426-4.9564-100.75-54.915-129.02 97.032-30.052 73.367-120.23-12.868-139.48 110.49-74.569 24.96-115.63-5.413-127.13 72.296-53.117 46.778-97.487 9.854-121.49-47.394-23.828-167.81-18.96-239.13-18.857l-222.3.322z" />
+      </svg>
+      <span aria-hidden="true" id="total-dislikes-1562746727083">34 <span class="gel-sr">total</span></span>
+    </button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    /* Sort control script */
+    var sorter = document.getElementById('comments-sort');
+    sorter.addEventListener('change', function () {
+      alert('Sorting changed to: ' + sorter.value);
+    });
+
+    /* Voting script */
+    var voting = document.querySelector('.gel-comment__vote');
+    var votingButtons = Array.prototype.slice.call(voting.querySelectorAll('button'));
+    var totals = Array.prototype.slice.call(voting.querySelectorAll('span[id]'));
+    voting.addEventListener('click', function (e) {
+      var index = votingButtons.indexOf(e.target);
+      if (index > -1) {
+        var otherIndex = index === 0 ? 1 : 0;
+        var pressed = votingButtons[index].getAttribute('aria-pressed') === 'true';
+        var otherPressed = votingButtons[otherIndex].getAttribute('aria-pressed') === 'true';
+        if (pressed) {
+          votingButtons[index].setAttribute('aria-pressed', 'false');
+          totals[index].textContent = parseInt(totals[index].textContent) - 1;
+        } else {
+          votingButtons[index].setAttribute('aria-pressed', 'true');
+          totals[index].textContent = parseInt(totals[index].textContent) + 1;
+          if (otherPressed) {
+            votingButtons[otherIndex].setAttribute('aria-pressed', 'false');
+            totals[otherIndex].textContent = parseInt(totals[otherIndex].textContent) - 1;
+          }
+        }
+      }
+    }, false);
+
+    /* Comment form script */
+    var form = document.querySelector('.gel-comments__form');
+    var submitButton = form.querySelector('[type="submit"]');
+    var textarea = form.querySelector('textarea');
+    var successMsg = form.querySelector('.gel-comments__success');
+
+    textarea.addEventListener('input', function () {
+      submitButton.hidden = textarea.value === '';
+    });
+
+    textarea.addEventListener('focus', function () {
+      if (textarea.value === '') {
+        submitButton.hidden = true;
+      }
+    });
+
+    submitButton.addEventListener('blur', function () {
+      successMsg.innerHTML = '';
+      submitButton.hidden = true;
+    });
+
+    var rules = [
+      {
+        name: 'your-comment',
+        required: true
+      }
+    ];
+
+    window.gel && gel.Validation.init();
+    var formValidation = new gel.Validation.constructor(form, rules);
+
+    form.addEventListener('gel-submitted', function () {
+      successMsg.innerHTML = 'Thanks! We will check this as quickly as possible before posting.';
+      textarea.value = '';
+    });
+  });
+</script>
+
+
+
+<!--<div class="gel-comments">
   <form class="gel-comments__form" id="comment-form">
     <p>
       You're signed in as <strong>Your Name</strong>.
@@ -468,9 +990,9 @@ title: Comments
 
     window.gel && gel.Validation.init();
     var form = document.getElementById('comment-form');
-    var formValidation = new gel.Validation.constructor(form, rules)
+    var formValidation = new gel.Validation.constructor(form, rules);
   });
-</script></div>
+</script>--></div>
         
           <p><a class="gel-cta gel-long-primer-bold" href="../demos/comments/" target="_new"><span class="gel-button__label">Open in new window</span><svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
         <h2 id="related-research">Related research</h2>
@@ -479,17 +1001,17 @@ title: Comments
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>Complementary Landmark — W3C, <a href="https://www.w3.org/TR/wai-aria-practices/examples/landmarks/complementary.html">https://www.w3.org/TR/wai-aria-practices/examples/landmarks/complementary.html</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+<li id="fn1" class="footnote-item"><p>Complementary Landmark — W3C, <a href="https://www.w3.org/TR/wai-aria-practices/examples/landmarks/complementary.html">https://www.w3.org/TR/wai-aria-practices/examples/landmarks/complementary.html</a> <a href="#fnref1" class="footnote-backref">↩︎</a> <a href="#fnref1:1" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn2" class="footnote-item"><p>Using the <code>aria-describedby</code> attribute — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute">https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+<li id="fn2" class="footnote-item"><p>Using the <code>aria-describedby</code> attribute — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute">https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute</a> <a href="#fnref2" class="footnote-backref">↩︎</a> <a href="#fnref2:1" class="footnote-backref">↩︎</a> <a href="#fnref2:2" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn3" class="footnote-item"><p>ARIA live regions — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions">https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+<li id="fn3" class="footnote-item"><p>ARIA live regions — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions">https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions</a> <a href="#fnref3" class="footnote-backref">↩︎</a> <a href="#fnref3:1" class="footnote-backref">↩︎</a> <a href="#fnref3:2" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn4" class="footnote-item"><p>NVDA Keyboard Shortcuts — Deque University, <a href="https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts">https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+<li id="fn4" class="footnote-item"><p>NVDA Keyboard Shortcuts — Deque University, <a href="https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts">https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts</a> <a href="#fnref4" class="footnote-backref">↩︎</a> <a href="#fnref4:1" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn5" class="footnote-item"><p>Using the <code>aria-invalid</code> attribute — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-invalid_attribute">https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-invalid_attribute</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+<li id="fn5" class="footnote-item"><p>Using the <code>aria-invalid</code> attribute — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-invalid_attribute">https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-invalid_attribute</a> <a href="#fnref5" class="footnote-backref">↩︎</a> <a href="#fnref5:1" class="footnote-backref">↩︎</a> <a href="#fnref5:2" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn6" class="footnote-item"><p>Grouping Controls — W3C, <a href="https://www.w3.org/WAI/tutorials/forms/grouping/">https://www.w3.org/WAI/tutorials/forms/grouping/</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+<li id="fn6" class="footnote-item"><p>Grouping Controls — W3C, <a href="https://www.w3.org/WAI/tutorials/forms/grouping/">https://www.w3.org/WAI/tutorials/forms/grouping/</a> <a href="#fnref6" class="footnote-backref">↩︎</a> <a href="#fnref6:1" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
