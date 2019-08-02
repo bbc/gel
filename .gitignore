@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
 npm-debug.log
+cypress/videos
 
 # What is this directory?
 _site
