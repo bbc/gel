@@ -35,7 +35,7 @@ Since comments, and the ability to leave a comment, are tangential to the articl
 </aside>
 ```
 
-The label is announced along with the complementary role when the user traverses into the `<aside>` element. It is also included as the label in screen readers' aggregated landmark menus. JAWS opens a landmarks/regions menu with <kbd>Insert</kbd> + <kbd>Ctrl</kbd> + <kbd>R</kbd>[^2]. The `<h2>` heading level marks the comments section as a subsection of the parent article, with its `<h1>` heading. 
+The label is announced along with the complementary role when the user traverses into the `<aside>` element. It is also included as the label in screen readers' aggregated landmark menus. The `<h2>` heading level marks the comments section as a subsection of the parent article, with its `<h1>` heading. 
 
 * All About The World Cup Qualifiers (`<h1>`)
     * Comments: Does the England team have any chance of qualifying for the World Cup? (`<h2>`)
@@ -92,7 +92,7 @@ Sandwiched between the form and the comment stream is a subcomponent that tells 
 
 How many sorting criteria are present depends on the complexity of any comment for the specific implementation. At the very least, users should be able to reorder comments by submission time: _"Latest first"_ versus _"Oldest first"_. Some comments (see [the ensuing comment stream section](#the-comment-stream)) include reaction controls. If so, you might implement _"Most popular"_ and _"Least popular"_.
 
-The [GEL Comments guide](https://www.bbc.co.uk/gel/guidelines/comments) illustrates the sorting control as a kind of _dropdown_ or `<select>`. It's recommended this is either implemented using the ARIA menu button pattern[^3] or uses a native `<select>` element with some special styling. It's possible to achieve the aesthetic illustrated in the [GEL Comments guide](https://www.bbc.co.uk/gel/guidelines/comments) with CSS—at least for the closed state[^4], if not for the `<option>`s. The advantage of using the native control is that semantic HTML is robust and interoperable with minimal code.
+The [GEL Comments guide](https://www.bbc.co.uk/gel/guidelines/comments) illustrates the sorting control as a kind of _dropdown_ or `<select>`. It's recommended this is either implemented using the ARIA menu button pattern[^4] or uses a native `<select>` element with some special styling. It's possible to achieve the aesthetic illustrated in the [GEL Comments guide](https://www.bbc.co.uk/gel/guidelines/comments) with CSS—at least for the closed state[^5], if not for the `<option>`s. The advantage of using the native control is that semantic HTML is robust and interoperable with minimal code.
 
 In the following code sample, the comment count is used as a description for the list (`<ul>`) that encloses [the comment stream](#the-comment-stream).
 
@@ -119,7 +119,7 @@ As standard, the SVG takes `focusable="false"` and `aria-hidden="true"` take it 
 
 ## The comments stream
 
-As already contested in the previous section, the comments themselves ought to be marked up as a list. Lists are identified and their items enumerated in screen reader output. Screen readers also provide list navigation shortcuts, such as the <kbd>i</kbd> key for navigating to the next list item in NVDA[^5].
+As already contested in the previous section, the comments themselves ought to be marked up as a list. Lists are identified and their items enumerated in screen reader output. Screen readers also provide list navigation shortcuts, such as the <kbd>i</kbd> key for navigating to the next list item in NVDA[^6].
 
 Where the facility to reply to comments is implemented, replies should be marked up as _nested_ lists appended to the original comment's content. This describes the **relationship of belonging** non-visually and to assistive technology users.
 
@@ -163,7 +163,7 @@ Each comment belonging to the same comment stream may also include:
 
 ### The heading
 
-The comment's `<h3>` heading (see the previous [comments stream](#the-comments-stream) section) must include _both_ the commenter's name (as derived from the authenticated user) and the time/date the comment was posted. Only by including the time/date does the `<h3>` become unique[^6], and therefore discernible by screen reader users navigating an aggregated headings list.
+The comment's `<h3>` heading (see the previous [comments stream](#the-comments-stream) section) must include _both_ the commenter's name (as derived from the authenticated user) and the time/date the comment was posted. Only by including the time/date does the `<h3>` become unique, and therefore discernible by screen reader users navigating an aggregated headings list.
 
 #### <mark is="bad"> Name-only headings list
 
@@ -250,7 +250,7 @@ See the [Recommended behaviour](#recommended-behaviour) section for notes on how
 
 ### The sorting control
 
-The biggest challenge in terms of styling is the custom aesthetic for the sorting `<select>` element. The wtfforms.com[^8] site includes a solution using `appearance: none`[^9] and the positioning of a custom downwards-pointing arrow. The `<option>` elements cannot take many custom styles (only `color` and `background-color` are applicable) but this is considered a fair compromise given the robustness of the underlying native control.
+The biggest challenge in terms of styling is the custom aesthetic for the sorting `<select>` element. The wtfforms.com site includes a solution using `appearance: none`[^8] and the positioning of a custom downwards-pointing arrow. The `<option>` elements cannot take many custom styles (only `color` and `background-color` are applicable) but this is considered a fair compromise given the robustness of the underlying native control.
 
 ```css
 .gel-comments__sort {
@@ -286,7 +286,7 @@ As set forth in [the GEL Comments guide](https://www.bbc.co.uk/gel/guidelines/co
 
 ### State indication
 
-The pressed (`aria-pressed="true"`) state of controls must be indicated not just through a change in color[^10]. In the case of the like and dislike voting controls, the [reference implementation](#reference-implementation) uses a blue `fill` for the button's SVG icon.
+The pressed (`aria-pressed="true"`) state of controls must be indicated not just through a change in color[^9]. In the case of the like and dislike voting controls, the [reference implementation](#reference-implementation) uses a blue `fill` for the button's SVG icon.
 
 ```css
   .gel-comment__vote button[aria-pressed="true"] path {
@@ -315,7 +315,7 @@ var rules = [
 
 The `hidden` submit button is visible/available whenever the `<textarea>`'s value in non-empty. Note that this does not do away with form validation, since we still need to provide associated state information (`aria-invalid="true"`) to the user while they are typing, and where they might have deleted all their text. It is better to be explicit.
 
-Submission is suppressed where the required field is empty, and the field's associated error element is populated. The field is marked as invalid with `aria-invalid="true"`[^5].
+Submission is suppressed where the required field is empty, and the field's associated error element is populated. The field is marked as invalid with `aria-invalid="true"`.
 
 ```html
 <div class="gel-form__divider">
@@ -334,11 +334,12 @@ form.addEventListener('gel-submitted', function () {
 });
 ```
 
-This message persists until the user refocuses the comment `<textarea>` to post another comment (should they ever do so). This is recommended over a timed removal, since this would mark an unexpected change in the UI.
+This message persists until the user unfocuses the submit button (a `blur` event is emitted). This is recommended over a timed removal, which would mean a change in UI unexpectedly not coinciding with a user action. The submit button itself is also hidden at this juncture (the `blur` event suggests a keyboard user will have already safely moved to another focusable element).
 
 ```js
-textarea.addEventListener('focus', function () {
-  successMsg.textContent = '';
+submitButton.addEventListener('blur', function () {
+  successMsg.innerHTML = '';
+  submitButton.hidden = true;
 });
 ```
 
@@ -387,379 +388,6 @@ Where _either_ of the buttons are pressed, that button's `aria-pressed` state is
 
 Press the same _"Like"_ button again and its state should switch back to `aria-pressed="false"`. Accordingly, the total for likes should be decremented. If the _"Dislike"_ button is pressed while the _"Like"_ button is in the `aria-pressed="true"` state, both button states change: _"Like"_ to `false` and _"Dislike"_ to `true`. Likes decrement by `1` and dislikes increment by `1`. Users cannot both like and dislike something simultaneously.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-There are two main parts to a comments section for a BBC [Article](../../foundations/articles): the comments form and the comments themselves. Since comments, and the ability to leave a comment, are tangential to the article itself these are grouped into an `<aside>` element. The `<aside>` element represents a complementary landmark[^1] to assistive technology users.
-
-
-
-```html
-<aside aria-labelledby="comments-label">
-  <h2 id="comments-label">Comments</h2>
-  <form>
-    <p>
-      You're signed in as Your Name. 
-      <a href="https://account.bbc.com/signout">Sign out</a>
-    </p>
-    <div class="gel-form__divider">
-      <label for="comment">Add your comment:</label>
-      <textarea id="comment" name="comment"></textarea>
-      <div class="gel-form__field-error" id="comment-error"></div>
-    </div>
-    <div class="gel-form__divider">
-      <div class="gel-comment__success" role="status" aria-live="polite"></div>
-    </div>
-    <div class="gel-form__divider">
-      <button class="gel-button" type="submit" aria-describedby="notice">Submit</button>
-    </div>
-    <p id="notice">All comments are <a
-        href="https://www.bbc.co.uk/social/moderation">reactively-moderated</a> and must follow <a
-        href="https://www.bbc.co.uk/social/moderation/house-rules">the house rules</a>.</p>
-  </form>
-  <div class="gel-comments__stream">
-    <noscript>You cannot read or write comments with JavaScript disabled. Please enable JavaScript and refresh the
-      page.</noscript>
-  </div>
-  <a class="gel-comments__add-link" href="#comment">Add your comment</a>
-</aside>
-```
-
-* **`aria-labelledby`:** This property labels the `<aside>` by association to the heading's `id`. In aggregated landmark menus, this makes it possible to identify the **Breakout box** by its label. The label is announced along with the complementary role when the user traverses into the `<aside>` element. It also labels the `<aside>` in landmark lists (see the previous point), so it should be unique — that is, not just _"Note"_ or _"Warning"_ in each case.
-* **`for="comment"`:** The textarea must be labelled programmatically, by matching its `id` with a `<label>`'s `for` value. As recommended in [Form fields](../form-fields) the label should appear persistently above the input/textarea.
-* **`class="gel-form__field-error"`:** The form should use the standard and accessible error messaging mechanism described in [Form fields](../form-fields). This error element is associated with the `<textarea>` and populated via the [Form fields](../form-fields) implementation's script.
-* **`id="notice"`:** All users should be made aware of the moderation rules before submitting their comment. To make this information available to screen reader users in a timely fashion, it is associated with the submit button using `aria-describedby`[^2]. That is: it will be read out as part of the button's semantic information while the user is focused on it.
-* **`href="#comment"`:** The comment form should be easily accessible at the top of the comments landmark. A link to the _"Add your comment"_ field is also available _after_ the list of comments. This allows a user who's reached the end of the comments to directly access the comment form to add their own.
-* **`class="gel-comments__success"`:** This live region[^3] is populated with the message _"Your comment was posted successfully"_. Live regions are announced in screen reader software whenever content is appended to them, meaning screen reader users can be kept abreast of changes to state.
-
-### Heading structure
-
-As outlined in [Headings](../../foundations/headings), you should use headings to describe a relationship of belonging. The comments landmark belongs as a direct subsection of the page. It should, therefore, take an `<h2>` heading to follow the page's main `<h1>`. Comments themselves each belong to the comments landmark, making the `<h3>` level applicable in context.
-
-```html
-* Article title (`<h1>`)
-    * Comments (`<h2>`)
-        * Clive Warren on Wed Jul 10 2019, at 13:48: (`<h3>`)
-        * Clive Butterworth on Tue Jul 09 2019, at 09:42: (`<h3>`)
-        * Clive Symington on Mon Jul 08 2019, at 13:37: (`<h3>`)
-```
-
-### A single comment
-
-The comments should be grouped into a list, since lists are identified and their items enumerated in screen reader output. Screen readers also provide list navigation shortcuts, such as the <kbd>i</kbd> key for navigating to the next list item in NVDA[^4].
-
-The following example illustrates a single comment, as a list item:
-
-```html
-<li class="gel-comment" id="lmu4jrrnt" tabindex="-1">
-  <h3>
-    Clive Warren
-    <time datetime="2019-07-10T13:48">on Wed Jul 10 2019, at 13:48</time>
-  </h3>
-  <div class="gel-comment__body">
-    <p>I like this content very much.</p>
-  </div>
-  <div class="gel-comment__options">
-    <a href="https://www.bbc.co.uk/moderation/complaints/comments/lmu4jrrnt">Report</a> 
-    <a href="path/to/this/permalink#lmu4jrrnt">Link</a>
-  </div>
-</li>
-```
-
-* **`id` and `tabindex="-1"`:** It's important users are able to link directly to the specific comment — hence the provision of the _"Link"_ inside `.gel-comments__options`. The `tabindex="-1"` attribution ensures keyboard focus, along with scroll position, is moved to the comment.
-* **`<h3>`:** See [Heading structure](#heading-structure). The heading level should reflect the nesting level of the comments. In this case, `<h3>` is expected since it is assumed the (outer) comments section is introduced with an `<h2>`.
-* **`<time>`** The `<time>` element uses `datetime` to create a machine readable version of the comment's date and time. It does not have any direct impact of the user experience.
-
-### Replies
-
-The ability to reply directly to comments may increase in engagement. A reply button should be provided alongside the other controls, inside the `.gel-comment__options` element:
-
-```html
-<div class="gel-comment__options">
-  <a href="https://www.bbc.co.uk/moderation/complaints/comments/lmu4jrrnt">Report</a> 
-  <a href="path/to/this/permalink#lmu4jrrnt">Link</a>
-  <button class="gel-button">Reply</button>
-</div>
-```
-
-Any one comment's replies should be grouped into a _nested_ list. That is, the reply should belong to a list that belongs to a comment that belongs to its own, higher-level, list (`ul > li > ul` in CSS selector terms).
-
-```html
-<div class="gel-comments">
-  <ul>
-    <li class="gel-comment" id="lmu4jrrnt" tabindex="-1">
-      <h3>
-        Clive Warren
-        <time datetime="2019-07-10T13:48">on Wed Jul 10 2019, at 13:48</time>
-      </h3>
-      <div class="gel-comment__body">
-        <p>I like this content very much.</p>
-      </div>
-      <div class="gel-comment__options">
-        <a href="https://www.bbc.co.uk/moderation/complaints/comments/lmu4jrrnt">Report</a> 
-        <a href="path/to/this/permalink#lmu4jrrnt">Link</a>
-        <button class="gel-button">Reply</button>
-      </div>
-      <ul>
-        <li>
-          <!-- a nested reply comment -->
-        </li>
-      </ul>
-    </li>
-    <li>
-      <!-- a top-level comment -->
-    </li>
-  </ul>
-</div>
-```
-
-Theoretically, reply nesting could recurse indefinitely. However, to prevent the comment stream from becoming unwieldy, it is recommended an arbitrary limit is set. Comments, say, 3 replies deep would no longer offer a reply button.
-
-The heading for a reply should link back to the original comment by the original commenter's name. Use the construction _"Person 2 replied to Person 1"_ like so:
-
-```html
-<h3>
-  Clive Sinclair replied to <a href="path/to/this/permalink#lmu4jrrnt">Clive Warren</a>
-  <time datetime="2019-07-10T13:48">on Wed Jul 10 2019, at 13:48</time>
-</h3>
-```
-
-Note the `<h3>`. While the nested list structure describes the nested relationship of replies to original comments, each comment should be considered _on the same plane_ as a contribution to the comment stream / discourse. This way, screen reader users are made aware of the nesting structure, but know that a comment of any type (reply or otherwise) can be navigated to using the `<h3>` shortcut (<kbd>3</kbd> in NVDA or JAWS on Windows).
-
-For brevity, comment replies are not implemented in the [Reference implementation](#reference-implementation).
-
-## Recommended layout
-
-The aesthetic for comments will vary between BBC sites. For example, CBBC comments ([see an example of a CBBC comments stream here](https://www.bbc.co.uk/cbbc/joinin/blue-peter-fan-club-page#comments)) uses a speech bubble design. All BBC comment sections should follow the following structure (reading from top to bottom):
-
-1. Introductory heading (_"Comments"_ or _"Your comments"_)
-2. Comment form (or sign-in form if the user is not signed in)
-3. Comment sorting controls (described in [Recommended behaviour](#recommended-behaviour))
-4. The comments list
-5. An _"Add your comment"_ link pointing to the _"Add your comment"_ textarea in the form above the comments list
-
-See the [Reference implementation](#reference-implementation) for an example layout implementation.
-
-## Recommended behaviour
-
-Comments, and the ability to write them, should be considered a progressive enhancement and the functionality provided via JavaScript. In the [Reference implementation](#reference-implementation), some plain ES5 JavaScript is used to handle comment submissions and (re)render the comment stream. In practice, you are more likely to use a library like React or Vue, and fetch comment data over XHR. 
-
-Where there is latency, a loading spinner may need to be incorporated similar to that implemented in the [Load more component](../load-more). The [Reference implementation](#reference-implementation) uses dummy data and just exemplifies the expected layout and interaction behaviour. Rendering is instantaneous.
-
-Where JavaScript is not available, the comment form's submit button is disabled and dimmed. The `<noscript>` tag for the comments stream is visible.
-
-```html
-<div class="gel-comments__stream">
-  <noscript>You cannot read or write comments with JavaScript disabled. Please enable JavaScript and refresh the
-    page.</noscript>
-</div>
-```
-
-### Posting a comment
-
-Where JavaScript is available, the submit button is enabled and form validation is initialized, as implemented in [Form fields](../form-fields). In this case, the only validation rule is that the `id="comment"` `<textarea>` is `required`. With the following rules object supplied, the `aria-required="true"` attribution is automatically added to the `<textarea>` element.
-
-```js
-var rules = [
-  {
-    name: 'comment',
-    required: true,
-  }
-];
-```
-
-Submission is suppressed where the required field is empty, and the field's associated error element is populated. The field is marked as invalid with `aria-invalid="true"`[^5].
-
-```html
-<div class="gel-form__divider">
-  <label for="comment">Add your comment:</label>
-  <textarea id="comment" name="comment" rows="5" aria-describedby="comment-error" aria-required="true" aria-invalid="true"></textarea>
-  <div class="gel-form__field-error" id="comment-error"><strong>Error:</strong> This field is required</div>
-</div>
-```
-
-When a comment is successfully submitted, the comment stream is immediately re-rendered to include the new comment. _"Your comment was posted successfully"_ is appended to the `class="gel-comment__success"` live region, and the comment box value is emptied. The custom `gel-submitted` event from the [Form fields](../form-fields) validation script is the 'hook' for this state management.
-
-```js
-this.form.addEventListener('gel-submitted', function () {
-  this.success.textContent = 'Your comment was posted successfully.';
-  this.commentBox.value = '';
-}.bind(this));
-```
-
-This message persists until the user refocuses the comment `<textarea>` to post another comment (should they ever do so).
-
-```js
-this.commentBox.addEventListener('focus', function () {
-  this.success.textContent = '';
-}.bind(this));
-```
-
-### Sorting
-
-To make the exploration of comments easier, you may wish to provide some sorting options. By default, comments in the [Reference implementation](#reference-implementation) are sorted in descending order  by their `time` property (newest first). The time of submission is acquired with `Date.now()`:
-
-```js
-comments.addComment({
-  id: Math.random().toString(36).substr(2, 9),
-  time: Date.now(),
-  name: 'Your Name',
-  comment: this.sanitize(this.form.comment.value)
-});
-```
-
-The `sortBy` method enables the re-rendering of the comment stream according to a chosen sorting method. In the [Reference implementation](#reference-implementation), just `timeAsc` is implemented alongside the default. 
-
-```js
-switch (this.sortMethod) {
-  case 'timeAsc':
-    data.sort(function (a, b) {
-      return a.time - b.time;
-    });
-    break;
-  default: // by time, ascending
-    data.sort(function (a, b) {
-      return b.time - a.time;
-    });
-}
-```
-
-It is recommended sorting controls are implemented using a fieldset of radio buttons, since they represent mutually exclusive options.
-
-```html
-<fieldset class="gel-comments__sort-controls">
-  <legend>Sort by</legend>
-  <label>
-    <input name="sort" type="radio" value="timeDesc" checked>
-    <span>Newest first</span>
-  </label>
-  <label>
-    <input name="sort" type="radio" value="timeAsc">
-    <span>Oldest first</span>
-  </label>
-</fieldset>
-```
-
-Screen readers identify both the fieldset (by the `<legend>` group label[^6]) and the individual inputs. When focus is moved onto the `checked` _"Newest first"_ radio, users will hear something similar to _"Newest first, selected radio button, 1 of 2, group, Sort by"_. The order of readout and the precise wording varies between screen readers, browsers, and operating systems.
-
-```js
-var sortControls = document.querySelector('.gel-comments__sort-controls');
-sortControls.addEventListener('change', function (e) {
-  comments.sortBy(e.target.value);
-});
-```
-
-### Linking to comments
-
-Clicking any comment's _"Link to"_ link simply links to the comment—as a document fragment—itself. In the [Reference implementation](#reference-implementation) this invokes a default focus ring around the comment.
-
-### Reporting comments
-
-Each comment includes a link for reporting abuse. The links URL is appended with the comment `id` so it can be correctly identified and tracked in the moderation system.
-
-```js
-<a href="https://www.bbc.co.uk/moderation/complaints/comments/' + this.id + '">Report</a>
-```
-
-### Reactions
-
-Some BBC sites' comment streams include the ability to upvote comments. Upvote buttons should be implemented as standard `<button>` elements, associated to the total vote count with `aria-describedby`. Something like this:
-
-```html
-<button class="gel-button" aria-describedby="total-z50fsmh2h">Upvote</button>
-<span class="gel-votes" id="total-z50fsmh2h">
-  <span class="gel-votes__number">126</span> 
-  <span class="gel-sr">votes in total</span>
-</span>
-```
-
-Note the `gel-sr` `<span>`, which provides visually hidden information to screen readers. The text _"votes in total"_ adds clarification for blind screen reader users for whom the nature of the functionality may be less clear.
-
-Comments that include a `points` property could be sorted by points. You can adapt the [Reference implementation](#reference-implementation) like so:
-
-```js
-switch (this.sortMethod) {
-  case 'timeAsc':
-    data.sort(function (a, b) {
-      return a.time - b.time;
-    });
-    break;
-  case 'pointsAsc': 
-    data.sort(function (a, b) {
-      return a.points - b.points;
-    });  
-    break;
-  case 'pointsDesc': 
-    data.sort(function (a, b) {
-      return b.points - a.points;
-    });  
-    break;
-  default: // by time, ascending
-    data.sort(function (a, b) {
-      return b.time - a.time;
-    });
-}
-```
-
 ## Reference implementation
 
 ::: alert Important
@@ -779,6 +407,9 @@ This topic does not yet have any related research available.
 [^1]: Complementary Landmark — W3C, <https://www.w3.org/TR/wai-aria-practices/examples/landmarks/complementary.html>
 [^2]: Using the `aria-describedby` attribute — MDN, <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute>
 [^3]: ARIA live regions — MDN, <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions>
-[^4]: NVDA Keyboard Shortcuts — Deque University, <https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts>
-[^5]: Using the `aria-invalid` attribute — MDN, <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-invalid_attribute>
-[^6]: Grouping Controls — W3C, <https://www.w3.org/WAI/tutorials/forms/grouping/>
+[^4]: ARIA Practices: Menu Button — WAI, <https://www.w3.org/TR/wai-aria-practices-1.1/#menubutton>
+[^5]: WTFForms — Mark Otto, <http://wtfforms.com/>
+[^6]: NVDA Keyboard Shortcuts — Deque University, <https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts>
+[^7]: Using the `group` role — MDN, <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_group_role>
+[^8]: `appearance` — MDN, <https://css-tricks.com/almanac/properties/a/appearance/>
+[^9]: WCAG2.1 1.4.1 Use Of Color, <https://www.w3.org/TR/WCAG21/#use-of-color>
