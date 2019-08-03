@@ -42,12 +42,12 @@ Or, if you're feeling like you want it all, try this...
 - `npm run build`
 
 ## Test
-We use Cypress with a Cucumber pre-processor to run the feature files found in [cypress/integrations](cypress/integrations). Step definitions for each feature file exist under `cypress/integrations/feature-file-name`.
+We use Cypress with a Cucumber pre-processor to run the feature files found in [cypress/integrations](cypress/integrations). Step definitions for feature files can be found in `cypress/integrations/<feature-file-name>`.
 
 To run the test suite in headless mode, run...
 
 - `npm test`
 
-Or to run tests in the GUI, run...
+Or to run them in the GUI...
 
 - `npm run cypress:open`
