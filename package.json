@@ -15,7 +15,7 @@
     "serve": "eleventy --serve",
     "test": "start-server-and-test test:server http://localhost:5000 cypress:run",
     "test:open": "start-server-and-test test:server http://localhost:5000 cypress:open",
-    "test:server": "npx serve",
+    "test:server": "npx serve --no-clipboard",
     "cypress:run": "npx cypress run",
     "cypress:open": "npx cypress open"
   },
