@@ -50,7 +50,7 @@ To run the test suite in headless mode, run...
 
 Or to run them in the GUI...
 
-- `npm run cypress:open`
+- `npm run test:open`
 
 ### Writing tests
 A solid test generally covers 3 phases:

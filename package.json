@@ -13,8 +13,9 @@
     "develop": "gulp",
     "build": "npm run js && npm run sass && npm run html",
     "serve": "eleventy --serve",
-    "test": "npm run cypress:run",
-    "test:serve": "npx serve",
+    "test": "start-server-and-test test:server http://localhost:5000 cypress:run",
+    "test:open": "start-server-and-test test:server http://localhost:5000 cypress:open",
+    "test:server": "npx serve",
     "cypress:run": "npx cypress run",
     "cypress:open": "npx cypress open"
   },
@@ -54,7 +55,8 @@
     "cypress": "^3.4.1",
     "cypress-cucumber-preprocessor": "^1.13.0",
     "gulp": "^4.0.2",
-    "serve": "^11.1.0"
+    "serve": "^11.1.0",
+    "start-server-and-test": "^1.9.2"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true
