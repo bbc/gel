@@ -51,3 +51,12 @@ To run the test suite in headless mode, run...
 Or to run them in the GUI...
 
 - `npm run cypress:open`
+
+### Writing tests
+A solid test generally covers 3 phases:
+
+1. Set up the application state.
+2. Take an action.
+3. Make an assertion about the resulting application state.
+
+You will see this phrased as “Given, When, Then” in our feature files.
