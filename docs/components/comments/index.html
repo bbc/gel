@@ -155,12 +155,19 @@
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comments__form"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>You're signed in as <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/user/comment/history"</span>&gt;</span>Ben<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-form__divider"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"your-comment"</span>&gt;</span>Add your comment<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"your-comment"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"your-comment"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-form__field-error"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"your-comment-error"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comments__success"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"status"</span> <span class="hljs-attr">aria-live</span>=<span class="hljs-string">"polite"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-form__divider"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comments__success"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"status"</span> <span class="hljs-attr">aria-live</span>=<span class="hljs-string">"polite"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"your-comment"</span>&gt;</span>Add your comment<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comments__field"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"your-comment"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"your-comment"</span> <span class="hljs-attr">maxlength</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"chars-left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comments__chars"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"chars-left"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comments__chars-left"</span>&gt;</span>200<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comments__chars-of"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>/ 200<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr"</span>&gt;</span>characters remaining<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-form__field-error"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"your-comment-error"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-form__divider"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"your-comment-rules"</span> <span class="hljs-attr">hidden</span>&gt;</span>Post<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
@@ -170,6 +177,8 @@
 </code></pre>
 <ul>
 <li><strong><code>for=&quot;your-comment&quot;</code>:</strong> The textarea must be labelled programmatically, by matching its <code>id</code> with a <code>&lt;label&gt;</code>'s <code>for</code> value. As recommended in <a href="../form-fields">Form fields</a> the label should appear persistently above the input/textarea, and not be supplanted by a <code>placeholder</code> attribute, ehich presents various accessibility and usability issues</li>
+<li><strong><code>class=&quot;gel-comments__field&quot;</code>:</strong> This groups the <code>&lt;textarea&gt;</code> with the character count element for CSS positioning. The count is associated with the <code>&lt;textarea&gt;</code> using <code>aria-describedby</code>.</li>
+<li><strong><code>class=&quot;gel-comment__chars&quot;</code>:</strong> A combination of <code>aria-hidden=&quot;true&quot;</code> and <code>class=&quot;gel-sr&quot;</code> ensures the accessible wording for this element follows the pattern <em>&quot;[number] characters remaining&quot;</em>. The complete <code>aria-describedby</code> value is a space separated combination of the <code>your-comment-error</code> and <code>chars-left</code> <code>id</code>s. The text of each <code>id</code>'s element is read in turn whenever the textarea is focused.</li>
 <li><strong><code>class=&quot;gel-form__field-error&quot;</code>:</strong> The form should use the standard and accessible error messaging mechanism described in <a href="../form-fields">Form fields</a>. This error element is associated with the <code>&lt;textarea&gt;</code> and populated via the <a href="../form-fields">Form fields</a> implementation's script (with adds <code>aria-describedby</code>, and <code>aria-invalid</code> where applicable).</li>
 <li><strong><code>id=&quot;your-comment-rules&quot;</code>:</strong> All users should be made aware of the moderation rules before submitting their comment. To make this information available to screen reader users in a timely fashion, it is associated with the submit button using <code>aria-describedby</code><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>. That is: it will be read out as part of the button's semantic information while the user is focused on it.</li>
 <li><strong><code>hidden</code>:</strong> As set out in the principle <a href="https://www.bbc.co.uk/gel/guidelines/comments">GEL Comments guide</a>, the submit button is not revealed until the user has entered some text into the <code>&lt;textarea&gt;</code></li>
@@ -233,14 +242,25 @@
 <ul>
 <li>An <code>&lt;h3&gt;</code> heading containing the commenter's name and the date of submission</li>
 <li>The text/body of the comment</li>
-<li>A link for reporting the comment</li>
 </ul>
 <p>Each comment belonging to the same comment stream may also include:</p>
 <ul>
 <li>A reply button</li>
 <li>A sharing button</li>
 <li>Reaction functionality</li>
+<li>An overflow menu containing supplementary functionality such as reporting or sharing the comment</li>
 </ul>
+<p>Where possible, it is advised you do not resort to using the overflow menu (as illustrated in the <a href="https://www.bbc.co.uk/gel/guidelines/comments">main GEL documentation</a>). If there is room, make all functionality visible by default.</p>
+<p>Where the overflow menu <em>is</em> implemented, it should always be as the last control inside the comment, on the right. It should expand and collapse a horizontal menu of controls according to its <code>aria-expanded</code> state (<code>true</code> for expanded; <code>false</code> for collapsed). Its (visually hidden) text label should read <em>&quot;More&quot;</em>.</p>
+<p>In the following sample, the overflow menu is in the <em>collapsed</em> state, and the menu itself is, accordingly, <code>hidden</code>.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comment__overflow-button"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr"</span>&gt;</span>More<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"/path/to/overflow/icon"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comment__overflow-menu"</span> <span class="hljs-attr">hidden</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
 <h3 id="the-heading">The heading</h3>
 <p>The comment's <code>&lt;h3&gt;</code> heading (see the previous <a href="#the-comments-stream">comments stream</a> section) must include <em>both</em> the commenter's name (as derived from the authenticated user) and the time/date the comment was posted. Only by including the time/date does the <code>&lt;h3&gt;</code> become unique, and therefore discernible by screen reader users navigating an aggregated headings list.</p>
 <h4 id="name-only-headings-list">
@@ -279,10 +299,10 @@
 </code></pre>
 <p>Reply comments should contain a link to both the current comment and the comment replied to, using the construction <em>&quot;Person 1 replied to Person 2&quot;</em>:</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#comment-1562746727083"</span>&gt;</span>Clive Robinson<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> 
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#comment-1562762936794"</span>&gt;</span>Steve<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> 
   replied to 
-  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#comment-1562762936794"</span>&gt;</span>Clive Davidson<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">time</span> <span class="hljs-attr">datetime</span>=<span class="hljs-string">"2019-07-10T13:48"</span>&gt;</span>on Wed Jul 10 2019, at 13:48<span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#comment-1562746727083"</span>&gt;</span>Clive<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">time</span> <span class="hljs-attr">datetime</span>=<span class="hljs-string">"2019-08-10T13:48"</span>&gt;</span>13:48<span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
 </code></pre>
 <p>Theoretically, reply nesting could recurse indefinitely. However, to prevent the comment stream from becoming unwieldy, it is recommended an arbitrary limit is set. Comments, say, 3 replies deep would no longer offer a reply button.</p>
@@ -380,6 +400,24 @@ Where the like/dislike controls are implemented as illustrated, they should take
   submitButton.hidden = <span class="hljs-literal">true</span>;
 });
 </code></pre>
+<h4 id="character-count">Character count</h4>
+<p>The character count is revealed only when the <code>&lt;textarea&gt;</code> is in focus.</p>
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-comments__chars</span> {
+  <span class="hljs-attribute">display</span>: none;
+}
+
+<span class="hljs-selector-class">.gel-comments__form</span> <span class="hljs-selector-tag">textarea</span><span class="hljs-selector-pseudo">:focus</span> + <span class="hljs-selector-class">.gel-comments__chars</span> {
+  <span class="hljs-attribute">display</span>: block;
+}
+</code></pre>
+<p>The accessible text for the character count (<em>&quot;[number] characters remaining&quot;</em>) is announced as part of the <code>&lt;textarea&gt;</code>'s accessible description, thanks to the element's <code>id</code> being included in the <code>&lt;textarea&gt;</code>'s <code>aria-describedby</code> value (see <a href="#recommended-markup">Recommended markup</a>).</p>
+<p>Decrementing the remaining characters is taken care of with an ad hoc script in the <a href="#reference-implementation">reference implementation</a>:</p>
+<pre class="hljs"><code>textarea.addEventListener(<span class="hljs-string">'input'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  charsLeft.textContent = <span class="hljs-number">200</span> - textarea.value.length;
+});
+</code></pre>
+<h4 id="replying">Replying</h4>
+<p>Writing a reply to a comment is first invoked by pressing the original comment's reply button. This should reveal an inline comment form, similar to <a href="#the-comment-form">the main comment form</a>, directly under the reply button, and the reply <code>&lt;textarea&gt;</code> should be focused. Reply forms are not implemented in the <a href="#reference-implementation">reference implementation</a> but they should behave similarly to <a href="#the-comment-form">the main comment form</a>, with character count and validation error messages included.</p>
 <h3 id="sorting">Sorting</h3>
 <p>Selecting a sorting option should immediately re-render the comments stream in the new order. The newly selected option doubles as the control's new label (<em>&quot;Oldest first&quot;</em> in the following example). Since a native <code>&lt;select&gt;</code> control is used, all of the expected behaviours for such a control are present.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-comments__sort"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"comments-sort"</span>&gt;</span>
@@ -432,80 +470,11 @@ title: Comments
   .text-align\:right {
     text-align: right;
   }
-
-  .gel-comments__form textarea {
-    width: 100%;
-    padding: 0.5rem;
-  }
-
-  .gel-comments__form [type="submit"][hidden] {
-    display: none;
-  }
-
-  .gel-comments__form textarea:focus {
-    outline: 2px solid;
-  }
-
-  .gel-comments__meta {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .gel-comments__sort {
-    position: relative;
-  }
-
-  .gel-comments__sort select {
-    -webkit-appearance: none;
-    appearance: none;
-    border: 0;
-    background: none;
-    font-size: inherit;
-    font-family: inherit;
-    padding-right: 1em;
-  }
-
-  .gel-comments__sort svg {
-    width: 0.75em;
-    position: absolute;
-    right: 0;
-    top: 0.333em;
-    pointer-events: none;
-  }
-
-  .gel-comment__vote {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  .gel-comment__vote *+button {
-    margin-left: 0.75rem;
-  }
-
-  .gel-comment__vote button+span {
-    margin-left: 0.25rem;
-  }
-
-  .gel-comment__vote button {
-    border: 0;
-    padding: 0;
-    background: none;
-  }
-
-  .gel-comment__vote button[aria-pressed="true"] path {
-    fill: #007bb8;
-  }
-
-  .gel-comment__vote svg,
-  .gel-comment__vote span {
-    pointer-events: none;
-  }
 </style>
 
 <h3>The comments form</h3>
 
-<div class="shadow-box">
+<div class="gel-comments shadow-box">
   <form class="gel-comments__form">
     <p>You're signed in as <strong><a href="path/to/user/comment/history">Ben</a></strong></p>
     <div class="gel-form__divider">
@@ -513,11 +482,18 @@ title: Comments
     </div>
     <div class="gel-form__divider">
       <label for="your-comment">Add your comment</label>
-      <textarea name="your-comment" id="your-comment"></textarea>
+      <div class="gel-comments__field">
+        <textarea name="your-comment" id="your-comment" maxlength="200" aria-describedby="chars-left"></textarea>
+        <span class="gel-comments__chars" id="chars-left">
+          <span class="gel-comments__chars-left">200</span>
+          <span class="gel-comments__chars-of" aria-hidden="true">/ 200</span>
+          <span class="gel-sr">characters left</span>
+        </span>
+      </div>
       <div class="gel-form__field-error" id="your-comment-error"></div>
     </div>
     <div class="gel-form__divider">
-      <button type="submit" aria-describedby="your-comment-rules" hidden>Post</button>
+      <button type="submit" class="gel-button" aria-describedby="your-comment-rules" hidden>Post</button>
     </div>
     <p id="your-comment-rules"><small>Comments must follow the <a href="path/to/rules">house rules</a></small>.</p>
   </form>
@@ -528,7 +504,7 @@ title: Comments
 <p>The meta information subcomponent, with a sorting control devised using a native <code>&lt;select></code> element.
 </p>
 
-<div class="shadow-box">
+<div class="gel-comments shadow-box">
   <div class="gel-comments__meta">
     <span id="comments-count">186 comments</span>
     <label class="gel-comments__sort" for="comments-sort">
@@ -549,7 +525,7 @@ title: Comments
 <p>An ad hoc script is provided to demonstrate the expected UI behaviour. A production implementation would be
   data-driven, and use declarative rendering.</p>
 
-<div class="shadow-box text-align:right">
+<div class="gel-comments shadow-box text-align:right">
   <div class="gel-comment__vote" role="group" aria-label="vote">
     <button aria-pressed="false" aria-descibedby="total-likes-1562746727083">
       <span class="gel-sr">Like</span>
@@ -570,46 +546,157 @@ title: Comments
   </div>
 </div>
 
+<h3>A comment, including a nested reply</h3>
+
+<p>The following omits the reply functionality.</p>
+
+<div class="gel-comments shadow-box">
+  <ul class="gel-comments__stream">
+    <li class="gel-comment" id="comment-1562746727083" tabindex="-1">
+      <h3 class="gel-comment__title">
+        <a href="#comment-1562746727083">
+          <strong>Clive</strong>
+          <time datetime="2019-8-10T12:04">12:04</time>
+        </a>
+      </h3>
+      <div class="gel-comment__body">
+        <p>Of course they have!<br />Go England!</p>
+      </div>
+      <div class="gel-comment__options">
+        <div class="gel-comment__options-left">
+          <button class="gel-comment__reply-button">
+            <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+              <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-comments"></use>
+            </svg>
+            Reply
+          </button>
+        </div>
+        <div class="gel-comment__options-right">
+          <div class="gel-comment__vote" role="group" aria-label="vote">
+            <button aria-pressed="false" aria-descibedby="total-likes-1562746727083">
+              <span class="gel-sr">Like</span>
+              <svg viewBox="0 0 867.20184 971.79153" class="gel-icon gel-icon--text" focusable="false"
+                aria-hidden="true">
+                <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-width="65"
+                  d="m32.813 475h102.3v417.06h-102.3zm233.17 441.18c-15.486-12.012-33.662-26.413-40.391-32.002-7.231-6.007-29.949-11.786-55.559-14.133-46.844 19.297-31.451 19.953-30.701-165.41.343-84.794.602-210.39 2.981-219 3.91-14.139-25.535 11.714 8.147 9.976 27.517-1.419 40.953-5.387 51.365-15.169 7.756-7.286 14.101-15.6 14.101-18.477 40.428-124.46 180.55-236.28 212.84-372.26.232-27.611 14.837-59.605 61.079-56.932 34.58 1.999 69.415 25.867 77.951 38.651 46.429 87.686-50.003 222.01-20.802 279.07 5.313 8.603 12.54 17.854 16.061 20.556s51.453 4.405 106.52 3.783c105.51-1.191 121.54 1.765 149.34 27.529 33.966 60.426-4.9564 100.75-54.915 129.02 97.032 30.052 73.367 120.23-12.868 139.48 110.49 74.569 24.96 115.63-5.413 127.13 72.296 53.117 46.778 97.487 9.854 121.49-47.394 23.828-167.81 18.96-239.13 18.857l-222.3-.322z" />
+              </svg>
+              <span aria-hidden="true" id="total-likes-1562746727083">12 <span class="gel-sr">total</span></span>
+            </button>
+            <button aria-pressed="false" aria-descibedby="total-dislikes-1562746727083">
+              <span class="gel-sr">Dislike</span>
+              <svg viewBox="0 0 867.20184 971.79153" class="gel-icon gel-icon--text" focusable="false"
+                aria-hidden="true">
+                <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-width="65"
+                  d="m32.813 496.47h102.3v-417.06h-102.3zm233.17-441.18c-15.486 12.012-33.662 26.413-40.391 32.002-7.231 6.007-29.949 11.786-55.559 14.133-46.844-19.297-31.451-19.953-30.701 165.41.343 84.794.602 210.39 2.981 219 3.91 14.139-25.535-11.714 8.147-9.976 27.517 1.419 40.953 5.387 51.365 15.169 7.756 7.286 14.101 15.6 14.101 18.477 40.428 124.46 180.55 236.28 212.84 372.26.232 27.611 14.837 59.605 61.079 56.932 34.58-1.999 69.415-25.867 77.951-38.651 46.429-87.686-50.003-222.01-20.802-279.07 5.313-8.603 12.54-17.854 16.061-20.556s51.453-4.405 106.52-3.783c105.51 1.191 121.54-1.765 149.34-27.529 33.966-60.426-4.9564-100.75-54.915-129.02 97.032-30.052 73.367-120.23-12.868-139.48 110.49-74.569 24.96-115.63-5.413-127.13 72.296-53.117 46.778-97.487 9.854-121.49-47.394-23.828-167.81-18.96-239.13-18.857l-222.3.322z" />
+              </svg>
+              <span aria-hidden="true" id="total-dislikes-1562746727083">3 <span class="gel-sr">total</span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <ul class="gel-comment__replies">
+        <li class="gel-comment gel-comment__reply" id="comment-1562762936794" tabindex="-1">
+          <h3 class="gel-comment__title">
+            <a href="#comment-1562762936794"><strong>Steve</strong></a>
+            replied to
+            <a href="#comment-1562746727083"><strong>Clive</strong></a>
+            <time datetime="2019-08-10T13:48">13:48</time>
+          </h3>
+          <div class="gel-comment__body">
+            <p>I think England are going to go all the way.</p>
+          </div>
+          <div class="gel-comment__options">
+            <div class="gel-comment__options-left">
+              <button class="gel-comment__reply-button">
+                <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+                  <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-comments"></use>
+                </svg>
+                Reply
+              </button>
+            </div>
+            <div class="gel-comment__options-right">
+              <div class="gel-comment__vote" role="group" aria-label="vote">
+                <button aria-pressed="false" aria-descibedby="total-likes-1562746727083">
+                  <span class="gel-sr">Like</span>
+                  <svg viewBox="0 0 867.20184 971.79153" class="gel-icon gel-icon--text" focusable="false"
+                    aria-hidden="true">
+                    <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round"
+                      stroke-width="65"
+                      d="m32.813 475h102.3v417.06h-102.3zm233.17 441.18c-15.486-12.012-33.662-26.413-40.391-32.002-7.231-6.007-29.949-11.786-55.559-14.133-46.844 19.297-31.451 19.953-30.701-165.41.343-84.794.602-210.39 2.981-219 3.91-14.139-25.535 11.714 8.147 9.976 27.517-1.419 40.953-5.387 51.365-15.169 7.756-7.286 14.101-15.6 14.101-18.477 40.428-124.46 180.55-236.28 212.84-372.26.232-27.611 14.837-59.605 61.079-56.932 34.58 1.999 69.415 25.867 77.951 38.651 46.429 87.686-50.003 222.01-20.802 279.07 5.313 8.603 12.54 17.854 16.061 20.556s51.453 4.405 106.52 3.783c105.51-1.191 121.54 1.765 149.34 27.529 33.966 60.426-4.9564 100.75-54.915 129.02 97.032 30.052 73.367 120.23-12.868 139.48 110.49 74.569 24.96 115.63-5.413 127.13 72.296 53.117 46.778 97.487 9.854 121.49-47.394 23.828-167.81 18.96-239.13 18.857l-222.3-.322z" />
+                  </svg>
+                  <span aria-hidden="true" id="total-likes-1562746727083">4 <span class="gel-sr">total</span></span>
+                </button>
+                <button aria-pressed="false" aria-descibedby="total-dislikes-1562746727083">
+                  <span class="gel-sr">Dislike</span>
+                  <svg viewBox="0 0 867.20184 971.79153" class="gel-icon gel-icon--text" focusable="false"
+                    aria-hidden="true">
+                    <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round"
+                      stroke-width="65"
+                      d="m32.813 496.47h102.3v-417.06h-102.3zm233.17-441.18c-15.486 12.012-33.662 26.413-40.391 32.002-7.231 6.007-29.949 11.786-55.559 14.133-46.844-19.297-31.451-19.953-30.701 165.41.343 84.794.602 210.39 2.981 219 3.91 14.139-25.535-11.714 8.147-9.976 27.517 1.419 40.953 5.387 51.365 15.169 7.756 7.286 14.101 15.6 14.101 18.477 40.428 124.46 180.55 236.28 212.84 372.26.232 27.611 14.837 59.605 61.079 56.932 34.58-1.999 69.415-25.867 77.951-38.651 46.429-87.686-50.003-222.01-20.802-279.07 5.313-8.603 12.54-17.854 16.061-20.556s51.453-4.405 106.52-3.783c105.51 1.191 121.54-1.765 149.34-27.529 33.966-60.426-4.9564-100.75-54.915-129.02 97.032-30.052 73.367-120.23-12.868-139.48 110.49-74.569 24.96-115.63-5.413-127.13 72.296-53.117 46.778-97.487 9.854-121.49-47.394-23.828-167.81-18.96-239.13-18.857l-222.3.322z" />
+                  </svg>
+                  <span aria-hidden="true" id="total-dislikes-1562746727083">1 <span class="gel-sr">total</span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    /* Sort control script */
+    // Sort control placeholder script
     var sorter = document.getElementById('comments-sort');
     sorter.addEventListener('change', function () {
-      alert('Sorting changed to: ' + sorter.value);
+      alert('TODO: Change the comment stream\'s sort order to ' + sorter.value);
     });
 
-    /* Voting script */
-    var voting = document.querySelector('.gel-comment__vote');
-    var votingButtons = Array.prototype.slice.call(voting.querySelectorAll('button'));
-    var totals = Array.prototype.slice.call(voting.querySelectorAll('span[id]'));
-    voting.addEventListener('click', function (e) {
-      var index = votingButtons.indexOf(e.target);
-      if (index > -1) {
-        var otherIndex = index === 0 ? 1 : 0;
-        var pressed = votingButtons[index].getAttribute('aria-pressed') === 'true';
-        var otherPressed = votingButtons[otherIndex].getAttribute('aria-pressed') === 'true';
-        if (pressed) {
-          votingButtons[index].setAttribute('aria-pressed', 'false');
-          totals[index].textContent = parseInt(totals[index].textContent) - 1;
-        } else {
-          votingButtons[index].setAttribute('aria-pressed', 'true');
-          totals[index].textContent = parseInt(totals[index].textContent) + 1;
-          if (otherPressed) {
-            votingButtons[otherIndex].setAttribute('aria-pressed', 'false');
-            totals[otherIndex].textContent = parseInt(totals[otherIndex].textContent) - 1;
+    // Reply placeholder script
+    var replyButtons = document.querySelectorAll('.gel-comment__reply-button');
+    Array.prototype.forEach.call(replyButtons, function (button) {
+      button.addEventListener('click', function () {
+        alert('TODO: Reveal and focus an inline version of the comment form for writing the reply');
+      });
+    });
+
+    // Voting placeholder script
+    var voters = document.querySelectorAll('.gel-comment__vote');
+    Array.prototype.forEach.call(voters, function (voter) {
+      var voterButtons = Array.prototype.slice.call(voter.querySelectorAll('button'));
+      var totals = Array.prototype.slice.call(voter.querySelectorAll('span[id]'));
+      voter.addEventListener('click', function (e) {
+        var index = voterButtons.indexOf(e.target);
+        if (index > -1) {
+          var otherIndex = index === 0 ? 1 : 0;
+          var pressed = voterButtons[index].getAttribute('aria-pressed') === 'true';
+          var otherPressed = voterButtons[otherIndex].getAttribute('aria-pressed') === 'true';
+          if (pressed) {
+            voterButtons[index].setAttribute('aria-pressed', 'false');
+            totals[index].textContent = parseInt(totals[index].textContent) - 1;
+          } else {
+            voterButtons[index].setAttribute('aria-pressed', 'true');
+            totals[index].textContent = parseInt(totals[index].textContent) + 1;
+            if (otherPressed) {
+              voterButtons[otherIndex].setAttribute('aria-pressed', 'false');
+              totals[otherIndex].textContent = parseInt(totals[otherIndex].textContent) - 1;
+            }
           }
         }
-      }
-    }, false);
+      });
+    });
 
-    /* Comment form script */
+    // Comment form placeholder script
     var form = document.querySelector('.gel-comments__form');
     var submitButton = form.querySelector('[type="submit"]');
     var textarea = form.querySelector('textarea');
     var successMsg = form.querySelector('.gel-comments__success');
+    var charsLeft = form.querySelector('.gel-comments__chars-left');
 
     textarea.addEventListener('input', function () {
       submitButton.hidden = textarea.value === '';
+      charsLeft.textContent = 200 - textarea.value.length;
     });
 
     textarea.addEventListener('focus', function () {
@@ -623,6 +710,7 @@ title: Comments
       submitButton.hidden = true;
     });
 
+    // Form validation 
     var rules = [
       {
         name: 'your-comment',
@@ -636,126 +724,10 @@ title: Comments
     form.addEventListener('gel-submitted', function () {
       successMsg.innerHTML = 'Thanks! We will check this as quickly as possible before posting.';
       textarea.value = '';
+      charsLeft.textContent = 200;
     });
   });
-</script>
-
-
-
-<!--<div class="gel-comments">
-  <form class="gel-comments__form" id="comment-form">
-    <p>
-      You're signed in as <strong>Your Name</strong>.
-      <a href="https://account.bbc.com/signout">Sign out</a>
-    </p>
-    <div class="gel-form__divider">
-      <label for="comment">Add your comment:</label>
-      <textarea id="comment" name="comment" rows="5"></textarea>
-      <div class="gel-form__field-error" id="comment-error"></div>
-    </div>
-    <div class="gel-form__divider">
-      <div class="gel-comments__success" role="status" aria-live="polite"></div>
-    </div>
-    <div class="gel-form__divider">
-      <button class="gel-button" type="submit" aria-describedby="disclaimer" disabled>Post comment</button>
-    </div>
-    <p id="disclaimer">All comments are <a
-        href="https://www.bbc.co.uk/social/moderation/house-rules">reactively-moderated</a> and must follow <a
-        href="https://www.bbc.co.uk/social/moderation/house-rules">the rules</a>.</p>
-  </form>
-  <fieldset class="gel-comments__sort-controls">
-    <legend>Sort by</legend>
-    <label>
-      <input name="sort" type="radio" value="timeDesc" checked>
-      <span>Newest first</span>
-    </label>
-    <label>
-      <input name="sort" type="radio" value="timeAsc">
-      <span>Oldest first</span>
-    </label>
-  </fieldset>
-  <div class="gel-comments__stream">
-    <noscript>You cannot read or write comments with JavaScript disabled. Please enable JavaScript and refresh the
-      page.</noscript>
-  </div>
-  <div class="gel-comments__add-link">
-    <a href="#comment">Add your comment</a>
-  </div>
-</div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    window.gel && gel.Comments.init();
-
-    var testData = [
-      {
-        id: 'z50fsmh2h',
-        time: 1562746598697,
-        name: 'Clive Warren',
-        comment: 'I like this very much.'
-      },
-      {
-        id: '4wi00jios',
-        time: 1562746727083,
-        name: 'Clive Smythe',
-        comment: 'I do not understand this at all.'
-      },
-      {
-        id: 'm1tx9pbj2',
-        time: 1562747117059,
-        name: 'Clive Henderson',
-        comment: 'I don\'t like this at all and think it\'s bad.'
-      },
-      {
-        id: 'lmu4jrrnt',
-        time: 1562762936794,
-        name: 'Clive Skogsberg',
-        comment: 'I\'m <span>indifferent</span>, to be perfectly honest.'
-      }
-    ];
-
-    var comments = new gel.Comments.constructor('.gel-comments', {
-      data: testData,
-      template: function (props) {
-        if (props.length < 1) {
-          return '<p><strong>There are no comments so far.</strong></p>';
-        }
-        return '<ul class="gel-comments__stream">' + props.map(function (item) {
-          var timeParsed = new Date(item.time);
-          var date = (new Date(item.time)).toLocaleDateString('en-GB', { month: 'short', day: 'numeric', year: 'numeric' });
-          var time = timeParsed.getHours() + ':' + timeParsed.getMinutes();
-          return '' +
-            '<li class="gel-comment" id="' + item.id + '" tabindex="-1">' +
-            '<h3>' + item.name + ' <time datetime="' + timeParsed.getFullYear() + "-" + (timeParsed.getMonth() + 1) + "-" + timeParsed.getDate() + 'T' + timeParsed.getHours() + ":" + timeParsed.getMinutes() + '">on ' + date + ' at ' + time + '</time></h3>' +
-            '<div>' + item.comment + '</div>' +
-            '<div class="gel-comment__options">' +
-            '<a href="https://www.bbc.co.uk/moderation/complaints/comments/' + this.id + '">Report</a>' +
-            '<a href="#' + item.id + '">Link to</a>' +
-            '</div>' +
-            '</li>';
-        }).join('') + '</ul>';
-      }
-    });
-
-    comments.render();
-
-    var sortControls = document.querySelector('.gel-comments__sort-controls');
-    sortControls.addEventListener('change', function (e) {
-      comments.sortBy(e.target.value);
-    });
-
-    var rules = [
-      {
-        name: 'comment',
-        required: true,
-      }
-    ];
-
-    window.gel && gel.Validation.init();
-    var form = document.getElementById('comment-form');
-    var formValidation = new gel.Validation.constructor(form, rules);
-  });
-</script>--></div>
+</script></div>
         
           <p><a class="gel-cta gel-long-primer-bold" href="../demos/comments/" target="_new"><span class="gel-button__label">Open in new window</span><svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
         <h2 id="related-research">Related research</h2>

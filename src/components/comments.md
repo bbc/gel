@@ -66,12 +66,19 @@ Authentication is out of scope for this article, so you are asked to imagine the
 <form class="gel-comments__form">
   <p>You're signed in as <a href="path/to/user/comment/history">Ben</a></p>
   <div class="gel-form__divider">
-    <label for="your-comment">Add your comment</label>
-    <textarea name="your-comment" id="your-comment"></textarea>
-    <div class="gel-form__field-error" id="your-comment-error"></div>
+    <div class="gel-comments__success" role="status" aria-live="polite"></div>
   </div>
   <div class="gel-form__divider">
-    <div class="gel-comments__success" role="status" aria-live="polite"></div>
+    <label for="your-comment">Add your comment</label>
+    <div class="gel-comments__field">
+      <textarea name="your-comment" id="your-comment" maxlength="200" aria-describedby="chars-left"></textarea>
+      <span class="gel-comments__chars" id="chars-left">
+        <span class="gel-comments__chars-left">200</span>
+        <span class="gel-comments__chars-of" aria-hidden="true">/ 200</span>
+        <span class="gel-sr">characters remaining</span>
+      </span>
+    </div>
+    <div class="gel-form__field-error" id="your-comment-error"></div>
   </div>
   <div class="gel-form__divider">
     <button type="submit" aria-describedby="your-comment-rules" hidden>Post</button>
@@ -81,6 +88,8 @@ Authentication is out of scope for this article, so you are asked to imagine the
 ```
 
 * **`for="your-comment"`:** The textarea must be labelled programmatically, by matching its `id` with a `<label>`'s `for` value. As recommended in [Form fields](../form-fields) the label should appear persistently above the input/textarea, and not be supplanted by a `placeholder` attribute, ehich presents various accessibility and usability issues
+* **`class="gel-comments__field"`:** This groups the `<textarea>` with the character count element for CSS positioning. The count is associated with the `<textarea>` using `aria-describedby`.
+* **`class="gel-comment__chars"`:** A combination of `aria-hidden="true"` and `class="gel-sr"` ensures the accessible wording for this element follows the pattern _"[number] characters remaining"_. The complete `aria-describedby` value is a space separated combination of the `your-comment-error` and `chars-left` `id`s. The text of each `id`'s element is read in turn whenever the textarea is focused.
 * **`class="gel-form__field-error"`:** The form should use the standard and accessible error messaging mechanism described in [Form fields](../form-fields). This error element is associated with the `<textarea>` and populated via the [Form fields](../form-fields) implementation's script (with adds `aria-describedby`, and `aria-invalid` where applicable).
 * **`id="your-comment-rules"`:** All users should be made aware of the moderation rules before submitting their comment. To make this information available to screen reader users in a timely fashion, it is associated with the submit button using `aria-describedby`[^2]. That is: it will be read out as part of the button's semantic information while the user is focused on it.
 * **`hidden`:** As set out in the principle [GEL Comments guide](https://www.bbc.co.uk/gel/guidelines/comments), the submit button is not revealed until the user has entered some text into the `<textarea>`
@@ -153,13 +162,29 @@ Every comment on a BBC site must include:
 
 * An `<h3>` heading containing the commenter's name and the date of submission
 * The text/body of the comment
-* A link for reporting the comment
 
 Each comment belonging to the same comment stream may also include:
 
 * A reply button
 * A sharing button
 * Reaction functionality
+* An overflow menu containing supplementary functionality such as reporting or sharing the comment
+
+Where possible, it is advised you do not resort to using the overflow menu (as illustrated in the [main GEL documentation](https://www.bbc.co.uk/gel/guidelines/comments)). If there is room, make all functionality visible by default.
+
+Where the overflow menu _is_ implemented, it should always be as the last control inside the comment, on the right. It should expand and collapse a horizontal menu of controls according to its `aria-expanded` state (`true` for expanded; `false` for collapsed). Its (visually hidden) text label should read _"More"_.
+
+In the following sample, the overflow menu is in the _collapsed_ state, and the menu itself is, accordingly, `hidden`.
+
+```html
+<button class="gel-comment__overflow-button" aria-expanded="false">
+  <span class="gel-sr">More</span>
+  <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+    <use xlink:href="/path/to/overflow/icon"></use>
+  </svg>
+</button>
+<div class="gel-comment__overflow-menu" hidden></div>
+```
 
 ### The heading
 
@@ -206,10 +231,10 @@ Reply comments should contain a link to both the current comment and the comment
 
 ```html
 <h3>
-  <a href="#comment-1562746727083">Clive Robinson</a> 
+  <a href="#comment-1562762936794">Steve</a> 
   replied to 
-  <a href="#comment-1562762936794">Clive Davidson</a>
-  <time datetime="2019-07-10T13:48">on Wed Jul 10 2019, at 13:48</time>
+  <a href="#comment-1562746727083">Clive</a>
+  <time datetime="2019-08-10T13:48">13:48</time>
 </h3>
 ```
 
@@ -342,6 +367,34 @@ submitButton.addEventListener('blur', function () {
   submitButton.hidden = true;
 });
 ```
+
+#### Character count
+
+The character count is revealed only when the `<textarea>` is in focus.
+
+```css
+.gel-comments__chars {
+  display: none;
+}
+
+.gel-comments__form textarea:focus + .gel-comments__chars {
+  display: block;
+}
+```
+
+The accessible text for the character count (_"[number] characters remaining"_) is announced as part of the `<textarea>`'s accessible description, thanks to the element's `id` being included in the `<textarea>`'s `aria-describedby` value (see [Recommended markup](#recommended-markup)).
+
+Decrementing the remaining characters is taken care of with an ad hoc script in the [reference implementation](#reference-implementation):
+
+```js
+textarea.addEventListener('input', function () {
+  charsLeft.textContent = 200 - textarea.value.length;
+});
+```
+
+#### Replying
+
+Writing a reply to a comment is first invoked by pressing the original comment's reply button. This should reveal an inline comment form, similar to [the main comment form](#the-comment-form), directly under the reply button, and the reply `<textarea>` should be focused. Reply forms are not implemented in the [reference implementation](#reference-implementation) but they should behave similarly to [the main comment form](#the-comment-form), with character count and validation error messages included.
 
 ### Sorting
 

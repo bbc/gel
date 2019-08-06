@@ -1364,7 +1364,17 @@
     // Initialize error markup and bindings
     fields.forEach(function (field, index) {
       // Set aria-describedby
-      field.setAttribute('aria-describedby', field.name + '-error');
+      // (Preserve extant description ids 
+      // if they exist, for things like character count)
+      var description = field.getAttribute('aria-describedby');
+      if (description) {
+        var descArr = description.split(' ');
+        descArr.push(field.name + '-error');
+        description = descArr.join(' ');
+      } else {
+        description = field.name + '-error';
+      }
+      field.setAttribute('aria-describedby', description);
 
       // If `required`, set `aria-required`
       if (rules[index].required) {

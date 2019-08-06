@@ -1,0 +1,148 @@
+.gel-comments__field {
+  position: relative;
+}
+
+.gel-comments__form textarea {
+  width: 100%;
+  padding: 0.5rem 0.5rem 1.5rem;
+}
+
+.gel-comments__form [type="submit"][hidden] {
+  display: none;
+}
+
+.gel-comments__chars {
+  display: none;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.gel-comments__form textarea:focus+.gel-comments__chars {
+  display: block;
+}
+
+.gel-comments__meta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gel-comments__sort {
+  position: relative;
+}
+
+.gel-comments__sort select {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+  background: none;
+  font-size: inherit;
+  font-family: inherit;
+  padding-right: 1em;
+}
+
+.gel-comments__sort svg {
+  width: 0.75em;
+  position: absolute;
+  right: 0;
+  top: 0.333em;
+  pointer-events: none;
+}
+
+.gel-comment__vote {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.gel-comment__vote *+button {
+  margin-left: 0.75rem;
+}
+
+.gel-comment__vote button+span {
+  margin-left: 0.25rem;
+}
+
+.gel-comment__vote button {
+  border: 0;
+  padding: 0;
+  background: none;
+}
+
+.gel-comment__vote button[aria-pressed="true"] path {
+  fill: $gel-color--star-command-blue;
+}
+
+.gel-comment__vote svg,
+.gel-comment__vote span {
+  pointer-events: none;
+}
+
+.gel-comments__stream,
+.gel-comment__replies {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gel-comment__replies {
+  margin-top: 1rem;
+}
+
+.gel-comment__title a {
+  text-decoration: none;
+}
+
+.gel-comment__title strong {
+  text-decoration: underline;
+}
+
+.gel-comment__title time {
+  display: block;
+  font-size: 0.8em;
+  font-weight: normal;
+}
+
+.gel-comment__options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gel-comment__reply-button {
+  font-weight: bold;
+  border: 0;
+  padding: 0;
+  background: none;
+}
+
+.gel-comment__replies {
+  border-top: 1px solid $gel-color--dusty-gray;
+}
+
+.gel-comment__reply {
+  padding-left: 1rem;
+  border-left: 2px solid $gel-color--star-command-blue;
+}
+
+.gel-comment__reply+.gel-comment__reply {
+  margin-top: 1rem;
+}
+
+.gel-comments a:focus,
+.gel-comments button:focus,
+.gel-comments select:focus,
+.gel-comments textarea:focus {
+  outline: 2px solid;
+  outline-offset: 2px;
+}
+
+.gel-comments textarea:focus {
+  outline-offset: 0;
+}
+
+.gel-comment__title a:focus strong {
+  outline: 2px solid $gel-color--dusty-gray;
+  outline-offset: 2px;
+}
