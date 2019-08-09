@@ -62,7 +62,7 @@ p {
 
 ## Measure
 
-A measure (line length) that is too long makes it difficult for readers to scan back and find the next line in order to continue. [**WCAG2.1 1.4.8 Visual Presentation**[^4] recommends a measure of no more than 80 characters, but between 60 and 70 is better still.
+A measure (line length) that is too long makes it difficult for readers to scan back and find the next line in order to continue. **WCAG2.1 1.4.8 Visual Presentation**[^4] recommends a measure of no more than 80 characters, but between 60 and 70 is better still.
 
 The measure must be:
 
