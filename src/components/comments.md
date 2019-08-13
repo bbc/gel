@@ -197,7 +197,7 @@ The comment's `<h3>` heading (see the previous [comments stream](#the-comments-s
 * Clive
 * Judith
 
-#### <mark is="bad"> Headings include timings
+#### <mark is="good"> Headings include timings
 
 * Clive (12:00)
 * Clive (12:01)
