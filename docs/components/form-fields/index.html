@@ -283,7 +283,8 @@ to break because they depend on JavaScript in order to function.</p>
 <p>The following describes the validation journey, as exemplified by the <a href="#reference-implementation"><strong>Reference implementation</strong></a>.</p>
 <h3 id="1-initial-state">1. Initial state</h3>
 <ul>
-<li>No fields have the <code>aria-required</code> or <code>aria-invalid</code> attribution</li>
+<li>No fields have the <code>aria-invalid</code> attribution</li>
+<li>Required fields have <code>aria-required=&quot;true&quot;</code></li>
 <li>The general error live region is present in the DOM, but not yet populated</li>
 </ul>
 <h3 id="2-individual-field-validation">2. Individual field validation</h3>
@@ -291,17 +292,15 @@ to break because they depend on JavaScript in order to function.</p>
 <li>Fields are validated as the user types subject to a debouncing function, giving the user a chance to type a full valid entry before an error message is displayed.</li>
 <li><code>aria-invalid</code> is toggled between <code>true</code> and <code>false</code> as the field becomes valid or invalid.</li>
 <li>The error element is populated with a priority error message when the field is in an invalid state (priority depends on the order the <code>tests</code> array is populated in the <code>rules</code> object; see the <a href="#reference-implementation"><strong>Reference implementation</strong></a>).</li>
-<li>Fields are <em>not</em> tested as required; only specific formatting errors are addressed.</li>
 </ul>
 <h3 id="3-failed-submission">3. Failed submission</h3>
 <ul>
-<li>Any empty required fields are indicated as such with a suitable error message and take the <code>aria-required=&quot;true&quot;</code> attribution.</li>
 <li>The general error message live region is populated.</li>
 <li>Focus remains on the submit button.</li>
 </ul>
 <h3 id="4-correcting-errors-after-failed-submission">4. Correcting errors after failed submission</h3>
 <ul>
-<li>Both formatting errors and the required mandate (if present) are now tested against.</li>
+<li>Error messages are removed as individual fields are corrected</li>
 <li>Upon all individual errors being corrected, the general error message is removed.</li>
 </ul>
 <h3 id="5-successful-submission">5. Successful submission</h3>

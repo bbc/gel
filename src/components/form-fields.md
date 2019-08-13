@@ -264,7 +264,8 @@ The following describes the validation journey, as exemplified by the [**Referen
 
 ### 1. Initial state
 
-* No fields have the `aria-required` or `aria-invalid` attribution
+* No fields have the `aria-invalid` attribution
+* Required fields have `aria-required="true"`
 * The general error live region is present in the DOM, but not yet populated
 
 ### 2. Individual field validation
@@ -272,17 +273,15 @@ The following describes the validation journey, as exemplified by the [**Referen
 * Fields are validated as the user types subject to a debouncing function, giving the user a chance to type a full valid entry before an error message is displayed. 
 * `aria-invalid` is toggled between `true` and `false` as the field becomes valid or invalid.
 * The error element is populated with a priority error message when the field is in an invalid state (priority depends on the order the `tests` array is populated in the `rules` object; see the [**Reference implementation**](#reference-implementation)).
-* Fields are _not_ tested as required; only specific formatting errors are addressed.
 
 ### 3. Failed submission
 
-* Any empty required fields are indicated as such with a suitable error message and take the `aria-required="true"` attribution.
 * The general error message live region is populated.
 * Focus remains on the submit button.
 
 ### 4. Correcting errors after failed submission
 
-* Both formatting errors and the required mandate (if present) are now tested against.
+* Error messages are removed as individual fields are corrected
 * Upon all individual errors being corrected, the general error message is removed.
 
 ### 5. Successful submission

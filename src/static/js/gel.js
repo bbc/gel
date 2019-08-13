@@ -1282,9 +1282,6 @@
     warn.classList.add('gel-form__warning');
     submit.parentNode.insertBefore(warn, submit);
 
-    // Do not initially bother users by validating for required
-    var testRequired = false;
-
     // Add errors if they don't already exist
     function saveError(name) {
       if (allErrors.indexOf(name) < 0) {
@@ -1328,9 +1325,9 @@
       });
 
       // Validate for required first
-      // if its being observed
+      // if it's being observed
       if (rule.required) {
-        if (field.value.trim() === '' && testRequired) {
+        if (field.value.trim() === '') {
           toInvalid(field, errorElem, 'This field is required');
           saveError(field.name);
           return;
@@ -1368,7 +1365,17 @@
     // Initialize error markup and bindings
     fields.forEach(function (field, index) {
       // Set aria-describedby
-      field.setAttribute('aria-describedby', field.name + '-error');
+      // (Preserve extant description ids 
+      // if they exist, for things like character count)
+      var description = field.getAttribute('aria-describedby');
+      if (description) {
+        var descArr = description.split(' ');
+        descArr.push(field.name + '-error');
+        description = descArr.join(' ');
+      } else {
+        description = field.name + '-error';
+      }
+      field.setAttribute('aria-describedby', description);
 
       // If `required`, set `aria-required`
       if (rules[index].required) {
@@ -1393,7 +1400,6 @@
     formElem.addEventListener('submit', function (e) {
       e.preventDefault();
       fields.forEach(function (field) {
-        testRequired = true;
         validate(field);
       });
       showHideWarn();

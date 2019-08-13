@@ -33,118 +33,272 @@
                 <h2>Reference implementation</h2>
 
                 
-<div class="gel-comments">
-  <form class="gel-comments__form" id="comment-form">
-    <p>
-      You're signed in as <strong>Your Name</strong>.
-      <a href="https://account.bbc.com/signout">Sign out</a>
-    </p>
-    <div class="gel-form__divider">
-      <label for="comment">Add your comment:</label>
-      <textarea id="comment" name="comment" rows="5"></textarea>
-      <div class="gel-form__field-error" id="comment-error"></div>
-    </div>
+<style>
+  .shadow-box {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.25rem #ccc;
+  }
+
+  .text-align\:right {
+    text-align: right;
+  }
+</style>
+
+<h3>The comments form</h3>
+
+<div class="gel-comments shadow-box">
+  <form class="gel-comments__form">
+    <p>You're signed in as <strong><a href="path/to/user/comment/history">Ben</a></strong></p>
     <div class="gel-form__divider">
       <div class="gel-comments__success" role="status" aria-live="polite"></div>
     </div>
     <div class="gel-form__divider">
-      <button class="gel-button" type="submit" aria-describedby="disclaimer" disabled>Post comment</button>
+      <label for="your-comment">Add your comment</label>
+      <div class="gel-comments__field">
+        <textarea name="your-comment" id="your-comment" maxlength="200" aria-describedby="chars-left"></textarea>
+        <span class="gel-comments__chars" id="chars-left">
+          <span class="gel-comments__chars-left">200</span>
+          <span class="gel-comments__chars-of" aria-hidden="true">/ 200</span>
+          <span class="gel-sr">characters left</span>
+        </span>
+      </div>
+      <div class="gel-form__field-error" id="your-comment-error"></div>
     </div>
-    <p id="disclaimer">All comments are <a
-        href="https://www.bbc.co.uk/social/moderation/house-rules">reactively-moderated</a> and must follow <a
-        href="https://www.bbc.co.uk/social/moderation/house-rules">the rules</a>.</p>
+    <div class="gel-form__divider">
+      <button type="submit" class="gel-button" aria-describedby="your-comment-rules" hidden>Post</button>
+    </div>
+    <p id="your-comment-rules"><small>Comments must follow the <a href="path/to/rules">house rules</a></small>.</p>
   </form>
-  <fieldset class="gel-comments__sort-controls">
-    <legend>Sort by</legend>
-    <label>
-      <input name="sort" type="radio" value="timeDesc" checked>
-      <span>Newest first</span>
+</div>
+
+<h3>The sorting control</h3>
+
+<p>The meta information subcomponent, with a sorting control devised using a native <code>&lt;select></code> element.
+</p>
+
+<div class="gel-comments shadow-box">
+  <div class="gel-comments__meta">
+    <span id="comments-count">186 comments</span>
+    <label class="gel-comments__sort" for="comments-sort">
+      <strong>Show:</strong>
+      <select id="comments-sort">
+        <option selected>Latest first</option>
+        <option>Oldest first</option>
+      </select>
+      <svg viewBox="0 0 32 32">
+        <path d="M16 29L32 3h-7.2L16 18.3 7.2 3H0"></path>
+      </svg>
     </label>
-    <label>
-      <input name="sort" type="radio" value="timeAsc">
-      <span>Oldest first</span>
-    </label>
-  </fieldset>
-  <div class="gel-comments__stream">
-    <noscript>You cannot read or write comments with JavaScript disabled. Please enable JavaScript and refresh the
-      page.</noscript>
   </div>
-  <div class="gel-comments__add-link">
-    <a href="#comment">Add your comment</a>
+</div>
+
+<h3>Voting</h3>
+
+<p>An ad hoc script is provided to demonstrate the expected UI behaviour. A production implementation would be
+  data-driven, and use declarative rendering.</p>
+
+<div class="gel-comments shadow-box text-align:right">
+  <div class="gel-comment__vote" role="group" aria-label="vote">
+    <button aria-pressed="false" aria-descibedby="total-likes-1562746727083">
+      <span class="gel-sr">Like</span>
+      <svg viewBox="0 0 867.20184 971.79153" class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+        <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-width="65"
+          d="m32.813 475h102.3v417.06h-102.3zm233.17 441.18c-15.486-12.012-33.662-26.413-40.391-32.002-7.231-6.007-29.949-11.786-55.559-14.133-46.844 19.297-31.451 19.953-30.701-165.41.343-84.794.602-210.39 2.981-219 3.91-14.139-25.535 11.714 8.147 9.976 27.517-1.419 40.953-5.387 51.365-15.169 7.756-7.286 14.101-15.6 14.101-18.477 40.428-124.46 180.55-236.28 212.84-372.26.232-27.611 14.837-59.605 61.079-56.932 34.58 1.999 69.415 25.867 77.951 38.651 46.429 87.686-50.003 222.01-20.802 279.07 5.313 8.603 12.54 17.854 16.061 20.556s51.453 4.405 106.52 3.783c105.51-1.191 121.54 1.765 149.34 27.529 33.966 60.426-4.9564 100.75-54.915 129.02 97.032 30.052 73.367 120.23-12.868 139.48 110.49 74.569 24.96 115.63-5.413 127.13 72.296 53.117 46.778 97.487 9.854 121.49-47.394 23.828-167.81 18.96-239.13 18.857l-222.3-.322z" />
+      </svg>
+      <span aria-hidden="true" id="total-likes-1562746727083">216 <span class="gel-sr">total</span></span>
+    </button>
+    <button aria-pressed="false" aria-descibedby="total-dislikes-1562746727083">
+      <span class="gel-sr">Dislike</span>
+      <svg viewBox="0 0 867.20184 971.79153" class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+        <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-width="65"
+          d="m32.813 496.47h102.3v-417.06h-102.3zm233.17-441.18c-15.486 12.012-33.662 26.413-40.391 32.002-7.231 6.007-29.949 11.786-55.559 14.133-46.844-19.297-31.451-19.953-30.701 165.41.343 84.794.602 210.39 2.981 219 3.91 14.139-25.535-11.714 8.147-9.976 27.517 1.419 40.953 5.387 51.365 15.169 7.756 7.286 14.101 15.6 14.101 18.477 40.428 124.46 180.55 236.28 212.84 372.26.232 27.611 14.837 59.605 61.079 56.932 34.58-1.999 69.415-25.867 77.951-38.651 46.429-87.686-50.003-222.01-20.802-279.07 5.313-8.603 12.54-17.854 16.061-20.556s51.453-4.405 106.52-3.783c105.51 1.191 121.54-1.765 149.34-27.529 33.966-60.426-4.9564-100.75-54.915-129.02 97.032-30.052 73.367-120.23-12.868-139.48 110.49-74.569 24.96-115.63-5.413-127.13 72.296-53.117 46.778-97.487 9.854-121.49-47.394-23.828-167.81-18.96-239.13-18.857l-222.3.322z" />
+      </svg>
+      <span aria-hidden="true" id="total-dislikes-1562746727083">34 <span class="gel-sr">total</span></span>
+    </button>
   </div>
+</div>
+
+<h3>A comment, including a nested reply</h3>
+
+<p>The following omits the reply functionality.</p>
+
+<div class="gel-comments shadow-box">
+  <ul class="gel-comments__stream">
+    <li class="gel-comment" id="comment-1562746727083" tabindex="-1">
+      <h3 class="gel-comment__title">
+        <a href="#comment-1562746727083">
+          <strong>Clive</strong>
+          <time datetime="2019-8-10T12:04">12:04</time>
+        </a>
+      </h3>
+      <div class="gel-comment__body">
+        <p>Of course they have!<br />Go England!</p>
+      </div>
+      <div class="gel-comment__options">
+        <div class="gel-comment__options-left">
+          <button class="gel-comment__reply-button">
+            <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+              <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-comments"></use>
+            </svg>
+            Reply
+          </button>
+        </div>
+        <div class="gel-comment__options-right">
+          <div class="gel-comment__vote" role="group" aria-label="vote">
+            <button aria-pressed="false" aria-descibedby="total-likes-1562746727083">
+              <span class="gel-sr">Like</span>
+              <svg viewBox="0 0 867.20184 971.79153" class="gel-icon gel-icon--text" focusable="false"
+                aria-hidden="true">
+                <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-width="65"
+                  d="m32.813 475h102.3v417.06h-102.3zm233.17 441.18c-15.486-12.012-33.662-26.413-40.391-32.002-7.231-6.007-29.949-11.786-55.559-14.133-46.844 19.297-31.451 19.953-30.701-165.41.343-84.794.602-210.39 2.981-219 3.91-14.139-25.535 11.714 8.147 9.976 27.517-1.419 40.953-5.387 51.365-15.169 7.756-7.286 14.101-15.6 14.101-18.477 40.428-124.46 180.55-236.28 212.84-372.26.232-27.611 14.837-59.605 61.079-56.932 34.58 1.999 69.415 25.867 77.951 38.651 46.429 87.686-50.003 222.01-20.802 279.07 5.313 8.603 12.54 17.854 16.061 20.556s51.453 4.405 106.52 3.783c105.51-1.191 121.54 1.765 149.34 27.529 33.966 60.426-4.9564 100.75-54.915 129.02 97.032 30.052 73.367 120.23-12.868 139.48 110.49 74.569 24.96 115.63-5.413 127.13 72.296 53.117 46.778 97.487 9.854 121.49-47.394 23.828-167.81 18.96-239.13 18.857l-222.3-.322z" />
+              </svg>
+              <span aria-hidden="true" id="total-likes-1562746727083">12 <span class="gel-sr">total</span></span>
+            </button>
+            <button aria-pressed="false" aria-descibedby="total-dislikes-1562746727083">
+              <span class="gel-sr">Dislike</span>
+              <svg viewBox="0 0 867.20184 971.79153" class="gel-icon gel-icon--text" focusable="false"
+                aria-hidden="true">
+                <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-width="65"
+                  d="m32.813 496.47h102.3v-417.06h-102.3zm233.17-441.18c-15.486 12.012-33.662 26.413-40.391 32.002-7.231 6.007-29.949 11.786-55.559 14.133-46.844-19.297-31.451-19.953-30.701 165.41.343 84.794.602 210.39 2.981 219 3.91 14.139-25.535-11.714 8.147-9.976 27.517 1.419 40.953 5.387 51.365 15.169 7.756 7.286 14.101 15.6 14.101 18.477 40.428 124.46 180.55 236.28 212.84 372.26.232 27.611 14.837 59.605 61.079 56.932 34.58-1.999 69.415-25.867 77.951-38.651 46.429-87.686-50.003-222.01-20.802-279.07 5.313-8.603 12.54-17.854 16.061-20.556s51.453-4.405 106.52-3.783c105.51 1.191 121.54-1.765 149.34-27.529 33.966-60.426-4.9564-100.75-54.915-129.02 97.032-30.052 73.367-120.23-12.868-139.48 110.49-74.569 24.96-115.63-5.413-127.13 72.296-53.117 46.778-97.487 9.854-121.49-47.394-23.828-167.81-18.96-239.13-18.857l-222.3.322z" />
+              </svg>
+              <span aria-hidden="true" id="total-dislikes-1562746727083">3 <span class="gel-sr">total</span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <ul class="gel-comment__replies">
+        <li class="gel-comment gel-comment__reply" id="comment-1562762936794" tabindex="-1">
+          <h3 class="gel-comment__title">
+            <a href="#comment-1562762936794"><strong>Steve</strong></a>
+            replied to
+            <a href="#comment-1562746727083"><strong>Clive</strong></a>
+            <time datetime="2019-08-10T13:48">13:48</time>
+          </h3>
+          <div class="gel-comment__body">
+            <p>I think England are going to go all the way.</p>
+          </div>
+          <div class="gel-comment__options">
+            <div class="gel-comment__options-left">
+              <button class="gel-comment__reply-button">
+                <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+                  <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-comments"></use>
+                </svg>
+                Reply
+              </button>
+            </div>
+            <div class="gel-comment__options-right">
+              <div class="gel-comment__vote" role="group" aria-label="vote">
+                <button aria-pressed="false" aria-descibedby="total-likes-1562746727083">
+                  <span class="gel-sr">Like</span>
+                  <svg viewBox="0 0 867.20184 971.79153" class="gel-icon gel-icon--text" focusable="false"
+                    aria-hidden="true">
+                    <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round"
+                      stroke-width="65"
+                      d="m32.813 475h102.3v417.06h-102.3zm233.17 441.18c-15.486-12.012-33.662-26.413-40.391-32.002-7.231-6.007-29.949-11.786-55.559-14.133-46.844 19.297-31.451 19.953-30.701-165.41.343-84.794.602-210.39 2.981-219 3.91-14.139-25.535 11.714 8.147 9.976 27.517-1.419 40.953-5.387 51.365-15.169 7.756-7.286 14.101-15.6 14.101-18.477 40.428-124.46 180.55-236.28 212.84-372.26.232-27.611 14.837-59.605 61.079-56.932 34.58 1.999 69.415 25.867 77.951 38.651 46.429 87.686-50.003 222.01-20.802 279.07 5.313 8.603 12.54 17.854 16.061 20.556s51.453 4.405 106.52 3.783c105.51-1.191 121.54 1.765 149.34 27.529 33.966 60.426-4.9564 100.75-54.915 129.02 97.032 30.052 73.367 120.23-12.868 139.48 110.49 74.569 24.96 115.63-5.413 127.13 72.296 53.117 46.778 97.487 9.854 121.49-47.394 23.828-167.81 18.96-239.13 18.857l-222.3-.322z" />
+                  </svg>
+                  <span aria-hidden="true" id="total-likes-1562746727083">4 <span class="gel-sr">total</span></span>
+                </button>
+                <button aria-pressed="false" aria-descibedby="total-dislikes-1562746727083">
+                  <span class="gel-sr">Dislike</span>
+                  <svg viewBox="0 0 867.20184 971.79153" class="gel-icon gel-icon--text" focusable="false"
+                    aria-hidden="true">
+                    <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round"
+                      stroke-width="65"
+                      d="m32.813 496.47h102.3v-417.06h-102.3zm233.17-441.18c-15.486 12.012-33.662 26.413-40.391 32.002-7.231 6.007-29.949 11.786-55.559 14.133-46.844-19.297-31.451-19.953-30.701 165.41.343 84.794.602 210.39 2.981 219 3.91 14.139-25.535-11.714 8.147-9.976 27.517 1.419 40.953 5.387 51.365 15.169 7.756 7.286 14.101 15.6 14.101 18.477 40.428 124.46 180.55 236.28 212.84 372.26.232 27.611 14.837 59.605 61.079 56.932 34.58-1.999 69.415-25.867 77.951-38.651 46.429-87.686-50.003-222.01-20.802-279.07 5.313-8.603 12.54-17.854 16.061-20.556s51.453-4.405 106.52-3.783c105.51 1.191 121.54-1.765 149.34-27.529 33.966-60.426-4.9564-100.75-54.915-129.02 97.032-30.052 73.367-120.23-12.868-139.48 110.49-74.569 24.96-115.63-5.413-127.13 72.296-53.117 46.778-97.487 9.854-121.49-47.394-23.828-167.81-18.96-239.13-18.857l-222.3.322z" />
+                  </svg>
+                  <span aria-hidden="true" id="total-dislikes-1562746727083">1 <span class="gel-sr">total</span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    window.gel && gel.Comments.init();
+    // Sort control placeholder script
+    var sorter = document.getElementById('comments-sort');
+    sorter.addEventListener('change', function () {
+      alert('TODO: Change the comment stream\'s sort order to ' + sorter.value);
+    });
 
-    var testData = [
-      {
-        id: 'z50fsmh2h',
-        time: 1562746598697,
-        name: 'Clive Warren',
-        comment: 'I like this very much.'
-      },
-      {
-        id: '4wi00jios',
-        time: 1562746727083,
-        name: 'Clive Smythe',
-        comment: 'I do not understand this at all.'
-      },
-      {
-        id: 'm1tx9pbj2',
-        time: 1562747117059,
-        name: 'Clive Henderson',
-        comment: 'I don\'t like this at all and think it\'s bad.'
-      },
-      {
-        id: 'lmu4jrrnt',
-        time: 1562762936794,
-        name: 'Clive Skogsberg',
-        comment: 'I\'m <span>indifferent</span>, to be perfectly honest.'
-      }
-    ];
+    // Reply placeholder script
+    var replyButtons = document.querySelectorAll('.gel-comment__reply-button');
+    Array.prototype.forEach.call(replyButtons, function (button) {
+      button.addEventListener('click', function () {
+        alert('TODO: Reveal and focus an inline version of the comment form for writing the reply');
+      });
+    });
 
-    var comments = new gel.Comments.constructor('.gel-comments', {
-      data: testData,
-      template: function (props) {
-        if (props.length < 1) {
-          return '<p><strong>There are no comments so far.</strong></p>';
+    // Voting placeholder script
+    var voters = document.querySelectorAll('.gel-comment__vote');
+    Array.prototype.forEach.call(voters, function (voter) {
+      var voterButtons = Array.prototype.slice.call(voter.querySelectorAll('button'));
+      var totals = Array.prototype.slice.call(voter.querySelectorAll('span[id]'));
+      voter.addEventListener('click', function (e) {
+        var index = voterButtons.indexOf(e.target);
+        if (index > -1) {
+          var otherIndex = index === 0 ? 1 : 0;
+          var pressed = voterButtons[index].getAttribute('aria-pressed') === 'true';
+          var otherPressed = voterButtons[otherIndex].getAttribute('aria-pressed') === 'true';
+          if (pressed) {
+            voterButtons[index].setAttribute('aria-pressed', 'false');
+            totals[index].textContent = parseInt(totals[index].textContent) - 1;
+          } else {
+            voterButtons[index].setAttribute('aria-pressed', 'true');
+            totals[index].textContent = parseInt(totals[index].textContent) + 1;
+            if (otherPressed) {
+              voterButtons[otherIndex].setAttribute('aria-pressed', 'false');
+              totals[otherIndex].textContent = parseInt(totals[otherIndex].textContent) - 1;
+            }
+          }
         }
-        return '<ul class="gel-comments__stream">' + props.map(function (item) {
-          var timeParsed = new Date(item.time);
-          var date = (new Date(item.time)).toLocaleDateString('en-GB', { month: 'short', day: 'numeric', year: 'numeric' });
-          var time = timeParsed.getHours() + ':' + timeParsed.getMinutes();
-          return '' +
-            '<li class="gel-comment" id="' + item.id + '" tabindex="-1">' +
-            '<h3>' + item.name + ' <time datetime="' + timeParsed.getFullYear() + "-" + (timeParsed.getMonth() + 1) + "-" + timeParsed.getDate() + 'T' + timeParsed.getHours() + ":" + timeParsed.getMinutes() + '">on ' + date + ' at ' + time + '</time></h3>' +
-            '<div>' + item.comment + '</div>' +
-            '<div class="gel-comment__options">' +
-            '<a href="https://www.bbc.co.uk/moderation/complaints/comments/' + this.id + '">Report</a>' +
-            '<a href="#' + item.id + '">Link to</a>' +
-            '</div>' +
-            '</li>';
-        }).join('') + '</ul>';
+      });
+    });
+
+    // Comment form placeholder script
+    var form = document.querySelector('.gel-comments__form');
+    var submitButton = form.querySelector('[type="submit"]');
+    var textarea = form.querySelector('textarea');
+    var successMsg = form.querySelector('.gel-comments__success');
+    var charsLeft = form.querySelector('.gel-comments__chars-left');
+
+    textarea.addEventListener('input', function () {
+      submitButton.hidden = textarea.value === '';
+      charsLeft.textContent = 200 - textarea.value.length;
+    });
+
+    textarea.addEventListener('focus', function () {
+      if (textarea.value === '') {
+        submitButton.hidden = true;
       }
     });
 
-    comments.render();
-
-    var sortControls = document.querySelector('.gel-comments__sort-controls');
-    sortControls.addEventListener('change', function (e) {
-      comments.sortBy(e.target.value);
+    submitButton.addEventListener('blur', function () {
+      successMsg.innerHTML = '';
+      submitButton.hidden = true;
     });
 
+    // Form validation 
     var rules = [
       {
-        name: 'comment',
-        required: true,
+        name: 'your-comment',
+        required: true
       }
     ];
 
     window.gel && gel.Validation.init();
-    var form = document.getElementById('comment-form');
-    var formValidation = new gel.Validation.constructor(form, rules)
+    var formValidation = new gel.Validation.constructor(form, rules);
+
+    form.addEventListener('gel-submitted', function () {
+      successMsg.innerHTML = 'Thanks! We will check this as quickly as possible before posting.';
+      textarea.value = '';
+      charsLeft.textContent = 200;
+    });
   });
 </script>
             </div>
