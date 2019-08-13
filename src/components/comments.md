@@ -87,10 +87,10 @@ Authentication is out of scope for this article, so you are asked to imagine the
 </form>
 ```
 
-* **`for="your-comment"`:** The textarea must be labelled programmatically, by matching its `id` with a `<label>`'s `for` value. As recommended in [Form fields](../form-fields) the label should appear persistently above the input/textarea, and not be supplanted by a `placeholder` attribute, ehich presents various accessibility and usability issues
+* **`for="your-comment"`:** The textarea must be labelled programmatically, by matching its `id` with a `<label>`'s `for` value. As recommended in [Form fields](../form-fields) the label should appear persistently above the input/textarea, and not be supplanted by a `placeholder` attribute, which presents various accessibility and usability issues
 * **`class="gel-comments__field"`:** This groups the `<textarea>` with the character count element for CSS positioning. The count is associated with the `<textarea>` using `aria-describedby`.
 * **`class="gel-comment__chars"`:** A combination of `aria-hidden="true"` and `class="gel-sr"` ensures the accessible wording for this element follows the pattern _"[number] characters remaining"_. The complete `aria-describedby` value is a space separated combination of the `your-comment-error` and `chars-left` `id`s. The text of each `id`'s element is read in turn whenever the textarea is focused.
-* **`class="gel-form__field-error"`:** The form should use the standard and accessible error messaging mechanism described in [Form fields](../form-fields). This error element is associated with the `<textarea>` and populated via the [Form fields](../form-fields) implementation's script (with adds `aria-describedby`, and `aria-invalid` where applicable).
+* **`class="gel-form__field-error"`:** The form should use the standard and accessible error messaging mechanism described in [Form fields](../form-fields). This error element is associated with the `<textarea>` and populated via the [Form fields](../form-fields) implementation's script (with added `aria-describedby`, and `aria-invalid` where applicable).
 * **`id="your-comment-rules"`:** All users should be made aware of the moderation rules before submitting their comment. To make this information available to screen reader users in a timely fashion, it is associated with the submit button using `aria-describedby`[^2]. That is: it will be read out as part of the button's semantic information while the user is focused on it.
 * **`hidden`:** As set out in the principle [GEL Comments guide](https://www.bbc.co.uk/gel/guidelines/comments), the submit button is not revealed until the user has entered some text into the `<textarea>`
 * **`class="gel-comments__success"`:** This live region[^3] is populated with the message _"Your comment was posted successfully"_. Live regions are announced in screen reader software whenever content is appended to them, meaning screen reader users can be kept abreast of changes to state.
@@ -128,7 +128,7 @@ As standard, the SVG takes `focusable="false"` and `aria-hidden="true"` take it 
 
 ## The comments stream
 
-As already contested in the previous section, the comments themselves ought to be marked up as a list. Lists are identified and their items enumerated in screen reader output. Screen readers also provide list navigation shortcuts, such as the <kbd>i</kbd> key for navigating to the next list item in NVDA[^6].
+As already explained in the previous section, the comments themselves ought to be marked up as a list. Lists are identified and their items enumerated in screen reader output. Screen readers also provide list navigation shortcuts, such as the <kbd>i</kbd> key for navigating to the next list item in NVDA[^6].
 
 Where the facility to reply to comments is implemented, replies should be marked up as _nested_ lists appended to the original comment's content. This describes the **relationship of belonging** non-visually and to assistive technology users.
 
@@ -172,7 +172,7 @@ Each comment belonging to the same comment stream may also include:
 
 Where possible, it is advised you do not resort to using the overflow menu (as illustrated in the [main GEL documentation](https://www.bbc.co.uk/gel/guidelines/comments)). If there is room, make all functionality visible by default.
 
-Where the overflow menu _is_ implemented, it should always be as the last control inside the comment, on the right. It should expand and collapse a horizontal menu of controls according to its `aria-expanded` state (`true` for expanded; `false` for collapsed). Its (visually hidden) text label should read _"More"_.
+Where the overflow menu _is_ implemented, it should always be as the last control inside the comment, on the right (when rendered in a left-to-right language). It should expand and collapse a horizontal menu of controls according to its `aria-expanded` state (`true` for expanded; `false` for collapsed). Its (visually hidden) text label should read _"More"_.
 
 In the following sample, the overflow menu is in the _collapsed_ state, and the menu itself is, accordingly, `hidden`.
 
@@ -311,7 +311,7 @@ As set forth in [the GEL Comments guide](https://www.bbc.co.uk/gel/guidelines/co
 
 ### State indication
 
-The pressed (`aria-pressed="true"`) state of controls must be indicated not just through a change in color[^9]. In the case of the like and dislike voting controls, the [reference implementation](#reference-implementation) uses a blue `fill` for the button's SVG icon.
+The pressed (`aria-pressed="true"`) state of controls must not be indicated only through a change in colour[^9]. In the case of the like and dislike voting controls, the [reference implementation](#reference-implementation) uses a blue `fill` for the button's SVG icon.
 
 ```css
   .gel-comment__vote button[aria-pressed="true"] path {
@@ -327,7 +327,7 @@ Where there is latency, a loading spinner may need to be incorporated similar to
 
 ### Posting a comment
 
-Where JavaScript is available, comments section is rendered and form validation initialized, as implemented in [Form fields](../form-fields). In this case, the only validation rule is that the `id="your-comment"` `<textarea>` is `required`. With the following rules object supplied, the `aria-required="true"` attribution is automatically added to the `<textarea>` element.
+Where JavaScript is available, comments section is rendered and form validation initialised, as implemented in [Form fields](../form-fields). In this case, the only validation rule is that the `id="your-comment"` `<textarea>` is `required`. With the following rules object supplied, the `aria-required="true"` attribution is automatically added to the `<textarea>` element.
 
 ```js
 var rules = [
