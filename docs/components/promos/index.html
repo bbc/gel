@@ -683,8 +683,8 @@ title: Promos
     <script type="text/javascript"> // create ATI tag and submit
     (function() {
         var title = document.querySelector("meta[property='og:title']").getAttribute("content").toLowerCase().split(': ');
-        var siteTitle = title[0].replace(/ /g, ".").replace(/[^a-zA-Z0-9.]/g, "").replace(/\.+/g, ".");
-        var pageTitle = title[1].replace(/ /g, "-").replace(/[^a-zA-Z0-9-]/g, "").replace(/-+/g, "-");
+        var siteTitle = '' + title[0].replace(/ /g, ".").replace(/[^a-zA-Z0-9.]/g, "").replace(/\.+/g, ".");
+        var pageTitle = '' + title[1].replace(/ /g, "-").replace(/[^a-zA-Z0-9-]/g, "").replace(/-+/g, "-");
 
         ;
         pageTitle = siteTitle + '.' + pageTitle +'.page';
