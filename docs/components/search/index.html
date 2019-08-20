@@ -7,6 +7,13 @@
     <link rel="icon" href="/gel/static/images/favicon.ico" type="image/x-icon">
 
     <title>GEL | Search</title>
+    <meta property="og:title" content="BBC GEL Technical Guide: Search">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bbc.github.io/gel/">
+    <meta property="og:image" content="https://bbc.github.io/gel/static/images/bbc-gel-logo.png">
+    <meta property="og:description" content="Guidance for developers who wish to implement BBC GEL component patterns in ways that follow all BBC accessibility standards.">
+    <meta property="og:locale" content="en_GB">
+    <meta name="version_number" content="1.0">
 
     <script src="/gel/static/js/site.js"></script>
 
@@ -388,6 +395,39 @@ title: Local search
 
     <script type="text/javascript">
         new Sticky('.sticky');
+    </script>
+
+    <!-- BBC ATI analytics -->
+    <script type="text/javascript" src="/gel/static/js/smarttag.js"></script>
+
+    <script type="text/javascript"> // create ATI tag and submit
+    (function() {
+        var version_number = document.querySelector("meta[name='version_number']").getAttribute("content");
+        var page_title = document.querySelector("meta[property='og:title']").getAttribute("content").replace(/[^a-zA-Z0-9_.]/g, "_").toLowerCase().replace(/_+/g, "_");
+        var page = page_title + "_v" + version_number;
+
+        var tag = new ATInternet.Tracker.Tag({
+            secure: true
+        }, undefined);
+
+        tag.page.set({ name: page });
+
+        var site = {
+            "4": "en",
+            "5": document.URL,
+            "6": document.referrer,
+            "8": "direct-hit",
+            "9": page_title
+        };
+        tag.customVars.set({ site: site });
+        
+        if (site["6"].match('bbc.github.io/gel')) {
+            //tag.dispatch();
+        }
+        else {
+            console.log('ATI tag:', page, site);
+        }
+    })();
     </script>
 </body>
 
