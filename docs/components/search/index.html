@@ -412,11 +412,12 @@ title: Local search
         ATTag.page.set({ name: pageTitle });
 
         var siteCustomVars = {
-            "4": "en",
-            "5": document.URL,
-            "6": document.referrer,
-            "8": "direct-hit",
-            "9": pageTitle
+            "3": "[bbc_website]",
+            "4": "[en]",
+            "5": "[" + document.URL + "]",
+            "6": "[" + document.referrer + "]",
+            "8": "[direct-hit]",
+            "9": "[" + pageTitle + "]"
         };
         ATTag.customVars.set({ site: siteCustomVars });
         
