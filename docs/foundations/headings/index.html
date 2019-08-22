@@ -294,6 +294,8 @@
 
     <script type="text/javascript"> // create ATI tag and submit
     (function() {
+        var url = document.URL;
+        var ref = document.referrer;
         var title = document.querySelector("meta[property='og:title']").getAttribute("content").toLowerCase().split(': ');
         var siteTitle = '' + title[0].replace(/ /g, ".").replace(/[^a-zA-Z0-9.]/g, "").replace(/\.+/g, ".");
         var pageTitle = '' + title[1].replace(/ /g, "-").replace(/[^a-zA-Z0-9-]/g, "").replace(/-+/g, "-");
@@ -304,10 +306,11 @@
         ATTag.page.set({ name: pageTitle });
 
         var siteCustomVars = {
+            "2": "[responsive]",
             "3": "[bbc_website]",
             "4": "[en]",
-            "5": "[" + document.URL + "]",
-            "6": "[" + document.referrer + "]",
+            "5": "[" + url + "]",
+            "6": (ref? "[" + ref + "]" : undefined),
             "8": "[direct-hit]",
             "9": "[" + pageTitle + "]"
         };
