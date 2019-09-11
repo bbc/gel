@@ -552,7 +552,7 @@ svg + .gel-promo__indicator-text {
 [aria-expanded="true"] .gel-card__close-label {
   display: block; }
 
-[aria-expanded="true"] .gel-card-more-label {
+[aria-expanded="true"] .gel-card__more-label {
   display: none; }
 
 .gel-card__toolbar button:hover,
