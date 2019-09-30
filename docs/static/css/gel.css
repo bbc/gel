@@ -1243,6 +1243,9 @@ input[type=range]::-ms-thumb {
   margin: 0;
   padding: 0.75rem; }
 
+.gel-masthead:not(.gel-masthead--with-js) .gel-masthead__more-menu-label {
+  display: none; }
+
 .gel-masthead__more-menu ul {
   flex-basis: 0;
   flex-grow: 999;
