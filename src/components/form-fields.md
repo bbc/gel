@@ -264,7 +264,7 @@ The following describes the validation journey, as exemplified by the [**Referen
 
 ### 1. Initial state
 
-* No fields have the `aria-invalid` attribution
+* No fields have the `aria-invalid` attribute
 * Required fields have `aria-required="true"`
 * The general error live region is present in the DOM, but not yet populated
 
