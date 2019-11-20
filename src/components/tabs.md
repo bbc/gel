@@ -177,7 +177,7 @@ By mouse or touch, clicking or pressing a tab will reveal its corresponding tab 
 
 To preserve the behaviour of the same-page links upon which the tabs are created and to address trouble screen reader users have been observed experiencing moving from the tab to the tab panel, clicking a tab programmatically moves focus to the visible tab panel. The tab panel is identified in screen readers as a tab panel, and the tab panel's label (borrowed from the corresponding tab using `aria-labelledby`) is also announced. 
 
-The tab panel is now the sequential focus starting point, making the first interactive element inside (or past) the tab panel next in focus order. However, the tab panel itself is not user focusable (it employs `tabindex="-1"`, not `tabindex="0"`), meaning <kbd>Shift</kbd> + <kbd>Tab</kbd> will take the user directly back to the tab list. Screen readers' 'virtual cursor'[^6] behaviour is not augmented or overridden in any way. Non-interactive user-focusable elements (elements with `tabindex="0"`) are usually considered a violation of **WCAG2.1 2.4.3 Focus Order**[^8].
+The tab panel is now the sequential focus starting point, making the first interactive element inside (or past) the tab panel next in focus order. However, the tab panel itself is not user focusable (it employs `tabindex="-1"`, not `tabindex="0"`), meaning <kbd>Shift</kbd> + <kbd>Tab</kbd> will take the user directly back to the tab list. Screen readers' 'virtual cursor'[^6] behaviour is not augmented or overridden in any way. Note, non-interactive user-focusable elements (elements with `tabindex="0"`) are usually considered a violation of **WCAG2.1 2.4.3 Focus Order**[^8].
 
 #### Back button support
 
