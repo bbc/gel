@@ -54,7 +54,7 @@ Where server-side rendering and progressive enhancement are possible, follow thi
 #### Notes
 
 * **`<ul>`:** The `<ul>` groups the same-page links together and enumerates them in screen reader output.
-* **links:** Each link's `href` corresponds to a `<section>` `id`. This capitalizes on standard browser behavior to allow the user to navigate to the `<section>`s without having to depend on JavaScript.
+* **links:** Each link's `href` corresponds to a `<section>` `id`. This capitalizes on standard browser behaviour to allow the user to navigate to the `<section>`s without having to depend on JavaScript.
 * **`<section>`**: Some screen readers allow users to navigate between `<section>` ('region') directly, by providing shortcuts. However, it is recommended each `<section>` is also introduced by a heading, since heading shortcuts are a more longstanding mode of navigation.
 * **tabindex="-1":** Each `<section>` takes `tabindex="-1"`. This forces browsers to move focus to the target element / hash fragment when activating a same-page link [^4].
 
@@ -177,7 +177,7 @@ By mouse or touch, clicking or pressing a tab will reveal its corresponding tab 
 
 To preserve the behaviour of the same-page links upon which the tabs are created and to address trouble screen reader users have been observed experiencing moving from the tab to the tab panel, clicking a tab programmatically moves focus to the visible tab panel. The tab panel is identified in screen readers as a tab panel, and the tab panel's label (borrowed from the corresponding tab using `aria-labelledby`) is also announced. 
 
-The tab panel is now the sequential focus starting point, making the first interactive element inside (or past) the tab panel next in focus order. However, the tab panel itself is not user focusable (it employs `tabindex="-1"`, not `tabindex="0"`), meaning <kbd>Shift</kbd> + <kbd>Tab</kbd> will take the user directly back to the tab list. Screen readers' 'virtual cursor'[^6] behavior is not augmented or overridden in any way. Non-interactive user-focusable elements (elements with `tabindex="0"`) are usually considered a violation of **WCAG2.1 2.4.3 Focus Order**[^8].
+The tab panel is now the sequential focus starting point, making the first interactive element inside (or past) the tab panel next in focus order. However, the tab panel itself is not user focusable (it employs `tabindex="-1"`, not `tabindex="0"`), meaning <kbd>Shift</kbd> + <kbd>Tab</kbd> will take the user directly back to the tab list. Screen readers' 'virtual cursor'[^6] behaviour is not augmented or overridden in any way. Non-interactive user-focusable elements (elements with `tabindex="0"`) are usually considered a violation of **WCAG2.1 2.4.3 Focus Order**[^8].
 
 #### Back button support
 
