@@ -18,7 +18,7 @@ We are writing technical recommendations for developers who build the patterns i
 | [Focus]({{site.basedir}}foundations/focus/) | Draft|
 | [Grids]({{site.basedir}}foundations/grids/) | Draft|
 | [Headings]({{site.basedir}}foundations/headings/) | Draft|
-| [Icons]({{site.basedir}}foundations/iconography/) | Draft|
+| [Iconography]({{site.basedir}}foundations/iconography/) | Draft|
 | [Routing]({{site.basedir}}foundations/routing/) | Draft|
 | [Typography]({{site.basedir}}foundations/typography/) | Draft|
 

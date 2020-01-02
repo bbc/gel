@@ -135,7 +135,7 @@ Controls often exist in changing states: active, disabled etc. It's important th
 
 The movement icons get around this by using a diagonal line-through style for the "off" state (pictured).
 
-![Movement on and movement off icons, with a line through the off version from top right to bottom left](./assets/movement.png).
+![Movement on and movement off icons, with a line through the off version from top right to bottom left]({{site.basedir}}static/images/gel-icon-movement.png).
 
 ### Text decoration
 
