@@ -40,6 +40,7 @@ We are writing technical recommendations for developers who build the patterns i
 | [Infographics]({{site.basedir}}components/infographics/) | Draft|
 | [Information Panel]({{site.basedir}}components/info-panels/) | Draft|
 | [Metadata strips]({{site.basedir}}components/metadata-strips/) | Draft|
+| [Masthead]({{site.basedir}}components/masthead/) | Draft |
 | [Promos]({{site.basedir}}components/promos/) | Draft|
 | [Pagination]({{site.basedir}}components/load-more/) | Draft|
 | [Pocket]({{site.basedir}}components/pockets/) | Draft|
@@ -90,7 +91,7 @@ In CSS, a basic layout is put in place then enhanced with modern layout modules 
     grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
     grid-gap: 1rem;
   }
-  
+
   .grid > * + * {
     margin: 0; /* undo, since `grid-gap` supercedes it */
   }
@@ -131,7 +132,7 @@ Each reference implementation that depends on JavaScript uses a basic constructo
   }
 ```
 
-Note that the `toggle` function is exposed as a public method, in case the switch needs to be toggled programmatically. 
+Note that the `toggle` function is exposed as a public method, in case the switch needs to be toggled programmatically.
 
 Initialization inside the component's demo page looks like this:
 

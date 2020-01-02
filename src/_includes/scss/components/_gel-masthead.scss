@@ -215,6 +215,10 @@
   padding: 0.75rem;
 }
 
+.gel-masthead:not(.gel-masthead--with-js) .gel-masthead__more-menu-label {
+  display: none;
+}
+
 .gel-masthead__more-menu ul {
   flex-basis: 0;
   flex-grow: 999;
@@ -273,9 +277,9 @@
   .gel-masthead__more-option-icon {
     display: block;
   }
-  
+
   .gel-masthead__more-option-text,
-  .gel-masthead--with-js .gel-masthead__links, 
+  .gel-masthead--with-js .gel-masthead__links,
   .gel-masthead__account-text,
   .gel-masthead__more-option::before {
     display: none;

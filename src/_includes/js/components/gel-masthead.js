@@ -97,8 +97,8 @@
 
       var callback = function (items, observer) {
         Array.prototype.forEach.call(items, function (item) {
-          // Change visibility and availability 
-          // of menu items depending on whether they 
+          // Change visibility and availability
+          // of menu items depending on whether they
           // are intersecting
           if (item.intersectionRatio > 0.98) {
             item.target.classList.remove('gel-masthead__link-hidden');
