@@ -211,7 +211,7 @@
 }
 </code></pre>
 <p>However, this can easily result in illegible labels for very narrow viewports. It is recommended you create a breakpoint based on the content at which to reconfigure the tabs into a single column. This might be implemented something like the following:</p>
-<pre class="hljs"><code>@<span class="hljs-keyword">media</span> (max-width: <span class="hljs-number">400px</span>) {
+<pre class="hljs"><code><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width:</span> <span class="hljs-number">400px</span>) {
   <span class="hljs-selector-class">.gel-tabs</span> &gt; <span class="hljs-selector-tag">ul</span> {
     <span class="hljs-attribute">flex-wrap</span>: wrap;
   }
@@ -230,7 +230,7 @@
 }
 </code></pre>
 <p>In addition, an <code>@media</code> query detecting high contrast mode<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> is used to create an alternative <code>aria-current</code> style for the selected tab. It is positioned <code>2px</code> down from its natural position. This obscures the line between the tab and panel, making them appear as one.</p>
-<pre class="hljs"><code>@<span class="hljs-keyword">media</span> (-ms-high-contrast: active) {
+<pre class="hljs"><code><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">-ms-high-contrast:</span> active) {
   <span class="hljs-selector-class">.gel-tabs</span> <span class="hljs-selector-attr">[aria-current]</span> {
     <span class="hljs-attribute">position</span>: relative;
     <span class="hljs-attribute">top</span>: <span class="hljs-number">2px</span>;

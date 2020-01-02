@@ -258,10 +258,10 @@ to break because they depend on JavaScript in order to function.</p>
   <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid transparent;
 }
 
-@<span class="hljs-keyword">media</span> (-ms-high-contrast: active) {
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">-ms-high-contrast:</span> active) {
   <span class="hljs-selector-class">.gel-form__field-error</span>,
   <span class="hljs-selector-class">.gel-form__warning</span> {
-    <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">invert</span>(100%);
+    <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">invert</span>(<span class="hljs-number">100%</span>);
   }
 }
 </code></pre>
@@ -274,10 +274,10 @@ to break because they depend on JavaScript in order to function.</p>
 <p>How the component looks with a <a href="https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode">Windows High Contrast Mode</a> theme active.</p>
 <p><img src="/gel/static/images/hcm_form_fields.png" alt="The error message is white with black text"></p>
 <p>A CSS filter is used to reverse the colours of the error message:</p>
-<pre class="hljs"><code>@<span class="hljs-keyword">media</span> (-ms-high-contrast: active) {
+<pre class="hljs"><code><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">-ms-high-contrast:</span> active) {
   <span class="hljs-selector-class">.gel-form__field-error</span>,
   <span class="hljs-selector-class">.gel-form__warning</span> {
-    <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">invert</span>(100%);
+    <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">invert</span>(<span class="hljs-number">100%</span>);
   }
 }
 </code></pre>

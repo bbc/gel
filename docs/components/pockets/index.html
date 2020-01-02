@@ -146,7 +146,7 @@
 </code></pre>
 <p>The 'foot' of the <strong>Pocket</strong> element contains the 'Show more' button, centrally justified. It has no height and appears as a single line, with the button placed centrally over it on the vertical axis, using a transform.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gel-pocket__foot</span> <span class="hljs-selector-tag">button</span> {
-  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(-50%);
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(-<span class="hljs-number">50%</span>);
 }
 </code></pre>
 <p>When the <strong>Pocket</strong> is in its unveiled/showing state, the button's text changes to 'Show less' (see <a href="#recommended-behaviour">Recommended behaviour</a>, below) and a class of <code>gel-pocket--foot-shown</code> is applied, enabling a <code>margin-top</code> style to separate the transformed button from the now unveiled content.</p>
@@ -155,7 +155,7 @@
 }
 </code></pre>
 <p>When the <em>&quot;Continue below...&quot;</em> element is focused, it draws attention by showing a brief <code>outline</code> animation:</p>
-<pre class="hljs"><code>@<span class="hljs-keyword">keyframes</span> focus {
+<pre class="hljs"><code><span class="hljs-keyword">@keyframes</span> focus {
   0%{
     <span class="hljs-attribute">outline-width</span>: <span class="hljs-number">0px</span>;
   }

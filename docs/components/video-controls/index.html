@@ -197,7 +197,7 @@ Visually hide an element, but leave it available for screen readers
  */</span>
 <span class="hljs-selector-class">.gel-sr</span> {
     <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">clip</span>: <span class="hljs-built_in">rect</span>(0 0 0 0);
+    <span class="hljs-attribute">clip</span>: <span class="hljs-built_in">rect</span>(<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>);
     <span class="hljs-attribute">height</span>: <span class="hljs-number">1px</span>;
     <span class="hljs-attribute">margin</span>: -<span class="hljs-number">1px</span>;
     <span class="hljs-attribute">overflow</span>: hidden;
@@ -241,7 +241,7 @@ Visually hide an element, but leave it available for screen readers
 <h3 id="the-timeline-1">The timeline</h3>
 <p>The <code>type=&quot;range&quot;</code> input (for the timeline) requires a number of proprietary styles to have a custom appearance<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>.</p>
 <p>Many of the custom styles are not visible where Windows High Contrast Mode is active, so we reinstate the user agent styles in an <code>@media</code> block:</p>
-<pre class="hljs"><code>@<span class="hljs-keyword">media</span> (-ms-high-contrast: active) {
+<pre class="hljs"><code><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">-ms-high-contrast:</span> active) {
   <span class="hljs-selector-class">.gel-video__timeline-container</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=range]</span>,
   <span class="hljs-selector-class">.gel-video__timeline-container</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=range]</span><span class="hljs-selector-pseudo">::-webkit-slider-runnable-track</span>,
   <span class="hljs-selector-class">.gel-video__timeline-container</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=range]</span><span class="hljs-selector-pseudo">::-webkit-slider-thumb</span>,

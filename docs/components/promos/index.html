@@ -283,10 +283,10 @@
   <span class="hljs-attribute">max-width</span>: <span class="hljs-number">266px</span>;
 }
 
-@<span class="hljs-keyword">supports</span> (display: grid) {
+<span class="hljs-keyword">@supports</span> (<span class="hljs-attribute">display:</span> grid) {
   <span class="hljs-selector-class">.gel-promos</span> {
     <span class="hljs-attribute">display</span>: grid;
-    <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(auto-fill, minmax(266px, 1fr));
+    <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(auto-fill, minmax(<span class="hljs-number">266px</span>, <span class="hljs-number">1</span>fr));
     <span class="hljs-attribute">grid-gap</span>: <span class="hljs-number">1rem</span>;
   }
   
@@ -313,7 +313,7 @@
 </code></pre>
 <h3 id="the-image">The image</h3>
 <p>The image will need to fit the available space, regardless of the Promo's dimensions (which are likely to change across breakpoints) without distorting. This is possible by setting the desired height of the image box and using the <code>object-fit</code> property:</p>
-<pre class="hljs"><code>@<span class="hljs-keyword">supports</span> (object-fit: cover) {
+<pre class="hljs"><code><span class="hljs-keyword">@supports</span> (<span class="hljs-attribute">object-fit:</span> cover) {
   <span class="hljs-selector-class">.gel-promo__image</span> <span class="hljs-selector-tag">img</span> {
     <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
     <span class="hljs-attribute">object-fit</span>: cover;
