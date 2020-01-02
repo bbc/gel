@@ -138,7 +138,7 @@ p a {
 
 Do not underline text of any other variety, lest it is mistaken for a link. Highlight `<mark>` text using a background colour instead.
 
-As set out under [**Buttons and CTAs**](../buttons-and-ctas), call-to-action links and buttons should be differentiated visually to reflect their differing behaviour.
+As set out under [**Buttons and CTAs**](/gel/components/buttons-and-ctas/), call-to-action links and buttons should be differentiated visually to reflect their differing behaviour.
 
 ## Contrast
 
