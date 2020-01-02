@@ -11,7 +11,7 @@ linkback: https://www.bbc.co.uk/gel/guidelines/tabs
 
 Tabbed interfaces, like accordions, allow users to view long-form content one section at a time. Clearly labelled tabs representing the individual sections make it easy for users to identify and reveal the content pertinent to them.
 
-Use tabs where the subject sections are not too numerous (more than four or five tabs in total) and the tab labels are not lengthy. Tab content should be self-sufficient: do not force users to switch back and forth between tabs to complete tasks[^1]. Where more than five sections/labels are present, or the tab labels are lengthy, an [**Accordion**](../accordions) pattern is preferred.
+Use tabs where the subject sections are not too numerous (no more than four or five tabs in total) and the tab labels are not lengthy. Tab content should be self-sufficient: do not force users to switch back and forth between tabs to complete tasks[^1]. Where more than five sections/labels are present, or the tab labels are lengthy, an [**Accordion**](../accordions) pattern is preferred.
 
 ::: alert Divergence from authoring practices
 The GEL tabs implementation diverges from the ARIA Authoring Practices specification[^2] in behaviour. This is to address usability issues found in both internal and external research[^3] with ARIA tab interfaces. See [Related research](#related-research).
@@ -54,7 +54,7 @@ Where server-side rendering and progressive enhancement are possible, follow thi
 #### Notes
 
 * **`<ul>`:** The `<ul>` groups the same-page links together and enumerates them in screen reader output.
-* **links:** Eah link's `href` corresponds to a `<section>` `id`. This capitalizes on standard browser behavior to allow the user to navigate to the `<section>`s without having to depend on JavaScript.
+* **links:** Each link's `href` corresponds to a `<section>` `id`. This capitalizes on standard browser behaviour to allow the user to navigate to the `<section>`s without having to depend on JavaScript.
 * **`<section>`**: Some screen readers allow users to navigate between `<section>` ('region') directly, by providing shortcuts. However, it is recommended each `<section>` is also introduced by a heading, since heading shortcuts are a more longstanding mode of navigation.
 * **tabindex="-1":** Each `<section>` takes `tabindex="-1"`. This forces browsers to move focus to the target element / hash fragment when activating a same-page link [^4].
 
@@ -175,9 +175,9 @@ The links and `<section>`s are communicated as such in screen reader output and 
 
 By mouse or touch, clicking or pressing a tab will reveal its corresponding tab panel. For keyboard users, unselected tabs are focusable and can be activated with the <kbd>Enter</kbd> and <kbd>Space</kbd> keys. 
 
-To preserve the behaviour of the same-page links upon which the tabs are created and to address trouble screen readers have been observed experiencing moving from the tab to the tab panel, clicking a tab programmatically moves focus to the visible tab panel. The tab panel is identified in screen readers as a tab panel, and the tab panel's label (borrowed from the corresponding tab using `aria-labelledby`) is also announced. 
+To preserve the behaviour of the same-page links upon which the tabs are created and to address trouble screen reader users have been observed experiencing moving from the tab to the tab panel, clicking a tab programmatically moves focus to the visible tab panel. The tab panel is identified in screen readers as a tab panel, and the tab panel's label (borrowed from the corresponding tab using `aria-labelledby`) is also announced. 
 
-The tab panel is now the sequential focus starting point, making the first interactive element inside (or past) the tab panel next in focus order. However, the tab panel itself is not user focusable (it employs `tabindex="-1"`, not `tabindex="0"`), meaning <kbd>Shift</kbd> + <kbd>Tab</kbd> will take the user directly back to the tab list. Screen readers' 'virtual cursor'[^6] behavior is not augmented or overridden in any way. Non-interactive user-focusable elements (elements with `tabindex="0"`) are usually considered a violation of **WCAG2.1 2.4.3 Focus Order**[^8].
+The tab panel is now the sequential focus starting point, making the first interactive element inside (or past) the tab panel next in focus order. However, the tab panel itself is not user focusable (it employs `tabindex="-1"`, not `tabindex="0"`), meaning <kbd>Shift</kbd> + <kbd>Tab</kbd> will take the user directly back to the tab list. Screen readers' 'virtual cursor'[^6] behaviour is not augmented or overridden in any way. Note, non-interactive user-focusable elements (elements with `tabindex="0"`) are usually considered a violation of **WCAG2.1 2.4.3 Focus Order**[^8].
 
 #### Back button support
 
@@ -219,11 +219,9 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 
 During the development of the tabs implementation, BBC News undertook research and hosted two days of usability testing with a number of keyboard-only participants, including blind and partially sighted participants.
 
-These participants were presented with three variations of the tab interface. Version 1 implemented all of the recommended semantics and behaviours of the [ARIA Authoring practices](https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel) guide, including tabs only being focusable/selectable by arrow key. Version 2 constituted a compromise position: tab semantics were implemented but the interface behaved as a table of contents (moving focus to panels on tab activation). Version 3 appeared as a tab interface but retained the semantics and behaviour of an interactive table of contents (see [Initial markup](#initial-markup)).
+These participants were presented with three variations of the tab interface. Version 1 implemented all of the recommended semantics and behaviours of the [ARIA Authoring practices](https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel) guide, including tabs only being focusable/selectable by the left or right arrow key when focus is on a tab element. Version 2 constituted a compromise position: tab semantics were implemented but the interface behaved as a table of contents (moving focus to panels on tab activation). Version 3 appeared as a tab interface but retained the semantics and behaviour of an interactive table of contents (see [Initial markup](#initial-markup)).
 
-These participants were presented with three variations of the tab interface. Version 1 implemented all of the recommended semantics and behaviours of the [ARIA Authoring practices](https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel) guide, including tabs only being focusable/selectable by arrow key. Version 2 constituted a compromise position: tab semantics were implemented but the interface behaved as a table of contents (moving focus to panels on tab activation). Version 3 appeared as a tab interface but retained the semantics and behaviour of an interactive table of contents (see [Initial markup](#initial-markup)).
-
-The majority of participants were uncomfortable with the same-page link (interactive table of contents) pattern (version 3) as this did not correctly describe the content. Arrow key navigation was either not discovered by participants, or interfered with the expected behaviour of browsing by arrow key using their screen reader's virtual cursor. The concept of 'tabs' as a semantic grouping mechanism was more popular than same page links.
+The majority of participants were uncomfortable with the same-page link (interactive table of contents) pattern (version 3) as this did not correctly describe the content. Arrow key (left or right) navigation was either not discovered by participants, or interfered with the expected behaviour of browsing by arrow key (up or down) using their screen reader's virtual cursor (due to this behaviour been overridden). The concept of 'tabs' as a semantic grouping mechanism was more popular than same page links.
 
 Accordingly, the implementation described here follows that of version 2, and degrades to an interactive table of contents where JavaScript does not run.
 
