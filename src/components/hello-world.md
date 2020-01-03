@@ -26,7 +26,16 @@ println('done');
 
 ## <icon class="gel-icon gel-icon--text" name="gel-icon-archery"> On Target
 
+## More details
+
+You can use footnotes[^1]. This [^2 is possible] too!
+
 ## Where next?
 
 * [BBC Homepage](http://bbc.co.uk/)
 * [BBC GEL Guidelines](http://bbc.co.uk/gel)
+
+### Further reading, elsewhere on the Web
+
+[^1]: The markdown-it-footnote project, <https://github.com/markdown-it/markdown-it-footnote>
+[^2]: "With a doughnut in each hand, anything is possible." --Jameela Jamil <https://en.wikipedia.org/wiki/Jameela_Jamil>

@@ -28,7 +28,7 @@ A **Promo** can be made up of different content, giving us the flexibility to co
 
 ## Recommended markup
 
-**Promos** can appear individually or in groups. In either case, they should be marked up inside an `<aside>` (complementary landmark[^1]). This marks the **Promo(s)** out as being tangential; they break away from the host page's main content to suggest complementary reading or resources.
+**Promos** can appear individually or in groups. In either case, they should be marked up inside an `<aside>` [^1 complementary landmark]. This marks the **Promo(s)** out as being tangential; they break away from the host page's main content to suggest complementary reading or resources.
 
 ```html
 <aside aria-labelledby="unique-promo-label">
@@ -48,7 +48,7 @@ In this case, the label is removed from the DOM with `hidden` because a visual l
 </aside>
 ```
 
-You must choose a heading level that is appropriate for the context[^2]. For example, if the promos can be considered a child subsection of the page, use an `<h2>`. 
+You must choose a [^2 heading level] that is appropriate for the context. For example, if the promos can be considered a child subsection of the page, use an `<h2>`. 
 
 * Main heading (`<h1>`)
     * Subsection heading (`<h2>`)
@@ -57,7 +57,7 @@ You must choose a heading level that is appropriate for the context[^2]. For exa
 
 ### Groups of promos
 
-A group of promos should be marked up as a list. This enables structural and navigational cues in screen reader software[^3].
+A group of promos should be marked up as a list. This enables structural and navigational cues in [^3 screen reader software].
 
 ```html
 <aside aria-labelledby="unique-promo-label">
@@ -77,7 +77,7 @@ The most important thing to remember about **Promo** components is they have a s
 
 #### The headline link
 
-The **Promo** must contain a link as its main label (or 'headline'). The wording of this link should resemble that of the target page's `<title>` and `<h1>`. This consistency aids cognitive accessibility and improves <abbr title="search engine optimization">SEO</abbr>[^4].
+The **Promo** must contain a link as its main label (or 'headline'). The wording of this link should resemble that of the target page's `<title>` and `<h1>`. This consistency aids cognitive accessibility and improves [^4 <abbr title="search engine optimization">SEO</abbr>].
 
 ```html
 <div class="gel-promo">
@@ -322,8 +322,8 @@ Transparent borders are applied on all sides. These become visible when Windows 
 
 **Promo** interaction should be ergonomic for mouse, touch, keyboard, and screen reader users. For mouse and touch users, the whole **Promo** should be clickable as one link. This should be achieved without relying on either of the following:
 
-1. **Multiple, duplicated links:** Linking each of the constituent elements produces multiple and redundant tab stops, impeding keyboard navigation[^6].
-2. **A wrapper link:** Placing all of the **Promo's** content inside a link produces a verbose, confusing and/or truncated link label[^7] (which is liable to affect both SEO and, more importantly, screen reader experience).
+1. **Multiple, duplicated links:** Linking each of the constituent elements produces multiple and redundant tab stops, impeding [^6 keyboard navigation].
+2. **A wrapper link:** Placing all of the **Promo's** content inside a link produces a verbose, confusing and/or truncated [^7 link label] (which is liable to affect both SEO and, more importantly, screen reader experience).
 
 Instead, the headline link's pseudo-content is positioned _over_ the entire **Promo**. 
 
@@ -362,7 +362,7 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 
 ## Related research
 
-This component was originally developed and tested at the BBC in a prototype of the BBC Homepage. During user research we tested with X users, including subjects with a variety of impairments and a range of digital skills. You can read more about our research and findings on [the project Wiki page, hosted on GitHub](#linktocome).
+This component was originally developed and tested at the BBC in a prototype of the BBC Homepage. During user research we tested using subjects with a variety of impairments and a range of digital skills.
 
 ### Further reading, elsewhere on the Web
 
