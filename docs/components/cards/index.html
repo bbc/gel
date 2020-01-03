@@ -109,7 +109,7 @@
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900"
                     style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="geltags-toc__links" class="geltags-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#test-specifications">Test specifications</a></li><li><a href="#related-research">Related research</a></li></ol>
+                    <ol id="geltags-toc__links" class="geltags-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended layout</a></li><li><a href="#recommended-behaviour">Recommended behaviour</a></li><li><a href="#reference-implementation">Reference implementation</a></li><li><a href="#related-research">Related research</a></li></ol>
                 </nav>
             </div>
 
@@ -179,11 +179,11 @@
 </code></pre>
 <h3 id="notes">Notes</h3>
 <ul>
-<li><strong><code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code>:</strong> <strong>Cards</strong> are typically presented as a set, and together must be marked up as an unordered list, with each card marked as a list item (<code>&lt;li&gt;</code>). This enables structural and navigational cues in screen reader software<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</li>
+<li><strong><code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code>:</strong> <strong>Cards</strong> are typically presented as a set, and together must be marked up as an unordered list, with each card marked as a list item (<code>&lt;li&gt;</code>). This enables structural and navigational cues in <a href="#fn1" id="fnref1">screen reader software<sup class="footnote-ref">[1]</sup></a>.</li>
 <li><strong>Headings:</strong> Each card's primary (headline) link must be contained within a heading, each of the card's headline headings must be of the same level, and the set of cards must be introduced as a section within the document by a heading one level higher.</li>
 <li><strong><code>gel-card__headline</code>:</strong> This must appear first in the source order, although the card content will <em>appear</em> first visually. This is because the card's heading introduces the document section that constitutes the rest of the card. Avoid putting interactive content inside <code>gel-card__headline</code> because this will create a reversed focus order.</li>
 <li><strong><code>gel-card__desc</code>:</strong> This will contain prosaic content, such as a description, attribution, and/or timestamp. Some of these elements may be linked to other resources.</li>
-<li><strong><code>aria-expanded</code>:</strong> You may need to provide additional, clarifying information for the card. A <code>gel-card__info</code> element is hidden by default, but can be toggled into view using the <code>aria-expanded</code> button. Note that the <code>gel-card__info</code> element appears directly after the <code>aria-expanded</code> button so that it is logically placed within browsing and focus order. The further action buttons will be the next <kbd>Tab</kbd> stops. The <code>aria-expanded</code> ARIA state attribute identifies the button as a 'toggle button' in screen readers<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</li>
+<li><strong><code>aria-expanded</code>:</strong> You may need to provide additional, clarifying information for the card. A <code>gel-card__info</code> element is hidden by default, but can be toggled into view using the <code>aria-expanded</code> button. Note that the <code>gel-card__info</code> element appears directly after the <code>aria-expanded</code> button so that it is logically placed within browsing and focus order. The further action buttons will be the next <kbd>Tab</kbd> stops. The <code>aria-expanded</code> <a href="#fn2" id="fnref2">ARIA state attribute<sup class="footnote-ref">[2]</sup></a> identifies the button as a 'toggle button' in screen readers.</li>
 <li><strong><code>role=&quot;group&quot;</code> and <code>aria-labelledby</code>:</strong> In order to reliably associate a label with the <code>gel-card__info</code> element, a generic ARIA role is provided. The label itself is provided as a heading of the correct nesting level (<code>&lt;h4&gt;</code> following <code>&lt;h3&gt;</code> in the example) and connected to <code>gel-card__info</code> using <code>aria-labelledby</code>.</li>
 <li><strong>Love, add, and share:</strong> The remaining actions facilitated by <code>gel-card__toolbar</code>. The <code>aria-pressed</code> state attribute should be provided on the &quot;Love&quot; action, since this is a an &quot;on/off&quot; toggle. In the above example, the text label is visually hidden with the <code>gel-sr</code> class. However, where there are fewer than three of these buttons present (and therefore more room), you should display the text labels visually as well as making them available to assistive technologies.</li>
 </ul>
@@ -199,7 +199,7 @@
 <h4 id="a-video">A video</h4>
 <p>If a video is provided, ensure the following:</p>
 <ol>
-<li>The video does not auto-play<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></li>
+<li>The video <a href="#fn3" id="fnref3">does not auto-play<sup class="footnote-ref">[3]</sup></a></li>
 <li>The video player's controls are accessible by screen reader and keyboard</li>
 <li>Dialogue in the video is accompanied by closed captions</li>
 </ol>
@@ -521,9 +521,7 @@ includecss: gelui.css
 </script></div>
         
           <p><a class="gel-cta gel-long-primer-bold" href="../demos/cards/" target="_new"><span class="gel-button__label">Open in new window</span><svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
-        <h2 id="test-specifications">Test specifications</h2>
-<p>A list of gherkin-style feature specifications (including requirements for the <a href="https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile">BBC Mobile Accessibility Guidelines</a>) for this component has been developed and published in a format suitable for use with an automated testing framework. You can review and download these feature files from <a href="#linktocome">the project Wiki page, hosted on GitHub</a>.</p>
-<h2 id="related-research">Related research</h2>
+        <h2 id="related-research">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
 <h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
 <hr class="footnotes-sep">

@@ -79,11 +79,11 @@ The following designates the basic card structure, consisting of the headline, d
 
 ### Notes
 
-* **`<ul>` and `<li>`:** **Cards** are typically presented as a set, and together must be marked up as an unordered list, with each card marked as a list item (`<li>`). This enables structural and navigational cues in screen reader software[^1].
+* **`<ul>` and `<li>`:** **Cards** are typically presented as a set, and together must be marked up as an unordered list, with each card marked as a list item (`<li>`). This enables structural and navigational cues in [^1 screen reader software].
 * **Headings:** Each card's primary (headline) link must be contained within a heading, each of the card's headline headings must be of the same level, and the set of cards must be introduced as a section within the document by a heading one level higher.
 * **`gel-card__headline`:** This must appear first in the source order, although the card content will _appear_ first visually. This is because the card's heading introduces the document section that constitutes the rest of the card. Avoid putting interactive content inside `gel-card__headline` because this will create a reversed focus order.
 * **`gel-card__desc`:** This will contain prosaic content, such as a description, attribution, and/or timestamp. Some of these elements may be linked to other resources.
-* **`aria-expanded`:** You may need to provide additional, clarifying information for the card. A `gel-card__info` element is hidden by default, but can be toggled into view using the `aria-expanded` button. Note that the `gel-card__info` element appears directly after the `aria-expanded` button so that it is logically placed within browsing and focus order. The further action buttons will be the next <kbd>Tab</kbd> stops. The `aria-expanded` ARIA state attribute identifies the button as a 'toggle button' in screen readers[^2].
+* **`aria-expanded`:** You may need to provide additional, clarifying information for the card. A `gel-card__info` element is hidden by default, but can be toggled into view using the `aria-expanded` button. Note that the `gel-card__info` element appears directly after the `aria-expanded` button so that it is logically placed within browsing and focus order. The further action buttons will be the next <kbd>Tab</kbd> stops. The `aria-expanded` [^2 ARIA state attribute] identifies the button as a 'toggle button' in screen readers.
 * **`role="group"` and `aria-labelledby`:** In order to reliably associate a label with the `gel-card__info` element, a generic ARIA role is provided. The label itself is provided as a heading of the correct nesting level (`<h4>` following `<h3>` in the example) and connected to `gel-card__info` using `aria-labelledby`.
 * **Love, add, and share:** The remaining actions facilitated by `gel-card__toolbar`. The `aria-pressed` state attribute should be provided on the "Love" action, since this is a an "on/off" toggle. In the above example, the text label is visually hidden with the `gel-sr` class. However, where there are fewer than three of these buttons present (and therefore more room), you should display the text labels visually as well as making them available to assistive technologies.
 
@@ -104,7 +104,7 @@ Instead, describe what is in the photograph and what makes it relevant.
 
 If a video is provided, ensure the following:
 
-1. The video does not auto-play[^3]
+1. The video [^3 does not auto-play]
 2. The video player's controls are accessible by screen reader and keyboard
 3. Dialogue in the video is accompanied by closed captions
 
@@ -284,11 +284,6 @@ Reference implementations are intended to demonstrate **what needs to be achieve
 <include src="components/demos/cards.html">
 
 <cta label="Open in new window" href="../demos/cards/">
-
-
-## Test specifications
-
-A list of gherkin-style feature specifications (including requirements for the [BBC Mobile Accessibility Guidelines](https://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile)) for this component has been developed and published in a format suitable for use with an automated testing framework. You can review and download these feature files from [the project Wiki page, hosted on GitHub](#linktocome).
 
 ## Related research
 
