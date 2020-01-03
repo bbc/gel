@@ -29,7 +29,7 @@ A **Promo** can be made up of different content, giving us the flexibility to co
 ## Recommended markup
 
 ::: info An aside about Aside
-Consider the context and surrounding content of a **Promo**. The general purpose of this component is to promote complementary or related content, so it is often appropriate for the **Promo** (or the group of **Promos**) to be placed inside an `<aside>` [^1 complementary landmark] element. However, if the rest of thhe page is devoted to displaying a list of items as **Promos** (such as a listicle or an index of featured content), then the **Promos** _are_ the main content! This judgement is best made with the point-of-view of our audience in mind: what would they find helpful and usable versus surprising or confusing.
+Consider the context and surrounding content of a **Promo**. The general purpose of this component is to promote complementary or related content, so it is often appropriate for the **Promo** (or the group of **Promos**) to be placed inside an `<aside>` [^1 complementary landmark] element. However, if the rest of the page is devoted to displaying a list of items as **Promos** (such as a listicle or an index of featured content), then the **Promos** _are_ the main content! This judgement is best made with the point-of-view of our audience in mind: what would they find helpful and usable versus surprising or confusing.
 :::
 
 Because **Promos** are often used to promote tangentially-related content, it is usually appropriate to use an `<aside>` element as the foundation for this component's markup.
