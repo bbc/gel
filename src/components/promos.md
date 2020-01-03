@@ -158,7 +158,7 @@ If present, the description (a couple of sentences; no more) should appear after
 
 #### Metadata
 
-The [**Metadata strip**](../metadata-strips) is described as its own component. It provides metadata in key value pairs, using a description list (`<dl>`).
+The [**Metadata strip**](../metadata-strips) is described as its own component. It provides metadata in key value pairs, using a [^8 description list] (`<dl>`).
 
 ```html
 <div class="gel-promo">
@@ -236,7 +236,7 @@ The appearance of each promo is improved by distributing the metadata (if presen
 
 ### The image
 
-The image will need to fit the available space, regardless of the Promo's dimensions (which are likely to change across breakpoints) without distorting. This is possible by setting the desired height of the image box and using the `object-fit` property:
+The image will need to fit the available space, regardless of the Promo's dimensions (which are likely to change across breakpoints) without distorting. This is possible by setting the desired height of the image box and using [^5 the 'object-fit' property]:
 
 ```css
 @supports (object-fit: cover) {
@@ -377,3 +377,4 @@ This component was originally developed and tested at the BBC in a prototype of 
 [^5]: `object-fit` (caniuse data), <https://caniuse.com/#feat=object-fit>
 [^6]: Keyboard Accessibility — WebAIM, <https://webaim.org/techniques/keyboard/>
 [^7]: Accessibility and HTML5 Block Links — <https://simplyaccessible.com/article/html5-block-links/>
+[^8]: The Description List element represents an association list consisting of zero or more name-value groups (a description list). see <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl>

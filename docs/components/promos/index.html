@@ -248,7 +248,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 <h4 id="metadata">Metadata</h4>
-<p>The <a href="../metadata-strips"><strong>Metadata strip</strong></a> is described as its own component. It provides metadata in key value pairs, using a description list (<code>&lt;dl&gt;</code>).</p>
+<p>The <a href="../metadata-strips"><strong>Metadata strip</strong></a> is described as its own component. It provides metadata in key value pairs, using a <a href="#fn5" id="fnref5">description list<sup class="footnote-ref">[5]</sup></a> (<code>&lt;dl&gt;</code>).</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo__image"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path/to/image"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
@@ -315,7 +315,7 @@
 }
 </code></pre>
 <h3 id="the-image">The image</h3>
-<p>The image will need to fit the available space, regardless of the Promo's dimensions (which are likely to change across breakpoints) without distorting. This is possible by setting the desired height of the image box and using the <code>object-fit</code> property:</p>
+<p>The image will need to fit the available space, regardless of the Promo's dimensions (which are likely to change across breakpoints) without distorting. This is possible by setting the desired height of the image box and using <a href="#fn6" id="fnref6">the 'object-fit' property<sup class="footnote-ref">[6]</sup></a>:</p>
 <pre class="hljs"><code><span class="hljs-keyword">@supports</span> (<span class="hljs-attribute">object-fit:</span> cover) {
   <span class="hljs-selector-class">.gel-promo__image</span> <span class="hljs-selector-tag">img</span> {
     <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
@@ -378,8 +378,8 @@
 <h2 id="recommended-behaviour">Recommended behaviour</h2>
 <p><strong>Promo</strong> interaction should be ergonomic for mouse, touch, keyboard, and screen reader users. For mouse and touch users, the whole <strong>Promo</strong> should be clickable as one link. This should be achieved without relying on either of the following:</p>
 <ol>
-<li><strong>Multiple, duplicated links:</strong> Linking each of the constituent elements produces multiple and redundant tab stops, impeding <a href="#fn5" id="fnref5">keyboard navigation<sup class="footnote-ref">[5]</sup></a>.</li>
-<li><strong>A wrapper link:</strong> Placing all of the <strong>Promo's</strong> content inside a link produces a verbose, confusing and/or truncated <a href="#fn6" id="fnref6">link label<sup class="footnote-ref">[6]</sup></a> (which is liable to affect both SEO and, more importantly, screen reader experience).</li>
+<li><strong>Multiple, duplicated links:</strong> Linking each of the constituent elements produces multiple and redundant tab stops, impeding <a href="#fn7" id="fnref7">keyboard navigation<sup class="footnote-ref">[7]</sup></a>.</li>
+<li><strong>A wrapper link:</strong> Placing all of the <strong>Promo's</strong> content inside a link produces a verbose, confusing and/or truncated <a href="#fn8" id="fnref8">link label<sup class="footnote-ref">[8]</sup></a> (which is liable to affect both SEO and, more importantly, screen reader experience).</li>
 </ol>
 <p>Instead, the headline link's pseudo-content is positioned <em>over</em> the entire <strong>Promo</strong>.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gel-promo__headline</span><span class="hljs-selector-pseudo">::after</span> {
@@ -620,9 +620,13 @@ title: Promos
 </li>
 <li id="fn4" class="footnote-item"><p>How To Write Page Titles For Google &amp; Other Search Engines in 2018, <a href="https://www.hobo-web.co.uk/title-tags/#page-titles-example-use">https://www.hobo-web.co.uk/title-tags/#page-titles-example-use</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn5" class="footnote-item"><p>Keyboard Accessibility — WebAIM, <a href="https://webaim.org/techniques/keyboard/">https://webaim.org/techniques/keyboard/</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+<li id="fn5" class="footnote-item"><p>The Description List element represents an association list consisting of zero or more name-value groups (a description list). see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn6" class="footnote-item"><p>Accessibility and HTML5 Block Links — <a href="https://simplyaccessible.com/article/html5-block-links/">https://simplyaccessible.com/article/html5-block-links/</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+<li id="fn6" class="footnote-item"><p><code>object-fit</code> (caniuse data), <a href="https://caniuse.com/#feat=object-fit">https://caniuse.com/#feat=object-fit</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>Keyboard Accessibility — WebAIM, <a href="https://webaim.org/techniques/keyboard/">https://webaim.org/techniques/keyboard/</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p>Accessibility and HTML5 Block Links — <a href="https://simplyaccessible.com/article/html5-block-links/">https://simplyaccessible.com/article/html5-block-links/</a> <a href="#fnref8" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
