@@ -206,7 +206,7 @@
 <p>Notifications and status messages that do not require user action should not steal focus. Consider using an ARIA live region instead<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
 </aside><h3 id="keyboard-and-screen-reader-experience">Keyboard and screen reader experience</h3>
 <p>Focus is placed inside the dialog upon opening it, meaning keyboard users have access to the functionality and screen reader users are informed of the dialog's presence. When the dialog first opens, a screen reader user will hear the announcement of the dialog role (<em>&quot;dialog&quot;</em>), its associated label (title) and description, and the role and label of the initially focused control.</p>
-<p>Users can move focus between the supplied controls and the close button, as well as 'escape' the dialog to focus browser chrome such as the address bar. Only the dialog is available and interactive while it is open, making it modal (it presents a 'mode' that suppresses and overrides normal page functionality).</p>
+<p>Users can move focus between the supplied controls and the close button, as well as 'escape' the dialog to focus browser chrome such as the address bar. Only the dialog is available and interactive while it is open, making it <a href="#fn4" id="fnref4">modal<sup class="footnote-ref">[4]</sup></a> (it presents a 'mode' that suppresses and overrides normal page functionality).</p>
 <h2 id="reference-implementation">Reference implementation</h2>
 
             <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-alert-important">
@@ -285,6 +285,8 @@ title: Action dialogs
 <li id="fn2" class="footnote-item"><p>Gist of the <code>vh</code> (visually hidden) class,  <a href="https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472">https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
 <li id="fn3" class="footnote-item"><p>&quot;Notifications&quot; (Inclusive Components blog), <a href="https://inclusive-components.design/notifications/">https://inclusive-components.design/notifications/</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>&quot;The current state of modal dialog accessibility&quot; <a href="https://developer.paciellogroup.com/blog/2018/06/the-current-state-of-modal-dialog-accessibility/">https://developer.paciellogroup.com/blog/2018/06/the-current-state-of-modal-dialog-accessibility/</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>

@@ -129,7 +129,7 @@ Notifications and status messages that do not require user action should not ste
 
 Focus is placed inside the dialog upon opening it, meaning keyboard users have access to the functionality and screen reader users are informed of the dialog's presence. When the dialog first opens, a screen reader user will hear the announcement of the dialog role (_"dialog"_), its associated label (title) and description, and the role and label of the initially focused control. 
 
-Users can move focus between the supplied controls and the close button, as well as 'escape' the dialog to focus browser chrome such as the address bar. Only the dialog is available and interactive while it is open, making it modal (it presents a 'mode' that suppresses and overrides normal page functionality).
+Users can move focus between the supplied controls and the close button, as well as 'escape' the dialog to focus browser chrome such as the address bar. Only the dialog is available and interactive while it is open, making it [^4 modal] (it presents a 'mode' that suppresses and overrides normal page functionality).
 
 ## Reference implementation
 
@@ -151,3 +151,4 @@ This topic does not yet have any related research available.
 [^1]: "Modal window" (Wikipedia), <https://en.wikipedia.org/wiki/Modal_window>
 [^2]: Gist of the `vh` (visually hidden) class,  <https://gist.github.com/Heydon/c8d46c0dd18ce96b5833b3b564e9f472> 
 [^3]: "Notifications" (Inclusive Components blog), <https://inclusive-components.design/notifications/>
+[^4]: "The current state of modal dialog accessibility" <https://developer.paciellogroup.com/blog/2018/06/the-current-state-of-modal-dialog-accessibility/>
