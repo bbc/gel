@@ -97,7 +97,7 @@ The pagination component is [documented on GEL](https://www.bbc.co.uk/gel/guidel
 Note the use of `role="separator"` to remove the ellipsis element from enumeration. Where the previous or next link is not applicable it is 'disabled' by having its `href` removed. This removes it from focus order. The current page is identified accessibly with `aria-current="page"`[^6].
 
 ```html
-<nav class="gel-pages" aria-labelledby="gel-pagination-label">
+<nav class="gel-pages" aria-labelledby="gel-pages-label">
   <div id="gel-pages-label" hidden>Page</div>
   <a class="gel-pages-prev">
     <span class="gel-sr">Previous page</span>

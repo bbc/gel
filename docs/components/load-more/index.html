@@ -181,7 +181,7 @@
 <h3 id="the-pagination-component">The pagination component</h3>
 <p>The pagination component is <a href="https://www.bbc.co.uk/gel/guidelines/numbered-pagination">documented on GEL</a>. This implementation incorporates a labelled navigation landmark. Screen readers tend to provide aggregated lists of landmark elements for quick navigation.</p>
 <p>Note the use of <code>role=&quot;separator&quot;</code> to remove the ellipsis element from enumeration. Where the previous or next link is not applicable it is 'disabled' by having its <code>href</code> removed. This removes it from focus order. The current page is identified accessibly with <code>aria-current=&quot;page&quot;</code><sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-pages"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"gel-pagination-label"</span>&gt;</span>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-pages"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"gel-pages-label"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"gel-pages-label"</span> <span class="hljs-attr">hidden</span>&gt;</span>Page<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-pages-prev"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr"</span>&gt;</span>Previous page<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
@@ -548,7 +548,7 @@ title: Load more – paginated
       <div class="gel-loader__loading-text gel-sr"></div>
     </div>
     <button class="gel-loader__button gel-button" type="button" hidden>Load more</button>
-    <nav class="gel-pages" aria-labelledby="gel-pagination-label">
+    <nav class="gel-pages" aria-labelledby="gel-pages__label">
       <div id="gel-pages__label" hidden>Page</div>
       <a class="gel-pages__prev">
         <span class="gel-sr">Previous page</span>
