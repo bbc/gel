@@ -371,7 +371,7 @@ Where the like/dislike controls are implemented as illustrated, they should take
 </code></pre>
 <h3 id="state-indication">State indication</h3>
 <p>The pressed (<code>aria-pressed=&quot;true&quot;</code>) state of controls must not be indicated only through a change in colour<sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup>. In the case of the like and dislike voting controls, the <a href="#reference-implementation">reference implementation</a> uses a blue <code>fill</code> for the button's SVG icon.</p>
-<pre class="hljs"><code>  <span class="hljs-selector-class">.gel-comment__vote</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-attr">[aria-pressed=<span class="hljs-string">"true"</span>]</span> <span class="hljs-selector-tag">path</span> {
+<pre class="hljs"><code>  <span class="hljs-selector-class">.gel-comment__vote</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-attr">[aria-pressed="true"]</span> <span class="hljs-selector-tag">path</span> {
     <span class="hljs-attribute">fill</span>: $gel-color--star-command-blue;
   }
 </code></pre>

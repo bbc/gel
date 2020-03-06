@@ -184,9 +184,9 @@
 <p>Now the submenu appears below each of the top-level menu items, but the table of contents-like nesting structure remains and focus order is not disrupted. After opening a submenu by clicking its attendant button, the next focusable element is the first of the submenu's options.</p>
 <p>The submenu container must take up the whole of the viewport. This is achieved using <code>calc()</code>:</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gel-sitemenu__more</span> {
-  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">100vw</span> + <span class="hljs-number">1px</span>);
+  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">calc</span>(100vw + 1px);
   <span class="hljs-attribute">position</span>: relative;
-  <span class="hljs-attribute">left</span>: <span class="hljs-built_in">calc</span>((<span class="hljs-number">100vw</span> - <span class="hljs-number">100%</span>) / <span class="hljs-number">2</span> * -<span class="hljs-number">1</span> - <span class="hljs-number">1px</span>);
+  <span class="hljs-attribute">left</span>: <span class="hljs-built_in">calc</span>((100vw - 100%) / <span class="hljs-number">2</span> * -<span class="hljs-number">1</span> - <span class="hljs-number">1px</span>);
 }
 </code></pre>
 <p>The element's width is first set to <code>100vw</code>, then it is repositioned to be flush with the left edge of the screen. The <code>1px</code> addition and subtraction compensates for the horizontal borders. Multiplying by <code>-1</code> negates the value to pull the position to the left.</p>
@@ -211,7 +211,7 @@
 }
 </code></pre>
 <p>The main style—a <code>4px</code> line at the base of the item—is supplemented by a fallback for Windows High Contrast Mode (because Windows HCM themes tend to remove box shadows<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>). This takes the form of a <code>text-decoration</code> style.</p>
-<pre class="hljs"><code><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">-ms-high-contrast:</span> active) {
+<pre class="hljs"><code>@<span class="hljs-keyword">media</span> (-ms-high-contrast: active) {
   <span class="hljs-selector-class">.gel-sitemenu__list</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span>,
   <span class="hljs-selector-class">.gel-sitemenu__list</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:hover</span>,
   <span class="hljs-selector-class">.gel-sitemenu__list</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span>,

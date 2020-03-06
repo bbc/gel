@@ -223,8 +223,8 @@
 <h2 id="recommended-layout">Recommended layout</h2>
 <p>The visual design of a generic accordion is specified in the <a href="https://www.bbc.co.uk/gel/guidelines/accordion">GEL Accordion documentation</a>.</p>
 <p>The <code>gel-icon-down</code> arrow must point downwards in the closed (<code>aria-expanded=&quot;false&quot;</code>) state, and upwards in the open (<code>aria-expanded=&quot;true&quot;</code>) state. For the sake of code brevity, this is achieved in the <a href="#reference-implementation">Reference implementation</a> using a simple CSS transform.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gel-accordion__handle</span> <span class="hljs-selector-attr">[aria-expanded=<span class="hljs-string">"true"</span>]</span> <span class="hljs-selector-tag">svg</span> {
-  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(<span class="hljs-number">180deg</span>);
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-accordion__handle</span> <span class="hljs-selector-attr">[aria-expanded="true"]</span> <span class="hljs-selector-tag">svg</span> {
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(180deg);
 }
 </code></pre>
 <p>The text appears on the left of the button and the SVG on the right (thanks to <code>justify-content: space-between</code>). Some margin is added to the left of the SVG to separate it from the button's text. The <code>flex-shrink: 0</code> declaration prevents the SVG from erroneously becoming proportionately narrower when the total space is diminished.</p>

@@ -134,7 +134,7 @@
 <p>In these instances, hide the label's <code>&lt;span&gt;</code> using the <code>gel-sr</code> class or similar. This class obscures the text visually without silencing its announcement in screen readers.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gel-sr</span> {
   <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
-  <span class="hljs-attribute">clip</span>: <span class="hljs-built_in">rect</span>(<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>);
+  <span class="hljs-attribute">clip</span>: <span class="hljs-built_in">rect</span>(0 0 0 0);
   <span class="hljs-attribute">height</span>: <span class="hljs-number">1px</span>;
   <span class="hljs-attribute">margin</span>: -<span class="hljs-number">1px</span>;
   <span class="hljs-attribute">overflow</span>: hidden;
@@ -228,8 +228,8 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre>
 <p>The arrow icon used in the <a href="../accordions"><strong>Accordion</strong></a> component faces downwards in the closed/collapsed state, and rotates to point upwards in the open/expanded state. That is, it points in the direction the <strong>Accordion</strong> item's 'drawer' will go. In the code snippet to follow, the <code>aria-expanded=&quot;true&quot;</code> attribution is the hook to apply the rotation transform.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gel-accordion-handle</span> <span class="hljs-selector-attr">[aria-expanded=<span class="hljs-string">"true"</span>]</span> <span class="hljs-selector-tag">svg</span> {
-  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(<span class="hljs-number">180deg</span>);
+<pre class="hljs"><code><span class="hljs-selector-class">.gel-accordion-handle</span> <span class="hljs-selector-attr">[aria-expanded="true"]</span> <span class="hljs-selector-tag">svg</span> {
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(180deg);
 }
 </code></pre>
 <h2 id="related-research">Related research</h2>
