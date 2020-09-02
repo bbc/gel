@@ -190,14 +190,14 @@ to break because they depend on JavaScript in order to function.</p>
 <h4 id="aria-invalid"><code>aria-invalid</code></h4>
 <p>A field element in an invalid state should have <code>aria-invalid=&quot;true&quot;</code>, and <code>aria-invalid=&quot;false&quot;</code> once the invalidity is corrected.</p>
 <h4 id="the-error-message">The error message</h4>
-<p>Error messages should be concise but descriptive. They are associated to their field element as an accessible description via <code>aria-describedby</code>. This element is populated with an appropriate error message when the field becomes invalid, and emptied when it is corrected.</p>
+<p>Error messages should be concise but descriptive. They are associated to their field element as an accessible description via <code>aria-describedby</code>. This element is populated with an appropriate error message when the field becomes invalid, and emptied when it is corrected. This element contains <code>role=&quot;alert&quot;</code> to ensure the change of state is announced to users.</p>
 <pre class="hljs"><code><span class="hljs-comment">&lt;!-- indeterminate (initial) state --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"username"</span>&gt;</span>
   Username
   <span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>You set this when you signed up<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"username-error"</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username-error"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username-error"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- invalid state--&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"username"</span>&gt;</span>
@@ -205,7 +205,7 @@ to break because they depend on JavaScript in order to function.</p>
   <span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>You set this when you signed up<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"username-error"</span> <span class="hljs-attr">aria-invalid</span>=<span class="hljs-string">"true"</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username-error"</span>&gt;</span>Error: Your username cannot contain spaces<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username-error"</span>&gt;</span>Error: Your username cannot contain spaces<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- valid state--&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"username"</span>&gt;</span>
@@ -213,7 +213,7 @@ to break because they depend on JavaScript in order to function.</p>
   <span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>You set this when you signed up<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"username-error"</span> <span class="hljs-attr">aria-invalid</span>=<span class="hljs-string">"false"</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username-error"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"alert"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username-error"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 <h4 id="required-fields">Required fields</h4>
 <p>It is assumed that any fields presented to the user should be completed, otherwise they should not be present. In which case, it is considered needlessly obstructive to indicate required fields before or during individual field validation.</p>

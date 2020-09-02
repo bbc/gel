@@ -122,7 +122,7 @@ A field element in an invalid state should have `aria-invalid="true"`, and `aria
 
 #### The error message
 
-Error messages should be concise but descriptive. They are associated to their field element as an accessible description via `aria-describedby`. This element is populated with an appropriate error message when the field becomes invalid, and emptied when it is corrected.
+Error messages should be concise but descriptive. They are associated to their field element as an accessible description via `aria-describedby`. This element is populated with an appropriate error message when the field becomes invalid, and emptied when it is corrected. This element contains `role="alert"` to ensure the change of state is announced to users.
 
 ```html
 <!-- indeterminate (initial) state -->
@@ -131,7 +131,7 @@ Error messages should be concise but descriptive. They are associated to their f
   <small>You set this when you signed up</small>
 </label>
 <input type="text" id="username" name="username" aria-describedby="username-error" />
-<div id="username-error"></div>
+<div role="alert" id="username-error"></div>
 
 <!-- invalid state-->
 <label for="username">
@@ -139,7 +139,7 @@ Error messages should be concise but descriptive. They are associated to their f
   <small>You set this when you signed up</small>
 </label>
 <input type="text" id="username" name="username" aria-describedby="username-error" aria-invalid="true" />
-<div id="username-error">Error: Your username cannot contain spaces</div>
+<div role="alert" id="username-error">Error: Your username cannot contain spaces</div>
 
 <!-- valid state-->
 <label for="username">
@@ -147,7 +147,7 @@ Error messages should be concise but descriptive. They are associated to their f
   <small>You set this when you signed up</small>
 </label>
 <input type="text" id="username" name="username" aria-describedby="username-error" aria-invalid="false" />
-<div id="username-error"></div>
+<div role="alert" id="username-error"></div>
 ```
 
 #### Required fields
