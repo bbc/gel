@@ -15,6 +15,7 @@ Our project is roughly organised into [source files](https://github.com/bbc/gel/
 Prerequisites:
 
 * Requires `npm` and `node`. (Known to work on NodeJS v11.)
+* Global [`uglify`](https://www.npmjs.com/package/uglify-js) binary installed: Like `npm install uglify-js -g`
 * Global [dart `sass`](https://sass-lang.com/install) binary installed: Like `brew install sass/sass/sass`
 
 1. `cd gel`
