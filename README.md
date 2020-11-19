@@ -11,7 +11,11 @@ We love contributors. If you have an idea for how to make an improvement, let us
 Our project is roughly organised into [source files](https://github.com/bbc/gel/tree/master/src) and generated [documentation files](https://github.com/bbc/gel/tree/master/docs). As writers we work in the [Markdown](https://learnxinyminutes.com/docs/markdown/)-formatted files in the `/src` folder. Running the build scripts, described below, will then generate the corresponding web pages in the `/docs` folder.
 
 ## Installation
-Prerequisites: Requires `npm` and `node`. (Known to work on NodeJS v11.)
+
+Prerequisites:
+
+* Requires `npm` and `node`. (Known to work on NodeJS v11.)
+* Global [dart `sass`](https://sass-lang.com/install) binary installed: Like `brew install sass/sass/sass`
 
 1. `cd gel`
 2. `npm install`
