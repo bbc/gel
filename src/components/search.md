@@ -2,7 +2,7 @@
 title: Search
 summary: The global and local search components each include 
 version: 0.1.0
-published: false
+published: true
 linkback: https://www.bbc.co.uk/gel/guidelines/local-search
 ---
 

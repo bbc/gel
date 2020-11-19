@@ -2,7 +2,7 @@
 title: Buttons and CTAs
 summary: The design of clickable controls must be consistent with their behaviour
 version: 0.1.0
-published: false
+published: true
 accessibility: true
 linkback: http://www.bbc.co.uk/gel/guidelines/sign-in-or-register-cta
 ---

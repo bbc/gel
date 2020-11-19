@@ -2,7 +2,7 @@
 title: Video controls
 summary: Custom HTML5 video functionality must be accessible and intuitive
 version: 0.1.0
-published: false
+published: true
 accessibility: true
 ---
 

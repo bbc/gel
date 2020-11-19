@@ -2,7 +2,7 @@
 title: Information panels
 summary: The information panel is a specialized popup panel for supplementary content and functionality
 version: 0.1.0
-published: false
+published: true
 accessibility: true
 linkback: https://www.bbc.co.uk/gel/guidelines/information-panel
 ---

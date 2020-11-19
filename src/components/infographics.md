@@ -2,7 +2,7 @@
 title: Infographics
 summary: Infographics should be informative, engaging, and accessible
 version: 0.1.0
-published: false
+published: true
 accessibility: true
 linkback: https://www.bbc.co.uk/gel/guidelines/how-to-design-infographics
 ---

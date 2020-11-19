@@ -2,7 +2,7 @@
 title: Breakout boxes
 summary: Breakout Boxes interject supplementary content within the flow of a document
 version: 0.1.0
-published: false
+published: true
 accessibility: false
 ---
 

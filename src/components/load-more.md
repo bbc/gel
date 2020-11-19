@@ -2,7 +2,7 @@
 title: Load more
 summary: Loading content must be a smooth experience and under the user's direct control
 version: 0.1.0
-published: false
+published: true
 accessibility: false
 linkback: https://www.bbc.co.uk/gel/guidelines/numbered-pagination
 ---

@@ -2,7 +2,7 @@
 title: Comments
 summary: The ability to engage with content must be inclusive. Everyone should be able to have their say.
 version: 0.1.0
-published: false
+published: true
 linkback: https://www.bbc.co.uk/gel/guidelines/comments
 ---
 

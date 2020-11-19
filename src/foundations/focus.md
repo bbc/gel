@@ -2,7 +2,7 @@
 title: Focus
 summary: Indicating and managing focus is integral to keyboard accessibility
 version: 0.1.0
-published: false
+published: true
 ---
 
 ## Introduction

@@ -2,7 +2,7 @@
 title: Grids
 summary: Visual layout should be efficient and consistent, without impeding document structure and accessibility
 version: 0.1.0
-published: false
+published: true
 accessibility: true
 linkback: https://www.bbc.co.uk/gel/guidelines/grid
 ---

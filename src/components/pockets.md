@@ -2,7 +2,7 @@
 title: Pockets
 summary: The Pocket pattern allows the user to reveal longform content at their discretion
 version: 0.1.0
-published: false
+published: true
 accessibility: true
 linkback: https://www.bbc.co.uk/gel/guidelines/pocket
 ---

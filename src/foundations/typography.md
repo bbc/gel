@@ -2,7 +2,7 @@
 title: Typography
 summary: Inclusive content must be readable, and for it to be readable it must first be legible
 version: 0.1.0
-published: false
+published: true
 accessibility: true
 linkback: https://www.bbc.co.uk/gel/guidelines/typography
 ---

@@ -2,7 +2,7 @@
 title: Filter & Sort
 summary: Filters help the user find what they’re looking for. Allowing the user to refine content by selecting criteria that’s relevant to their needs.
 version: 0.1.0
-published: false
+published: true
 linkback: https://www.bbc.co.uk/gel/guidelines/filter
 ---
 

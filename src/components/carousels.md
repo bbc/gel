@@ -2,7 +2,7 @@
 title: Carousels
 summary: A Carousel is a way to browse lots of content in a limited amount of vertical space, by scrolling a window onto that content
 version: 0.1.0
-published: false
+published: true
 accessibility: false
 linkback: https://www.bbc.co.uk/gel/guidelines/carousel
 ---

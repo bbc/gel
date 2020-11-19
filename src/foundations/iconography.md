@@ -2,7 +2,7 @@
 title: Iconography
 summary: Iconography aids communication, but should not take precedence over text
 version: 0.1.0
-published: false
+published: true
 accessibility: true
 linkback: https://www.bbc.co.uk/gel/guidelines/iconography
 ---

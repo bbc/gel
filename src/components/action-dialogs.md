@@ -2,7 +2,7 @@
 title: Action dialogs
 summary: Action dialogs are presented where the user must choose a course of action
 version: 0.1.0
-published: false
+published: true
 accessibility: true
 linkback: http://www.bbc.co.uk/gel/guidelines/confirmation-and-error-messages
 ---

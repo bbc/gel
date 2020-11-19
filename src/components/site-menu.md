@@ -2,7 +2,7 @@
 title: Site menu
 summary: The Site menu is the navigation region for the local site, and can contain two tiers of navigation options
 version: 0.1.0
-published: false
+published: true
 accessibility: false
 linkback: http://www.bbc.co.uk/gel
 ---

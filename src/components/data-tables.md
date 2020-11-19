@@ -2,7 +2,7 @@
 title: Data tables
 summary: Tabular data must be presented with a sound semantic and visual structure
 version: 0.1.0
-published: false
+published: true
 accessibility: false
 ---
 

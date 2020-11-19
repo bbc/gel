@@ -2,7 +2,7 @@
 title: Cards
 summary: Cards let you preview and share content quickly, without having to leave the page you're on.
 version: 0.1.0
-published: false
+published: true
 accessibility: false
 linkback: http://www.bbc.co.uk/gel/guidelines/cards
 ---

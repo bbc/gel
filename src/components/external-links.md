@@ -2,7 +2,7 @@
 title: External Links
 summary: External links direct people outside of the BBC domain; a behaviour that must be indicated to all users
 version: 0.1.0
-published: false
+published: true
 accessibility: false
 linkback: https://www.bbc.co.uk/gel/guidelines/external-linking
 ---

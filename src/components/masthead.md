@@ -2,7 +2,7 @@
 title: Masthead
 summary: The Masthead comprises the global navigation and a banner for the local site
 version: 0.1.0
-published: false
+published: true
 accessibility: true
 linkback: https://www.bbc.co.uk/gel/guidelines/masthead
 ---

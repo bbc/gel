@@ -2,7 +2,7 @@
 title: Routing
 summary: Route changes in single-page applications need to emulate the conventions of page loads
 version: 0.1.0
-published: false
+published: true
 ---
 
 ## Introduction

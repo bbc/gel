@@ -2,7 +2,7 @@
 title: Share tools
 summary: Share tools offer unobtrusive options to share BBC content on social media
 version: 0.1.0
-published: false
+published: true
 accessibility: true
 linkback: https://www.bbc.co.uk/gel/guidelines/share-tools
 ---

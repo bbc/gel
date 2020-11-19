@@ -2,7 +2,7 @@
 title: Form fields and validation
 summary: Form fields must be accessible and usable, helping the user to provide valid input
 version: 0.1.0
-published: false
+published: true
 accessibility: false
 linkback: https://www.bbc.co.uk/gel/guidelines/how-to-design-forms
 ---
