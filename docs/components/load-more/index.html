@@ -197,7 +197,7 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"?page=5"</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"?page=6"</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"?page=7"</span>&gt;</span>7<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"separator"</span>&gt;</span>&amp;hellip;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"separator"</span>&gt;</span><span class="hljs-symbol">&amp;hellip;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"?page=999"</span>&gt;</span>999<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-pages-text"</span>&gt;</span>Page 1 of 999<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -219,12 +219,12 @@
 </ul>
 <h2 id="the-loading-indicator">The loading indicator</h2>
 <p>The loading indicator should be the standard <a href="http://bbc.github.io/gel-iconography/">Gel Iconography</a> SVG icon,  <code>gel-icon-loading</code>. It should appear above the button while the results are being fetched. It should not appear wider than the button itself. The standard animation, as defined in <a href="http://bbc.github.io/gel-iconography/">Gel Iconography</a>, is applied in the <a href="#reference-implementation">Reference implementation</a> as follows:</p>
-<pre class="hljs"><code>@<span class="hljs-keyword">keyframes</span> gel-spin {
+<pre class="hljs"><code><span class="hljs-keyword">@keyframes</span> gel-spin {
   0% {
-    <span class="hljs-attribute">transform</span>:<span class="hljs-built_in">rotate</span>(0deg);
+    <span class="hljs-attribute">transform</span>:<span class="hljs-built_in">rotate</span>(<span class="hljs-number">0deg</span>);
   }
   100% {
-    <span class="hljs-attribute">transform</span>:<span class="hljs-built_in">rotate</span>(360deg);
+    <span class="hljs-attribute">transform</span>:<span class="hljs-built_in">rotate</span>(<span class="hljs-number">360deg</span>);
   }
 }
 
@@ -237,7 +237,7 @@
 </code></pre>
 <h3 id="the-separator">The separator</h3>
 <p>The separator element introducing any batch of new results takes focus to place those results next in focus order. Therefore, it should have some form of focus style. In the <a href="#reference-implementation">Reference implementation</a> a diminishing animated focus style is used to first draw attention then disappear. Since the element itself is not interactive, a persistent focus style may be misleading.</p>
-<pre class="hljs"><code>@<span class="hljs-keyword">keyframes</span> focus {
+<pre class="hljs"><code><span class="hljs-keyword">@keyframes</span> focus {
   0%{
     <span class="hljs-attribute">outline</span>: <span class="hljs-number">2px</span> dotted $gel-color--tundora;
   }
@@ -246,7 +246,7 @@
   }
 }
 
-<span class="hljs-selector-class">.gel-loader__items</span> <span class="hljs-selector-attr">[role="separator"]</span><span class="hljs-selector-pseudo">:focus</span> {
+<span class="hljs-selector-class">.gel-loader__items</span> <span class="hljs-selector-attr">[role=<span class="hljs-string">"separator"</span>]</span><span class="hljs-selector-pseudo">:focus</span> {
   <span class="hljs-attribute">outline-width</span>: <span class="hljs-number">0</span>;
   <span class="hljs-attribute">outline-offset</span>: <span class="hljs-number">2px</span>;
   <span class="hljs-attribute">animation</span>: focus <span class="hljs-number">1s</span> linear <span class="hljs-number">1</span>;
@@ -254,7 +254,7 @@
 </code></pre>
 <h2 id="the-pagination-component-1">The pagination component</h2>
 <p>For maximum backwards compatibility with minimum code, <code>inline-block</code> places the items side-by-side. In the <a href="#reference-implementation">Reference implementation</a>, the expanded layout (with 9 numbered items, including the ellipsis and end item) switches down to the compact version (with the text element; specified in <a href="https://www.bbc.co.uk/gel/guidelines/numbered-pagination">GEL Numbered Pagination</a>) at <code>650px</code>. This will differ for your setup due to the inevitable discrepancy between the pagination container's and the viewport's width. It will need adjusting.</p>
-<pre class="hljs"><code>@<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">650px</span>) {
+<pre class="hljs"><code><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width:</span> <span class="hljs-number">650px</span>) {
   <span class="hljs-selector-class">.gel-pages-text</span> {
     <span class="hljs-attribute">display</span>: none;
   }

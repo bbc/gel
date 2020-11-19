@@ -179,11 +179,11 @@
 </code></pre>
 <h3 id="notes">Notes</h3>
 <ul>
-<li><strong><code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code>:</strong> <strong>Cards</strong> are typically presented as a set, and together must be marked up as an unordered list, with each card marked as a list item (<code>&lt;li&gt;</code>). This enables structural and navigational cues in [^1 screen reader software].</li>
+<li><strong><code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code>:</strong> <strong>Cards</strong> are typically presented as a set, and together must be marked up as an unordered list, with each card marked as a list item (<code>&lt;li&gt;</code>). This enables structural and navigational cues in <a href="#fn1" id="fnref1">screen reader software<sup class="footnote-ref">[1]</sup></a>.</li>
 <li><strong>Headings:</strong> Each card's primary (headline) link must be contained within a heading, each of the card's headline headings must be of the same level, and the set of cards must be introduced as a section within the document by a heading one level higher.</li>
 <li><strong><code>gel-card__headline</code>:</strong> This must appear first in the source order, although the card content will <em>appear</em> first visually. This is because the card's heading introduces the document section that constitutes the rest of the card. Avoid putting interactive content inside <code>gel-card__headline</code> because this will create a reversed focus order.</li>
 <li><strong><code>gel-card__desc</code>:</strong> This will contain prosaic content, such as a description, attribution, and/or timestamp. Some of these elements may be linked to other resources.</li>
-<li><strong><code>aria-expanded</code>:</strong> You may need to provide additional, clarifying information for the card. A <code>gel-card__info</code> element is hidden by default, but can be toggled into view using the <code>aria-expanded</code> button. Note that the <code>gel-card__info</code> element appears directly after the <code>aria-expanded</code> button so that it is logically placed within browsing and focus order. The further action buttons will be the next <kbd>Tab</kbd> stops. The <code>aria-expanded</code> [^2 ARIA state attribute] identifies the button as a 'toggle button' in screen readers.</li>
+<li><strong><code>aria-expanded</code>:</strong> You may need to provide additional, clarifying information for the card. A <code>gel-card__info</code> element is hidden by default, but can be toggled into view using the <code>aria-expanded</code> button. Note that the <code>gel-card__info</code> element appears directly after the <code>aria-expanded</code> button so that it is logically placed within browsing and focus order. The further action buttons will be the next <kbd>Tab</kbd> stops. The <code>aria-expanded</code> <a href="#fn2" id="fnref2">ARIA state attribute<sup class="footnote-ref">[2]</sup></a> identifies the button as a 'toggle button' in screen readers.</li>
 <li><strong><code>role=&quot;group&quot;</code> and <code>aria-labelledby</code>:</strong> In order to reliably associate a label with the <code>gel-card__info</code> element, a generic ARIA role is provided. The label itself is provided as a heading of the correct nesting level (<code>&lt;h4&gt;</code> following <code>&lt;h3&gt;</code> in the example) and connected to <code>gel-card__info</code> using <code>aria-labelledby</code>.</li>
 <li><strong>Love, add, and share:</strong> The remaining actions facilitated by <code>gel-card__toolbar</code>. The <code>aria-pressed</code> state attribute should be provided on the &quot;Love&quot; action, since this is a an &quot;on/off&quot; toggle. In the above example, the text label is visually hidden with the <code>gel-sr</code> class. However, where there are fewer than three of these buttons present (and therefore more room), you should display the text labels visually as well as making them available to assistive technologies.</li>
 </ul>
@@ -199,7 +199,7 @@
 <h4 id="a-video">A video</h4>
 <p>If a video is provided, ensure the following:</p>
 <ol>
-<li>The video [^3 does not auto-play]</li>
+<li>The video <a href="#fn3" id="fnref3">does not auto-play<sup class="footnote-ref">[3]</sup></a></li>
 <li>The video player's controls are accessible by screen reader and keyboard</li>
 <li>Dialogue in the video is accompanied by closed captions</li>
 </ol>
@@ -225,10 +225,10 @@
   <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">1rem</span> <span class="hljs-number">1rem</span> <span class="hljs-number">0</span>;
 }
 
-@<span class="hljs-keyword">supports</span> (display: grid) {
+<span class="hljs-keyword">@supports</span> (<span class="hljs-attribute">display:</span> grid) {
   <span class="hljs-selector-class">.gel-cards</span> {
     <span class="hljs-attribute">display</span>: grid;
-    <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(auto-fill, minmax(266px, 1fr));
+    <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(auto-fill, minmax(<span class="hljs-number">266px</span>, <span class="hljs-number">1</span>fr));
     <span class="hljs-attribute">grid-gap</span>: <span class="hljs-number">1rem</span>;
   }
 
@@ -267,7 +267,7 @@
   <span class="hljs-attribute">width</span>: auto;
 }
 
-@<span class="hljs-keyword">supports</span> (object-fit: cover) {
+<span class="hljs-keyword">@supports</span> (<span class="hljs-attribute">object-fit:</span> cover) {
   <span class="hljs-selector-class">.gel-card__content</span> <span class="hljs-selector-tag">img</span>, 
   <span class="hljs-selector-class">.gel-card__content</span> <span class="hljs-selector-tag">video</span> {
     <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
@@ -524,6 +524,17 @@ includecss: gelui.css
         <h2 id="related-research">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
 <h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>&quot;Basic screen reader commands for accessibility testing&quot; by Léonie Watson, <a href="https://developer.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/">https://developer.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><code>aria-expanded</code> (state) — W3C, <a href="https://www.w3.org/WAI/PF/aria-1.1/states_and_properties#aria-expanded">https://www.w3.org/WAI/PF/aria-1.1/states_and_properties#aria-expanded</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>&quot;Why Autoplay Is An Accessibility Issue&quot; — <a href="http://abilitynet.org.uk">abilitynet.org.uk</a>, <a href="https://www.abilitynet.org.uk/news-blogs/why-autoplay-accessibility-issue">https://www.abilitynet.org.uk/news-blogs/why-autoplay-accessibility-issue</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
 
                 <aside class="geltags-breakout-box geltags-breakout-box extra-padding"

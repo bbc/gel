@@ -262,10 +262,10 @@
   <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">1rem</span>;
 }
 
-@<span class="hljs-keyword">supports</span> (display: grid) {
+<span class="hljs-keyword">@supports</span> (<span class="hljs-attribute">display:</span> grid) {
   <span class="hljs-selector-class">.grid</span> {
     <span class="hljs-attribute">display</span>: grid;
-    <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(auto-fill, minmax(266px, 1fr));
+    <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(auto-fill, minmax(<span class="hljs-number">266px</span>, <span class="hljs-number">1</span>fr));
     <span class="hljs-attribute">grid-gap</span>: <span class="hljs-number">1rem</span>;
   }
 

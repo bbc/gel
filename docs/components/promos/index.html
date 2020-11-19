@@ -152,7 +152,7 @@
 <h2 id="recommended-markup">Recommended markup</h2>
 
             <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-info-an-aside-about-aside">
-              <h4 id="aside-info-an-aside-about-aside" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>An aside about Aside</h4><div><p>Consider the context and surrounding content of a <strong>Promo</strong>. The general purpose of this component is to promote complementary or related content, so it is often appropriate for the <strong>Promo</strong> (or the group of <strong>Promos</strong>) to be placed inside an <code>&lt;aside&gt;</code> [^1 complementary landmark] element. However, if the rest of the page is devoted to displaying a list of items as <strong>Promos</strong> (such as a listicle or an index of featured content), then the <strong>Promos</strong> <em>are</em> the main content! This judgement is best made with the point-of-view of our audience in mind: what would they find helpful and usable versus surprising or confusing.</p>
+              <h4 id="aside-info-an-aside-about-aside" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>An aside about Aside</h4><div><p>Consider the context and surrounding content of a <strong>Promo</strong>. The general purpose of this component is to promote complementary or related content, so it is often appropriate for the <strong>Promo</strong> (or the group of <strong>Promos</strong>) to be placed inside an <code>&lt;aside&gt;</code> <a href="#fn1" id="fnref1">complementary landmark<sup class="footnote-ref">[1]</sup></a> element. However, if the rest of the page is devoted to displaying a list of items as <strong>Promos</strong> (such as a listicle or an index of featured content), then the <strong>Promos</strong> <em>are</em> the main content! This judgement is best made with the point-of-view of our audience in mind: what would they find helpful and usable versus surprising or confusing.</p>
 </aside><p>Because <strong>Promos</strong> are often used to promote tangentially-related content, it is usually appropriate to use an <code>&lt;aside&gt;</code> element as the foundation for this component's markup.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"unique-promo-label"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"unique-promo-label"</span> <span class="hljs-attr">hidden</span>&gt;</span>Related programmes<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
@@ -166,7 +166,7 @@
   <span class="hljs-comment">&lt;!-- promo(s) here --&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
 </code></pre>
-<p>You must choose a [^2 heading level] that is appropriate for the context. For example, if the promos can be considered a child subsection of the page, use an <code>&lt;h2&gt;</code>.</p>
+<p>You must choose a <a href="#fn2" id="fnref2">heading level<sup class="footnote-ref">[2]</sup></a> that is appropriate for the context. For example, if the promos can be considered a child subsection of the page, use an <code>&lt;h2&gt;</code>.</p>
 <ul>
 <li>Main heading (<code>&lt;h1&gt;</code>)
 <ul>
@@ -177,7 +177,7 @@
 </li>
 </ul>
 <h3 id="groups-of-promos">Groups of promos</h3>
-<p>A group of promos should be marked up as a list. This enables structural and navigational cues in [^3 screen reader software].</p>
+<p>A group of promos should be marked up as a list. This enables structural and navigational cues in <a href="#fn3" id="fnref3">screen reader software<sup class="footnote-ref">[3]</sup></a>.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"unique-promo-label"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"unique-promo-label"</span>&gt;</span>More like this<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promos"</span>&gt;</span>
@@ -191,7 +191,7 @@
 <h3 id="the-promo-itself">The promo itself</h3>
 <p>The most important thing to remember about <strong>Promo</strong> components is they have a single purpose: to promote another part of the BBC's services; a site, news story, television programme etc. <strong>Promos</strong> are differentiated from <a href="../cards"><strong>Cards</strong></a> in that they only have one piece of functionality: a link to the promoted content. If you intend to include functionality <em>in situ</em>, such as a video player, use a <strong>Card</strong> instead.</p>
 <h4 id="the-headline-link">The headline link</h4>
-<p>The <strong>Promo</strong> must contain a link as its main label (or 'headline'). The wording of this link should resemble that of the target page's <code>&lt;title&gt;</code> and <code>&lt;h1&gt;</code>. This consistency aids cognitive accessibility and improves [^4 <abbr title="search engine optimization">SEO</abbr>].</p>
+<p>The <strong>Promo</strong> must contain a link as its main label (or 'headline'). The wording of this link should resemble that of the target page's <code>&lt;title&gt;</code> and <code>&lt;h1&gt;</code>. This consistency aids cognitive accessibility and improves <a href="#fn4" id="fnref4"><abbr title="search engine optimization">SEO</abbr><sup class="footnote-ref">[4]</sup></a>.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo__content"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo__headline"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/content"</span>&gt;</span>University Challenge<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
@@ -248,7 +248,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 <h4 id="metadata">Metadata</h4>
-<p>The <a href="../metadata-strips"><strong>Metadata strip</strong></a> is described as its own component. It provides metadata in key value pairs, using a [^8 description list] (<code>&lt;dl&gt;</code>).</p>
+<p>The <a href="../metadata-strips"><strong>Metadata strip</strong></a> is described as its own component. It provides metadata in key value pairs, using a <a href="#fn5" id="fnref5">description list<sup class="footnote-ref">[5]</sup></a> (<code>&lt;dl&gt;</code>).</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-promo__image"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path/to/image"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
@@ -286,10 +286,10 @@
   <span class="hljs-attribute">max-width</span>: <span class="hljs-number">266px</span>;
 }
 
-@<span class="hljs-keyword">supports</span> (display: grid) {
+<span class="hljs-keyword">@supports</span> (<span class="hljs-attribute">display:</span> grid) {
   <span class="hljs-selector-class">.gel-promos</span> {
     <span class="hljs-attribute">display</span>: grid;
-    <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(auto-fill, minmax(266px, 1fr));
+    <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(auto-fill, minmax(<span class="hljs-number">266px</span>, <span class="hljs-number">1</span>fr));
     <span class="hljs-attribute">grid-gap</span>: <span class="hljs-number">1rem</span>;
   }
   
@@ -315,8 +315,8 @@
 }
 </code></pre>
 <h3 id="the-image">The image</h3>
-<p>The image will need to fit the available space, regardless of the Promo's dimensions (which are likely to change across breakpoints) without distorting. This is possible by setting the desired height of the image box and using [^5 the 'object-fit' property]:</p>
-<pre class="hljs"><code>@<span class="hljs-keyword">supports</span> (object-fit: cover) {
+<p>The image will need to fit the available space, regardless of the Promo's dimensions (which are likely to change across breakpoints) without distorting. This is possible by setting the desired height of the image box and using <a href="#fn6" id="fnref6">the 'object-fit' property<sup class="footnote-ref">[6]</sup></a>:</p>
+<pre class="hljs"><code><span class="hljs-keyword">@supports</span> (<span class="hljs-attribute">object-fit:</span> cover) {
   <span class="hljs-selector-class">.gel-promo__image</span> <span class="hljs-selector-tag">img</span> {
     <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
     <span class="hljs-attribute">object-fit</span>: cover;
@@ -378,8 +378,8 @@
 <h2 id="recommended-behaviour">Recommended behaviour</h2>
 <p><strong>Promo</strong> interaction should be ergonomic for mouse, touch, keyboard, and screen reader users. For mouse and touch users, the whole <strong>Promo</strong> should be clickable as one link. This should be achieved without relying on either of the following:</p>
 <ol>
-<li><strong>Multiple, duplicated links:</strong> Linking each of the constituent elements produces multiple and redundant tab stops, impeding [^6 keyboard navigation].</li>
-<li><strong>A wrapper link:</strong> Placing all of the <strong>Promo's</strong> content inside a link produces a verbose, confusing and/or truncated [^7 link label] (which is liable to affect both SEO and, more importantly, screen reader experience).</li>
+<li><strong>Multiple, duplicated links:</strong> Linking each of the constituent elements produces multiple and redundant tab stops, impeding <a href="#fn7" id="fnref7">keyboard navigation<sup class="footnote-ref">[7]</sup></a>.</li>
+<li><strong>A wrapper link:</strong> Placing all of the <strong>Promo's</strong> content inside a link produces a verbose, confusing and/or truncated <a href="#fn8" id="fnref8">link label<sup class="footnote-ref">[8]</sup></a> (which is liable to affect both SEO and, more importantly, screen reader experience).</li>
 </ol>
 <p>Instead, the headline link's pseudo-content is positioned <em>over</em> the entire <strong>Promo</strong>.</p>
 <pre class="hljs"><code><span class="hljs-selector-class">.gel-promo__headline</span><span class="hljs-selector-pseudo">::after</span> {
@@ -609,6 +609,27 @@ title: Promos
         <h2 id="related-research">Related research</h2>
 <p>This component was originally developed and tested at the BBC in a prototype of the BBC Homepage. During user research we tested using subjects with a variety of impairments and a range of digital skills.</p>
 <h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Complementary Landmark — W3C, <a href="https://www.w3.org/TR/wai-aria-practices/examples/landmarks/complementary.html">https://www.w3.org/TR/wai-aria-practices/examples/landmarks/complementary.html</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>How to structure headings for web accessibility — Nomensa, <a href="https://www.nomensa.com/blog/2017/how-structure-headings-web-accessibility">https://www.nomensa.com/blog/2017/how-structure-headings-web-accessibility</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>&quot;Basic screen reader commands for accessibility testing&quot; by Léonie Watson, <a href="https://developer.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/">https://developer.paciellogroup.com/blog/2015/01/basic-screen-reader-commands-for-accessibility-testing/</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>How To Write Page Titles For Google &amp; Other Search Engines in 2018, <a href="https://www.hobo-web.co.uk/title-tags/#page-titles-example-use">https://www.hobo-web.co.uk/title-tags/#page-titles-example-use</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>The Description List element represents an association list consisting of zero or more name-value groups (a description list). see <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p><code>object-fit</code> (caniuse data), <a href="https://caniuse.com/#feat=object-fit">https://caniuse.com/#feat=object-fit</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>Keyboard Accessibility — WebAIM, <a href="https://webaim.org/techniques/keyboard/">https://webaim.org/techniques/keyboard/</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p>Accessibility and HTML5 Block Links — <a href="https://simplyaccessible.com/article/html5-block-links/">https://simplyaccessible.com/article/html5-block-links/</a> <a href="#fnref8" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
 
                 <aside class="geltags-breakout-box geltags-breakout-box extra-padding"

@@ -33,6 +33,11 @@ $gel-type-enable--base-elements: true;
 
 $gel-color--brand: #397cb8;
 
+html {
+  font-size: 1.11rem;
+  font-size: calc(1rem + 0.15vw);
+}
+
 div#gel-app {
   @include gel-typography('body-copy');
 }
@@ -149,6 +154,7 @@ a {
   }
 
   code.hljs {
+    font-size: 90%;
     padding: double($gel-spacing-unit);
     margin: double($gel-spacing-unit);
   }

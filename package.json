@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "sass": "sass-pack -s src/_includes/scss/site.scss -o src/static/css/ && sass-pack -s src/_includes/scss/gel.scss -o src/static/css/",
+    "sass": "sass src/_includes/scss/site.scss src/static/css/site.css && sass src/_includes/scss/gel.scss src/static/css/gel.css",
     "js": "uglifyjs node_modules/fontfaceobserver/fontfaceobserver.standalone.js node_modules/highlight.js/lib/highlight.js node_modules/sticky-js/dist/sticky.min.js node_modules/menuspy/dist/menuspy.min.js -o src/static/js/site.js && cat src/_includes/js/components/*.js > src/static/js/gel.js",
     "html": "eleventy --input=./src/ --output=docs/ --formats=md,html",
     "develop": "gulp",
@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/bbc/code-gel#readme",
   "dependencies": {
-    "@11ty/eleventy": "^0.8.3",
+    "@11ty/eleventy": "^0.11.1",
     "cheerio": "^1.0.0-rc.3",
     "fontfaceobserver": "^2.1.0",
     "gel-grid": "^4.0.0",
@@ -40,14 +40,13 @@
     "markdown-it-shortcode-tag": "^1.1.0",
     "menuspy": "^1.3.0",
     "normalize": "^0.3.1",
-    "sass-pack": "^2.2.2",
     "slug": "^0.9.4",
     "sticky-js": "^1.2.0",
     "sweet-scroll": "^3.0.1",
     "uglify-js": "^3.7.3"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.13",
     "gulp": "^4.0.2"
   }
 }
