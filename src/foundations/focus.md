@@ -91,7 +91,7 @@ User agents provide focus styles by default, but these diverge considerably, and
 
 To normalize browser behaviour, and make focus styles more apparent, remove the default style and provide your own. Any CSS declaration can be applied to the `:focus` state, but be mindful that focus styles are _functional_ styles, and must be visible under all circumstances. 
 
-In some browsers, background images are eliminated when Windows High Contrast Mode is active. Changes to colour alone would also fail **WCAG2.1 1.4.1 Use of Color**[^7]. Instead, provide a reasonably thick `outline`. In most circumstances, this should share the text's `color` (since the contrast for `color` should already differentiate it from the local background). Just omit a color value to achieve this:
+Be aware that in some browsers background images are eliminated when Windows High Contrast Mode is active, and changes to _colour alone_ could fail **WCAG2.1 1.4.1 Use of color**[^7], so ensure that you provide a reasonably thick `outline` using a colour with adequate contrast against all the backgrounds on the page where it could be visible. One simple way to achieve this is to set the outline colour to share the text's `color`. This should be safe since the contrast for the text will already differentiate it from its background. The CSS to implement that simply omits the `color` property:
 
 ```css
 :focus {
@@ -129,7 +129,7 @@ mainHeading.tabindex = -1;
 mainHeading.focus();
 ```
 
-In React, you would defer to the `refs` API[^5]:
+In React, you would defer to the `refs` API:
 
 ```js
 // Initialize <h1 ref={this.mainHeading} tabindex="-1">Brexitcast</h1>
@@ -164,7 +164,7 @@ This topic does not yet have any related research available.
 [^4]: Using the `tabindex` attribute — The Paciello Group, <https://developer.paciellogroup.com/blog/2014/08/using-the-tabindex-attribute/>
 [^5]: `writing-mode` — MDN, <https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode>
 [^6]: Avoid default browser focus styles — Adrian Roselli, <http://adrianroselli.com/2017/02/avoid-default-browser-focus-styles.html>
-[^7]: WCAG2.1 1.4.1 Use of Color, <https://www.w3.org/TR/WCAG21/#use-of-color>
+[^7]: WCAG2.1 1.4.1 Use of color, <https://www.w3.org/TR/WCAG21/#use-of-color>
 [^8]: WCAG2.1 2.1.2 No Keyboard Trap, <https://www.w3.org/TR/WCAG21/#no-keyboard-trap>
 [^9]: WICG `inert` (polyfill), <https://github.com/WICG/inert>
 

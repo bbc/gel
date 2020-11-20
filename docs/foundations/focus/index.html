@@ -167,7 +167,7 @@
 <p>As the <strong>WCAG2.1 2.4.7 Focus Visible</strong> mandates: <em>&quot;any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible&quot;</em>. Without visible indication, it's not easy to tell which element currently has focus, if any.</p>
 <p>User agents provide focus styles by default, but these diverge considerably, and are not sufficient under many circumstances<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>.</p>
 <p>To normalize browser behaviour, and make focus styles more apparent, remove the default style and provide your own. Any CSS declaration can be applied to the <code>:focus</code> state, but be mindful that focus styles are <em>functional</em> styles, and must be visible under all circumstances.</p>
-<p>In some browsers, background images are eliminated when Windows High Contrast Mode is active. Changes to colour alone would also fail <strong>WCAG2.1 1.4.1 Use of Color</strong><sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>. Instead, provide a reasonably thick <code>outline</code>. In most circumstances, this should share the text's <code>color</code> (since the contrast for <code>color</code> should already differentiate it from the local background). Just omit a color value to achieve this:</p>
+<p>Be aware that in some browsers background images are eliminated when Windows High Contrast Mode is active, and changes to <em>colour alone</em> could fail <strong>WCAG2.1 1.4.1 Use of color</strong><sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>, so ensure that you provide a reasonably thick <code>outline</code> using a colour with adequate contrast against all the backgrounds on the page where it could be visible. One simple way to achieve this is to set the outline colour to share the text's <code>color</code>. This should be safe since the contrast for the text will already differentiate it from its background. The CSS to implement that simply omits the <code>color</code> property:</p>
 <pre class="hljs"><code><span class="hljs-selector-pseudo">:focus</span> {
   <span class="hljs-attribute">outline</span>: <span class="hljs-number">2px</span> solid;
 }
@@ -191,7 +191,7 @@
 mainHeading.tabindex = <span class="hljs-number">-1</span>;
 mainHeading.focus();
 </code></pre>
-<p>In React, you would defer to the <code>refs</code> API<sup class="footnote-ref"><a href="#fn5" id="fnref5:1">[5:1]</a></sup>:</p>
+<p>In React, you would defer to the <code>refs</code> API:</p>
 <pre class="hljs"><code><span class="hljs-comment">// Initialize &lt;h1 ref={this.mainHeading} tabindex="-1"&gt;Brexitcast&lt;/h1&gt;</span>
 <span class="hljs-keyword">this</span>.mainHeading = React.createRef();
 
@@ -219,11 +219,11 @@ mainHeading.focus();
 </li>
 <li id="fn4" class="footnote-item"><p>Using the <code>tabindex</code> attribute — The Paciello Group, <a href="https://developer.paciellogroup.com/blog/2014/08/using-the-tabindex-attribute/">https://developer.paciellogroup.com/blog/2014/08/using-the-tabindex-attribute/</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn5" class="footnote-item"><p><code>writing-mode</code> — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode">https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode</a> <a href="#fnref5" class="footnote-backref">↩︎</a> <a href="#fnref5:1" class="footnote-backref">↩︎</a></p>
+<li id="fn5" class="footnote-item"><p><code>writing-mode</code> — MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode">https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
 </li>
 <li id="fn6" class="footnote-item"><p>Avoid default browser focus styles — Adrian Roselli, <a href="http://adrianroselli.com/2017/02/avoid-default-browser-focus-styles.html">http://adrianroselli.com/2017/02/avoid-default-browser-focus-styles.html</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn7" class="footnote-item"><p>WCAG2.1 1.4.1 Use of Color, <a href="https://www.w3.org/TR/WCAG21/#use-of-color">https://www.w3.org/TR/WCAG21/#use-of-color</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+<li id="fn7" class="footnote-item"><p>WCAG2.1 1.4.1 Use of color, <a href="https://www.w3.org/TR/WCAG21/#use-of-color">https://www.w3.org/TR/WCAG21/#use-of-color</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
 </li>
 <li id="fn8" class="footnote-item"><p>WCAG2.1 2.1.2 No Keyboard Trap, <a href="https://www.w3.org/TR/WCAG21/#no-keyboard-trap">https://www.w3.org/TR/WCAG21/#no-keyboard-trap</a> <a href="#fnref8" class="footnote-backref">↩︎</a></p>
 </li>
