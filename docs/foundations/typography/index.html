@@ -190,13 +190,13 @@
 <p>Do <em>not</em> increase the <code>letter-spacing</code> of sentence-case text. The Reith typeface is designed for optimal legibility without adjusting the tracking.</p>
 <h2 id="links">Links</h2>
 <p>It is important that links are clearly differentiated from surrounding text. As mandated by <strong>WCAG2.1 1.4.1 Use of color</strong><sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup> this means not differentiating links by colour alone. Not all people can (accurately) perceive colour differences, and not all devices and screens accurately convey colour.</p>
-<p>Lean on established convention by providing an underline, using either <code>text-decoration: underline</code> or a border. Where <code>text-decoration</code> is employed, you can increase legibility by preventing the line from intersecting the font's <a href="https://en.wikipedia.org/wiki/Descender">descenders</a>. Note that some browsers now support <code>text-decoration-skip: ink</code> by default.</p>
-<pre class="hljs"><code><span class="hljs-selector-tag">p</span> <span class="hljs-selector-tag">a</span> {
+<p>The BBC has traditionally has used heavier font-weighting to visually differentiate linked text from surrounding body text, adding an underline that appears on hover or focus. You can follow this established convention by incorporating the underline indicator in your links depending on the hover / focus state, using either <code>text-decoration: underline</code> or a border. Where <code>text-decoration</code> is employed, you can increase legibility by preventing the line from intersecting the font's <a href="https://en.wikipedia.org/wiki/Descender">descenders</a>. Note that some browsers now support <code>text-decoration-skip-ink</code> by default.</p>
+<pre class="hljs"><code><span class="hljs-selector-tag">p</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span>, <span class="hljs-selector-tag">p</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span> {
   <span class="hljs-attribute">text-decoration</span>: underline;
-  <span class="hljs-attribute">text-decoration-skip</span>: ink;
+  <span class="hljs-attribute">text-decoration-skip-ink</span>: auto;
 }
 </code></pre>
-<p>Do not underline text of any other variety, lest it is mistaken for a link. Highlight <code>&lt;mark&gt;</code> text using a background colour instead.</p>
+<p>Avoid using underlined text on general text to prevent it being mistaken for a link. Highlight <code>&lt;mark&gt;</code> text using a background colour instead.</p>
 <p>As set out under <a href="/gel/components/buttons-and-ctas/"><strong>Buttons and CTAs</strong></a>, call-to-action links and buttons should be differentiated visually to reflect their differing behaviour.</p>
 <h2 id="contrast">Contrast</h2>
 <p>It's imperative there is sufficient contrast between foreground text and backgrounds, in line with <strong>WCAG2.1 1.4.3 Contrast</strong><sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup>.</p>

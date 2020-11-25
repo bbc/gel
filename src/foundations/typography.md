@@ -127,16 +127,16 @@ Do _not_ increase the `letter-spacing` of sentence-case text. The Reith typeface
 
 It is important that links are clearly differentiated from surrounding text. As mandated by **WCAG2.1 1.4.1 Use of color**[^7] this means not differentiating links by colour alone. Not all people can (accurately) perceive colour differences, and not all devices and screens accurately convey colour.
 
-Lean on established convention by providing an underline, using either `text-decoration: underline` or a border. Where `text-decoration` is employed, you can increase legibility by preventing the line from intersecting the font's [descenders](https://en.wikipedia.org/wiki/Descender). Note that some browsers now support `text-decoration-skip: ink` by default.
+The BBC has traditionally has used heavier font-weighting to visually differentiate linked text from surrounding body text, adding an underline that appears on hover or focus. You can follow this established convention by incorporating the underline indicator in your links depending on the hover / focus state, using either `text-decoration: underline` or a border. Where `text-decoration` is employed, you can increase legibility by preventing the line from intersecting the font's [descenders](https://en.wikipedia.org/wiki/Descender). Note that some browsers now support `text-decoration-skip-ink` by default.
 
 ```css
-p a {
+p a:hover, p a:focus {
   text-decoration: underline;
-  text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
 }
 ```
 
-Do not underline text of any other variety, lest it is mistaken for a link. Highlight `<mark>` text using a background colour instead.
+Avoid using underlined text on general text to prevent it being mistaken for a link. Highlight `<mark>` text using a background colour instead.
 
 As set out under [**Buttons and CTAs**](/gel/components/buttons-and-ctas/), call-to-action links and buttons should be differentiated visually to reflect their differing behaviour.
 
