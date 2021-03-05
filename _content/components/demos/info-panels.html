@@ -1,0 +1,106 @@
+---
+title: Info panels
+---
+
+<style>
+  /*.example-slice {
+    padding: 1rem 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+  }*/
+</style>
+
+<h3>Left/below alignment</h3>
+<div class="example-slice">
+  <div class="gel-infopanel infopanel--left-below">
+    <button class="gel-infopanel__button gel-button" type="button" aria-haspopup="true" aria-expanded="false">More
+      info</button>
+    <div class="gel-infopanel__panel" role="group" aria-labelledby="unique-ref1" style="width: 15rem;" hidden>
+      <div class="gel-infopanel__title-area">
+        <span id="unique-ref1" aria-hidden="true">More info</span>
+        <button class="gel-infopanel__close-button">
+          <span class="gel-sr">close</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-no"></use>
+          </svg>
+        </button>
+      </div>
+      <ul>
+        <li><a href="#">Option one</a></li>
+        <li><a href="#">Option two</a></li>
+        <li><a href="#">Option three</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h3>Right/below alignment</h3>
+<div class="example-slice" style="text-align: right">
+  <div class="gel-infopanel infopanel--right-below">
+    <button class="gel-infopanel__button gel-button" type="button" aria-haspopup="true" aria-expanded="false">More
+      info</button>
+    <div class="gel-infopanel__panel" role="group" aria-labelledby="unique-ref2" style="width: 15rem;" hidden>
+      <div class="gel-infopanel__title-area">
+        <span id="unique-ref2" aria-hidden="true">More info</span>
+        <button class="gel-infopanel__close-button">
+          <span class="gel-sr">close</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-no"></use>
+          </svg>
+        </button>
+      </div>
+      <ul>
+        <li><a href="#">Option one</a></li>
+        <li><a href="#">Option two</a></li>
+        <li><a href="#">Option three</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h3>Center/below alignment</h3>
+<div class="example-slice" style="text-align: center">
+  <div class="gel-infopanel infopanel--center-below">
+    <button class="gel-infopanel__button gel-button" type="button" aria-haspopup="true" aria-expanded="false">More
+      info</button>
+    <div class="gel-infopanel__panel" role="group" aria-labelledby="unique-ref3" style="width: 15rem;" hidden>
+      <div class="gel-infopanel__title-area">
+        <span id="unique-ref3" aria-hidden="true">More info</span>
+        <button class="gel-infopanel__close-button">
+          <span class="gel-sr">close</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-no"></use>
+          </svg>
+        </button>
+      </div>
+      <ul>
+        <li><a href="#">Option one</a></li>
+        <li><a href="#">Option two</a></li>
+        <li><a href="#">Option three</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+    window.gel && gel.InfoPanel.init();
+
+    // Initialize example 1
+    new gel.InfoPanel.constructor(
+      document.querySelector('.infopanel--left-below')
+    );
+
+    // Initialize example 2
+    new gel.InfoPanel.constructor(
+      document.querySelector('.infopanel--right-below'),
+      { hAlign: 'right' }
+    );
+
+    // Initialize example 3
+    new gel.InfoPanel.constructor(
+      document.querySelector('.infopanel--center-below'),
+      { hAlign: 'center' }
+    );
+  });
+</script>

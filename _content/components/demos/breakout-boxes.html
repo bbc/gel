@@ -1,0 +1,21 @@
+---
+title: Breakout Boxes
+---
+
+<div style="margin-bottom: 1rem;">
+  <aside class="gel-breakout-box gel-breakout-box extra-padding" aria-labelledby="aside-1541071173689">
+    <h4 id="aside-1541071173689" aria-hidden="true"><svg class="gel-breakout-box__icon gel-icon gel-icon--text">
+        <use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-info"></use>
+      </svg>Tip</h4>
+    <div>
+      <p>To associate <code>aria-labelledby</code> with the respective <code>id</code>, they must share a value and
+        that value must be unique. In your templating system, you can create a unique string at the time of compilation
+        using <code>Date()</code>:</p>
+      <pre><code class="prettyprint">const unique = + new Date(); // e.g. 1540915290281
+</code></pre>
+      <p>An <code>id</code> that is not unique is considered a parsing error and, since it affects accessible naming
+        associations here, would mean a failure under <strong>WCAG 4.1.1 Parsing</strong><sup class="footnote-ref"><a
+            href="#fn3" id="fnref3">[3]</a></sup>.</p>
+    </div>
+  </aside>
+</div>

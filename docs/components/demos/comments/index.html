@@ -32,8 +32,7 @@
             <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-5/5@l">
                 <h2>Reference implementation</h2>
 
-                
-<style>
+                <style>
   .shadow-box {
     padding: 1rem;
     border-radius: 0.25rem;
@@ -44,9 +43,7 @@
     text-align: right;
   }
 </style>
-
 <h3>The comments form</h3>
-
 <div class="gel-comments shadow-box">
   <form class="gel-comments__form">
     <p>You're signed in as <strong><a href="path/to/user/comment/history">Ben</a></strong></p>
@@ -71,12 +68,9 @@
     <p id="your-comment-rules"><small>Comments must follow the <a href="path/to/rules">house rules</a></small>.</p>
   </form>
 </div>
-
 <h3>The sorting control</h3>
-
 <p>The meta information subcomponent, with a sorting control devised using a native <code>&lt;select></code> element.
 </p>
-
 <div class="gel-comments shadow-box">
   <div class="gel-comments__meta">
     <span id="comments-count">186 comments</span>
@@ -92,12 +86,9 @@
     </label>
   </div>
 </div>
-
 <h3>Voting</h3>
-
 <p>An ad hoc script is provided to demonstrate the expected UI behaviour. A production implementation would be
   data-driven, and use declarative rendering.</p>
-
 <div class="gel-comments shadow-box text-align:right">
   <div class="gel-comment__vote" role="group" aria-label="vote">
     <button aria-pressed="false" aria-descibedby="total-likes-1562746727083">
@@ -118,11 +109,8 @@
     </button>
   </div>
 </div>
-
 <h3>A comment, including a nested reply</h3>
-
 <p>The following omits the reply functionality.</p>
-
 <div class="gel-comments shadow-box">
   <ul class="gel-comments__stream">
     <li class="gel-comment" id="comment-1562746727083" tabindex="-1">
@@ -217,7 +205,6 @@
     </li>
   </ul>
 </div>
-
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     // Sort control placeholder script

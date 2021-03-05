@@ -1,0 +1,181 @@
+---
+title: Video controls
+---
+
+<div style="margin-bottom: 1rem;">
+  <h3>Simple card play/pause</h3>
+  <p>This minimal implementation reveals the mute button while the video is playing.</p>
+  <div class="gel-card" style="width: 300px;">
+    <div class="gel-card__headline">
+      <h4>The 2001 BBC2 Ident</h4>
+    </div>
+    <div class="gel-card__content">
+      <video controls src="/gel/static/videos/ident_clip.mp4">
+        <track label="English" kind="subtitles" srclang="en" src="/gel/static/videos/ident.vtt" default>
+        <p>
+          Your browser doesn't support HTML5 video.
+          <a href="/gel/static/videos/ident_clip.mp4">Download</a> the video instead.
+        </p>
+      </video>
+      <button class="gel-video__play-button gel-card__play-button" type="button" hidden>
+        <span class="gel-video__button-off">
+          <span class="gel-sr">Play</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-play"></use>
+          </svg>
+        </span>
+        <span class="gel-video__button-on">
+          <span class="gel-sr">Pause</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-pause"></use>
+          </svg>
+        </span>
+      </button>
+      <button class="gel-video__mute-button gel-card__mute-button" type="button" hidden>
+        <span class="gel-video__button-off">
+          <span class="gel-sr">Mute</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-listen"></use>
+          </svg>
+        </span>
+        <span class="gel-video__button-on">
+          <span class="gel-sr">Unmute</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true" fill="#fff">
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-sound-off"></use>
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div class="gel-card__desc">
+      <p>Do you remember the radio controlled car?</p>
+    </div>
+    <div class="gel-card__toolbar">
+      <button type="button" aria-expanded="false">
+        <span class="gel-card__more-label">
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-up"></use>
+          </svg>
+          More info
+        </span>
+        <span class="gel-card__close-label">
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-no"></use>
+          </svg>
+          Close
+        </span>
+      </button>
+      <div class="gel-card__info" role="group" aria-labelledby="more-info-title-1" hidden>
+        <h5 class="gel-card__info-heading" id="more-info-title-1" tabindex="-1">More info</h5>
+        <p>The history of BBC television idents begins in the early 1950s, when the BBC first displayed a logo between
+          programmes to identify its service. As new technology has become available, these devices have evolved from
+          simple still black and white images to the sophisticated full colour short films seen today. With the arrival
+          of digital services in the United Kingdom, and with them many more new channels, branding is perceived by
+          broadcasters to be much more important, meaning that idents need to stand out from the competition.</p>
+      </div>
+      <button type="button" aria-pressed="false">
+        <span class="gel-sr">Love</span>
+        <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+          <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-love-loved-state"></use>
+        </svg>
+      </button>
+      <button type="button">
+        <span class="gel-sr">Add</span>
+        <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+          <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-add"></use>
+        </svg>
+      </button>
+      <button type="button">
+        <span class="gel-sr">Share</span>
+        <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+          <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-share"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <h3>Play, mute, and scrub</h3>
+  <div class="gel-video__container" style="max-width: 400px">
+    <video class=" gel-video" controls src="/gel/static/videos/ident_clip.mp4">
+      <track label="English" kind="subtitles" srclang="en" src="/gel/static/videos/ident.vtt" default>
+      <p>
+        Your browser doesn't support HTML5 video.
+        <a href="/gel/static/videos/ident_clip.mp4">Download</a> the video instead.
+      </p>
+    </video>
+    <div class="gel-video__controls" hidden>
+      <button class="gel-video__play-button" type="button">
+        <span class="gel-video__button-off">
+          <span class="gel-sr">Play</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-play"></use>
+          </svg>
+        </span>
+        <span class="gel-video__button-on">
+          <span class="gel-sr">Pause</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-pause"></use>
+          </svg>
+        </span>
+      </button>
+      <label for="timeline" class="gel-video__timeline-container">
+        <span class="gel-sr">Timeline</span>
+        <input type="range" id="timeline" />
+      </label>
+      <button class="gel-video__mute-button" type="button">
+        <span class="gel-video__button-off">
+          <span class="gel-sr">Mute</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-listen"></use>
+          </svg>
+        </span>
+        <span class="gel-video__button-on">
+          <span class="gel-sr">Unmute</span>
+          <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+            <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-sound-off"></use>
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.gel && gel.Card.init() && gel.Video.init();
+
+    // Simple card play/pause
+    var cardElem = document.querySelector('.gel-card');
+    var card = new gel.Card.constructor(cardElem);
+    var videoElem1 = cardElem.querySelector('video');
+    var video1 = new gel.Video.videoInit(videoElem1);
+    var playElem1 = cardElem.querySelector('.gel-card__play-button');
+    var playButton1 = new gel.Video.playButton(playElem1, videoElem1);
+    var muteElem1 = cardElem.querySelector('.gel-card__mute-button');
+    var mute2 = new gel.Video.muteButton(muteElem1, videoElem1);
+    // Show custom play and mute buttons when video is initialized
+    playElem1.hidden = false;
+    muteElem1.hidden = false
+    // Hide the mute button until the muted video is playing
+    muteElem1.hidden = true;
+    playElem1.addEventListener('click', function () {
+      muteElem1.hidden = !muteElem1.hidden;
+    });
+    // Hide the mute button at the end so things don't go out of sync
+    videoElem1.addEventListener('ended', function () {
+      muteElem1.hidden = true;
+    })
+
+    // Play, mute, and scrub
+    var videoContainer = document.querySelector('.gel-video__container');
+    var videoControls = document.querySelector('.gel-video__controls');
+    // Show custom controls when video is initialized
+    videoControls.hidden = false
+    var videoElem2 = videoContainer.querySelector('.gel-video');
+    var video2 = new gel.Video.videoInit(videoElem2);
+    var playElem2 = videoContainer.querySelector('.gel-video__play-button');
+    var playButton2 = new gel.Video.playButton(playElem2, videoElem2);
+    var muteElem2 = videoContainer.querySelector('.gel-video__mute-button');
+    var mute2 = new gel.Video.muteButton(muteElem2, videoElem2);
+    var scrubElem = videoContainer.querySelector('[type="range"]');
+    var scrub = new gel.Video.scrub(scrubElem, videoElem2);
+  });
+</script>

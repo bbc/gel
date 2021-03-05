@@ -1,0 +1,201 @@
+---
+title: Load more
+---
+
+<div class="gel-loader">
+  <ul class="gel-loader__items">
+    <li class="gel-loader__item">
+      <p>delectus ullam et corporis nulla voluptas sequi</p>
+      <a class="gel-cta" href="http://www.example.com/path/to/1">Read more about result 1</a>
+    </li>
+    <li class="gel-loader__item">
+      <p>iusto eius quod necessitatibus culpa ea</p>
+      <a class="gel-cta" href="http://www.example.com/path/to/2">Read more about result 2</a>
+    </li>
+    <li class="gel-loader__item">
+      <p>a quo magni similique perferendis</p>
+      <a class="gel-cta" href="http://www.example.com/path/to/3">Read more about result 3</a>
+    </li>
+    <li class="gel-loader__item">
+      <p>ullam ut quidem id aut vel consequuntur</p>
+      <a class="gel-cta" href="http://www.example.com/path/to/4">Read more about result 4</a>
+    </li>
+    <li class="gel-loader__item">
+      <p>doloremque illum aliquid sunt</p>
+      <a class="gel-cta" href="http://www.example.com/path/to/5">Read more about result 5</a>
+    </li>
+    <li class="gel-loader__item">
+      <p>qui explicabo molestiae dolorem</p>
+      <a class="gel-cta" href="http://www.example.com/path/to/6">Read more about result 6</a>
+    </li>
+  </ul>
+  <div class="gel-loader__foot">
+    <div class="gel-loader__loading" role="status" hidden>
+      <svg class="gel-icon gel-icon--text gel-icon-loading" focusable="false" aria-hidden="true">
+        <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-loading"></use>
+      </svg>
+      <div class="gel-loader__loading-text gel-sr"></div>
+    </div>
+    <button class="gel-loader__button gel-button" type="button" hidden>Load more</button>
+    <nav class="gel-pages" aria-labelledby="gel-pages__label">
+      <div id="gel-pages__label" hidden>Page</div>
+      <a class="gel-pages__prev">
+        <span class="gel-sr">Previous page</span>
+        <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+          <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-previous"></use>
+        </svg>
+      </a>
+      <ol class="gel-pages__numbered">
+        <li><a href="?page=1" aria-current="page">1</a></li>
+        <li><a href="?page=2">2</a></li>
+        <li><a href="?page=3">3</a></li>
+        <li><a href="?page=4">4</a></li>
+        <li><a href="?page=5">5</a></li>
+        <li><a href="?page=6">6</a></li>
+        <li><a href="?page=7">7</a></li>
+        <li role="separator">&hellip;</li>
+        <li><a href="?page=999">999</a></li>
+      </ol>
+      <div class="gel-pages__text">Page 1 of 999</div>
+      <a class="gel-pages__next" href="?page=2">
+        <span class="gel-sr">Next page</span>
+        <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+          <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-next"></use>
+        </svg>
+      </a>
+    </nav>
+  </div>
+</div>
+
+<script type="text/javascript">
+  // The constructor 
+  function LoadMore(elem, amount, start, dataProvider) {
+    this.elem = elem;
+    // Save refs to key elements
+    this.loadBay = this.elem.querySelector('.gel-loader__items');
+    this.pages = this.elem.querySelector('.gel-pages');
+    this.paginator = this.elem.querySelector('.gel-pages');
+    this.button = this.elem.querySelector('.gel-loader__button');
+    this.loading = this.elem.querySelector('.gel-loader__loading');
+    this.loadingText = this.loading.querySelector('.gel-loader__loading-text');
+
+    // Only run if Promises are supported
+    if (typeof Promise !== "undefined" && Promise.toString().indexOf("[native code]") !== -1) {
+      // Reveal load more button
+      this.button.hidden = false;
+      // Hide fallback paginator
+      this.paginator.hidden = true;
+
+      this.amount = amount;
+      this.start = start;
+
+      this.loadItems = function (amount, start) {
+        // Make array of URLs to request using the base URL
+        var requestQueue = [];
+        for (var i = this.start; i < this.start + this.amount; i++) {
+          requestQueue.push(i);
+        }
+
+        // Factory to create the separator element that marks
+        // the start of the new results and takes focus
+        var createSeparator = function (message) {
+          var sep = document.createElement('li');
+          sep.setAttribute('role', 'separator');
+          sep.tabIndex = 0;
+          sep.textContent = message;
+          return sep;
+        }
+
+        // Factory to create elements to wrap request data
+        var createItem = function (item) {
+          var itemElem = document.createElement('li');
+          itemElem.classList.add('gel-loader__item');
+          itemElem.innerHTML = '<p>' + item.title + '</p>';
+          itemElem.innerHTML += '<a class="gel-cta" href="http://www.example.com/path/to/' + item.id + '">Read more about result ' + item.id + '</a>';
+          return itemElem;
+        }
+
+        // Enter loading state by appending to
+        // live region
+        this.loading.hidden = false;
+        this.loadingText.textContent = 'Loading, please wait.';
+
+        var results = [];
+        dataProvider && Promise.all(requestQueue.map(i => dataProvider(i)
+          .then(resp => resp.json())))
+          .then(items => {
+            items.forEach(function (item) {
+              results.push(createItem(item));
+            });
+            var sep = createSeparator('Results ' + items[0].id + ' to ' + items[items.length - 1].id);
+            results.unshift(sep);
+            results.forEach(function (result) {
+              this.loadBay.appendChild(result);
+            }.bind(this));
+            // Focus the 'continue' element above the
+            // new results
+            sep.focus();
+            // Exit loading state
+            this.loading.hidden = true;
+            this.loadingText.textContent = '';
+            // Increment this.start for next run
+            this.start = this.start + this.amount;
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
+      }
+
+      // Listen on the 'load more' button
+      this.button.addEventListener('click', function () {
+        this.load();
+      }.bind(this));
+    }
+  }
+
+  // The load method
+  LoadMore.prototype.load = function () {
+    this.loadItems(this.start, this.amount);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // You can pull numbered results from an API
+    // var dataURL = 'https://jsonplaceholder.typicode.com/posts/';
+    // var dataProvider = function(i) {
+    //   return fetch(dataURL + i); // => Promise
+    // };
+
+    // But any function that returns a promise can be used
+    var dataProvider = function (i) {
+      if (typeof Promise !== "undefined" && Promise.toString().indexOf("[native code]") !== -1) {
+        return new Promise(function (resolve, reject) {
+          setTimeout(function () {
+            resolve({
+              json: function () {
+                return {
+                  userId: i, id: i, title: randomTitle(8)
+                };
+              }
+            })
+          }, 800);
+        });
+      } else {
+        return false;
+      }
+    };
+
+    // Initialize
+    var loaderElem = document.querySelector('.gel-loader');
+    var loader = new LoadMore(loaderElem, 6, 7, dataProvider);
+  });
+
+  // Fake content generator for demonstration purposes only
+  function randomTitle(len) {
+    var words = ['ipsum', 'dolor', 'sit', 'amet', 'et', 'per', 'qui', 'iillum', 'fatto', 'riempire', 'fuori', 'amore', 'che', 'dopo', 'andato', 'adat', 'tarsi', 'fets', 'potuto', 'fico', 'figda', 'uso', 'feltro', 'in', 'ludere', 'depulci', 'char', 'giro', 'noi'];
+    var result = [];
+    while (len--) {
+      result.push(words[Math.floor(Math.random() * words.length)]);
+    }
+    return result.join(' ')
+  }
+</script>

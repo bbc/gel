@@ -1,0 +1,77 @@
+---
+title: Search filter
+---
+<style>
+  #results-placeholder {
+    padding: 1.5rem;
+    border: 1px dashed currentColor;
+    margin-top: 1.5rem;
+  }
+  .filler {
+    color: #ddd;
+  }
+</style>
+
+<p  class="filler" aria-hidden="true">
+  In facilis noluisse nec. Per eu omnes corrumpit omittantur, sit in amet fierent adipiscing. Cum et ferri tempor pertinax. Ut vis dolor nemore eleifend. Duo et modus utamur perpetua, est dico inimicus salutandi ad. Ponderum theophrastus no quo, omnis iusto meliore vis ea. Ad nullam everti corpora nec, nec ex elit error eligendi, dolorum vocibus perfecto ex nec?
+</p>
+<p  class="filler" aria-hidden="true">
+  Per debitis meliore propriae at. In iudico malorum eam. Mel malorum saperet id, vel an quidam virtute. Clita vocent ne vix, aperiri temporibus sed ut.
+</p>
+
+<nav class="gel-filter" aria-labelledby="filter-label">
+  <div class="gel-filter__bar">
+    <span class="gel-filter__label" id="filter-label" aria-hidden="true">Filter:</span>
+    <ul class="gel-filter__list">
+      <li><a href=".?filter=filter+1">Filter 1</a></li>
+      <li><a href=".?filter=filter+2">Filter 2</a></li>
+      <li><a href=".?filter=filter+3">Filter 3</a></li>
+      <li><a href=".?filter=filter+4">Filter 4</a></li>
+      <li><a href=".?filter=filter+5">Filter 5</a></li>
+      <li><a href=".?filter=filter+6">Filter 6</a></li>
+      <li><a href=".?filter=filter+7">Filter 7</a></li>
+      <li><a href=".?filter=filter+8">Filter 8</a></li>
+      <li><a href=".?filter=filter+9">Filter 9</a></li>
+    </ul>
+    <button class="gel-filter__more" aria-expanded="false" hidden>
+      More
+      <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+        <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-down"></use>
+      </svg>
+    </button>
+  </div>
+  <div class="gel-filter__popup" hidden></div>
+  <div class="gel-filter__sort">
+    <span class="gel-filter__sort-label">Sort by:</span>
+    <ul>
+      <li><a href=".?filter=filter+1&sort=relevance">Relevance</a></li>
+      <li><a href=".?filter=filter+1&sort=date">Date</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div id="results-placeholder" tabindex="0">Results for the filter to appear in place of this message.</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var filterElem = document.querySelector('.gel-filter');
+    var filter = new gel.Filter.constructor(filterElem);
+
+    // Just for this demo, to emulate full page reloads:
+    var search = location.search.substring(1);
+    var searchParsed = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
+    var relevanceLink = document.querySelector('[href*="sort=relevance"]');
+    var dateLink = document.querySelector('[href*="sort=date"]');
+    relevanceLink.href = '.?filter=' + searchParsed.filter + '&sort=relevance';
+    dateLink.href = '.?filter=' + searchParsed.filter + '&sort=date';
+    var currentLinks = document.querySelectorAll('.gel-filter__list [href*="' + searchParsed.filter + '"], .gel-filter__sort [href*="' + searchParsed.sort + '"]');
+    var currentLinksArray = Array.prototype.slice.call(currentLinks);
+    currentLinksArray.forEach(function (l) {
+      l.setAttribute('aria-current', 'true');
+    });
+    var placeholder = document.getElementById('results-placeholder');
+    var sortMessage = searchParsed.sort ? ' and ' + searchParsed.sort + ' sort' : '';
+    placeholder.innerHTML = 'Results for <code>' + searchParsed.filter.replace('+', ' ') + '</code> ' + sortMessage + ' to appear in place of this message.';
+    placeholder.focus();
+  });
+</script>

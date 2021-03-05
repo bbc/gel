@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{site.basedir}}static/images/favicon.ico" type="image/x-icon">
+
+    <title>{{site.title}} | {{title}}</title>
+    <meta property="og:title" content="GEL Technical Guide: {{title}}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bbc.github.io/gel/">
+    <meta property="og:image" content="https://bbc.github.io/gel/static/images/bbc-gel-logo.png">
+    <meta property="og:description" content="Guidance for developers who wish to implement BBC GEL component patterns in ways that follow all BBC accessibility standards.">
+    <meta property="og:locale" content="en_GB">
+    <meta name="version_number" content="1.0">
+
+    <script src="{{site.basedir}}static/js/site.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{site.basedir}}static/css/gel.css">
+    <link rel="stylesheet" type="text/css" href="{{site.basedir}}static/css/site.css">
+
+    <script type="text/javascript"> // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    <script type="text/javascript"> // download and use Reith font
+        try {
+            (new FontFaceObserver('ReithSans', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-sans-loaded';
+            });
+            (new FontFaceObserver('ReithSerif', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-loaded';
+            });
+        } catch (e) {
+            console.log('Reith fonts did not load within 5 seconds.');
+        }
+    </script>
+
+    {% if includecss %}
+    <link rel="stylesheet" type="text/css" href="{{site.basedir}}static/css/{{ includecss }}">
+    {% endif %}
+</head>
+
+<body class="geltags-body">
+    <p class="gel-sr gel-sr__focusable gel-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('gel-sr__focused')"
+            onblur="this.parentNode.classList.remove('gel-sr__focused')">Skip
+            to content</a>
+    </p>
+
+    <header>
+        <div class="geltags-header gs-u-clearfix">
+            <div class="gel-wrap">
+                <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24"
+                        viewBox="0 0 100 24">
+                        <title>BBC</title>
+                        <image xlink:href="{{site.basedir}}static/images/bbc-blocks_grey.svg"
+                            src="{{site.basedir}}static/images/bbc-blocks_grey.png" width="100%" height="100%"></image>
+                    </svg></a>
+            </div>
+        </div>
+        <div class="geltags-header__banner gs-u-clearfix">
+            <div class="gel-wrap">
+                <div class="gel-layout">
+                    <div class="gel-layout__item gel-2/5@l"
+                        style="text-align:left; padding-left:13px; margin-bottom:32px; margin-top: -12px;">
+                        <a href="{{site.basedir}}" class="geltags-logo"><img src="{{site.basedir}}static/images/bbc-gel-logo.png" alt="BBC GEL, global experience language" style="max-width:169px;"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" tabindex="-1" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <!-- column placeholder-->
+            </div>
+
+            <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
+                <h1 class="geltags-header__title">{{title}}</h1>
+                <p class="geltags-header__summary gel-great-primer">{{summary}}</p>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900"
+                    style="padding-top:32px">
+                    <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
+                    {{ content | toc | safe }}
+                </nav>
+            </div>
+
+            <div class="geltags-sections geltags-body-copy gel-layout__item gel-3/5@l">
+                {{ content | safe }}
+            </div>
+        </div>
+    </main>
+
+    <div class="geltags-feedback-banner">
+        <div class="gel-wrap">
+            <div class="gel-layout">
+                <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
+                    <p><small>Copyright &copy; 2021 BBC. This content is published under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence</a>, unless otherwise noted.</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="{{site.basedir}}static/js/gel.js"></script>
+
+    {% if includejs %}
+    <script type="text/javascript" src="{{site.basedir}}static/js/{{ includejs }}"></script>
+    {% endif %}
+
+    <script type="text/javascript">
+        new Sticky('.sticky');
+    </script>
+
+    <!-- BBC ATI analytics -->
+    <script type="text/javascript" src="{{site.basedir}}static/js/smarttag.js"></script>
+
+    <script type="text/javascript"> // create ATI tag and submit
+    (function() {
+        var url = document.URL;
+        var ref = document.referrer;
+        var title = document.querySelector("meta[property='og:title']").getAttribute("content").toLowerCase().split(': ');
+        var siteTitle = '' + title[0].replace(/ /g, ".").replace(/[^a-zA-Z0-9.]/g, "").replace(/\.+/g, ".");
+        var pageTitle = '' + title[1].replace(/ /g, "-").replace(/[^a-zA-Z0-9-]/g, "").replace(/-+/g, "-");
+        pageTitle = siteTitle + '.' + pageTitle +'.page';
+
+        var ATTag = new ATInternet.Tracker.Tag({ secure: true });
+
+        ATTag.page.set({ name: pageTitle });
+
+        var siteCustomVars = {
+            "2": "[responsive]",
+            "3": "[bbc_website]",
+            "4": "[en]",
+            "5": "[" + url + "]",
+            "6": (ref? "[" + ref + "]" : undefined),
+            "8": "[direct-hit]",
+            "9": "[" + pageTitle + "]"
+        };
+        ATTag.customVars.set({ site: siteCustomVars });
+        
+        if (document.URL.match(/\/\/bbc\.github\.io\/gel/i)) {
+            ATTag.dispatch();
+        }
+        else {
+            console.log('ATI tag not sent:', siteTitle, siteCustomVars);
+        }
+    })();
+    </script>
+</body>
+
+</html>

@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/gel/static/images/favicon.ico" type="image/x-icon">
 
-    <title>GEL | Home</title>
-    <meta property="og:title" content="GEL Technical Guide: Home">
+    <title>GEL | GEL Technical Documentation</title>
+    <meta property="og:title" content="GEL Technical Guide: GEL Technical Documentation">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bbc.github.io/gel/">
     <meta property="og:image" content="https://bbc.github.io/gel/static/images/bbc-gel-logo.png">
@@ -16,9 +16,7 @@
     <meta name="version_number" content="1.0">
 
     <script src="/gel/static/js/site.js"></script>
-
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <link rel="stylesheet" type="text/css" href="/gel/static/css/gel.css">
     <link rel="stylesheet" type="text/css" href="/gel/static/css/site.css">
 
@@ -40,10 +38,6 @@
         } catch (e) {
             console.log('Reith fonts did not load within 5 seconds.');
         }
-    </script>
-
-    <script type="text/javascript"> // syntax highlight
-        hljs.initHighlightingOnLoad();
     </script>
 
     
@@ -74,7 +68,6 @@
                         style="text-align:left; padding-left:13px; margin-bottom:32px; margin-top: -12px;">
                         <a href="/gel/" class="geltags-logo"><img src="/gel/static/images/bbc-gel-logo.png" alt="BBC GEL, global experience language" style="max-width:169px;"></a>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -87,8 +80,8 @@
             </div>
 
             <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
-                <h1 class="geltags-header__title">Home</h1>
-                <p class="geltags-header__summary gel-great-primer">Guidance for developers building accessible websites based on BBC GEL.</p>
+                <h1 class="geltags-header__title">GEL Technical Documentation</h1>
+                <p class="geltags-header__summary gel-great-primer">Guidance for developers building accessible websites based on BBC GEL</p>
             </div>
         </div>
 
@@ -97,155 +90,80 @@
                 <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900"
                     style="padding-top:32px">
                     <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
-                    <ol id="geltags-toc__links" class="geltags-toc"><li><a href="#whats-here">What's here?</a></li><li><a href="#about-this-site">About this site</a></li><li><a href="#coding-conventions">Coding conventions</a></li><li><a href="#questions">Questions?</a></li></ol>
+                    <ol id="geltags-toc__links" class="geltags-toc"><li><a href="#foundations">Foundations</a></li><li><a href="#components">Components</a></li><li><a href="#about-this-site">About this site</a></li><li><a href="#coding-conventions">Coding conventions</a></li><li><a href="#questions">Questions?</a></li></ol>
                 </nav>
             </div>
 
             <div class="geltags-sections geltags-body-copy gel-layout__item gel-3/5@l">
-                <h2 id="whats-here">What's here?</h2>
-<p>We are writing technical recommendations for developers who build the patterns in <a href="http://www.bbc.co.uk/gel/">the BBC GEL Guidelines</a>. Each of these technical guides detail the recommended HTML, JS and CSS to use in your front-end code. The examples in each guide are for reference only and are not intended to be used as a library.</p>
-<h3 id="foundations">Foundations</h3>
-<table>
-<thead>
-<tr>
-<th>Foundation Title</th>
-<th>Status</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="/gel/foundations/focus/">Focus</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/foundations/grids/">Grids</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/foundations/headings/">Headings</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/foundations/iconography/">Iconography</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/foundations/routing/">Routing</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/foundations/typography/">Typography</a></td>
-<td>Draft</td>
-</tr>
-</tbody>
-</table>
-<h3 id="components">Components</h3>
-<table>
-<thead>
-<tr>
-<th>Component Title</th>
-<th>Status</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="/gel/components/accordions/">Accordions</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/components/action-dialogs/">Action dialogs</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/components/breakout-boxes/">Breakout boxes</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/components/buttons-and-ctas/">Buttons and CTAs</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/components/cards/">Cards</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/components/carousels/">Carousels</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/components/comments/">Comments</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/components/data-tables/">Data tables</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/components/external-links/">External links</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/components/filter-and-sort/">Filter and sort</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/components/form-fields/">Form fields and validation</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/components/infographics/">Infographics</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/components/info-panels/">Information Panel</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/components/metadata-strips/">Metadata strips</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/components/masthead/">Masthead</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/components/promos/">Promos</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/components/load-more/">Pagination</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/components/pockets/">Pocket</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/components/share-tools/">Share Tools</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/components/site-menu/">Site Menu</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/components/search/">Search</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/components/tabs/">Tabs</a></td>
-<td>Draft</td>
-</tr>
-<tr>
-<td><a href="/gel/components/video-controls/">Video controls</a></td>
-<td>Draft</td>
-</tr>
-</tbody>
-</table>
+                <h2 id="foundations">Foundations</h2>
+<dl>
+<dt><a href="foundations/focus/">Focus</a></dt>
+<dd>Indicating and managing focus is integral to keyboard accessibility</dd>
+<dt><a href="foundations/grids/">Grids</a></dt>
+<dd>Visual layout should be efficient and consistent, without impeding document structure and accessibility</dd>
+<dt><a href="foundations/headings/">Headings</a></dt>
+<dd>Headings provide a semantic and visual hierarchical structure to a document</dd>
+<dt><a href="foundations/iconography/">Iconography</a></dt>
+<dd>Iconography aids communication, but should not take precedence over text</dd>
+<dt><a href="foundations/routing/">Routing</a></dt>
+<dd>Route changes in single-page applications need to emulate the conventions of page loads</dd>
+<dt><a href="foundations/typography/">Typography</a></dt>
+<dd>Inclusive content must be readable, and for it to be readable it must first be legible</dd>
+</dl>
+<h2 id="components">Components</h2>
+<dl>
+<dt><a href="components/accordions/">Accordions</a></dt>
+<dd>The accordion consists of a number of collapsed sections, each with a button to expand that section's content</dd>
+<dt><a href="components/action-dialogs/">Action dialogs</a></dt>
+<dd>Action dialogs are presented where the user must choose a course of action</dd>
+<dt><a href="components/breakout-boxes/">Breakout boxes</a></dt>
+<dd>Breakout Boxes interject supplementary content within the flow of a document</dd>
+<dt><a href="components/buttons-and-ctas/">Buttons and CTAs</a></dt>
+<dd>The design of clickable controls must be consistent with their behaviour</dd>
+<dt><a href="components/cards/">Cards</a></dt>
+<dd>Cards let you preview and share content quickly, without having to leave the page you're on</dd>
+<dt><a href="components/carousels/">Carousels</a></dt>
+<dd>A Carousel is a way to browse lots of content in a limited amount of vertical space, by scrolling a window onto that content</dd>
+<dt><a href="components/comments/">Comments</a></dt>
+<dd>The ability to engage with content must be inclusive. Everyone should be able to have their say</dd>
+<dt><a href="components/data-tables/">Data tables</a></dt>
+<dd>Tabular data must be presented with a sound semantic and visual structure</dd>
+<dt><a href="components/external-links/">External links</a></dt>
+<dd>External links direct people outside of the BBC domain; a behaviour that must be indicated to all users</dd>
+<dt><a href="components/filter-and-sort/">Filter and sort</a></dt>
+<dd>Filters help the user find what they’re looking for. Allowing the user to refine content by selecting criteria that’s relevant to their needs</dd>
+<dt><a href="components/form-fields/">Form fields and validation</a></dt>
+<dd>Form fields must be accessible and usable, helping the user to provide valid input</dd>
+<dt><a href="components/infographics/">Infographics</a></dt>
+<dd>Infographics should be informative, engaging, and accessible</dd>
+<dt><a href="components/info-panels/">Information Panel</a></dt>
+<dd>The information panel is a specialized popup panel for supplementary content and functionality</dd>
+<dt><a href="components/masthead/">Masthead</a></dt>
+<dd>The Masthead comprises the global navigation and a banner for the local site</dd>
+<dt><a href="components/metadata-strips/">Metadata strips</a></dt>
+<dd>The metadata strip defines key metadata for an item of content, in a compact form</dd>
+<dt><a href="components/load-more/">Pagination</a></dt>
+<dd>Loading content must be a smooth experience and under the user's direct control</dd>
+<dt><a href="components/pockets/">Pockets</a></dt>
+<dd>The Pocket pattern allows the user to reveal longform content at their discretion</dd>
+<dt><a href="components/promos/">Promos</a></dt>
+<dd>A promo is a snippet of content which links to a full piece of content elsewhere on the BBC site or app</dd>
+<dt><a href="components/search/">Search</a></dt>
+<dd>The global and local search components each include</dd>
+<dt><a href="components/share-tools/">Share Tools</a></dt>
+<dd>Share tools offer unobtrusive options to share BBC content on social media</dd>
+<dt><a href="components/site-menu/">Site Menu</a></dt>
+<dd>The Site menu is the navigation region for the local site, and can contain two tiers of navigation options</dd>
+<dt><a href="components/tabs/">Tabs</a></dt>
+<dd>Tabs make it easy to view and navigate stacked panels of related content</dd>
+<dt><a href="components/video-controls/">Video controls</a></dt>
+<dd>Custom HTML5 video functionality must be accessible and intuitive</dd>
+</dl>
 <h2 id="about-this-site">About this site</h2>
-<p>The BBC Global Experience Language (GEL) Technical Guides are a series of framework-agnostic, code-centric recommendations and examples for building GEL design patterns in websites. They illustrate how to create websites that comply with all BBC guidelines and industry best practice, giving special emphasis to accessibility.</p>
-<p>Our guides are for BBC developers following the BBC GEL design patterns, including all BBC employees, contractors and suppliers, however they are publicly available for anyone who may be interested in how the BBC recommends building websites.</p>
+<p>The BBC Global Experience Language (GEL) Technical Guides are a series of framework-agnostic, code-centric recommendations and examples for building <a href="http://www.bbc.co.uk/gel/">GEL design patterns</a> in websites. They illustrate how to create websites that comply with all BBC guidelines and industry best practice, giving special emphasis to the <a href="https://www.bbc.co.uk/accessibility/forproducts/">BBC Accessibility Guidelines</a> for websites.</p>
+<p>Our guides are for BBC developers following the BBC GEL design patterns, including all BBC employees, contractors and suppliers. However they are publicly available for anyone who may be interested in how the BBC recommends building websites.</p>
 <p>You can use these guides under an Open Government Licence for Public Sector Information. Details can be found on <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">the National Archives website</a>.</p>
+<p>The examples in each guide are for reference only and are not intended to be used as a library.</p>
 <h2 id="coding-conventions">Coding conventions</h2>
 <p>Our guides make recommendations about the markup (HTML), layout (CSS), and behaviour (JS) of your GEL implementations. It is otherwise technology agnostic.</p>
 <p>However, the reference implementations inside our guides adhere to certain principles and conventions. If you are intending to contribute working code to this project, please be mindful of these.</p>
@@ -253,24 +171,24 @@
 <p>All reference implementations are written in ES5. The intention is for the code to be as widely understood, and as easily adopted for creating test cases as possible. In a few cases, small polyfills are included. These are added to the implementation's demo page inside the <code>init</code> function.</p>
 <h3 id="progressive-enhancement">Progressive enhancement</h3>
 <p>Our guides eschew larger polyfills and compatibility libraries, opting to use feature detection. In JavaScript this might mean wrapping functionality in an <code>if</code> block.</p>
-<pre class="hljs"><code><span class="hljs-keyword">if</span> (<span class="hljs-string">'IntersectionObserver'</span> <span class="hljs-keyword">in</span> <span class="hljs-built_in">window</span>) {
-  <span class="hljs-comment">// Do something with the IntersectionObserver API</span>
+<pre><code class="prettyprint syntax-js">if ('IntersectionObserver' in window) {
+  // Do something with the IntersectionObserver API
 }
 </code></pre>
 <p>In CSS, a basic layout is put in place then enhanced with modern layout modules like CSS Grid inside <code>@supports</code> blocks:</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.grid</span> &gt; * + * {
-  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">1rem</span>;
+<pre><code class="prettyprint syntax-css">.grid &gt; * + * {
+  margin-top: 1rem;
 }
 
-<span class="hljs-keyword">@supports</span> (<span class="hljs-attribute">display:</span> grid) {
-  <span class="hljs-selector-class">.grid</span> {
-    <span class="hljs-attribute">display</span>: grid;
-    <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(auto-fill, minmax(<span class="hljs-number">266px</span>, <span class="hljs-number">1</span>fr));
-    <span class="hljs-attribute">grid-gap</span>: <span class="hljs-number">1rem</span>;
+@supports (display: grid) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
+    grid-gap: 1rem;
   }
 
-  <span class="hljs-selector-class">.grid</span> &gt; * + * {
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>; <span class="hljs-comment">/* undo, since `grid-gap` supercedes it */</span>
+  .grid &gt; * + * {
+    margin: 0; /* undo, since `grid-gap` supercedes it */
   }
 }
 </code></pre>
@@ -279,35 +197,35 @@
 <p>Component scripts are attached to the <code>gel</code> namespace, like <code>gel.ComponentName</code>.</p>
 <h3 id="constructor-pattern">Constructor pattern</h3>
 <p>Each reference implementation that depends on JavaScript uses a basic constructor pattern to instantiate the working component. For example, the simple toggle switch constructor looks like this:</p>
-<pre class="hljs"><code>  self.constructor = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">button</span>) </span>{
-    <span class="hljs-keyword">this</span>.button = button;
-    <span class="hljs-comment">// The 'on/off' text is provided in an aria-hidden &lt;span&gt;</span>
-    <span class="hljs-keyword">this</span>.onOffSpan = <span class="hljs-keyword">this</span>.button.querySelector(<span class="hljs-string">'[aria-hidden]'</span>);
+<pre><code class="prettyprint syntax-js">  self.constructor = function (button) {
+    this.button = button;
+    // The 'on/off' text is provided in an aria-hidden &lt;span&gt;
+    this.onOffSpan = this.button.querySelector('[aria-hidden]');
 
-    <span class="hljs-comment">// Set aria-pressed to false if the attribute is absent</span>
-    <span class="hljs-keyword">let</span> currentState = <span class="hljs-keyword">this</span>.button.getAttribute(<span class="hljs-string">'aria-pressed'</span>) === <span class="hljs-string">'true'</span>;
-    <span class="hljs-keyword">this</span>.button.setAttribute(<span class="hljs-string">'aria-pressed'</span>, currentState);
-    <span class="hljs-comment">// Set the span's text to match the state</span>
-    <span class="hljs-keyword">this</span>.onOffSpan.textContent = currentState ? <span class="hljs-string">'on'</span> : <span class="hljs-string">'off'</span>;
+    // Set aria-pressed to false if the attribute is absent
+    let currentState = this.button.getAttribute('aria-pressed') === 'true';
+    this.button.setAttribute('aria-pressed', currentState);
+    // Set the span's text to match the state
+    this.onOffSpan.textContent = currentState ? 'on' : 'off';
 
-    <span class="hljs-comment">// Bind to the toggle method</span>
-    <span class="hljs-keyword">this</span>.button.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-keyword">this</span>.toggle.bind(<span class="hljs-keyword">this</span>));
+    // Bind to the toggle method
+    this.button.addEventListener('click', this.toggle.bind(this));
   }
 
-  <span class="hljs-comment">// The toggle method</span>
-  self.constructor.prototype.toggle = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">let</span> currentState = <span class="hljs-keyword">this</span>.button.getAttribute(<span class="hljs-string">'aria-pressed'</span>) === <span class="hljs-string">'true'</span>;
-    <span class="hljs-keyword">this</span>.button.setAttribute(<span class="hljs-string">'aria-pressed'</span>, !currentState);
-    <span class="hljs-keyword">this</span>.onOffSpan.textContent = currentState ? <span class="hljs-string">'off'</span> : <span class="hljs-string">'on'</span>;
+  // The toggle method
+  self.constructor.prototype.toggle = function () {
+    let currentState = this.button.getAttribute('aria-pressed') === 'true';
+    this.button.setAttribute('aria-pressed', !currentState);
+    this.onOffSpan.textContent = currentState ? 'off' : 'on';
   }
 </code></pre>
 <p>Note that the <code>toggle</code> function is exposed as a public method, in case the switch needs to be toggled programmatically.</p>
 <p>Initialization inside the component's demo page looks like this:</p>
-<pre class="hljs"><code><span class="hljs-keyword">var</span> switchElem = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.gel-button-switch'</span>);
-<span class="hljs-keyword">var</span> switchButton = <span class="hljs-keyword">new</span> gel.Switch.constructor(switchElem);
+<pre><code class="prettyprint syntax-js">var switchElem = document.querySelector('.gel-button-switch');
+var switchButton = new gel.Switch.constructor(switchElem);
 </code></pre>
 <h2 id="questions">Questions?</h2>
-<p>This project is currently being overseen by the BBC Accessibility Team, managed by Gareth Ford Williams. If you have access to our corporate Slack channel pop in and say hi. We welcome questions and suggestions posted to this project's GitHub issue tracker.</p>
+<p>This project is currently being overseen by the BBC Accessibility Team. If you have access to our corporate Slack channel pop in and say hi. We welcome questions and suggestions posted to <a href="https://github.com/bbc/gel">this project's GitHub issue tracker</a>.</p>
 
             </div>
         </div>
@@ -317,19 +235,7 @@
         <div class="gel-wrap">
             <div class="gel-layout">
                 <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
-                    <p><small>Copyright &copy; 2020 BBC. This content is published under the Open Government Licence, unless otherwise noted.</small></p>
-                    <!--h2 class="geltags-feedback-banner__title">Got a minute?</h2>
-                    <p>We'd love to know what you think of our website.</p>
-                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/"
-                        class="geltags-button geltags-button__link-button geltags-feedback-banner__cta geltags-button--primary">
-                        <span class="geltags-button__content">Go to survey</span>
-                        <span class="geltags-button__icon_wrapper">
-                            <svg class="geltags-button__icon geltags-icon geltags-icon--text">
-                                <use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"
-                                    style="fill:undefined;"></use>
-                            </svg>
-                        </span>
-                    </a-->
+                    <p><small>Copyright &copy; 2021 BBC. This content is published under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence</a>, unless otherwise noted.</small></p>
                 </div>
             </div>
         </div>

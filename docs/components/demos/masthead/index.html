@@ -32,8 +32,7 @@
             <div class="gel-guideline-sections gel-body-copy gel-layout__item gel-5/5@l">
                 <h2>Reference implementation</h2>
 
-                
-<nav class="gel-masthead" aria-labelledby="gel-masthead__label">
+                <nav class="gel-masthead" aria-labelledby="gel-masthead__label">
   <span id="gel-masthead__label" hidden>BBC sites</span>
   <div class="gel-masthead__bar">
     <div class="gel-masthead__logo">
@@ -134,11 +133,12 @@
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function () {
     window.gel && gel.Masthead.init();
+<pre><code>var mastheadElem = document.querySelector('.gel-masthead');
+var masthead = new gel.Masthead.constructor(mastheadElem);
+</code></pre>
+<p>});<br>
+</script></p>
 
-    var mastheadElem = document.querySelector('.gel-masthead');
-    var masthead = new gel.Masthead.constructor(mastheadElem);
-  });
-</script>
             </div>
         </div>
     </main>

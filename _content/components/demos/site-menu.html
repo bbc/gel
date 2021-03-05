@@ -1,0 +1,45 @@
+---
+title: Table of contents
+layout:  _site/templates/layout-demos-full-width.njk
+---
+
+<nav class="gel-sitemenu" aria-labelledby="gel-sitemenu__label">
+  <span id="gel-sitemenu-label" hidden>This site</span>
+  <button class="gel-sitemenu__menu-button" type="button" aria-expanded="false">
+    <svg class="gel-icon gel-icon--text" focusable="false">
+      <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-list"></use>
+    </svg>
+    Menu
+  </button>
+  <ul class="gel-sitemenu__list">
+    <li><a href="#" aria-current="page">Home</a></li>
+    <li>
+      <button class="gel-sitemenu__more-button" type="button" aria-expanded="false">
+        Guidelines
+        <svg class="gel-icon gel-icon--text" focusable="false">
+          <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-down"></use>
+        </svg>
+      </button>
+      <div class="gel-sitemenu__more">
+        <div class="gel-sitemenu__more-inner">
+          <ul>
+            <li><a href="#">Foundations</a></li>
+            <li><a href="#">Design patterns</a></li>
+            <li><a href="#">How-tos</a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li><a href="#">Articles</a></li>
+    <li><a href="#">About UX&amp;D</a></li>
+  </ul>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.gel && gel.SiteMenu.init();
+
+    var menuElem = document.querySelector('.gel-sitemenu');
+    var menu = new gel.SiteMenu.constructor(menuElem);
+  });
+</script>

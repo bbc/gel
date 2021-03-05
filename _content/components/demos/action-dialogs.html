@@ -1,0 +1,60 @@
+---
+title: Action dialogs
+---
+
+<div id="my-action-dialog__1" class="gel-action-dialog" role="dialog" aria-labelledby="my-action-dialog__label-1"
+  aria-describedby="my-action-dialog__desc-1">
+  <h3 id="my-action-dialog__label-1" class="gel-action-dialog__title">Add to enjoy later</h3>
+  <div id="my-action-dialog__desc-1" class="gel-action-dialog__content">
+    <p>Sign in to add to My Programmes and enjoy it later on other devices</p>
+  </div>
+  <div class="gel-action-dialog__buttons">
+    <a href="#/path/to/sign-in">Sign in</a>
+    or
+    <a href="#/path/to/register">Register</a>
+  </div>
+  <button class="gel-action-dialog__close">
+    <span class="gel-sr">close</span>
+    <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+      <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-no"></use>
+    </svg>
+  </button>
+</div>
+
+<div id="my-action-dialog__2" class="gel-action-dialog" role="dialog" aria-labelledby="my-action-dialog__label-2"
+  aria-describedby="my-action-dialog__desc-2">
+  <h3 id="my-action-dialog__label-2" class="gel-action-dialog__title">Add to enjoy later</h3>
+  <div id="my-action-dialog__desc-2" class="gel-action-dialog__content">
+    <p>Sign in to add to My Programmes and enjoy it later on other devices</p>
+  </div>
+  <div class="gel-action-dialog__buttons">
+    <a href="#/path/to/sign-in">Sign in</a>
+    or
+    <a href="#/path/to/register">Register</a>
+  </div>
+  <button class="gel-action-dialog__close">
+    <span class="gel-sr">close</span>
+    <svg class="gel-icon gel-icon--text" focusable="false" aria-hidden="true">
+      <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-no"></use>
+    </svg>
+  </button>
+</div>
+
+<p><button class="gel-button gel-button--primary" id="gel-action-dialog__invoker-1">Open action dialog (bottom)</button></p>
+<p><button class="gel-button gel-button--primary" id="gel-action-dialog__invoker-2">Open action dialog (center)</button></p>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+    window.gel && gel.ActionDialog.init();
+
+    // Example 1: Dialog aligned to bottom of screen
+    var dialogBottomElem = document.getElementById('my-action-dialog__1');
+    var dialogBottomInvoker = document.getElementById('gel-action-dialog__invoker-1');
+    var d1 = new gel.ActionDialog.constructor(dialogBottomElem, dialogBottomInvoker);
+
+    // Example 2: Dialog centered in viewport
+    var dialogCenterElem = document.getElementById('my-action-dialog__2');
+    var dialogCenterInvoker = document.getElementById('gel-action-dialog__invoker-2');
+    var d2 = new gel.ActionDialog.constructor(dialogCenterElem, dialogCenterInvoker, true);
+  });
+</script>

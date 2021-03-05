@@ -1,0 +1,882 @@
+/**
+ * site settings
+ */
+
+$gel-grid-enable--markup-output: true;
+$gel-grid-enable--1280-breakpoint: true;
+$gel-grid-enable--box-sizing: true;
+
+$gel-type-enable--markup-output: true;
+$gel-type-enable--font-family: false;
+$gel-type-enable--base-elements: true;
+
+/**
+ * gel atoms
+ */
+@import 'atoms/animations';
+@import 'atoms/colours';
+@import 'atoms/gel-z-index';
+@import 'atoms/sr';
+
+/**
+ * dependencies
+ */
+@import "gel-foundations";
+@import "components/common/util";
+@import "components/common/mixins";
+
+@media (min-width: 56.25em) {
+  .gel-pull__right\@l {
+    text-align: right !important;
+  }
+}
+
+$gel-color--brand: #397cb8;
+
+html {
+  font-size: 1.11rem;
+  font-size: calc(1rem + 0.15vw);
+}
+
+div#gel-app {
+  @include gel-typography('body-copy');
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    font-size: 62.5%;
+    font-family: Arial,Helvetica,freesans,sans-serif;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+main:focus {
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.geltags-body-copy {
+  a {
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid $gel-color--link-underline;
+  }
+
+  a:hover {
+    color: $gel-color--brand;
+    border-bottom: 1px solid $gel-color--brand;
+    transition: 300ms;
+  }
+
+  h1, h2, h3, h4, h5, h6, li {
+    a {
+      border-bottom:  1px solid transparent;
+    }
+    a:hover {
+      border-bottom: 1px solid $gel-color--brand;
+    }
+  }
+
+  h2 {
+    border-top: 1px solid #ccc;
+    padding-top: 30px;
+    margin-top: 64px;
+  }
+}
+
+.geltags-link--last-word {
+  white-space: nowrap;
+}
+
+.geltags-icon--inline-text {
+  height: 0.75em;
+  width: 0.75em;
+  left: 0;
+  top: 0.3em;
+  margin-left: 0.2em;
+  padding-top: 0.055em;
+}
+
+.orb-nav-pri a:hover {
+  color: inherit;
+}
+
+/* Type Styles for the Code GEL website body */
+.geltags-body, .geltags-article-body {
+  @include gel-typography('body-copy');
+
+  h1 {
+    @include gel-typography('canon-bold');
+    font-weight: 800;
+    letter-spacing: normal;
+    margin-top: $gel-alt-spacing-unit;
+    margin-bottom: $gel-alt-spacing-unit;
+  }
+
+  h2 {
+    @include gel-typography('trafalgar-bold');
+    letter-spacing: normal;
+    padding-top: triple($gel-alt-spacing-unit) - 4;
+    margin-top: double($gel-alt-spacing-unit);
+    margin-bottom: triple($gel-spacing-unit);
+  }
+
+  h3 {
+    @include gel-typography('great-primer-bold');
+    letter-spacing: normal;
+    margin-top: double($gel-spacing-unit) + 4;
+    margin-bottom: $gel-alt-spacing-unit;
+  }
+
+  h4 {
+    @include gel-typography('pica-bold');
+    letter-spacing: normal;
+    margin-top: double($gel-spacing-unit) + 4;
+    margin-bottom: $gel-alt-spacing-unit;
+  }
+
+  p {
+    margin-bottom: double($gel-spacing-unit);
+    @include mq($from: gel-bp-xxl) {
+      margin-bottom: double($gel-spacing-unit) + 4;
+    }
+  }
+
+  code.prettyprint {
+    display: block;
+    overflow-x: auto;
+    color: #333;
+    background: #f8f8f8;
+    font-size: 90%;
+    padding: quadruple($gel-spacing-unit);
+  }
+}
+
+.geltags-feedback-banner {
+    margin-top: 192px;
+}
+
+/*
+ * Use full font if JavaScript has put b-reith-sans-loaded on the <html> element.
+ *
+ * 1. Override gel-typography classes which set negative letter spacing as this
+ *    is no longer require in the new font. This code should be removed once all
+ *    products are using the new font and should be moved to the gel-typography
+ *    code base. https://jira.dev.bbc.co.uk/browse/GELWEB-847
+ */
+
+/*
+ */
+
+/* are there other fonts we can use as fallbacks here? */
+
+.serif
+{
+  font-family: "Times New Roman", serif;
+}
+
+.b-reith-loaded .serif
+{
+  @include reith(true);
+}
+
+.sans
+{
+  font-family: Helvetica, Arial, freesans, sans-serif;
+}
+
+.b-reith-sans-loaded .sans
+{
+  @include reith(false);
+}
+
+
+// Rules to hide/show elements depending on nonJS version
+.noscriptElement {
+  display: none;
+}
+
+.noscript {
+  .noscriptElement {
+    display: block;
+  }
+}
+
+.noscript {
+  .geltags-enhanced {
+    display: none;
+  }
+}
+
+/*
+ * gel styles
+ */
+
+/* header */
+
+.geltags-logo {
+  display: inline-block;
+  font-size: 46px;
+  font-weight:700;
+  color:#404040;
+  letter-spacing: -1.3333px;
+}
+@media (max-width: 37.5em) {
+  .geltags-logo {
+    margin-left: -8px;
+  }
+}
+
+.geltags-header {
+    background: #fff;
+    padding: 8px 0 3px 0;
+    border-bottom: 1px solid #dcdcdc
+}
+.geltags-header .gel-wrap {
+  padding-left: 8px !important;
+}
+
+.geltags-header__banner {
+  padding: 24px 0 16px;
+  border-bottom: 1px solid #dcdcdc;
+  margin-bottom: 24px;
+}
+
+.geltags-header__data {
+    margin-top: 24px
+}
+
+.geltags-header__title {
+    margin: 12px 0 24px;
+    font-size: 28px;
+    font-size: 1.75rem;
+    line-height: 32px;
+    line-height: 2rem;
+    font-weight: 700;
+    font-weight: 800
+}
+
+@media (min-width: 20em) {
+    .geltags-header__title {
+        font-size:32px;
+        font-size: 2rem;
+        line-height: 36px;
+        line-height: 2.25rem
+    }
+}
+
+@media (min-width: 37.5em) {
+    .geltags-header__title {
+        font-size:52px;
+        font-size: 3.25rem;
+        line-height: 56px;
+        line-height: 3.5rem
+    }
+
+    .no-touch .geltags-header__title {
+        font-size: 44px;
+        font-size: 2.75rem;
+        line-height: 48px;
+        line-height: 3rem
+    }
+}
+
+/* good and bad */
+
+.circular {
+    display: inline-block;
+    position: relative;
+    top: -1px;
+    margin-right: 4px;
+    width: 21px;
+    line-height: 21px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 13px;
+    color: white;
+    background: #333;
+    font-family: "Lucida Sans Unicode", "Arial Unicode MS", Verdana, "Verdana Ref", sans-serif !important;
+}
+
+.circular__good {
+  background: #789e42;
+}
+.circular__bad {
+  background: #bb3626;
+}
+
+/* breakout */
+
+.geltags-breakout-box {
+    background: #eee;
+    padding: 8px;
+    margin: 20px 0 32px 0;
+    width: 100%
+}
+
+.geltags-breakout-box.extra-padding {
+    padding: 16px 16px 16px 18px
+}
+.geltags-breakout-box.extra-margin {
+    margin-top: 18px;
+}
+
+.geltags-breakout-box h4 {
+    margin-top: 8px;
+    margin-bottom: 8px
+}
+
+.geltags-breakout-box a {
+  border-bottom-color: $gel-color--tundora;
+}
+
+.geltags-breakout-box p {
+    margin: 0;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 15px;
+    font-size: .9375rem;
+    line-height: 18px;
+    line-height: 1.125rem;
+    color: #404040;
+}
+.b-reith-sans-loaded .geltags-breakout-box p {
+    @include reith(false, true);
+}
+
+@media (min-width: 37.5em) {
+    .geltags-breakout-box p {
+        line-height:20px;
+        line-height: 1.25rem
+    }
+
+    .no-touch .geltags-breakout-box p {
+        font-size: 14px;
+        font-size: .875rem;
+        line-height: 18px;
+        line-height: 1.25rem
+    }
+}
+
+.geltags-breakout-box__icon {
+    float: left;
+    display: inline;
+    margin-right: 8px;
+    position: relative;
+    top: 1px
+}
+
+.geltags-standout-box {
+  background: #eee;
+  width: 100%;
+  overflow: auto;
+  zoom: 1;
+  padding: double($gel-spacing-unit);
+  @include gel-typography('brevier');
+  dt, dd {
+    float: left;
+    line-height: 150%;
+  }
+  dt {
+    clear:both;
+    font-weight: bold;
+  }
+  dd {
+    margin-inline-start: 8px;
+  }
+}
+
+/* toc */
+
+.geltags-toc {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+@media (min-width: 900px) {
+  #side-nav {
+    padding-top: 4 * $gel-spacing-unit + 4;
+  }
+}
+.geltags-toc li {
+  margin-bottom: 2px;
+}
+
+.geltags-toc a {
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 160%;
+  border-bottom: 1px solid transparent
+}
+.geltags-toc a:hover,
+.geltags-toc a:focus,
+.geltags-toc li.active a {
+  color: $gel-color--brand;
+  transition: .3s
+}
+
+.geltags-toc a:hover {
+  border-bottom: 1px solid $gel-color--brand;
+  transition: .3s
+}
+
+/* figures */
+
+figcaption {
+  font-style: italic;
+  text-align: center;
+}
+
+* + figcaption {
+  margin-top: 1rem;
+}
+
+figcaption + * {
+  margin-top: 1rem;
+}
+
+/* icon */
+
+.geltags-icon {
+    fill: currentColor
+}
+
+.geltags-icon--small {
+    height: 16px;
+    width: 16px
+}
+
+.geltags-icon--medium {
+    height: 32px;
+    width: 32px
+}
+
+.geltags-icon--large {
+    height: 64px;
+    width: 64px
+}
+
+.geltags-icon--text {
+    margin-top: .1em;
+    height: 1em;
+    width: 1em;
+    vertical-align: text-top
+}
+
+/* snippet */
+
+pre {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  tab-size: 2;
+}
+
+/* body-copy */
+
+.b-reith-loaded .geltags-body-copy {
+  p, ol, ul {
+    @include reith(true);
+  }
+}
+
+.geltags-body-copy {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 20px;
+  line-height: 1.25rem;
+}
+
+@media (min-width: 20em) {
+  .geltags-body-copy {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 22px;
+    line-height: 1.375rem;
+  }
+}
+
+@media (min-width: 37.5em) {
+  .geltags-body-copy {
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 24px;
+    line-height: 1.5rem;
+  }
+  .no-touch .geltags-body-copy {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 22px;
+    line-height: 1.375rem;
+  }
+}
+
+body {
+  font-family: Helvetica, Arial, freesans, sans-serif;
+}
+
+
+/* button */
+
+.geltags-button {
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-size: .9375rem;
+    font-weight: 800 !important;
+    line-height: 18px;
+    line-height: 1.125rem;
+    margin: 16px 0;
+    padding: 16px;
+    text-decoration: none
+}
+.b-reith-sans-loaded .geltags-button {
+    font-family: ReithSans;
+}
+a.geltags-button:hover {
+    color: white;
+}
+
+@media (min-width: 37.5em) {
+    .geltags-button {
+        line-height:20px;
+        line-height: 1.25rem
+    }
+
+    .no-touch .geltags-button {
+        font-size: 14px;
+        font-size: .875rem;
+        line-height: 18px;
+        line-height: 1.125rem
+    }
+}
+
+.geltags-button:hover:not(.is-disabled) {
+    text-decoration: none
+}
+
+.geltags-button.is-disabled {
+    cursor: default;
+    opacity: .6
+}
+
+.geltags-button.geltags-button--primary {
+    background: transparent;
+    border-color: #5a5a5a;
+    color: #404040;
+    transition: background-color .2s ease
+}
+
+.geltags-button.geltags-button--primary:hover {
+    transition: .3s;
+    border: 1px solid #397cb8;
+    color: #397cb8
+}
+
+.geltags-button.geltags-button--primary:hover .geltags-button__content {
+    text-decoration: none;
+    border-bottom: 1px solid #397cb8;
+    transition: border-bottom .3s
+}
+
+.geltags-button__content {
+    border-bottom: 1px solid transparent;
+    margin-right: 12px;
+    float: left
+}
+
+.geltags-button--secondary {
+    border-color: #404040;
+    color: #404040;
+    background: transparent
+}
+
+.geltags-button--light {
+    border-color: #fff;
+    color: #fff;
+    background: transparent
+}
+
+.geltags-button--light:hover {
+    transition: .3s
+}
+
+.geltags-button--light:hover .geltags-button__content {
+    text-decoration: none;
+    border-bottom: 1px solid #fff;
+    transition: border-bottom .3s
+}
+
+.geltags-button--minor {
+    background: transparent
+}
+
+.geltags-button--dark {
+  text-decoration: none;
+  background: #121212;
+  color: #fff
+}
+
+.geltags-button--dark:hover:not(.is-disabled) {
+    text-decoration: underline;
+}
+
+.geltags-button--danger {
+    background: #e4134f;
+    color: #fff
+}
+
+.geltags-button--danger:hover:not(.is-disabled) {
+    background: #b50f3f
+}
+
+.geltags-input {
+    border: 1px solid #121212;
+    padding: 12px;
+    width: 100%;
+    background: #fff;
+    font-size: 15px;
+    font-size: .9375rem;
+    line-height: 20px;
+    line-height: 1.25rem
+}
+
+@media (min-width: 20em) {
+    .geltags-input {
+        font-size:16px;
+        font-size: 1rem;
+        line-height: 20px;
+        line-height: 1.25rem
+    }
+}
+
+@media (min-width: 37.5em) {
+    .geltags-input {
+        font-size:18px;
+        font-size: 1.125rem;
+        line-height: 22px;
+        line-height: 1.375rem
+    }
+
+    .no-touch .geltags-input {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 20px;
+        line-height: 1.25rem
+    }
+}
+
+/* feedback banner */
+
+.geltags-feedback-banner {
+    background-color: #ffdc48;
+    color: #404040;
+    padding: 32px 0;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 22px;
+    line-height: 1.375rem
+}
+
+@media (min-width: 37.5em) {
+    .geltags-feedback-banner {
+        font-size:21px;
+        font-size: 1.3125rem;
+        line-height: 24px;
+        line-height: 1.5rem
+    }
+
+    .no-touch .geltags-feedback-banner {
+        font-size: 20px;
+        font-size: 1.25rem
+    }
+}
+
+.geltags-feedback-banner p {
+    max-width: 600px;
+    margin-top: 0
+}
+
+.geltags-feedback-banner__icon {
+    padding-bottom: 24px;
+    margin-top: 24px
+}
+
+.geltags-feedback-banner__icon svg {
+    width: 72px;
+    height: 72px
+}
+
+.geltags-feedback-banner__title {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 24px;
+    line-height: 1.5rem;
+    font-weight: 700;
+    letter-spacing: normal;
+    font-stretch: 100%;
+    margin-bottom: 16px;
+    margin-top: 24px
+}
+
+@media (min-width: 20em) {
+    .geltags-feedback-banner__title {
+        font-size:24px;
+        font-size: 1.5rem;
+        line-height: 28px;
+        line-height: 1.75rem
+    }
+}
+
+@media (min-width: 37.5em) {
+    .geltags-feedback-banner__title {
+        font-size:36px;
+        font-size: 2.25rem;
+        line-height: 40px;
+        line-height: 2.5rem
+    }
+
+    .no-touch .geltags-feedback-banner__title {
+        font-size: 32px;
+        font-size: 2rem;
+        line-height: 36px;
+        line-height: 2.25rem
+    }
+}
+
+.geltags-feedback-banner__cta {
+    margin-top: 16px;
+    margin-bottom: 16px
+}
+
+.geltags-feedback-banner__cta .geltags-button__icon {
+    height: 16px;
+    width: 16px;
+    position: relative
+}
+
+.geltags-feedback-banner__cta .geltags-button__icon svg {
+    position: absolute;
+    top: 2px;
+    left: 0
+}
+
+a.geltags-button.geltags-button__link-button {
+    font-size: 15px;
+    font-size: .9375rem;
+    line-height: 18px;
+    line-height: 1.125rem;
+    font-weight: 700;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center
+}
+
+@media (min-width: 37.5em) {
+    a.geltags-button.geltags-button__link-button {
+        line-height:20px;
+        line-height: 1.25rem
+    }
+
+    .no-touch a.geltags-button.geltags-button__link-button {
+        font-size: 14px;
+        font-size: .875rem;
+        line-height: 18px;
+        line-height: 1.125rem
+    }
+}
+
+
+/* two-colum definition list */
+@media (min-width: 37.5em) {
+  dl.geltags-2col-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    font-family: "Times New Roman", serif;
+  }
+  .b-reith-loaded dl.geltags-2col-list {
+      font-family: ReithSerif !important;
+  }
+
+  dl.geltags-2col-list dt {
+    padding: 1rem 0;
+    flex: 0 0 35%;
+    overflow: hidden; /* Prevents long words in labels from causing layout to break */
+  }
+
+  dl.geltags-2col-list dd {
+    padding: 1rem 0 1rem 0;
+    margin-left: 0;
+    flex: 65% 0 0;
+    padding-left: 1rem;
+    max-width: 65%; /* Fix for IE issue in which box-sizing is not taken into account when using flex */
+  }
+
+  dl.geltags-2col-list dd + dd {
+    margin-left: 35%;
+  }
+
+  dl.geltags-2col-list dt {
+    flex: 0 0 25%;
+  }
+  dl.geltags-2col-list dd {
+    flex: 75% 0 0;
+    max-width: 75%;
+  }
+  dl.geltags-2col-list dd + dd {
+    margin-left: 25%;
+  }
+
+  dl.geltags-2col-list *, dl.geltags-2col-list *:after, dl.geltags-2col-list *:before {
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 37.5em) {
+  dl.geltags-2col-list dt {
+    padding-top: 1rem;
+  }
+  dl.geltags-2col-list dd {
+    margin-left: 0;
+  }
+  dl.geltags-2col-list dd + dd {
+    margin-left: 0;
+  }
+}
+
+/* hacks */
+
+hr.footnotes-sep {
+  display: none;
+}
+
+.footnotes-list a {
+  word-break: break-all;
+}
+
+sup.footnote-ref {
+  margin: -8px 4px 0 4px;
+  display: inline-block;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  border: 2px solid;
+  padding: 0.5rem;
+}

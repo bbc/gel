@@ -42,9 +42,10 @@ function compileHtml() { return exec('npm run html'); }
 // Watch all relevant files and assign tasks to be
 // completed in a series when any of them change.
 
-watch('./src/**/*.{md,html,json,njk}', series(compileHtml, reload));
-watch('./src/_includes/scss/**/*.scss', series(compileSass, compileHtml, reload));
-watch('./src/_includes/js/**/*.js', series(compileJs, compileHtml, reload));
+watch('./_content/**/*.{md,html}', series(compileHtml, reload));
+watch('./_site/templates/**/*.njk', series(compileHtml, reload));
+watch('./_site/includes/scss/**/*.scss', series(compileSass, compileHtml, reload));
+watch('./_site/includes/js/**/*.js', series(compileJs, compileHtml, reload));
 
 
 // PUBLIC TASKS
@@ -52,5 +53,6 @@ watch('./src/_includes/js/**/*.js', series(compileJs, compileHtml, reload));
 
 // When the following task is run: compile sass, js and html concurrently,
 // then start the server, open the browser and watch all relevant files.
-
-exports.default = series(parallel(compileSass, compileJs, compileHtml), serve);
+exports.serve = serve;
+exports.watch = series(parallel(compileSass, compileJs, compileHtml), serve);
+exports.default = exports.watch;

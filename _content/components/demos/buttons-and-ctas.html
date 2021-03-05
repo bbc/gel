@@ -1,0 +1,45 @@
+---
+title: Buttons and CTAs
+---
+
+<h3>Basic button</h3>
+
+<button class="gel-button" type="button" onClick="alert('Basic button clicked')">Download</button>
+
+<h3>Button with icon</h3>
+
+<button class="gel-button" type="button" onClick="alert('Button with icon clicked')">
+  <span class="gel-button__label">Download</span><svg aria-hidden="true" focusable="false" class="gel-button__icon gel-icon gel-icon--text">
+    <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-download"></use>
+  </svg>
+</button>
+
+<h3>Switch button with <code>aria-pressed</code></h3>
+
+<button class="gel-button gel-button-switch">
+  <span class="gel-button__label">Night theme</span>
+  <span aria-hidden="true">on</span>
+</button>
+
+<h3 id="basic-cta">Basic CTA</h3>
+
+<a class="gel-cta" href="#basic-cta">Help</a>
+
+<h3 id="cta-with-icon">CTA with icon</h3>
+
+<a class="gel-cta" href="#cta-with-icon">
+  <svg aria-hidden="true" focusable="false" class="gel-button__icon gel-icon gel-icon--text">
+    <use xlink:href=" /gel/static/images/gel-icons-all.svg#gel-icon-help"></use>
+  </svg><span class="gel-button__label">Help</span>
+</a>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.gel && gel.Switch.init();
+
+    // Initialize switch button
+    var switchElem = document.querySelector('.gel-button-switch');
+    var switchButton = new gel.Switch.constructor(switchElem);
+  });
+</script>

@@ -16,9 +16,7 @@
     <meta name="version_number" content="1.0">
 
     <script src="/gel/static/js/site.js"></script>
-
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <link rel="stylesheet" type="text/css" href="/gel/static/css/gel.css">
     <link rel="stylesheet" type="text/css" href="/gel/static/css/site.css">
 
@@ -40,11 +38,6 @@
         } catch (e) {
             console.log('Reith fonts did not load within 5 seconds.');
         }
-    </script>
-
-    <script type="text/javascript">
-        // syntax highlight
-        hljs.initHighlightingOnLoad();
     </script>
 
     
@@ -119,12 +112,12 @@
 <p>The construction of GEL's <strong>Share tools</strong> must, therefore, be both unobtrusive and ergonomic. The implementation to follow is easy to avoid and dismiss, but not difficult to locate or operate.</p>
 <h2 id="recommended-markup">Recommended markup</h2>
 <p>Omitting the individual social media buttons for the time being, let's explore the outer structure:</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sharetools"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"gel-sharetools__label"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"gel-sharetools__label"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>Share this<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#gel-sharetools__end"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr gel-sr__focusable"</span>&gt;</span>Skip sharing<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- list of social media buttons here --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr gel-sr__focusable"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"gel-sharetools__end"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span>&gt;</span>End of sharing tools<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
+<pre><code class="prettyprint syntax-html">&lt;aside class=&quot;gel-sharetools&quot; aria-labelledby=&quot;gel-sharetools__label&quot;&gt;
+  &lt;h3 id=&quot;gel-sharetools__label&quot; aria-hidden=&quot;true&quot;&gt;Share this&lt;/h3&gt;
+  &lt;a href=&quot;#gel-sharetools__end&quot; class=&quot;gel-sr gel-sr__focusable&quot;&gt;Skip sharing&lt;/a&gt;
+  &lt;!-- list of social media buttons here --&gt;
+  &lt;div class=&quot;gel-sr gel-sr__focusable&quot; id=&quot;gel-sharetools__end&quot; tabindex=&quot;-1&quot;&gt;End of sharing tools&lt;/div&gt;
+&lt;/aside&gt;
 </code></pre>
 <ul>
 <li><strong><code>&lt;aside&gt;</code>:</strong> <strong>Share tools</strong> should be encapsulated in a complementary landmark (<code>&lt;aside&gt;</code>) with a label similar to &quot;Share this&quot; or &quot;Sharing&quot;. This makes them easily discoverable and identifiable in screen reader landmark navigation.</li>
@@ -136,14 +129,14 @@
 <h3 id="individual-tools">Individual tools</h3>
 <p>The social media buttons themselves are members of a list. List semantics (<code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code>) communicate important information to screen reader users, such as the number of items present, and enable navigation shortcuts.</p>
 <p>Here is the Twitter Share tool, for example:</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-button"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/external/Twitter/API"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sr"</span>&gt;</span>Twitter, share this, external<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"path/to/gel-icons-social.svg#gel-icon-twitter"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<pre><code class="prettyprint syntax-html">&lt;li&gt;
+  &lt;a class=&quot;gel-button&quot; href=&quot;path/to/external/Twitter/API&quot; target=&quot;_blank&quot;&gt;
+    &lt;span class=&quot;gel-sr&quot;&gt;Twitter, share this, external&lt;/span&gt;
+    &lt;svg class=&quot;gel-icon gel-icon--text&quot; focusable=&quot;false&quot; aria-hidden=&quot;true&quot;&gt;
+      &lt;use xlink:href=&quot;path/to/gel-icons-social.svg#gel-icon-twitter&quot;&gt;&lt;/use&gt;
+    &lt;/svg&gt;
+  &lt;/a&gt;
+&lt;/li&gt;
 </code></pre>
 <ul>
 <li><strong><code>class=&quot;gel-sr&quot;</code>:</strong> This class visually hides the textual label without making it unavailable to assistive technologies. The commas in the text itself produce pauses in the output, making it easier to understand. The <em>&quot;external&quot;</em> part warns screen reader users that <code>target=&quot;_blank&quot;</code> will change their context to a new page and UI.</li>
@@ -151,15 +144,15 @@
 </ul>
 <h3 id="information-panel">Information panel</h3>
 <p>As set out in <a href="https://www.bbc.co.uk/gel/guidelines/share-tools">GEL's <strong>Share tools</strong> documentation</a>, the final item in the list of tools secrete an <a href="../info-panels"><strong>Information panel</strong></a>. This contains a <code>class=&quot;gel-sharetools__complete&quot;</code> element comprising a complete set of social media buttons (including those not featured outside the <strong>Information panel</strong>) and the option to copy the host page's link from an input element.</p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sharetools__complete"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sharetools__options"</span>&gt;</span>
-    <span class="hljs-comment">&lt;!-- all sharing buttons --&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sharetools__link"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"gel-sharetools__link-input"</span>&gt;</span>Copy this link<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-sharetools__link-input"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"gel-sharetools__link-input"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"http://bbc.in/3x4mp1e"</span> <span class="hljs-attr">readonly</span> /&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<pre><code class="prettyprint syntax-html">&lt;div class=&quot;gel-sharetools__complete&quot;&gt;
+  &lt;ul class=&quot;gel-sharetools__options&quot;&gt;
+    &lt;!-- all sharing buttons --&gt;
+  &lt;/ul&gt;
+  &lt;div class=&quot;gel-sharetools__link&quot;&gt;
+    &lt;label for=&quot;gel-sharetools__link-input&quot;&gt;Copy this link&lt;/label&gt;
+    &lt;input class=&quot;gel-sharetools__link-input&quot; type=&quot;text&quot; id=&quot;gel-sharetools__link-input&quot; value=&quot;http://bbc.in/3x4mp1e&quot; readonly /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 </code></pre>
 <ul>
 <li><strong><code>for</code> and <code>id</code>:</strong> The <em>&quot;Copy this link&quot;</em> label's <code>for</code> must match that of the input's <code>id</code> to associate it with the input. All <code>id</code>s must be unique; if there is more than one <strong>Share tools</strong> component on the page, make sure each instance's <code>id</code>s differ.</li>
@@ -168,44 +161,43 @@
 <h2 id="recommended-layout">Recommended layout</h2>
 <h3 id="the-horizontal-list">The horizontal list</h3>
 <p>The <code>&lt;ul&gt;</code> of tools appears directly after the heading (<code>role=&quot;presentation&quot;</code>) element. The items receive a margin on all sides, meaning there is a visible gap between items however they wrap. The excess margin is removed using a negative margin on the parent <code>&lt;ul&gt;</code>. This ensures the subcomponent does not show an indentation on either side.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gel-sharetools__options</span> {
-  <span class="hljs-attribute">display</span>: flex;
-  <span class="hljs-attribute">flex-wrap</span>: wrap;
-  <span class="hljs-attribute">margin</span>: -<span class="hljs-number">0.125rem</span>; <span class="hljs-comment">/* excess margin removed */</span>
+<pre><code class="prettyprint syntax-css">.gel-sharetools__options {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.125rem; /* excess margin removed */
 }
 
-<span class="hljs-selector-class">.gel-sharetools__options</span> &gt; <span class="hljs-selector-tag">li</span> {
-  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0.125rem</span>; <span class="hljs-comment">/* margin added */</span>
+.gel-sharetools__options &gt; li {
+  margin: 0.125rem; /* margin added */
 }
 </code></pre>
 <h3 id="the-skip-link">The skip link</h3>
 <p>The skip link (<em>&quot;Skip sharing&quot;</em>) takes the classes <code>gel-sr</code> and <code>gel-sr__focusable</code>. The first hides the link visually, but does not remove it from focus order. The second ensures the link appears <em>when</em> it is focused. Only keyboard users (including screen reader users) will be aware of the link.</p>
 <h3 id="the-information-panel">The Information panel</h3>
-<p>The expected layout of the <strong>Information panel</strong> is documented with the <a href="../info-panel"><strong>Information panel</strong> component</a>.</p>
+<p>The expected layout of the <strong>Information panel</strong> is documented with the <a href="../info-panels"><strong>Information panel</strong> component</a>.</p>
 <h3 id="high-contrast">High contrast</h3>
 <p>How the component looks with a <a href="https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode">Windows High Contrast Mode</a> theme active.</p>
-<p><img src="/gel/static/images/hcm_share_tools.png" alt="Borders make the buttons visible"></p>
+<p><img src="../../static/images/hcm_share_tools.png" alt="Borders make the buttons visible"></p>
 <h2 id="recommended-behaviour">Recommended behaviour</h2>
 <p><strong>Share tools</strong> consists of a list of external links, which open social media platforms' respective pages in new tabs. As described in <a href="#expected-markup">Expected markup</a>, screen reader users are forewarned about this change in context by each link's visually hidden label being appended with <em>&quot;external&quot;</em>.</p>
 <p>Keyboard users (including screen reader users) traversing the page will first encounter the skip link (reading <em>&quot;Skip sharing&quot;</em> in the reference implementation). This link will be revealed visually upon being focused. Users wishing to bypass the <strong>Share tools</strong> can activate the link. Screen reader users will hear <em>&quot;End of sharing tools&quot;</em> as the target element is focused. Sighted keyboard users will see the focused element appear, including the focus style. From there, the user can continue down the page, focusing the remainder of interactive elements sequentially.</p>
 <h3 id="the-link-input">The link input</h3>
 
-            <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-info-information-panel-behaviour">
-              <h4 id="aside-info-information-panel-behaviour" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Information panel behaviour</h4><div><p>The interaction behaviour of the <strong>Information panel</strong> is covered in the <a href="../info-panel">Information panel documentation</a>.</p>
+                    <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-info-information-panel-behaviour">
+                    <h4 id="aside-info-information-panel-behaviour" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Information panel behaviour</h4><div><p>The interaction behaviour of the <strong>Information panel</strong> is covered in the <a href="../info-panels">Information panel documentation</a>.</p>
 </aside><p>The experience of copying the link from the <code>class=&quot;gel-sharetools__link-input&quot;</code> element is aided slightly by selecting the input's value and copying it to the clipboard on focus. The script for this behaviour is embedded in the demonstration page:</p>
-<pre class="hljs"><code><span class="hljs-keyword">var</span> copyLink = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.gel-sharetools__link-input'</span>);
-copyLink.addEventListener(<span class="hljs-string">'focus'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+<pre><code class="prettyprint syntax-js">var copyLink = document.querySelector('.gel-sharetools__link-input');
+copyLink.addEventListener('focus', function () {
   copyLink.select();
-  <span class="hljs-built_in">document</span>.execCommand(<span class="hljs-string">'copy'</span>);
+  document.execCommand('copy');
 });
 </code></pre>
 <p>This behaviour is in place for those who perceive the <em>&quot;Copy this link&quot;</em> label as a control. Clicking a label focuses its associated form element. The cited JavaScript does not prevent the user from selecting and copying the link/value manually.</p>
 <h2 id="reference-implementation">Reference implementation</h2>
 
-            <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-alert-important">
-              <h4 id="aside-alert-important" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
-</aside>
-          <div class="geltags-demo"><!-- 
+                    <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-alert-important">
+                    <h4 id="aside-alert-important" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+</aside><div class="geltags-demo"><!-- 
 title: Share tools
  -->
 
@@ -325,10 +317,7 @@ title: Share tools
       document.execCommand('copy');
     });
   });
-</script></div>
-        
-          <p><a class="gel-cta gel-long-primer-bold" href="../demos/share-tools/" target="_new"><span class="gel-button__label">Open in new window</span><svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
-        <h2 id="related-research">Related research</h2>
+</script></div><p><a class="gel-cta gel-long-primer-bold" href="../demos/share-tools/" target="_new"><span class="gel-button__label">Open in new window</span><svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p><h2 id="related-research">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
 <h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
 <hr class="footnotes-sep">
@@ -371,19 +360,7 @@ title: Share tools
         <div class="gel-wrap">
             <div class="gel-layout">
                 <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
-                    <p><small>Copyright &copy; 2020 BBC. This content is published under the Open Government Licence, unless otherwise noted.</small></p>
-                    <!--h2 class="geltags-feedback-banner__title">Got a minute?</h2>
-                    <p>We'd love to know what you think of our website.</p>
-                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/"
-                        class="geltags-button geltags-button__link-button geltags-feedback-banner__cta geltags-button--primary">
-                        <span class="geltags-button__content">Go to survey</span>
-                        <span class="geltags-button__icon_wrapper">
-                            <svg class="geltags-button__icon geltags-icon geltags-icon--text">
-                                <use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"
-                                    style="fill:undefined;"></use>
-                            </svg>
-                        </span>
-                    </a-->
+                    <p><small>Copyright &copy; 2021 BBC. This content is published under the Open Government Licence, unless otherwise noted.</small></p>
                 </div>
             </div>
         </div>

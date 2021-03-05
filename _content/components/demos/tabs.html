@@ -1,0 +1,35 @@
+---
+title: Tabs
+---
+
+<h2>Tabs Example</h2>
+<div style="margin-bottom: 1rem;">
+  <div class="gel-tabs">
+    <ul>
+      <li><a href="#section1">Section 1</a></li>
+      <li><a href="#section2">Section 2</a></li>
+      <li><a href="#section3">Section 3</a></li>
+    </ul>
+    <section id="section1" tabindex="-1">
+      <h3>Section 1</h3>
+      <p>Content for section 1.</p>
+    </section>
+    <section id="section2" tabindex="-1">
+      <h3>Section 2</h3>
+      <p>Content for section 2.</p>
+    </section>
+    <section id="section3" tabindex="-1">
+      <h3>Section 3</h3>
+      <p>Content for section 3.</p>
+    </section>
+  </div>
+</div>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function (event) {
+    window.gel && gel.Tabs.init();
+
+    var tabsElem = document.querySelector('.gel-tabs');
+    var tabs = new gel.Tabs.constructor(tabsElem);
+  });
+</script>

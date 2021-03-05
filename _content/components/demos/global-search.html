@@ -1,0 +1,177 @@
+---
+title: Global search
+---
+
+<nav class="gel-masthead" aria-labelledby="gel-masthead__label">
+  <span id="gel-masthead__label" hidden>BBC sites</span>
+  <div class="gel-masthead__bar">
+    <div class="gel-masthead__logo">
+      <a href="https://bbc.co.uk">
+        <span class="gel-sr">BBC homepage</span>
+        <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+          <use xlink:href="/gel/static/images/bbc-logo.svg#bbc-logo"></use>
+        </svg>
+      </a>
+    </div>
+    <div class="gel-masthead__account-option">
+      <a href="https://account.bbc.com/account">
+        <span class="gel-sr">Your account,</span>
+        <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+          <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-sign-in"></use>
+        </svg>
+        <span class="gel-masthead__account-text">User</span>
+      </a>
+    </div>
+    <div class="gel-masthead__alerts-option">
+      <a href="#gel-masthead__alerts">
+        <span class="gel-sr">Notifications</span>
+        <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+          <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-alerts"></use>
+        </svg>
+      </a>
+    </div>
+    <div class="gel-masthead__links">
+      <span id="sites-label" hidden>BBC sites</span>
+      <ul aria-labelledby="sites-label">
+        <li><a href="https://www.bbc.co.uk/news">News</a></li>
+        <li><a href="https://www.bbc.co.uk/sport">Sport</a></li>
+        <li><a href="https://www.bbc.co.uk/weather">Weather</a></li>
+        <li><a href="https://www.bbc.co.uk/iplayer">iPlayer</a></li>
+        <li><a href="https://www.bbc.co.uk/sounds">Sounds</a></li>
+        <li><a href="https://www.bbc.co.uk/cbbc">CBBC</a></li>
+      </ul>
+    </div>
+    <div class="gel-masthead__more-option">
+      <a href="#gel-masthead__more">
+        <span class="gel-sr">More</span>
+        <span class="gel-masthead__more-option-text" aria-hidden="true">
+          More
+          <span aria-hidden="true">▾</span>
+        </span>
+        <svg class="gel-masthead__more-option-icon gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+          <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-list"></use>
+        </svg>
+      </a>
+    </div>
+    <div class="gel-masthead__search-option" role="search">
+      <a href="https://www.bbc.co.uk/search">
+        <span>Search</span>
+        <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+          <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-search"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div id="gel-masthead__more" class="gel-masthead__more-menu gel-masthead__popup">
+    <div class="gel-masthead__more-menu-inner">
+      <h2 aria-hidden="true" class="gel-masthead__more-menu-label no-toc">MORE</h2>
+      <ul>
+        <li><a href="https://www.bbc.co.uk/news">News</a></li>
+        <li><a href="https://www.bbc.co.uk/sport">Sport</a></li>
+        <li><a href="https://www.bbc.co.uk/weather">Weather</a></li>
+        <li><a href="https://www.bbc.co.uk/iplayer">iPlayer</a></li>
+        <li><a href="https://www.bbc.co.uk/sounds">Sounds</a></li>
+        <li><a href="https://www.bbc.co.uk/cbbc">CBBC</a></li>
+        <li class="gel-masthead-more-account-link">
+          <a href="https://account.bbc.com/account">
+            <svg class="gel-icon gel-icon--text" aria-hidden="true" focusable="false">
+              <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-sign-in"></use>
+            </svg>
+            Your account
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="gel-masthead__alerts" class="gel-masthead__alerts gel-masthead__popup">
+    <h2 class="no-toc">Notifications</h2>
+    <p>No notifications right now. We'll let you know when something from your favourite programmes, artists and
+      playlists is available for you.</p>
+    <p>If your notifications are turned off, you can always turn them back on. Just go to settings.</p>
+  </div>
+  <div class="gel-masthead__banner">
+    <a href="/" class="gel-masthead__banner-logo">
+      <span class="gel-sr">
+        Homepage
+      </span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 478.2 165.8">
+        <use xlink:href="/gel/static/images/gel-logo.svg#gel-logo"></use>
+      </svg>
+    </a>
+  </div>
+</nav>
+<div class="gel-search gel-global-search" role="search">
+  <form class="gel-search__controls" method="get" action="https://search.bbc.co.uk/search">
+    <label for="search" hidden>Search the BBC</label>
+    <input type="text" id="search" name="search" />
+    <button type="submit">
+      <span class="gel-sr">Search</span>
+      <svg class="gel-icon gel-icon--text" focusable="false">
+        <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-search"></use>
+      </svg>
+    </button>
+    <button type="button" class="gel-search__close">
+      <span class="gel-sr">Close</span>
+      <svg class="gel-icon gel-icon--text" focusable="false">
+        <use xlink:href="/gel/static/images/gel-icons-all.svg#gel-icon-no"></use>
+      </svg>
+    </button>
+  </form>
+  <aside class="gel-search__suggestions" aria-label="Search suggestions" aria-hidden="true" hidden>
+    <h2 class="gel-search__suggestions-label" role="status" aria-live="polite">Suggestions:</h2>
+    <div class="gel-search__suggestions-links"></div>
+  </aside>
+</div>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function (event) {
+    window.gel && gel.Masthead.init();
+
+    var mastheadElem = document.querySelector('.gel-masthead');
+    var masthead = new gel.Masthead.constructor(mastheadElem);
+
+    var globalSearchElem = document.querySelector('.gel-global-search');
+
+    // Dummy suggestions data
+    var globalData = {
+      a: [
+        'Aenean',
+        'Arcu',
+        'Aliquam'
+      ],
+      b: [
+        'Blandit',
+        'Bibendum'
+      ],
+      c: [
+        'Curae',
+        'Curabitur',
+        'Congue',
+        'Cras'
+      ],
+      d: [
+        'Dignissim',
+        'Dictum'
+      ]
+    }
+
+    // Toggle the search region's visibility
+    var openButton = document.querySelector('.gel-masthead__search-option a');
+    gel.Search.toggle(openButton, globalSearchElem);
+
+    // A placeholder function for building the 
+    // suggestions HTML
+    var globalBuildFunction = function (context) {
+      var letter = context.input.value.charAt(0);
+      var hasSuggestions = context.data.hasOwnProperty(letter);
+      if (hasSuggestions) {
+        var listItems = context.data[letter].map(function (l) {
+          return '<li><a href="#">' + l + '</a></li>';
+        }).join('');
+        context.suggestionsLinks.innerHTML = '<ul>' + listItems + '</ul>';
+      }
+    }
+
+    var globalSearch = new gel.Search.constructor(globalSearchElem, globalData, globalBuildFunction);
+  });
+</script>

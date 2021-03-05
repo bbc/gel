@@ -16,9 +16,7 @@
     <meta name="version_number" content="1.0">
 
     <script src="/gel/static/js/site.js"></script>
-
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <link rel="stylesheet" type="text/css" href="/gel/static/css/gel.css">
     <link rel="stylesheet" type="text/css" href="/gel/static/css/site.css">
 
@@ -40,11 +38,6 @@
         } catch (e) {
             console.log('Reith fonts did not load within 5 seconds.');
         }
-    </script>
-
-    <script type="text/javascript">
-        // syntax highlight
-        hljs.initHighlightingOnLoad();
     </script>
 
     
@@ -124,24 +117,24 @@
 <p>For more context, consult the <a href="http://www.bbc.co.uk/gel/guidelines/confirmation-and-error-messages">Confirmation &amp; Error Messages GEL page</a>.</p>
 <h2 id="recommended-markup">Recommended markup</h2>
 <p>In the following example, we imagine the user has tried to add a programme to 'My Programmes'. Since this functionality is only available to authenticated users, an action dialog asks the user to either sign in or register in order to continue.</p>
-<pre class="hljs"><code>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-action-dialog"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"dialog"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"gel-action-dialog__label-1"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"gel-action-dialog__desc-1"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"gel-action-dialog-label__1"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-action-dialog__title"</span>&gt;</span>Add to enjoy later<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"gel-action-dialog-desc__1"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-action-dialog__content"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Sign in to add to My Programmes and enjoy it later on other devices<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-action-dialog__buttons"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#/path/to/sign-in"</span>&gt;</span>Sign in<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<pre><code class="prettyprint syntax-html">  &lt;div class=&quot;gel-action-dialog&quot; role=&quot;dialog&quot; aria-labelledby=&quot;gel-action-dialog__label-1&quot; aria-describedby=&quot;gel-action-dialog__desc-1&quot;&gt;
+    &lt;h3 id=&quot;gel-action-dialog-label__1&quot; class=&quot;gel-action-dialog__title&quot;&gt;Add to enjoy later&lt;/h2&gt;
+    &lt;div id=&quot;gel-action-dialog-desc__1&quot; class=&quot;gel-action-dialog__content&quot;&gt;
+      &lt;p&gt;Sign in to add to My Programmes and enjoy it later on other devices&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;gel-action-dialog__buttons&quot;&gt;
+      &lt;a href=&quot;#/path/to/sign-in&quot;&gt;Sign in&lt;/a&gt;
       or 
-      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#/path/to/register"</span>&gt;</span>Register<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-action-dialog__close"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vh"</span>&gt;</span>close<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gel-icon gel-icon--text"</span> <span class="hljs-attr">focusable</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">"true"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#gel-icon-no"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+      &lt;a href=&quot;#/path/to/register&quot;&gt;Register&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;button class=&quot;gel-action-dialog__close&quot;&gt;
+      &lt;span class=&quot;vh&quot;&gt;close&lt;/span&gt;
+      &lt;svg class=&quot;gel-icon gel-icon--text&quot; focusable=&quot;false&quot; aria-hidden=&quot;true&quot;&gt;
+        &lt;use xlink:href=&quot;#gel-icon-no&quot;&gt;&lt;/use&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
 </code></pre>
 <h3 id="notes">Notes</h3>
 <ul>
@@ -153,41 +146,41 @@
 </ul>
 <h2 id="recommended-layout">Recommended layout</h2>
 <p><strong>Action dialogs</strong> can appear in the center, or at the bottom, of the page. In the <a href="#reference-implementation"><strong>reference implementation</strong></a> they appear at the bottom by default. The <code>fixed</code> position value ensures they cannot be scrolled out of view.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gel-action-dialog</span> {
-  <span class="hljs-attribute">position</span>: fixed;
-  <span class="hljs-attribute">top</span>: auto;
-  <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
-  <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
-  <span class="hljs-attribute">bottom</span>: <span class="hljs-number">0</span>;
+<pre><code class="prettyprint syntax-css">.gel-action-dialog {
+  position: fixed;
+  top: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 </code></pre>
 <p>The center configuration requires a <code>transform</code> to place the element in the vertical center irrespective of its natural height:</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gel-action-dialog__center</span> {
-  <span class="hljs-attribute">top</span>: <span class="hljs-number">50%</span>;
-  <span class="hljs-attribute">bottom</span>: auto;
-  <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;
-  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(-<span class="hljs-number">50%</span>, -<span class="hljs-number">50%</span>);
+<pre><code class="prettyprint syntax-css">.gel-action-dialog__center {
+  top: 50%;
+  bottom: auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 </code></pre>
 <p>With this translation in place, dialogs with considerable content will become obscured at the top and bottom of the viewport. To avoid this, the dialog description element (<code>class=&quot;gel-action-dialog__desc&quot;</code>) is given a <code>max-height</code> and allowed to scroll vertically:</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gel-action-dialog__desc</span> {
-  <span class="hljs-attribute">max-height</span>: <span class="hljs-number">30vh</span>;
-  <span class="hljs-attribute">overflow-y</span>: auto;
+<pre><code class="prettyprint syntax-css">.gel-action-dialog__desc {
+  max-height: 30vh;
+  overflow-y: auto;
 }
 </code></pre>
 <p>When the dialog is open, sibling elements are given the <code>inert</code> attribute (see <a href="#expected-behaviour"><strong>expected behaviour</strong></a>, below). The inert content should <em>appear</em> inert by diminishing its visibility. Opacity and/or filtering can achieve this effect.</p>
-<pre class="hljs"><code><span class="hljs-selector-class">.gel-action-dialog--open</span> <span class="hljs-selector-attr">[inert]</span> {
-  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.3</span>;
+<pre><code class="prettyprint syntax-css">.gel-action-dialog--open [inert] {
+  opacity: 0.3;
 }
 </code></pre>
 <p>Note that the style is applied via a class placed on the <code>&lt;body&gt;</code> using the 'gel-action-dialog' namespace. This ensures the specific inert style is only applied in the presence of an open dialog (the style does not 'leak' to other <code>inert</code> instances).</p>
 <h3 id="high-contrast">High contrast</h3>
 <p>How the component looks with a <a href="https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode">Windows High Contrast Mode</a> theme active:</p>
-<p><img src="/gel/static/images/hcm_action-dialogs.png" alt="Borders help demarcate the dialog where high contrast mode is running"></p>
+<p><img src="../../static/images/hcm_action-dialogs.png" alt="Borders help demarcate the dialog where high contrast mode is running"></p>
 <h2 id="expected-behaviour">Expected behaviour</h2>
 
-            <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-info-results-of-actions">
-              <h4 id="aside-info-results-of-actions" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Results of actions</h4><div><p>The result of an action taken via an action dialog will depend on the purpose of your dialog and is not specified here. Attach listeners to the action dialog's controls as appropriate.</p>
+                    <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-info-results-of-actions">
+                    <h4 id="aside-info-results-of-actions" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Results of actions</h4><div><p>The result of an action taken via an action dialog will depend on the purpose of your dialog and is not specified here. Attach listeners to the action dialog's controls as appropriate.</p>
 </aside><h3 id="when-the-dialog-opens">When the dialog opens</h3>
 <ol>
 <li>The dialog element appears in its designated position</li>
@@ -201,18 +194,17 @@
 <li>If the dialog was originally invoked as a response to a user action, the element that invoked the action (such as a button) is refocused</li>
 </ol>
 
-            <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-alert-interruptions">
-              <h4 id="aside-alert-interruptions" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Interruptions</h4><div><p>Interruptions are dialogs that appear spontaneously, without direct invocation (conscious or otherwise) on the part of the user. These are very disruptive, and should be avoided in almost all circumstances. One legitimate use case would be to inform the user of their timed session coming to an end and offering them the opportunity to extend it.</p>
+                    <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-alert-interruptions">
+                    <h4 id="aside-alert-interruptions" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Interruptions</h4><div><p>Interruptions are dialogs that appear spontaneously, without direct invocation (conscious or otherwise) on the part of the user. These are very disruptive, and should be avoided in almost all circumstances. One legitimate use case would be to inform the user of their timed session coming to an end and offering them the opportunity to extend it.</p>
 <p>Notifications and status messages that do not require user action should not steal focus. Consider using an ARIA live region instead<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
 </aside><h3 id="keyboard-and-screen-reader-experience">Keyboard and screen reader experience</h3>
 <p>Focus is placed inside the dialog upon opening it, meaning keyboard users have access to the functionality and screen reader users are informed of the dialog's presence. When the dialog first opens, a screen reader user will hear the announcement of the dialog role (<em>&quot;dialog&quot;</em>), its associated label (title) and description, and the role and label of the initially focused control.</p>
 <p>Users can move focus between the supplied controls and the close button, as well as 'escape' the dialog to focus browser chrome such as the address bar. Only the dialog is available and interactive while it is open, making it <a href="#fn4" id="fnref4">modal<sup class="footnote-ref">[4]</sup></a> (it presents a 'mode' that suppresses and overrides normal page functionality).</p>
 <h2 id="reference-implementation">Reference implementation</h2>
 
-            <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-alert-important">
-              <h4 id="aside-alert-important" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
-</aside>
-          <div class="geltags-demo"><!-- 
+                    <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-alert-important">
+                    <h4 id="aside-alert-important" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-alert" style="fill:#404040;"></use></svg>Important</h4><div><p>Reference implementations are intended to demonstrate <strong>what needs to be achieved</strong>, but not necessarily how to achieve it. That would depend on the technology stack you are working with. The HTML semantics, layout, and behaviour of your implementation must conform to the reference implementation. Your JS framework, CSS methodology, and—most likely—content will differ.</p>
+</aside><div class="geltags-demo"><!-- 
 title: Action dialogs
  -->
 
@@ -271,10 +263,7 @@ title: Action dialogs
     var dialogCenterInvoker = document.getElementById('gel-action-dialog__invoker-2');
     var d2 = new gel.ActionDialog.constructor(dialogCenterElem, dialogCenterInvoker, true);
   });
-</script></div>
-        
-          <p><a class="gel-cta gel-long-primer-bold" href="../demos/action-dialogs/" target="_new"><span class="gel-button__label">Open in new window</span><svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p>
-        <h2 id="related-research">Related research</h2>
+</script></div><p><a class="gel-cta gel-long-primer-bold" href="../demos/action-dialogs/" target="_new"><span class="gel-button__label">Open in new window</span><svg class="gel-button__icon gel-icon gel-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"></use></svg></a></p><h2 id="related-research">Related research</h2>
 <p>This topic does not yet have any related research available.</p>
 <h3 id="further-reading-elsewhere-on-the-web">Further reading, elsewhere on the Web</h3>
 <hr class="footnotes-sep">
@@ -317,19 +306,7 @@ title: Action dialogs
         <div class="gel-wrap">
             <div class="gel-layout">
                 <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
-                    <p><small>Copyright &copy; 2020 BBC. This content is published under the Open Government Licence, unless otherwise noted.</small></p>
-                    <!--h2 class="geltags-feedback-banner__title">Got a minute?</h2>
-                    <p>We'd love to know what you think of our website.</p>
-                    <a href="https://www.smartsurvey.co.uk/s/gel-website-feedback/"
-                        class="geltags-button geltags-button__link-button geltags-feedback-banner__cta geltags-button--primary">
-                        <span class="geltags-button__content">Go to survey</span>
-                        <span class="geltags-button__icon_wrapper">
-                            <svg class="geltags-button__icon geltags-icon geltags-icon--text">
-                                <use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-external-link"
-                                    style="fill:undefined;"></use>
-                            </svg>
-                        </span>
-                    </a-->
+                    <p><small>Copyright &copy; 2021 BBC. This content is published under the Open Government Licence, unless otherwise noted.</small></p>
                 </div>
             </div>
         </div>
