@@ -59,3 +59,7 @@ From the project base directory simply run...
 - `serve`
 
 Then navigate to the resulting server address like so: `http://localhost:8888/gel/components/hello-world` using whatever hostname and port is appropriate.
+
+## Licence
+
+The code in this repositoy is used to generate our documentation and is unlicenced. The generated documentation itself is published at <https://bbc.github.io/gel/> and is licenced under the [Open Government Licence](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/), unless otherwise noted.
