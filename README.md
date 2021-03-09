@@ -8,7 +8,7 @@ This repository holds the _documentation_ for the BBC GEL Technical Guides. The 
 
 We love contributors. If you have an idea for how to make an improvement, let us know by [creating an issue to discuss your idea](https://github.com/bbc/gel/issues). We recommend you familiarise yourself with [the process of creating a pull-request in GitHub](https://help.github.com/en/articles/creating-a-pull-request) before proceeding.
 
-Our project is roughly organised into [source files](https://github.com/bbc/gel/tree/master/src) and generated [documentation files](https://github.com/bbc/gel/tree/master/docs). As writers we work in the [Markdown](https://learnxinyminutes.com/docs/markdown/)-formatted files in the `/src` folder. Running the build scripts, described below, will then generate the corresponding web pages in the `/docs` folder.
+Our project is roughly organised into [source files](https://github.com/bbc/gel/tree/master/_content) and generated [documentation files](https://github.com/bbc/gel/tree/master/docs). As writers we work in the [Markdown](https://learnxinyminutes.com/docs/markdown/)-formatted files in the `/_content` folder. Running the build scripts, described below, will then generate the corresponding web pages in the `/docs` folder.
 
 ## Installation
 
@@ -23,9 +23,9 @@ Prerequisites:
 3. `npm link`
 
 ## Develop
-- `npm run develop`
+- `npm run watch`
 
-This will watch and compile files, and serve the `docs` folder on localhost while reloading the browser automatically.
+This will use `gulp` to watch and compile files, and serve the `docs` folder on localhost while reloading the browser automatically.
 
 ## Build
 To generate the HTML output into the project `docs` folder, using the markdown from the project `src` folder, run this command...
