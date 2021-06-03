@@ -7,6 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "clean": "rm -rf docs/*",
     "sass": "sass _site/src/scss/site.scss _site/static/css/site.css && sass _site/src/scss/gel.scss _site/static/css/gel.css",
     "js": "uglifyjs node_modules/fontfaceobserver/fontfaceobserver.standalone.js node_modules/sticky-js/dist/sticky.min.js node_modules/menuspy/dist/menuspy.min.js -o _site/static/js/site.js && cat _site/src/js/components/*.js > _site/static/js/gel.js",
@@ -27,13 +28,14 @@
   },
   "homepage": "https://github.com/bbc/code-gel#readme",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
+    "cheerio": "^1.0.0-rc.9",
     "copy-dir": "^1.3.0",
     "fontfaceobserver": "^2.1.0",
     "gel-grid": "^4.0.0",
     "gel-sass-tools": "^1.2.1",
     "gel-typography": "^2.0.5",
-    "glob": "^7.1.6",
+    "glob": "^7.1.7",
+    "gulp": "^4.0.2",
     "headmatter": "0.0.2",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.2.5",
@@ -47,10 +49,12 @@
     "slug": "^0.9.4",
     "sticky-js": "^1.2.0",
     "sweet-scroll": "^3.0.1",
-    "uglify-js": "^3.7.3"
+    "uglify-js": "^3.13.8"
+  },
+  "resolutions": {
+    "yargs-parser": "^18.1.3"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.13",
-    "gulp": "^4.0.2"
+    "browser-sync": "^2.26.13"
   }
 }

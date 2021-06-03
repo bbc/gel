@@ -14,13 +14,31 @@ Our project is roughly organised into [source files](https://github.com/bbc/gel/
 
 Prerequisites:
 
-* Requires `npm` and `node`. (Known to work on NodeJS v11.)
-* Global [`uglify`](https://www.npmjs.com/package/uglify-js) binary installed: Like `npm install uglify-js -g`
-* Global [dart `sass`](https://sass-lang.com/install) binary installed: Like `brew install sass/sass/sass`
+* Requires `npm` and `node`. Known to work on NodeJS v12.
+```
+$ node -v
+  v12.13.0
+$ npm -v
+  6.12.0
+```
+* Global [`sass`](https://www.npmjs.com/package/sass) binary installed: Like `npm i sass -g`
+```
+$ sass --version
+  1.34.1 compiled with dart2js 2.13.1
+```
+* Global [`gulp`](https://www.npmjs.com/package/gulp) binary installed: Like `npm i gulp -g`
+```
+$ gulp --version
+  CLI version: 2.3.0
+```
 
-1. `cd gel`
-2. `npm install`
-3. `npm link`
+To install:
+```
+$ git clone https://github.com/bbc/gel.git
+$ cd gel
+$ npm install
+$ npm link
+```
 
 ## Develop
 - `npm run watch`
