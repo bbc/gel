@@ -2,19 +2,25 @@
 
 ## Summary
 
-This repository holds the _documentation_ for the BBC GEL Technical Guides. The purpose of the code in this project is to compile and generate the website found at https://bbc.github.io/gel Notice that there is *no library or framework here*, we're just about documentation.
+This repository holds the source for the _documentation_ that explains the BBC GEL Technical Guides: the result of running this project is to produce the static HTML-based website found at https://bbc.github.io/gel.
+
+Notice that there is *no library or framework here*, we're just documentation all the way down.
 
 ## Contributing
 
 We love contributors. If you have an idea for how to make an improvement, let us know by [creating an issue to discuss your idea](https://github.com/bbc/gel/issues). We recommend you familiarise yourself with [the process of creating a pull-request in GitHub](https://help.github.com/en/articles/creating-a-pull-request) before proceeding.
 
-Our project is roughly organised into [source files](https://github.com/bbc/gel/tree/master/_content) and generated [documentation files](https://github.com/bbc/gel/tree/master/docs). As writers we work in the [Markdown](https://learnxinyminutes.com/docs/markdown/)-formatted files in the `/_content` folder. Running the build scripts, described below, will then generate the corresponding web pages in the `/docs` folder.
+[Raising an issue](https://github.com/bbc/gel/issues) is a great way to contribute! Let us know if you spotted anything that can be fixed or improved or if you have an idea for a change. You don't need to have any special software or developer skillz to raise an issue or make a suggestion, just pop onto our public GitHub website and let us know!
+
+If you do want to work with our source files, you will need to have the `git` commandline  tool (or the [GitHub Desktop client](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop)) installed. With `git` you can `[clone` our repository(https://www.youtube.com/watch?v=CKcqniGu3tA)] to your own computer and get hacking! This project's files are roughly organised into [source files](https://github.com/bbc/gel/tree/master/_content) and generated [documentation files](https://github.com/bbc/gel/tree/master/docs). As authors we work in the [Markdown](https://learnxinyminutes.com/docs/markdown/)-formatted files in the `/_content` folder.
+
+Running the build scripts, described below, will then generate the corresponding web pages in the `/docs` folder. Use `git` to commit and [create a pull request](https://opensource.com/article/19/7/create-pull-request-github). We'll take it from there!
 
 ## Installation
 
 Prerequisites:
 
-* Requires `npm` and `node`. Known to work on NodeJS v12.
+* This requires [`npm` and `node` commandline tools to be installed](https://nodejs.dev/learn/how-to-install-nodejs). this process is known to work on NodeJS v12.x.
 ```
 $ node -v
   v12.13.0
@@ -25,6 +31,11 @@ $ npm -v
 ```
 $ sass --version
   1.34.1 compiled with dart2js 2.13.1
+```
+* Global [`uglifyjs`](https://www.npmjs.com/package/uglify-js) binary installed: Like `npm i uglify-js -g`
+```
+$ uglifyjs --version
+  uglify-js 3.11.6
 ```
 * Global [`gulp`](https://www.npmjs.com/package/gulp) binary installed: Like `npm i gulp -g`
 ```
