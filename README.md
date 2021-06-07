@@ -12,7 +12,7 @@ We love contributors. If you have an idea for how to make an improvement, let us
 
 [Raising an issue](https://github.com/bbc/gel/issues) is a great way to contribute! Let us know if you spotted anything that can be fixed or improved or if you have an idea for a change. You don't need to have any special software or developer skillz to raise an issue or make a suggestion, just pop onto our public GitHub website and let us know!
 
-If you do want to work with our source files, you will need to have the `git` commandline  tool (or the [GitHub Desktop client](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop)) installed. With `git` you can `[clone` our repository(https://www.youtube.com/watch?v=CKcqniGu3tA)] to your own computer and get hacking! This project's files are roughly organised into [source files](https://github.com/bbc/gel/tree/master/_content) and generated [documentation files](https://github.com/bbc/gel/tree/master/docs). As authors we work in the [Markdown](https://learnxinyminutes.com/docs/markdown/)-formatted files in the `/_content` folder.
+If you do want to work with our source files, you will need to have the `git` commandline  tool (or the [GitHub Desktop client](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop)) installed. With `git` you can [`clone` our repository](https://www.youtube.com/watch?v=CKcqniGu3tA) onto your own computer and get hacking! This project's files are roughly organised into [source files](https://github.com/bbc/gel/tree/master/_content) and generated [documentation files](https://github.com/bbc/gel/tree/master/docs). As authors we work in the [Markdown](https://learnxinyminutes.com/docs/markdown/)-formatted files in the `/_content` folder.
 
 Running the build scripts, described below, will then generate the corresponding web pages in the `/docs` folder. Use `git` to commit and [create a pull request](https://opensource.com/article/19/7/create-pull-request-github). We'll take it from there!
 
@@ -81,13 +81,13 @@ This is only an example: https://bbc.github.io/gel/components/hello-world/
 
 It's just HTML, so you only need to open up a web browser :-)
 
-If you're trying to preview the site running off of your desktop, I recommend using [the awesome 'serve' module](https://www.npmjs.com/package/serve).
+If you're trying to preview the site running off of your desktop, you can run the `serve` script:
 
-From the project base directory simply run...
+From the project base directory...
 
-- `serve`
+- `npm run serve`
 
-Then navigate to the resulting server address like so: `http://localhost:8888/gel/components/hello-world` using whatever hostname and port is appropriate.
+Then navigate to the resulting server address like `http://localhost:3000/components/hello-world` (or using whatever hostname and port is appropriate).
 
 ## Licence
 

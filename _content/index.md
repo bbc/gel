@@ -190,6 +190,10 @@ var switchElem = document.querySelector('.gel-button-switch');
 var switchButton = new gel.Switch.constructor(switchElem);
 ```
 
+## Related
+
+Did you know we created a related project for Testers? We have translated most of our technical documentation in [ACT-formatted test scripts](https://github.com/bbc/gel-test-docs/tree/master/act).
+
 ## Questions?
 
 This project is currently being overseen by the BBC Accessibility Team. If you have access to our corporate Slack channel pop in and say hi. We welcome questions and suggestions posted to [this project's GitHub issue tracker](https://github.com/bbc/gel).
