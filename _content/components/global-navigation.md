@@ -1,8 +1,8 @@
 ---
 title: Global Navigation
 summary: The global navigation is a component of the masthead, which additionally contains the cookie banner and advertisements.
-version: 0.0.1
-published: true
+version: 0.0.3
+published: false
 accessibility: true
 linkback: https://www.bbc.co.uk/gel/guidelines/global-navigation
 ---
