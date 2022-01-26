@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en" class="b-pw-1280 b-reith-sans-font b-reith-serif-font no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/gel/static/images/favicon.ico" type="image/x-icon">
+
+    <title>GEL | Global Navigation</title>
+    <meta property="og:title" content="GEL Technical Guide: Global Navigation">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bbc.github.io/gel/">
+    <meta property="og:image" content="https://bbc.github.io/gel/static/images/bbc-gel-logo.png">
+    <meta property="og:description" content="Guidance for developers who wish to implement BBC GEL component patterns in ways that follow all BBC accessibility standards.">
+    <meta property="og:locale" content="en_GB">
+    <meta name="version_number" content="1.0">
+
+    <script src="/gel/static/js/site.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="/gel/static/css/gel.css">
+    <link rel="stylesheet" type="text/css" href="/gel/static/css/site.css">
+
+    <script type="text/javascript"> // feature detects
+        document.documentElement.className = document.documentElement.className.replace(' no-js', ' js');
+        document.documentElement.className += (' ' + ('ontouchstart' in document.documentElement ? 'touch' : 'no-touch'));
+        document.documentElement.className += (' ' + ('flexWrap' in document.documentElement.style ? 'flex' : 'no-flex'));
+        document.documentElement.className += (' ' + ((document.createElementNS && 'createSVGRect' in document.createElementNS('http://www.w3.org/2000/svg', 'svg')) ? 'svg' : 'no-svg'));
+    </script>
+
+    <script type="text/javascript">
+        try {
+            (new FontFaceObserver('ReithSans', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-sans-loaded';
+            });
+            (new FontFaceObserver('ReithSerif', 5000)).load().then(function () {
+                document.documentElement.className += ' b-reith-loaded';
+            });
+        } catch (e) {
+            console.log('Reith fonts did not load within 5 seconds.');
+        }
+    </script>
+
+    
+</head>
+
+<body class="geltags-body">
+    <p class="gel-sr gel-sr__focusable gel-sr__overlay" tabindex="0">
+        <a href="#main" onfocus="this.parentNode.classList.add('gel-sr__focused')"
+            onblur="this.parentNode.classList.remove('gel-sr__focused')">Skip
+            to content</a>
+    </p>
+
+    <header>
+        <div class="geltags-header gs-u-clearfix">
+            <div class="gel-wrap">
+                <a href="http://www.bbc.co.uk/"><svg aria-label="BBC GEL Logo" width="100" height="24"
+                        viewBox="0 0 100 24">
+                        <title>BBC</title>
+                        <image xlink:href="/gel/static/images/bbc-blocks_grey.svg"
+                            src="/gel/static/images/bbc-blocks_grey.png" width="100%" height="100%"></image>
+                    </svg></a>
+            </div>
+        </div>
+        <div class="geltags-header__banner gs-u-clearfix">
+            <div class="gel-wrap">
+                <div class="gel-layout">
+                    <div class="gel-layout__item gel-2/5@l"
+                        style="text-align:left; padding-left:13px; margin-bottom:32px; margin-top: -12px;">
+                        <a href="/gel/" class="geltags-logo"><img src="/gel/static/images/bbc-gel-logo.png" alt="BBC GEL, global experience language" style="max-width:169px;"></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" tabindex="-1" class="gel-wrap gs-u-clearfix">
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <!-- column placeholder-->
+            </div>
+
+            <div class="gel-layout__item gel-2/5@l" style="padding-right: 12px;">
+                <h1 class="geltags-header__title">Global Navigation</h1>
+                <p class="geltags-header__summary gel-great-primer">The global navigation is a component of the masthead, which additionally contains the cookie banner and advertisements.</p>
+            </div>
+
+            <div class="gel-layout__item gel-1/5@l">
+                <dl class="geltags-standout-box">
+                    
+                    <dt>Version:</dt>
+                    <dd>0.0.1</dd>
+                    
+                    <dt>Status:</dt>
+                    <dd>Published</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="gel-layout">
+            <div class="gel-layout__item gel-1/5@l">
+                <nav role="navigation" id="side-nav" class="gel-side-nav sticky" data-sticky-for="900"
+                    style="padding-top:32px">
+                    <div class="gel-pica gs-u-mb gs-u-mt0">Contents</div>
+                    <ol id="geltags-toc__links" class="geltags-toc"><li><a href="#introduction">Introduction</a></li><li><a href="#recommended-markup">Recommended markup</a></li><li><a href="#recommended-layout">Recommended Layout</a></li><li><a href="#recommended-behaviour">Recommended Behaviour</a></li></ol>
+                </nav>
+            </div>
+
+            <div class="geltags-sections geltags-body-copy gel-layout__item gel-3/5@l">
+                <h2 id="introduction">Introduction</h2>
+<p>The global navigation provides navigation between BBC products. It also allows users to access their account, notifications and search the BBC or the service the user is on.</p>
+<p>This document contains the intended designed experience for included users groups such as older users, users of assistive technology and user with customised fonts, colours, and backgrounds.</p>
+<p>The global navigation is intended for use by all groups apart from young children under 5.</p>
+<h3 id="technical-scope">Technical scope</h3>
+<p>The global navigation is an essential component for each of the pages of any BBC site. To be considered robust, the following levels of reliance on JavaScript must be considered:</p>
+<ol>
+<li><strong>No JavaScript</strong>: The functionality must be available to users whose browsers are not running JavaScript or when JavaScript fails to run for any reason.</li>
+<li><strong>Progressive Enhancement</strong>: A core experience for all functionality must be provided and enhanced depending on the browsers capability and implementation.</li>
+</ol>
+<p>A number of responsive design and progressive enhancement techniques are employed to make the Masthead as inclusive as possible</p>
+<h2 id="recommended-markup">Recommended markup</h2>
+<p>The global navigation is contained within the masthead; the masthead is a container with an implicit or explicit role of <code>banner</code>:</p>
+<pre><code class="prettyprint syntax-html">&lt;header&gt;
+  …
+&lt;/header&gt;
+</code></pre>
+<p>The global navigation component within the header comprises of the following sub-components:</p>
+<ol>
+<li>The logo:  <em>BBC home navigation link</em></li>
+<li>The account module: <em>displays who is signed in and links to the account overview page</em></li>
+<li>The notification module: <em>includes notification functionality</em></li>
+<li>The priority links list: <em>a set of common BBC pages one can navigate between</em></li>
+<li>The 'More' menu:  <em>a more complete set of BBC site navigation items</em></li>
+<li>The search functionality: <em>locate and navigate to content within the site</em></li>
+</ol>
+<p>The global navigation content is contained within an element with an implicit or explicit role of <code>navigation</code> and an accessible name of “BBC-wide”:</p>
+<pre><code class="prettyprint syntax-html">&lt;nav aria-label=&quot;BBC-wide&quot;&gt;
+  …
+&lt;/nav&gt;
+</code></pre>
+<h3 id="logo">Logo</h3>
+<p>The logo's purpose is to provide branding and a link to the homepage.</p>
+<pre><code class="prettyprint syntax-html">&lt;a href=&quot;…&quot;&gt;
+  &lt;svg role=&quot;img&quot; aria-label=&quot;BBC Homepage&quot; focusable=&quot;false&quot;&gt;…&lt;/svg&gt;
+&lt;/a&gt;
+</code></pre>
+<p>The logo is provided as an inline SVG. Its <code>fill</code> is set to <code>currentColor</code>, honouring Windows High Contrast Mode text colours.</p>
+<h3 id="account-module">Account module</h3>
+<p>The account module has two modes, depending on the signed-in status of the user:</p>
+<ul>
+<li><em>Signed-out users</em>: a link to the sign-in page with the text “Sign-in”.</li>
+<li><em>Signed-in users</em>: a link to the user's account page with text of either the user's display name or, for users that do not have a display name, “Your account”.</li>
+</ul>
+<p>In both cases the link contains a decorative avatar icon. At small screen sizes, the text label is hidden with only the avatar icon visible. At all screen sizes, the text of the link is the link's accessible name.</p>
+<p>Signed out:</p>
+<pre><code class="prettyprint syntax-html">&lt;a href=&quot;…&quot;&gt;
+  &lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;…&lt;/svg&gt;
+  &lt;span&gt;Sign-in&lt;/span&gt;
+&lt;/a&gt;
+</code></pre>
+<p>Signed in:</p>
+<pre><code class="prettyprint syntax-html">&lt;a href=&quot;…&quot;&gt;
+  &lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;…&lt;/svg&gt;
+  &lt;span&gt;Your account&lt;/span&gt;
+&lt;/a&gt;
+</code></pre>
+<h3 id="notifications-module">Notifications module</h3>
+<p>The notifications module provides a link to notifications for all users (core experience) and may be progressively enhanced to provide a drawer with notification elements.</p>
+<h3 id="priority-links-list">Priority links list</h3>
+<p>The priority links module shows users a list of prioritised BBC service links to allow them to navigate between services. It is a list of links with optional decorative service identifier icons. Although the list of links has a priority order based on BBC requirements, this does not necessarily match the priority order of the site visitor and is therefore an unordered list semantically.</p>
+<p>The screen size determines the number of links displayed within the priority links list. Links not included within the priority links list are included within the “More” menu. Hidden links must be removed from the accessibility tree and inaccessible to all inputs, including keyboards and switches. If zero links are displayed in the priority links list, the list must be removed from the accessibility tree.</p>
+<pre><code class="prettyprint syntax-html">&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/news&quot;&gt;News&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/sport&quot;&gt;Sport&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/weather&quot;&gt;Weather&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/iplayer&quot;&gt;iPlayer&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/sounds&quot;&gt;Sounds&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/cbbc&quot;&gt;CBBC&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<h3 id="more-menu">More menu</h3>
+<p>The more menu reveals additional BBC services so that users can navigate the larger range of BBC service offerings.</p>
+<p>Services that appear within the priority links subcomponent do not appear within the more menu drawer and vice versa. Hidden links must be both removed from the accessibility tree and inaccessible to all methods of input, including keyboards and switches.</p>
+<p>The more menu control is a link with an accessible name of “More Menu”.</p>
+<p>The more menu drawer should immediately follows the more menu control in the source order and must be contained within an element with an implicit or explicit role of <code>navigation</code> and an accessible name of “More Menu”:</p>
+<pre><code class="prettyprint syntax-html">&lt;a href=&quot;#gel-masthead__more&quot;&gt;More menu&lt;/a&gt;
+&lt;nav id=&quot;gel-masthead__more&quot; aria-label=&quot;More menu&quot;&gt;
+  …
+&lt;/nav&gt;
+</code></pre>
+<p>The more menu control links, with a URL fragment, to the container of the more menu drawer. The display state of the more menu drawer is then based on the presence of the URL fragment within the URL of the current page using the <code>:target</code> CSS pseudo-class:</p>
+<pre><code class="prettyprint syntax-css">#gel-masthead__more {
+  display: none;
+}
+
+#gel-masthead__more:target {
+  display: block;
+}
+</code></pre>
+<p>The drawback of this approach is that only one component using this approach can be manipulated at a time.</p>
+<p>The more menu can be progressively enhanced to act as a disclosure component by giving the more menu control an explicit role of <code>button</code> and an <code>aria-expanded</code> attribute with a value of <code>false</code> when the more menu is closed and <code>true</code> when the more menu is open. The default event of the more menu control must be disabled, and instead, the display state of the more menu content must be toggled by activating the more menu control.</p>
+<pre><code class="prettyprint syntax-html">&lt;a href=&quot;#gel-masthead__more&quot; role=&quot;button&quot; aria-expanded=&quot;false&quot;&gt;More menu&lt;/a&gt;
+&lt;nav id=&quot;gel-masthead__more&quot; aria-label=&quot;More menu&quot;&gt;
+  …
+&lt;/nav&gt;
+</code></pre>
+<p>Links within the more menu drawer are structured as an unordered list with the same semantics and structure as the priority links list.</p>
+<pre><code class="prettyprint syntax-css">#gel-masthead__more {
+  display: none;
+}
+
+[aria-expanded=&quot;true&quot;] + #gel-masthead__more {
+  display: block;
+}
+</code></pre>
+<p>When the more menu drawer is opened and closed using a keyboard, animation should not be used.</p>
+<p>When the more menu drawer is opened by activating the more menu control with a keyboard <code>ENTER</code> or <code>SPACE</code> keypress, focus should be set to the first link within the more menu drawer. When the more menu drawer is opened by activating the more menu control with a click or an interaction that simulates a click event, focus should be set to the more menu drawer container.</p>
+<p>The more menu drawer can be closed by either activating the more menu control while the more menu is open, pressing the <code>ESC</code> key when focus is within the more menu drawer, or by moving focus away from the more menu drawer container. In all cases, focus should be set to the more menu control when the drawer is closed.</p>
+<h3 id="search-module">Search module</h3>
+<p>The purpose of the search sub-component is to either navigate the user to search page (core) or provide an in-page search experience via a draw within the global navigation (enhanced).</p>
+<p>The core implementation of the search module is as a link to the search page. The link has an accessible name of “Search BBC” by default, but this can be changed for specific products. As well as a text label, the link contains a search icon. The text label is hidden at small screen sizes with only the search icon visible. At all screen sizes, the link's text is the link's accessible name.</p>
+<p>The link is contained within an element with an explicit role of <code>search</code>:</p>
+<pre><code class="prettyprint syntax-html">&lt;div role=&quot;search&quot;&gt;
+  &lt;a href=&quot;/search&quot;&gt;
+    &lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;…&lt;/svg&gt;
+    &lt;span&gt;Search BBC&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+<p>When progressively enhanced, the search module is implemented in the same way as the more menu, with the drawer containing a search form:</p>
+<pre><code class="prettyprint syntax-html">&lt;div role=&quot;search&quot;&gt;
+  &lt;a href=&quot;/search&quot;&gt;
+    &lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;…&lt;/svg&gt;
+    &lt;span&gt;Search BBC&lt;/span&gt;
+  &lt;/a&gt;
+  &lt;nav aria-label=&quot;Search BBC&quot;&gt;
+    &lt;!-- Search form --&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;
+</code></pre>
+<h2 id="recommended-layout">Recommended Layout</h2>
+<p>The components of the global navigation should be structured in the order presented here:</p>
+<pre><code class="prettyprint syntax-html">&lt;header&gt;
+  &lt;nav aria-label=&quot;BBC-wide&quot;&gt;
+    &lt;a href=&quot;…&quot;&gt;
+      &lt;svg role=&quot;img&quot; aria-label=&quot;BBC Homepage&quot; focusable=&quot;false&quot;&gt;…&lt;/svg&gt;
+    &lt;/a&gt;
+
+    &lt;a href=&quot;…&quot;&gt;
+      &lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;…&lt;/svg&gt;
+      &lt;span&gt;Sign-in&lt;/span&gt;
+    &lt;/a&gt;
+
+    &lt;!-- Notifications module --&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;/news&quot;&gt;News&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;/sport&quot;&gt;Sport&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;/weather&quot;&gt;Weather&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;/iplayer&quot;&gt;iPlayer&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;/sounds&quot;&gt;Sounds&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;/cbbc&quot;&gt;CBBC&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;a href=&quot;#gel-masthead__more&quot; role=&quot;button&quot; aria-expanded=&quot;false&quot;&gt;More menu&lt;/a&gt;
+    &lt;nav id=&quot;gel-masthead__more&quot; aria-label=&quot;More menu&quot;&gt;
+      …
+    &lt;/nav&gt;
+
+    &lt;div role=&quot;search&quot;&gt;
+      &lt;a href=&quot;/search&quot;&gt;
+        &lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;…&lt;/svg&gt;
+        &lt;span&gt;Search BBC&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+</code></pre>
+<h2 id="recommended-behaviour">Recommended Behaviour</h2>
+<p>A number of responsive design and progressive enhancement techniques are employed to make the global navigation as inclusive as possible. Specifically, the following features must be included:</p>
+<ol>
+<li>Animation within the global navigation must support the <code>prefers-reduced-motion</code> CSS media feature with an assumption that motion should not be used if there is value set. For example, the logo blocks must only animate if <code>prefers-reduced-motion</code> is set to <code>false</code> and only for one cycle.</li>
+<li>Clear and purposefully designed focus state, supported in all browsers.</li>
+<li>For switch users, browser default behaviours for links.</li>
+<li>A minimum touch target size of 44x44px at default zoom level.</li>
+<li>Support for content resized with browser zoom at every zoom level between 100% and 400%.</li>
+<li>Support for content resized with browser text at every text resize level between 100% and 200%.</li>
+<li>Support for high contrast mode that works across all user agents. Content must therefore not be implemented as background images.</li>
+<li>Support for a reasonable range of custom user styles (see recommended behaviour) [@NOTE: TBD]</li>
+<li>A minimum contrast ratio between foreground and background colours for all text content (including the BBC logo) of 4.5:1, between foreground and background colours for all non-text content of 3:1, and between adjacent colours for all content (for example, the borders of form fields against the background) of 3:1.</li>
+<li>Elements with an accessible role of <code>link</code> must be activatable with <code>ENTER</code> key presses.</li>
+<li>Elements with an accessible role of <code>button</code> must be activatable with <code>ENTER</code> and <code>SPACE</code> key presses.</li>
+</ol>
+
+
+                <aside class="geltags-breakout-box geltags-breakout-box extra-padding"
+                    aria-labelledby="aside-info-Could-you-improve-this-documentation">
+                    <h4 id="aside-info-Could-you-improve-this-documentation" aria-hidden="true">
+                        <svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text">
+                            <use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-info"
+                                style="fill:#404040;"></use>
+                        </svg>Could you improve this documentation?
+                    </h4>
+                    <div>
+                        <p>
+                            If you think you could make anything you see here a bit better then become one of <a
+                                href="/gel/contributors/">our
+                                lovely contributors</a>!
+                        </p>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="geltags-feedback-banner">
+        <div class="gel-wrap">
+            <div class="gel-layout">
+                <div class="gel-layout__item gel-2/3@l gel-3/5@xl">
+                    <p><small>Copyright &copy; 2021 BBC. This content is published under the Open Government Licence, unless otherwise noted.</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script nomodule defer type="text/javascript" src="/gel/static/js/external-svg-polyfill.js"></script>
+    <script type="text/javascript" src="/gel/static/js/gel.js"></script>
+
+    
+
+    <script type="text/javascript">
+        new Sticky('.sticky');
+    </script>
+
+    <!-- BBC ATI analytics -->
+    <script type="text/javascript" src="/gel/static/js/smarttag.js"></script>
+
+    <script type="text/javascript"> // create ATI tag and submit
+    (function() {
+        var url = document.URL;
+        var ref = document.referrer;
+        var title = document.querySelector("meta[property='og:title']").getAttribute("content").toLowerCase().split(': ');
+        var siteTitle = '' + title[0].replace(/ /g, ".").replace(/[^a-zA-Z0-9.]/g, "").replace(/\.+/g, ".");
+        var pageTitle = '' + title[1].replace(/ /g, "-").replace(/[^a-zA-Z0-9-]/g, "").replace(/-+/g, "-");
+        pageTitle = siteTitle + '.' + pageTitle +'.page';
+
+        var ATTag = new ATInternet.Tracker.Tag({ secure: true });
+
+        ATTag.page.set({ name: pageTitle });
+
+        var siteCustomVars = {
+            "2": "[responsive]",
+            "3": "[bbc_website]",
+            "4": "[en]",
+            "5": "[" + url + "]",
+            "6": (ref? "[" + ref + "]" : undefined),
+            "8": "[direct-hit]",
+            "9": "[" + pageTitle + "]"
+        };
+        ATTag.customVars.set({ site: siteCustomVars });
+        
+        if (document.URL.match(/\/\/bbc\.github\.io\/gel/i)) {
+            ATTag.dispatch();
+        }
+        else {
+            console.log('ATI tag not sent:', siteTitle, siteCustomVars);
+        }
+    })();
+    </script>
+</body>
+
+</html>
