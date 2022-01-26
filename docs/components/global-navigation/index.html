@@ -182,7 +182,7 @@
 <p>The more menu reveals additional BBC services so that users can navigate the larger range of BBC service offerings.</p>
 <p>Services that appear within the priority links subcomponent do not appear within the more menu drawer and vice versa. Hidden links must be both removed from the accessibility tree and inaccessible to all methods of input, including keyboards and switches.</p>
 <p>The more menu control is a link with an accessible name of “More Menu”.</p>
-<p>The more menu drawer should immediately follows the more menu control in the source order and must be contained within an element with an implicit or explicit role of <code>navigation</code> and an accessible name of “More Menu”:</p>
+<p>The more menu drawer should immediately follows the more menu control in the source order, it may be present later in the source order but this is not ideal. The more menu drawer must be contained within an element with an implicit or explicit role of <code>navigation</code> and an accessible name of “More Menu”:</p>
 <pre><code class="prettyprint syntax-html">&lt;a href=&quot;#gel-masthead__more&quot;&gt;More menu&lt;/a&gt;
 &lt;nav id=&quot;gel-masthead__more&quot; aria-label=&quot;More menu&quot;&gt;
   …
@@ -239,7 +239,7 @@
 &lt;/div&gt;
 </code></pre>
 <h2 id="recommended-layout">Recommended Layout</h2>
-<p>The components of the global navigation should be structured in the order presented here:</p>
+<p>The components of the global navigation should be structured in the order presented here. See <a href="#more-menu">detailed information about the more menu draw</a> above</p>
 <pre><code class="prettyprint syntax-html">&lt;header&gt;
   &lt;nav aria-label=&quot;BBC-wide&quot;&gt;
     &lt;a href=&quot;…&quot;&gt;

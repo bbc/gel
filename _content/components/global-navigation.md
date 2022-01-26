@@ -119,7 +119,7 @@ Services that appear within the priority links subcomponent do not appear within
 
 The more menu control is a link with an accessible name of “More Menu”.
 
-The more menu drawer should immediately follows the more menu control in the source order and must be contained within an element with an implicit or explicit role of `navigation` and an accessible name of “More Menu”:
+The more menu drawer should immediately follows the more menu control in the source order, it may be present later in the source order but this is not ideal. The more menu drawer must be contained within an element with an implicit or explicit role of `navigation` and an accessible name of “More Menu”:
 
 ```html
 <a href="#gel-masthead__more">More menu</a>
@@ -202,7 +202,7 @@ When progressively enhanced, the search module is implemented in the same way as
 
 ## Recommended Layout
 
-The components of the global navigation should be structured in the order presented here:
+The components of the global navigation should be structured in the order presented here. See [detailed information about the more menu draw](#more-menu) above
 
 ```html
 <header>
