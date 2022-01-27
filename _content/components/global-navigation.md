@@ -1,7 +1,7 @@
 ---
 title: Global Navigation
 summary: The global navigation is a component of the masthead, which additionally contains the cookie banner and advertisements.
-version: 0.0.3
+version: 0.0.4
 published: false
 accessibility: true
 linkback: https://www.bbc.co.uk/gel/guidelines/global-navigation
@@ -171,7 +171,7 @@ The more menu drawer can be closed by either activating the more menu control wh
 
 ### Search module
 
-The purpose of the search sub-component is to either navigate the user to search page (core) or provide an in-page search experience via a draw within the global navigation (enhanced).
+The purpose of the search sub-component is to either navigate the user to search page (core) or provide an in-page search experience via a drawer within the global navigation (enhanced).
 
 The core implementation of the search module is as a link to the search page. The link has an accessible name of “Search BBC” by default, but this can be changed for specific products. As well as a text label, the link contains a search icon. The text label is hidden at small screen sizes with only the search icon visible. At all screen sizes, the link's text is the link's accessible name.
 
@@ -202,7 +202,7 @@ When progressively enhanced, the search module is implemented in the same way as
 
 ## Recommended Layout
 
-The components of the global navigation should be structured in the order presented here. See [detailed information about the more menu draw](#more-menu) above
+The components of the global navigation should be structured in the order presented here. See [detailed information about the more menu drawer](#more-menu) above
 
 ```html
 <header>

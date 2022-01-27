@@ -89,7 +89,7 @@
                 <dl class="geltags-standout-box">
                     
                     <dt>Version:</dt>
-                    <dd>0.0.3</dd>
+                    <dd>0.0.4</dd>
                     
                     <dt>Status:</dt>
                     <dd>Draft</dd>
@@ -217,7 +217,7 @@
 <p>When the more menu drawer is opened by activating the more menu control with a keyboard <code>ENTER</code> or <code>SPACE</code> keypress, focus should be set to the first link within the more menu drawer. When the more menu drawer is opened by activating the more menu control with a click or an interaction that simulates a click event, focus should be set to the more menu drawer container.</p>
 <p>The more menu drawer can be closed by either activating the more menu control while the more menu is open, pressing the <code>ESC</code> key when focus is within the more menu drawer, or by moving focus away from the more menu drawer container. In all cases, focus should be set to the more menu control when the drawer is closed.</p>
 <h3 id="search-module">Search module</h3>
-<p>The purpose of the search sub-component is to either navigate the user to search page (core) or provide an in-page search experience via a draw within the global navigation (enhanced).</p>
+<p>The purpose of the search sub-component is to either navigate the user to search page (core) or provide an in-page search experience via a drawer within the global navigation (enhanced).</p>
 <p>The core implementation of the search module is as a link to the search page. The link has an accessible name of “Search BBC” by default, but this can be changed for specific products. As well as a text label, the link contains a search icon. The text label is hidden at small screen sizes with only the search icon visible. At all screen sizes, the link's text is the link's accessible name.</p>
 <p>The link is contained within an element with an explicit role of <code>search</code>:</p>
 <pre><code class="prettyprint syntax-html">&lt;div role=&quot;search&quot;&gt;
@@ -239,7 +239,7 @@
 &lt;/div&gt;
 </code></pre>
 <h2 id="recommended-layout">Recommended Layout</h2>
-<p>The components of the global navigation should be structured in the order presented here. See <a href="#more-menu">detailed information about the more menu draw</a> above</p>
+<p>The components of the global navigation should be structured in the order presented here. See <a href="#more-menu">detailed information about the more menu drawer</a> above</p>
 <pre><code class="prettyprint syntax-html">&lt;header&gt;
   &lt;nav aria-label=&quot;BBC-wide&quot;&gt;
     &lt;a href=&quot;…&quot;&gt;
