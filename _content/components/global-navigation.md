@@ -1,8 +1,8 @@
 ---
 title: Global Navigation
 summary: The global navigation is a component of the masthead, which additionally contains the cookie banner and advertisements.
-version: 0.0.4
-published: false
+version: 1.0.0
+published: true
 accessibility: true
 linkback: https://www.bbc.co.uk/gel/guidelines/global-navigation
 ---
@@ -253,7 +253,7 @@ A number of responsive design and progressive enhancement techniques are employe
 5. Support for content resized with browser zoom at every zoom level between 100% and 400%.
 6. Support for content resized with browser text at every text resize level between 100% and 200%.
 7. Support for high contrast mode that works across all user agents. Content must therefore not be implemented as background images.
-8. Support for a reasonable range of custom user styles (see recommended behaviour) [@NOTE: TBD]
+8. Support for user defined font size, font colour and background colours.
 9. A minimum contrast ratio between foreground and background colours for all text content (including the BBC logo) of 4.5:1, between foreground and background colours for all non-text content of 3:1, and between adjacent colours for all content (for example, the borders of form fields against the background) of 3:1.
 10. Elements with an accessible role of `link` must be activatable with `ENTER` key presses.
 11. Elements with an accessible role of `button` must be activatable with `ENTER` and `SPACE` key presses.

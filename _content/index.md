@@ -67,8 +67,8 @@ linkback: http://www.bbc.co.uk/gel
 [Information Panel](components/info-panels/)
 : The information panel is a specialized popup panel for supplementary content and functionality
 
-[Masthead](components/masthead/)
-: The Masthead comprises the global navigation and a banner for the local site
+[Global Navigation](components/global-navigation/)
+: The global navigation is a component of the masthead, which additionally contains the cookie banner and advertisements.
 
 [Metadata strips](components/metadata-strips/)
 : The metadata strip defines key metadata for an item of content, in a compact form
