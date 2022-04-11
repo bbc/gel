@@ -7,7 +7,9 @@ accessibility: true
 linkback: https://www.bbc.co.uk/gel/guidelines/masthead
 ---
 <div class="geltags-breakout-box geltags-breakout-box extra-padding">
-<h4>Deprecated</h4>
+<h4 class="aside-info-link-elements-for-same-page-navigation"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text">
+    <use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use>
+</svg>Deprecated</h4>
 
 <p>Please note this component has been deprecated and replaced by the <a href="https://bbc.github.io/gel/components/global-navigation/">Global Navigation Component</a></p>
 
