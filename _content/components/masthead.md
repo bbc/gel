@@ -6,6 +6,12 @@ published: true
 accessibility: true
 linkback: https://www.bbc.co.uk/gel/guidelines/masthead
 ---
+<div class="geltags-breakout-box geltags-breakout-box extra-padding">
+<h4>Deprecated</h4>
+
+<p>Please note this component has been deprecated and replaced by the <a href="https://bbc.github.io/gel/components/global-navigation/">Global Navigation Component</a></p>
+
+</div>
 
 ## Introduction
 
