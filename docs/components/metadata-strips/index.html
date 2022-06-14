@@ -113,10 +113,10 @@
 
                     <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-info-promo-implementation">
                     <h4 id="aside-info-promo-implementation" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Promo implementation</h4><div><p>The following example assumes the content is a <a href="../promos">Promo</a> and includes just publishing and derivation information. Other definitions may be applicable elsewhere.</p>
-</aside><pre><code class="prettyprint syntax-html">&lt;dl class=&quot;gel-metadata-strip&quot;&gt;
-  &lt;div&gt;
-    &lt;dt class=&quot;gel-sr&quot;&gt;Published:&lt;/dt&gt;
-    &lt;dd&gt;
+</aside><pre><code class="prettyprint syntax-html">&lt;ul class=&quot;gel-metadata-strip&quot;&gt;
+  &lt;li&gt;
+    &lt;span class=&quot;gel-sr&quot;&gt;Published:&lt;/span&gt;
+    &lt;div&gt;
       &lt;span aria-hidden=&quot;true&quot;&gt;
         &lt;svg class=&quot;gel-icon gel-icon--text&quot; focusable=&quot;false&quot;&gt;
           &lt;use xlink:href=&quot;path/to/gel-icons-all.svg#gel-icon-duration&quot;&gt;&lt;/use&gt;
@@ -124,32 +124,31 @@
         1m
       &lt;/span&gt;
       &lt;span class=&quot;gel-sr&quot;&gt;1 minute ago&lt;/span&gt;
-    &lt;/dd&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-    &lt;dt class=&quot;gel-sr&quot;&gt;From:&lt;/dt&gt;
-    &lt;dd&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;span class=&quot;gel-sr&quot;&gt;From:&lt;/span&gt;
+    &lt;div&gt;
       &lt;a href=&quot;link/to/category&quot;&gt;UK&lt;/a&gt;
-    &lt;/dd&gt;
-  &lt;/div&gt;
-&lt;/dl&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 </code></pre>
 <ul>
-<li><strong><code>&lt;dl&gt;</code> and <code>&lt;div&gt;</code>:</strong> The most appropriate markup for key/value based information is the definition (or 'description') list. It is permitted<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> to use <code>&lt;div&gt;</code> elements to wrap pairs of <code>&lt;dt&gt;</code> and <code>&lt;dd&gt;</code> elements for layout purposes.</li>
-<li><strong><code>class=&quot;gel-sr&quot;</code> for <code>&lt;dt&gt;</code>:</strong> The definition titles (<code>&lt;dt&gt;</code>s) are only needed for non-visual clarification in screen reader output. They are hidden visually using the <code>gel-sr</code> class.</li>
-<li><strong>gel-icon:</strong> The SVG icon (if present) is hidden along with the display text. It takes <code>focusable=&quot;false&quot;</code> to remove it from focus order in some versions of IE and Edge<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></li>
-<li><strong><code>aria-hidden=&quot;true&quot;</code></strong> In some cases, the visually displayed text may not be sufficient for synthetic voice announcement. In these cases, the displayed text (and associated iconography) is hidden from assistive technologies with <code>aria-hidden=&quot;true&quot;</code><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> and an alternative wording is provided non-visually (using the <code>gel-sr</code> class to hide this text visually).</li>
+<li><strong><code>class=&quot;gel-sr&quot;</code> for <code>&lt;span&gt;</code>:</strong> These are only needed for non-visual clarification in screen reader output. They are hidden visually using the <code>gel-sr</code> class.</li>
+<li><strong>gel-icon:</strong> The SVG icon (if present) is hidden along with the display text. It takes <code>focusable=&quot;false&quot;</code> to remove it from focus order in some versions of IE and Edge<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
+<li><strong><code>aria-hidden=&quot;true&quot;</code></strong> In some cases, the visually displayed text may not be sufficient for synthetic voice announcement. In these cases, the displayed text (and associated iconography) is hidden from assistive technologies with <code>aria-hidden=&quot;true&quot;</code><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> and an alternative wording is provided non-visually (using the <code>gel-sr</code> class to hide this text visually).</li>
 </ul>
 <h2 id="recommended-layout">Recommended layout</h2>
-<p>The <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, and <code>&lt;dd&gt;</code> must have their user agent styles removed. The child <code>&lt;div&gt;</code>s are set to <code>inline-block</code>, with <code>white-space: nowrap</code>.</p>
-<pre><code class="prettyprint syntax-css">.gel-metadata-strip &gt; div {
+<p>The <code>&lt;ul&gt;</code> must have its user agent styles removed. The child <code>&lt;li&gt;</code>s are set to <code>inline-block</code>, with <code>white-space: nowrap</code>.</p>
+<pre><code class="prettyprint syntax-css">.gel-metadata-strip &gt; li {
   display: inline-block;
   white-space: nowrap;
 }
 </code></pre>
-<p>The purpose of <code>nowrap</code> is to ensure pairs of definition titles and their definitions wrap together and are never split across lines. This aids scanning and comprehension.</p>
-<p>A border separator is included between—and only between—definition <code>&lt;div&gt;</code>s using pseudo-content:</p>
-<pre><code class="prettyprint syntax-css">.gel-metadata-strip &gt; div + div::before {
+<p>The purpose of <code>nowrap</code> is to ensure pairs of titles and descriptions wrap together and are never split across lines. This aids scanning and comprehension.</p>
+<p>A border separator is included between—and only between—definition <code>&lt;li&gt;</code>s using pseudo-content:</p>
+<pre><code class="prettyprint syntax-css">.gel-metadata-strip &gt; li + li::before {
   content: '';
   border-left: 1px solid;
   margin: 0 0.25rem;
@@ -157,7 +156,7 @@
 </code></pre>
 <p>This is preferable to using a character such as a pip (&quot;|&quot;) which will be announced unhelpfully in some screen readers.</p>
 <h3 id="links">Links</h3>
-<p>Some metadata values may be linked, such as the 'From' value in the <a href="#expected-markup"><strong>Expected markup</strong></a> example. It is important these links are not differentiated by colour alone<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. People who are colour-blind or who use non-colour displays cannot perceive colour differences and will not be able to distinguish the link.</p>
+<p>Some metadata values may be linked, such as the 'From' value in the <a href="#expected-markup"><strong>Expected markup</strong></a> example. It is important these links are not differentiated by colour alone<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. People who are colour-blind or who use non-colour displays cannot perceive colour differences and will not be able to distinguish the link.</p>
 <p>Accompany any colour differentiation with <code>text-decoration: underline</code>, if this style is not already being inherited.</p>
 <pre><code class="prettyprint syntax-css">.gel-metadata-strip a {
   text-decoration: underline;
@@ -208,13 +207,11 @@ title: Metadata Strips
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>&quot;Allow &lt;div&gt; around each &lt;dt&gt;&lt;dd&gt; group in &lt;dl&gt;&quot; (WHATWG merged pull request), <a href="https://github.com/whatwg/html/pull/1945">https://github.com/whatwg/html/pull/1945</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+<li id="fn1" class="footnote-item"><p>Don't make every <code>&lt;svg&gt;</code> focusable by default (issue) — Microsoft, <a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8090208/">https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8090208/</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn2" class="footnote-item"><p>Don't make every <code>&lt;svg&gt;</code> focusable by default (issue) — Microsoft, <a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8090208/">https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8090208/</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+<li id="fn2" class="footnote-item"><p>&quot;Accessibility chops: <code>hidden</code> and <code>aria-hidden</code>&quot; — The Paciello Group, <a href="https://developer.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/">https://developer.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn3" class="footnote-item"><p>&quot;Accessibility chops: <code>hidden</code> and <code>aria-hidden</code>&quot; — The Paciello Group, <a href="https://developer.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/">https://developer.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn4" class="footnote-item"><p>Use Of Color: Understanding WCAG 1.4.1, <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html">https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+<li id="fn3" class="footnote-item"><p>Use Of Color: Understanding WCAG 1.4.1, <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html">https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>
