@@ -20,7 +20,7 @@ The following example assumes the content is a [Promo](../promos) and includes j
 ```html
 <ul class="gel-metadata-strip">
   <li>
-    <span class="gel-sr">Published:</span>
+    <div class="gel-sr">Published:</div>
     <div>
       <span aria-hidden="true">
         <svg class="gel-icon gel-icon--text" focusable="false">
@@ -32,7 +32,7 @@ The following example assumes the content is a [Promo](../promos) and includes j
     </div>
   </li>
   <li>
-    <span class="gel-sr">From:</span>
+    <div class="gel-sr">From:</div>
     <div>
       <a href="link/to/category">UK</a>
     </div>
@@ -40,7 +40,7 @@ The following example assumes the content is a [Promo](../promos) and includes j
 </ul>
 ```
 
-* **`class="gel-sr"` for `<span>`:** These are only needed for non-visual clarification in screen reader output. They are hidden visually using the `gel-sr` class.
+* **`class="gel-sr"` for `<div>`:** These are only needed for non-visual clarification in screen reader output. They are hidden visually using the `gel-sr` class.
 * **gel-icon:** The SVG icon (if present) is hidden along with the display text. It takes `focusable="false"` to remove it from focus order in some versions of IE and Edge[^1]
 * **`aria-hidden="true"`** In some cases, the visually displayed text may not be sufficient for synthetic voice announcement. In these cases, the displayed text (and associated iconography) is hidden from assistive technologies with `aria-hidden="true"`[^2] and an alternative wording is provided non-visually (using the `gel-sr` class to hide this text visually).
 
