@@ -115,7 +115,7 @@
                     <h4 id="aside-info-promo-implementation" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Promo implementation</h4><div><p>The following example assumes the content is a <a href="../promos">Promo</a> and includes just publishing and derivation information. Other definitions may be applicable elsewhere.</p>
 </aside><pre><code class="prettyprint syntax-html">&lt;ul class=&quot;gel-metadata-strip&quot;&gt;
   &lt;li&gt;
-    &lt;span class=&quot;gel-sr&quot;&gt;Published:&lt;/span&gt;
+    &lt;div class=&quot;gel-sr&quot;&gt;Published:&lt;/div&gt;
     &lt;div&gt;
       &lt;span aria-hidden=&quot;true&quot;&gt;
         &lt;svg class=&quot;gel-icon gel-icon--text&quot; focusable=&quot;false&quot;&gt;
@@ -127,7 +127,7 @@
     &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;span class=&quot;gel-sr&quot;&gt;From:&lt;/span&gt;
+    &lt;div class=&quot;gel-sr&quot;&gt;From:&lt;/div&gt;
     &lt;div&gt;
       &lt;a href=&quot;link/to/category&quot;&gt;UK&lt;/a&gt;
     &lt;/div&gt;
@@ -135,7 +135,7 @@
 &lt;/ul&gt;
 </code></pre>
 <ul>
-<li><strong><code>class=&quot;gel-sr&quot;</code> for <code>&lt;span&gt;</code>:</strong> These are only needed for non-visual clarification in screen reader output. They are hidden visually using the <code>gel-sr</code> class.</li>
+<li><strong><code>class=&quot;gel-sr&quot;</code> for <code>&lt;div&gt;</code>:</strong> These are only needed for non-visual clarification in screen reader output. They are hidden visually using the <code>gel-sr</code> class.</li>
 <li><strong>gel-icon:</strong> The SVG icon (if present) is hidden along with the display text. It takes <code>focusable=&quot;false&quot;</code> to remove it from focus order in some versions of IE and Edge<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
 <li><strong><code>aria-hidden=&quot;true&quot;</code></strong> In some cases, the visually displayed text may not be sufficient for synthetic voice announcement. In these cases, the displayed text (and associated iconography) is hidden from assistive technologies with <code>aria-hidden=&quot;true&quot;</code><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> and an alternative wording is provided non-visually (using the <code>gel-sr</code> class to hide this text visually).</li>
 </ul>
