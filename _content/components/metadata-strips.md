@@ -55,7 +55,7 @@ The `<ul>` must have its user agent styles removed. The child `<li>`s are set to
 }
 ```
 
-The purpose of `nowrap` is to ensure pairs of titles and descriptions wrap together and are never split across lines. This aids scanning and comprehension.
+The purpose of `nowrap` is to ensure items are never split across lines. This aids scanning and comprehension.
 
 A border separator is included between—and only between—definition `<li>`s using pseudo-content:
 
