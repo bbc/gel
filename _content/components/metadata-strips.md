@@ -114,4 +114,4 @@ This topic does not yet have any related research available.
 
 [^1]: Don't make every `<svg>` focusable by default (issue) — Microsoft, <https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8090208/>
 [^2]: "Accessibility chops: `hidden` and `aria-hidden`" — The Paciello Group, <https://developer.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/>
-[^3]: Use Of Color: Understanding WCAG 1.4.1, <https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html>
+[^3]: Understanding Success Criterion 1.4.1: Use of Color, <https://www.w3.org/WAI/WCAG21/Understanding/use-of-color>
