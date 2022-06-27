@@ -1,7 +1,7 @@
 ---
 title: Metadata strips
 summary: The metadata strip defines key metadata for an item of content, in a compact form
-version: 0.1.0
+version: 1.0.0
 published: true
 accessibility: true
 linkback: http://www.bbc.co.uk/gel/guidelines/cards
