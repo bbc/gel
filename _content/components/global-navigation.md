@@ -119,7 +119,7 @@ Services that appear within the priority links subcomponent do not appear within
 
 The more menu control is a link with an accessible name of “More Menu”.
 
-The more menu drawer should immediately follows the more menu control in the source order, it may be present later in the source order but this is not ideal. The more menu drawer must be contained within an element with an implicit or explicit role of `navigation` and an accessible name of “More Menu”:
+The more menu drawer should immediately follow the more menu control in the source order, it may be present later in the source order but this is not ideal. The more menu drawer must be contained within an element with an implicit or explicit role of `navigation` and an accessible name of “More Menu”:
 
 ```html
 <a href="#gel-masthead__more">More menu</a>
@@ -167,7 +167,7 @@ When the more menu drawer is opened and closed using a keyboard, animation shoul
 
 When the more menu drawer is opened by activating the more menu control with a keyboard `ENTER` or `SPACE` keypress, focus should be set to the first link within the more menu drawer. When the more menu drawer is opened by activating the more menu control with a click or an interaction that simulates a click event, focus should be set to the more menu drawer container.
 
-The more menu drawer can be closed by either activating the more menu control while the more menu is open, pressing the `ESC` key when focus is within the more menu drawer, or by moving focus away from the more menu drawer container. In all cases, focus should be set to the more menu control when the drawer is closed.
+The more menu drawer can be closed by either activating the more menu control while the more menu is open, pressing the `ESC` key when focus is within the more menu drawer, or activating the close button within the drawer. The more menu drawer should remain open even when tabbing moves focus off the drawer. When the more drawer is closed by user action, focus should be returned to the more menu control.
 
 ### Search module
 
