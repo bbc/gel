@@ -47,7 +47,7 @@ To install:
 ```
 $ git clone https://github.com/bbc/gel.git
 $ cd gel
-$ npm install
+$ npm ci
 $ npm link
 ```
 
