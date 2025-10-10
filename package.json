@@ -7,7 +7,6 @@
     "doc": "docs"
   },
   "scripts": {
-    "preinstall": "npx npm-force-resolutions",
     "clean": "rm -rf docs/*",
     "sass": "sass _site/src/scss/site.scss _site/static/css/site.css && sass _site/src/scss/gel.scss _site/static/css/gel.css",
     "js": "uglifyjs node_modules/fontfaceobserver/fontfaceobserver.standalone.js node_modules/sticky-js/dist/sticky.min.js node_modules/menuspy/dist/menuspy.min.js -o _site/static/js/site.js && cat _site/src/js/components/*.js > _site/static/js/gel.js",
@@ -28,33 +27,30 @@
   },
   "homepage": "https://github.com/bbc/code-gel#readme",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.9",
-    "copy-dir": "^1.3.0",
-    "fontfaceobserver": "^2.1.0",
-    "gel-grid": "^4.0.0",
-    "gel-sass-tools": "^1.2.1",
-    "gel-typography": "^2.0.5",
-    "glob": "^7.1.7",
-    "gulp": "^4.0.2",
+    "cheerio": "1.0.0-rc.9",
+    "copy-dir": "1.3.0",
+    "fontfaceobserver": "2.1.0",
+    "gel-grid": "4.1.0",
+    "gel-sass-tools": "1.3.0",
+    "gel-typography": "2.0.5",
+    "glob": "7.1.7",
+    "gulp": "4.0.2",
     "headmatter": "0.0.2",
-    "markdown-it": "^8.4.2",
-    "markdown-it-anchor": "^5.2.5",
-    "markdown-it-container": "^2.0.0",
-    "markdown-it-deflist": "^2.1.0",
+    "markdown-it": "8.4.2",
+    "markdown-it-anchor": "5.3.0",
+    "markdown-it-container": "2.0.0",
+    "markdown-it-deflist": "2.1.0",
     "markdown-it-footnote": "github:micmath/markdown-it-footnote#master",
-    "markdown-it-shortcode-tag": "^1.1.0",
-    "menuspy": "^1.3.0",
-    "normalize": "^0.3.1",
-    "nunjucks": "^3.2.3",
-    "slug": "^0.9.4",
-    "sticky-js": "^1.2.0",
-    "sweet-scroll": "^3.0.1",
-    "uglify-js": "^3.13.8"
-  },
-  "resolutions": {
-    "yargs-parser": "^18.1.3"
+    "markdown-it-shortcode-tag": "1.1.0",
+    "menuspy": "1.3.0",
+    "normalize": "0.3.1",
+    "nunjucks": "3.2.3",
+    "slug": "0.9.4",
+    "sticky-js": "1.3.0",
+    "sweet-scroll": "3.0.1",
+    "uglify-js": "3.13.8"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.13"
+    "browser-sync": "2.26.14"
   }
 }
