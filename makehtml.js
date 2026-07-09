@@ -97,7 +97,7 @@ md.render = function() {
 };
 
 const path = require('path');
-const glob = require('glob');
+const { glob } = require('glob');
 const headmatter = require('headmatter');
 const copydir = require('copy-dir');
 
@@ -152,25 +152,29 @@ const contentSources = [{
 ];
 
 contentSources.forEach(contentSource => {
-    glob(contentSource.match, {}, (err, files) => {
-        files.forEach(file => {
-            let fileContent = fs.readFileSync(file, 'utf8');
-            let { head, content } = headmatter.parse(fileContent);
-            content = md.render(content);
-            let data = Object.assign({ site, content }, (contentSource.options || {}), head);
-            const template = fs.readFileSync(data.layout, 'utf8');
-            let output = templateEnv.renderString(template, data);
-            let outfile = nunjucks.renderString(data.outfile, { basename: path.basename(file).replace(/\.(html|md)$/i, '') });
-            let outdir = path.dirname(outfile);
-            fs.mkdir(outdir, { recursive: true }, (err) => {
-                if (err) throw err;
-                console.log(`> ${outfile}`);
-                fs.writeFile(outfile, output, 'utf8', (err) => {
+    glob(contentSource.match)
+        .then(files => {
+            files.forEach(file => {
+                let fileContent = fs.readFileSync(file, 'utf8');
+                let { head, content } = headmatter.parse(fileContent);
+                content = md.render(content);
+                let data = Object.assign({ site, content }, (contentSource.options || {}), head);
+                const template = fs.readFileSync(data.layout, 'utf8');
+                let output = templateEnv.renderString(template, data);
+                let outfile = nunjucks.renderString(data.outfile, { basename: path.basename(file).replace(/\.(html|md)$/i, '') });
+                let outdir = path.dirname(outfile);
+                fs.mkdir(outdir, { recursive: true }, (err) => {
                     if (err) throw err;
-                })              
+                    console.log(`> ${outfile}`);
+                    fs.writeFile(outfile, output, 'utf8', (err) => {
+                        if (err) throw err;
+                    })              
+                });
             });
+        })
+        .catch(err => {
+            console.error(err);
         });
-    });
 });
 
 const staticSources = [{
@@ -183,3 +187,34 @@ staticSources.forEach(staticSource => {
         filter: (stat, filepath, filename) => !filename.match(/^\./)
     });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
