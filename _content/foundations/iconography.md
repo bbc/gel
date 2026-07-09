@@ -11,11 +11,11 @@ linkback: https://www.bbc.co.uk/gel/guidelines/iconography
 
 Text is the primary form of communication on the web, and is highly interoperable. Only use icons where additional clarity is sought. Icons may help those with cognitive impairments, and others who find themselves on a page that isn't in their first language.
 
-A [comprehensive and standardized set](http://bbc.github.io/gel-iconography/) of BBC icons is available. It is not recommended you create your own iconography. Cognition depends heavily on convention, and only by using established iconography can you foster familiarity.
+A comprehensive and standardized set of [BBC icons](https://www.bbc.co.uk/gel/features/iconography) is available. It is not recommended you create your own iconography. Cognition depends heavily on convention, and only by using established iconography can you foster familiarity.
 
 ### Avoid icon fonts
 
-The [BBC icons](http://bbc.github.io/gel-iconography/) are intended for implementation using inline SVG. Like icon fonts, SVG icons are infinitely scalable without degradation.
+The [BBC icons](https://www.bbc.co.uk/gel/features/iconography) are intended for implementation using inline SVG. Like icon fonts, SVG icons are infinitely scalable without degradation.
 
 Unlike SVG, icon fonts icons are mapped to unicode points and interpreted as text. This can have accessibility issues. Most icon font sets map their icons to the unicode [Private Use Areas](https://en.wikipedia.org/wiki/Private_Use_Areas) in order to avoid overriding established, meaningful characters and symbols. A problem occurs when users set their own fonts, using an extension or user stylesheet: the icons are replaced with 'missing character' symbols[^1]. Dyslexic users sometimes set their own fonts for improved legibility.
 
