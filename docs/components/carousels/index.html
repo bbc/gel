@@ -208,6 +208,25 @@
   opacity: 0.5;
 }
 </code></pre>
+<h3 id="scroll-button-accessible-labels">Scroll button accessible labels</h3>
+<p>The previous and next buttons should provide alternative text<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> that communicate what content will be brought into view when the button is activated. Rather than simply announcing &quot;Previous&quot; or &quot;Next&quot;, the label should include the item or range of items that will become visible, along with the total number of items in the carousel.</p>
+<p>Where multiple items will be visible after scrolling, the label should use the format &quot;X to Y of Z&quot;, where X is the first visible item, Y is the last visible item, and Z is the total number of items in the carousel. For example:</p>
+<ul>
+<li>Previous, 1 to 3 of 10</li>
+<li>Next, 3 to 5 of 10</li>
+</ul>
+<p>Where only a single item is visible at a time, the label should use the format &quot;X of Z&quot;:</p>
+<ul>
+<li>Previous, 1 of 10</li>
+<li>Next, 3 of 10</li>
+</ul>
+<p>These labels describe the destination state of the carousel; that is, the content that will be visible after the button has been activated, not the content that is currently visible. In the examples above, the carousel is assumed to be showing items 2–4 and scrolling one item at a time.</p>
+<p>When the user is already at the beginning or end of the carousel, the respective disabled control may simply be labelled:</p>
+<ul>
+<li>Previous</li>
+<li>Next</li>
+</ul>
+<p>The exact values will depend on the carousel's configuration, viewport size, and scrolling behaviour. Implementations that scroll multiple items at a time should follow the same pattern, calculating the appropriate destination range for each button.</p>
 <h3 id="smooth-scrolling">Smooth scrolling</h3>
 <p>Where supported, <code>scroll-behavior: smooth</code> animates scrolling, whether scrolling is instigated by pressing a previous or next button, or by other means. Where the property is not supported, the browser steps over it and the interface remains usable.</p>
 <p>This feature is only applied if the user has not chosen to reduce animations in their system settings:</p>
@@ -236,16 +255,16 @@
   }
 });
 </code></pre>
-<p>This not only invokes the 'fading' effect described in <a href="#recommended-layout"><strong>Recommended layout</strong></a>, but also removes inert items from focus order and the accessibility tree<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. The upshot is that, like sighted mouse users, keyboard and screen reader users can only perceive and interact with items that are not inert.</p>
+<p>This not only invokes the 'fading' effect described in <a href="#recommended-layout"><strong>Recommended layout</strong></a>, but also removes inert items from focus order and the accessibility tree<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. The upshot is that, like sighted mouse users, keyboard and screen reader users can only perceive and interact with items that are not inert.</p>
 <p>Were the inert attribute not employed, a keyboard user could scroll to the end of a long set of items, only to find that the first (currently obscured) item was still first in focus order. Pressing tab would scroll the container back to the beginning and progress would be lost.</p>
 
                     <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-info-inert-polyfill">
-                    <h4 id="aside-info-inert-polyfill" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Inert polyfill</h4><div><p>The <a href="#reference-implementation"><strong>Reference implementation</strong></a> includes a small polyfill<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> for the <code>inert</code> attribute, increasing the reach of the behaviour it enables.</p>
+                    <h4 id="aside-info-inert-polyfill" aria-hidden="true"><svg class="geltags-breakout-box__icon geltags-icon geltags-icon--text"><use xlink:href="/gel/static/images/gel-icons-core-set.svg#gel-icon-info" style="fill:#404040;"></use></svg>Inert polyfill</h4><div><p>The <a href="#reference-implementation"><strong>Reference implementation</strong></a> includes a small polyfill<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> for the <code>inert</code> attribute, increasing the reach of the behaviour it enables.</p>
 </aside><h3 id="button-controls">Button controls</h3>
 <p>Keyboard users must scroll the content using the buttons. Each time a button is pressed, the scrollable container scrolls half of its own width (as measured on page load).</p>
 <pre><code class="prettyprint syntax-js">var scrollAmount = list.offsetWidth / 2;
 </code></pre>
-<p>Buttons that are not applicable (the previous button if the user is scrolled all the way left, or the next button if the user is scrolled all the way to the right) are <code>disabled</code>. This is made possible by listening to the <code>scroll</code> event, which necessitates debouncing<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> to address performance concerns.</p>
+<p>Buttons that are not applicable (the previous button if the user is scrolled all the way left, or the next button if the user is scrolled all the way to the right) are <code>disabled</code>. This is made possible by listening to the <code>scroll</code> event, which necessitates debouncing<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> to address performance concerns.</p>
 <pre><code class="prettyprint syntax-js">var debounced;
 scrollable.addEventListener('scroll', function () {
   window.clearTimeout(debounced);
@@ -254,7 +273,7 @@ scrollable.addEventListener('scroll', function () {
 </code></pre>
 <p>Buttons taking the <code>disabled</code> attribute are removed from focus order and identified as <em>&quot;disabled&quot;</em> or <em>&quot;dimmed&quot;</em> in screen reader output.</p>
 <h3 id="lazy-loading">Lazy loading</h3>
-<p>Although it is not provided as an intrinsic part of the <a href="#reference-implementation"><strong>Reference implementation</strong></a> to follow, it is recommended you use a lazy loading<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup> solution for images inside the carousel. Since the image containers for <a href="../cards"><strong>Card</strong></a> and <a href="../promos"><strong>Promo</strong></a> components have a fixed height, you do not need to address the vertical scroll jumping issues associated with lazy loading.</p>
+<p>Although it is not provided as an intrinsic part of the <a href="#reference-implementation"><strong>Reference implementation</strong></a> to follow, it is recommended you use a lazy loading<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup> solution for images inside the carousel. Since the image containers for <a href="../cards"><strong>Card</strong></a> and <a href="../promos"><strong>Promo</strong></a> components have a fixed height, you do not need to address the vertical scroll jumping issues associated with lazy loading.</p>
 <h2 id="reference-implementation">Reference implementation</h2>
 
                     <aside class="geltags-breakout-box geltags-breakout-box extra-padding" aria-labelledby="aside-alert-important">
@@ -525,13 +544,15 @@ title: Carousels
 </li>
 <li id="fn2" class="footnote-item"><p>&quot;Perceived Affordances and Designing for Task Flow&quot; — Johnny Holland, <a href="http://johnnyholland.org/2010/04/perceived-affordances-and-designing-for-task-flow/">http://johnnyholland.org/2010/04/perceived-affordances-and-designing-for-task-flow/</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn3" class="footnote-item"><p>&quot;The Accessibility Tree&quot; — <a href="http://developers.google.com">developers.google.com</a>, <a href="https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree">https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+<li id="fn3" class="footnote-item"><p>HTML5: Techniques for providing useful text alternatives — W3C, <a href="https://w3c.github.io/alt-techniques/with-pictures.html">https://w3c.github.io/alt-techniques/with-pictures.html</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn4" class="footnote-item"><p>Inert polyfill on Github, <a href="https://github.com/GoogleChrome/inert-polyfill">https://github.com/GoogleChrome/inert-polyfill</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+<li id="fn4" class="footnote-item"><p>&quot;The Accessibility Tree&quot; — <a href="http://developers.google.com">developers.google.com</a>, <a href="https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree">https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn5" class="footnote-item"><p>Throttling and Debouncing in JavaScript — <a href="http://Codeburst.io">Codeburst.io</a>, <a href="https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf">https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+<li id="fn5" class="footnote-item"><p>Inert polyfill on Github, <a href="https://github.com/GoogleChrome/inert-polyfill">https://github.com/GoogleChrome/inert-polyfill</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn6" class="footnote-item"><p>Lazy loading images using Intersection Observer — Dean Hume,  <a href="https://deanhume.com/lazy-loading-images-using-intersection-observer/">https://deanhume.com/lazy-loading-images-using-intersection-observer/</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+<li id="fn6" class="footnote-item"><p>Throttling and Debouncing in JavaScript — <a href="http://Codeburst.io">Codeburst.io</a>, <a href="https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf">https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>Lazy loading images using Intersection Observer — Dean Hume,  <a href="https://deanhume.com/lazy-loading-images-using-intersection-observer/">https://deanhume.com/lazy-loading-images-using-intersection-observer/</a> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>

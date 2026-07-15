@@ -130,6 +130,29 @@ The previous and next buttons, `class="gel-carousel__buttons"`, is absolutely po
 }
 ```
 
+### Scroll button accessible labels
+
+The previous and next buttons should provide alternative text[^3] that communicate what content will be brought into view when the button is activated. Rather than simply announcing "Previous" or "Next", the label should include the item or range of items that will become visible, along with the total number of items in the carousel.
+
+Where multiple items will be visible after scrolling, the label should use the format "X to Y of Z", where X is the first visible item, Y is the last visible item, and Z is the total number of items in the carousel. For example:
+
+- Previous, 1 to 3 of 10
+- Next, 3 to 5 of 10
+
+Where only a single item is visible at a time, the label should use the format "X of Z":
+
+- Previous, 1 of 10
+- Next, 3 of 10
+
+These labels describe the destination state of the carousel; that is, the content that will be visible after the button has been activated, not the content that is currently visible. In the examples above, the carousel is assumed to be showing items 2–4 and scrolling one item at a time.
+
+When the user is already at the beginning or end of the carousel, the respective disabled control may simply be labelled:
+
+- Previous
+- Next
+
+The exact values will depend on the carousel's configuration, viewport size, and scrolling behaviour. Implementations that scroll multiple items at a time should follow the same pattern, calculating the appropriate destination range for each button.
+
 ### Smooth scrolling
 
 Where supported, `scroll-behavior: smooth` animates scrolling, whether scrolling is instigated by pressing a previous or next button, or by other means. Where the property is not supported, the browser steps over it and the interface remains usable.
@@ -172,12 +195,12 @@ Array.prototype.forEach.call(items, function (item) {
 });
 ```
 
-This not only invokes the 'fading' effect described in [**Recommended layout**](#recommended-layout), but also removes inert items from focus order and the accessibility tree[^3]. The upshot is that, like sighted mouse users, keyboard and screen reader users can only perceive and interact with items that are not inert. 
+This not only invokes the 'fading' effect described in [**Recommended layout**](#recommended-layout), but also removes inert items from focus order and the accessibility tree[^4]. The upshot is that, like sighted mouse users, keyboard and screen reader users can only perceive and interact with items that are not inert. 
 
 Were the inert attribute not employed, a keyboard user could scroll to the end of a long set of items, only to find that the first (currently obscured) item was still first in focus order. Pressing tab would scroll the container back to the beginning and progress would be lost. 
 
 ::: info Inert polyfill
-The [**Reference implementation**](#reference-implementation) includes a small polyfill[^4] for the `inert` attribute, increasing the reach of the behaviour it enables.
+The [**Reference implementation**](#reference-implementation) includes a small polyfill[^5] for the `inert` attribute, increasing the reach of the behaviour it enables.
 :::
 
 ### Button controls
@@ -188,7 +211,7 @@ Keyboard users must scroll the content using the buttons. Each time a button is 
 var scrollAmount = list.offsetWidth / 2;
 ```
 
-Buttons that are not applicable (the previous button if the user is scrolled all the way left, or the next button if the user is scrolled all the way to the right) are `disabled`. This is made possible by listening to the `scroll` event, which necessitates debouncing[^5] to address performance concerns.
+Buttons that are not applicable (the previous button if the user is scrolled all the way left, or the next button if the user is scrolled all the way to the right) are `disabled`. This is made possible by listening to the `scroll` event, which necessitates debouncing[^6] to address performance concerns.
 
 ```js
 var debounced;
@@ -202,7 +225,7 @@ Buttons taking the `disabled` attribute are removed from focus order and identif
 
 ### Lazy loading
 
-Although it is not provided as an intrinsic part of the [**Reference implementation**](#reference-implementation) to follow, it is recommended you use a lazy loading[^6] solution for images inside the carousel. Since the image containers for [**Card**](../cards) and [**Promo**](../promos) components have a fixed height, you do not need to address the vertical scroll jumping issues associated with lazy loading.
+Although it is not provided as an intrinsic part of the [**Reference implementation**](#reference-implementation) to follow, it is recommended you use a lazy loading[^7] solution for images inside the carousel. Since the image containers for [**Card**](../cards) and [**Promo**](../promos) components have a fixed height, you do not need to address the vertical scroll jumping issues associated with lazy loading.
 
 ## Reference implementation
 
@@ -222,7 +245,8 @@ This topic does not yet have any related research available.
 
 [^1]: "Image Carousels: Getting Control of the Merry-Go-Round" — usability.gov, <https://www.usability.gov/get-involved/blog/2013/04/image-carousels.html>
 [^2]: "Perceived Affordances and Designing for Task Flow" — Johnny Holland, <http://johnnyholland.org/2010/04/perceived-affordances-and-designing-for-task-flow/>
-[^3]: "The Accessibility Tree" — developers.google.com, <https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree>
-[^4]: Inert polyfill on Github, <https://github.com/GoogleChrome/inert-polyfill>
-[^5]: Throttling and Debouncing in JavaScript — Codeburst.io, <https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf>
-[^6]: Lazy loading images using Intersection Observer — Dean Hume,  <https://deanhume.com/lazy-loading-images-using-intersection-observer/>
+[^3]: HTML5: Techniques for providing useful text alternatives — W3C, <https://w3c.github.io/alt-techniques/with-pictures.html>
+[^4]: "The Accessibility Tree" — developers.google.com, <https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree>
+[^5]: Inert polyfill on Github, <https://github.com/GoogleChrome/inert-polyfill>
+[^6]: Throttling and Debouncing in JavaScript — Codeburst.io, <https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf>
+[^7]: Lazy loading images using Intersection Observer — Dean Hume,  <https://deanhume.com/lazy-loading-images-using-intersection-observer/>
