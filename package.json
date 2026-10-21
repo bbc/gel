@@ -36,7 +36,7 @@
     "glob": "13.0.6",
     "gulp": "5.0.1",
     "headmatter": "0.0.2",
-    "markdown-it": "14.3.0",
+    "markdown-it": "14.3.3",
     "markdown-it-anchor": "5.3.0",
     "markdown-it-container": "2.0.0",
     "markdown-it-deflist": "2.1.0",
