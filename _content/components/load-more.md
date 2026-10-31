@@ -94,7 +94,7 @@ You may introduce each result with a heading, but each result's heading must be 
 
 The pagination component is [documented on GEL](https://www.bbc.co.uk/gel/guidelines/numbered-pagination). This implementation incorporates a labelled navigation landmark. Screen readers tend to provide aggregated lists of landmark elements for quick navigation.
 
-Note the use of `role="separator"` to remove the ellipsis element from enumeration. Where the previous or next link is not applicable it is 'disabled' by having its `href` removed. This removes it from focus order. The current page is identified accessibly with `aria-current="page"`[^6].
+Note the ellipsis element is marked `aria-hidden="true"` so it is not enumerated by assistive technologies: a `separator` role is not allowed on an `li` element. Where the previous or next link is not applicable it is 'disabled' by having its `href` removed. This removes it from focus order. The current page is identified accessibly with `aria-current="page"`[^6].
 
 ```html
 <nav class="gel-pages" aria-labelledby="gel-pages-label">
@@ -113,7 +113,7 @@ Note the use of `role="separator"` to remove the ellipsis element from enumerati
     <li><a href="?page=5">5</a></li>
     <li><a href="?page=6">6</a></li>
     <li><a href="?page=7">7</a></li>
-    <li role="separator">&hellip;</li>
+    <li aria-hidden="true">&hellip;</li>
     <li><a href="?page=999">999</a></li>
   </ol>
   <div class="gel-pages-text">Page 1 of 999</div>
